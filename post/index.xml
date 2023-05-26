@@ -8,6 +8,7 @@
     <language>en-us</language>
     <managingEditor>evans@virginia.edu (David Evans)</managingEditor>
     <webMaster>evans@virginia.edu (David Evans)</webMaster>
+    <lastBuildDate>Fri, 26 May 2023 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://llmrisks.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,11 +16,11 @@
     <item>
       <title>Welcome to the LLM Risks Seminar</title>
       <link>https://llmrisks.github.io/welcome/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 26 May 2023 00:00:00 +0000</pubDate>
       <author>evans@virginia.edu (David Evans)</author>
       <guid>https://llmrisks.github.io/welcome/</guid>
       <description>Full Transcript
- The actual seminar won&amp;rsquo;t be fully planned by GPT-4, but more information on it won&amp;rsquo;t be available until later. I&amp;rsquo;m expecting the structure and format to be similar to this seminar, but with a topic focused on learning as much as we can about the potential for both good and harm from generative AI (including large language models) and things we can do (mostly technically, but including policy) to mitigate the harms.</description>
+ Seminar Plan The actual seminar won&amp;rsquo;t be fully planned by GPT-4, but more information on it won&amp;rsquo;t be available until later. I&amp;rsquo;m expecting the structure and format to be similar to this seminar, but with a topic focused on learning as much as we can about the potential for both good and harm from generative AI (including large language models) and things we can do (mostly technically, but including policy) to mitigate the harms.</description>
     </item>
     
   </channel>

@@ -1,5 +1,5 @@
 +++
-date = "26 May Jan 2023"
+date = "26 May 2023"
 draft = false
 title = "Welcome to the LLM Risks Seminar"
 slug = "welcome"
@@ -13,6 +13,7 @@ slug = "welcome"
 </center>
 
 
+## Seminar Plan
 
 The actual seminar won't be fully planned by GPT-4, but more
 information on it won't be available until later. I'm expecting the
@@ -23,8 +24,10 @@ from generative AI (including large language models) and things we can
 do (mostly technically, but including policy) to mitigate the harms.
 
 
+##
+
 <center>
-<img src="/images/readings.png" witdh="60%"><br>
+<img src="/images/readings.png" witdh="40%"><br>
 
 [Full Transcript](https://poe.com/s/9bOFQnPCmJn537ZVEhuM)
 </center>
