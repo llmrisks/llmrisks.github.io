@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Topics on Risks (and Benefits) of Generative AI and Large Language Models</title>
+    <link>https://llmrisks.github.io/topics/</link>
+    <description>Recent content in Topics on Risks (and Benefits) of Generative AI and Large Language Models</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>evans@virginia.edu (David Evans)</managingEditor>
+    <webMaster>evans@virginia.edu (David Evans)</webMaster>
+    
+	<atom:link href="https://llmrisks.github.io/topics/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+  </channel>
+</rss>

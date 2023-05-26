@@ -1,0 +1,50 @@
+baseurl = "https://llmrisks.github.io/"
+languageCode = "en-us"
+title = "Risks (and Benefits) of Generative AI and Large Language Models"
+subtitle = "UVA CS 6501 Fall 2023"
+copyright = ""
+theme = "seminar"
+
+paginate = 10
+paginatePath = "page"
+
+pageNotFoundTitle = "Not Found"
+pageNotFoundDetail = "Your request cannot be answered by this website. Perhaps you should try asking GPT, but most likely a bad link or mistyped URL. If its a broken link, please let us know."
+
+[markup.goldmark.renderer]
+unsafe= true
+
+[permalinks]
+    post = "/:slug/"
+    code = "/:slug/"
+
+[taxonomies]
+    tag = "tags"
+    topic = "topics"
+
+[author]
+    name = "David Evans"
+    email = "evans@virginia.edu"
+
+[params]
+    brand = "Risks of Generative AI"
+    topline = "Risks of Generative AI"
+    footline = "<p align=\"center\">CS 6501 | University of Virginia, Fall 2023 | <a href=\"https://www.cs.virginia.edu/evans\">David Evans</a>"
+    sidebar = "left"
+
+    nodate = true
+    noauthor = true
+    noread = true
+    nopaging=true
+    notoc=true
+
+[blackfriday]
+    angledQuotes = false
+    fractions = false
+    hrefTargetBlank = false
+    latexDashes = true
+    plainIdAnchors = true
+    extensions = []
+    extensionmask = []
+
+[[menu.footer]]

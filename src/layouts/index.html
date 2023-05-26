@@ -1,0 +1,126 @@
+{{ define "main" }}
+{{ $posts_title := index .Site.Params "posts_title" | default "Posts" }}
+{{ $posts_count := index .Site.Params "posts_count" | default 10 }}
+{{ $pubs_title := index .Site.Params "pubs_title" | default "Publications" }}
+{{ $pubs_count := index .Site.Params "pubs_count" | default 5 }}
+
+   <div class="container">       
+   <div class="sidebar">
+   <p>
+University of Virginia<Br>
+cs3120 Spring 2023<br>
+Theory of Computation<br>
+</p>
+<p>
+<p>
+<b><a href="/syllabus">Syllabus</a></b></br>
+&nbsp;&nbsp;&nbsp;<a href="/schedule">Schedule</a></br>
+&nbsp;&nbsp;&nbsp;<a href="https://forms.gle/5HSapzRDRen4V4VA7">Extension Request</a></br>
+
+
+<b><a href="/classes">Classes</a></b></br>
+
+<!--
+
+&nbsp;&nbsp;&nbsp;<a href="/officehours">Office Hours</a></br>
+</p>
+-->
+<p>
+<!--&nbsp;&nbsp;&nbsp;<a href="/pledge">Pledge</a></br>
+</p>
+<p>
+
+<!--&nbsp;&nbsp;&nbsp;<a href="/pledge">Pledge</a></br>
+</p>
+-->
+<p>
+<b><a href="https://introtcs.org">Book</a></b> [<a href="https://files.boazbarak.org/introtcs/lnotes_book.pdf">PDF</a>]</br>
+<a href="/resources/"><b>Resources</b></a></p>
+   
+<p></p>
+
+<!--
+   <p>
+Past Weeks<br>
+
+<a href="/week1">1</a> &middot; <a href="/week2">2</a> &middot; <a href="/week3"><b>3</b></a> &middot; <a href="/week4">4</a> 
+&middot;
+<a href="/week5">5</a>
+&middot;
+<a href="/week6">6</a>
+&middot;
+<a href="/week7">7</a>
+&middot;
+<a href="/week7">8</a></br>
+<a href="/week9">9</a> &middot;
+<a href="/week10">10</a> &middot;
+<a href="/week11">11</a> &middot;
+<a href="/week12">12</a> &middot;
+<a href="/weeko"><b>Week &omega;</b></a>
+-->
+<!-- 
+&middot; <a href="/week5">5</a> &middot;
+  <a href="/week6">6</a> &middot;
+  <a href="/week7">7</a> &middot;
+  <a href="/week8">8</a> &middot;
+  <a href="/week9">9</a></br>
+  </p>
+  <a href="/week10"><b>Week 10</b></a></br>
+  <a href="/week11"><b>Week 11</b></a></br>
+</p>
+-->
+</p>
+
+   <p>
+   <b><a href="/post/">Recent Posts</a></b>
+
+   {{ range first 10 (where site.RegularPages "Type" "in" site.Params.mainSections).ByDate.Reverse }}
+   <div class="posttitle">
+      {{ partial "post-title" . }}
+   </div>
+   {{ end }}
+   <div class="posttitle">
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     <a href="/post/"><em>More...</em></a>
+   </div>
+   
+   </p>
+   <p>
+<!--   <b><a href="/team/">Team</a></b><br> -->
+   </p>
+<p>
+ 
+       <a href="/f21/">Fall 2021 Archive</a><br>
+       <a href="/f20/">Fall 2020 Archive</a><br>
+     <a href="/f19/">Fall 2019 Archive</a>
+     </p>
+
+   </div>
+
+
+    <div class="content">
+
+    {{ range .Site.Pages }}
+        {{ if eq .Type "index" }}
+           {{ .Content }}
+        {{ end }}
+    {{ end }}
+
+
+    
+    {{ range first $posts_count (where site.RegularPages "Type" "in" site.Params.mainSections).ByDate.Reverse }}
+    {{ partial "post-full-summary" . }}
+    {{ end }}
+
+
+    <footer>
+      <nav>
+	<a href="/post/" class="button hollow primary">All {{ $posts_title }}</a>
+      </nav>
+    </footer>
+
+</div>
+</div>
+
+{{ end }}
+
