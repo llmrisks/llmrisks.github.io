@@ -8,7 +8,18 @@
     <language>en-us</language>
     <managingEditor>evans@virginia.edu (David Evans)</managingEditor>
     <webMaster>evans@virginia.edu (David Evans)</webMaster>
-    <lastBuildDate>Fri, 26 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://llmrisks.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 17 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://llmrisks.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Welcome Survey</title>
+      <link>https://llmrisks.github.io/survey/</link>
+      <pubDate>Thu, 17 Aug 2023 00:00:00 +0000</pubDate>
+      <author>evans@virginia.edu (David Evans)</author>
+      <guid>https://llmrisks.github.io/survey/</guid>
+      <description>Please submit this welcome survey before 8:59pm on Monday, August 21:
+ https://forms.gle/dxhFmJH7WRs32s1ZA
+ Your answers won&amp;rsquo;t be shared publicly, but I will use the responses to the survey to plan the seminar, including forming teams, and may share some aggregate and anonymized results and anonymized quotes from the surveys.</description>
+    </item>
+    
     <item>
       <title>Welcome to the LLM Risks Seminar</title>
       <link>https://llmrisks.github.io/welcome/</link>
