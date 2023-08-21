@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://llmrisks.github.io/post/</loc>
+    <lastmod>2023-08-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://llmrisks.github.io/readings/</loc>
     <lastmod>2023-08-21T00:00:00+00:00</lastmod>
   </url>
@@ -18,8 +23,8 @@
   </url>
   
   <url>
-    <loc>https://llmrisks.github.io/post/</loc>
-    <lastmod>2023-08-17T00:00:00+00:00</lastmod>
+    <loc>https://llmrisks.github.io/updates/</loc>
+    <lastmod>2023-08-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>

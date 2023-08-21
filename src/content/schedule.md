@@ -152,11 +152,10 @@ class to make it more worthwhile and engaging.
   we can meet after class on Monday to discuss.
 
 **One week and a day** before your team is scheduled to lead, you
-  should submit a PR to the course website to post the materials for
-  the week on the course site. So, the team leading on 11/13 September
-  should do this by Sunday, September 3 at 5:29pm. Assuming I am happy
-  with your plan, this will be posted shortly after on the course
-  website.
+  should post the materials for the week, including the response
+  questions or activities, on the course discussion site. So, the team
+  leading on 11/13 September should do this by Sunday, September 3 at
+  5:29pm. 
 
 For teams leading the first few weeks, this schedule is not possible,
 so is adjusted in the schedule below. The team leading 28/30 August
