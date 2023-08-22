@@ -193,6 +193,8 @@ Sina Alemohammad, Josue Casco-Rodriguez, Lorenzo Luzi, Ahmed Imtiaz Humayun, Hos
 
 [Awesome-LLM: a curated list of Large Language Model Papers and Links](https://github.com/Hannibal046/Awesome-LLM)
 
+[LLM Security](https://llmsecurity.net/) &mdash; collection of papers on LLM security
+
 [COS 597G (Fall 2022): Understanding Large Language Models](https://www.cs.princeton.edu/courses/archive/fall22/cos597G/) (Princeton Course taught by [Danqi Chen](https://www.cs.princeton.edu/~danqic/)
 
 [CS324 - Large Language Models (Winter 2022)](https://stanford-cs324.github.io/winter2022/) (Stanford Course taught by [Percy Liang](https://cs.stanford.edu/~pliang/), [
