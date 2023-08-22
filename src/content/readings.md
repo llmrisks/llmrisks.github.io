@@ -13,6 +13,25 @@ This page collects some potential topics and readings for the seminar.
 
 Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Lukasz Kaiser, Illia Polosukhin. [_Attention Is All You Need_](https://arxiv.org/abs/1706.03762). [https://arxiv.org/abs/1706.03762](https://arxiv.org/abs/1706.03762). NeurIPS 2017.
 
+
+Jacob Devlin, Ming-Wei Chang, Kenton Lee, Kristina Toutanova. [_BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding_](https://aclanthology.org/N19-1423/). ACL 2019.
+
+
+(optional) Alec Radford, Jeffrey Wu, Rewon Child, David Luan, Dario Amodei, Ilya Sutskever. [_Language Models are Unsupervised Multitask Learners_](/docs/language-models.pdf). OpenAI, 2019.
+
+These two blog posts by Jay Alammar are helpful for understanding attention and Transformers:
+
+- [Visualizing A Neural Machine Translation Model (Mechanics of Seq2seq Models With Attention)](https://jalammar.github.io/visualizing-neural-machine-translation-mechanics-of-seq2seq-models-with-attention/](https://jalammar.github.io/visualizing-neural-machine-translation-mechanics-of-seq2seq-models-with-attention/)
+- [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/)
+
+Laura Weidinger, John Mellor, Maribeth Rauh, Conor Griffin, Jonathan
+Uesato, Po-Sen Huang, Myra Cheng, Mia Glaese, Borja Balle, Atoosa
+Kasirzadeh, Zac Kenton, Sasha Brown, Will Hawkins, Tom Stepleton,
+Courtney Biles, Abeba Birhane, Julia Haas, Laura Rimell, Lisa Anne
+Hendricks, William Isaac, Sean Legassick, Geoffrey Irving, Iason
+Gabriel. [_Ethical and social risks of harm from Language
+Models_](https://arxiv.org/abs/2112.04359) DeepMind, 2021. [https://arxiv.org/abs/2112.04359](https://arxiv.org/abs/2112.04359)
+
 Simon Willison. [_Catching up on the weird world of LLMs_](https://simonwillison.net/2023/Aug/3/weird-world-of-llms/), August 2023.
 
 ### Viewpoint Essays
@@ -94,6 +113,8 @@ Yang Liu, Yuanshun Yao, Jean-Francois Ton, Xiaoying Zhang, Ruocheng Guo Hao Chen
 
 ## AGI
 
+Sébastien Bubeck, Varun Chandrasekaran, Ronen Eldan, Johannes Gehrke, Eric Horvitz, Ece Kamar, Peter Lee, Yin Tat Lee, Yuanzhi Li, Scott Lundberg, Harsha Nori, Hamid Palangi, Marco Tulio Ribeiro, Yi Zhang. [_Sparks of Artificial General Intelligence: Early experiments with GPT-4_](https://www.microsoft.com/en-us/research/publication/sparks-of-artificial-general-intelligence-early-experiments-with-gpt-4/). Microsoft, March 2023. [https://arxiv.org/abs/2303.12712](https://arxiv.org/abs/2303.12712)
+
 Yejin Choi. [_The Curious Case of Commonsense Intelligence_](https://www.amacad.org/publication/curious-case-commonsense-intelligence). Daedalus, Spring 2022.
 
 Konstantine Arkoudas. [_GPT-4 Can't Reason_](https://arxiv.org/abs/2308.03762). [https://arxiv.org/abs/2308.03762](https://arxiv.org/abs/2308.03762).
@@ -111,6 +132,8 @@ Boaz Barak. [_The shape of AGI: Cartoons and back of envelope_](https://windowso
 ## Art
 
 ## Writing
+
+## Human Dignity and Job Loss
 
 ## "Cheating"
 
@@ -155,6 +178,8 @@ Distributions from Corrupted Data_](https://arxiv.org/abs/2305.19256). [https://
 Ilia Shumailov, Zakhar Shumaylov, Yiren Zhao, Yarin Gal, Nicolas Papernot, Ross Anderson. [_The Curse of Recursion: Training on Generated Data Makes Models Forget_](https://arxiv.org/abs/2305.17493). [https://arxiv.org/abs/2305.17493](https://arxiv.org/abs/2305.17493)
 
 Sina Alemohammad, Josue Casco-Rodriguez, Lorenzo Luzi, Ahmed Imtiaz Humayun, Hossein Babaei, Daniel LeJeune, Ali Siahkoohi, Richard G. Baraniuk. [_Self-Consuming Generative Models Go MAD_](https://arxiv.org/abs/2307.01850). [https://arxiv.org/abs/2307.01850](https://arxiv.org/abs/2307.01850).
+
+## Environmental Harms
 
 
 ## Useful Guides

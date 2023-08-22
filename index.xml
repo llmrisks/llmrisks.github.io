@@ -18,8 +18,8 @@
       <description>This page collects some potential topics and readings for the seminar.
 Introduction (Week 1) Introduction to Large Language Models (from Stanford course)
 Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Lukasz Kaiser, Illia Polosukhin. Attention Is All You Need. https://arxiv.org/abs/1706.03762. NeurIPS 2017.
-Simon Willison. Catching up on the weird world of LLMs, August 2023.
-Viewpoint Essays Douglas Hofstadter. Gödel, Escher, Bach, and AI. The Atlantic. 8 July 2023.</description>
+Jacob Devlin, Ming-Wei Chang, Kenton Lee, Kristina Toutanova. BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding. ACL 2019.
+(optional) Alec Radford, Jeffrey Wu, Rewon Child, David Luan, Dario Amodei, Ilya Sutskever.</description>
     </item>
     
     <item>
