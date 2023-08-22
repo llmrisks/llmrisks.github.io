@@ -8,11 +8,7 @@
     <language>en-us</language>
     <managingEditor>evans@virginia.edu (David Evans)</managingEditor>
     <webMaster>evans@virginia.edu (David Evans)</webMaster>
-    <lastBuildDate>Mon, 21 Aug 2023 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://llmrisks.github.io/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 21 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://llmrisks.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Readings and Topics</title>
       <link>https://llmrisks.github.io/readings/</link>
@@ -22,8 +18,8 @@
       <description>This page collects some potential topics and readings for the seminar.
 Introduction (Week 1) Introduction to Large Language Models (from Stanford course)
 Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Lukasz Kaiser, Illia Polosukhin. Attention Is All You Need. https://arxiv.org/abs/1706.03762. NeurIPS 2017.
-Jean Kaddour, Joshua Harris, Maximilian Mozes, Herbie Bradley, Roberta Raileanu, Robert McHardy. Challenges and Applications of Large Language Models. https://arxiv.org/abs/2307.10169
-Simon Willison. Catching up on the weird world of LLMs, August 2023.</description>
+Simon Willison. Catching up on the weird world of LLMs, August 2023.
+Viewpoint Essays Douglas Hofstadter. Gödel, Escher, Bach, and AI. The Atlantic. 8 July 2023.</description>
     </item>
     
     <item>

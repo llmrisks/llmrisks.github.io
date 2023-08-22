@@ -13,8 +13,6 @@ This page collects some potential topics and readings for the seminar.
 
 Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Lukasz Kaiser, Illia Polosukhin. [_Attention Is All You Need_](https://arxiv.org/abs/1706.03762). [https://arxiv.org/abs/1706.03762](https://arxiv.org/abs/1706.03762). NeurIPS 2017.
 
-Jean Kaddour, Joshua Harris, Maximilian Mozes, Herbie Bradley, Roberta Raileanu, Robert McHardy. [_Challenges and Applications of Large Language Models_](https://arxiv.org/abs/2307.10169). [https://arxiv.org/abs/2307.10169](https://arxiv.org/abs/2307.10169)
-
 Simon Willison. [_Catching up on the weird world of LLMs_](https://simonwillison.net/2023/Aug/3/weird-world-of-llms/), August 2023.
 
 ### Viewpoint Essays
@@ -25,6 +23,14 @@ Marc Andreessen. [AI Will Save the World](https://www.thefp.com/p/why-ai-will-sa
 
 Paul Kingsnorth. [_Rage Against the Machine_](https://www.thefp.com/p/rage-against-the-machine-ai-paul-kingsnorth). 12 July 2023
 
+### Broad Overviews
+
+Jean Kaddour, Joshua Harris, Maximilian Mozes, Herbie Bradley, Roberta Raileanu, Robert McHardy. [_Challenges and Applications of Large Language Models_](https://arxiv.org/abs/2307.10169). [https://arxiv.org/abs/2307.10169](https://arxiv.org/abs/2307.10169)
+
+Center for Research on Foundation Models (CRFM) at the Stanford
+Institute for Human-Centered Artificial Intelligence (HAI). [_On the
+Opportunities and Risks of Foundation
+Models_](https://arxiv.org/abs/2108.07258) [https://arxiv.org/abs/2108.07258](https://arxiv.org/abs/2108.07258). [Report Page](https://crfm.stanford.edu/report.html)
 
 
 ## Copyright and Law
@@ -36,11 +42,9 @@ Katherine Lee, A. Feder Cooper, James Grimmelmann, and Daphne Ippolito. [_AI and
 
 Nikhil Vyas, Sham Kakade, Boaz Barak. [_On Provable Copyright Protection for Generative Models_](https://arxiv.org/abs/2302.10870). [https://arxiv.org/abs/2302.10870](https://arxiv.org/abs/2302.10870).
 
-
 ## Governance and Regulation
 
 Michael Veale, Kira Matus, Robert Gorwa. [_AI and Global Governance: Modalities, Rationales, Tensions_](https://discovery.ucl.ac.uk/id/eprint/10171121/1/Veale%20Matus%20Gorwa%202023.pdf). Annual Review of Law and Social Science, 2023.
-
 
 ## Amplification Techniques
 
