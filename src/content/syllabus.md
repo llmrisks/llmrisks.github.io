@@ -4,7 +4,7 @@
 University of Virginia, Fall 2023
 
 **Meetings:** Mondays and Wednesdays, 9:30-10:45am in Rice 340
-
+ 
 **Course Objective.** This seminar will focus on understanding the
   potential risks and benefits of advances in Generative Artificial
   Intelligence and Large Language Models. This is a research-focused
