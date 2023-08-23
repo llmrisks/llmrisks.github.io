@@ -21,7 +21,7 @@ Jacob Devlin, Ming-Wei Chang, Kenton Lee, Kristina Toutanova. [_BERT: Pre-traini
 
 These two blog posts by Jay Alammar are helpful for understanding attention and Transformers:
 
-- [Visualizing A Neural Machine Translation Model (Mechanics of Seq2seq Models With Attention)](https://jalammar.github.io/visualizing-neural-machine-translation-mechanics-of-seq2seq-models-with-attention/](https://jalammar.github.io/visualizing-neural-machine-translation-mechanics-of-seq2seq-models-with-attention/)
+- [Visualizing A Neural Machine Translation Model (Mechanics of Seq2seq Models With Attention)](https://jalammar.github.io/visualizing-neural-machine-translation-mechanics-of-seq2seq-models-with-attention/)
 - [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/)
 
 Laura Weidinger, John Mellor, Maribeth Rauh, Conor Griffin, Jonathan
