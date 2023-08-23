@@ -78,7 +78,7 @@ href="mailto:evans@virginia.edu">evans@virginia.edu</a>) the plan for
 week 2 by Sunday, 27 August and have materials ready for posting by
 the next Wednesday.
 
-The teams have been posted at [https://github.com/llmrisks/discussions/blob/main/teams.md](https://github.com/llmrisks/discussions/blob/main/teams.md) (visible only to the class).
+The teams have been posted at [https://github.com/llmrisks/discussions/blob/main/teams.md](https://github.com/llmrisks/discussions/blob/main/teams.md) (visible only to the class). Everyone should have gotten an invite to the github organization, but if not please check with me.
 
 
 
