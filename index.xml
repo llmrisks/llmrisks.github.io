@@ -8,7 +8,28 @@
     <language>en-us</language>
     <managingEditor>evans@virginia.edu (David Evans)</managingEditor>
     <webMaster>evans@virginia.edu (David Evans)</webMaster>
-    <lastBuildDate>Mon, 21 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://llmrisks.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 23 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://llmrisks.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Class 0: Getting Organized</title>
+      <link>https://llmrisks.github.io/class0/</link>
+      <pubDate>Wed, 23 Aug 2023 00:00:00 +0000</pubDate>
+      <author>evans@virginia.edu (David Evans)</author>
+      <guid>https://llmrisks.github.io/class0/</guid>
+      <description>I&amp;rsquo;ve updated the Schedule and Bi-Weekly Schedule based on the discussions today.
+The plan is below:
+  Week Lead Team Blogging Team Everyone Else     Two Weeks Before  Come up with idea for the week and planned readings, send to me by 5:29pm on Tuesday (2 weeks - 1 day before)   -    Week Before  Post plan and questions in github discussions by no later than 9am Wednesday; prepare for leading meetings   Prepare plan for blogging (how you will divide workload, collaborative tools for taking notes and writing)   Read/do materials and respond to preparation questions in github discussions (by 5:29pm Sunday)    Week of Leading Meetings  Lead interesting, engaging, and illuminating meetings!</description>
+    </item>
+    
+    <item>
+      <title>Weekly Schedule</title>
+      <link>https://llmrisks.github.io/weeklyschedule/</link>
+      <pubDate>Wed, 23 Aug 2023 00:00:00 +0000</pubDate>
+      <author>evans@virginia.edu (David Evans)</author>
+      <guid>https://llmrisks.github.io/weeklyschedule/</guid>
+      <description>This is the regular bi-weekly schedule:
+  Week Lead Team Blogging Team Everyone Else     Two Weeks Before  Come up with idea for the week and planned readings, send to me by 5:29pm on Tuesday (2 weeks - 1 day before)   -    Week Before  Post plan and questions in github discussions by no later than 9am Wednesday; prepare for leading meetings   Prepare plan for blogging (how you will divide workload, collaborative tools for taking notes and writing)   Read/do materials and respond to preparation questions in github discussions (by 5:29pm Sunday)    Week of Leading Meetings  Lead interesting, engaging, and illuminating meetings!</description>
+    </item>
+    
     <item>
       <title>Readings and Topics</title>
       <link>https://llmrisks.github.io/readings/</link>
@@ -29,6 +50,7 @@ Jacob Devlin, Ming-Wei Chang, Kenton Lee, Kristina Toutanova. BERT: Pre-training
       <author>evans@virginia.edu (David Evans)</author>
       <guid>https://llmrisks.github.io/schedule/</guid>
       <description>The schedule details will be filled in as the semester progresses (and future weeks are subject to change, but as much as is known is documented here).
+See Weekly Schedule for the bi-weekly expectations for each team.
   Week Lead Team Blog Team Topic     0: 23 Aug Dave Starting the Seminar   1: 28/30 Aug 14     2: 4/6 Sep 25     3: 11/13 Sep 36     4: 18/20 Sep 41     5: 25/27 Sep 52     6: 4 Oct TBD (2 Oct is Fall Classes Break)    7: 9/11 Oct 63     8: 16/18 Oct 14     9: 23/25 Oct 25     10: 30 Oct/1 Nov 36     11: 6/8 Nov 41     14: 13/15 Nov 5 2     15: 20 Nov TBD (22 Nov is Thanksgiving Break)   16: 27/29 Nov 6 3     17: 4 Dec TBD (Last meeting is 4 December)    Leading Team Schedule As the leading team, your job is to select a worthwhile topic, decide on a reading assignment (which can include things other than reading and is not limited to typical research papers) for the class, write questions that the class should write responses to in preparation for the discussion, and lead an interesting, engaging, and illuminating class!</description>
     </item>
     

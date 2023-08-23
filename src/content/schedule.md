@@ -9,6 +9,9 @@ The schedule details will be filled in as the semester progresses (and
 future weeks are subject to change, but as much as is known is
 documented here).
 
+See [Weekly Schedule](/weeklyschedule) for the bi-weekly expectations
+for each team.
+
 <table class="schedule">
 <thead>
 <tr>
@@ -142,19 +145,22 @@ class!
 You have two class sessions to present your topic (Monday and
 Wednesday meetings), so please don't just give a series of
 unconnected, dull presentations. You need to think of things to do in
-class to make it more worthwhile and engaging.
+class to make it more worthwhile and engaging. Some of your class may
+be presenting ideas using slides, but you should aim to also include
+other things such as whiteboard presentations, group discussions,
+class activities, etc.
 
-**Two weeks and a day** before your team is scheduled to lead, you
+**Two weeks minus a day** before your team is scheduled to lead, you
   should have an idea what you want to do, tentative list of readings
-  or other materials, and send this to me by 5:29pm on the Sunday. For
+  or other materials, and send this to me by 5:29pm on the Tuesdday. For
   example, the team leading on 11/13 September should send the plan on
-  Sunday, August 27. I will give you some quick feedback on this, and
-  we can meet after class on Monday to discuss.
+  Tuesday, August 29. I will give you some quick feedback on this, and
+  we can meet after class on Wednesday to discuss.
 
-**One week and a day** before your team is scheduled to lead, you
+**One week** before your team is scheduled to lead, you
   should post the materials for the week, including the response
   questions or activities, on the course discussion site. So, the team
-  leading on 11/13 September should do this by Sunday, September 3 at
+  leading on 11/13 September should do this by Wednesday, September 6 at
   5:29pm. 
 
 For teams leading the first few weeks, this schedule is not possible,
@@ -162,8 +168,8 @@ so is adjusted in the schedule below. The team leading 28/30 August
 will get a rough plan from me on the first class, and submit a plan
 for posting by 5:29pm on **Thursday, 24 August**. The team leading the
 second week 4/6 September should decide on a general plan for the week
-and send it to me by 5:29pm on **Thursday, 24 August**. Then, the
-materials should be ready for posting by **Sunday, 27 August**.
+and send it to me by 5:29pm on **Sunday, 27 August**. Then, the
+materials should be ready for posting by **Wednesday, 30 August**.
 
 After you've completed the class meeting, you should help the Blogging
 team by providing them with your materials, answering their questions,
@@ -176,7 +182,7 @@ All deadlines are at 5:29pm on the date listed.
 <table class="schedule">
 <thead>
 <tr>
-<td>Date</td><td>Pre-Plan</td><td>Materials Ready</td></tr>
+<td>Date</td><td>Pre-Plan</td><td>Materials Ready (Wednesday, 5:29pm)</td></tr>
 </thead>
 <tr><td>Thursday, 24 August</td><td>Team 2</td><td>Team 1</td></tr>
 <tr><td>Sunday, 27 August</td><td>Team 3</td><td>Team 2</td></tr>
