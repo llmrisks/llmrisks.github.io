@@ -181,6 +181,9 @@ Sina Alemohammad, Josue Casco-Rodriguez, Lorenzo Luzi, Ahmed Imtiaz Humayun, Hos
 
 ## Environmental Harms
 
+## Evaluating LLMs
+
+Percy Liang, et al. [_Holistic Evaluation of Language Models_](https://arxiv.org/abs/2211.09110). [HELM Project](https://crfm.stanford.edu/helm/v0.2.2/).
 
 ## Useful Guides
 

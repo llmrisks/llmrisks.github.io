@@ -8,7 +8,19 @@
     <language>en-us</language>
     <managingEditor>evans@virginia.edu (David Evans)</managingEditor>
     <webMaster>evans@virginia.edu (David Evans)</webMaster>
-    <lastBuildDate>Wed, 23 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://llmrisks.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 25 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://llmrisks.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Github Discussions</title>
+      <link>https://llmrisks.github.io/discussions/</link>
+      <pubDate>Fri, 25 Aug 2023 00:00:00 +0000</pubDate>
+      <author>evans@virginia.edu (David Evans)</author>
+      <guid>https://llmrisks.github.io/discussions/</guid>
+      <description>Everyone should have received an invitation to the github discussions site, and be able to see the posts there and submit your own posts and comments. If you didn&amp;rsquo;t get this invitation, it was probably blocked by the email system. Try visiting:
+https://github.com/orgs/llmrisks/invitation
+(while logged into the github account you listed on your form).
+Once you&amp;rsquo;ve accepted the invitation, you should be able to visit https://github.com/llmrisks/discussions/discussions/2 (the now-finalized discussion post for Week 1), and contribute to the discussions there.</description>
+    </item>
+    
     <item>
       <title>Class 0: Getting Organized</title>
       <link>https://llmrisks.github.io/class0/</link>
