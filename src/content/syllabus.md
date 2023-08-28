@@ -77,20 +77,6 @@ harmful.  If you have any doubts about whether or not something you
 want to do is ethical and legal, you should check with the course
 instructor before proceeding.
 
-## Area Requirements
-
-**Note for CS Graduate Students.** As per the actual rules in the
-Graduate Handbook, a cs6501 seminar course does not a priori count for
-any particular areas.  It may be possible to count it for any area,
-but it would be up to you to make the case to your committee that it
-should count for a given area. In most cases, this will depend a lot
-on what you individually do in the class &mdash; for example, you
-could select presentation topics that would make a strong case for
-counting it for the "Theory" area, but someone else who does a
-systems-focused project would be able to count it for a different
-area. I can help provide guidance on this, but it is ultimately up to
-your committee to decide if a course counts for a particular area
-requirement.
 
 ## Generative AI Policy
 
