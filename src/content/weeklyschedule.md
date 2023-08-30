@@ -18,11 +18,12 @@ This is the regular bi-weekly schedule:
 </thead>
 <tbody>
 <tr>
-<td>Two Weeks Before<td>
+<td>Two Weeks Before</td>
 <td>
 Come up with idea for the week and planned readings, send to me by
 5:29pm on Tuesday (2 weeks - 1 day before)
 </td>
+<td>-</td>
 <td>
 -
 </td>
