@@ -56,10 +56,13 @@ Models_](https://arxiv.org/abs/2108.07258) [https://arxiv.org/abs/2108.07258](ht
 
 Katherine Lee, A. Feder Cooper, James Grimmelmann, and Daphne Ippolito. [_AI and Law: The Next Generation_](https://genlaw.github.io/explainers/explainers.pdf). July 2023. [https://genlaw.github.io/explainers/](https://genlaw.github.io/explainers/)
 
+Inyoung Cheong, Aylin Caliskan, Tadayoshi Kohno. [_Is the U.S. Legal System Ready for AI's Challenges to Human Values?_](https://arxiv.org/abs/2308.15906). 30 August 2023.
+
 [Sarah Silverman, Christopher Golden, and Richard Kadrey vs. OpenAI](https://s3.documentcloud.org/documents/23869693/silverman-openai-complaint.pdf). Legal Complaint against ChatGPT, file 7 July 2023.
 
-
 Nikhil Vyas, Sham Kakade, Boaz Barak. [_On Provable Copyright Protection for Generative Models_](https://arxiv.org/abs/2302.10870). [https://arxiv.org/abs/2302.10870](https://arxiv.org/abs/2302.10870).
+
+Federal Register. [_Artificial Intelligence and Copyright_](https://www.federalregister.gov/documents/2023/08/30/2023-18624/artificial-intelligence-and-copyright). Request for Comment (Published 30 August 2023, Comments due by 15 November 2023)
 
 ## Governance and Regulation
 
