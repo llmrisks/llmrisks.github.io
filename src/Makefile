@@ -6,9 +6,6 @@ GITHUB_PAGES_BRANCH=gh-pages
 THEME = seminar
 
 MARKDOWN = python3 -m markdown
-BASEDIR = .
-DOCSDIR = $(BASEDIR)/docs
-PAGEDIR = $(BASEDIR)/content/
 
 html:
 	hugo --theme=$(THEME)
