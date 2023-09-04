@@ -14,18 +14,6 @@
     
     
     <item>
-      <title>Week 1: Introduction</title>
-      <link>https://llmrisks.github.io/week1/</link>
-      <pubDate>Sun, 03 Sep 2023 00:00:00 +0000</pubDate>
-      <author>evans@virginia.edu (David Evans)</author>
-      <guid>https://llmrisks.github.io/week1/</guid>
-      <description>(see bottom for assigned readings and questions)
-Attention, Transformers, and BERT Monday, 28 August
-Transformers1 are a class of deep learning models that have revolutionized the field of natural language processing (NLP) and various other domains. The concept of transformers originated as an attempt to address the limitations of traditional recurrent neural networks (RNNs) in sequential data processing. Here&amp;rsquo;s an overview of transformers&amp;rsquo; evolution and significance.
-Background and Origin RNNs2 were one of the earliest models used for sequence-based tasks in machine learning.</description>
-    </item>
-    
-    <item>
       <title>Github Discussions</title>
       <link>https://llmrisks.github.io/discussions/</link>
       <pubDate>Fri, 25 Aug 2023 00:00:00 +0000</pubDate>
