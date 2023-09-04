@@ -46,7 +46,7 @@ In summary, transformers, with their innovative attention mechanisms, have signi
 **Advancements in Transformers.**
 One significant advancement of transformers over previous models like LSTMs and RNNs is their ability to handle long-range dependencies and capture contextual information more effectively. Transformers achieve this through mechanisms like self-attention and multi-head attention. This allows them to process input tokens in parallel, rather than sequentially, leading to improved efficiency and performance. However, a drawback could be increased computational complexity due to the parallel processing, especially in multi-head attention
 
-**Positional Encodings.**:
+**Positional Encodings.**
 The use of positional encodings in transformers helps address the lack of inherent positional information in their architecture. This enables transformers to handle sequential data effectively without relying solely on the order of tokens. The benefits include scalability and the ability to handle longer sequences, but a potential drawback is that these positional encodings might not fully capture complex positional relationships in very long sequences.
 
 **Self-Attention and Multi-Head Attention.**
@@ -81,7 +81,7 @@ The authors of BERT might not have fully anticipated its exact future use and im
 The comparison with the development of the atomic bomb and the risks involved suggests that technological advancements can have significant benefits but also potential drawbacks. Similarly, creating beneficial AI technology, like BERT, comes with the responsibility of considering its impacts and ethical implications.
 
 
-## Vision Problems:
+## Vision Problems
 ```angular2html
 Q: What makes language models different from transformers?
 ``` 
