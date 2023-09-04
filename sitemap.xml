@@ -3,12 +3,17 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://llmrisks.github.io/discussions/</loc>
-    <lastmod>2023-08-25T00:00:00+00:00</lastmod>
+    <loc>https://llmrisks.github.io/post/</loc>
+    <lastmod>2023-09-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://llmrisks.github.io/post/</loc>
+    <loc>https://llmrisks.github.io/week1/</loc>
+    <lastmod>2023-09-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://llmrisks.github.io/discussions/</loc>
     <lastmod>2023-08-25T00:00:00+00:00</lastmod>
   </url>
   
