@@ -28,7 +28,7 @@ options.
 
 - You should create your page in the `src/content/post/`
   subdirectory. You can start by copying an earlier file in that
-  directory (e.g., `class1.md`) and updating the header section
+  directory (e.g., `week1.md`) and updating the header section
   (between the `+++` marks) and replacing everything after that with
   your content.  Don't forget to **update the date** so your page will
   appear in the right order. You can put `draft = true` in the header,

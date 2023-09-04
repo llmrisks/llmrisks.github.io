@@ -1,23 +1,34 @@
 +++
 date = "03 Sep 2023"
 draft = true
-title = "Class 1: Blogging for Week 1"
-slug = "class1"
+title = "Week 1: Introduction"
+slug = "week1"
 +++
 
-# Lecture 1 Attention, Transformers, and BERT
-Transformers[^1] are a class of deep learning models that have revolutionized the field of natural language processing (NLP) and various other domains. The concept of transformers originated as an attempt to address the limitations of traditional recurrent neural networks (RNNs) in handling sequential data. Here's an overview of their evolution and significance.
+# Attention, Transformers, and BERT
+
+**Monday, 28 August**
+
+Transformers[^1] are a class of deep learning models that have
+revolutionized the field of natural language processing (NLP) and
+various other domains. The concept of transformers originated as an
+attempt to address the limitations of traditional recurrent neural
+networks (RNNs) in sequential data processing. Here's an overview of
+transformers' evolution and significance.
 
 ## Background and Origin
 RNNs[^2] were one of the earliest models used for sequence-based tasks in machine learning. They processed input tokens one after another and used their internal memory to capture dependencies in the sequence. The following figure gives an illustration of the RNN architecture.
 
+<center>
 <a href="/images/rnn.png"><img src="/images/rnn.png" width="60%"></a><br>
-[Image Source](https://web.stanford.edu/class/cs224n)
+
+RNN ([Image Source](https://web.stanford.edu/class/cs224n))
+</center>
 
 **Limitations of RNNs.**
-Despite improvements, RNNs have the following shortcomings:
-- RNNs are struggled with long sequences. It only keeps recent information but looses long-term memory.
-- RNNs have problems of vanishing gradient[^3]. In this, the gradients that are used to update the model become very small during back propagation, leading the RNNs to learn nothing from training. 
+Despite many improvements over this basic architecture, RNNs have the following shortcomings:
+- RNNs struggle with long sequences. It only keeps recent information but looses long-term memory.
+- RNNs suffer from vanishing gradients[^3]. In this, the gradients that are used to update the model become very small during back propagation, leading the RNNs to learn nothing from training. 
 
 **Introduction of LSTMs.**
 Long Short-Term Memory (LSTM)[^4] networks were then introduced to address the vanishing gradient problem in RNNs. LSTMs had memory cells and gating mechanisms that allowed them to capture long-term memories more effectively. While LSTMs improved memory retention, they were still computationally expensive and slow to train, especially on large datasets.
