@@ -20,12 +20,10 @@ options.
   what I've heard, people are also able to use Hugo on linux and
   Windows without much difficulty, but I have not tried this myself.)
 
-- Clone the github repository for the course website:
-     `git clone https://github.com/llmrisks/llmrisks.github.io.git`
-  This is what is used to build the
+- [Fork the github repository for the course website](https://github.com/llmrisks/llmrisks.github.io/fork).  This is what is used to build the
   [https://llmrisks.github.io/](https://llmrisks.github.io/) site.  If you are
   working with multiple teammates on the blog post (which you probably
-  should be), you can add write permissions for everyone to the cloned
+  should be), you can add write permissions for everyone to the forked
   repository.
 
 - You should create your page in the `src/content/post/`
