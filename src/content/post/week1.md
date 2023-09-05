@@ -24,7 +24,7 @@ RNNs[^2] were one of the earliest models used for sequence-based tasks in machin
 <center>
 <a href="/images/rnn.png"><img src="/images/rnn.png" width="60%"></a><br>
 
-RNN ([Image Source](https://web.stanford.edu/class/cs224n))
+RNN ([Image Source](https://cs231n.github.io/rnn/))
 </center>
 
 **Limitations of RNNs.**
@@ -36,8 +36,8 @@ Despite many improvements over this basic architecture, RNNs have the following 
 Long Short-Term Memory (LSTM)[^4] networks were then introduced to address the vanishing gradient problem in RNNs. LSTMs had memory cells and gating mechanisms that allowed them to capture long-term memories more effectively. While LSTMs improved memory retention, they were still computationally expensive and slow to train, especially on large datasets.
 
 **Attention Mechanism.**
-The attention mechanism[^1] was introduced as a way to help models focus on relevant parts of the input sequence when generating output. This addressed the memory issues that plagued previous models.
-Attention mechanisms allowed models to weigh the importance of different input tokens when making predictions.
+The attention mechanism[^11][^12][^1] was introduced as a way to help models focus on relevant parts of the input sequence when generating output. This addressed the memory issues that plagued previous models.
+Attention mechanisms allowed models to weigh the importance of different input tokens when making predictions or encoding information. In essence, it enables the model to focus selectively on relevant parts of the input sequence while disregarding less pertinent ones. In practice, attention mechanism can be categorized into self-attention and multi-head attention based on the number of heads used in the attention structure.
 
 ## The Transformer Model
 The transformer architecture, introduced by Vaswani et al. (2017) [^1], marked a significant advance in NLP. It used self-attention mechanisms to process input tokens in parallel and capture contextual information more effectively.
@@ -63,7 +63,7 @@ One significant advancement of transformers over previous models like LSTMs and 
 The use of positional encodings in transformers helps address the lack of inherent positional information in their architecture. This enables transformers to handle sequential data effectively without relying solely on the order of tokens. The benefits include scalability and the ability to handle longer sequences, but a potential drawback is that these positional encodings might not fully capture complex positional relationships in very long sequences.
 
 **Self-Attention and Multi-Head Attention.**
-Self-attention is a useful mechanism that allows each token to consider the relationships between all other tokens in a sequence. While it provides a more nuanced understanding of input, it can be computationally expensive. The use of multi-head attention further enhances the model's ability to capture different types of dependencies in the data. The number of attention heads (e.g., 8 in BERT) is a balance between performance and complexity. Too few or too many heads can result in suboptimal performance.
+Self-attention is a useful mechanism that allows each token to consider the relationships between all other tokens in a sequence. While it provides a more nuanced understanding of input, it can be computationally expensive. The use of multi-head attention further enhances the model's ability to capture different types of dependencies in the data. The number of attention heads (e.g., 8 in BERT) is a balance between performance and complexity. Too few or too many heads can result in suboptimal performance. More details about self-attention and multi-head attention can be found in [^13]. 
 
 **Context and Answers in Activities.**
 Let’s do some activity now!
@@ -80,7 +80,7 @@ The context given in the activities influences the answers provided. More contex
 
 ## BERT: Bidirectional Transformers
 **BERT's Design and Limitations.**
-BERT[^7] uses bidirectional attention and masking to enable it to capture context from both sides of a word. The masking during training helps the model learn to predict words in context, simulating its real-world usage. While BERT's design was successful, it does require a substantial amount of training data and resources. Its application may be more focused on text completion tasks, which differs from the generative capabilities of models like GPT.
+BERT[^7] uses bidirectional attention and masking to enable it to capture context from both sides of a word. The masking during training helps the model learn to predict words in context, simulating its real-world usage. While BERT's design was successful, it does require a substantial amount of training data and resources. Its application may be more focused on tasks such as sentiment analysis, named entity recognition, and Question answering, while GPT is better at handling tasks such as content creation, text summarization, and machine translation[^14].
 
 <center>
 <a href="/images/bert.png"><img src="/images/bert.png" width="60%"></a><br>
@@ -176,7 +176,10 @@ So, there you have it, a peek into the world of Large Language Models and the li
 [^8]:Radford, A., Wu, J., Child, R., Luan, D., Amodei, D., & Sutskever, I. (2019). Language models are unsupervised multitask learners. OpenAI blog, 1(8), 9.
 [^9]:Brown, T., Mann, B., Ryder, N., Subbiah, M., Kaplan, J. D., Dhariwal, P., ... & Amodei, D. (2020). Language models are few-shot learners. Advances in neural information processing systems, 33, 1877-1901.
 [^10]:Yang, J., Jin, H., Tang, R., Han, X., Feng, Q., Jiang, H., ... & Hu, X. (2023). Harnessing the power of llms in practice: A survey on chatgpt and beyond. arXiv preprint arXiv:2304.13712.
-
+[^11]:Mnih, V., Heess, N., & Graves, A. (2014). Recurrent models of visual attention. Advances in neural information processing systems, 27.
+[^12]:Bahdanau, D., Cho, K., & Bengio, Y. (2014). Neural machine translation by jointly learning to align and translate. arXiv preprint arXiv:1409.0473.
+[^13]: Karim, R. (2023, January 2). Illustrated: Self-attention. Medium. https://towardsdatascience.com/illustrated-self-attention-2d627e33b20a 
+[^14]: Ahmad, K. (2023b, April 26). GPT vs. Bert: What are the differences between the two most popular language models?. MUO. https://www.makeuseof.com/gpt-vs-bert/ 
 
 # Readings
 
