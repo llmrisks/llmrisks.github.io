@@ -88,12 +88,12 @@ revolutionized the field of natural language processing (NLP) and
 various other domains. The concept of transformers originated as an
 attempt to address the limitations of traditional recurrent neural
 networks (RNNs) in sequential data processing. Here&rsquo;s an overview of
-transformers&rsquo; evolution and significance.</p>
+transformers' evolution and significance.</p>
 <h2 id="background-and-origin">Background and Origin</h2>
 <p>RNNs<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> were one of the earliest models used for sequence-based tasks in machine learning. They processed input tokens one after another and used their internal memory to capture dependencies in the sequence. The following figure gives an illustration of the RNN architecture.</p>
 <center>
 <a href="/images/rnn.png"><img src="/images/rnn.png" width="60%"></a><br>
-<p>RNN (<a href="https://web.stanford.edu/class/cs224n">Image Source</a>)</p>
+<p>RNN (<a href="https://cs231n.github.io/rnn/">Image Source</a>)</p>
 </center>
 <p><strong>Limitations of RNNs.</strong>
 Despite many improvements over this basic architecture, RNNs have the following shortcomings:</p>
@@ -104,8 +104,8 @@ Despite many improvements over this basic architecture, RNNs have the following 
 <p><strong>Introduction of LSTMs.</strong>
 Long Short-Term Memory (LSTM)<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> networks were then introduced to address the vanishing gradient problem in RNNs. LSTMs had memory cells and gating mechanisms that allowed them to capture long-term memories more effectively. While LSTMs improved memory retention, they were still computationally expensive and slow to train, especially on large datasets.</p>
 <p><strong>Attention Mechanism.</strong>
-The attention mechanism<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> was introduced as a way to help models focus on relevant parts of the input sequence when generating output. This addressed the memory issues that plagued previous models.
-Attention mechanisms allowed models to weigh the importance of different input tokens when making predictions.</p>
+The attention mechanism<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup><sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> was introduced as a way to help models focus on relevant parts of the input sequence when generating output. This addressed the memory issues that plagued previous models.
+Attention mechanisms allowed models to weigh the importance of different input tokens when making predictions or encoding information. In essence, it enables the model to focus selectively on relevant parts of the input sequence while disregarding less pertinent ones. In practice, attention mechanism can be categorized into self-attention and multi-head attention based on the number of heads used in the attention structure.</p>
 <h2 id="the-transformer-model">The Transformer Model</h2>
 <p>The transformer architecture, introduced by Vaswani et al. (2017) <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>, marked a significant advance in NLP. It used self-attention mechanisms to process input tokens in parallel and capture contextual information more effectively.
 Transformers broke down sentences into smaller parts and learned statistical relationships between these parts to understand meaning and generate responses.
@@ -117,17 +117,17 @@ The parallel processing capabilities of transformers, enabled by self-attention,
 <p><strong>Mathematical Foundations.</strong>
 Transformers involve mathematical representations of words and their relationships. The model learns to establish connections between words based on their contextual importance.</p>
 <p><strong>Crucial Role in NLP.</strong>
-Transformers play a crucial role in capturing the meaning of words and sentences<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup><sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup>, allowing for more accurate and contextually relevant outputs in various NLP tasks.
+Transformers play a crucial role in capturing the meaning of words and sentences<sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup><sup id="fnref:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup>, allowing for more accurate and contextually relevant outputs in various NLP tasks.
 In summary, transformers, with their innovative attention mechanisms, have significantly advanced the field of NLP by enabling efficient processing of sequences, capturing context effectively, and achieving state-of-the-art performance on a variety of tasks.</p>
 <p><strong>Advancements in Transformers.</strong>
 One significant advancement of transformers over previous models like LSTMs and RNNs is their ability to handle long-range dependencies and capture contextual information more effectively. Transformers achieve this through self-attention and multi-head attention. This allows them to process input tokens in parallel, rather than sequentially, leading to improved efficiency and performance. However, a drawback could be increased computational complexity due to the parallel processing, especially in multi-head attention.</p>
 <p><strong>Positional Encodings.</strong>
 The use of positional encodings in transformers helps address the lack of inherent positional information in their architecture. This enables transformers to handle sequential data effectively without relying solely on the order of tokens. The benefits include scalability and the ability to handle longer sequences, but a potential drawback is that these positional encodings might not fully capture complex positional relationships in very long sequences.</p>
 <p><strong>Self-Attention and Multi-Head Attention.</strong>
-Self-attention is a useful mechanism that allows each token to consider the relationships between all other tokens in a sequence. While it provides a more nuanced understanding of input, it can be computationally expensive. The use of multi-head attention further enhances the model&rsquo;s ability to capture different types of dependencies in the data. The number of attention heads (e.g., 8 in BERT) is a balance between performance and complexity. Too few or too many heads can result in suboptimal performance.</p>
+Self-attention is a useful mechanism that allows each token to consider the relationships between all other tokens in a sequence. While it provides a more nuanced understanding of input, it can be computationally expensive. The use of multi-head attention further enhances the model&rsquo;s ability to capture different types of dependencies in the data. The number of attention heads (e.g., 8 in BERT) is a balance between performance and complexity. Too few or too many heads can result in suboptimal performance. More details about self-attention and multi-head attention can be found in <sup id="fnref:9"><a href="#fn:9" class="footnote-ref" role="doc-noteref">9</a></sup>.</p>
 <p><strong>Context and Answers in Activities.</strong>
 Let’s do some activity now!</p>
-<pre><code class="language-angular2html" data-lang="angular2html">I used to ___ 
+<pre tabindex="0"><code class="language-angular2html" data-lang="angular2html">I used to ___ 
 
 Yesterday, I went to ___
 
@@ -135,7 +135,7 @@ It is raining ___
 </code></pre><p>The context given in the activities influences the answers provided. More context leads to more accurate responses. This highlights how models like BERT benefit from bidirectional attention, as they can consider both preceding and succeeding words when generating predictions.</p>
 <h2 id="bert-bidirectional-transformers">BERT: Bidirectional Transformers</h2>
 <p><strong>BERT&rsquo;s Design and Limitations.</strong>
-BERT<sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup> uses bidirectional attention and masking to enable it to capture context from both sides of a word. The masking during training helps the model learn to predict words in context, simulating its real-world usage. While BERT&rsquo;s design was successful, it does require a substantial amount of training data and resources. Its application may be more focused on text completion tasks, which differs from the generative capabilities of models like GPT.</p>
+BERT<sup id="fnref:10"><a href="#fn:10" class="footnote-ref" role="doc-noteref">10</a></sup> uses bidirectional attention and masking to enable it to capture context from both sides of a word. The masking during training helps the model learn to predict words in context, simulating its real-world usage. While BERT&rsquo;s design was successful, it does require a substantial amount of training data and resources. Its application may be more focused on tasks such as sentiment analysis, named entity recognition, and Question answering, while GPT is better at handling tasks such as content creation, text summarization, and machine translation<sup id="fnref:11"><a href="#fn:11" class="footnote-ref" role="doc-noteref">11</a></sup>.</p>
 <center>
 <a href="/images/bert.png"><img src="/images/bert.png" width="60%"></a><br>
 <p><a href="https://production-media.paperswithcode.com/methods/new_BERT_Overall.jpg">Image Source</a></p>
@@ -150,7 +150,7 @@ The authors of BERT might not have fully anticipated its exact future use and im
 <blockquote>
 <p>Q: <em>Why was BERT published in 2019, inspiring large language models, and why have GPT models continued to improve while BERT&rsquo;s advancements seem comparatively limited?</em></p>
 </blockquote>
-<p>Decoder models, responsible for generating content, boast applications that are both visible and instantly captivating to the public. Examples like chatbots, story generators, and models from the GPT series showcase this ability by producing human-like text. This immediate allure likely fuels increased research and investment. Due to the inherent challenges in producing coherent and contextually appropriate outputs, generative tasks have garnered significant research attention. Additionally, decoder models, especially transformers like GPT-2<sup id="fnref:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup> and GPT-3<sup id="fnref:9"><a href="#fn:9" class="footnote-ref" role="doc-noteref">9</a></sup>, excel in transfer learning, allowing pre-trained models to be fine-tuned for specific tasks, highlighting their remarkable adaptability.</p>
+<p>Decoder models, responsible for generating content, boast applications that are both visible and instantly captivating to the public. Examples like chatbots, story generators, and models from the GPT series showcase this ability by producing human-like text. This immediate allure likely fuels increased research and investment. Due to the inherent challenges in producing coherent and contextually appropriate outputs, generative tasks have garnered significant research attention. Additionally, decoder models, especially transformers like GPT-2<sup id="fnref:12"><a href="#fn:12" class="footnote-ref" role="doc-noteref">12</a></sup> and GPT-3<sup id="fnref:13"><a href="#fn:13" class="footnote-ref" role="doc-noteref">13</a></sup>, excel in transfer learning, allowing pre-trained models to be fine-tuned for specific tasks, highlighting their remarkable adaptability.</p>
 <blockquote>
 <p>Q: <em>Why use 8-headers in the transformer architecture?</em></p>
 </blockquote>
@@ -165,7 +165,7 @@ The authors of BERT might not have fully anticipated its exact future use and im
 <p>Before LLMs become language wizards, they need to be trained. The crucial question is where they acquire their knowledge.</p>
 <p>LLMs need lots and lots of information to learn from. They look at stuff like internet articles, books, and even Wikipedia. But there&rsquo;s a catch. They have a clean-up crew called &ldquo;C4&rdquo; to make sure the information is tidy and reliable.</p>
 <p>Training LLMs requires potent computational resources, such as Graphics Processing Units (GPUs). Computationally-expensive large-scale training, while crucial for enhancing their capabilities, involves substantial energy consumption, which, depending on how it is produces may emit large amounts of carbon dioxide.</p>
-<p>Transitioning to the practical applications of these language models, LLMs excel in diverse domains<sup id="fnref:10"><a href="#fn:10" class="footnote-ref" role="doc-noteref">10</a></sup>. They can undergo meticulous fine-tuning to perform specialized tasks, ranging from aiding in customer service to content generation for websites. Furthermore, these models exhibit the ability to adapt and learn from feedback, mirroring human learning processes.</p>
+<p>Transitioning to the practical applications of these language models, LLMs excel in diverse domains<sup id="fnref:14"><a href="#fn:14" class="footnote-ref" role="doc-noteref">14</a></sup>. They can undergo meticulous fine-tuning to perform specialized tasks, ranging from aiding in customer service to content generation for websites. Furthermore, these models exhibit the ability to adapt and learn from feedback, mirroring human learning processes.</p>
 <h3 id="risks-and-rewards">Risks and Rewards</h3>
 <p>In our class discussion, we had a friendly debate about LLMs. Some students thought they were fantastic because they can boost productivity, assist with learning, and bridge gaps between people. They even saw LLMs as potential problem solvers for biases in the human world.</p>
 <p>But others had concerns. They worried about things like LLMs being too mysterious (like a black box), how they could influence the way people think, and the risks of false information and deep fakes. Some even thought that LLMs might detrimentally impact human intelligence and creativity.</p>
@@ -179,7 +179,7 @@ The authors of BERT might not have fully anticipated its exact future use and im
 </ul>
 <p><strong>Risks Group.</strong></p>
 <ul>
-<li>Concerns were expressed regarding LLMs&rsquo; opacity and complexity, making them challenging to comprehend.</li>
+<li>Concerns were expressed regarding LLMs' opacity and complexity, making them challenging to comprehend.</li>
 <li>Apprehensions were raised about LLMs potentially exerting detrimental influences on human cognition and societal dynamics.</li>
 <li>LLMs are ripe for potential abuses in their ability to generate convincing false information cheaply.</li>
 <li>The potential impact of LLMs on human intelligence and creativity was a topic of contemplation.</li>
@@ -258,41 +258,53 @@ way they consider risks?</p>
 <hr>
 <ol>
 <li id="fn:1" role="doc-endnote">
-<p>Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., &hellip; &amp; Polosukhin, I. (2017). Attention is all you need. Advances in neural information processing systems, 30. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., &hellip; &amp; Polosukhin, I. (2017). Attention is all you need. Advances in neural information processing systems, 30.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2" role="doc-endnote">
-<p>Sherstinsky, A. (2020). Fundamentals of recurrent neural network (RNN) and long short-term memory (LSTM) network. Physica D: Nonlinear Phenomena, 404, 132306. <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Sherstinsky, A. (2020). Fundamentals of recurrent neural network (RNN) and long short-term memory (LSTM) network. Physica D: Nonlinear Phenomena, 404, 132306.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:3" role="doc-endnote">
-<p>Pascanu, R., Mikolov, T., &amp; Bengio, Y. (2013, May). On the difficulty of training recurrent neural networks. In International conference on machine learning (pp. 1310-1318). Pmlr. <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Pascanu, R., Mikolov, T., &amp; Bengio, Y. (2013, May). On the difficulty of training recurrent neural networks. In International conference on machine learning (pp. 1310-1318). Pmlr.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:4" role="doc-endnote">
-<p>Hochreiter, S., &amp; Schmidhuber, J. (1997). Long short-term memory. Neural computation, 9(8), 1735-1780. <a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Hochreiter, S., &amp; Schmidhuber, J. (1997). Long short-term memory. Neural computation, 9(8), 1735-1780.&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:5" role="doc-endnote">
-<p>Lin, T., Wang, Y., Liu, X., &amp; Qiu, X. (2022). A survey of transformers. AI Open. <a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Mnih, V., Heess, N., &amp; Graves, A. (2014). Recurrent models of visual attention. Advances in neural information processing systems, 27.&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:6" role="doc-endnote">
-<p>Khan, S., Naseer, M., Hayat, M., Zamir, S. W., Khan, F. S., &amp; Shah, M. (2022). Transformers in vision: A survey. ACM computing surveys (CSUR), 54(10s), 1-41. <a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Bahdanau, D., Cho, K., &amp; Bengio, Y. (2014). Neural machine translation by jointly learning to align and translate. arXiv preprint arXiv:1409.0473.&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:7" role="doc-endnote">
-<p>Devlin, J., Chang, M. W., Lee, K., &amp; Toutanova, K. (2018). Bert: Pre-training of deep bidirectional transformers for language understanding. arXiv preprint arXiv:1810.04805. <a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Lin, T., Wang, Y., Liu, X., &amp; Qiu, X. (2022). A survey of transformers. AI Open.&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:8" role="doc-endnote">
-<p>Radford, A., Wu, J., Child, R., Luan, D., Amodei, D., &amp; Sutskever, I. (2019). Language models are unsupervised multitask learners. OpenAI blog, 1(8), 9. <a href="#fnref:8" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Khan, S., Naseer, M., Hayat, M., Zamir, S. W., Khan, F. S., &amp; Shah, M. (2022). Transformers in vision: A survey. ACM computing surveys (CSUR), 54(10s), 1-41.&#160;<a href="#fnref:8" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:9" role="doc-endnote">
-<p>Brown, T., Mann, B., Ryder, N., Subbiah, M., Kaplan, J. D., Dhariwal, P., &hellip; &amp; Amodei, D. (2020). Language models are few-shot learners. Advances in neural information processing systems, 33, 1877-1901. <a href="#fnref:9" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Karim, R. (2023, January 2). Illustrated: Self-attention. Medium. <a href="https://towardsdatascience.com/illustrated-self-attention-2d627e33b20a">https://towardsdatascience.com/illustrated-self-attention-2d627e33b20a</a>&#160;<a href="#fnref:9" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:10" role="doc-endnote">
-<p>Yang, J., Jin, H., Tang, R., Han, X., Feng, Q., Jiang, H., &hellip; &amp; Hu, X. (2023). Harnessing the power of llms in practice: A survey on chatgpt and beyond. arXiv preprint arXiv:2304.13712. <a href="#fnref:10" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Devlin, J., Chang, M. W., Lee, K., &amp; Toutanova, K. (2018). Bert: Pre-training of deep bidirectional transformers for language understanding. arXiv preprint arXiv:1810.04805.&#160;<a href="#fnref:10" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:11" role="doc-endnote">
+<p>Ahmad, K. (2023b, April 26). GPT vs. Bert: What are the differences between the two most popular language models?. MUO. <a href="https://www.makeuseof.com/gpt-vs-bert/">https://www.makeuseof.com/gpt-vs-bert/</a>&#160;<a href="#fnref:11" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:12" role="doc-endnote">
+<p>Radford, A., Wu, J., Child, R., Luan, D., Amodei, D., &amp; Sutskever, I. (2019). Language models are unsupervised multitask learners. OpenAI blog, 1(8), 9.&#160;<a href="#fnref:12" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:13" role="doc-endnote">
+<p>Brown, T., Mann, B., Ryder, N., Subbiah, M., Kaplan, J. D., Dhariwal, P., &hellip; &amp; Amodei, D. (2020). Language models are few-shot learners. Advances in neural information processing systems, 33, 1877-1901.&#160;<a href="#fnref:13" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:14" role="doc-endnote">
+<p>Yang, J., Jin, H., Tang, R., Han, X., Feng, Q., Jiang, H., &hellip; &amp; Hu, X. (2023). Harnessing the power of llms in practice: A survey on chatgpt and beyond. arXiv preprint arXiv:2304.13712.&#160;<a href="#fnref:14" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
 
       </div>
 
-      <meta itemprop="wordCount" content="2864">
+      <meta itemprop="wordCount" content="2998">
       <meta itemprop="datePublished" content="2023-09-03">
       <meta itemprop="url" content="https://llmrisks.github.io/week1/">
     </article>

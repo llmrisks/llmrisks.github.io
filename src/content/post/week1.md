@@ -1,6 +1,6 @@
 +++
 date = "03 Sep 2023"
-draft = true
+draft = false
 title = "Week 1: Introduction"
 slug = "week1"
 +++
