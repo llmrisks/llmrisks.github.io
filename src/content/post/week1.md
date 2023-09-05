@@ -178,8 +178,8 @@ So, there you have it, a peek into the world of Large Language Models and the li
 [^10]:Yang, J., Jin, H., Tang, R., Han, X., Feng, Q., Jiang, H., ... & Hu, X. (2023). Harnessing the power of llms in practice: A survey on chatgpt and beyond. arXiv preprint arXiv:2304.13712.
 [^11]:Mnih, V., Heess, N., & Graves, A. (2014). Recurrent models of visual attention. Advances in neural information processing systems, 27.
 [^12]:Bahdanau, D., Cho, K., & Bengio, Y. (2014). Neural machine translation by jointly learning to align and translate. arXiv preprint arXiv:1409.0473.
-[^13]: Karim, R. (2023, January 2). Illustrated: Self-attention. Medium. https://towardsdatascience.com/illustrated-self-attention-2d627e33b20a 
-[^14]: Ahmad, K. (2023b, April 26). GPT vs. Bert: What are the differences between the two most popular language models?. MUO. https://www.makeuseof.com/gpt-vs-bert/ 
+[^13]:Karim, R. (2023, January 2). Illustrated: Self-attention. Medium. https://towardsdatascience.com/illustrated-self-attention-2d627e33b20a 
+[^14]:Ahmad, K. (2023b, April 26). GPT vs. Bert: What are the differences between the two most popular language models?. MUO. https://www.makeuseof.com/gpt-vs-bert/ 
 
 # Readings
 
