@@ -102,6 +102,18 @@ Risks and Benefits of Generative AI and LLMs
 
    
    <div class="posttitle">
+      <a href="/week3/">Week 3: Prompting and Bias</a>
+
+
+   </div>
+   
+   <div class="posttitle">
+      <a href="/week2/">Week 2: Alignment</a>
+
+
+   </div>
+   
+   <div class="posttitle">
       <a href="/week1/">Week 1: Introduction</a>
 
 
@@ -185,9 +197,155 @@ Risks and Benefits of Generative AI and LLMs
     
         
     
+        
+    
+        
+    
 
 
     
+    
+    <h1><a href="/week3/">Week 3: Prompting and Bias</a></h1>
+<div class="post-metadata">
+  <span class="post-date">
+    <time datetime="2023-09-06 00:00:00 &#43;0000 UTC" itemprop="datePublished">6 September 2023</time>
+  </span>
+  
+</div>
+
+      <div class="post-body" itemprop="articleBody">
+        <h1 id="readings">Readings</h1>
+<ol>
+<li>
+<p>(for Monday) Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Brian Ichter, Fei Xia, Ed Chi, Quoc Le, Denny Zhou. <a href="https://arxiv.org/abs/2201.11903"><em>Chain-of-Thought Prompting Elicits Reasoning in Large Language Models</em></a>. 2022.</p>
+</li>
+<li>
+<p>(for Wednesday) Myra Cheng, Esin Durmus, Dan Jurafsky. <a href="https://arxiv.org/abs/2305.18189">Marked Personas: Using Natural Language Prompts to Measure Stereotypes in Language Models</a>. ACL 2023.</p>
+</li>
+</ol>
+<h2 id="optional-additional-readings">Optional Additional Readings</h2>
+<p><strong>Background:</strong></p>
+<ul>
+<li>Lilian Weng, <a href="https://lilianweng.github.io/posts/2023-03-15-prompt-engineering/"><em>Prompting Engineering</em></a>. March 2023.</li>
+<li>Miles Turpin, Julian Michael, Ethan Perez, Samuel R. Bowman. <a href="https://arxiv.org/abs/2305.04388"><em>Language Models Don&rsquo;t Always Say What They Think: Unfaithful Explanations in Chain-of-Thought Prompting</em></a>. May 2023.</li>
+<li>Tony Z. Zhao, Eric Wallace, Shi Feng, Dan Klein, Sameer Singh. <a href="https://arxiv.org/abs/2102.09690"><em>Calibrate Before Use: Improving Few-Shot Performance of Language Models</em></a>. ICML 2021.</li>
+</ul>
+<p><strong>Stereotypes and bias:</strong></p>
+<ul>
+<li>Yang Trista Cao, Anna Sotnikova, Hal Daumé III, Rachel Rudinger, Linda Zou.    <a href="https://aclanthology.org/2022.naacl-main.92.pdf"><em>Theory-Grounded Measurement of U.S. Social Stereotypes in English Language Models</em></a>. NAACL 2022.</li>
+</ul>
+<p><strong>Prompt Injection:</strong></p>
+<ul>
+<li>Eric Wallace, Shi Feng, Nikhil Kandpal, Matt Gardner, Sameer Singh. <a href="https://arxiv.org/abs/1908.07125"><em>Universal Adversarial Triggers for Attacking and Analyzing NLP</em></a>. EMNLP 2019</li>
+<li>Simon Willison, <a href="https://simonwillison.net/2022/Sep/12/prompt-injection/"><em>Prompt injection attacks against GPT-3</em></a>. September 2022.</li>
+<li>William Zhang. <a href="https://www.robustintelligence.com/blog-posts/prompt-injection-attack-on-gpt-4"><em>Prompt Injection Attack on GPT-4</em></a>. Robust Intelligence, March 2023.</li>
+</ul>
+<h1 id="discussion-questions">Discussion Questions</h1>
+<p>Everyone who is not in either the lead or blogging team for the week should post (in the comments below) an answer to at least one of the four questions in each section, or a substantive response to someone else&rsquo;s comment, or something interesting about the readings that is not covered by these questions.</p>
+<p>Don&rsquo;t post duplicates - if others have already posted, you should read their responses before adding your own. Please post your responses to different questions as separate comments.</p>
+<p>First section (1 – 4): Before <strong>5:29pm</strong> on <strong>Sunday, September 10</strong>.<br>
+Second section (5 – 9): Before <strong>5:29pm</strong> on <strong>Tuesday, September 12</strong>.</p>
+<h2 id="before-sunday-questions-about-chain-of-thought-prompting">Before Sunday: Questions about Chain-of-Thought Prompting</h2>
+<ol>
+<li>
+<p>Compared to other types of prompting, do you believe that chain-of-thought prompting represents the most effective approach for enhancing the performance of LLMs? Why or why not? If not, could you propose an alternative?</p>
+</li>
+<li>
+<p>The paper highlights several examples where chain-of-thought prompting can significantly improve its outcomes, such as in solving math problems, applying commonsense reasoning, and comprehending data. Considering these improvements, what additional capabilities do you envision for LLMs using chain-of-thought prompting?</p>
+</li>
+<li>
+<p>Why are different language models in the experiment performing differently with chain-of-thought prompting?</p>
+</li>
+<li>
+<p>Try some of your own experiments with prompt engineering using your favorite LLM, and report interesting results. Is what you find consistent with what you expect from the paper? Are you able to find any new prompting methods that are effective?</p>
+</li>
+</ol>
+<h2 id="by-tuesday-questions-about-marked-personas">By Tuesday: Questions about Marked Personas</h2>
+<ol start="5">
+<li>
+<p>The paper addresses potential harms from LLMs by identifying the underlying stereotypes present in their generated contents. Additionally, the paper offers methods to examine and measure those stereotypes. Can this approach effectively be used to diminish stereotypes and enhance fairness? What are the main limitations of the work?</p>
+</li>
+<li>
+<p>The paper mentions racial stereotypes identified in downstream applications such as story generation. Are there other possible issues we might encounter when the racial stereotypes in LLMs become problematic after its application?</p>
+</li>
+<li>
+<p>Much of the evaluation in this work uses a list of White and Black stereotypical attributes provided by Ghavami and Peplau (2013) as the human-written responses and compares them with the list of LLMs generated responses. This, however, does not encompass all racial backgrounds and is heavily biased by American attitudes about racial categories, and they might not distinguish between races in great detail. Do you believe there could be a notable difference when more comprehensive racial representation is incorporated? If yes, what potential differences may arise? If no, why not?</p>
+</li>
+<li>
+<p>This work emphasizes the naturalness of the input provided to the LLM, while we have previously seen examples of eliciting harmful outputs by using less natural language. What potential benefits or risks are there in not investigating less natural inputs (e.g., prompt injection attacks including the suffix attack we saw in Week 2)? Can you suggest a less natural prompt that could reveal additional or alternate stereotypes?</p>
+</li>
+<li>
+<p>The authors recommend transparency of bias mitigation methods, citing the benefit it could provide to researchers and practitioners. Specifically, how might researchers benefit from this? Can you foresee any negative consequences (either to researchers or the general users of these models) of this transparency?</p>
+</li>
+</ol>
+
+      </div>
+<hr class="post-separator"></hr>
+
+    
+    <h1><a href="/week2/">Week 2: Alignment</a></h1>
+<div class="post-metadata">
+  <span class="post-date">
+    <time datetime="2023-09-03 00:00:00 &#43;0000 UTC" itemprop="datePublished">3 September 2023</time>
+  </span>
+  
+</div>
+
+      <div class="post-body" itemprop="articleBody">
+        <h1 id="readings">Readings</h1>
+<ol>
+<li><a href="https://aligned.substack.com/p/what-is-alignment">What is the alignment problem?</a> - Blog post by Jan Leike</li>
+<li><a href="https://arxiv.org/abs/2209.07858">Red Teaming Language Models to Reduce Harms: Methods, Scaling Behaviors, and Lessons Learned</a> Ganguli, Deep, Liane Lovitt, Jackson Kernion, Amanda Askell, Yuntao Bai, Saurav Kadavath, Ben Mann et al. arXiv preprint arXiv:2209.07858 (2022).</li>
+<li><a href="https://arxiv.org/pdf/2209.00626.pdf">The Alignment Problem from a Deep Learning Perspective</a> Richard Ngo, Lawrence Chan, and Sören Mindermann. arXiv preprint arXiv:2209.00626 (2022).</li>
+<li><a href="https://arxiv.org/abs/2307.15043">Universal and Transferable Adversarial Attacks on Aligned Language Models</a> Zou, Andy, Zifan Wang, J. Zico Kolter, and Matt Fredrikson. arXiv preprint arXiv:2307.15043  (2023).</li>
+</ol>
+<h2 id="optional-additional-readings">Optional Additional Readings</h2>
+<h3 id="background--motivation">Background / Motivation</h3>
+<ul>
+<li>Exploring how neural circuits collect meaningful information: <a href="https://distill.pub/2020/circuits/zoom-in/">https://distill.pub/2020/circuits/zoom-in/</a>  (suggested if you are less experienced with ML):</li>
+<li>What could solutions to the alignment problem look like? Blog post - <a href="https://aligned.substack.com/p/alignment-solution">https://aligned.substack.com/p/alignment-solution</a></li>
+<li>OpenAI’s July SuperAlignment Announcement <a href="https://openai.com/blog/introducing-superalignment">https://openai.com/blog/introducing-superalignment</a></li>
+</ul>
+<h3 id="alignment-readings">Alignment Readings</h3>
+<ul>
+<li><a href="https://arxiv.org/pdf/2210.01790.pdf">Goal misgeneralization: Why correct specifications aren&rsquo;t enough for correct goals.</a> Shah, Rohin, Vikrant Varma, Ramana Kumar, Mary Phuong, Victoria Krakovna, Jonathan Uesato, and Zac Kenton.  arXiv preprint arXiv:2210.01790 (2022).</li>
+<li><a href="https://arxiv.org/abs/1611.08219">The Off-Switch Game.</a> Hadfield-Menell, Dylan, Anca Dragan, Pieter Abbeel, and Stuart Russell.  In International Joint Conferences on Artificial Intelligence Organization. 2017.</li>
+<li><a href="https://proceedings.neurips.cc/paper/2017/hash/32fdab6559cdfa4f167f8c31b9199643-Abstract.html">Inverse Reward Design</a> Hadfield-Menell, Dylan, Smitha Milli, Pieter Abbeel, Stuart J. Russell, and Anca Dragan. Advances in Neural Information Processing Systems (2017).</li>
+<li>Inner alignment: (sections 1, 3, 4): <a href="https://arxiv.org/abs/1906.01820">Risks from Learned Optimization in Advanced Machine Learning Systems</a> Hubinger, Evan, Chris van Merwijk, Vladimir Mikulik, Joar Skalse, and Scott Garrabrant.  arXiv preprint arXiv:1906.01820 (2019).</li>
+<li>Outer alignment: <a href="https://www.lesswrong.com/posts/33EKjmAdKFn3pbKPJ/outer-alignment-and-imitative-amplification">Outer alignment and imitative amplification</a> - Blog post by Evan Hubinger.</li>
+<li><a href="https://arxiv.org/abs/2107.10939">What are you optimizing for? Aligning Recommender Systems with Human Values</a> Stray, Jonathan, Ivan Vendrov, Jeremy Nixon, Steven Adler, and Dylan Hadfield-Menell.  arXiv preprint arXiv:2107.10939 (2021).</li>
+<li><a href="https://openai.com/research/instruction-following">Training language models to follow instructions with human feedback</a> Ouyang, Long, Jeffrey Wu, Xu Jiang, Diogo Almeida, Carroll Wainwright, Pamela Mishkin, Chong Zhang et al. Advances in Neural Information Processing Systems (2022).</li>
+</ul>
+<h3 id="adversarial-attacks--jailbreaking">Adversarial Attacks / Jailbreaking</h3>
+<ul>
+<li><a href="https://arxiv.org/pdf/2306.15447.pdf">Are aligned neural networks adversarially aligned?</a> Carlini, Nicholas, Milad Nasr, Christopher A. Choquette-Choo, Matthew Jagielski, Irena Gao, Anas Awadalla, Pang Wei Koh et al. arXiv preprint arXiv:2306.15447 (2023).</li>
+<li><a href="https://arxiv.org/pdf/2302.09923.pdf">Prompt Stealing Attacks Against Text-to-Image Generation Models</a> Shen, Xinyue, Yiting Qu, Michael Backes, and Yang Zhang. arXiv preprint arXiv:2302.09923 (2023).</li>
+<li><a href="https://www.deepmind.com/blog/red-teaming-language-models-with-language-models">Red-teaming LLMs</a> - Blog post by Deepmind</li>
+</ul>
+<h1 id="discussion-questions">Discussion Questions</h1>
+<p>Before 5:29pm on Sunday, September 3, everyone who is not in either the lead or blogging team for the week should post (in the comments below) an answer to at least one of these four questions in the first section (1&ndash;4) and one of the questions in the second section (4&ndash;8), or a substantive response to someone else&rsquo;s comment, or something interesting about the readings that is not covered by these questions.</p>
+<p>Don&rsquo;t post duplicates - if others have already posted, you should read their responses before adding your own.</p>
+<p>Please post your responses to different questions as separate comments.</p>
+<hr>
+<p>Questions about <code>The Alignment Problem from a Deep Learning Perspective</code> (and alignment in general)</p>
+<ol>
+<li>Section 2 of the paper presents the issue of reward hacking. Specifically, as the authors expand to situationally-aware reward hacking, examples are presented of possible ways the reward function could be exploited in clever ways to prevent human supervisors from recognizing incorrect behavior. InstructGPT, a variant of GPT by OpenAI, uses a similar reinforcement learning human feedback loop to fine-tune the model under human supervision. Besides the examples provided (or more specifically than those examples), how might a GPT model exploit this system? What are the risks associated with reward hacking in this situation?</li>
+<li>To what extent should developers be concerned about &ldquo;power-seeking&rdquo; behavior at the present? Are there imminent threats that could come from a misaligned agent, or are these concerns that will only be realized as the existing technology is improved?</li>
+<li>Given the vast literature on alignment, one straightforward “solution to alignment” seems: provide the model with all sets of rules/issues in the literature so far, and ask it to “always be mindful” of such issues. For instance, simply ask the model (via some evaluation that itself uses AI, or some self-supervised learning paradigm) to “not try to take control” or related terms. Why do you think this could work, or would not? Can you think of any existing scenarios where such “instructions” are explicit and yet the model naturally bypasses them?</li>
+<li>Section 4.3 mentions “an AI used for drug development, which was repurposed to design toxins” - this is a straightforward example of an adversarial attack that simply maximizes (instead of minimizing) a given objective. As long as gradients exist, this should be true for any kind of model. How do you think alignment can possibly solve this, or is this even something that can ever be solved? We could have the perfect aligned model, but what stops a bad actor from running such gradient-based (or similar) attacks to “maximize” some loss on a model that has been trained with all sorts of alignment measures.</li>
+</ol>
+<hr>
+<p>Questions about  <code>Universal and Transferable Adversarial Attacks on Aligned Language Models</code> (and attacks/red-teaming in general)</p>
+<ol start="5">
+<li>The paper has some very specific design choices, such as only using a suffix for prompts, or targeting responses such that they start with specific phrases. Can you think of some additions/modifications to the technique(s) used in the paper that could potentially improve attack performance?</li>
+<li>From an adversarial perspective, these LLMs ultimately rely on data seen (and freely available) on the Internet. Why then, is “an LLM that can generate targeted jokes” or “an LLM that can give plans on toppling governments” an issue, when such information is anyway available on the Internet (and with much less hassle, given that jailbreaking can be non-trivial and demanding at times)? To paraphrase, shouldn’t the focus be on “aligning users”, and not models?</li>
+<li>Most of Llama-2’s training data (which is the model used for crafting examples in most experiments), is mostly English, along with most text on the Internet. Do you think the adversary could potentially benefit from phrasing their prompt in another language, perhaps appended with  “Respond in English?”. Do you think another language could help/harm attack success rates?</li>
+<li>Several fields of machine learning have looked at adversarial robustness, out-of-domain generalization, and other problems/techniques to help model, in some sense, “adapt” better to unseen environments. Do you think alignment is the same as out-of-domain generalization (or similar notions of generalization), or are there some fundamental differences between the two?</li>
+</ol>
+
+      </div>
+<hr class="post-separator"></hr>
+
     
     <h1><a href="/week1/">Week 1: Introduction</a></h1>
 <div class="post-metadata">
