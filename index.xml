@@ -8,7 +8,11 @@
     <language>en-us</language>
     <managingEditor>evans@virginia.edu (David Evans)</managingEditor>
     <webMaster>evans@virginia.edu (David Evans)</webMaster>
-    <lastBuildDate>Wed, 06 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://llmrisks.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 23 Aug 2023 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://llmrisks.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Week 3: Prompting and Bias</title>
       <link>https://llmrisks.github.io/week3/</link>
@@ -29,17 +33,8 @@
       <guid>https://llmrisks.github.io/week1/</guid>
       <description>(see bottom for assigned readings and questions)
 Attention, Transformers, and BERT Monday, 28 August
-Transformers1 are a class of deep learning models that have revolutionized the field of natural language processing (NLP) and various other domains. The concept of transformers originated as an attempt to address the limitations of traditional recurrent neural networks (RNNs) in sequential data processing. Here&amp;rsquo;s an overview of transformers&#39; evolution and significance.
+Transformers1 are a class of deep learning models that have revolutionized the field of natural language processing (NLP) and various other domains. The concept of transformers originated as an attempt to address the limitations of traditional recurrent neural networks (RNNs) in sequential data processing. Here&amp;rsquo;s an overview of transformers&amp;rsquo; evolution and significance.
 Background and Origin RNNs2 were one of the earliest models used for sequence-based tasks in machine learning.</description>
-    </item>
-    
-    <item>
-      <title>Week 2: Alignment</title>
-      <link>https://llmrisks.github.io/week2/</link>
-      <pubDate>Sun, 03 Sep 2023 00:00:00 +0000</pubDate>
-      <author>evans@virginia.edu (David Evans)</author>
-      <guid>https://llmrisks.github.io/week2/</guid>
-      <description>Readings  What is the alignment problem? - Blog post by Jan Leike Red Teaming Language Models to Reduce Harms: Methods, Scaling Behaviors, and Lessons Learned Ganguli, Deep, Liane Lovitt, Jackson Kernion, Amanda Askell, Yuntao Bai, Saurav Kadavath, Ben Mann et al. arXiv preprint arXiv:2209.07858 (2022). The Alignment Problem from a Deep Learning Perspective Richard Ngo, Lawrence Chan, and Sören Mindermann. arXiv preprint arXiv:2209.00626 (2022). Universal and Transferable Adversarial Attacks on Aligned Language Models Zou, Andy, Zifan Wang, J.</description>
     </item>
     
     <item>
