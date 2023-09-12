@@ -1,7 +1,7 @@
 <!doctype html>
 <html class="no-js" lang="en-us">
   <head>
-	<meta name="generator" content="Hugo 0.71.0" />
+	<meta name="generator" content="Hugo 0.92.0" />
     <meta charset="utf-8">
     <title>Risks (and Benefits) of Generative AI and Large Language Models</title>
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -337,7 +337,7 @@ like <a href="https://aclanthology.org/2023.acl-long.656.pdf"><em>From Pretraini
 (Feng et al.)</a> show
 that famous models like BERT and ChatGPT do appear to have
 socioeconomic political leanings (of course, there is no true
-<code>neutral'' or </code>center&rsquo;&rsquo; position, these are just defined by where
+<code>neutral'' or </code>center'' position, these are just defined by where
 the expected distribution of beliefs lies).</p>
 <p>Figure 1 shows the political leanings of famous LLMs.</p>
 <center>
@@ -422,10 +422,10 @@ history lesson on the French Revolution!</p>
 <p>However, a developer&rsquo;s responsibility doesn&rsquo;t culminate once the AI product hits the market. The journey is continuous. Post-deployment, it&rsquo;s crucial for developers to monitor the system&rsquo;s alignment with human values and rectify any deviations. It&rsquo;s an ongoing commitment to refinement and recalibration. Moreover, transparency is key. Developers should be proactive in highlighting potential concerns related to their models and fostering a culture where the public is not just a passive victim but an active participant in the model alignment process.</p>
 <p>To round off, it&rsquo;s essential for developers to adopt a forward-thinking mindset. The decisions made today in the AI labs and coding chambers will shape the world of tomorrow. Thus, every developer should think about the long-term consequences of their work, always aiming to ensure that AI not only dazzles with its brilliance but also remains beneficial for generations to come.</p>
 <blockquote>
-<p><em>How might AI developers&rsquo; responsibility evolve?</em></p>
+<p><em>How might AI developers' responsibility evolve?</em></p>
 </blockquote>
 <p>It&rsquo;s impossible to catch all edge cases. As AI systems grow in complexity, predicting every potential outcome or misalignment becomes a herculean task. Developers, in the future, might need to shift from a perfectionist mindset to one that emphasizes robustness and adaptability. While it&rsquo;s essential to put in rigorous engineering effort to minimize errors, it&rsquo;s equally crucial to understand and communicate that no system can be flawless.</p>
-<p>Besides, given that catching all cases isn&rsquo;t feasible, developers&rsquo; roles might evolve to include more dynamic and real-time monitoring of AI systems. This would involve continuously learning from real-world interactions, gathering feedback, and iterating on the model to ensure better alignment with human values.</p>
+<p>Besides, given that catching all cases isn&rsquo;t feasible, developers' roles might evolve to include more dynamic and real-time monitoring of AI systems. This would involve continuously learning from real-world interactions, gathering feedback, and iterating on the model to ensure better alignment with human values.</p>
 <h2 id="the-alignment-problem-from-a-deep-learning-perspective">The Alignment Problem from a Deep Learning Perspective</h2>
 <p>In this part of today&rsquo;s seminar, the whole class was divided into 3 groups to discuss the possible alignment problems from a deep learning perspective. Specifically, three groups were focusing on the alignment problems regarding different categories of Deep Learning methods, which are:</p>
 <ol>
@@ -550,8 +550,8 @@ history lesson on the French Revolution!</p>
 </li>
 <li>
 <p><strong>Data Leakage</strong>: Generating copyrighted/private, personally-identiﬁable information.</p>
-<p>Coypright infringement (which is about the expression of an idea) is very different from leaking private information, but for purposes of this limited discussion we considered them together. Since LLMs and other AIGC models such as Stable Diffusion have strong ability to memorize, imitate and generate, the generated contents will very likely infringe on copyrights and may include sensitive personally-identifiable materials. There are already lawsuits accusing these companies regarding the copyright infringement issue (link, link).</p>
-<p>Regarding the possible solutions, Group 2 viewed this from two perspectives. During the data preprocessing stage, companies such as OpenAI can collect the training data according to the license and also pay for the copyrighted data if needed. During the post-processing stage, commercial licenses and rule-based filters can be added to the model to ensure the fair use of the output content. For example, GitHub Copilot will block the generated suggestion if it has about 50 tokens that exactly or nearly match the training data (link). OpenAI takes a different strategy by asking the users to be responsible for using the generated content, including for ensuring that it does not violate any applicable law or these Terms (link). There are many cases currently working their way through the legal system, and it remains to be seen how courts will interpret things.</p>
+<p>Coypright infringement (which is about the expression of an idea) is very different from leaking private information, but for purposes of this limited discussion we considered them together. Since LLMs and other AIGC models such as Stable Diffusion have strong ability to memorize, imitate and generate, the generated contents will very likely infringe on copyrights and may include sensitive personally-identifiable materials. There are already lawsuits accusing these companies regarding the copyright infringement issue (lawsuits <a href="https://www.nytimes.com/2023/07/10/arts/sarah-silverman-lawsuit-openai-meta.html">news1</a>, <a href="https://www.npr.org/2023/08/16/1194202562/new-york-times-considers-legal-action-against-openai-as-copyright-tensions-swirl">news2</a>).</p>
+<p>Regarding the possible solutions, Group 2 viewed this from two perspectives. During the data preprocessing stage, companies such as OpenAI can collect the training data according to the license and also pay for the copyrighted data if needed. During the post-processing stage, commercial licenses and rule-based filters can be added to the model to ensure the fair use of the output content. For example, GitHub Copilot will block the generated suggestion if it has about 50 tokens that exactly or nearly match the training data (<a href="https://docs.github.com/en/copilot/configuring-github-copilot/configuring-github-copilot-settings-on-githubcom#enabling-or-disabling-duplication-detection">source</a>). OpenAI takes a different strategy by asking the users to be responsible for using the generated content, including for ensuring that it does not violate any applicable law or these Terms (<a href="https://openai.com/policies/terms-of-use">source</a>). There are many cases currently working their way through the legal system, and it remains to be seen how courts will interpret things.</p>
 <p>However, the current solutions still have their limitations. For
 program and code, preventing data leakage might be relatively easy
 [perhaps, but many would dispute this], but for image and text, this
@@ -872,7 +872,7 @@ revolutionized the field of natural language processing (NLP) and
 various other domains. The concept of transformers originated as an
 attempt to address the limitations of traditional recurrent neural
 networks (RNNs) in sequential data processing. Here&rsquo;s an overview of
-transformers&rsquo; evolution and significance.</p>
+transformers' evolution and significance.</p>
 <h2 id="background-and-origin">Background and Origin</h2>
 <p>RNNs<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> were one of the earliest models used for sequence-based tasks in machine learning. They processed input tokens one after another and used their internal memory to capture dependencies in the sequence. The following figure gives an illustration of the RNN architecture.</p>
 <center>
@@ -911,7 +911,7 @@ The use of positional encodings in transformers helps address the lack of inhere
 Self-attention is a useful mechanism that allows each token to consider the relationships between all other tokens in a sequence. While it provides a more nuanced understanding of input, it can be computationally expensive. The use of multi-head attention further enhances the model&rsquo;s ability to capture different types of dependencies in the data. The number of attention heads (e.g., 8 in BERT) is a balance between performance and complexity. Too few or too many heads can result in suboptimal performance. More details about self-attention and multi-head attention can be found in <sup id="fnref:9"><a href="#fn:9" class="footnote-ref" role="doc-noteref">9</a></sup>.</p>
 <p><strong>Context and Answers in Activities.</strong>
 Let’s do some activity now!</p>
-<pre><code class="language-angular2html" data-lang="angular2html">I used to ___ 
+<pre tabindex="0"><code class="language-angular2html" data-lang="angular2html">I used to ___ 
 
 Yesterday, I went to ___
 
@@ -963,7 +963,7 @@ The authors of BERT might not have fully anticipated its exact future use and im
 </ul>
 <p><strong>Risks Group.</strong></p>
 <ul>
-<li>Concerns were expressed regarding LLMs&rsquo; opacity and complexity, making them challenging to comprehend.</li>
+<li>Concerns were expressed regarding LLMs' opacity and complexity, making them challenging to comprehend.</li>
 <li>Apprehensions were raised about LLMs potentially exerting detrimental influences on human cognition and societal dynamics.</li>
 <li>LLMs are ripe for potential abuses in their ability to generate convincing false information cheaply.</li>
 <li>The potential impact of LLMs on human intelligence and creativity was a topic of contemplation.</li>
@@ -1042,46 +1042,46 @@ way they consider risks?</p>
 <hr>
 <ol>
 <li id="fn:1" role="doc-endnote">
-<p>Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., &hellip; &amp; Polosukhin, I. (2017). Attention is all you need. Advances in neural information processing systems, 30. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., &hellip; &amp; Polosukhin, I. (2017). Attention is all you need. Advances in neural information processing systems, 30.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2" role="doc-endnote">
-<p>Sherstinsky, A. (2020). Fundamentals of recurrent neural network (RNN) and long short-term memory (LSTM) network. Physica D: Nonlinear Phenomena, 404, 132306. <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Sherstinsky, A. (2020). Fundamentals of recurrent neural network (RNN) and long short-term memory (LSTM) network. Physica D: Nonlinear Phenomena, 404, 132306.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:3" role="doc-endnote">
-<p>Pascanu, R., Mikolov, T., &amp; Bengio, Y. (2013, May). On the difficulty of training recurrent neural networks. In International conference on machine learning (pp. 1310-1318). Pmlr. <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Pascanu, R., Mikolov, T., &amp; Bengio, Y. (2013, May). On the difficulty of training recurrent neural networks. In International conference on machine learning (pp. 1310-1318). Pmlr.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:4" role="doc-endnote">
-<p>Hochreiter, S., &amp; Schmidhuber, J. (1997). Long short-term memory. Neural computation, 9(8), 1735-1780. <a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Hochreiter, S., &amp; Schmidhuber, J. (1997). Long short-term memory. Neural computation, 9(8), 1735-1780.&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:5" role="doc-endnote">
-<p>Mnih, V., Heess, N., &amp; Graves, A. (2014). Recurrent models of visual attention. Advances in neural information processing systems, 27. <a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Mnih, V., Heess, N., &amp; Graves, A. (2014). Recurrent models of visual attention. Advances in neural information processing systems, 27.&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:6" role="doc-endnote">
-<p>Bahdanau, D., Cho, K., &amp; Bengio, Y. (2014). Neural machine translation by jointly learning to align and translate. arXiv preprint arXiv:1409.0473. <a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Bahdanau, D., Cho, K., &amp; Bengio, Y. (2014). Neural machine translation by jointly learning to align and translate. arXiv preprint arXiv:1409.0473.&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:7" role="doc-endnote">
-<p>Lin, T., Wang, Y., Liu, X., &amp; Qiu, X. (2022). A survey of transformers. AI Open. <a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Lin, T., Wang, Y., Liu, X., &amp; Qiu, X. (2022). A survey of transformers. AI Open.&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:8" role="doc-endnote">
-<p>Khan, S., Naseer, M., Hayat, M., Zamir, S. W., Khan, F. S., &amp; Shah, M. (2022). Transformers in vision: A survey. ACM computing surveys (CSUR), 54(10s), 1-41. <a href="#fnref:8" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Khan, S., Naseer, M., Hayat, M., Zamir, S. W., Khan, F. S., &amp; Shah, M. (2022). Transformers in vision: A survey. ACM computing surveys (CSUR), 54(10s), 1-41.&#160;<a href="#fnref:8" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:9" role="doc-endnote">
-<p>Karim, R. (2023, January 2). Illustrated: Self-attention. Medium. <a href="https://towardsdatascience.com/illustrated-self-attention-2d627e33b20a">https://towardsdatascience.com/illustrated-self-attention-2d627e33b20a</a> <a href="#fnref:9" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Karim, R. (2023, January 2). Illustrated: Self-attention. Medium. <a href="https://towardsdatascience.com/illustrated-self-attention-2d627e33b20a">https://towardsdatascience.com/illustrated-self-attention-2d627e33b20a</a>&#160;<a href="#fnref:9" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:10" role="doc-endnote">
-<p>Devlin, J., Chang, M. W., Lee, K., &amp; Toutanova, K. (2018). Bert: Pre-training of deep bidirectional transformers for language understanding. arXiv preprint arXiv:1810.04805. <a href="#fnref:10" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Devlin, J., Chang, M. W., Lee, K., &amp; Toutanova, K. (2018). Bert: Pre-training of deep bidirectional transformers for language understanding. arXiv preprint arXiv:1810.04805.&#160;<a href="#fnref:10" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:11" role="doc-endnote">
-<p>Ahmad, K. (2023b, April 26). GPT vs. Bert: What are the differences between the two most popular language models?. MUO. <a href="https://www.makeuseof.com/gpt-vs-bert/">https://www.makeuseof.com/gpt-vs-bert/</a> <a href="#fnref:11" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Ahmad, K. (2023b, April 26). GPT vs. Bert: What are the differences between the two most popular language models?. MUO. <a href="https://www.makeuseof.com/gpt-vs-bert/">https://www.makeuseof.com/gpt-vs-bert/</a>&#160;<a href="#fnref:11" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:12" role="doc-endnote">
-<p>Radford, A., Wu, J., Child, R., Luan, D., Amodei, D., &amp; Sutskever, I. (2019). Language models are unsupervised multitask learners. OpenAI blog, 1(8), 9. <a href="#fnref:12" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Radford, A., Wu, J., Child, R., Luan, D., Amodei, D., &amp; Sutskever, I. (2019). Language models are unsupervised multitask learners. OpenAI blog, 1(8), 9.&#160;<a href="#fnref:12" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:13" role="doc-endnote">
-<p>Brown, T., Mann, B., Ryder, N., Subbiah, M., Kaplan, J. D., Dhariwal, P., &hellip; &amp; Amodei, D. (2020). Language models are few-shot learners. Advances in neural information processing systems, 33, 1877-1901. <a href="#fnref:13" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Brown, T., Mann, B., Ryder, N., Subbiah, M., Kaplan, J. D., Dhariwal, P., &hellip; &amp; Amodei, D. (2020). Language models are few-shot learners. Advances in neural information processing systems, 33, 1877-1901.&#160;<a href="#fnref:13" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:14" role="doc-endnote">
-<p>Yang, J., Jin, H., Tang, R., Han, X., Feng, Q., Jiang, H., &hellip; &amp; Hu, X. (2023). Harnessing the power of llms in practice: A survey on chatgpt and beyond. arXiv preprint arXiv:2304.13712. <a href="#fnref:14" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Yang, J., Jin, H., Tang, R., Han, X., Feng, Q., Jiang, H., &hellip; &amp; Hu, X. (2023). Harnessing the power of llms in practice: A survey on chatgpt and beyond. arXiv preprint arXiv:2304.13712.&#160;<a href="#fnref:14" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>

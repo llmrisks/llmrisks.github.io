@@ -203,7 +203,7 @@ like <a href="https://aclanthology.org/2023.acl-long.656.pdf"><em>From Pretraini
 (Feng et al.)</a> show
 that famous models like BERT and ChatGPT do appear to have
 socioeconomic political leanings (of course, there is no true
-<code>neutral'' or </code>center&rsquo;&rsquo; position, these are just defined by where
+<code>neutral'' or </code>center'' position, these are just defined by where
 the expected distribution of beliefs lies).</p>
 <p>Figure 1 shows the political leanings of famous LLMs.</p>
 <center>
@@ -288,10 +288,10 @@ history lesson on the French Revolution!</p>
 <p>However, a developer&rsquo;s responsibility doesn&rsquo;t culminate once the AI product hits the market. The journey is continuous. Post-deployment, it&rsquo;s crucial for developers to monitor the system&rsquo;s alignment with human values and rectify any deviations. It&rsquo;s an ongoing commitment to refinement and recalibration. Moreover, transparency is key. Developers should be proactive in highlighting potential concerns related to their models and fostering a culture where the public is not just a passive victim but an active participant in the model alignment process.</p>
 <p>To round off, it&rsquo;s essential for developers to adopt a forward-thinking mindset. The decisions made today in the AI labs and coding chambers will shape the world of tomorrow. Thus, every developer should think about the long-term consequences of their work, always aiming to ensure that AI not only dazzles with its brilliance but also remains beneficial for generations to come.</p>
 <blockquote>
-<p><em>How might AI developers&rsquo; responsibility evolve?</em></p>
+<p><em>How might AI developers' responsibility evolve?</em></p>
 </blockquote>
 <p>It&rsquo;s impossible to catch all edge cases. As AI systems grow in complexity, predicting every potential outcome or misalignment becomes a herculean task. Developers, in the future, might need to shift from a perfectionist mindset to one that emphasizes robustness and adaptability. While it&rsquo;s essential to put in rigorous engineering effort to minimize errors, it&rsquo;s equally crucial to understand and communicate that no system can be flawless.</p>
-<p>Besides, given that catching all cases isn&rsquo;t feasible, developers&rsquo; roles might evolve to include more dynamic and real-time monitoring of AI systems. This would involve continuously learning from real-world interactions, gathering feedback, and iterating on the model to ensure better alignment with human values.</p>
+<p>Besides, given that catching all cases isn&rsquo;t feasible, developers' roles might evolve to include more dynamic and real-time monitoring of AI systems. This would involve continuously learning from real-world interactions, gathering feedback, and iterating on the model to ensure better alignment with human values.</p>
 <h2 id="the-alignment-problem-from-a-deep-learning-perspective">The Alignment Problem from a Deep Learning Perspective</h2>
 <p>In this part of today&rsquo;s seminar, the whole class was divided into 3 groups to discuss the possible alignment problems from a deep learning perspective. Specifically, three groups were focusing on the alignment problems regarding different categories of Deep Learning methods, which are:</p>
 <ol>
@@ -416,8 +416,8 @@ history lesson on the French Revolution!</p>
 </li>
 <li>
 <p><strong>Data Leakage</strong>: Generating copyrighted/private, personally-identiﬁable information.</p>
-<p>Coypright infringement (which is about the expression of an idea) is very different from leaking private information, but for purposes of this limited discussion we considered them together. Since LLMs and other AIGC models such as Stable Diffusion have strong ability to memorize, imitate and generate, the generated contents will very likely infringe on copyrights and may include sensitive personally-identifiable materials. There are already lawsuits accusing these companies regarding the copyright infringement issue (link, link).</p>
-<p>Regarding the possible solutions, Group 2 viewed this from two perspectives. During the data preprocessing stage, companies such as OpenAI can collect the training data according to the license and also pay for the copyrighted data if needed. During the post-processing stage, commercial licenses and rule-based filters can be added to the model to ensure the fair use of the output content. For example, GitHub Copilot will block the generated suggestion if it has about 50 tokens that exactly or nearly match the training data (link). OpenAI takes a different strategy by asking the users to be responsible for using the generated content, including for ensuring that it does not violate any applicable law or these Terms (link). There are many cases currently working their way through the legal system, and it remains to be seen how courts will interpret things.</p>
+<p>Coypright infringement (which is about the expression of an idea) is very different from leaking private information, but for purposes of this limited discussion we considered them together. Since LLMs and other AIGC models such as Stable Diffusion have strong ability to memorize, imitate and generate, the generated contents will very likely infringe on copyrights and may include sensitive personally-identifiable materials. There are already lawsuits accusing these companies regarding the copyright infringement issue (lawsuits <a href="https://www.nytimes.com/2023/07/10/arts/sarah-silverman-lawsuit-openai-meta.html">news1</a>, <a href="https://www.npr.org/2023/08/16/1194202562/new-york-times-considers-legal-action-against-openai-as-copyright-tensions-swirl">news2</a>).</p>
+<p>Regarding the possible solutions, Group 2 viewed this from two perspectives. During the data preprocessing stage, companies such as OpenAI can collect the training data according to the license and also pay for the copyrighted data if needed. During the post-processing stage, commercial licenses and rule-based filters can be added to the model to ensure the fair use of the output content. For example, GitHub Copilot will block the generated suggestion if it has about 50 tokens that exactly or nearly match the training data (<a href="https://docs.github.com/en/copilot/configuring-github-copilot/configuring-github-copilot-settings-on-githubcom#enabling-or-disabling-duplication-detection">source</a>). OpenAI takes a different strategy by asking the users to be responsible for using the generated content, including for ensuring that it does not violate any applicable law or these Terms (<a href="https://openai.com/policies/terms-of-use">source</a>). There are many cases currently working their way through the legal system, and it remains to be seen how courts will interpret things.</p>
 <p>However, the current solutions still have their limitations. For
 program and code, preventing data leakage might be relatively easy
 [perhaps, but many would dispute this], but for image and text, this
@@ -641,7 +641,7 @@ interesting proxies for what may be real threats in the near future
 
       </div>
 
-      <meta itemprop="wordCount" content="6585">
+      <meta itemprop="wordCount" content="6586">
       <meta itemprop="datePublished" content="2023-09-11">
       <meta itemprop="url" content="https://llmrisks.github.io/week2/">
     </article>
