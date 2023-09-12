@@ -1,6 +1,6 @@
 +++
 date = "11 Sep 2023"
-draft = true
+draft = false
 title = "Week 2: Alignment"
 slug = "week2"
 katex = true

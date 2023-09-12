@@ -14,6 +14,16 @@
     
     
     <item>
+      <title>Week 2: Alignment</title>
+      <link>https://llmrisks.github.io/week2/</link>
+      <pubDate>Mon, 11 Sep 2023 00:00:00 +0000</pubDate>
+      <author>evans@virginia.edu (David Evans)</author>
+      <guid>https://llmrisks.github.io/week2/</guid>
+      <description>(see bottom for assigned readings and questions)
+Table of Contents  (Monday, 09/04/2023) Introduction to Alignment  Introduction to AI Alignment and Failure Cases  Discussion Questions   The Alignment Problem from a Deep Learning Perspective  Group of RL-based methods Group of LLM-based methods Group of Other ML methods     (Wednesday, 09/06/2023) Alignment Challenges and Solutions  Opening Discussion Introduction to Red-Teaming  In-class Activity (5 groups) How to use Red-Teaming?</description>
+    </item>
+    
+    <item>
       <title>Week 3: Prompting and Bias</title>
       <link>https://llmrisks.github.io/week3/</link>
       <pubDate>Wed, 06 Sep 2023 00:00:00 +0000</pubDate>
