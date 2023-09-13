@@ -1,7 +1,7 @@
 +++
 date = "13 Sep 2023"
 draft = false
-title = "Week 4: Ca[abilities of LLMs"
+title = "Week 4: Capabilities of LLMs"
 slug = "week4"
 +++
 
