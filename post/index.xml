@@ -8,7 +8,21 @@
     <language>en-us</language>
     <managingEditor>evans@virginia.edu (David Evans)</managingEditor>
     <webMaster>evans@virginia.edu (David Evans)</webMaster>
-    <lastBuildDate>Mon, 11 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://llmrisks.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 13 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://llmrisks.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Week 4: Ca[abilities of LLMs</title>
+      <link>https://llmrisks.github.io/week4/</link>
+      <pubDate>Wed, 13 Sep 2023 00:00:00 +0000</pubDate>
+      <author>evans@virginia.edu (David Evans)</author>
+      <guid>https://llmrisks.github.io/week4/</guid>
+      <description>Readings Monday:
+  Jingfeng Yang, Hongye Jin, Ruixiang Tang, Xiaotian Han, Qizhang Feng, Haoming Jiang, Bing Yin, Xia Hu. Harnessing the Power of LLMs in Practice: A Survey on ChatGPT and Beyond. April 2023. https://arxiv.org/abs/2304.13712. [PDF]
+  OpenAI. GPT-4 Technical Report. March 2023. https://arxiv.org/abs/2303.08774 [PDF]
+  Optionally, also explore https://openai.com/blog/chatgpt-plugins.
+Wednesday:
+Karan Singhal, Tao Tu, Juraj Gottweis, Rory Sayres, Ellery Wulczyn, Le Hou, Kevin Clark, Stephen Pfohl, Heather Cole-Lewis, Darlene Neal, Mike Schaekermann, Amy Wang, Mohamed Amin, Sami Lachgar, Philip Mansfield, Sushant Prakash, Bradley Green, Ewa Dominowska, Blaise Aguera y Arcas, Nenad Tomasev, Yun Liu, Renee Wong, Christopher Semturs, S.</description>
+    </item>
+    
     <item>
       <title>Week 2: Alignment</title>
       <link>https://llmrisks.github.io/week2/</link>
