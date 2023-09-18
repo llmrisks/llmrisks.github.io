@@ -84,6 +84,7 @@ Figure 6 shows the comparison between standard prompting and chain-of-thought pr
 <td><img src="/src/content/images/Week3/Picture10.png" width="80%"></td>
 Figure 6: Difference between standard prompting and chain-of-thought prompting
 </tr></table>
+([Image Source](https://arxiv.org/abs/2201.11903))
 
 ## What is the difference between prompts and fine-tuning?
 Prompt engineering focuses on eliciting better output for a given LLM through changing input. Fine-tuning focuses on enhancing model performance by training the model on a smaller, targeted database relevant to the desired task. The similarity is that both methods help improve the model's performance and provide desired outcomes. Prompt engineering requires no retraining, and the prompting is performed in a single window of the model. At the same time, fine-tuning involves retraining the model and changing the model parameter to improve its performance. Fine-tuning also requires more computational resources compared to prompt engineering.
