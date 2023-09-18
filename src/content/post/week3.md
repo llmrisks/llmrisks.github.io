@@ -7,6 +7,8 @@ slug = "week3"
 
 # Prompt Engineering
 
+- [Warm-up questions](#warm-up-questions)
+
 **Monday, 06 September**
 
 
