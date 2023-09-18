@@ -25,7 +25,7 @@ For the first question, providing more examples as prompts did not work. At the 
 Figure 1 shows the prompting for the first question and the answer from GPT3.5.
 
 <table><tr>
-<td><img src="/images/Week3/Picture1.png" width="45%"></td>
+<td><img src="/src/content/images/Week3/Picture1.png" width="45%"></td>
 <td><img src="/images/Week3/Picture2.png" width="45%"></td>
 Figure 1: Prompting for arithmetic question
 </tr></table>table>
