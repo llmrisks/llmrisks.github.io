@@ -9,7 +9,7 @@ slug = "week3"
 
 # Table of Contents
 
-- [(Monday, 09/11/2023) Prompt Engineering](#Monday-talk)
+- [(Monday, 09/11/2023) Prompt Engineering](#monday-09112023-prompt-engineering)
    - [Warm-up questions](#warm-up-questions)
    - [What is Prompt Engineering?](#what-is-prompt-engineering)
    - [How is prompt-based learning different from traditional supervised learning?](#how-is-prompt-based-learning)
@@ -18,7 +18,7 @@ slug = "week3"
    - [When is the best to use prompts vs fine-tuning?](#prompts-vs-fine-tuning)
    - [Risk of Prompts](#risks-of-prompts)
    - [Discussion about Prompt format](#discussion-prompt-format)
-- [(Wednesday, 09/13/2023) Prompt Engineering: Exposing LLM Risks](#Wedneday-talk)
+- [(Wednesday, 09/13/2023) Prompt Engineering: Exposing LLM Risks](#monday-09132023-prompt-engineering-llm-risks)
    - [Open Discussion](#open-discussion)
    - [Case Study: Marked Personas](#marked-personas)
    - [Discussion: Bias mitigation](#bias-mitigation)
