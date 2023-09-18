@@ -18,7 +18,7 @@ slug = "week3"
    - [When is the best to use prompts vs fine-tuning?](#prompts-vs-fine-tuning)
    - [Risk of Prompts](#risks-of-prompts)
    - [Discussion about Prompt format](#discussion-prompt-format)
-- [(Wednesday, 09/13/2023) Prompt Engineering: Exposing LLM Risks](#monday-09132023-prompt-engineering-llm-risks)
+- [(Wednesday, 09/13/2023) Prompt Engineering: Exposing LLM Risks](#wednesday-09132023-prompt-engineering-llm-risks)
    - [Open Discussion](#open-discussion)
    - [Case Study: Marked Personas](#marked-personas)
    - [Discussion: Bias mitigation](#bias-mitigation)
