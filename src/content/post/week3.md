@@ -81,7 +81,7 @@ Chain-of-thought – The given task or question is decomposed into coherent inte
 Figure 6 shows the comparison between standard prompting and chain-of-thought prompting
 <table><tr>
 <td><img src="/src/content/images/Week3/Picture9.png" width="80%"></td>
-<td><img src="/src/content/images/Week3/Picture10.png" width="65%"></td>
+<td><img src="/src/content/images/Week3/Picture10.png" width="70%"></td>
 Figure 6: Difference between standard prompting and chain-of-thought prompting
 </tr></table>
 ([Image Source](https://arxiv.org/abs/2201.11903))
