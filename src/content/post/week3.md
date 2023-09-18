@@ -5,7 +5,9 @@ title = "Week 3: Prompting and Bias"
 slug = "week3"
 +++
 
-# Prompt Engineering
+# Prompt Engineering (Week 3)
+
+# Table of Contents
 
 - [(Monday, 09/11/2023) Prompt Engineering](#Monday-talk)
    - [Warm-up questions](#warm-up-questions)
@@ -23,6 +25,12 @@ slug = "week3"
    - [Hands-on Activity: Prompt Hacking](#prompt-hacking)
    - [Discussion: Can we defend against prompt hacking by build-in safegurads?](#can-we-defend)
    - [Further thoughts: What's the real risk?](#what-is-the-real-risk)
+- [Readings](#readings)
+  - [Optional Additional Readings](#optional-additional-readings)
+    - [Background](#background--motivation)
+    - [Stereotypes and bias:](#stereotypes-bias)
+    - [Prompt Injection:](#injection)
+- [Discussion Questions](#discussion-questions-1)
 
 # (Monday, 09/11/2023) Prompt Engineering
 
@@ -171,7 +179,7 @@ As we can see in the activity, right now this safeguard is not that strong. A mo
 ## Further thoughts: What's the real risk?
 While jailbreaking is one of the risks of LLMs, a more risky situation may be that LLM is intentionally trained and used by people to do bad things. Afterall, misuse is not that serious compared with a specific crime.
 
-
+[Back to top](#table-of-contents)
 
 
 # Readings
