@@ -5,10 +5,11 @@ title = "Week 3: Prompting and Bias"
 slug = "week3"
 +++
 
+# Prompt Engineering
 
-Prompt Engineering
+**Monday, 28 August**
 
-Monday 
+
 ## Warm-up questions
 The class on Monday started with warm-up questions to demonstrate how prompts can help LLM produce correct answers/desired outcomes. The questions and the prompts were tested in GPT3.5. This task was performed as an in-class experiment where each individual used GPT3.5 to test the questions and help GPT3.5 produce correct answers via prompts. 
 
