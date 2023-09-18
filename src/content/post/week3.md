@@ -63,9 +63,9 @@ In-context learning is a powerful approach to fine-tuning or training the model 
 
 There are three different types of prompts:
 Zero-shot prompt – Here, the model predicts the answers given only a natural language description of the task. 
+
 <center>
 <a href="/src/content/images/Week3/Picture7.png"><img src="/src/content/images/Week3/Picture7.png" width="80%"></a><br>
-
 Figure 4: Example for zero-shot prompting
 </center>
 
