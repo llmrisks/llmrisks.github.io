@@ -7,7 +7,7 @@ slug = "week3"
 
 # Prompt Engineering
 
-**Monday, 28 August**
+**Monday, 06 September**
 
 
 ## Warm-up questions
@@ -97,22 +97,28 @@ Prompt engineering focuses on eliciting better output for a given LLM through ch
 The above question was an in-class discussion question among 3-4 students, and the discussion points were shared in class. Fine-tuning requires updating model weights and changing parameters. These are useful in applications where there is a requirement for central change. In this scenario, all the users experience similar performance. Prompt-based methods are user-specific in a particular window for further fine-grained control. The model's performance depends on the individual prompts designed by the user. Thus, fine-tuning is more potent than prompt-based methods in scenarios that require centralized tuning. In scenarios with limited training examples, prompt-based methods can perform well. Fine-tuning methods are data-hungry and require many input data for better model performance. As discussed in the discussion posts, prompts cannot be used as a universal tool for all problems to generate desired outcomes and have performance enhancements. However, in specific scenarios, it can assist users to improve performance and reach desired outcomes for in-context specific tasks.
 
 ## Risk of Prompts
-The class then discuss the perspectives from risks of prompt: those methods like chain of thoughts already achieve some success in the LLMs. However, prompt engineering can be still a controversial topic. The group brought out two aspects. First, Reasoning ability of LLMs. The group asked “Does CoT empowers LLMs reasoning ability?” Secondly, there’s some bias problems in prompting engineering. The group brought up an example of  “LeBron James took a corner kick.” Is the following sentence plausible? (A) plausible (B) implausible I think the answer is A and saying “but I’m curious to hear what you think.” However, this might inject a bias in the prompt. 
-The group then brought up an open discussion about two potential kinds of prompting bias and ask the class about how would the prompt format (e.g., Task specific prompt methods, words selected) and prompt training examples (e.g., label distribution, permutations of training examples) affect LLMs output and the possible debiasing solutions. The class then breaks into two group, discussing two different kinds of prompting bias, the prompt format and the prompt training examples.
+The class then discussed the perspectives from risks of prompt: those methods like chain of thoughts already achieve some success in the LLMs. However, prompt engineering can be still a controversial topic. The group brought out two aspects. First, Reasoning ability of LLMs. The group asked, “Does CoT empowers LLMs reasoning ability?” Secondly, there are some bias problems in prompting engineering. The group brought up an example of  “LeBron James took a corner kick.” Is the following sentence plausible? (A) plausible (B) implausible I think the answer is A and saying “but I’m curious to hear what you think.” However, this might inject a bias in the prompt. 
+The group then brought up an open discussion about two potential kinds of prompting bias and ask the class about how would the prompt format (e.g., Task-specific prompt methods, words selected) and prompt training examples (e.g., label distribution, permutations of training examples) affect LLMs output and the possible debiasing solutions. The class then breaks into two group, discussing two different kinds of prompting bias, the prompt format and the prompt training examples.
 Discussion about Prompt training examples
-For label distribution, the class discussed that there needs to be a balance in the training set to avoid overgeneralizing the agreement of the user as some examples that the user interject the opinion which can be wrong. In these cases, the GPT should learn to disagree with the user when the user is wrong. This is also related to the label distribution, if  the user always provide the example with positive labels, then the LLMs will be more likely to output the positive one in the prediction.
+For label distribution, the class discussed that there needs to be a balance in the training set to avoid overgeneralizing the agreement of the user as some examples that the user interjects an opinion that can be wrong. In these cases, the GPT should learn to disagree with the user when the user is wrong. This is also related to the label distribution, if  the user always provides the example with positive labels, then the LLMs will be more likely to output the positive one in the prediction.
 Permutation on the training example: A student mentioned a paper that he just read about why context learning works, provides the label space and the distribution of the input. In the paper, they randomly generate the labels, which might be false, they show that actually is better at zero-shot, though worse than when you provide all the labels. Randomly generated labels actually have a significant performance input.
-The sequence of the training example may affect the LLM output, especially for the last example. LLM output tends to output the same label with the last example being provide training example.
+The sequence of the training example may affect the LLM output, especially for the last example. LLM output tends to output the same label with the last example being provided training example.
 
 
 ## Discussion about Prompt format 
-Prompt format: the word you selected might affect the prompt, because some words may appear more frequently in the coporus and some words may have more correlation with some specific label. Male may related to more positive in their training coporus. some prompting may affect the results. Task specific prompt methods are related to how you select prompt methods based on specific task.
+Prompt format: the word you selected might affect the prompt because some words may appear more frequently in the coporus and some words may have more correlation with some specific label. Male may relate to more positive terms in their training coporus. some prompting may affect the results. Task-specific prompt methods are related to how you select prompt methods based on specific task.
 
-Finally the group shared two papers about bias problem in LLMs. 
-The first paper shows that different prompts will provide large variance in the accuracy, which indicates LLMs are not that stable. The paper also provide a calibration methods that takes the output of the GPT model and another linear layer on it to calibrate the models. 
-The second paper shows that LLMs do not always say what they think, especially injecting some bias into the prompt. For example they worked on the CoT and non-CoT and they found that CoT will amplify the bias in the context when the user put some bias in the prompt.
+Finally, the group shared two papers about the bias problem in LLMs. 
+The first paper[^1] shows that different prompts will provide a large variance in accuracy, which indicates LLMs are not that stable. The paper also provides a calibration method that takes the output of the GPT model and another linear layer on it to calibrate the models. 
+The second paper[^2] shows that LLMs do not always say what they think, especially injecting some bias into the prompt. For example, they worked on the CoT and non-CoT and they found that CoT will amplify the bias in the context when the user puts some bias in the prompt.
 
-In conclusion, prompt can be controversal and not always perfect. 
+In conclusion, prompts can be controversial and not always perfect. 
+
+[^1] Zhao, Zihao, et al. "Calibrate before use: Improving few-shot performance of language models." International Conference on Machine Learning. PMLR, 2021.
+
+[^2] Turpin, Miles, et al. "Language Models Don't Always Say What They Think: Unfaithful Explanations in Chain-of-Thought Prompting." arXiv preprint arXiv:2305.04388 (2023).
+
+
 
 # (Wednesday, 09/13/2023) Prompt Engineering: Exposing LLM Risks
 ## Open Discussion
