@@ -114,9 +114,9 @@ The second paper[^2] shows that LLMs do not always say what they think, especial
 
 In conclusion, prompts can be controversial and not always perfect. 
 
-[^1] Zhao, Zihao, et al. "Calibrate before use: Improving few-shot performance of language models." International Conference on Machine Learning. PMLR, 2021.
+[^1]: Zhao, Zihao, et al. "Calibrate before use: Improving few-shot performance of language models." International Conference on Machine Learning. PMLR, 2021.
 
-[^2] Turpin, Miles, et al. "Language Models Don't Always Say What They Think: Unfaithful Explanations in Chain-of-Thought Prompting." arXiv preprint arXiv:2305.04388 (2023).
+[^2]: Turpin, Miles, et al. "Language Models Don't Always Say What They Think: Unfaithful Explanations in Chain-of-Thought Prompting." arXiv preprint arXiv:2305.04388 (2023).
 
 
 
