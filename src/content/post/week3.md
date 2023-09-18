@@ -28,7 +28,7 @@ Figure 1 shows the prompting for the first question and the answer from GPT3.5.
 <td><img src="/src/content/images/Week3/Picture1.png" width="80%"></td>
 <td><img src="/src/content/images/Week3/Picture2.png" width="80%"></td>
 Figure 1: Prompting for arithmetic question
-</tr></table>table>
+</tr></table>
 
 For the second question, providing an example and an explanation behind the reasoning on how to reach the final answer helped GPT produce the correct answer. Here, the prompt included explicitly stating that the magic box can also convert from coins to apples. 
 
@@ -37,7 +37,7 @@ Figure 2 shows the prompting for the second question and the answer from GPT3.5.
 <td><img src="/src/content/images/Week3/Picture3.png" width="80%"></td>
 <td><img src="/src/content/images/Week3/Picture4.png" width="80%"></td>
 Figure 2: Prompting for common sense question
-</tr></table>table>
+</tr></table>
 
 While GPT was producing random results for the third question, instructing GPT through examples to take the words, concatenate the last letters, and then find the alphabet's position helped produce the correct answer. 
 
@@ -46,7 +46,7 @@ Figure 3 shows the prompting for the third question and the answer from GPT3.5.
 <td><img src="/src/content/images/Week3/Picture5.png" width="80%"></td>
 <td><img src="/src/content/images/Week3/Picture6.png" width="80%"></td>
 Figure 3: Prompting for symbolic reasoning question
-</tr></table>table>
+</tr></table>
 
 All these examples demonstrate the benefit of using prompts to explore the model's reasoning ability.
 
