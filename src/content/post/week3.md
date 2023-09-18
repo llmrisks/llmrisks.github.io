@@ -25,8 +25,8 @@ For the first question, providing more examples as prompts did not work. At the 
 Figure 1 shows the prompting for the first question and the answer from GPT3.5.
 
 <table><tr>
-<td><img src="/src/content/images/Week3/Picture1.png" width="60%"></td>
-<td><img src="/src/content/images/Week3/Picture2.png" width="60%"></td>
+<td><img src="/src/content/images/Week3/Picture1.png" width="80%"></td>
+<td><img src="/src/content/images/Week3/Picture2.png" width="80%"></td>
 Figure 1: Prompting for arithmetic question
 </tr></table>table>
 
@@ -34,8 +34,8 @@ For the second question, providing an example and an explanation behind the reas
 
 Figure 2 shows the prompting for the second question and the answer from GPT3.5.
 <table><tr>
-<td><img src="/src/content/images/Week3/Picture3.png" width="45%"></td>
-<td><img src="/src/content/images/Week3/Picture4.png" width="45%"></td>
+<td><img src="/src/content/images/Week3/Picture3.png" width="80%"></td>
+<td><img src="/src/content/images/Week3/Picture4.png" width="80%"></td>
 Figure 2: Prompting for common sense question
 </tr></table>table>
 
@@ -43,8 +43,8 @@ While GPT was producing random results for the third question, instructing GPT t
 
 Figure 3 shows the prompting for the third question and the answer from GPT3.5.
 <table><tr>
-<td><img src="/src/content/images/Week3/Picture5.png" width="45%"></td>
-<td><img src="/src/content/images/Week3/Picture6.png" width="45%"></td>
+<td><img src="/src/content/images/Week3/Picture5.png" width="80%"></td>
+<td><img src="/src/content/images/Week3/Picture6.png" width="80%"></td>
 Figure 3: Prompting for symbolic reasoning question
 </tr></table>table>
 
