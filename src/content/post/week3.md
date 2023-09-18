@@ -62,6 +62,7 @@ Interestingly, the prompts were initially used in language translations and emot
 In-context learning is a powerful approach to fine-tuning or training the model within a specific context. This improves the performance and reliability of the model for the specific task or the environment. Here, the models are given a few examples as reference/instructions that are relevant to the context and are domain-specific.
 
 There are three different types of prompts:
+
 Zero-shot prompt – Here, the model predicts the answers given only a natural language description of the task. 
 
 <center>
