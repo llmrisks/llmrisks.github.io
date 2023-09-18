@@ -8,7 +8,8 @@ slug = "week3"
 
 Prompt Engineering
 
-Warm-up questions
+Monday 
+## Warm-up questions
 The class on Monday started with warm-up questions to demonstrate how prompts can help LLM produce correct answers/desired outcomes. The questions and the prompts were tested in GPT3.5. This task was performed as an in-class experiment where each individual used GPT3.5 to test the questions and help GPT3.5 produce correct answers via prompts. 
 
 The three questions were:
@@ -27,15 +28,15 @@ For the first question, providing more examples as prompts did not work. At the 
 
 All these examples demonstrate the benefit of using prompts to explore the model's reasoning ability.
 
-What is Prompt Engineering? 
+## What is Prompt Engineering? 
 Prompt engineering is a method to communicate and guide LLM to demonstrate a behavior or generate desired outcomes based on specific instructions and/or queries. The model weights or parameters are not updated in prompt engineering.
 
-How is prompt-based learning different from traditional supervised learning?
+## How is prompt-based learning different from traditional supervised learning?
 The traditional learning method trains the model by taking input and generating an output based on prediction probability. The model learns to map input data to specific output labels. In contrast, Prompt-based learning models the probability of the text directly. Here, the inputs are converted to textual strings called prompts. These prompts are used to generate desired outcomes. Prompt-based learning offers more flexibility in adapting the model's behavior to different tasks by modifying the prompts. Retraining the model is not required in this scenario. 
 
 Interestingly, the prompts were initially used in language translations and emotion predictions based on texts instead of improving the performance of LLMs.
 
-In-context learning and different types of prompts
+## In-context learning and different types of prompts
 In-context learning is a powerful approach to fine-tuning or training the model within a specific context. This improves the performance and reliability of the model for the specific task or the environment. Here, the models are given a few examples as reference/instructions that are relevant to the context and are domain-specific.
 
 There are three different types of prompts:
@@ -52,13 +53,13 @@ Chain-of-thought – The given task or question is decomposed into coherent inte
 
 
 
-What is the difference between prompts and fine-tuning?
+## What is the difference between prompts and fine-tuning?
 Prompt engineering focuses on eliciting better output for a given LLM through changing input. Fine-tuning focuses on enhancing model performance by training the model on a smaller, targeted database relevant to the desired task. The similarity is that both methods help improve the model's performance and provide desired outcomes. Prompt engineering requires no retraining, and the prompting is performed in a single window of the model. At the same time, fine-tuning involves retraining the model and changing the model parameter to improve its performance. Fine-tuning also requires more computational resources compared to prompt engineering.
 
-When is the best to use prompts vs fine-tuning?
+## When is the best to use prompts vs fine-tuning?
 The above question was an in-class discussion question among 3-4 students, and the discussion points were shared in class. Fine-tuning requires updating model weights and changing parameters. These are useful in applications where there is a requirement for central change. In this scenario, all the users experience similar performance. Prompt-based methods are user-specific in a particular window for further fine-grained control. The model's performance depends on the individual prompts designed by the user. Thus, fine-tuning is more potent than prompt-based methods in scenarios that require centralized tuning. In scenarios with limited training examples, prompt-based methods can perform well. Fine-tuning methods are data-hungry and require many input data for better model performance. As discussed in the discussion posts, prompts cannot be used as a universal tool for all problems to generate desired outcomes and have performance enhancements. However, in specific scenarios, it can assist users to improve performance and reach desired outcomes for in-context specific tasks.
 
-Risk of Prompts
+## Risk of Prompts
 The class then discuss the perspectives from risks of prompt: those methods like chain of thoughts already achieve some success in the LLMs. However, prompt engineering can be still a controversial topic. The group brought out two aspects. First, Reasoning ability of LLMs. The group asked “Does CoT empowers LLMs reasoning ability?” Secondly, there’s some bias problems in prompting engineering. The group brought up an example of  “LeBron James took a corner kick.” Is the following sentence plausible? (A) plausible (B) implausible I think the answer is A and saying “but I’m curious to hear what you think.” However, this might inject a bias in the prompt. 
 The group then brought up an open discussion about two potential kinds of prompting bias and ask the class about how would the prompt format (e.g., Task specific prompt methods, words selected) and prompt training examples (e.g., label distribution, permutations of training examples) affect LLMs output and the possible debiasing solutions. The class then breaks into two group, discussing two different kinds of prompting bias, the prompt format and the prompt training examples.
 Discussion about Prompt training examples
@@ -67,7 +68,7 @@ Permutation on the training example: A student mentioned a paper that he just re
 The sequence of the training example may affect the LLM output, especially for the last example. LLM output tends to output the same label with the last example being provide training example.
 
 
-Discussion about Prompt format 
+## Discussion about Prompt format 
 Prompt format: the word you selected might affect the prompt, because some words may appear more frequently in the coporus and some words may have more correlation with some specific label. Male may related to more positive in their training coporus. some prompting may affect the results. Task specific prompt methods are related to how you select prompt methods based on specific task.
 
 Finally the group shared two papers about bias problem in LLMs. 
@@ -75,6 +76,8 @@ The first paper shows that different prompts will provide large variance in the 
 The second paper shows that LLMs do not always say what they think, especially injecting some bias into the prompt. For example they worked on the CoT and non-CoT and they found that CoT will amplify the bias in the context when the user put some bias in the prompt.
 
 In conclusion, prompt can be controversal and not always perfect. 
+
+
 
 
 
