@@ -21,19 +21,32 @@ The three questions were:
 While the first question tested the arithmetic capability of the model, the second and the third questions tested common sense and symbolic reasoning, respectively. The initial response from GPT3.5 for all three questions was wrong. 
 
 For the first question, providing more examples as prompts did not work. At the same time, an explanation of how to reach the specific answer by decomposing the multiplication into multiple steps helped. 
-Figure 1 shows the prompting for the first question.
 
-<center>
-<a href="/images/Week3/Picture1.png"><img src="/images/Week3/Picture1.png" width="45%"></a><br>
-<a href="/images/Week3/Picture2.png"><img src="/images/Week3/Picture2.png" width="45%"></a><br>
+Figure 1 shows the prompting for the first question and the answer from GPT3.5.
+
+<table><tr>
+<td><img src="/images/Week3/Picture1.png" width="45%"></td>
+<td><img src="/images/Week3/Picture2.png" width="45%"></td>
 Figure 1: Prompting for arithmetic question
-</center>
-For the second question, providing an example and an explanation behind the reasoning on how to reach the final answer helped GPT produce the correct answer. Here, the prompt included explicitly stating that the magic box can also convert from coins to apples. While GPT was producing random results for the third question, instructing GPT through examples to take the words, concatenate the last letters, and then find the alphabet's position helped produce the correct answer. The screenshots of the questions and GPT3.5 responses are provided below.
+</tr></table>table>
 
+For the second question, providing an example and an explanation behind the reasoning on how to reach the final answer helped GPT produce the correct answer. Here, the prompt included explicitly stating that the magic box can also convert from coins to apples. 
 
+Figure 2 shows the prompting for the second question and the answer from GPT3.5.
+<table><tr>
+<td><img src="/images/Week3/Picture3.png" width="45%"></td>
+<td><img src="/images/Week3/Picture4.png" width="45%"></td>
+Figure 2: Prompting for common sense question
+</tr></table>table>
 
+While GPT was producing random results for the third question, instructing GPT through examples to take the words, concatenate the last letters, and then find the alphabet's position helped produce the correct answer. 
 
-
+Figure 3 shows the prompting for the third question and the answer from GPT3.5.
+<table><tr>
+<td><img src="/images/Week3/Picture5.png" width="45%"></td>
+<td><img src="/images/Week3/Picture6.png" width="45%"></td>
+Figure 3: Prompting for symbolic reasoning question
+</tr></table>table>
 
 All these examples demonstrate the benefit of using prompts to explore the model's reasoning ability.
 
