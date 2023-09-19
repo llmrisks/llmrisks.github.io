@@ -5,6 +5,8 @@ title = "Week 3: Prompting and Bias"
 slug = "week3"
 +++
 
+(see bottom for assigned readings and questions)
+
 # Prompt Engineering (Week 3)
 
 # Table of Contents
