@@ -1,5 +1,5 @@
 +++
-date = "06 Sep 2023"
+date = "18 Sep 2023"
 draft = false
 title = "Week 3: Prompting and Bias"
 slug = "week3"
@@ -47,8 +47,8 @@ For the first question, providing more examples as prompts did not work. At the 
 Figure 1 shows the prompting for the first question and the answer from GPT3.5.
 
 <table><tr>
-<td><img src="/src/content/images/Week3/Picture1.png" width="80%"></td>
-<td><img src="/src/content/images/Week3/Picture2.png" width="80%"></td>
+<td><img src="../images/Week3/Picture1.png" width="80%"></td>
+<td><img src="../images/Week3/Picture2.png" width="80%"></td>
 Figure 1: Prompting for arithmetic question
 </tr></table>
 
@@ -56,8 +56,8 @@ For the second question, providing an example and an explanation behind the reas
 
 Figure 2 shows the prompting for the second question and the answer from GPT3.5.
 <table><tr>
-<td><img src="/src/content/images/Week3/Picture3.png" width="80%"></td>
-<td><img src="/src/content/images/Week3/Picture4.png" width="80%"></td>
+<td><img src="../images/Week3/Picture3.png" width="80%"></td>
+<td><img src="../images/Week3/Picture4.png" width="80%"></td>
 Figure 2: Prompting for common sense question
 </tr></table>
 
@@ -65,8 +65,8 @@ While GPT was producing random results for the third question, instructing GPT t
 
 Figure 3 shows the prompting for the third question and the answer from GPT3.5.
 <table><tr>
-<td><img src="/src/content/images/Week3/Picture5.png" width="80%"></td>
-<td><img src="/src/content/images/Week3/Picture6.png" width="80%"></td>
+<td><img src="../images/Week3/Picture5.png" width="80%"></td>
+<td><img src="../images/Week3/Picture6.png" width="80%"></td>
 Figure 3: Prompting for symbolic reasoning question
 </tr></table>
 
@@ -88,28 +88,31 @@ There are three different types of prompts:
 Zero-shot prompt – Here, the model predicts the answers given only a natural language description of the task. 
 
 <center>
-<a href="/src/content/images/Week3/Picture7.png"><img src="/src/content/images/Week3/Picture7.png" width="50%"></a><br>
+<a href="../images/Week3/Picture7.png"><img src="../images/Week3/Picture7.png" width="50%"></a><br>
 Figure 4: Example for zero-shot prompting
 </center>
+
 ([Image Source](https://arxiv.org/pdf/2005.14165.pdf))
 
 
 One-shot/Few-shot prompt – In this scenario, one or few examples are provided that explains the task description the model, i.e. prompting the model with few input-output pairs.
 
 <center>
-<a href="/src/content/images/Week3/Picture8.png"><img src="/src/content/images/Week3/Picture8.png" width="50%"></a><br>
+<a href="../images/Week3/Picture8.png"><img src="../images/Week3/Picture8.png" width="50%"></a><br>
 Figure 5: Examples for one-shot and fewshot prompting
 </center>
+
 ([Image Source](https://arxiv.org/pdf/2005.14165.pdf))
 
 Chain-of-thought – The given task or question is decomposed into coherent intermediate reasoning steps that are solved before providing the final response. This explores the reasoning ability of the model for each of the provided tasks. It is given in the format <input chain-of-thought output>. The difference between standard prompting and chain-of-thought prompting is described in the figure below. In the figure to the right, the highlighted statement in blue is an example of chain-of-thought prompting, where the reasoning behind reaching a final answer is provided as a part of the example. Thus, in the model outcome, the model also outputs its reasoning, highlighted in green, to reach the final answer. In addition, chain-of-thought prompting can revolutionize the way we interact with LLMs and leverage their capabilities, as they provide step-by-step explanations of how a particular response is reached.
 
 Figure 6 shows the comparison between standard prompting and chain-of-thought prompting
 <table><tr>
-<td><img src="/src/content/images/Week3/Picture9.png" width="78%"></td>
-<td><img src="/src/content/images/Week3/Picture10.png" width="75%"></td>
+<td><img src="../images/Week3/Picture9.png" width="78%"></td>
+<td><img src="../images/Week3/Picture10.png" width="75%"></td>
 Figure 6: Difference between standard prompting and chain-of-thought prompting
 </tr></table>
+
 ([Image Source](https://arxiv.org/abs/2201.11903))
 
 ## What is the difference between prompts and fine-tuning?
