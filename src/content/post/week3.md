@@ -9,6 +9,11 @@ slug = "week3"
 
 # Prompt Engineering (Week 3)
 
+<author>Presenting Team: Group 3 </author>
+
+<author>Blogging Team: Aparna Kishore, Erzhen Hu, Elena Long, Jingping Wan</author>
+
+
 - [(Monday, 09/11/2023) Prompt Engineering](#monday-09112023-prompt-engineering)
    - [Warm-up questions](#warm-up-questions)
    - [What is Prompt Engineering?](#what-is-prompt-engineering)
@@ -50,7 +55,7 @@ Figure 1 shows the prompting for the first question and the answer from GPT3.5.
 <table><tr>
 <td><img src="../images/Week3/Picture1.png" width="95%"></td>
 <td><img src="../images/Week3/Picture2.png" width="95%"></td><br><tr>
-<td colspan=2 align="center">Figure 1: <b>Prompting for arithmetic question</b>/td>
+<td colspan=2 align="center">Figure 1: <b>Prompting for arithmetic question</b></td>
 </tr></table>
 
 For the second question, providing an example and an explanation behind the reasoning on how to reach the final answer helped GPT produce the correct answer. Here, the prompt included explicitly stating that the magic box can also convert from coins to apples. 
@@ -154,11 +159,12 @@ The second paper[^2] shows that LLMs do not always say what they think, especial
 
 In conclusion, prompts can be controversial and not always perfect. 
 
-TODO: find the actual papers, put in links and make the references more complete.
+<!-- TODO: find the actual papers, put in links and make the references more complete. -->
 
-[^1]: Zhao, Zihao, et al. "Calibrate before use: Improving few-shot performance of language models." International Conference on Machine Learning. PMLR, 2021.
 
-[^2]: Turpin, Miles, et al. "Language Models Don't Always Say What They Think: Unfaithful Explanations in Chain-of-Thought Prompting." arXiv preprint arXiv:2305.04388 (2023).
+[^1]: Tony Z. Zhao, Eric Wallace, Shi Feng, Dan Klein, Sameer Singh. "[Calibrate before use: Improving few-shot performance of language models](https://arxiv.org/pdf/2102.09690.pdf)." International Conference on Machine Learning. PMLR, 2021.
+
+[^2]: Miles Turpin, Julian Michael, Ethan Perez, Samuel R. Bowman. "[Language Models Don't Always Say What They Think: Unfaithful Explanations in Chain-of-Thought Prompting.](https://arxiv.org/pdf/2305.04388.pdf)" arXiv preprint arXiv:2305.04388, 2023.
 
 # (Wednesday, 09/13/2023) Marked Personas
 
