@@ -13,7 +13,6 @@ slug = "week3"
 
 <author>Blogging Team: Aparna Kishore, Erzhen Hu, Elena Long, Jingping Wan</author>
 
-
 - [(Monday, 09/11/2023) Prompt Engineering](#monday-09112023-prompt-engineering)
    - [Warm-up questions](#warm-up-questions)
    - [What is Prompt Engineering?](#what-is-prompt-engineering)
