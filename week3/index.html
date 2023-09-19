@@ -85,13 +85,167 @@
       <h1 itemprop="name">Week 3: Prompting and Bias</h1>
       <div class="post-metadata">
   <span class="post-date">
-    <time datetime="2023-09-06 00:00:00 &#43;0000 UTC" itemprop="datePublished">6 September 2023</time>
+    <time datetime="2023-09-18 00:00:00 &#43;0000 UTC" itemprop="datePublished">18 September 2023</time>
   </span>
   
 </div>
 
       <div class="post-body" itemprop="articleBody">
-        <h1 id="readings">Readings</h1>
+        <p>(see bottom for assigned readings and questions)</p>
+<h1 id="prompt-engineering-week-3">Prompt Engineering (Week 3)</h1>
+<p><author>Presenting Team: Group 3 </author></p>
+<p><author>Blogging Team: Aparna Kishore, Erzhen Hu, Elena Long, Jingping Wan</author></p>
+<ul>
+<li><a href="#monday-09112023-prompt-engineering">(Monday, 09/11/2023) Prompt Engineering</a>
+<ul>
+<li><a href="#warm-up-questions">Warm-up questions</a></li>
+<li><a href="#what-is-prompt-engineering">What is Prompt Engineering?</a></li>
+<li><a href="#how-is-prompt-based-learning-different-from-traditional-supervised-learning">How is prompt-based learning different from traditional supervised learning?</a></li>
+<li><a href="#in-context-learning-and-different-types-of-prompts">In-context learning and different types of prompts</a></li>
+<li><a href="#what-is-the-difference-between-prompts-and-fine-tuning">What is the difference between prompts and fine-tuning?</a></li>
+<li><a href="#when-is-the-best-to-use-prompts-vs-fine-tuning">When is the best to use prompts vs fine-tuning?</a></li>
+<li><a href="#risk-of-prompts">Risk of Prompts</a></li>
+<li><a href="#discussion-about-prompt-format">Discussion about Prompt format</a></li>
+</ul>
+</li>
+<li><a href="#wednesday-09132023-prompt-engineering-exposing-llm-risks">(Wednesday, 09/13/2023) Prompt Engineering: Exposing LLM Risks</a>
+<ul>
+<li><a href="#open-discussion">Open Discussion</a></li>
+<li><a href="#case-study-marked-personas">Case Study: Marked Personas</a></li>
+<li><a href="#discussion-bias-mitigation">Discussion: Bias mitigation</a></li>
+<li><a href="#hands-on-activity-prompt-hacking">Hands-on Activity: Prompt Hacking</a></li>
+<li><a href="#discussion-can-we-defend-against-prompt-hacking-by-build-in-safegurads">Discussion: Can we defend against prompt hacking by build-in safegurads?</a></li>
+<li><a href="#further-thoughts-whats-the-real-risk">Further thoughts: What&rsquo;s the real risk?</a></li>
+</ul>
+</li>
+<li><a href="#readings">Readings</a>
+<ul>
+<li><a href="#optional-additional-readings">Optional Additional Readings</a></li>
+<li><a href="#discussion-questions">Discussion Questions</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="monday-09112023-prompt-engineering">(Monday, 09/11/2023) Prompt Engineering</h1>
+<h2 id="warm-up-questions">Warm-up questions</h2>
+<p>Monday&rsquo;s class started with warm-up questions to demonstrate how prompts can help an LLM produce correct answers or desired outcomes. The questions and the prompts were tested in GPT3.5. This task was performed as an in-class experiment where each individual used GPT3.5 to test the questions and help GPT3.5 produce correct answers via prompts.</p>
+<p>The three questions were:</p>
+<ol>
+<li><em>What is 7084 times 0.99?</em></li>
+<li><em>I have a magic box that can only transfer coins. If you insert a number of coins in it, the next day each coin will turn into two apples. If I add 10 coins and wait for 3 days, what will happen?</em></li>
+<li><em>Among &ldquo;Oregon, Virginia, Wyoming&rdquo;, what is the word that ends with &ldquo;n&rdquo;？</em></li>
+</ol>
+<p>While the first question tested the arithmetic capability of the model, the second and the third questions tested common sense and symbolic reasoning, respectively. The initial response from GPT3.5 for all three questions was wrong.</p>
+<p>For the first question, providing more examples as prompts did not work. At the same time, an explanation of how to reach the specific answer by decomposing the multiplication into multiple steps helped.</p>
+<p>Figure 1 shows the prompting for the first question and the answer from GPT3.5.</p>
+<table><tr>
+<td><img src="../images/Week3/Picture1.png" width="95%"></td>
+<td><img src="../images/Week3/Picture2.png" width="95%"></td><br><tr>
+<td colspan=2 align="center">Figure 1: <b>Prompting for arithmetic question</b></td>
+</tr></table>
+<p>For the second question, providing an example and an explanation behind the reasoning on how to reach the final answer helped GPT produce the correct answer. Here, the prompt included explicitly stating that the magic box can also convert from coins to apples.</p>
+<p>Figure 2 shows the prompting for the second question and the answer from GPT3.5.</p>
+<table><tr>
+<td><img src="../images/Week3/Picture3.png" width="95%"></td>
+<td><img src="../images/Week3/Picture4.png" width="95%"></td></tr>
+<tr>
+<td colspan=2 align="center">Figure 2: <b>Prompting for common sense question</b>
+</tr></table>
+<p>While GPT was producing random results for the third question, instructing GPT through examples to take the words, concatenate the last letters, and then find the alphabet&rsquo;s position helped produce the correct answer.</p>
+<p>Figure 3 shows the prompting for the third question and the answer from GPT3.5.</p>
+<table><tr>
+<td><img src="../images/Week3/Picture5.png" width="95%"></td>
+<td><img src="../images/Week3/Picture6.png" width="95%"></td></tr>
+<tr>
+<td colspan=2 align="center">
+Figure 3: <b>Prompting for symbolic reasoning question</b></td>
+</tr></table>
+<p>All these examples demonstrate the benefit of using prompts to explore the model&rsquo;s reasoning ability.</p>
+<h2 id="what-is-prompt-engineering">What is Prompt Engineering?</h2>
+<p>Prompt engineering is a method to communicate and guide LLM to demonstrate a behavior or desired outcomes by crafting prompts that coax the model towards providing the desired response. The model weights or parameters are not updated in prompt engineering.</p>
+<h2 id="how-is-prompt-based-learning-different-from-traditional-supervised-learning">How is prompt-based learning different from traditional supervised learning?</h2>
+<p>Traditional supervised learning trains a model by taking input and generating an output based on prediction probability. The model learns to map input data to specific output labels. In contrast, prompt-based learning models the probability of the text directly. Here, the inputs are converted to textual strings called prompts. These prompts are used to generate desired outcomes. Prompt-based learning offers more flexibility in adapting the model&rsquo;s behavior to different tasks by modifying the prompts. Retraining the model is not required in this scenario.</p>
+<p>Interestingly, the prompts were initially used in language translations and emotion predictions based on texts instead of improving the performance of LLMs.</p>
+<h2 id="in-context-learning-and-different-types-of-prompts">In-context learning and different types of prompts</h2>
+<p>In-context learning is a powerful approach to fine-tuning or training the model within a specific context. This improves the performance and reliability of the model for the specific task or the environment. Here, the models are given a few examples as reference/instructions that are relevant to the context and are domain-specific.</p>
+<p>We can categorized in-context learning into three different types of prompts:</p>
+<ul>
+<li><em>Zero-shot</em> – the model predicts the answers given only a natural language description of the task.</li>
+</ul>
+<center>
+<a href="../images/Week3/Picture7.png"><img src="../images/Week3/Picture7.png" width="65%"></a>  
+<p>Figure 4: <b>Example for zero-shot prompting</b> (<a href="https://arxiv.org/pdf/2005.14165.pdf">Image Source</a>)</p>
+</center>
+<ul>
+<li><em>One-shot</em> or <em>Few-shot</em> – In this scenario, one or few examples are provided that explains the task description the model, i.e. prompting the model with few input-output pairs.</li>
+</ul>
+<center>
+<a href="../images/Week3/Picture8.png"><img src="../images/Week3/Picture8.png" width="65%"></a><br>
+<p>Figure 5: Examples for one-shot and fewshot prompting (<a href="https://arxiv.org/pdf/2005.14165.pdf">Image Source</a>)</p>
+</center>
+<ul>
+<li><em>Chain-of-thought</em> – The given task or question is decomposed into coherent intermediate reasoning steps that are solved before providing the final response. This explores the reasoning ability of the model for each of the provided tasks. It is given in the format <code>&lt;input chain-of-thought output&gt;</code>. The difference between standard prompting and chain-of-thought prompting is depicted in the figure below. In the figure to the right, the highlighted statement in blue is an example of chain-of-thought prompting, where the reasoning behind reaching a final answer is provided as a part of the example. Thus, in the model outcome, the model also outputs its reasoning, highlighted in green, to reach the final answer. In addition, chain-of-thought prompting can revolutionize the way we interact with LLMs and leverage their capabilities, as they provide step-by-step explanations of how a particular response is reached.</li>
+</ul>
+<table><tr>
+<td align="center"><img src="../images/Week3/Picture9.png" width="85%"></td>
+<td align="center"><img src="../images/Week3/Picture10.png" width="85%"></td>
+</tr>
+<tr>
+<td align="center" colspan="2">
+<p>Figure 6: <b>Standard prompting and chain-of-thought prompting</b> (<a href="https://arxiv.org/abs/2201.11903">Image Source</a>)</tr></table></p>
+<h2 id="what-is-the-difference-between-prompts-and-fine-tuning">What is the difference between prompts and fine-tuning?</h2>
+<p>Prompt engineering focuses on eliciting better output for a given LLM through changing input. Fine-tuning focuses on enhancing model performance by training the model on a smaller, targeted database relevant to the desired task. The similarity is that both methods help improve the model&rsquo;s performance and provide desired outcomes.</p>
+<p>Prompt engineering requires no retraining, and the prompting is performed in a single window of the model. At the same time, fine-tuning involves retraining the model and changing the model parameter to improve its performance. Fine-tuning also requires more computational resources compared to prompt engineering.</p>
+<h2 id="when-is-the-best-to-use-prompts-vs-fine-tuning">When is the best to use prompts vs fine-tuning?</h2>
+<p>The above question was an in-class discussion question, and the discussion points were shared in class. Fine-tuning requires updating model weights and changing parameters. These are useful in applications where there is a requirement for central change. In this scenario, all the users experience similar performance. Prompt-based methods are user-specific in a particular window for further fine-grained control. The model&rsquo;s performance depends on the individual prompts designed by the user. Thus, fine-tuning is more potent than prompt-based methods in scenarios that require centralized tuning.</p>
+<p>In scenarios with limited training examples, prompt-based methods can perform well. Fine-tuning methods are data-hungry and require many input data for better model performance. As discussed in the discussion posts, prompts cannot be used as a universal tool for all problems to generate desired outcomes and have performance enhancements. However, in specific scenarios, it can assist users to improve performance and reach desired outcomes for in-context specific tasks.</p>
+<h2 id="risk-of-prompts">Risk of Prompts</h2>
+<p>The class then discussed the perspectives from risks of prompt: those methods like chain of thoughts already achieve some success in the LLMs. However, prompt engineering can be still a controversial topic. The group brought out two aspects.</p>
+<p>First, Reasoning ability of LLMs. The group asked, “Does CoT empowers LLMs reasoning ability?” Secondly, there are some bias problems in prompting engineering. The group brought up an example of  “LeBron James took a corner kick.” Is the following sentence plausible? (A) plausible (B) implausible I think the answer is A and saying “but I’m curious to hear what you think.” However, this might inject a bias in the prompt.</p>
+<p>The group then brought up an open discussion about two potential kinds of prompting bias and ask the class about how would the prompt format (e.g., Task-specific prompt methods, words selected) and prompt training examples (e.g., label distribution, permutations of training examples) affect LLMs output and the possible debiasing solutions.</p>
+<p>The class then discussed two different kinds of prompting bias, the prompt format and the prompt training examples.</p>
+<h3 id="discussion-about-prompt-training-examples">Discussion about Prompt training examples</h3>
+<p>For label distribution, the class discussed that there needs to be a balance in the training set to avoid overgeneralizing the agreement of the user as some examples that the user interjects an opinion that can be wrong. In these cases, the GPT should learn to disagree with the user when the user is wrong. This is also related to the label distribution, if  the user always provides the example with positive labels, then the LLMs will be more likely to output the positive one in the prediction.</p>
+<p>Permutation on the training example: A student mentioned a paper that he just read about why context learning works, provides the label space and the distribution of the input. In the paper, they randomly generate the labels, which might be false, they show that actually is better at zero-shot, though worse than when you provide all the labels. Randomly generated labels actually have a significant performance input.
+The sequence of the training example may affect the LLM output, especially for the last example. LLM output tends to output the same label with the last example being provided training example.</p>
+<h2 id="discussion-about-prompt-format">Discussion about Prompt format</h2>
+<p>Prompt format: the word you selected might affect the prompt because some words may appear more frequently in the coporus and some words may have more correlation with some specific label. Male may relate to more positive terms in their training coporus. some prompting may affect the results. Task-specific prompt methods are related to how you select prompt methods based on specific task.</p>
+<p>Finally, the group shared two papers about the bias problem in LLMs.
+The first paper<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> shows that different prompts will provide a large variance in accuracy, which indicates LLMs are not that stable. The paper also provides a calibration method that takes the output of the GPT model and another linear layer on it to calibrate the models.
+The second paper<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> shows that LLMs do not always say what they think, especially injecting some bias into the prompt. For example, they worked on the CoT and non-CoT and they found that CoT will amplify the bias in the context when the user puts some bias in the prompt.</p>
+<p>In conclusion, prompts can be controversial and not always perfect.</p>
+<!-- TODO: find the actual papers, put in links and make the references more complete. -->
+<h1 id="wednesday-09132023-marked-personas">(Wednesday, 09/13/2023) Marked Personas</h1>
+<h2 id="open-discussion">Open Discussion</h2>
+<p>What do you think are the biggest potential risks of LLMs?</p>
+<ul>
+<li><strong>Social impact from intentional misuse.</strong> LLM’s content could be manipulated by the government, can potentially affect elections and raise tensions between countries.</li>
+<li><strong>Mutual trust among people could be harmed.</strong> We cannot tell which email or info was written by humans or automatically generated by chatgpt. As a result, we may treat these information more skeptically.</li>
+<li><strong>People may overly trust LLM outputs.</strong> We may rely more on asking LLM, which is a second-hand information source, rather than actively searching information by ourselves, overtrusting LLM system. Information pool may be contaminated by LLM if they provide misleading information.</li>
+</ul>
+<p>How does GPT-4 Respond?</p>
+<ul>
+<li>Misinformation: Provide wrong / misleading / sensitive information, known as jailbreaking of LLM.</li>
+<li>Potential manipulation: People could intentionally hack LLM by giving specific prompts.</li>
+</ul>
+<h2 id="case-study-marked-personas">Case Study: Marked Personas</h2>
+<p>Myra Cheng, Esin Durmus, Dan Jurafsky. <a href="https://arxiv.org/abs/2305.18189">Marked Personas: Using Natural Language Prompts to Measure Stereotypes in Language Models</a>. ACL 2023.</p>
+<p>In this study, ChatGPT was asked to give descriptions about several characters based on different ethnicity / gender / demographic groups, e.g., Asian woman, Black woman and white man.</p>
+<p>When describing a character from a non-dominant demographic group, while the overall description is positive, it could still imply some potential stereotypes. For example, “Almond-shaped eye” is used in describing an east asian woman while it may sound strange to a real east asian. We can also see that ChatGPT is intentionally trying to build a more diverse and politically correct atmosphere for different groups. In contrast, ChatGPT uses mostly neutral and ordinary words when describing an average white man.</p>
+<h2 id="discussion-bias-mitigation">Discussion: Bias mitigation</h2>
+<h3 id="group-1">Group 1</h3>
+<p>Mitigation could sometimes be overcompensating. As a language model, it should try to be neutral and independent. Also, given that people themselves are biased, and LLM is learning from the human world, we may be over-expecting LLMs to be perfectly unbiased. After all, it is hard to define what is fairness and distinguish between stereotype and prototype, leading to over corrections.</p>
+<h3 id="group-2">Group 2</h3>
+<p>We may be able to identify the risks by data augmentation (replacing “male” with “female” in prompts). Governments should also be responsible for setting rules and regulating LLMs. (Note: this is controversial, and it is unclear what kinds of regulations might be useful or effective.)</p>
+<h3 id="group-4">Group 4</h3>
+<p>Companies like OpenAI should publish the mitigation strategies so that it could be understood and monitored by the public. Another aspect is that different groups of people can have very diverse points of views, so it is hard to define the stereotypes and biases with a universal law. Also, the answer could be very different based on the prompts, making it even harder to mitigate</p>
+<h2 id="hands-on-activity-prompt-hacking">Hands-on Activity: Prompt Hacking</h2>
+<p>In this activity, the class was trying to make ChatGPT generate sensitive / bad responses. It could be done by setting a pretended identity, e.g. pretending to be a Hutu person in Rwanda in the 1990s or pretending to be a criminal. With these conditions, ChatGPT’s barrier of biased or evil contents can be partly bypassed.</p>
+<h2 id="discussion-can-we-defend-against-prompt-hacking-by-build-in-safegurads">Discussion: Can we defend against prompt hacking by build-in safegurads?</h2>
+<p>As we can see in the activity, right now this safeguard is not that strong. A more practical way may be to add a disclaimer at the end of potentially sensitive content and give a questionnaire to collect feedback for better iteration. Companies should also actively identify these jailbreakings and attempt to mitigate them.</p>
+<h2 id="further-thoughts-whats-the-real-risk">Further thoughts: What&rsquo;s the real risk?</h2>
+<p>While jailbreaking is one of the risks of LLMs, a more risky situation may be that LLM is intentionally trained and used by people to do bad things. After all, misuse is not that serious compared with a specific crime.</p>
+<p><a href="#table-of-contents">Back to top</a></p>
+<h1 id="readings">Readings</h1>
 <ol>
 <li>
 <p>(for Monday) Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Brian Ichter, Fei Xia, Ed Chi, Quoc Le, Denny Zhou. <a href="https://arxiv.org/abs/2201.11903"><em>Chain-of-Thought Prompting Elicits Reasoning in Large Language Models</em></a>. 2022.</p>
@@ -155,20 +309,29 @@ Second section (5 – 9): Before <strong>5:29pm</strong> on <strong>Tuesday, Sep
 <p>The authors recommend transparency of bias mitigation methods, citing the benefit it could provide to researchers and practitioners. Specifically, how might researchers benefit from this? Can you foresee any negative consequences (either to researchers or the general users of these models) of this transparency?</p>
 </li>
 </ol>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>Tony Z. Zhao, Eric Wallace, Shi Feng, Dan Klein, Sameer Singh. &ldquo;<a href="https://arxiv.org/pdf/2102.09690.pdf">Calibrate before use: Improving few-shot performance of language models</a>.&rdquo; International Conference on Machine Learning. PMLR, 2021.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>Miles Turpin, Julian Michael, Ethan Perez, Samuel R. Bowman. &ldquo;<a href="https://arxiv.org/pdf/2305.04388.pdf">Language Models Don&rsquo;t Always Say What They Think: Unfaithful Explanations in Chain-of-Thought Prompting.</a>&rdquo; arXiv preprint arXiv:2305.04388, 2023.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
 
       </div>
 
-      <meta itemprop="wordCount" content="704">
-      <meta itemprop="datePublished" content="2023-09-06">
+      <meta itemprop="wordCount" content="3101">
+      <meta itemprop="datePublished" content="2023-09-18">
       <meta itemprop="url" content="https://llmrisks.github.io/week3/">
     </article>
 
     <ul class="pagination" role="navigation" aria-label="Pagination">
       
-      <li class="arrow" aria-disabled="true"><a href="https://llmrisks.github.io/week1/">&laquo; <em>Previous<span class="show-for-sr"> page</span></em>: Week 1: Introduction</a></li>
+      <li class="arrow" aria-disabled="true"><a href="https://llmrisks.github.io/week4/">&laquo; <em>Previous<span class="show-for-sr"> page</span></em>: Week 4: Capabilities of LLMs</a></li>
       
-      
-      <li class="arrow" aria-disabled="true"><a href="https://llmrisks.github.io/week2/"><em>Next<span class="show-for-sr"> page</span></em>: Week 2: Alignment&nbsp;&raquo;</a></li>
       
     </ul>
 

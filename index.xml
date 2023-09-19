@@ -8,10 +8,18 @@
     <language>en-us</language>
     <managingEditor>evans@virginia.edu (David Evans)</managingEditor>
     <webMaster>evans@virginia.edu (David Evans)</webMaster>
-    <lastBuildDate>Wed, 23 Aug 2023 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://llmrisks.github.io/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Mon, 18 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://llmrisks.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Week 3: Prompting and Bias</title>
+      <link>https://llmrisks.github.io/week3/</link>
+      <pubDate>Mon, 18 Sep 2023 00:00:00 +0000</pubDate>
+      <author>evans@virginia.edu (David Evans)</author>
+      <guid>https://llmrisks.github.io/week3/</guid>
+      <description>(see bottom for assigned readings and questions)
+Prompt Engineering (Week 3) Presenting Team: Group 3 
+Blogging Team: Aparna Kishore, Erzhen Hu, Elena Long, Jingping Wan
+ (Monday, 09/11/2023) Prompt Engineering  Warm-up questions What is Prompt Engineering? How is prompt-based learning different from traditional supervised learning? In-context learning and different types of prompts What is the difference between prompts and fine-tuning? When is the best to use prompts vs fine-tuning?</description>
+    </item>
     
     <item>
       <title>Week 4: Capabilities of LLMs</title>
@@ -45,7 +53,7 @@ Table of Contents  (Monday, 09/04/2023) Introduction to Alignment  Introduction 
       <guid>https://llmrisks.github.io/week1/</guid>
       <description>(see bottom for assigned readings and questions)
 Attention, Transformers, and BERT Monday, 28 August
-Transformers1 are a class of deep learning models that have revolutionized the field of natural language processing (NLP) and various other domains. The concept of transformers originated as an attempt to address the limitations of traditional recurrent neural networks (RNNs) in sequential data processing. Here&amp;rsquo;s an overview of transformers&amp;rsquo; evolution and significance.
+Transformers1 are a class of deep learning models that have revolutionized the field of natural language processing (NLP) and various other domains. The concept of transformers originated as an attempt to address the limitations of traditional recurrent neural networks (RNNs) in sequential data processing. Here&amp;rsquo;s an overview of transformers&#39; evolution and significance.
 Background and Origin RNNs2 were one of the earliest models used for sequence-based tasks in machine learning.</description>
     </item>
     
