@@ -9,7 +9,7 @@ slug = "week3"
 
 # Prompt Engineering (Week 3)
 
-<author>Presenting Team: Group 3 </author>
+<author>Presenting Team: Haolin Liu, Xueren Ge, Ji  Hyun Kim, Stephanie Schoch </author>
 
 <author>Blogging Team: Aparna Kishore, Erzhen Hu, Elena Long, Jingping Wan</author>
 
