@@ -88,7 +88,7 @@ About 70% of students could get an answer “A” by searching google at first t
 <table><tr>
   <td><img src="../images/Week4/PaLM_fine_tuning_img.png" width="95%"></td>
 </tr>
-  <td colspan=1 align="center"> Figure 4 <b> <a href="https://youtu.be/cNfINi5CNbY"> (Image source)</a></b>
+  <td colspan=1 align="center"> Figure 4 <b> <a href="https://www.youtube.com/watch?v=ixRanV-rdAQ">(Image source)</a></b>
 </table>
 
 Med-PalM2 score 67.2% on USMLE-type questions in the MedQA dataset. Considering that pproximate medical pass mark was 60%, Med-PalM2 was the first LLM model who passed the approximate medical pass mark by Dec 22. 
