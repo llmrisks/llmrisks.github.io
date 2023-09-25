@@ -19,7 +19,7 @@ The presenters highlighted three types of data to consider for a task: the pre-t
 <table><tr>
   <td><img src="../images/Week4/llms_vs_fine_tuned_models.png" width="95%"></td>
 </tr>
-  <td colspan=1 align="center"> Figure 1 <b>Figure caption <a href="https://arxiv.org/abs/2307.11346">(Image source)</a></b></td>
+  <td colspan=1 align="center"> Figure 1 <b> <a href="https://arxiv.org/abs/2307.11346">(Image source)</a></b></td>
 </table>
 
 At this point, the professor prompted a discussion question asking whether wouldn’t it be better to do a more fair comparison by training on the same amount of data. The discussion went on and the presenters then continued talking about the practical guidelines from a task perspective.
@@ -51,7 +51,7 @@ Group 1: Created a plug-in that allows a user to make DIY furniture or buy new f
 <table><tr>
   <td><img src="../images/Week4/group_1_plugin.png" width="95%"></td>
 </tr>
-  <td colspan=1 align="center"> Figure 2 <b>Figure caption </b></td>
+  <td colspan=1 align="center"> Figure 2 <b>Group 1 Ideation </b></td>
 </table>
 
 Group 2: Suggested a plug-in that generates the profile of a fake person with a fake social media account. Essentially, it aimed to create a convincing online persona that would resemble a real person but was entirely fictional.
@@ -62,7 +62,7 @@ Group 3: Created a plug-in that uses a person’s portfolio/resume to match them
 <table><tr>
   <td><img src="../images/Week4/group_3_plugin.png" width="95%"></td>
 </tr>
-  <td colspan=1 align="center"> Figure 3 <b>Figure caption </b></td>
+  <td colspan=1 align="center"> Figure 3 <b>Group 3 Ideation </b></td>
 </table>
 
 Group 4: Shared the concept of a plug-in that allows a user to find the taxonomy of a particular research paper, and place it in a research area. Moreover, it offered the valuable function of returning related papers, thus assisting users in discovering additional relevant research in their field of interest.
