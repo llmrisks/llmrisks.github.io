@@ -70,7 +70,8 @@ Group 4: Shared the concept of a plug-in that allows a user to find the taxonomy
 The discussion on Monday concluded with the class appreciating each other’s ideas on the possibilities of using plug-ins but also their limitations and associated risks. This exchange of perspectives and ideas highlighted the creative ways in which technology and AI-driven tools could be used to address various challenges and opportunities across different domains. 
 
 # Wednesday, September 20
-Introduction: 
+Introduction 
+
 Monday’s class started with warm-up story about a young boy who finally got diagnosed from ChatGPT. He saw 17 doctors over 3years for chronic pain but they couldn’t diagnosis what made boy painful. One day, his parents explained the boy’s symptom to ChatGPT and they got a reliable answer. They brought this information to a doctor and after several tests, he could finally get a diagnosis which was correct information from ChatGPT. This story presents a bright possibilities for the medical use of Chat GPT. We also got a simple question and had to solve the problem not using ChatGPT.
 
 <table><tr>
@@ -114,18 +115,28 @@ We now know that Med-PaLM2 has expert-level of medical knowledge exceeding any o
   <td colspan=1 align="center"> Figure 3 <b>Group 3 Ideation </b></td>
 </table>
 
-Discussion 1: What are the potential implications of LLMs reaching or surpassing human expertise in medical knowledge? Find advantages and disadvantages of Med-LLM. How can we make the model perform better? What are the limitations?
+Discussions
+
+What are the potential implications of LLMs reaching or surpassing human expertise in medical knowledge? Find advantages and disadvantages of Med-LLM. How can we make the model perform better? What are the limitations?
+
 •	At what point do we trust doctors vs LLMs and to what extent?
 
 •	Are LLMs more convenient than going to a doctor?
 
 •	People will be more prone to self-diagnosis
+
 •	People could be more honest with AI than a human being
+
 •	Should we let AI write prescriptions?
+
 •	How can we truly verify what is right and what is wrong?
+
 •	AI could obviously give a better diagnosis than human whose experiences effect diagnoses
+
 •	What would happen when different Ais give different results?
+
 •	There is a lot of data to train with and fine tune. Is this worth the time and effort?
+
 •	Who is taking accountability for the mistakes made by AI? If a doctor does something wrong, they can have their license taken, but this is that the case for AI
 
 
@@ -147,7 +158,8 @@ Discussion 1: What are the potential implications of LLMs reaching or surpassing
   <td colspan=1 align="center"> Figure 3 <b>Group 3 Ideation </b></td>
 </table>
 
-Discussion 2. How can we refine and improve LLMs like Med-PaLM2 to be more effective in healthcare applications?
+How can we refine and improve LLMs like Med-PaLM2 to be more effective in healthcare applications?
+
 <table><tr>
   <td><img src="../images/Week4/group_3_plugin.png" width="95%"></td>
 </tr>
