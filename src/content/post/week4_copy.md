@@ -77,7 +77,7 @@ Wednesday's class started with warm-up story about a young boy who finally got d
 <table><tr>
   <td><img src="../images/Week4/ATP_img.png" width="95%"></td>
 </tr>
-  <td colspan=1 align="center"> Figure 3 <b></b></td>
+  <td colspan=1 align="center"> Figure 4 <b></b></td>
 </table>
 
 
@@ -88,7 +88,7 @@ About 70% of students could get an answer “A” by searching google at first t
 <table><tr>
   <td><img src="../images/Week4/PaLM_fine_tuning_img.png" width="95%"></td>
 </tr>
-  <td colspan=1 align="center"> Figure 4 <b> <a href="https://www.youtube.com/watch?v=ixRanV-rdAQ">(Image source)</a></b>
+  <td colspan=1 align="center"> Figure 5 <b> <a href="https://www.youtube.com/watch?v=ixRanV-rdAQ">(Image source)</a></b>
 </table>
 
 Med-PalM2 score 67.2% on USMLE-type questions in the MedQA dataset. Considering that pproximate medical pass mark was 60%, Med-PalM2 was the first LLM model who passed the approximate medical pass mark by Dec 22. 
@@ -98,14 +98,14 @@ Presenter introduced Med-PaLM2 which is fine-tuned PaLM2 with a medical knowledg
 <table><tr>
   <td><img src="../images/Week4/Med-PaLM2_score_1.png" width="95%"></td>
 </tr>
-  <td colspan=1 align="center"> Figure 5 <b> <a href="https://sites.research.google/med-palm/">(Image source)</a></b>
+  <td colspan=1 align="center"> Figure 6 <b> <a href="https://sites.research.google/med-palm/">(Image source)</a></b>
 </table>
 Recently researchers released Med-PaLM2 which was trained more data and upgraded and made a same experiment. It showed that Med-PaLM2 scored an accuracy of 86.5% on USMLE-type-questions in the MedQA dataset. Compared with other LLM performance before 2023, Med-PaLM2 was the first LLM to reach expert performance.
 
 <table><tr>
   <td><img src="../images/Week4/Med-PaLM2_score_2.png" width="95%"></td>
 </tr>
-  <td colspan=1 align="center"> Figure 6 <b> <a href="https://www.nature.com/articles/s41586-023-06291-2"
+  <td colspan=1 align="center"> Figure 7 <b> <a href="https://www.nature.com/articles/s41586-023-06291-2"
 >(Image source)</a></b>
 </table>
 
@@ -114,7 +114,7 @@ We now know that Med-PaLM2 has expert-level of medical knowledge exceeding any o
 <table><tr>
   <td><img src="../images/Week4/Med-PaLM2_Performance.png" width="95%"></td>
 </tr>
-  <td colspan=1 align="center"> Figure 7 <b> <a href="https://arxiv.org/pdf/2305.09617.pdf">(Image source)</a></b>
+  <td colspan=1 align="center"> Figure 8 <b> <a href="https://arxiv.org/pdf/2305.09617.pdf">(Image source)</a></b>
 </table>
 
 Discussions
@@ -145,13 +145,13 @@ What are the potential implications of LLMs reaching or surpassing human experti
 <table><tr>
   <td><img src="../images/Week4/Med-PaLM2_performance_2.png" width="95%"></td>
 </tr>
-  <td colspan=1 align="center"> Figure 8 <b> <a href="https://arxiv.org/pdf/2305.09617.pdf">(Image source)</a></b>
+  <td colspan=1 align="center"> Figure 9 <b> <a href="https://arxiv.org/pdf/2305.09617.pdf">(Image source)</a></b>
 </table>
 
 <table><tr>
   <td><img src="../images/Week4/Med-PaLM2_x_ray.png" width="95%"></td>
 </tr>
-  <td colspan=1 align="center"> Figure 9 <b> <a href="https://sites.research.google/med-palm/">(Image source)</a></b>
+  <td colspan=1 align="center"> Figure 10 <b> <a href="https://sites.research.google/med-palm/">(Image source)</a></b>
 </table>
 
 How can we refine and improve LLMs like Med-PaLM2 to be more effective in healthcare applications?
