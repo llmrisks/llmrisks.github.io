@@ -88,7 +88,7 @@ About 70% of students could get an answer “A” by searching google at first t
 <table><tr>
   <td><img src="../images/Week4/PaLM_fine_tuning_img.png" width="95%"></td>
 </tr>
-  <td colspan=1 align="center"> Figure 3 <b>Group 3 Ideation </b></td>
+  <td colspan=1 align="center"> Figure 4 <b> </b></td>
 </table>
 
 Med-PalM2 score 67.2% on USMLE-type questions in the MedQA dataset. Considering that pproximate medical pass mark was 60%, Med-PalM2 was the first LLM model who passed the approximate medical pass mark by Dec 22. 
@@ -98,21 +98,21 @@ Presenter introduced Med-PaLM2 which is fine-tuned PaLM2 with a medical knowledg
 <table><tr>
   <td><img src="../images/Week4/Med-PaLM2_score_1.png" width="95%"></td>
 </tr>
-  <td colspan=1 align="center"> Figure 3 <b>Group 3 Ideation </b></td>
+  <td colspan=1 align="center"> Figure 5 <b> </b></td>
 </table>
 Recently researchers released Med-PaLM2 which was trained more data and upgraded and made a same experiment. It showed that Med-PaLM2 scored an accuracy of 86.5% on USMLE-type-questions in the MedQA dataset. Compared with other LLM performance before 2023, Med-PaLM2 was the first LLM to reach expert performance.
 
 <table><tr>
   <td><img src="../images/Week4/Med-PaLM2_score_2.png" width="95%"></td>
 </tr>
-  <td colspan=1 align="center"> Figure 3 <b>Group 3 Ideation </b></td>
+  <td colspan=1 align="center"> Figure 6 <b> </b></td>
 </table>
 We now know that Med-PaLM2 has expert-level of medical knowledge exceeding any other LLM models. Then, how about comparing it to a human physician. The results seemed very interesting. When it comes to High Quality Answer Traits, Med-PaLM2 showed better reflects consensus, better reading comprehension, better knowledge to recall, and better reasoning. When they tested Potential Answer Risks, physician omitted more information, and gave slightly more evidence of demographic bias, and potentially greater extent/likelihood of harm but, Med-PaLM2 gave more inaccurate/irrelevant information. It seemed that there are even more many advantages than actual physician. Now we all can agree that Med-PaLM2 technically performs very well and move on to the discussion. 
 
 <table><tr>
   <td><img src="../images/Week4/Med-PaLM2_Performance.png" width="95%"></td>
 </tr>
-  <td colspan=1 align="center"> Figure 3 <b>Group 3 Ideation </b></td>
+  <td colspan=1 align="center"> Figure 7 <bGroup 3 Ideation </b></td>
 </table>
 
 Discussions
@@ -143,13 +143,13 @@ What are the potential implications of LLMs reaching or surpassing human experti
 <table><tr>
   <td><img src="../images/Week4/Med-PaLM2_performance_2.png" width="95%"></td>
 </tr>
-  <td colspan=1 align="center"> Figure 3 <b>Group 3 Ideation </b></td>
+  <td colspan=1 align="center"> Figure 8 <b></b></td>
 </table>
 
 <table><tr>
   <td><img src="../images/Week4/Med-PaLM2_x_ray.png" width="95%"></td>
 </tr>
-  <td colspan=1 align="center"> Figure 3 <b>Group 3 Ideation </b></td>
+  <td colspan=1 align="center"> Figure 9 <bGroup 3 Ideation </b></td>
 </table>
 
 How can we refine and improve LLMs like Med-PaLM2 to be more effective in healthcare applications?
