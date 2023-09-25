@@ -77,7 +77,7 @@ Wednesday's class started with warm-up story about a young boy who finally got d
 <table><tr>
   <td><img src="../images/Week4/ATP_img.png" width="95%"></td>
 </tr>
-  <td colspan=1 align="center"> Figure 3 <b>Group 3 Ideation </b></td>
+  <td colspan=1 align="center"> Figure 3 <b></b></td>
 </table>
 
 
@@ -88,9 +88,8 @@ About 70% of students could get an answer “A” by searching google at first t
 <table><tr>
   <td><img src="../images/Week4/PaLM_fine_tuning_img.png" width="95%"></td>
 </tr>
-  <td colspan=1 align="center"> Figure 4 <b> </b></td>
+  <td colspan=1 align="center"> Figure 4 <b> <a href="https://www.youtube.com/watchv=cNfINi5CNbY&t=7520s"> (Image source)</a></b>
 </table>
-
 Med-PalM2 score 67.2% on USMLE-type questions in the MedQA dataset. Considering that pproximate medical pass mark was 60%, Med-PalM2 was the first LLM model who passed the approximate medical pass mark by Dec 22. 
 
 
