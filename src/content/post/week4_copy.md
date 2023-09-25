@@ -143,7 +143,7 @@ What are the potential implications of LLMs reaching or surpassing human experti
 <table><tr>
   <td><img src="../images/Week4/Med-PaLM2_performance_2.png" width="95%"></td>
 </tr>
-  <td colspan=1 align="center"> Figure 8 <b></b></td>
+  <td colspan=1 align="center"> Figure 8 <b> <a href="https://arxiv.org/pdf/2305.09617.pdf">(Image source)</a></b>
 </table>
 
 <table><tr>
