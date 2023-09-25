@@ -72,10 +72,10 @@ The discussion on Monday concluded with the class appreciating each other’s id
 # Wednesday, September 20
 Introduction 
 
-Monday’s class started with warm-up story about a young boy who finally got diagnosed from ChatGPT. He saw 17 doctors over 3years for chronic pain but they couldn’t diagnosis what made boy painful. One day, his parents explained the boy’s symptom to ChatGPT and they got a reliable answer. They brought this information to a doctor and after several tests, he could finally get a diagnosis which was correct information from ChatGPT. This story presents a bright possibilities for the medical use of Chat GPT. We also got a simple question and had to solve the problem not using ChatGPT.
+Wednesday's class started with warm-up story about a young boy who finally got diagnosed from ChatGPT. He saw 17 doctors over 3years for chronic pain but they couldn’t diagnosis what made boy painful. One day, his parents explained the boy’s symptom to ChatGPT and they got a reliable answer. They brought this information to a doctor and after several tests, he could finally get a diagnosis which was correct information from ChatGPT. This story presents a bright possibilities for the medical use of Chat GPT. We also got a simple question and had to solve the problem not using ChatGPT.
 
 <table><tr>
-  <td><img src="../images/Week4/group_3_plugin.png" width="95%"></td>
+  <td><img src="../images/Week4/ATP_img.png" width="95%"></td>
 </tr>
   <td colspan=1 align="center"> Figure 3 <b>Group 3 Ideation </b></td>
 </table>
@@ -86,7 +86,7 @@ Med-PaLM2
 About 70% of students could get an answer “A” by searching google at first trial, and 30% of students could get an answer by several attempts. Later, we were asked to use ChatGPT to get an answer. All students could get a correct answer for at first trial. Presenter said, “Even though we can get a medical information through searching a google, it is much faster and convenient to use ChatGPT”. Actually, ChatGPT has been pre-trained from many documents from google, so it is good at giving general information. However, if we ask deeper and expertise questions to ChatGPT, it may not give an answer. We indeed need a LLM model which is trained from medical information to get a reliable result. 
 
 <table><tr>
-  <td><img src="../images/Week4/group_3_plugin.png" width="95%"></td>
+  <td><img src="../images/Week4/PaLM_fine_tuning_img.png" width="95%"></td>
 </tr>
   <td colspan=1 align="center"> Figure 3 <b>Group 3 Ideation </b></td>
 </table>
@@ -96,21 +96,21 @@ Med-PalM2 score 67.2% on USMLE-type questions in the MedQA dataset. Considering 
 
 Presenter introduced Med-PaLM2 which is fine-tuned PaLM2 with a medical knowledge. 
 <table><tr>
-  <td><img src="../images/Week4/group_3_plugin.png" width="95%"></td>
+  <td><img src="../images/Week4/Med-PaLM2_score_1.png" width="95%"></td>
 </tr>
   <td colspan=1 align="center"> Figure 3 <b>Group 3 Ideation </b></td>
 </table>
 Recently researchers released Med-PaLM2 which was trained more data and upgraded and made a same experiment. It showed that Med-PaLM2 scored an accuracy of 86.5% on USMLE-type-questions in the MedQA dataset. Compared with other LLM performance before 2023, Med-PaLM2 was the first LLM to reach expert performance.
 
 <table><tr>
-  <td><img src="../images/Week4/group_3_plugin.png" width="95%"></td>
+  <td><img src="../images/Week4/Med-PaLM2_score_2.png" width="95%"></td>
 </tr>
   <td colspan=1 align="center"> Figure 3 <b>Group 3 Ideation </b></td>
 </table>
 We now know that Med-PaLM2 has expert-level of medical knowledge exceeding any other LLM models. Then, how about comparing it to a human physician. The results seemed very interesting. When it comes to High Quality Answer Traits, Med-PaLM2 showed better reflects consensus, better reading comprehension, better knowledge to recall, and better reasoning. When they tested Potential Answer Risks, physician omitted more information, and gave slightly more evidence of demographic bias, and potentially greater extent/likelihood of harm but, Med-PaLM2 gave more inaccurate/irrelevant information. It seemed that there are even more many advantages than actual physician. Now we all can agree that Med-PaLM2 technically performs very well and move on to the discussion. 
 
 <table><tr>
-  <td><img src="../images/Week4/group_3_plugin.png" width="95%"></td>
+  <td><img src="../images/Week4/Med-PaLM2_Performance.png" width="95%"></td>
 </tr>
   <td colspan=1 align="center"> Figure 3 <b>Group 3 Ideation </b></td>
 </table>
@@ -141,30 +141,18 @@ What are the potential implications of LLMs reaching or surpassing human experti
 
 
 <table><tr>
-  <td><img src="../images/Week4/group_3_plugin.png" width="95%"></td>
+  <td><img src="../images/Week4/Med-PaLM2_performance_2.png" width="95%"></td>
 </tr>
   <td colspan=1 align="center"> Figure 3 <b>Group 3 Ideation </b></td>
 </table>
 
 <table><tr>
-  <td><img src="../images/Week4/group_3_plugin.png" width="95%"></td>
-</tr>
-  <td colspan=1 align="center"> Figure 3 <b>Group 3 Ideation </b></td>
-</table>
-
-<table><tr>
-  <td><img src="../images/Week4/group_3_plugin.png" width="95%"></td>
+  <td><img src="../images/Week4/Med-PaLM2_x_ray.png" width="95%"></td>
 </tr>
   <td colspan=1 align="center"> Figure 3 <b>Group 3 Ideation </b></td>
 </table>
 
 How can we refine and improve LLMs like Med-PaLM2 to be more effective in healthcare applications?
-
-<table><tr>
-  <td><img src="../images/Week4/group_3_plugin.png" width="95%"></td>
-</tr>
-  <td colspan=1 align="center"> Figure 3 <b>Group 3 Ideation </b></td>
-</table>
 
 
 [^1]: Jingfeng Yang, Hongye Jin, Ruixiang Tang, Xiaotian Han, Qizhang Feng, Haoming Jiang, Bing Yin, Xia Hu. Harnessing the Power of LLMs in Practice: A Survey on ChatGPT and Beyond. April 2023. https://arxiv.org/abs/2304.13712.
