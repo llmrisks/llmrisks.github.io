@@ -105,7 +105,7 @@ Recently researchers released Med-PaLM2 which was trained more data and upgraded
 <table><tr>
   <td><img src="../images/Week4/Med-PaLM2_score_2.png" width="95%"></td>
 </tr>
-  <td colspan=1 align="center"> Figure 5 <b> <a href="https://www.nature.com/articles/s41586-023-06291-2"
+  <td colspan=1 align="center"> Figure 6 <b> <a href="https://www.nature.com/articles/s41586-023-06291-2"
 >(Image source)</a></b>
 </table>
 
