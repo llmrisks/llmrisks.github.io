@@ -105,8 +105,10 @@ Recently researchers released Med-PaLM2 which was trained more data and upgraded
 <table><tr>
   <td><img src="../images/Week4/Med-PaLM2_score_2.png" width="95%"></td>
 </tr>
-  <td colspan=1 align="center"> Figure 6 <b> </b></td>
+  <td colspan=1 align="center"> Figure 5 <b> <a href="https://www.nature.com/articles/s41586-023-06291-2"
+>(Image source)</a></b>
 </table>
+
 We now know that Med-PaLM2 has expert-level of medical knowledge exceeding any other LLM models. Then, how about comparing it to a human physician. The results seemed very interesting. When it comes to High Quality Answer Traits, Med-PaLM2 showed better reflects consensus, better reading comprehension, better knowledge to recall, and better reasoning. When they tested Potential Answer Risks, physician omitted more information, and gave slightly more evidence of demographic bias, and potentially greater extent/likelihood of harm but, Med-PaLM2 gave more inaccurate/irrelevant information. It seemed that there are even more many advantages than actual physician. Now we all can agree that Med-PaLM2 technically performs very well and move on to the discussion. 
 
 <table><tr>
