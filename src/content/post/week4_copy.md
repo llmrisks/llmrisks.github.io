@@ -69,6 +69,87 @@ Group 4: Shared the concept of a plug-in that allows a user to find the taxonomy
 
 The discussion on Monday concluded with the class appreciating each other’s ideas on the possibilities of using plug-ins but also their limitations and associated risks. This exchange of perspectives and ideas highlighted the creative ways in which technology and AI-driven tools could be used to address various challenges and opportunities across different domains. 
 
+# Wednesday, September 20
+Introduction
+Monday’s class started with warm-up story about a young boy who finally got diagnosed from ChatGPT. He saw 17 doctors over 3years for chronic pain but they couldn’t diagnosis what made boy painful. One day, his parents explained the boy’s symptom to ChatGPT and they got a reliable answer. They brought this information to a doctor and after several tests, he could finally get a diagnosis which was correct information from ChatGPT. This story presents a bright possibilities for the medical use of Chat GPT. We also got a simple question and had to solve the problem not using ChatGPT.
+<table><tr>
+  <td><img src="../images/Week4/group_3_plugin.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"> Figure 3 <b>Group 3 Ideation </b></td>
+</table>
+
+
+Med-PaLM2
+About 70% of students could get an answer “A” by searching google at first trial, and 30% of students could get an answer by several attempts. Later, we were asked to use ChatGPT to get an answer. All students could get a correct answer for at first trial. Presenter said, “Even though we can get a medical information through searching a google, it is much faster and convenient to use ChatGPT”. Actually, ChatGPT has been pre-trained from many documents from google, so it is good at giving general information. However, if we ask deeper and expertise questions to ChatGPT, it may not give an answer. We indeed need a LLM model which is trained from medical information to get a reliable result. 
+
+<table><tr>
+  <td><img src="../images/Week4/group_3_plugin.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"> Figure 3 <b>Group 3 Ideation </b></td>
+</table>
+
+Med-PalM2 score 67.2% on USMLE-type questions in the MedQA dataset. Considering that pproximate medical pass mark was 60%, Med-PalM2 was the first LLM model who passed the approximate medical pass mark by Dec 22. 
+
+
+Presenter introduced Med-PaLM2 which is fine-tuned PaLM2 with a medical knowledge. 
+<table><tr>
+  <td><img src="../images/Week4/group_3_plugin.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"> Figure 3 <b>Group 3 Ideation </b></td>
+</table>
+Recently researchers released Med-PaLM2 which was trained more data and upgraded and made a same experiment. It showed that Med-PaLM2 scored an accuracy of 86.5% on USMLE-type-questions in the MedQA dataset. Compared with other LLM performance before 2023, Med-PaLM2 was the first LLM to reach expert performance.
+
+<table><tr>
+  <td><img src="../images/Week4/group_3_plugin.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"> Figure 3 <b>Group 3 Ideation </b></td>
+</table>
+We now know that Med-PaLM2 has expert-level of medical knowledge exceeding any other LLM models. Then, how about comparing it to a human physician. The results seemed very interesting. When it comes to High Quality Answer Traits, Med-PaLM2 showed better reflects consensus, better reading comprehension, better knowledge to recall, and better reasoning. When they tested Potential Answer Risks, physician omitted more information, and gave slightly more evidence of demographic bias, and potentially greater extent/likelihood of harm but, Med-PaLM2 gave more inaccurate/irrelevant information. It seemed that there are even more many advantages than actual physician. Now we all can agree that Med-PaLM2 technically performs very well and move on to the discussion. 
+
+<table><tr>
+  <td><img src="../images/Week4/group_3_plugin.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"> Figure 3 <b>Group 3 Ideation </b></td>
+</table>
+
+Discussion1. What are the potential implications of LLMs reaching or surpassing human expertise in medical knowledge? Find advantages and disadvantages of Med-LLM. How can we make the model perform better? What are the limitations?
+•	At what point do we trust doctors vs LLMs and to what extent?
+•	Are LLMs more convenient than going to a doctor?
+•	People will be more prone to self-diagnosis
+•	People could be more honest with AI than a human being
+•	Should we let AI write prescriptions?
+•	How can we truly verify what is right and what is wrong?
+•	AI could obviously give a better diagnosis than human whose experiences effect diagnoses
+•	What would happen when different Ais give different results?
+•	There is a lot of data to train with and fine tune. Is this worth the time and effort?
+•	Who is taking accountability for the mistakes made by AI? If a doctor does something wrong, they can have their license taken, but this is that the case for AI
+
+
+<table><tr>
+  <td><img src="../images/Week4/group_3_plugin.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"> Figure 3 <b>Group 3 Ideation </b></td>
+</table>
+
+<table><tr>
+  <td><img src="../images/Week4/group_3_plugin.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"> Figure 3 <b>Group 3 Ideation </b></td>
+</table>
+
+<table><tr>
+  <td><img src="../images/Week4/group_3_plugin.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"> Figure 3 <b>Group 3 Ideation </b></td>
+</table>
+
+Discussion 2. How can we refine and improve LLMs like Med-PaLM2 to be more effective in healthcare applications?
+<table><tr>
+  <td><img src="../images/Week4/group_3_plugin.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"> Figure 3 <b>Group 3 Ideation </b></td>
+</table>
+
 
 [^1]: Jingfeng Yang, Hongye Jin, Ruixiang Tang, Xiaotian Han, Qizhang Feng, Haoming Jiang, Bing Yin, Xia Hu. Harnessing the Power of LLMs in Practice: A Survey on ChatGPT and Beyond. April 2023. https://arxiv.org/abs/2304.13712.
 [^2]: OpenAI. GPT-4 Technical Report. March 2023. https://arxiv.org/abs/2303.08774
