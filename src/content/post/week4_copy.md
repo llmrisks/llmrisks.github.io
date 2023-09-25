@@ -112,7 +112,7 @@ We now know that Med-PaLM2 has expert-level of medical knowledge exceeding any o
 <table><tr>
   <td><img src="../images/Week4/Med-PaLM2_Performance.png" width="95%"></td>
 </tr>
-  <td colspan=1 align="center"> Figure 7 <bGroup 3 Ideation </b></td>
+  <td colspan=1 align="center"> Figure 7 <b> <a href="https://arxiv.org/pdf/2305.09617.pdf">(Image source)</a></b>
 </table>
 
 Discussions
