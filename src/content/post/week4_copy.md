@@ -98,7 +98,7 @@ Presenter introduced Med-PaLM2 which is fine-tuned PaLM2 with a medical knowledg
 <table><tr>
   <td><img src="../images/Week4/Med-PaLM2_score_1.png" width="95%"></td>
 </tr>
-  <td colspan=1 align="center"> Figure 5 <b> </b></td>
+  <td colspan=1 align="center"> Figure 5 <b> <a href="https://sites.research.google/med-palm/">(Image source)</a></b>
 </table>
 Recently researchers released Med-PaLM2 which was trained more data and upgraded and made a same experiment. It showed that Med-PaLM2 scored an accuracy of 86.5% on USMLE-type-questions in the MedQA dataset. Compared with other LLM performance before 2023, Med-PaLM2 was the first LLM to reach expert performance.
 
@@ -149,7 +149,7 @@ What are the potential implications of LLMs reaching or surpassing human experti
 <table><tr>
   <td><img src="../images/Week4/Med-PaLM2_x_ray.png" width="95%"></td>
 </tr>
-  <td colspan=1 align="center"> Figure 9 <bGroup 3 Ideation </b></td>
+  <td colspan=1 align="center"> Figure 9 <b> <a href="https://sites.research.google/med-palm/">(Image source)</a></b>
 </table>
 
 How can we refine and improve LLMs like Med-PaLM2 to be more effective in healthcare applications?
