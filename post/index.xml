@@ -8,7 +8,11 @@
     <language>en-us</language>
     <managingEditor>evans@virginia.edu (David Evans)</managingEditor>
     <webMaster>evans@virginia.edu (David Evans)</webMaster>
-    <lastBuildDate>Mon, 18 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://llmrisks.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 18 Sep 2023 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://llmrisks.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Week 3: Prompting and Bias</title>
       <link>https://llmrisks.github.io/week3/</link>
@@ -19,20 +23,6 @@
 Prompt Engineering (Week 3) Presenting Team: Haolin Liu, Xueren Ge, Ji Hyun Kim, Stephanie Schoch 
 Blogging Team: Aparna Kishore, Erzhen Hu, Elena Long, Jingping Wan
  (Monday, 09/11/2023) Prompt Engineering  Warm-up questions What is Prompt Engineering? How is prompt-based learning different from traditional supervised learning? In-context learning and different types of prompts What is the difference between prompts and fine-tuning? When is the best to use prompts vs fine-tuning?</description>
-    </item>
-    
-    <item>
-      <title>Week 4: Capabilities of LLMs</title>
-      <link>https://llmrisks.github.io/week4/</link>
-      <pubDate>Wed, 13 Sep 2023 00:00:00 +0000</pubDate>
-      <author>evans@virginia.edu (David Evans)</author>
-      <guid>https://llmrisks.github.io/week4/</guid>
-      <description>Readings Monday:
-  Jingfeng Yang, Hongye Jin, Ruixiang Tang, Xiaotian Han, Qizhang Feng, Haoming Jiang, Bing Yin, Xia Hu. Harnessing the Power of LLMs in Practice: A Survey on ChatGPT and Beyond. April 2023. https://arxiv.org/abs/2304.13712. [PDF]
-  OpenAI. GPT-4 Technical Report. March 2023. https://arxiv.org/abs/2303.08774 [PDF]
-  Optionally, also explore https://openai.com/blog/chatgpt-plugins.
-Wednesday:
-Karan Singhal, Tao Tu, Juraj Gottweis, Rory Sayres, Ellery Wulczyn, Le Hou, Kevin Clark, Stephen Pfohl, Heather Cole-Lewis, Darlene Neal, Mike Schaekermann, Amy Wang, Mohamed Amin, Sami Lachgar, Philip Mansfield, Sushant Prakash, Bradley Green, Ewa Dominowska, Blaise Aguera y Arcas, Nenad Tomasev, Yun Liu, Renee Wong, Christopher Semturs, S.</description>
     </item>
     
     <item>
@@ -53,7 +43,7 @@ Table of Contents  (Monday, 09/04/2023) Introduction to Alignment  Introduction 
       <guid>https://llmrisks.github.io/week1/</guid>
       <description>(see bottom for assigned readings and questions)
 Attention, Transformers, and BERT Monday, 28 August
-Transformers1 are a class of deep learning models that have revolutionized the field of natural language processing (NLP) and various other domains. The concept of transformers originated as an attempt to address the limitations of traditional recurrent neural networks (RNNs) in sequential data processing. Here&amp;rsquo;s an overview of transformers&#39; evolution and significance.
+Transformers1 are a class of deep learning models that have revolutionized the field of natural language processing (NLP) and various other domains. The concept of transformers originated as an attempt to address the limitations of traditional recurrent neural networks (RNNs) in sequential data processing. Here&amp;rsquo;s an overview of transformers&amp;rsquo; evolution and significance.
 Background and Origin RNNs2 were one of the earliest models used for sequence-based tasks in machine learning.</description>
     </item>
     
