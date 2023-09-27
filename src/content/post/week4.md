@@ -83,7 +83,7 @@ Wednesday's class started with warm-up story about a young boy who finally got d
 We also got a simple question and had to solve the problem not using ChatGPT.
 
 <table><tr>
-  <td><img src="../images/Week4/figure4" width="95%"></td>
+  <td><img src="../images/Week4/figure4.png" width="95%"></td>
 </tr>
   <td colspan=1 align="center"> Figure 4 <b></b></td>
 </table>
