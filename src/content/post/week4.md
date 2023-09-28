@@ -5,6 +5,12 @@ title = "Week 4: Capabilities of LLMs"
 slug = "week4"
 +++
 
+# Capabilities of LLMs (Week 4)
+
+<author>Presenting Team: Xindi Guo, Mengxuan Hu, Tseganesh Beyene Kebede, Zihan Guan</author>
+
+<author>Blogging Team: Ajwa Shahid, Caroline Gihlstorf, Changhong Yang, Hyeongjin Kim, Sarah Boyce</author>
+
 # Monday, September 18
 
 Jingfeng Yang, Hongye Jin, Ruixiang Tang, Xiaotian Han, Qizhang Feng, Haoming Jiang, Bing Yin, Xia Hu. _Harnessing the Power of LLMs in Practice: A Survey on ChatGPT and Beyond_. April 2023. [https://arxiv.org/abs/2304.13712](https://arxiv.org/abs/2304.13712)
@@ -70,15 +76,14 @@ Group 4: Shared the concept of a plug-in that allows a user to find the taxonomy
 The discussion on Monday concluded with the class appreciating each other’s ideas on the possibilities of using plug-ins but also their limitations and associated risks. This exchange of perspectives and ideas highlighted the creative ways in which technology and AI-driven tools could be used to address various challenges and opportunities across different domains. 
 
 # Wednesday: Medical Applications of LLMs
+## Introduction
 
 Wednesday's class started with warm-up story about a young boy who finally got diagnosed from ChatGPT. He saw 17 doctors over 3 years for chronic pain but they couldn’t diagnosis what made boy painful. One day, his parents explained the boy’s symptom to ChatGPT and they got a reliable answer. They brought this information to a doctor and after several tests, he could finally get a diagnosis which was correct information from ChatGPT. This story presents a bright possibilities for the medical use of Chat GPT.
-
-## Med-PaLM2
 
 We also got a simple question and had to solve the problem not using ChatGPT.
 
 <table><tr>
-  <td><img src="../images/Week4/ATP_img.png" width="95%"></td>
+  <td><img src="../images/Week4/figure4.png" width="95%"></td>
 </tr>
   <td colspan=1 align="center"> Figure 4 <b></b></td>
 </table>
@@ -94,28 +99,25 @@ medical information to get a reliable result. (Note that GPT-4 is
 already competitive in many ways with models tuneds specifically for
 medical applications.)
 
-<table><tr>
-  <td><img src="../images/Week4/PaLM_fine_tuning_img.png" width="95%"></td>
-</tr>
-  <td colspan=1 align="center"> Figure 5 <b> <a href="https://www.youtube.com/watch?v=ixRanV-rdAQ">(Image source)</a></b>
-</table>
+## Medical fine-tuned LLMs
 
-Med-PaLM which is fine-tuned PaLM with a medical knowledge. Med-PalM scored 67.2% on USMLE-type questions in the MedQA dataset. Considering that pproximate medical pass mark was 60%, Med-PalM2 was the first LLM model who passed the approximate medical pass mark by Dec 22. 
+There were many attemps to build LLMs trained with medical knowlege. Med-PaLM is one of the representive models, which is fine-tuned PaLM with a medical knowledge. Figure 5 showed that Med-PalM scored 67.2% on USMLE-type questions in the MedQA dataset. Considering that approximate medical pass mark was 60%, Med-PalM was the first LLM model who passed the approximate medical pass mark by Dec 22. 
 
 <table><tr>
-  <td><img src="../images/Week4/Med-PaLM2_score_1.png" width="95%"></td>
+  <td><img src="../images/Week4/figure5.png" width="95%"></td>
 </tr>
-  <td colspan=1 align="center"> Figure 6 <b> <a href="https://sites.research.google/med-palm/">(Image source)</a></b>
+  <td colspan=1 align="center"> Figure 5 <b> <a href="https://sites.research.google/med-palm/">(Image source)</a></b>
 </table>
 
-Recently researchers released Med-PaLM2 which was trained more data and upgraded and made a same experiment. It showed that Med-PaLM2 scored an accuracy of 86.5% on USMLE-type-questions in the MedQA dataset. Compared with other LLM performance before 2023, Med-PaLM2 was the first LLM to reach expert performance.
+Recently researchers developed Med-PaLM2. They trained PaLM2 with more medical data and upgraded. Figure 6 shows the brief explaination of how Med-PaLM2 was trained. As a result of training fine-tuned with more and better medical information, it could achieve significant improvement.
 
 <table><tr>
-  <td><img src="../images/Week4/Med-PaLM2_score_2.png" width="95%"></td>
+  <td><img src="../images/Week4/figure6.png" width="95%"></td>
 </tr>
-  <td colspan=1 align="center"> Figure 7 <b> <a href="https://www.nature.com/articles/s41586-023-06291-2"
->(Image source)</a></b>
+  <td colspan=1 align="center"> Figure 6 <b> <a href="https://www.youtube.com/watch?v=ixRanV-rdAQ">(Image source)</a></b>
 </table>
+
+The researchers had a same experiment. Figure 7 showed that Med-PaLM2 scored an accuracy of 86.5% on USMLE-type-questions in the MedQA dataset. Compared with other LLM performance before 2023, Med-PaLM2 was the first LLM to reach expert performance.
 
 In comparison to human physicians in High Quality Answer Traits, Med-PaLM2 showed better reflects consensus, better reading comprehension, better knowledge to recall, and better reasoning.
 
@@ -124,14 +126,31 @@ information, and gave slightly more evidence of demographic bias, and
 potentially greater extent/likelihood of harm but Med-PaLM2 gave more
 inaccurate/irrelevant information.
 
-There is evidence from these tests that Med-PaLM2 performs very well,
+<table><tr>
+  <td><img src="../images/Week4/figure7.jpeg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"> Figure 7 <b> <a href="https://arxiv.org/pdf/2305.09617.pdf">(Image source)</a></b>
+</table>
+
+
+We have seen evidence showing that Med-PaLM2 performs very well,
 but this is just a starting point for the discussion of how AI should
 be used in healthcare.
 
+Presenter suggested the one way of increasing the capabilities of Med-LLMs. Extending input data from language to other source of data like image, LLMs could understand better about the condition of patients and give more correct diagnosis. Presenter introduced a multimodal version Med-PaLM, in figure 8. Accuracy of the diagonsis is mainly based on how input data contain the precise information about the patient, so as LLM model could be trained through those multimodal material, there would be larger chances of increasing the capabilities.
+
 <table><tr>
-  <td><img src="../images/Week4/Med-PaLM2_Performance.png" width="95%"></td>
+  <td><img src="../images/Week4/figure8.png" width="95%"></td>
 </tr>
-  <td colspan=1 align="center"> Figure 8 <b> <a href="https://arxiv.org/pdf/2305.09617.pdf">(Image source)</a></b>
+  <td colspan=1 align="center"> Figure 8 <b> <a href="https://sites.research.google/med-palm/">(Image source)</a></b>
+</table>
+
+Also presenter gave a data about physician evaluation on Multi-Med QA and adversarial Qustion to compare the physician, Med-PaLM1, and Med-PaLM2 as you can see in figure 9. It showed the significant increased capabilities as Med-PaLM developed to Med-PaLM2. Furthermore, Almost evalution on Med-PaLM2 is within the range of physicians and some of evaluation even exceed physicians. Based on this results, presenter opened a discussion.
+
+<table><tr>
+  <td><img src="../images/Week4/figure9.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"> Figure 9 <b> <a href="https://arxiv.org/pdf/2305.09617.pdf">(Image source)</a></b>
 </table>
 
 ## Discussion
@@ -162,21 +181,6 @@ The discussion raised more questions than answers:
 
 - How can we refine and improve LLMs like Med-PaLM2 to be more effective in healthcare applications?
 
-
-
-<table><tr>
-  <td><img src="../images/Week4/Med-PaLM2_performance_2.png" width="95%"></td>
-</tr>
-  <td colspan=1 align="center"> Figure 9 <b> <a href="https://arxiv.org/pdf/2305.09617.pdf">(Image source)</a></b>
-</table>
-
-<table><tr>
-  <td><img src="../images/Week4/Med-PaLM2_x_ray.png" width="95%"></td>
-</tr>
-  <td colspan=1 align="center"> Figure 10 <b> <a href="https://sites.research.google/med-palm/">(Image source)</a></b>
-</table>
-
-
 [^1]: Jingfeng Yang, Hongye Jin, Ruixiang Tang, Xiaotian Han, Qizhang Feng, Haoming Jiang, Bing Yin, Xia Hu. Harnessing the Power of LLMs in Practice: A Survey on ChatGPT and Beyond. April 2023. https://arxiv.org/abs/2304.13712.
 [^2]: OpenAI. GPT-4 Technical Report. March 2023. https://arxiv.org/abs/2303.08774
 [^3]: Karan Singhal, Tao Tu, Juraj Gottweis, Rory Sayres, Ellery Wulczyn, Le Hou, Kevin Clark, Stephen Pfohl, Heather Cole-Lewis, Darlene Neal, Mike Schaekermann, Amy Wang, Mohamed Amin, Sami Lachgar, Philip Mansfield, Sushant Prakash, Bradley Green, Ewa Dominowska, Blaise Aguera y Arcas, Nenad Tomasev, Yun Liu, Renee Wong, Christopher Semturs, S. Sara Mahdavi, Joelle Barral, Dale Webster, Greg S. Corrado, Yossi Matias, Shekoofeh Azizi, Alan Karthikesalingam, Vivek Natarajan. Towards Expert-Level Medical Question Answering with Large Language Models https://arxiv.org/abs/2305.09617
@@ -196,5 +200,3 @@ drew M. Dai, Thanumalayan Sankaranarayana Pillai, Marie Pellat, Aitor Lewkowycz,
 Erica Moreira, Rewon Child, Oleksandr Polozov, Katherine Lee, Zongwei Zhou, Xuezhi Wang, Brennan Saeta, Mark Diaz, Orhan Firat, Michele Catasta, Jason Wei, Kathy
 Meier-Hellstern, Douglas Eck, Jeff Dean, Slav Petrov, and Noah Fiedel. Palm: Scaling
 language modeling with pathways, 2022. https://arxiv.org/abs/2204.02311
-
-
