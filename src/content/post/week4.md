@@ -24,7 +24,7 @@ The presenters highlighted three types of data to consider for a task: the pre-t
 The following Figure 1 shows that fine-tuned models performed better than LLMs after being trained on enough data:
 
 <table><tr>
-  <td><img src="/images/Week4/llms_vs_fine_tuned_models.png" width="95%"></td>
+  <td><img src="/images/week4/llms_vs_fine_tuned_models.png" width="95%"></td>
 </tr>
   <td colspan=1 align="center"> Figure 1 <b> <a href="https://arxiv.org/abs/2307.11346">(Image source)</a></b></td>
 </table>
@@ -55,7 +55,7 @@ _Group 1_: Envisioned a plug-in that allows a user to make DIY furniture or buy 
 
 
 <table><tr>
-  <td><img src="/images/Week4/group_1_plugin.png" width="95%"></td>
+  <td><img src="/images/week4/group_1_plugin.png" width="95%"></td>
 </tr>
   <td colspan=1 align="center"> Figure 2 <b>DIY Furniture Plug-In </b></td>
 </table>
@@ -66,7 +66,7 @@ _Group 3_: Created a plug-in that uses a person’s portfolio/resume to match th
 
 
 <table><tr>
-  <td><img src="/images/Week4/group_3_plugin.png" width="95%"></td>
+  <td><img src="/images/week4/group_3_plugin.png" width="95%"></td>
 </tr>
   <td colspan=1 align="center"> Figure 3 <b>Job Hunter Plug-In</b></td>
 </table>
@@ -83,7 +83,7 @@ Wednesday's class started with warm-up story about a young boy who finally got d
 We also got a simple question and had to solve the problem not using ChatGPT.
 
 <table><tr>
-  <td><img src="/images/Week4/figure4.png" width="95%"></td>
+  <td><img src="/images/week4/figure4.png" width="95%"></td>
 </tr>
   <td colspan=1 align="center"> Figure 4 <b></b></td>
 </table>
@@ -104,7 +104,7 @@ medical applications.)
 There were many attemps to build LLMs trained with medical knowlege. Med-PaLM is one of the representive models, which is fine-tuned PaLM with a medical knowledge. Figure 5 showed that Med-PalM scored 67.2% on USMLE-type questions in the MedQA dataset. Considering that approximate medical pass mark was 60%, Med-PalM was the first LLM model who passed the approximate medical pass mark by Dec 22. 
 
 <table><tr>
-  <td><img src="/images/Week4/figure5.png" width="95%"></td>
+  <td><img src="/images/week4/figure5.png" width="95%"></td>
 </tr>
   <td colspan=1 align="center"> Figure 5 <b> <a href="https://sites.research.google/med-palm/">(Image source)</a></b>
 </table>
@@ -112,7 +112,7 @@ There were many attemps to build LLMs trained with medical knowlege. Med-PaLM is
 Recently researchers developed Med-PaLM2. They trained PaLM2 with more medical data and upgraded. Figure 6 shows the brief explaination of how Med-PaLM2 was trained. As a result of training fine-tuned with more and better medical information, it could achieve significant improvement.
 
 <table><tr>
-  <td><img src="/images/Week4/figure6.png" width="95%"></td>
+  <td><img src="/images/week4/figure6.png" width="95%"></td>
 </tr>
   <td colspan=1 align="center"> Figure 6 <b> <a href="https://www.youtube.com/watch?v=ixRanV-rdAQ">(Image source)</a></b>
 </table>
@@ -127,7 +127,7 @@ potentially greater extent/likelihood of harm but Med-PaLM2 gave more
 inaccurate/irrelevant information.
 
 <table><tr>
-  <td><img src="/images/Week4/figure7.jpeg" width="95%"></td>
+  <td><img src="/images/week4/figure7.jpeg" width="95%"></td>
 </tr>
   <td colspan=1 align="center"> Figure 7 <b> <a href="https://arxiv.org/pdf/2305.09617.pdf">(Image source)</a></b>
 </table>
@@ -140,7 +140,7 @@ be used in healthcare.
 Presenter suggested the one way of increasing the capabilities of Med-LLMs. Extending input data from language to other source of data like image, LLMs could understand better about the condition of patients and give more correct diagnosis. Presenter introduced a multimodal version Med-PaLM, in figure 8. Accuracy of the diagonsis is mainly based on how input data contain the precise information about the patient, so as LLM model could be trained through those multimodal material, there would be larger chances of increasing the capabilities.
 
 <table><tr>
-  <td><img src="/images/Week4/figure8.png" width="95%"></td>
+  <td><img src="/images/week4/figure8.png" width="95%"></td>
 </tr>
   <td colspan=1 align="center"> Figure 8 <b> <a href="https://sites.research.google/med-palm/">(Image source)</a></b>
 </table>
@@ -148,7 +148,7 @@ Presenter suggested the one way of increasing the capabilities of Med-LLMs. Exte
 Also presenter gave a data about physician evaluation on Multi-Med QA and adversarial Qustion to compare the physician, Med-PaLM1, and Med-PaLM2 as you can see in figure 9. It showed the significant increased capabilities as Med-PaLM developed to Med-PaLM2. Furthermore, Almost evalution on Med-PaLM2 is within the range of physicians and some of evaluation even exceed physicians. Based on this results, presenter opened a discussion.
 
 <table><tr>
-  <td><img src="/images/Week4/figure9.png" width="95%"></td>
+  <td><img src="/images/week4/figure9.png" width="95%"></td>
 </tr>
   <td colspan=1 align="center"> Figure 9 <b> <a href="https://arxiv.org/pdf/2305.09617.pdf">(Image source)</a></b>
 </table>
