@@ -1,87 +1,56 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://llmrisks.github.io/post/</loc>
-    <lastmod>2023-09-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2023-09-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://llmrisks.github.io/</loc>
+    <lastmod>2023-09-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://llmrisks.github.io/week4/</loc>
+    <lastmod>2023-09-25T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://llmrisks.github.io/week3/</loc>
     <lastmod>2023-09-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://llmrisks.github.io/week2/</loc>
     <lastmod>2023-09-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://llmrisks.github.io/week1/</loc>
     <lastmod>2023-09-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://llmrisks.github.io/discussions/</loc>
     <lastmod>2023-08-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://llmrisks.github.io/class0/</loc>
     <lastmod>2023-08-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://llmrisks.github.io/</loc>
-    <lastmod>2023-08-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://llmrisks.github.io/weeklyschedule/</loc>
     <lastmod>2023-08-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://llmrisks.github.io/readings/</loc>
     <lastmod>2023-08-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://llmrisks.github.io/schedule/</loc>
     <lastmod>2023-08-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://llmrisks.github.io/updates/</loc>
     <lastmod>2023-08-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://llmrisks.github.io/survey/</loc>
     <lastmod>2023-08-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://llmrisks.github.io/welcome/</loc>
     <lastmod>2023-05-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://llmrisks.github.io/syllabus/</loc>
     <priority>0</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://llmrisks.github.io/blogging/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://llmrisks.github.io/tags/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://llmrisks.github.io/topics/</loc>
   </url>
-  
 </urlset>

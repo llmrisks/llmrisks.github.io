@@ -1,7 +1,7 @@
 <!doctype html>
 <html class="no-js" lang="en-us">
   <head>
-	<meta name="generator" content="Hugo 0.71.0" />
+	<meta name="generator" content="Hugo 0.92.0" />
     <meta charset="utf-8">
     <title>Risks (and Benefits) of Generative AI and Large Language Models</title>
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -113,6 +113,12 @@ Risks and Benefits of Generative AI and LLMs
 
    
    <div class="posttitle">
+      <a href="/week4/">Week 4: Capabilities of LLMs</a>
+
+
+   </div>
+   
+   <div class="posttitle">
       <a href="/week3/">Week 3: Prompting and Bias</a>
 
 
@@ -212,9 +218,184 @@ Risks and Benefits of Generative AI and LLMs
     
         
     
+        
+    
 
 
     
+    
+    <h1><a href="/week4/">Week 4: Capabilities of LLMs</a></h1>
+<div class="post-metadata">
+  <span class="post-date">
+    <time datetime="2023-09-25 00:00:00 &#43;0000 UTC" itemprop="datePublished">25 September 2023</time>
+  </span>
+  
+</div>
+
+      <div class="post-body" itemprop="articleBody">
+        <h1 id="capabilities-of-llms-week-4">Capabilities of LLMs (Week 4)</h1>
+<p><author>Presenting Team: Xindi Guo, Mengxuan Hu, Tseganesh Beyene Kebede, Zihan Guan</author></p>
+<p><author>Blogging Team: Ajwa Shahid, Caroline Gihlstorf, Changhong Yang, Hyeongjin Kim, Sarah Boyce</author></p>
+<h1 id="monday-september-18">Monday, September 18</h1>
+<p>Jingfeng Yang, Hongye Jin, Ruixiang Tang, Xiaotian Han, Qizhang Feng, Haoming Jiang, Bing Yin, Xia Hu. <em>Harnessing the Power of LLMs in Practice: A Survey on ChatGPT and Beyond</em>. April 2023. <a href="https://arxiv.org/abs/2304.13712">https://arxiv.org/abs/2304.13712</a></p>
+<p>This discussion was essential to highlight the distinction between large language models (LLMs) and fine-tuned models. The paper defines LLMs as models trained on large amounts of data without a particular domain of application in mind and fine-tuned models as models trained on some general data in addition to data from a specific domain in which they will perform a particular task. They also highlighted a rule of thumb from the paper that LLMs typically have more than 20 billion parameters whereas fine-tuned models have fewer than 20 billion parameters.</p>
+<p>The presenters then discussed how to go about choosing the model that is best for a task when there are so many available. They explored two ways of approaching this problem: one that considers the data, and another that considers the task.</p>
+<p>The presenters highlighted three types of data to consider for a task: the pre-training data, the fine-tuning data, and the test data. If there is a model already pre-trained on data that is relevant to the task at hand, that model might be a good choice. In order for a dataset to be conducive to fine-tuning a model, the data must be labeled and that there must be enough of it to sufficiently train the model. Otherwise, training an LLM would be better. The presenters noted, however, that fine-tuned models have been shown to perform better than LLMs on specific tasks when they have sufficient data to train on.</p>
+<p>The following Figure 1 shows that fine-tuned models performed better than LLMs after being trained on enough data:</p>
+<table><tr>
+  <td><img src="../images/Week4/llms_vs_fine_tuned_models.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"> Figure 1 <b> <a href="https://arxiv.org/abs/2307.11346">(Image source)</a></b></td>
+</table>
+<p>LLMs and fine-tuned models perform better on different tasks. According to a study from the paper <a href="https://arxiv.org/abs/2301.13848"><em>Benchmarking Large Language Models for News Summarization</em></a> <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>, LLMs perform better than fine-tuned models on text summarization according to the preferences of human raters. Additionally, LLMs perform better on tasks that require large amounts of knowledge from a variety of domains<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>. In machine translation, however, fine-tuned models generally do better than LLMs, although they only do slightly better in low-resource settings<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>. Additionally, the presenters explained that fine-tuned models and LLMs have similar performance when the task only requires very specific knowledge.</p>
+<p>The presenters then posed the following question to the class: “How could we enhance LLM in the scenario where the required knowledge does not match their learned knowledge?” The class formed four groups to discuss the question. Each group then shared a summary of what they had discussed:</p>
+<p>Group 1: Discussed enhancements in both training and testing. For testing, use intentional prompts to get the knowledge you want from the model. For training, adding more training data, using a knowledge graph to classify knowledge into different clusters for ease of search, and using a plug-in, as mentioned in the GitHub discussion.</p>
+<p>Group 2: Advocated for enhancement through the model&rsquo;s ability to retrieve information from external sources and undergo fine-tuning.</p>
+<p>Group 3: Emphasized the significance of using more extensive datasets and guiding models through example-based prompts to extract additional knowledge from the available data.</p>
+<p>Group 4: Proposed refining model performance through fine-tuning and deliberately specifying the model&rsquo;s role within a chat setting to steer it toward specific tasks.</p>
+<p>The presenters also mentioned that LLMs perform arithmetic better as they grow larger and that LLMs are better at commonsense reasoning than fine-tuned models<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>.</p>
+<h2 id="chatgpt-plug-ins">ChatGPT Plug-Ins</h2>
+<p>The presenters then moved to a discussion of ChatGPT plug-ins. They established that LLMs are not able to keep up with current knowledge and facts and that they mainly handle text data as opposed to image data, audio, and other data formats. They also explained that while LLMs may be able to generate instructions for a human to follow to complete a task, they are often unable to follow those instructions and complete the tasks themselves. This is where plug-ins come in.</p>
+<p>Plug-ins allow LLMs to access data outside of what they have already learned, for example, by searching the web. Plug-ins can enable ChatGPT to search the web (<a href="https://openai.com/blog/chatgpt-plugins#browsing">https://openai.com/blog/chatgpt-plugins#browsing</a>) and write code (<a href="https://openai.com/blog/chatgpt-plugins#code-interpreter)">https://openai.com/blog/chatgpt-plugins#code-interpreter)</a>. They also showed a video of how ChatGPT can use plug-ins from outside OpenAI to complete tasks with specific instructions, namely, finding a restaurant, then a recipe, then calculating the number of calories in the recipe (<a href="https://openai.com/blog/chatgpt-plugins#third-party-plugins)">https://openai.com/blog/chatgpt-plugins#third-party-plugins)</a>.</p>
+<p>The class then formed groups and spent 25 minutes designing custom plug-ins. Each group then shared their plug-in with the class:</p>
+<p><em>Group 1</em>: Envisioned a plug-in that allows a user to make DIY furniture or buy new furniture by submitting an image of something they would like to make from scratch or buy and returning either a link to a similar piece of furniture or a video/instructions on how to build a piece of furniture similar to the one in their image (Figure 2).</p>
+<table><tr>
+  <td><img src="../images/Week4/group_1_plugin.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"> Figure 2 <b>DIY Furniture Plug-In </b></td>
+</table>
+<p><em>Group 2</em>: Suggested a plug-in that generates the profile of a fake person with a fake social media account. Essentially, it aimed to create a convincing online persona that would resemble a real person but was entirely fictional. (Such a plug-in, obviously, raises some serious ethical concerns and could be used for some legitimate purposes, but many malign ones!)</p>
+<p><em>Group 3</em>: Created a plug-in that uses a person’s portfolio/resume to match them with different jobs serving as an ultimate career support tool (Figure 3). It assisted users in job search by matching them with relevant job openings, provided tailored preparation materials for interviews, offered resume/portfolio editing guidance, and provided opportunities to expand their professional network. Essentially, it aimed to equip individuals with the tools and resources needed to enhance their career prospects.</p>
+<table><tr>
+  <td><img src="../images/Week4/group_3_plugin.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"> Figure 3 <b>Job Hunter Plug-In</b></td>
+</table>
+<p>Group 4: Shared the concept of a plug-in that allows a user to find the taxonomy of a particular research paper, and place it in a research area. Moreover, it offered the valuable function of returning related papers, thus assisting users in discovering additional relevant research in their field of interest.</p>
+<p>The discussion on Monday concluded with the class appreciating each other’s ideas on the possibilities of using plug-ins but also their limitations and associated risks. This exchange of perspectives and ideas highlighted the creative ways in which technology and AI-driven tools could be used to address various challenges and opportunities across different domains.</p>
+<h1 id="wednesday-medical-applications-of-llms">Wednesday: Medical Applications of LLMs</h1>
+<h2 id="introduction">Introduction</h2>
+<p>Wednesday&rsquo;s class started with warm-up story about a young boy who finally got diagnosed from ChatGPT. He saw 17 doctors over 3 years for chronic pain but they couldn’t diagnosis what made boy painful. One day, his parents explained the boy’s symptom to ChatGPT and they got a reliable answer. They brought this information to a doctor and after several tests, he could finally get a diagnosis which was correct information from ChatGPT. This story presents a bright possibilities for the medical use of Chat GPT.</p>
+<p>We also got a simple question and had to solve the problem not using ChatGPT.</p>
+<table><tr>
+  <td><img src="../images/Week4/figure4.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"> Figure 4 <b></b></td>
+</table>
+<p>About 70% of students could get an answer “A” using a simple web search (e.g., duckduckgo or google) at first trial, and 30% of students could get an answer by several attempts.</p>
+<p>Later, we were asked to use ChatGPT to get an answer. All students could get a correct answer for at first trial. For a simple question like this, it is unclear if GPT is better than a web search. ChatGPT has been pre-trained from many documents from the web, so it is good at giving general information.</p>
+<p>However, if we ask deeper and expertise questions to ChatGPT, it may
+not give an answer. We indeed need a LLM model which is trained from
+medical information to get a reliable result. (Note that GPT-4 is
+already competitive in many ways with models tuneds specifically for
+medical applications.)</p>
+<h2 id="medical-fine-tuned-llms">Medical fine-tuned LLMs</h2>
+<p>There were many attemps to build LLMs trained with medical knowlege. Med-PaLM is one of the representive models, which is fine-tuned PaLM with a medical knowledge. Figure 5 showed that Med-PalM scored 67.2% on USMLE-type questions in the MedQA dataset. Considering that approximate medical pass mark was 60%, Med-PalM was the first LLM model who passed the approximate medical pass mark by Dec 22.</p>
+<table><tr>
+  <td><img src="../images/Week4/figure5.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"> Figure 5 <b> <a href="https://sites.research.google/med-palm/">(Image source)</a></b>
+</table>
+<p>Recently researchers developed Med-PaLM2. They trained PaLM2 with more medical data and upgraded. Figure 6 shows the brief explaination of how Med-PaLM2 was trained. As a result of training fine-tuned with more and better medical information, it could achieve significant improvement.</p>
+<table><tr>
+  <td><img src="../images/Week4/figure6.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"> Figure 6 <b> <a href="https://www.youtube.com/watch?v=ixRanV-rdAQ">(Image source)</a></b>
+</table>
+<p>The researchers had a same experiment. Figure 7 showed that Med-PaLM2 scored an accuracy of 86.5% on USMLE-type-questions in the MedQA dataset. Compared with other LLM performance before 2023, Med-PaLM2 was the first LLM to reach expert performance.</p>
+<p>In comparison to human physicians in High Quality Answer Traits, Med-PaLM2 showed better reflects consensus, better reading comprehension, better knowledge to recall, and better reasoning.</p>
+<p>When they tested Potential Answer Risks, physicians omitted more
+information, and gave slightly more evidence of demographic bias, and
+potentially greater extent/likelihood of harm but Med-PaLM2 gave more
+inaccurate/irrelevant information.</p>
+<table><tr>
+  <td><img src="../images/Week4/figure7.jpeg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"> Figure 7 <b> <a href="https://arxiv.org/pdf/2305.09617.pdf">(Image source)</a></b>
+</table>
+<p>We have seen evidence showing that Med-PaLM2 performs very well,
+but this is just a starting point for the discussion of how AI should
+be used in healthcare.</p>
+<p>Presenter suggested the one way of increasing the capabilities of Med-LLMs. Extending input data from language to other source of data like image, LLMs could understand better about the condition of patients and give more correct diagnosis. Presenter introduced a multimodal version Med-PaLM, in figure 8. Accuracy of the diagonsis is mainly based on how input data contain the precise information about the patient, so as LLM model could be trained through those multimodal material, there would be larger chances of increasing the capabilities.</p>
+<table><tr>
+  <td><img src="../images/Week4/figure8.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"> Figure 8 <b> <a href="https://sites.research.google/med-palm/">(Image source)</a></b>
+</table>
+<p>Also presenter gave a data about physician evaluation on Multi-Med QA and adversarial Qustion to compare the physician, Med-PaLM1, and Med-PaLM2 as you can see in figure 9. It showed the significant increased capabilities as Med-PaLM developed to Med-PaLM2. Furthermore, Almost evalution on Med-PaLM2 is within the range of physicians and some of evaluation even exceed physicians. Based on this results, presenter opened a discussion.</p>
+<table><tr>
+  <td><img src="../images/Week4/figure9.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"> Figure 9 <b> <a href="https://arxiv.org/pdf/2305.09617.pdf">(Image source)</a></b>
+</table>
+<h2 id="discussion">Discussion</h2>
+<p><em>What are the potential implications of LLMs reaching or surpassing human expertise in medical knowledge?</em></p>
+<p>The discussion raised more questions than answers:</p>
+<ul>
+<li>
+<p>At what point do we trust doctors vs LLMs and to what extent?</p>
+</li>
+<li>
+<p>Are LLMs more convenient than going to a doctor?</p>
+</li>
+<li>
+<p>People will be more prone to self-diagnosis</p>
+</li>
+<li>
+<p>People could be more honest with AI than a human being</p>
+</li>
+<li>
+<p>Should we let AI write prescriptions?</p>
+</li>
+<li>
+<p>How can we truly verify what is right and what is wrong?</p>
+</li>
+<li>
+<p>AI could obviously give a better diagnosis than human whose experiences effect diagnoses</p>
+</li>
+<li>
+<p>What would happen when different Ais give different results?</p>
+</li>
+<li>
+<p>There is a lot of data to train with and fine tuning. Is this worth the time and effort?</p>
+</li>
+<li>
+<p>Who is taking accountability for the mistakes made by AI? If a doctor does something wrong, they can have their license taken, but this is that the case for AI.</p>
+</li>
+<li>
+<p>How can we refine and improve LLMs like Med-PaLM2 to be more effective in healthcare applications?</p>
+</li>
+</ul>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>Tianyi Zhang, Faisal Ladhak, Esin Durmus, Percy Liang, Kathleen McKeown, and Tatsunori B. Hashimoto. Benchmarking large language models for news summarization, 2023. <a href="https://arxiv.org/abs/2301.13848">https://arxiv.org/abs/2301.13848</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>Aakanksha Chowdhery, Sharan Narang, Jacob Devlin, Maarten Bosma, Gaurav
+Mishra, Adam Roberts, Paul Barham, Hyung Won Chung, Charles Sutton, Sebastian
+Gehrmann, Parker Schuh, Kensen Shi, Sasha Tsvyashchenko, Joshua Maynez, Abhishek
+Rao, Parker Barnes, Yi Tay, Noam Shazeer, Vinodkumar Prabhakaran, Emily Reif,
+Nan Du, Ben Hutchinson, Reiner Pope, James Bradbury, Jacob Austin, Michael Isard,
+Guy Gur-Ari, Pengcheng Yin, Toju Duke, Anselm Levskaya, Sanjay Ghemawat, Sunipa
+Dev, Henryk Michalewski, Xavier Garcia, Vedant Misra, Kevin Robinson, Liam Fedus,
+Denny Zhou, Daphne Ippolito, David Luan, Hyeontaek Lim, Barret Zoph, Alexan-
+der Spiridonov, Ryan Sepassi, David Dohan, Shivani Agrawal, Mark Omernick, An-
+drew M. Dai, Thanumalayan Sankaranarayana Pillai, Marie Pellat, Aitor Lewkowycz,
+Erica Moreira, Rewon Child, Oleksandr Polozov, Katherine Lee, Zongwei Zhou, Xuezhi Wang, Brennan Saeta, Mark Diaz, Orhan Firat, Michele Catasta, Jason Wei, Kathy
+Meier-Hellstern, Douglas Eck, Jeff Dean, Slav Petrov, and Noah Fiedel. Palm: Scaling
+language modeling with pathways, 2022. <a href="https://arxiv.org/abs/2204.02311">https://arxiv.org/abs/2204.02311</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p>OpenAI. GPT-4 Technical Report. March 2023. <a href="https://arxiv.org/abs/2303.08774">https://arxiv.org/abs/2303.08774</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
+      </div>
+<hr class="post-separator"></hr>
+
     
     <h1><a href="/week3/">Week 3: Prompting and Bias</a></h1>
 <div class="post-metadata">
@@ -447,10 +628,10 @@ Second section (5 – 9): Before <strong>5:29pm</strong> on <strong>Tuesday, Sep
 <hr>
 <ol>
 <li id="fn:1" role="doc-endnote">
-<p>Tony Z. Zhao, Eric Wallace, Shi Feng, Dan Klein, Sameer Singh. &ldquo;<a href="https://arxiv.org/pdf/2102.09690.pdf">Calibrate before use: Improving few-shot performance of language models</a>.&rdquo; International Conference on Machine Learning. PMLR, 2021. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Tony Z. Zhao, Eric Wallace, Shi Feng, Dan Klein, Sameer Singh. &ldquo;<a href="https://arxiv.org/pdf/2102.09690.pdf">Calibrate before use: Improving few-shot performance of language models</a>.&rdquo; International Conference on Machine Learning. PMLR, 2021.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2" role="doc-endnote">
-<p>Miles Turpin, Julian Michael, Ethan Perez, Samuel R. Bowman. &ldquo;<a href="https://arxiv.org/pdf/2305.04388.pdf">Language Models Don&rsquo;t Always Say What They Think: Unfaithful Explanations in Chain-of-Thought Prompting.</a>&rdquo; arXiv preprint arXiv:2305.04388, 2023. <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Miles Turpin, Julian Michael, Ethan Perez, Samuel R. Bowman. &ldquo;<a href="https://arxiv.org/pdf/2305.04388.pdf">Language Models Don&rsquo;t Always Say What They Think: Unfaithful Explanations in Chain-of-Thought Prompting.</a>&rdquo; arXiv preprint arXiv:2305.04388, 2023.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
@@ -580,7 +761,7 @@ like <a href="https://aclanthology.org/2023.acl-long.656.pdf"><em>From Pretraini
 (Feng et al.)</a> show
 that famous models like BERT and ChatGPT do appear to have
 socioeconomic political leanings (of course, there is no true
-<code>neutral'' or </code>center&rsquo;&rsquo; position, these are just defined by where
+<code>neutral'' or </code>center'' position, these are just defined by where
 the expected distribution of beliefs lies).</p>
 <p>Figure 1 shows the political leanings of famous LLMs.</p>
 <center>
@@ -665,10 +846,10 @@ history lesson on the French Revolution!</p>
 <p>However, a developer&rsquo;s responsibility doesn&rsquo;t culminate once the AI product hits the market. The journey is continuous. Post-deployment, it&rsquo;s crucial for developers to monitor the system&rsquo;s alignment with human values and rectify any deviations. It&rsquo;s an ongoing commitment to refinement and recalibration. Moreover, transparency is key. Developers should be proactive in highlighting potential concerns related to their models and fostering a culture where the public is not just a passive victim but an active participant in the model alignment process.</p>
 <p>To round off, it&rsquo;s essential for developers to adopt a forward-thinking mindset. The decisions made today in the AI labs and coding chambers will shape the world of tomorrow. Thus, every developer should think about the long-term consequences of their work, always aiming to ensure that AI not only dazzles with its brilliance but also remains beneficial for generations to come.</p>
 <blockquote>
-<p><em>How might AI developers&rsquo; responsibility evolve?</em></p>
+<p><em>How might AI developers' responsibility evolve?</em></p>
 </blockquote>
 <p>It&rsquo;s impossible to catch all edge cases. As AI systems grow in complexity, predicting every potential outcome or misalignment becomes a herculean task. Developers, in the future, might need to shift from a perfectionist mindset to one that emphasizes robustness and adaptability. While it&rsquo;s essential to put in rigorous engineering effort to minimize errors, it&rsquo;s equally crucial to understand and communicate that no system can be flawless.</p>
-<p>Besides, given that catching all cases isn&rsquo;t feasible, developers&rsquo; roles might evolve to include more dynamic and real-time monitoring of AI systems. This would involve continuously learning from real-world interactions, gathering feedback, and iterating on the model to ensure better alignment with human values.</p>
+<p>Besides, given that catching all cases isn&rsquo;t feasible, developers' roles might evolve to include more dynamic and real-time monitoring of AI systems. This would involve continuously learning from real-world interactions, gathering feedback, and iterating on the model to ensure better alignment with human values.</p>
 <h2 id="the-alignment-problem-from-a-deep-learning-perspective">The Alignment Problem from a Deep Learning Perspective</h2>
 <p>In this part of today&rsquo;s seminar, the whole class was divided into 3 groups to discuss the possible alignment problems from a deep learning perspective. Specifically, three groups were focusing on the alignment problems regarding different categories of Deep Learning methods, which are:</p>
 <ol>
@@ -1037,7 +1218,7 @@ revolutionized the field of natural language processing (NLP) and
 various other domains. The concept of transformers originated as an
 attempt to address the limitations of traditional recurrent neural
 networks (RNNs) in sequential data processing. Here&rsquo;s an overview of
-transformers&rsquo; evolution and significance.</p>
+transformers' evolution and significance.</p>
 <h2 id="background-and-origin">Background and Origin</h2>
 <p>RNNs<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> were one of the earliest models used for sequence-based tasks in machine learning. They processed input tokens one after another and used their internal memory to capture dependencies in the sequence. The following figure gives an illustration of the RNN architecture.</p>
 <center>
@@ -1076,7 +1257,7 @@ The use of positional encodings in transformers helps address the lack of inhere
 Self-attention is a useful mechanism that allows each token to consider the relationships between all other tokens in a sequence. While it provides a more nuanced understanding of input, it can be computationally expensive. The use of multi-head attention further enhances the model&rsquo;s ability to capture different types of dependencies in the data. The number of attention heads (e.g., 8 in BERT) is a balance between performance and complexity. Too few or too many heads can result in suboptimal performance. More details about self-attention and multi-head attention can be found in <sup id="fnref:9"><a href="#fn:9" class="footnote-ref" role="doc-noteref">9</a></sup>.</p>
 <p><strong>Context and Answers in Activities.</strong>
 Let’s do some activity now!</p>
-<pre><code class="language-angular2html" data-lang="angular2html">I used to ___ 
+<pre tabindex="0"><code class="language-angular2html" data-lang="angular2html">I used to ___ 
 
 Yesterday, I went to ___
 
@@ -1128,7 +1309,7 @@ The authors of BERT might not have fully anticipated its exact future use and im
 </ul>
 <p><strong>Risks Group.</strong></p>
 <ul>
-<li>Concerns were expressed regarding LLMs&rsquo; opacity and complexity, making them challenging to comprehend.</li>
+<li>Concerns were expressed regarding LLMs' opacity and complexity, making them challenging to comprehend.</li>
 <li>Apprehensions were raised about LLMs potentially exerting detrimental influences on human cognition and societal dynamics.</li>
 <li>LLMs are ripe for potential abuses in their ability to generate convincing false information cheaply.</li>
 <li>The potential impact of LLMs on human intelligence and creativity was a topic of contemplation.</li>
@@ -1207,46 +1388,46 @@ way they consider risks?</p>
 <hr>
 <ol>
 <li id="fn:1" role="doc-endnote">
-<p>Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., &hellip; &amp; Polosukhin, I. (2017). Attention is all you need. Advances in neural information processing systems, 30. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., &hellip; &amp; Polosukhin, I. (2017). Attention is all you need. Advances in neural information processing systems, 30.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2" role="doc-endnote">
-<p>Sherstinsky, A. (2020). Fundamentals of recurrent neural network (RNN) and long short-term memory (LSTM) network. Physica D: Nonlinear Phenomena, 404, 132306. <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Sherstinsky, A. (2020). Fundamentals of recurrent neural network (RNN) and long short-term memory (LSTM) network. Physica D: Nonlinear Phenomena, 404, 132306.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:3" role="doc-endnote">
-<p>Pascanu, R., Mikolov, T., &amp; Bengio, Y. (2013, May). On the difficulty of training recurrent neural networks. In International conference on machine learning (pp. 1310-1318). Pmlr. <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Pascanu, R., Mikolov, T., &amp; Bengio, Y. (2013, May). On the difficulty of training recurrent neural networks. In International conference on machine learning (pp. 1310-1318). Pmlr.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:4" role="doc-endnote">
-<p>Hochreiter, S., &amp; Schmidhuber, J. (1997). Long short-term memory. Neural computation, 9(8), 1735-1780. <a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Hochreiter, S., &amp; Schmidhuber, J. (1997). Long short-term memory. Neural computation, 9(8), 1735-1780.&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:5" role="doc-endnote">
-<p>Mnih, V., Heess, N., &amp; Graves, A. (2014). Recurrent models of visual attention. Advances in neural information processing systems, 27. <a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Mnih, V., Heess, N., &amp; Graves, A. (2014). Recurrent models of visual attention. Advances in neural information processing systems, 27.&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:6" role="doc-endnote">
-<p>Bahdanau, D., Cho, K., &amp; Bengio, Y. (2014). Neural machine translation by jointly learning to align and translate. arXiv preprint arXiv:1409.0473. <a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Bahdanau, D., Cho, K., &amp; Bengio, Y. (2014). Neural machine translation by jointly learning to align and translate. arXiv preprint arXiv:1409.0473.&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:7" role="doc-endnote">
-<p>Lin, T., Wang, Y., Liu, X., &amp; Qiu, X. (2022). A survey of transformers. AI Open. <a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Lin, T., Wang, Y., Liu, X., &amp; Qiu, X. (2022). A survey of transformers. AI Open.&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:8" role="doc-endnote">
-<p>Khan, S., Naseer, M., Hayat, M., Zamir, S. W., Khan, F. S., &amp; Shah, M. (2022). Transformers in vision: A survey. ACM computing surveys (CSUR), 54(10s), 1-41. <a href="#fnref:8" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Khan, S., Naseer, M., Hayat, M., Zamir, S. W., Khan, F. S., &amp; Shah, M. (2022). Transformers in vision: A survey. ACM computing surveys (CSUR), 54(10s), 1-41.&#160;<a href="#fnref:8" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:9" role="doc-endnote">
-<p>Karim, R. (2023, January 2). Illustrated: Self-attention. Medium. <a href="https://towardsdatascience.com/illustrated-self-attention-2d627e33b20a">https://towardsdatascience.com/illustrated-self-attention-2d627e33b20a</a> <a href="#fnref:9" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Karim, R. (2023, January 2). Illustrated: Self-attention. Medium. <a href="https://towardsdatascience.com/illustrated-self-attention-2d627e33b20a">https://towardsdatascience.com/illustrated-self-attention-2d627e33b20a</a>&#160;<a href="#fnref:9" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:10" role="doc-endnote">
-<p>Devlin, J., Chang, M. W., Lee, K., &amp; Toutanova, K. (2018). Bert: Pre-training of deep bidirectional transformers for language understanding. arXiv preprint arXiv:1810.04805. <a href="#fnref:10" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Devlin, J., Chang, M. W., Lee, K., &amp; Toutanova, K. (2018). Bert: Pre-training of deep bidirectional transformers for language understanding. arXiv preprint arXiv:1810.04805.&#160;<a href="#fnref:10" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:11" role="doc-endnote">
-<p>Ahmad, K. (2023b, April 26). GPT vs. Bert: What are the differences between the two most popular language models?. MUO. <a href="https://www.makeuseof.com/gpt-vs-bert/">https://www.makeuseof.com/gpt-vs-bert/</a> <a href="#fnref:11" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Ahmad, K. (2023b, April 26). GPT vs. Bert: What are the differences between the two most popular language models?. MUO. <a href="https://www.makeuseof.com/gpt-vs-bert/">https://www.makeuseof.com/gpt-vs-bert/</a>&#160;<a href="#fnref:11" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:12" role="doc-endnote">
-<p>Radford, A., Wu, J., Child, R., Luan, D., Amodei, D., &amp; Sutskever, I. (2019). Language models are unsupervised multitask learners. OpenAI blog, 1(8), 9. <a href="#fnref:12" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Radford, A., Wu, J., Child, R., Luan, D., Amodei, D., &amp; Sutskever, I. (2019). Language models are unsupervised multitask learners. OpenAI blog, 1(8), 9.&#160;<a href="#fnref:12" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:13" role="doc-endnote">
-<p>Brown, T., Mann, B., Ryder, N., Subbiah, M., Kaplan, J. D., Dhariwal, P., &hellip; &amp; Amodei, D. (2020). Language models are few-shot learners. Advances in neural information processing systems, 33, 1877-1901. <a href="#fnref:13" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Brown, T., Mann, B., Ryder, N., Subbiah, M., Kaplan, J. D., Dhariwal, P., &hellip; &amp; Amodei, D. (2020). Language models are few-shot learners. Advances in neural information processing systems, 33, 1877-1901.&#160;<a href="#fnref:13" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:14" role="doc-endnote">
-<p>Yang, J., Jin, H., Tang, R., Han, X., Feng, Q., Jiang, H., &hellip; &amp; Hu, X. (2023). Harnessing the power of llms in practice: A survey on chatgpt and beyond. arXiv preprint arXiv:2304.13712. <a href="#fnref:14" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Yang, J., Jin, H., Tang, R., Han, X., Feng, Q., Jiang, H., &hellip; &amp; Hu, X. (2023). Harnessing the power of llms in practice: A survey on chatgpt and beyond. arXiv preprint arXiv:2304.13712.&#160;<a href="#fnref:14" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
