@@ -4,7 +4,7 @@ draft = true
 title = "Week 4: Capabilities of LLMs"
 slug = "week4"
 +++
-
+ 
 # Monday, September 18
 
 Jingfeng Yang, Hongye Jin, Ruixiang Tang, Xiaotian Han, Qizhang Feng, Haoming Jiang, Bing Yin, Xia Hu. _Harnessing the Power of LLMs in Practice: A Survey on ChatGPT and Beyond_. April 2023. [https://arxiv.org/abs/2304.13712](https://arxiv.org/abs/2304.13712)
