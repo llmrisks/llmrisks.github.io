@@ -1,5 +1,5 @@
 +++
-date = "4 Oct 2023"
+date = "04 Oct 2023"
 draft = false
 title = "Week 5: Hallucination"
 slug = "week5"
