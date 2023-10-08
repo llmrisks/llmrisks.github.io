@@ -15,7 +15,7 @@ slug = "week5"
 
 <table>
     <tr>
-        <td><img src="/images/Week5/Hallucination/Hallucination_page_4.png" width="95%"></td>
+        <td><img src="/images/week5/Hallucination/Hallucination_page_4.png" width="95%"></td>
     </tr>
     <td colspan=1 align="center"> Figure 1 <b>(Presentation Slides): Peoiple Hallucinate Too</b>
     <br/>
@@ -30,7 +30,7 @@ slug = "week5"
 </table>
 <table>
     <tr>
-        <td><img src="/images/Week5/Hallucination/Hallucination_page_6.png" width="95%"></td>
+        <td><img src="/images/week5/Hallucination/Hallucination_page_6.png" width="95%"></td>
     </tr>
     <td colspan=1 align="center"> Figure 2 <b>(Presentation Slides): Hallucination Definition</b>
     <br/>
@@ -56,7 +56,7 @@ slug = "week5"
 </table>
 <table>
     <tr>
-        <td><img src="/images/Week5/Hallucination_Solution_&_Benefits/Hallucination_Solution_&_Benefits_page_5.png" width="95%"></td>
+        <td><img src="/images/week5/Hallucination_Solution_&_Benefits/Hallucination_Solution_&_Benefits_page_5.png" width="95%"></td>
     </tr>
     <td colspan=1 align="center"> Figure 3 <b>(Presentation Slides): Sources of Hallucination - <a href="https://arxiv.org/abs/2309.01219">Siren's Song in the AI Ocean: A Survey on Hallucination in Large Language Models</a></b>
     <br/>
@@ -75,7 +75,7 @@ slug = "week5"
 </table>
 <table>
     <tr>
-        <td><img src="/images/Week5/Hallucination_Solution_&_Benefits/Hallucination_Solution_&_Benefits_page_4.png" width="95%"></td>
+        <td><img src="/images/week5/Hallucination_Solution_&_Benefits/Hallucination_Solution_&_Benefits_page_4.png" width="95%"></td>
     </tr>
     <td colspan=1 align="center"> Figure 4 <b>(Presentation Slides): Hallucination Risks</b>
     <br/>
@@ -101,7 +101,7 @@ Group 3: Fact-conflict hallucination
 
 <table>
     <tr>
-        <td><img src="/images/Week5/Hallucination_Solution_&_Benefits/Hallucination_Solution_&_Benefits_page_7.png" width="95%"></td>
+        <td><img src="/images/week5/Hallucination_Solution_&_Benefits/Hallucination_Solution_&_Benefits_page_7.png" width="95%"></td>
     </tr>
     <td colspan=1 align="center"> Figure 5 <b>(Presentation Slides): Mitigation Strategies - <a href="https://arxiv.org/abs/2309.01219">Siren's Song in the AI Ocean: A Survey on Hallucination in Large Language Models</a></b>
         <br/>
@@ -126,7 +126,7 @@ Group 3: Fact-conflict hallucination
 </table>
 <table>
     <tr>
-        <td><img src="/images/Week5/Hallucination_Solution_&_Benefits/Hallucination_Solution_&_Benefits_page_16.png" width="95%"></td>
+        <td><img src="/images/week5/Hallucination_Solution_&_Benefits/Hallucination_Solution_&_Benefits_page_16.png" width="95%"></td>
     </tr>
     <td colspan=1 align="center"> Figure 6 
         <b>(Presentation Slides): Potential Solution - <a href="https://arxiv.org/abs/2309.03883">DoLa: Decoding by Contrasting Layers Improves Factuality in Large Language Models</a></b>
@@ -141,7 +141,7 @@ Group 3: Fact-conflict hallucination
 </table>
 <table>
     <tr>
-        <td><img src="/images/Week5/Hallucination_Solution_&_Benefits/Hallucination_Solution_&_Benefits_page_21.png" width="95%"></td>
+        <td><img src="/images/week5/Hallucination_Solution_&_Benefits/Hallucination_Solution_&_Benefits_page_21.png" width="95%"></td>
     </tr>
     <td colspan=1 align="center"> Figure 7 
         <b>(Presentation Slides): Potential Solution - <a href="https://arxiv.org/abs/2302.00083">In-Context Retrieval-Augmented Language Models</a></b>
@@ -158,7 +158,7 @@ Group 3: Fact-conflict hallucination
 </table>
 <table>
     <tr>
-        <td><img src="/images/Week5/Hallucination_Solution_&_Benefits/Hallucination_Solution_&_Benefits_page_28.png" width="95%"></td>
+        <td><img src="/images/week5/Hallucination_Solution_&_Benefits/Hallucination_Solution_&_Benefits_page_28.png" width="95%"></td>
     </tr>
     <td colspan=1 align="center"> Figure 7 
         <b>(Presentation Slides): <a href="https://arxiv.org/abs/2302.00083">Benefits of Hallucinations</a></b>
