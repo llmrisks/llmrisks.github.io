@@ -169,3 +169,28 @@ Group 3: Fact-conflict hallucination
         </p>
     </td>
 </table>
+
+Discussion 1: based on the sources of hallucination, can you think of ways to solve the hallucination problem?
+    Group 2: 
+        Discussed 2 papers (reading for this week) - using semantic search, pre-pending context to help the model (assistance to reduce hallucination) but relying on outside information, but does not help with the model’s inability to work in general cases
+        Automated prompt engineering
+        Optimizing context(s) provided by the user (large contexts can lead to hallucination), perhaps some sort of filtering/attention mechanism to reduce number of tokens the model needs to consider/take in
+        Model side: red-teaming, corner cases and identify certain domains where hallucinations may exist
+        Responses change for the same prompt (sampling ftw) - producing multiple responses to the same prompt and combining them (majority vote, perhaps?) to weed out hallucination that occurs with low probability
+    Group 1: 
+        Not many alternatives to the available data 
+        Also discussed generating multiple responses (like group 2), but they proposed letting the user choose between the different choices
+        “I don’t know” as a possibility when uncertain (instead of resorting to hallucination)
+    Group 3: Inconsistency in Training Data
+        Fine-tune and ensure you’re using up-to-date data
+        Fine-tuning doesn’t guarantee that the old data isn’t used
+        Only get data from trustworthy sources
+        Discussed using a bigger model to check hallucinations in a smaller model
+        Caveat: how do we ensure the bigger model is correct? Why don’t we use the bigger model instead? 
+
+
+Discussion 2: Potential benefits of hallucinations in LLMs?
+    “Train” the humans → ensures that ppl using these models get caught using the models inappropriately (?), and this teaches ppl not to blindly trust 
+    If you know for certain that the information generated isn’t true, this could help you come up w/ new ideas or new perspectives on a given prompt/problem
+    Fake data: can be helpful for synthetic data generation, but need to be cautious about accuracy/plausibility of generated data
+
