@@ -5,6 +5,8 @@ title = "Week 5: Hallucination"
 slug = "week5"
 +++
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
 # Hallucination (Week 5)
 
 <author>Presenting Team: Liu Zhe, Peng Wang, Sikun Guo, Yinhan He, Zhepei Wei</author>
@@ -17,10 +19,10 @@ slug = "week5"
     <tr>
         <td><img src="/images/week5/Hallucination/Hallucination_page_4.png" width="95%"></td>
     </tr>
-    <td colspan=1 align="center"> Figure 1 <b>(Presentation Slides): Peoiple Hallucinate Too</b>
+    <td colspan=1 align="center"> Figure 1 <b>(Presentation Slides): People Hallucinate Too</b>
     <br/>
         <p style="text-align: left; text-indent: 5%;">
-            In general, hallucinations refer to the propagation of false information and/or misinformation. One common example of hallucinations is the Mandela Effect, where incorrect memories are shared by a large group of people. For instance, a paranormal researcher, Fiona Broome, reported a widespread misremembering of a tragedy that Mandela died in prison in the 1980’s, which was untrue.
+            In general, hallucinations refer to the propagation of false information and/or misinformation. One common example of hallucinations is the <a href="https://en.wikipedia.org/wiki/False_memory">Mandela Effect</a>, where incorrect memories are shared by a large group of people. For instance, a paranormal researcher, Fiona Broome, reported a widespread misremembering of a tragedy that Mandela died in prison in the 1980’s, which was untrue.
         </p>
     </td>
 </table>
@@ -28,24 +30,17 @@ slug = "week5"
     <tr>
         <td><img src="/images/week5/Hallucination/Hallucination_page_6.png" width="95%"></td>
     </tr>
-    <td colspan=1 align="center"> Figure 2 <b>(Presentation Slides): Hallucination Definition</b>
+    <td colspan=1 align="left"> Figure 2 <b>(Presentation Slides): Hallucination Definition</b>
     <br/>
         <p style="text-align: left; text-indent: 5%;">
-            In the context of LLMs, hallucinations are a phenomenon that refer to a model’s seemingly plausible generated output, usually presented in a confident tone which makes users more susceptible to believing the result. There are three types of hallucinations according to the “Siren's Song in the AI Ocean” paper: (1) input-conflict, (2) context-conflict, and (3) fact-conflict. 
-            In class, there seemed to be several dissenting opinions about the definition of hallucination regarding LLMs. One classmate argued how alignment-based hallucination should not be considered as part of the discussion scope, as the model would still be doing what it was intended to be doing (i.e. aligning with the user and/or aligning with the trainer). 
+            In the context of LLMs, hallucinations are a phenomenon that refer to a model’s seemingly plausible generated output, usually presented in a confident tone which makes users more susceptible to believing the result. There are three types of hallucinations according to the “Siren's Song in the AI Ocean” paper: (1) input-conflict, (2) context-conflict, and (3) fact-conflict.
+            In class, there seemed to be several dissenting opinions about the definition of hallucination regarding LLMs. One classmate argued how alignment-based hallucination should not be considered as part of the discussion scope, as the model would still be doing what it was intended to be doing (i.e. aligning with the user and/or aligning with the trainer).
         </p>
-        <p style="text-align: left; text-indent: 5%;">
-            Input-conflict:
-                This subcategory of hallucinations deviates from user input. Input from the user can be separated into a task instruction and a task input. An example of a task instruction is a user prompting a model to make a presentation for them. In this example, a task input could be the research papers the user wanted the presentation to be based off of.
-        </p>
-        <p style="text-align: left; text-indent: 5%;">
-            Context-conflict:
-                Context-conflict hallucinations occur when a model generates contradicting information within a response. A simple example of this would be replacing someone’s name (ex. Silver) for another name (ex. Stern).
-        </p>
-        <p style="text-align: left; text-indent: 5%;">
-            Fact-conflict:
-                This is the most common subcategory of hallucination, thus making it the most recent focus of research. An example of this could be returning the wrong date for a historical event.
-        </p>
+        <ul>
+            <li><i>Input-conflict:</i> This subcategory of hallucinations deviates from user input. Input from the user can be separated into a task instruction and a task input. An example of a task instruction is a user prompting a model to make a presentation for them. In this example, a task input could be the research papers the user wanted the presentation to be based off of.</li>
+            <li><i>Context-conflict:</i> Context-conflict hallucinations occur when a model generates contradicting information within a response. A simple example of this would be replacing someone’s name (ex. Silver) for another name (ex. Stern).</li>
+            <li><i>Fact-conflict:</i> This is the most common subcategory of hallucination, thus making it the most recent focus of research. An example of this could be returning the wrong date for a historical event.</li>
+        </ul>
     </td>
 </table>
 
@@ -84,19 +79,21 @@ slug = "week5"
     </td>
 </table>
 
-<h2>Group Activity: Engage with ChatGPT to Explore Its Hallucinations (Three Groups Focusing on Different Hallucination Types)</h2>
-
-<p style="text-align: left; text-indent: 5%;">
-In Group 1, the focus is on "Input-conflict Hallucination". One member narrated a story involving two characters, where one character murdered the other. Contrarily, ChatGPT presented an opposite conclusion. Another member tried to exploit different languages, using two distinct languages that possess similar words.
+<div class="p-3 mb-2 bg-info text-white">
+<h2> Group Activity: Engage with ChatGPT to Explore Its Hallucinations (Three Groups Focusing on Different Hallucination Types) </h2>
+<br>
+<p style="text-align: left; text-indent: 2%;">
+<i>Group 1</i> focused on "Input-conflict Hallucination". One member narrated a story involving two characters, where one character murdered the other. Contrarily, ChatGPT presented an opposite conclusion. Another member tried to exploit different languages, using two distinct languages that possess similar words.
 </p>
 
-<p style="text-align: left; text-indent: 5%;">
-Group 2 concentrated on "Counter-conflict Hallucination". They described four to five fictitious characters, detailing their interrelationships. Some relationships were deducible, yet the model frequently failed to make a complete set of deductions until explictely prompted to be more complete.
+<p style="text-align: left; text-indent: 2%;">
+<i>Group 2</i> concentrated on "Counter-conflict Hallucination". They described four to five fictitious characters, detailing their interrelationships. Some relationships were deducible, yet the model frequently failed to make a complete set of deductions until explictely prompted to be more complete.
 </p>
 
-<p style="text-align: left; text-indent: 5%;">
-Group 3 delved into "Fact-conflict Hallucination". An illustrative example was when ChatGPT was queried with the fraction "⅓". It offered "0.333" as an approximation. However, when subsequently asked to multiply "0.3333" by "3", it confidently responded with "1". Additional tests included translations between two languages.
+<p style="text-align: left; text-indent: 2%;">
+<i>Group 3</i> delved into "Fact-conflict Hallucination". An illustrative example was when ChatGPT was queried with the fraction "⅓". It offered "0.333" as an approximation. However, when subsequently asked to multiply "0.3333" by "3", it confidently responded with "1". Additional tests included translations between two languages.
 </p>
+</div>
 
 
 
@@ -113,10 +110,10 @@ Group 3 delved into "Fact-conflict Hallucination". An illustrative example was w
             During the pretraining phase, it is essential to feasibly construct high-quality data. A potential solution is to filter out machine-generated sources, especially when tokens are uncommon. However, we can only use heuristic rules, which are not always effective at removing fake content.
         </p>
         <p style="text-align: left; text-indent: 5%;">
-            For supervised fine-tuning, there is typically a limited amount of data available for the instruction set. Some of the recommended solutions include manually removing problematic instructions and employing an honest-oriented SFT approach. The term "honesty" can be misleading as it is sometimes used to encapture a much broader range of desired behaviors by the trainer.
+            For supervised fine-tuning, there is typically a limited amount of data available for the instruction set. Some of the recommended solutions include manually removing problematic instructions and employing an honest-oriented SFT approach. The term "honesty" can be misleading as it is sometimes used to capture a much broader range of desired behaviors by the trainer.
         </p>
         <p style="text-align: left; text-indent: 5%;">
-            RLHF is an important alignment method which can also be used to mitigate halucinations including through the human labelers focusing more on "honest" answers.
+            RLHF is an important alignment method which can also be used to mitigate hallucinations including through the human labelers focusing more on "honest" answers.
         </p>
         <p style="text-align: left; text-indent: 5%;">
             For inference, one strategy is to reduce the snowballing of hallucinations by designing a dynamic p-value. The p-value should start off large and shrink as more tokens are generated. Furthermore, introducing new or external knowledge can be done at two different positions: before and after generation.
@@ -191,4 +188,3 @@ Group 3 delved into "Fact-conflict Hallucination". An illustrative example was w
     If users can conclusively discern, however, that the produced information is fictitious, it could assist in fostering new ideas or fresh perspectives on a given topic.
     Furthermore, while fake data has potential utility in synthetic data generation, there's a pressing need to remain vigilant regarding the accuracy and plausibility of the data produced.
 </p>
-
