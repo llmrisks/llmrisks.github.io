@@ -72,10 +72,6 @@ slug = "week5"
         <td><img src="/images/week5/Hallucination_Solution_&_Benefits/Hallucination_Solution_&_Benefits_page_4.png" width="95%"></td>
     </tr>
     <td colspan=1 align="center"> Figure 4 <b>(Presentation Slides): Hallucination Risks</b>
-    <br/>
-        <p style="text-align: left; text-indent: 5%;">
-            TBC
-        </p>
     </td>
 </table>
 
