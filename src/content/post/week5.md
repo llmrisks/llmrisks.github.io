@@ -2,7 +2,7 @@
 date = "04 Oct 2023"
 draft = false
 title = "Week 5: Hallucination"
-slug = "Week5"
+slug = "week5"
 +++
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -184,3 +184,9 @@ slug = "Week5"
     If users can conclusively discern, however, that the produced information is fictitious, it could assist in fostering new ideas or fresh perspectives on a given topic.
     Furthermore, while fake data has potential utility in synthetic data generation, there's a pressing need to remain vigilant regarding the accuracy and plausibility of the data produced.
 </p>
+
+[1]: Zhang, Y., Li, Y., Cui, L., Cai, D., Liu, L., Fu, T., Huang, X., Zhao, E., Zhang, Y., Chen, Y., Wang, L., Luu, A. T., Bi, W., Shi, F., &Shi, S. (2023, September 24). Siren’s song in the AI Ocean: A survey on hallucination in large language models. arXiv.org. https://arxiv.org/abs/2309.01219 
+
+[2]: Ram, O., Levine, Y., Dalmedigos, I., Muhlgay, D., Shashua, A., Leyton-Brown, K., & Shoham, Y. (2023, August 1). In-context retrieval-augmented language models. arXiv.org. https://arxiv.org/abs/2302.00083
+
+[3]: Chuang, Y.-S., Xie, Y., Luo, H., Kim, Y., Glass, J., & He, P. (2023, September 7). Dola: Decoding by contrasting layers improves factuality in large language models. arXiv.org. https://arxiv.org/abs/2309.03883 
