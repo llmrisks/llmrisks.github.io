@@ -113,6 +113,12 @@ Risks and Benefits of Generative AI and LLMs
 
    
    <div class="posttitle">
+      <a href="/week5/">Week 5: Hallucination</a>
+
+
+   </div>
+   
+   <div class="posttitle">
       <a href="/week4/">Week 4: Capabilities of LLMs</a>
 
 
@@ -220,9 +226,246 @@ Risks and Benefits of Generative AI and LLMs
     
         
     
+        
+    
 
 
     
+    
+    <h1><a href="/week5/">Week 5: Hallucination</a></h1>
+<div class="post-metadata">
+  <span class="post-date">
+    <time datetime="2023-10-04 00:00:00 &#43;0000 UTC" itemprop="datePublished">4 October 2023</time>
+  </span>
+  
+</div>
+
+      <div class="post-body" itemprop="articleBody">
+        <p>(see bottom for assigned readings and questions)</p>
+<h1 id="hallucination-week-5">Hallucination (Week 5)</h1>
+<p><author>Presenting Team: Liu Zhe, Peng Wang, Sikun Guo, Yinhan He, Zhepei Wei</author></p>
+<p><author>Blogging Team: Anshuman Suri, Jacob Christopher, Kasra Lekan, Kaylee Liu, My Dinh</author></p>
+<h1 id="wednesday-september-27th-intro-to-hallucination">Wednesday, September 27th: Intro to Hallucination</h1>
+<table>
+    <tr>
+        <td><img src="/images/Week5/Hallucination_page_4.png" width="95%"></td>
+    </tr>
+    <tr>
+    <td colspan=1 align="center"><b>People Hallucinate Too</b>
+        <p style="text-align: left; text-indent: 5%;">
+            In general, hallucinations refer to the propagation of false information and/or misinformation. One common example of hallucinations is the <a href="https://en.wikipedia.org/wiki/False_memory">Mandela Effect</a>, where incorrect memories are shared by a large group of people. For instance, a paranormal researcher, Fiona Broome, reported a widespread misremembering of a tragedy that Mandela died in prison in the 1980’s, which was untrue.
+        </p>
+    </td>
+</tr>
+</table>
+<table>
+    <tr>
+        <td><img src="/images/Week5/Hallucination_page_6.png" width="95%"></td>
+    </tr>
+    <tr>
+    <td colspan=1><center><b>Hallucination Definition</b></center>
+    <br/>
+        <p style="text-align: left; text-indent: 5%;">
+            In the context of LLMs, hallucinations are a phenomenon that refer to a model’s seemingly plausible generated output, usually presented in a confident tone which makes users more susceptible to believing the result.
+<p>There are three types of hallucinations according to the “Siren&rsquo;s Song
+in the AI Ocean” paper: (1) input-conflict, (2)
+context-conflict, and (3) fact-conflict.  In class, there
+seemed to be several dissenting opinions about the
+definition of hallucination regarding LLMs. One classmate
+argued how alignment-based hallucination should not be
+considered as part of the discussion scope, as the model
+would still be doing what it was intended to be doing
+(i.e. aligning with the user and/or aligning with the
+trainer).  </p> <ul> <li><i>Input-conflict:</i> This
+subcategory of hallucinations deviates from user
+input. Input from the user can be separated into a task
+instruction and a task input. An example of a task
+instruction is a user prompting a model to make a
+presentation for them. In this example, a task input could
+be the research papers the user wanted the presentation to
+be based on.</li> <li><i>Context-conflict:</i>
+Context-conflict hallucinations occur when a model
+generates contradicting information within a response. A
+simple example of this would be replacing someone’s name
+(ex. Silver) for another name (ex. Stern).</li>
+<li><i>Fact-conflict:</i> This is the most common
+subcategory of hallucination, thus making it the most
+recent focus of research. An example of this could be
+returning the wrong date for a historical event.</li>
+</ul> </td> </table></p>
+<table>
+    <tr>
+        <td><img src="/images/Week5/Hallucination_Solution_&_Benefits_page_5.png" width="95%"></td>
+    </tr>
+    <tr>
+    <td colspan=1 align="center"> <center><b>Sources of Hallucination</b></center>
+<br>
+<p><a href="https://arxiv.org/abs/2309.01219"><em>Siren&rsquo;s Song in the AI Ocean: A Survey on Hallucination in Large Language Models</em>  </a>
+</td>
+</tr></p>
+</table>
+<table>
+    <tr>
+        <td><img src="/images/Week5/Hallucination_Solution_&_Benefits_page_4.png" width="95%"></td>
+    </tr>
+    <td colspan=1 align="center"><b>Hallucination Risks</b>
+    </td>
+</table>
+<div class="p-3 mb-2 bg-info text-white">
+<h2> Group Activity: Engage with ChatGPT to Explore Its Hallucinations (Three Groups Focusing on Different Hallucination Types) </h2>
+<br>
+<p style="text-align: left; text-indent: 2%;">
+<i>Group 1</i> focused on "Input-conflict Hallucination". One member narrated a story involving two characters, where one character murdered the other. Contrarily, ChatGPT presented an opposite conclusion. Another member tried to exploit different languages, using two distinct languages that possess similar words.
+</p>
+<p style="text-align: left; text-indent: 2%;">
+<i>Group 2</i> concentrated on "Counter-conflict Hallucination". They described four to five fictitious characters, detailing their interrelationships. Some relationships were deducible, yet the model frequently failed to make a complete set of deductions until explictely prompted to be more complete.
+</p>
+<p style="text-align: left; text-indent: 2%;">
+<i>Group 3</i> delved into "Fact-conflict Hallucination". An illustrative example was when ChatGPT was queried with the fraction "⅓". It offered "0.333" as an approximation. However, when subsequently asked to multiply "0.3333" by "3", it confidently responded with "1". Additional tests included translations between two languages.
+</p>
+</div>
+<h1 id="wednesday-october-4th-hallucination-solutions">Wednesday, October 4th: Hallucination Solutions</h1>
+<table>
+    <tr>
+        <td><img src="/images/Week5/Hallucination_Solution_&_Benefits_page_7.png" width="95%"></td>
+    </tr>
+   <tr>
+  <td colspan=1 align="center"><b>Mitigation Strategies</b>
+<p><a href="https://arxiv.org/abs/2309.01219"><em>Siren&rsquo;s Song in the AI Ocean: A Survey on Hallucination in Large Language Models</em></a></b>
+<br/>
+<p style="text-align: left; text-indent: 5%;">
+During the pretraining phase, it is essential to feasibly construct high-quality data. A potential solution is to filter out machine-generated sources, especially when tokens are uncommon. However, we can only use heuristic rules, which are not always effective at removing fake content.
+</p>
+<p style="text-align: left; text-indent: 5%;">
+For supervised fine-tuning, there is typically a limited amount of data available for the instruction set. Some of the recommended solutions include manually removing problematic instructions and employing an honest-oriented SFT approach. The term &ldquo;honesty&rdquo; can be misleading as it is sometimes used to capture a much broader range of desired behaviors by the trainer.
+</p>
+<p style="text-align: left; text-indent: 5%;">
+RLHF is an important alignment method which can also be used to mitigate hallucinations including through the human labelers focusing more on &ldquo;honest&rdquo; answers.
+</p>
+<p style="text-align: left; text-indent: 5%;">
+For inference, one strategy is to reduce the snowballing of hallucinations by designing a dynamic p-value. The p-value should start off large and shrink as more tokens are generated. Furthermore, introducing new or external knowledge can be done at two different positions: before and after generation.
+</p>
+</td>
+</tr></p>
+</table>
+<table>
+    <tr>
+        <td><img src="/images/Week5/Hallucination_Solution_&_Benefits_page_16.png" width="95%"></td>
+    </tr>
+<tr>
+<td colspan=1 align="center"> 
+<b>Decoding Contrasting Layers</b><br>
+<p><a href="https://arxiv.org/abs/2309.03883"><em>DoLa: Decoding by Contrasting Layers Improves Factuality in Large Language Models</em></a></p>
+<br/>
+<p style="text-align: left; text-indent: 5%;">
+            Based on evolving trends, the concept of contrastive decoding is introduced. For example, one might ask, "How do we decide between Seattle or Olympia?" When considering the last layer as a mature layer, it is beneficial to contrast the differences between the preceding layers, which can be deemed as premature. For each of these layers, it is possible to calculate the difference between each probability distribution by comparing mature and premature layers, a process that utilizes the Jensen-Shannon Divergence. Such an approach permits the amplification of the factual knowledge that the model has acquired, thereby enhancing its output generation.
+        </p>
+    </td>
+</table>
+<table>
+    <tr>
+        <td><img src="/images/Week5/Hallucination_Solution_&_Benefits_page_21.png" width="95%"></td>
+    </tr>
+    <tr>
+    <td colspan=1 align="center">
+<p><a href="https://arxiv.org/abs/2302.00083"><em>In-Context Retrieval-Augmented Language Models</em></a></p>
+  <p style="text-align: left; text-indent: 5%;">
+            The model parameters are kept frozen. Instead of directly inputting text into the model, the approach first uses retrieval to search for relevant documents from external sources. The findings from these sources are then concatenated with the original text. Re-ranking results from the retrieval model also provides benefits; the exact perplexities can be referred to in the slide. It has been observed that smaller strides can enhance performance, albeit at the cost of increased runtime. The authors have noticed that the information at the end of a query is typically more relevant for output generation. In general, shorter queries tend to outperform longer ones.
+        </p>
+    </td>
+</table>
+<table>
+    <tr>
+       <td><img src="/images/Week5/Hallucination_Solution_&_Benefits_page_28.png" width="95%"></td>
+    </tr>
+  <tr>
+<td colspan=1 align="center"><a href="https://arxiv.org/abs/2302.00083"><em>Benefits of Hallucinations</em></a>
+    </td>
+    </tr>
+</table>
+<h2 id="discussion-_based-on-the-sources-of-hallucination-what-methods-can-be-employed-to-mitigate-the-hallucination-issue_h2">Discussion: <em>Based on the sources of hallucination, what methods can be employed to mitigate the hallucination issue?</em></h2></h2>
+<p style="text-align: left; text-indent: 5%;">
+    Group 2:
+        Discussed two papers from this week's reading which highlighted the use of semantic search and the introduction of external context to aid the model. This approach, while useful for diminishing hallucination, heavily depends on external information, which is not effective in generic cases.
+        Further strategies discussed were automated prompt engineering, optimization of user-provided context (noting that extensive contexts can induce hallucination), and using filtering or attention mechanisms to limit the tokens the model processes.
+        From the model's perspective, it is beneficial to employ red-teaming, explore corner cases, and pinpoint domains where hallucinations are prevalent.
+        Notably, responses can vary for an identical prompt. A proposed solution is to generate multiple responses to the same prompt and amalgamate them, perhaps through a majority voting system, to eliminate low-probability hallucinations.
+</p>
+<p style="text-align: left; text-indent: 5%;">
+    Group 1:
+        Discussed the scarcity of alternatives to the current training dataset.
+        Like Group 2, they also explored the idea of generating multiple responses but suggested allowing the user to select from the array of choices.
+        Another approach discussed was the model admitting uncertainty, stating "I don’t know", rather than producing a hallucination.
+</p>
+<p style="text-align: left; text-indent: 5%;">
+    Group 3: Addressed inconsistencies in the training data.
+        Emphasized the importance of fine-tuning and ensuring the use of contemporary data.
+        However, they noted that fine-tuning doesn't ensure exclusion of outdated data.
+        It was also advised to source data solely from credible sources.
+        An interesting perspective discussed was utilizing a larger model to verify the smaller model's hallucinations. But a caveat arises: How can one ensure the larger model's accuracy? And if the larger model is deemed superior, why not employ it directly?
+</p>
+<h2 id="discussion-_what-are-the-potential-advantages-of-hallucinations-in-large-language-models-llms_h2">Discussion: <em>What are the potential advantages of hallucinations in Large Language Models (LLMs)?</em></h2></h2>
+<p style="text-align: left; text-indent: 5%;">
+    One advantage discussed was that hallucinations "train" users to not blindly trust the model outputs. If such models are blindly trusted, there is a much greater risk associated with their use.
+    If users can conclusively discern, however, that the produced information is fictitious, it could assist in fostering new ideas or fresh perspectives on a given topic.
+    Furthermore, while fake data has potential utility in synthetic data generation, there's a pressing need to remain vigilant regarding the accuracy and plausibility of the data produced.
+</p>
+<h1 id="readings">Readings</h1>
+<h3 id="for-the-first-class-927">For the first class (9/27)</h3>
+<p>Yue Zhang, Yafu Li, Leyang Cui, Deng Cai, Lemao Liu, Tingchen Fu, Xinting Huang et al. <a href="https://arxiv.org/abs/2309.01219"><em>Siren&rsquo;s Song in the AI Ocean: A Survey on Hallucination in Large Language Models</em></a>. September 2023. <a href="https://arxiv.org/abs/2309.01219">https://arxiv.org/abs/2309.01219</a></p>
+<h3 id="for-the-second-class-104">For the second class (10/4)</h3>
+<p>Choose <strong>one</strong> (or more) of the following papers to read:</p>
+<ul>
+<li>Ori Ram, Yoav Levine, Itay Dalmedigos, Dor Muhlgay, Amnon Shashua, Kevin Leyton-Brown, and Yoav Shoham. <a href="https://arxiv.org/abs/2302.00083"><em>In-context retrieval-augmented language models</em></a>. Accepted for publication in TACL 2024.</li>
+<li>Yung-Sung Chuang, Yujia Xie, Hongyin Luo, Yoon Kim, James Glass, and Pengcheng He. <a href="https://arxiv.org/abs/2309.03883"><em>DoLa: Decoding by Contrasting Layers Improves Factuality in Large Language Models</em></a>. September 2023.</li>
+</ul>
+<h2 id="optional-additional-readings">Optional Additional Readings</h2>
+<h3 id="overview-of-hallucination">Overview of hallucination</h3>
+<ul>
+<li>Vipula Rawte, Amit Sheth, and Amitava Das. <a href="https://arxiv.org/abs/2309.05922"><em>A Survey of Hallucination in Large Foundation Models</em></a>. September 2023.</li>
+<li>Hongbin Ye, Tong Liu, Aijia Zhang, Wei Hua, and Weiqiang Jia. <a href="https://arxiv.org/abs/2309.06794"><em>Cognitive Mirage: A Review of Hallucinations in Large Language Models</em></a>. September 2023. <br>
+Nick McKenna, Tianyi Li, Liang Cheng, Mohammad Javad Hosseini, Mark Johnson, and Mark Steedman. <a href="https://arxiv.org/abs/2305.14552"><em>Sources of Hallucination by Large Language Models on Inference Tasks</em></a>. May 2023.</li>
+<li><a href="https://arstechnica.com/information-technology/2023/04/why-ai-chatbots-are-the-ultimate-bs-machines-and-how-people-hope-to-fix-them/"><em>Why ChatGPT and Bing Chat are so good at making things up</em></a></li>
+</ul>
+<h3 id="how-to-reduce-hallucination-retrieval-augmented-llm">How to reduce hallucination: Retrieval-augmented LLM</h3>
+<ul>
+<li>Weijia Shi, Sewon Min, Michihiro Yasunaga, Minjoon Seo, Rich James, Mike Lewis, Luke Zettlemoyer, and Wen-tau Yih. <a href="https://arxiv.org/abs/2301.12652"><em>Replug: Retrieval-augmented black-box language models</em></a>. January 2023.</li>
+<li>Baolin Peng, Michel Galley, Pengcheng He, Hao Cheng, Yujia Xie, Yu Hu, Qiuyuan Huang et al. <a href="https://arxiv.org/abs/2302.12813"><em>Check your facts and try again: Improving large language models with external knowledge and automated feedback</em></a>. Februrary 2023.</li>
+<li>Akari Asai, Sewon Min, Zexuan Zhong, and Danqi Chen. <a href="https://acl2023-retrieval-lm.github.io/">ACL 2023 Tutorial: <em>Retrieval-based Language Models and Applications</em></a>. ACL 2023.</li>
+</ul>
+<h3 id="how-to-reduce-hallucination-decoding-strategy">How to reduce hallucination: Decoding strategy</h3>
+<ul>
+<li>Nayeon Lee, Wei Ping, Peng Xu, Mostofa Patwary, Pascale N. Fung, Mohammad Shoeybi, and Bryan Catanzaro. <a href="https://proceedings.neurips.cc/paper_files/paper/2022/hash/df438caa36714f69277daa92d608dd63-Abstract-Conference.html"><em>Factuality enhanced language models for open-ended text generation</em></a>. NeurIPS 2022.</li>
+<li>Kenneth Li, Oam Patel, Fernanda Viégas, Hanspeter Pfister, and Martin Wattenberg. <a href="https://arxiv.org/abs/2306.03341"><em>Inference-Time Intervention: Eliciting Truthful Answers from a Language Model</em></a>. June 2023.</li>
+</ul>
+<h3 id="hallucination-is-not-always-harmful-possible-use-cases-of-hallucination">Hallucination is not always harmful: Possible use cases of hallucination</h3>
+<ul>
+<li><a href="https://github.com/DivergentAI/dreamGPT"><em>dreamGPT: AI powered inspiration</em></a></li>
+<li><a href="https://techcrunch.com/2023/09/04/are-language-models-doomed-to-always-hallucinate/"><em>Are AI models doomed to always hallucinate?</em></a></li>
+<li><a href="https://www.smartcompany.com.au/technology/artificial-intelligence/openai-ceo-sam-altman-ai-hallucinations/#:~:text=%E2%80%9COne%20of%20the%20non%2Dobvious,have%20good%20stuff%20for%20that.">OpenAI CEO Sam Altman sees “a lot of value” in AI hallucinations</a>.</li>
+</ul>
+<h1 id="discussion-questions">Discussion Questions</h1>
+<p>Everyone who is not in either the lead or blogging team for the week should post (in the comments below) an answer to at least one of the four questions in each section, or a substantive response to someone else&rsquo;s comment, or something interesting about the readings that is not covered by these questions.</p>
+<p>Don&rsquo;t post duplicates - if others have already posted, you should read their responses before adding your own. Please post your responses to different questions as separate comments.</p>
+<p>First section (1 - 4): Before 5:29pm on <strong>Tuesday 26 September</strong>. <br>
+Second section (5 - 9): Before 5:29pm on <strong>Tuesday 3 October</strong>.</p>
+<h2 id="questions-for-the-first-class-927">Questions for the first class (9/27)</h2>
+<ol>
+<li>What are the risks of hallucinations, especially when LLMs are used in critical applications such as autonomous vehicles, medical diagnosis, or legal analysis?</li>
+<li>What are some potential long-term consequences of allowing LLMs to generate fabricated information without proper detection and mitigation measures in place?</li>
+<li>How can we distinguish between legitimate generalization or &ldquo;creative writing&rdquo; and hallucination? Where is the line between expanding on existing knowledge and creating entirely fictional information, and what are the consequences on users?</li>
+</ol>
+<h2 id="questions-for-the-second-class-104">Questions for the second class (10/4)</h2>
+<ol>
+<li>The required reading presents two methods for reducing hallucinations, i.e., introducing external knowledge and designing better decoding strategies. Can you brainstorm or refer to optional readings to explore ways to further mitigate hallucinations? If so, could you elaborate more on your ideas and also discuss the challenges and risks associated with them?</li>
+<li>Among all the mitigation strategies for addressing hallucination (including those introduced in the reading material from the first class), which one do you find most promising, and why?</li>
+<li>Do retrieval-augmented LLMs pose any risks or potential negative consequences despite their ability to mitigate LLM hallucinations through the use of external knowledge?</li>
+<li>The method proposed by DoLa seems quite simple but effective. Where do you think the authors of DoLa get the inspiration for their idea？</li>
+</ol>
+
+      </div>
+<hr class="post-separator"></hr>
+
     
     <h1><a href="/week4/">Week 4: Capabilities of LLMs</a></h1>
 <div class="post-metadata">
@@ -233,7 +476,8 @@ Risks and Benefits of Generative AI and LLMs
 </div>
 
       <div class="post-body" itemprop="articleBody">
-        <h1 id="capabilities-of-llms-week-4">Capabilities of LLMs (Week 4)</h1>
+        <p>(see bottom for assigned readings and questions)</p>
+<h1 id="capabilities-of-llms-week-4">Capabilities of LLMs (Week 4)</h1>
 <p><author>Presenting Team: Xindi Guo, Mengxuan Hu, Tseganesh Beyene Kebede, Zihan Guan</author></p>
 <p><author>Blogging Team: Ajwa Shahid, Caroline Gihlstorf, Changhong Yang, Hyeongjin Kim, Sarah Boyce</author></p>
 <h1 id="monday-september-18">Monday, September 18</h1>
@@ -366,6 +610,51 @@ be used in healthcare.</p>
 <p>How can we refine and improve LLMs like Med-PaLM2 to be more effective in healthcare applications?</p>
 </li>
 </ul>
+<h2 id="readings">Readings</h2>
+<p><strong>Monday:</strong></p>
+<ol>
+<li>
+<p>Jingfeng Yang, Hongye Jin, Ruixiang Tang, Xiaotian Han, Qizhang Feng, Haoming Jiang, Bing Yin, Xia Hu. <a href="https://arxiv.org/abs/2304.13712"><em>Harnessing the Power of LLMs in Practice: A Survey on ChatGPT and Beyond</em></a>. April 2023. <a href="https://arxiv.org/abs/2304.13712">https://arxiv.org/abs/2304.13712</a>. [<a href="https://arxiv.org/pdf/2304.13712.pdf">PDF</a>]</p>
+</li>
+<li>
+<p>OpenAI. <a href="https://arxiv.org/abs/2303.08774"><em>GPT-4 Technical Report</em></a>. March 2023. <a href="https://arxiv.org/abs/2303.08774">https://arxiv.org/abs/2303.08774</a> [<a href="https://arxiv.org/pdf/2303.08774.pdf">PDF</a>]</p>
+</li>
+</ol>
+<p>Optionally, also explore <a href="https://openai.com/blog/chatgpt-plugins">https://openai.com/blog/chatgpt-plugins</a>.</p>
+<p><strong>Wednesday:</strong></p>
+<ol start="3">
+<li>Karan Singhal, Tao Tu, Juraj Gottweis, Rory Sayres, Ellery Wulczyn, Le Hou, Kevin Clark, Stephen Pfohl, Heather Cole-Lewis, Darlene Neal, Mike Schaekermann, Amy Wang, Mohamed Amin, Sami Lachgar, Philip Mansfield, Sushant Prakash, Bradley Green, Ewa Dominowska, Blaise Aguera y Arcas, Nenad Tomasev, Yun Liu, Renee Wong, Christopher Semturs, S. Sara Mahdavi, Joelle Barral, Dale Webster, Greg S. Corrado, Yossi Matias, Shekoofeh Azizi, Alan Karthikesalingam, Vivek Natarajan. <a href="https://arxiv.org/abs/2305.09617"><em>Towards Expert-Level Medical Question Answering with Large Language Models</em></a>
+<a href="https://arxiv.org/abs/2305.09617">https://arxiv.org/abs/2305.09617</a> [<a href="https://arxiv.org/pdf/2305.09617.pdf">PDF</a>]</li>
+</ol>
+<p>Optional Readings:</p>
+<ul>
+<li>Harsha Nori, Nicholas King, Scott Mayer McKinney, Dean Carignan, Eric Horvitz. <a href="https://arxiv.org/abs/2303.13375"><em>Capabilities of GPT-4 on Medical Challenge Problems</em></a>. March 2023. <a href="https://arxiv.org/abs/2303.13375">https://arxiv.org/abs/2303.13375</a></li>
+<li>Travis Zack, Eric Lehman, Mirac Suzgun, Jorge A. Rodriguez, Leo Anthony Celi, Judy Gichoya, Dan Jurafsky, Peter Szolovits, David W. Bates, Raja-Elie E. Abdulnour, Atul J. Butte,  Emily Alsentzer. <a href="https://www.medrxiv.org/content/10.1101/2023.07.13.23292577"><em>Coding Inequity: Assessing GPT-4’s Potential for Perpetuating Racial and Gender Biases in Healthcare</em></a>. July 2023.
+<a href="https://www.medrxiv.org/content/10.1101/2023.07.13.23292577">https://www.medrxiv.org/content/10.1101/2023.07.13.23292577</a> — This article relates to the underlying biases in the models we talked about this week, but with an application that show clear potential harm resulting from these biases in the form if increased risk of medical misdiagnosis.</li>
+</ul>
+<h2 id="discussion-for-monday">Discussion for Monday:</h2>
+<p>Everyone who is not in either the lead or blogging team for the week should post (in the comments below) an answer to at least one of the questions in this section, or a substantive response to someone else&rsquo;s comment, or something interesting about the readings that is not covered by these questions. Don&rsquo;t post duplicates - if others have already posted, you should read their responses before adding your own. Please post your responses to different questions as separate comments.</p>
+<p>You should post your <em>initial</em> response before 5:29pm on Sunday, September 17, but feel free (and encouraged!) to continue the discussion after that, including responding to any responses by others to your comments.</p>
+<ol>
+<li>Based on the criterions shown in Figure 2 of [1], imagine a practical scenario and explain why you would choose or not choose using LLMs for your scenario.</li>
+<li>Are plug-ins the future of AGI? Do you think that a company should only focus on building powerful AI systems that does not need any support from plug-ins, or they should only focus on the core system and involve more plug-ins into the ecosystem?</li>
+</ol>
+<h2 id="discussion-for-wednesday">Discussion for Wednesday:</h2>
+<p>You should post your <em>initial</em> response to one of the questions below or something interesting related to the Wednesday readings before 5:29pm on Tuesday, September 19.</p>
+<ol>
+<li>
+<p>What should we do before deploying LLMs in medical diagnosis applications? What (if any) regulations should control or limit how they would be used?</p>
+</li>
+<li>
+<p>With LLMs handling sensitive medical information, how can patient privacy and data security be maintained? What policies and safeguards should be in place to protect patient data?</p>
+</li>
+<li>
+<p>The paper discusses the progress of LLMs towards achieving physician-level performance in medical question answering. What are the potential implications of LLMs reaching or surpassing human expertise in medical knowledge?</p>
+</li>
+<li>
+<p>The paper mentions the importance of safety and minimizing bias in LLM-generated medical information, and the <a href="https://www.medrxiv.org/content/10.1101/2023.07.13.23292577">optional reading</a> reports on some experiments that show biases in GPT&rsquo;s medical diagnoses. Should models be tuned to ignore protected attributes? Should we prevent models from being used in medical applications until these problems can be solved?</p>
+</li>
+</ol>
 <section class="footnotes" role="doc-endnotes">
 <hr>
 <ol>

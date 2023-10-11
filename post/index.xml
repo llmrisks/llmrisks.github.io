@@ -8,17 +8,29 @@
     <language>en-us</language>
     <managingEditor>evans@virginia.edu (David Evans)</managingEditor>
     <webMaster>evans@virginia.edu (David Evans)</webMaster>
-    <lastBuildDate>Mon, 25 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://llmrisks.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 04 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://llmrisks.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Week 5: Hallucination</title>
+      <link>https://llmrisks.github.io/week5/</link>
+      <pubDate>Wed, 04 Oct 2023 00:00:00 +0000</pubDate>
+      <author>evans@virginia.edu (David Evans)</author>
+      <guid>https://llmrisks.github.io/week5/</guid>
+      <description>(see bottom for assigned readings and questions)
+Hallucination (Week 5) Presenting Team: Liu Zhe, Peng Wang, Sikun Guo, Yinhan He, Zhepei Wei
+Blogging Team: Anshuman Suri, Jacob Christopher, Kasra Lekan, Kaylee Liu, My Dinh
+Wednesday, September 27th: Intro to Hallucination      People Hallucinate Too In general, hallucinations refer to the propagation of false information and/or misinformation. One common example of hallucinations is the Mandela Effect, where incorrect memories are shared by a large group of people.</description>
+    </item>
+    
     <item>
       <title>Week 4: Capabilities of LLMs</title>
       <link>https://llmrisks.github.io/week4/</link>
       <pubDate>Mon, 25 Sep 2023 00:00:00 +0000</pubDate>
       <author>evans@virginia.edu (David Evans)</author>
       <guid>https://llmrisks.github.io/week4/</guid>
-      <description>Capabilities of LLMs (Week 4) Presenting Team: Xindi Guo, Mengxuan Hu, Tseganesh Beyene Kebede, Zihan Guan
+      <description>(see bottom for assigned readings and questions)
+Capabilities of LLMs (Week 4) Presenting Team: Xindi Guo, Mengxuan Hu, Tseganesh Beyene Kebede, Zihan Guan
 Blogging Team: Ajwa Shahid, Caroline Gihlstorf, Changhong Yang, Hyeongjin Kim, Sarah Boyce
-Monday, September 18 Jingfeng Yang, Hongye Jin, Ruixiang Tang, Xiaotian Han, Qizhang Feng, Haoming Jiang, Bing Yin, Xia Hu. Harnessing the Power of LLMs in Practice: A Survey on ChatGPT and Beyond. April 2023. https://arxiv.org/abs/2304.13712
-This discussion was essential to highlight the distinction between large language models (LLMs) and fine-tuned models.</description>
+Monday, September 18 Jingfeng Yang, Hongye Jin, Ruixiang Tang, Xiaotian Han, Qizhang Feng, Haoming Jiang, Bing Yin, Xia Hu. Harnessing the Power of LLMs in Practice: A Survey on ChatGPT and Beyond. April 2023. https://arxiv.org/abs/2304.13712</description>
     </item>
     
     <item>
