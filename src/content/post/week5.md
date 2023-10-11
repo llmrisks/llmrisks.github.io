@@ -2,7 +2,7 @@
 date = "04 Oct 2023"
 draft = false
 title = "Week 5: Hallucination"
-slug = "week5"
+slug = "Week5"
 +++
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -17,7 +17,7 @@ slug = "week5"
 
 <table>
     <tr>
-        <td><img src="/images/week5/Hallucination/Hallucination_page_4.png" width="95%"></td>
+        <td><img src="/images/Week5/Hallucination_page_4.png" width="95%"></td>
     </tr>
     <td colspan=1 align="center"> Figure 1 <b>(Presentation Slides): People Hallucinate Too</b>
     <br/>
@@ -28,7 +28,7 @@ slug = "week5"
 </table>
 <table>
     <tr>
-        <td><img src="/images/week5/Hallucination/Hallucination_page_6.png" width="95%"></td>
+        <td><img src="/images/Week5/Hallucination_page_6.png" width="95%"></td>
     </tr>
     <td colspan=1 align="left"> Figure 2 <b>(Presentation Slides): Hallucination Definition</b>
     <br/>
@@ -46,7 +46,7 @@ slug = "week5"
 
 <table>
     <tr>
-        <td><img src="/images/week5/Hallucination_Solution_&_Benefits/Hallucination_Solution_&_Benefits_page_5.png" width="95%"></td>
+        <td><img src="/images/Week5/Hallucination_Solution_&_Benefits_page_5.png" width="95%"></td>
     </tr>
     <td colspan=1 align="center"> 
         Figure 3 <b>(Presentation Slides): Sources of Hallucination - 
@@ -69,7 +69,7 @@ slug = "week5"
 
 <table>
     <tr>
-        <td><img src="/images/week5/Hallucination_Solution_&_Benefits/Hallucination_Solution_&_Benefits_page_4.png" width="95%"></td>
+        <td><img src="/images/Week5/Hallucination_Solution_&_Benefits_page_4.png" width="95%"></td>
     </tr>
     <td colspan=1 align="center"> Figure 4 <b>(Presentation Slides): Hallucination Risks</b>
     </td>
@@ -97,7 +97,7 @@ slug = "week5"
 
 <table>
     <tr>
-        <td><img src="/images/week5/Hallucination_Solution_&_Benefits/Hallucination_Solution_&_Benefits_page_7.png" width="95%"></td>
+        <td><img src="/images/Week5/Hallucination_Solution_&_Benefits_page_7.png" width="95%"></td>
     </tr>
     <td colspan=1 align="center"> 
         Figure 5 <b>(Presentation Slides): Mitigation Strategies - <a href="https://arxiv.org/abs/2309.01219">Siren's Song in the AI Ocean: A Survey on Hallucination in Large Language Models</a></b>
@@ -119,7 +119,7 @@ slug = "week5"
 
 <table>
     <tr>
-        <td><img src="/images/week5/Hallucination_Solution_&_Benefits/Hallucination_Solution_&_Benefits_page_16.png" width="95%"></td>
+        <td><img src="/images/Week5/Hallucination_Solution_&_Benefits_page_16.png" width="95%"></td>
     </tr>
     <td colspan=1 align="center"> 
         <b>Figure 6 (Presentation Slides):</b> This figure presents a potential solution titled <a href="https://arxiv.org/abs/2309.03883">"DoLa: Decoding by Contrasting Layers Improves Factuality in Large Language Models"</a>.
@@ -133,7 +133,7 @@ slug = "week5"
 
 <table>
     <tr>
-        <td><img src="/images/week5/Hallucination_Solution_&_Benefits/Hallucination_Solution_&_Benefits_page_21.png" width="95%"></td>
+        <td><img src="/images/Week5/Hallucination_Solution_&_Benefits_page_21.png" width="95%"></td>
     </tr>
     <td colspan=1 align="center">
         Figure 7: <b>Presentation Slides - Potential Solution: <a href="https://arxiv.org/abs/2302.00083">In-Context Retrieval-Augmented Language Models</a></b>
@@ -146,7 +146,7 @@ slug = "week5"
 
 <table>
     <tr>
-        <td><img src="/images/week5/Hallucination_Solution_&_Benefits/Hallucination_Solution_&_Benefits_page_28.png" width="95%"></td>
+        <td><img src="/images/Week5/Hallucination_Solution_&_Benefits_page_28.png" width="95%"></td>
     </tr>
     <td colspan=1 align="center"> 
         Figure 7: <b>Presentation Slides</b>. <a href="https://arxiv.org/abs/2302.00083">Benefits of Hallucinations</a>.
