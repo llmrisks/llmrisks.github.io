@@ -21,9 +21,6 @@ slug = "week5"
     </tr>
     <tr>
     <td colspan=1 align="center"><b>People Hallucinate Too</b>
-        <p style="text-align: left; text-indent: 5%;">
-            In general, hallucinations refer to the propagation of false information and/or misinformation. One common example of hallucinations is the <a href="https://en.wikipedia.org/wiki/False_memory">Mandela Effect</a>, where incorrect memories are shared by a large group of people. For instance, a paranormal researcher, Fiona Broome, reported a widespread misremembering of a tragedy that Mandela died in prison in the 1980’s, which was untrue.
-        </p>
     </td>
 </tr>
 </table>
@@ -35,25 +32,12 @@ slug = "week5"
     <td colspan=1><center><b>Hallucination Definition</b></center>
     <br/>
         <p style="text-align: left; text-indent: 5%;">
-            In the context of LLMs, hallucinations are a phenomenon that refer to a model’s seemingly plausible generated output, usually presented in a confident tone which makes users more susceptible to believing the result.
-
 There are three types of hallucinations according to the “Siren's Song
-            in the AI Ocean” paper: (1) input-conflict, (2)
-            context-conflict, and (3) fact-conflict.  In class, there
-            seemed to be several dissenting opinions about the
-            definition of hallucination regarding LLMs. One classmate
-            argued how alignment-based hallucination should not be
-            considered as part of the discussion scope, as the model
-            would still be doing what it was intended to be doing
-            (i.e. aligning with the user and/or aligning with the
-            trainer).  </p> <ul> <li><i>Input-conflict:</i> This
+            in the AI Ocean” paper:
+
+<ul> <li><i>Input-conflict:</i> This
             subcategory of hallucinations deviates from user
-            input. Input from the user can be separated into a task
-            instruction and a task input. An example of a task
-            instruction is a user prompting a model to make a
-            presentation for them. In this example, a task input could
-            be the research papers the user wanted the presentation to
-            be based on.</li> <li><i>Context-conflict:</i>
+            input.</li> <li><i>Context-conflict:</i>
             Context-conflict hallucinations occur when a model
             generates contradicting information within a response. A
             simple example of this would be replacing someone’s name
@@ -62,7 +46,16 @@ There are three types of hallucinations according to the “Siren's Song
             subcategory of hallucination, thus making it the most
             recent focus of research. An example of this could be
             returning the wrong date for a historical event.</li>
-            </ul> </td> </table>
+            </ul>
+ 
+In class, there were dissenting opinions about the
+            definition of hallucination regarding LLMs. One classmate
+            argued how alignment-based hallucination should not be
+            considered as part of the discussion scope, as the model
+            would still be doing what it was intended to be doing
+            (i.e. aligning with the user and/or aligning with the
+            trainer). 
+</td> </table>
 
 <table>
     <tr>
@@ -116,16 +109,7 @@ There are three types of hallucinations according to the “Siren's Song
 <a href="https://arxiv.org/abs/2309.01219">_Siren's Song in the AI Ocean: A Survey on Hallucination in Large Language Models_</a></b>
         <br/>
         <p style="text-align: left; text-indent: 5%;">
-            During the pretraining phase, it is essential to feasibly construct high-quality data. A potential solution is to filter out machine-generated sources, especially when tokens are uncommon. However, we can only use heuristic rules, which are not always effective at removing fake content.
-        </p>
-        <p style="text-align: left; text-indent: 5%;">
-            For supervised fine-tuning, there is typically a limited amount of data available for the instruction set. Some of the recommended solutions include manually removing problematic instructions and employing an honest-oriented SFT approach. The term "honesty" can be misleading as it is sometimes used to capture a much broader range of desired behaviors by the trainer.
-        </p>
-        <p style="text-align: left; text-indent: 5%;">
-            RLHF is an important alignment method which can also be used to mitigate hallucinations including through the human labelers focusing more on "honest" answers.
-        </p>
-        <p style="text-align: left; text-indent: 5%;">
-            For inference, one strategy is to reduce the snowballing of hallucinations by designing a dynamic p-value. The p-value should start off large and shrink as more tokens are generated. Furthermore, introducing new or external knowledge can be done at two different positions: before and after generation.
+     For inference, one strategy is to reduce the snowballing of hallucinations by designing a dynamic p-value. The p-value should start off large and shrink as more tokens are generated. Furthermore, introducing new or external knowledge can be done at two different positions: before and after generation.
         </p>
     </td>
     </tr>
