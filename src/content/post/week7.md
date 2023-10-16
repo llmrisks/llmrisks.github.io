@@ -7,12 +7,11 @@ slug = "week6"
 
 (see bottom for assigned readings and questions)
 
-# GANS and DeepFakes (Week 7)
-
 <author>Presenting Team: Aparna Kishore, Elena Long, Erzhen Hu, Jingping Wan </author>
 
 <author>Blogging Team: Haochen Liu, Haolin Liu, Ji Hyun Kim, Stephanie Schoch, Xueren Ge </author>
-# Monday, October 9th: Generative Adversarial Network and DeepFakes
+
+# Monday, 9 October: <br> Generative Adversarial Networks and DeepFakes
 
 <div class="slide">
   <img src="../images/week7/A.JPG" alt="">
@@ -24,44 +23,62 @@ slug = "week6"
 </div>
 <div class="slide">
   <img src="../images/week7/C.JPG" alt="">
-  <p>To ensure students have a better understanding of GANs. The leading team held a “GAN Auction Game” to simulate the generating and predicting process of the generator and discriminator in GAN. In this game, students are divided into two groups (Group 1 and Group 2). Group 1 will provide three items (e.g. the name of a place) while Group 2 tries to identify whether the items provided are real or fake. In that case, Group 1 plays as the generator while Group 2 serves as the discriminator. During the game, Group 2 will assign a price to each item Group 1 proposes. A correct assessment of an item's veracity earns the corresponding price, whereas a misjudgment causes a loss of the same amount. After two rounds, the groups exchange roles and play for two more rounds. The detailed process of the game is summarized in the following table.</p>
-</div>
-<div class="slide">
-  <img src="../images/week7/CA.JPG" alt="">
-  
-</div>
-<div class="slide">
-  <img src="../images/week7/CB.JPG" alt="">
-  <p>This game captures the training process of GANs where the generator first proposes certain contents (e.g. images or contexts) and the discriminator is trained to identify the real content. If the generator successfully creates contents that cheat the discriminator, it will receive a high reward for further tuning. On the other hand, if the discriminator correctly identifies the content created by the generator. It will also get a large reward (the price in this auction game).  This iterative training process can be explained by the figures below.</p>
+  <p>To ensure students have a better understanding of GANs. The leading team held a “GAN Auction Game” to simulate the generating and predicting process of the generator and discriminator in GAN. In this game, students are divided into two groups (Group 1 and Group 2). Group 1 will provide three items (e.g. the name of a place) while Group 2 tries to identify whether the items provided are real or fake.
+
+The game captures the training process of GANs where the generator first proposes certain contents (e.g. images or contexts) and the discriminator is trained to distinguish real from generated (fake) content.
+
+If the generator successfully creates contents that fools the discriminator, it will receive a high reward for further tuning. On the other hand, if the discriminator correctly identifies the content created by the generator it receives a reward.
+
+This iterative training process is illustrated by the figures below.</p>
+
 </div>
 <div class="slide">
   <img src="../images/week7/D.JPG" alt="">
   
 </div>
+
+##
+
 <div class="slide">
   <img src="../images/week7/E.JPG" alt="">
   
 </div>
+
+##
+
 <div class="slide">
   <img src="../images/week7/F.JPG" alt="">
   
 </div>
+
+##
+
 <div class="slide">
   <img src="../images/week7/G.JPG" alt="">
   <p>Formally, the training process can be modeled as a two-player zero-sum game by conducting min-max optimization on the objective function.A Nash equilibrium will be established between generator and discriminator.</p>
 </div>
 <div class="slide">
   <img src="../images/week7/H.JPG" alt="">
-  <p>The detailed training algorithm is shown here, in which the discriminator and generator update iteratively.</p>
 </div>
+
+#
+
 <div class="slide">
   <img src="../images/week7/I.JPG" alt="">
-  <p>Generally speaking, for a system that only has generators and discriminators, it is hard to tell whether they are doing well because there are many bad local optima. Thus, one direct way is to introduce human feedback for evaluating. For example, we can borrow strategies from Large Language Models (LLMs), particularly employing Reinforcement Learning from Human Feedback (RLHF). In this method, experts would iteratively rank the generated samples, offering direct reinforcement signals to improve the generator's output. This approach could enhance the realism and semantic alignment of the content created by GANs. However, the RLHF method has its drawbacks, primarily the extensive need for expert involvement, raising concerns about its scalability in larger evaluations. An alternative could be the inclusion of non-expert users, offering a broader range of feedback. Crowdsourcing and user studies are suggested as methods to understand if the generated content meets the target audience's needs and preferences.</p>
-<p>For images or tabular data, when the data distribution is roughly known, inception score serves as an useful metric. This score calculates the KL divergence between the conditional class distribution and the marginal class distribution of generated samples. A higher IS indicates clearer and more diverse images. However, it doesn't always correlate with human judgment.</p>
+  <p>
+
+For a system that only has generators and discriminators, it is hard to tell whether they are doing well because there are many bad local optima. Thus, one direct way is to introduce human feedback for evaluating.
+
+For example, we can borrow strategies from Large Language Models (LLMs), particularly employing Reinforcement Learning from Human Feedback (RLHF). In this method, experts would iteratively rank the generated samples, offering direct reinforcement signals to improve the generator's output. This approach could enhance the realism and semantic alignment of the content created by GANs. However, the RLHF method has its drawbacks, primarily the extensive need for expert involvement, raising concerns about its scalability in larger evaluations.
+
+An alternative could be the inclusion of non-expert users, offering a broader range of feedback. Crowdsourcing and user studies are suggested as methods to understand if the generated content meets the target audience's needs and preferences.</p>
+<p>For images or tabular data, when the data distribution is roughly known, inception score serves as an useful metric. This score calculates the KL divergence between the conditional class distribution and the marginal class distribution of generated samples. A higher inception score (IS) indicates clearer and more diverse images. However, it doesn't always correlate with human judgment.</p>
 </div>
 <div class="slide">
   <img src="../images/week7/J.JPG" alt="">
-  <p>Generative Adversarial Networks (GANs) also face crucial challenges:</p>
+
+##
+
 <ol>
 <li><p>Vanishing/Exploding Gradient: During backpropagation, gradients can shrink (vanish) or grow excessively (explode), disrupting learning. Vanishing gradients stall the network's learning, as parameter updates become negligible. Exploding gradients cause extreme, destabilizing updates, hindering the model's convergence.</p>
 </li>
@@ -71,8 +88,10 @@ slug = "week6"
 </div>
 <div class="slide">
   <img src="../images/week7/K.JPG" alt="">
-  <p>After the general introduction of GANs, the leading team then focuses on utilizing GANs to generate realistic images, which is regarded as one of the most important applications of GANs. GANs are very powerful to generate fake images.</p>
 </div>
+
+#
+
 <div class="slide">
   <img src="../images/week7/L.JPG" alt="">
   <p>A warm-up game is to identify the fake person that is generated by GANs.</p>
@@ -87,8 +106,10 @@ slug = "week6"
 </div>
 <div class="slide">
   <img src="../images/week7/O.JPG" alt="">
-  <p>The first method is utilizing deep learning which discover underlying patterns that are more likely to be generated by GAN. </p>
 </div>
+
+##
+
 <div class="slide">
   <img src="../images/week7/P.JPG" alt="">
   <p>For example, images generated by GANs tend to contain color artifacts or invisible artifacts that can be identified by deep learning models.</p>
@@ -114,15 +135,15 @@ slug = "week6"
   <p>In summary, generative models such as GANs have fundamentally transformed people's lives, and there remains a substantial amount of future research and development ahead. Some future directions are listed above.</p>
 </div>
 
-# Wednesday, October 11th: Creation and Detection of DeepFake Videos
+# Wednesday, 11 October<br>Creation and Detection of DeepFake Videos
 
 <div class="slide">
   <img src="../images/week7/1.png" alt="">
-  <p> Today’s topic is creation and detection of deepfake videos. </p>
 </div>
-<div class="slide">
-  <img src="../images/week7/2.png" alt="">
-  <p> There are three aspects to be covered:  
+
+##
+
+  <p> Outline
   <ol>
   <li>Introduction to deepfake videos</li>
   <li>Detecting Face-swap deepfakes with temporal dynamics</li>
@@ -132,14 +153,16 @@ slug = "week6"
 </div>
 <div class="slide">
   <img src="../images/week7/3.png" alt="">
-  <p> Definition of a deepfake: A deceptive image or recording that distorts reality to deceive.
+
+<p> Definition of a deepfake: A deceptive image or recording that distorts reality to deceive.
   </p>
 </div>
 <div class="slide">
   <img src="../images/week7/4.png" alt="">
-  <p> Ways of generating deepfakes: Generative models (GANS, diffusion models, etc.)
-  </p>
 </div>
+
+#
+
 <div class="slide">
   <img src="../images/week7/5.png" alt="">
   <p> There are some side effects of face swap methods, including
@@ -151,7 +174,7 @@ slug = "week6"
 </div>
 <div class="slide">
   <img src="../images/week7/6.png" alt="">
-  <p> The presenters introduce three different methods of generating deepfake videos:
+  <p> The presenters introduced three different methods of generating deepfake videos:
   <ol>
   <li> Reenactment </li>
   <li> Lip-sync deepfakes </li>
@@ -202,7 +225,9 @@ slug = "week6"
 </div>
 <div class="slide">
   <img src="../images/week7/13.png" alt="">
-  <p> Text-based methods modify videos per word, **phonemes** and **visemes** are key for pronunciation and analysis. Text edits are matched with phoneme sequences in the source video. Parameters of the 3D head model are used to smooth lip motions.
+
+
+Text-based methods modify videos per word, **phonemes** and **visemes** are key for pronunciation and analysis. Text edits are matched with phoneme sequences in the source video. Parameters of the 3D head model are used to smooth lip motions.
   </p>
 </div>
 <div class="slide">
@@ -212,7 +237,7 @@ slug = "week6"
 </div>
 <div class="slide">
   <img src="../images/week7/15.png" alt="">
-  <p> In response to deepfake generally and manipulated content, roughly three types of authentication techniques are proposed:
+  <p> Three types of authentication techniques:
   <ul>
   <li> Forensic  Analysis </li>
   <li> Digital Signatures </li>
@@ -233,8 +258,12 @@ slug = "week6"
   <li><i>Foggy background</i> of first picture vs. <i>Realistic background</i> of the second picture</li>
   <li><i>Scale/ratio</i> of head and hand is odd in the third picture</li>
   </ul>
-  During the class poll to determine which image appeared authentic, the majority of students voted for the second image, with a few supporting the first, and none voting for the third. Surprisingly, contrary to the class’s expectations, it was revealed that the first image was genuine, while the others were crafted by a TikTok user in creating deep fake content.
-  </p>
+  During the class poll to determine which image appeared authentic, the majority of students voted for the second image, with a few supporting the first, and none voting for the third.
+</p>
+<p>
+Surprisingly to the majority of the class, it was revealed that the first image was genuine, while the others were crafted by a TikTok user in creating deep fake content.
+
+</p>
 </div>
 <div class="slide">
   <img src="../images/week7/18.png" alt="">
@@ -327,7 +356,9 @@ Zuckerberg, they used GAN to synthesize the mouth region of individuals to match
   <img src="../images/week7/29.png" alt="">
   <p> Human pulse and respiratory motions are imperceptible to the human eye. Amplifying these factors could serve as a method for detecting generated videos.
   </p>
-  <p> **Note:** Originally designed for medical purposes, aiming to identify potential health risks. </p>
+
+
+**Note:** The method was originally designed for medical purposes, aiming to identify potential health risks in a medical setting in a non-intrusive way. </p>
 </div>
 <div class="slide">
   <img src="../images/week7/30.png" alt="">
@@ -341,9 +372,14 @@ Zuckerberg, they used GAN to synthesize the mouth region of individuals to match
 </div>
 <div class="slide">
   <img src="../images/week7/31.png" alt="">
+
+#
+  
   <p> Both the technology and ways to detect deep-fake videos will continue to advance.
 However, it requires more than simply trying to generate and identify them.
-By using watermarks, deep-fake videos can be distinguished from the source. Furthermore, public education on teaching importance on collecting information from the correct source and further government regulations can be considered.
+By using watermarks, deep-fake videos can be distinguished from the source. Furthermore, public education on teaching importance on collecting information from the correct source and further government regulations can be considered. Perhaps the biggest threat from improvements in the quality and ease of creating fake imagery, is that people will lose confidence in all images and assume everything they see is fake.
+
+
   </p>
 </div>
 
