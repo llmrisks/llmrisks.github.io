@@ -36,7 +36,7 @@ Students in the seminar are expected to:
   ones charged with leading the topic discussion, but should work
   closely with the leaders on the posted write-up. 
 
-- Particpate actively in class meetings.  This means being prepared to
+- Participate actively in class meetings.  This means being prepared to
   contribute by doing the assigned preparation (which will typically
   involve reading a few research papers, but may involve other things
   also) and thinking about the materials deeply to be able to
