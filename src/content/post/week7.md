@@ -166,16 +166,12 @@ slug = "week6"
 </div>
 <div class="slide">
   <img src="../images/week7/8.png" alt="">
-  <p> 
-  <ol>
-  <li> </li>
-  </ol>
+  <p> Example of a reenactment: the mouth movement in Trump's video is animated by a source actor.
   </p>
 </div>
 <div class="slide">
   <img src="../images/week7/9.png" alt="">
-  <p> Example of a reenactment: the mouth movement in Trump's video is animated by a source actor.
-  </p>
+  <p>Here is another example of Reenactment, where the dancing in target video is animated by a source actor.</p>
 </div>
 <div class="slide">
   <img src="../images/week7/10.png" alt="">
