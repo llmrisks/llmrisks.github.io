@@ -14,6 +14,18 @@
     
     
     <item>
+      <title>Week 8: Machine Translation</title>
+      <link>https://llmrisks.github.io/week8/</link>
+      <pubDate>Sun, 22 Oct 2023 00:00:00 +0000</pubDate>
+      <author>evans@virginia.edu (David Evans)</author>
+      <guid>https://llmrisks.github.io/week8/</guid>
+      <description>(see bottom for assigned readings and questions)
+Machine Translation (Week 8) Presenting Team: Ajwa Shahid, Caroline Gihlstorf, Changhong Yang, Hyeongjin Kim, Sarah Boyce
+Blogging Team: Xindi Guo, Mengxuan Hu, Tseganesh Beyene Kebede, Zihan Guan
+Monday, 16 Oct: Diving into the History of Machine Translation Let&amp;rsquo;s kick off this topic with an activity that involves translating an English sentence into a language of your choice and subsequently composing pseudocode to describe the process.</description>
+    </item>
+    
+    <item>
       <title>Week 7: GANs and DeepFakes</title>
       <link>https://llmrisks.github.io/week7/</link>
       <pubDate>Mon, 16 Oct 2023 00:00:00 +0000</pubDate>

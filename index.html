@@ -113,6 +113,12 @@ Risks and Benefits of Generative AI and LLMs
 
    
    <div class="posttitle">
+      <a href="/week8/">Week 8: Machine Translation</a>
+
+
+   </div>
+   
+   <div class="posttitle">
       <a href="/week7/">Week 7: GANs and DeepFakes</a>
 
 
@@ -162,12 +168,6 @@ Risks and Benefits of Generative AI and LLMs
    
    <div class="posttitle">
       <a href="/updates/">Updates</a>
-
-
-   </div>
-   
-   <div class="posttitle">
-      <a href="/survey/">Welcome Survey</a>
 
 
    </div>
@@ -230,9 +230,311 @@ Risks and Benefits of Generative AI and LLMs
     
         
     
+        
+    
 
 
     
+    
+    <h1><a href="/week8/">Week 8: Machine Translation</a></h1>
+<div class="post-metadata">
+  <span class="post-date">
+    <time datetime="2023-10-22 00:00:00 &#43;0000 UTC" itemprop="datePublished">22 October 2023</time>
+  </span>
+  
+</div>
+
+      <div class="post-body" itemprop="articleBody">
+        <p>(see bottom for assigned readings and questions)</p>
+<h1 id="machine-translation-week-8">Machine Translation (Week 8)</h1>
+<p><author>Presenting Team: Ajwa Shahid, Caroline Gihlstorf, Changhong Yang, Hyeongjin Kim, Sarah Boyce</author></p>
+<p><author>Blogging Team: Xindi Guo, Mengxuan Hu, Tseganesh Beyene Kebede, Zihan Guan</author></p>
+<h1 id="monday-16-oct-br-diving-into-the-history-of-machine-translation">Monday, 16 Oct: <br> Diving into the History of Machine Translation</h1>
+<p>Let&rsquo;s kick off this topic with an activity that involves translating an English sentence into a language of your choice and subsequently composing pseudocode to describe the process.</p>
+<center>
+<div class="slide">
+  <img src="../images/week8/slide_1.png" alt="" width="70%">
+</div>
+</center>
+<h2 id="heading"></h2>
+<p>Here is an example of pseudocode from the activity:</p>
+<pre><code class="language-angular2html" data-lang="angular2html">Sentence = &quot;The students like to read interesting books.&quot;
+# The bilingual dictionary from English to Chinese: Eng_chinese_dict
+Translation = []
+for word in Sentence.split():
+    if word in Eng_chinese_dict:
+        Translation.append(Eng_chinese_dict[word])
+    else:
+        Translation.append(word)
+Translated_sentence = &quot; &quot;.join(Translation)
+</code></pre><p>After the activity discussion, here are the challenges encountered when translating from English to another language:</p>
+<ul>
+<li>Variations in Word Order: Different languages have varying word orders, affecting sentence structure.</li>
+<li>Idiomatic Expressions: Idioms and phrases may lack direct equivalents in other languages, requiring creative translation.</li>
+<li>Plurality and Gender: Managing plural forms and gender variations can be complex across languages.</li>
+<li>Verb Conjugations: Verbs change for different tenses and moods, complicating translation.</li>
+<li>Subject-Object-Verb Order: Sentence structure differences influence how subjects, objects, and verbs are translated.</li>
+<li>Verb Tense: Addressing past, present, and future tenses accurately in translation is crucial.</li>
+</ul>
+<h2 id="the-early-days-of-machine-translation">The Early Days of Machine Translation</h2>
+<p>The birth of machine translation can be traced back to 1933 with the work of George Artsrouni and Petr Smirnov-Troyanskii. Artsrouni developed an automatic multilingual word lookup, which can be viewed as a precursor to the modern digital dictionary. Smirnov-Troyanskii conceptualized a machine translation process where humans and machines work together, with different steps encoded by humans and others by the machine.</p>
+<h2 id="different-generations-of-machine-translation-approaches">Different Generations of Machine Translation Approaches</h2>
+<p>Machine translation approaches can be categorized into three primary generations, each having its unique characteristics and methodologies.</p>
+<h3 id="first-generation-direct-translation">First Generation: Direct Translation</h3>
+<p>The MT system is designed in all details specifically for one particular pair of languages, e.g. Russian as the language of the original texts, the source language, and English as the language of the translated texts, the target language. Translation is direct from the source language (SL) text to the target language (TL) text;Typically, systems consist of a large bilingual dictionary and a single monolithic program for analyzing and generating texts; such &lsquo;direct translation&rsquo; systems are necessarily bilingual and unidirectional.</p>
+<center>
+<div class="slide">
+  <img src="../images/week8/slide_2.png" alt="" width="70%">
+</div>
+</center>
+<h3 id="second-generation-interlingua-and-transfer-approach">Second Generation: Interlingua and Transfer Approach</h3>
+<p>The Interlingua approach proposed the use of a universal semantic representation, known as Interlingua, between the source and target languages. This approach offered the advantage of being multilingual, where it was easy to swap source languages, thus reducing the number of models needed.
+In contrast, the Transfer approach used abstract representations of both the source and target languages. This approach required an extensive collection of dictionaries, grammar rules, and language structure rules, including syntax, morphology, and possibly semantics.</p>
+<h3 id="third-generation-statistical-methods">Third Generation: Statistical Methods</h3>
+<p>The third generation of MT brought a significant shift by introducing statistical methods. This generation marked a transition from rule-based methods to learning-based methods, leveraging data and probability to guide translation.</p>
+<center>
+<div class="slide">
+  <img src="../images/week8/slide_3.png" alt="" width="70%">
+<p> Image Source: <a>https://aclanthology.org/J90-2002.pdf</a> </p>
+</div>
+</center>
+<h2 id="a-timeline-of-machine-translation-evolution">A Timeline of Machine Translation Evolution</h2>
+<h1 id="heading-1"></h1>
+<center>
+<div class="slide">
+  <img src="../images/week8/slide_4.png" alt="" width="90%">
+</div>
+</center>
+<h2 id="heading-2"></h2>
+<p>In the 1950s, theory-driven machine translation began, heavily influenced by linguistics and computer science, with a primary focus on Russian-English and English-Russian translation and the use of some statistical methods.</p>
+<p>The 1960s introduced challenges in representing semantics and the &ldquo;encoder-decoder&rdquo; structure, a foundational concept in modern neural machine translation.</p>
+<p>In the 1970s, the field transitioned from interlingua to transfer methods and explored AI concepts.</p>
+<p>The 1980s brought multilingual MT systems, revisiting interlingua methods and advancing semantic representations.</p>
+<p>The 1990s witnessed a significant shift from rule-based methods to &ldquo;corpus-based&rdquo; and &ldquo;example-based&rdquo; approaches, emphasizing data-driven methods in machine translation. It also marked the initial use of neural networks and the integration of machine translation with speech recognition, opening new horizons in the field.</p>
+<h1 id="neural-machine-translation">Neural Machine Translation</h1>
+<p>Neural Machine Translation (NMT) uses neural network models to develop a statistical model for machine translation. Unlike traditional phrase-based translation systems that comprise multiple small sub-components tuned separately, NMT attempts to build and train a singular, large neural network that reads a sentence and outputs the correct translation.</p>
+<h2 id="early-models">Early Models</h2>
+<h3 id="recurrent-neural-network-rnn">Recurrent Neural Network (RNN)</h3>
+<center>
+<div class="slide">
+  <img src="../images/week8/slide_5.png" alt="" width="70%">
+</div>
+</center>
+<p>RNNs process sequential data one element at a time, maintaining a hidden state that captures information from previous elements to inform future predictions or classifications. In the image above, &lsquo;x&rsquo; represents individual elements from sequential data, &lsquo;A&rsquo; represents the Neural Network, and &lsquo;h&rsquo; signifies the hidden layer. At each time step, it processes sequential data step-by-step.</p>
+<div class="slide">
+  <img src="../images/week8/slide_6.png" alt="">
+</div>
+<p>The image above illustrates how RNN works for language translation. To translate a sentence like &lsquo;How are you?&rsquo; from English to French using an RNN Encoder-Decoder, the English input is initially encoded through an Encoder. Subsequently, the Decoder generates the French output word by word. This sequential process results in the French translation, such as &lsquo;Comment allez vous ?,&rsquo; from the English input.</p>
+<p>However, RNNs have a limitation in handling long-term dependencies. When dealing with a large amount of data, RNNs may struggle to memorize it all.</p>
+<p>One solution to this limitation is Long Short Term Memory networks (LSTM), a specific type of RNN designed to capture long-term dependencies. LSTMs incorporate forget, input, and output gates that regulate the flow of information within the network:</p>
+<ul>
+<li>The forget gate determines whether to retain or discard certain information.</li>
+<li>The input gate quantifies the significance of new information introduced.</li>
+<li>The output gate determines what information should be produced.</li>
+</ul>
+<center>
+<div class="slide">
+  <img src="../images/week8/slide_7.png" alt="" width="70%">
+</div>
+</center>
+<p>Simultaneously, the attention mechanism stands as a pivotal development in NMT. It grants the decoder access to all hidden states from the encoder, enabling the network to selectively focus on different segments of the input sequence during each step of output generation. This enhances the model&rsquo;s ability to handle long sentences and complex dependencies. The model gains access to all inputs through the use of bidirectional RNNs. Additionally, the prediction of the next word depends on the weighted combination of these hidden states.</p>
+<div class="slide">
+  <img src="../images/week8/slide_8.png" alt="">
+</div>
+<h3 id="transformer-model">Transformer Model</h3>
+<p>The Transformer model is a type of neural network architecture primarily used in the field of natural language processing.</p>
+<p><strong>Key Advantage:</strong>
+Unlike models that process sentences sequentially, a Transformer processes the whole sentence at once, which can lead to faster computation and the ability to parallelize the process.</p>
+<div class="slide">
+  <img src="../images/week8/slide_9.png" alt="">
+</div>
+<p>In the self-attention mechanism, a given batched input X is linearly projected into three distinct representations: Query (Q), Key (K), and Value (V). The attention score is computed using Q and K. If padding is applied, all padding positions are masked in the attention score.</p>
+<p><strong>Multi-Head Attention</strong>
+In a Transformer model, Q, K, and V are divided into multiple splits, and each split is passed into a separate head, termed as a &ldquo;multi-head&rdquo; attention system. Each head computes its attention independently, and all attention results are then concatenated, effectively reversing the split operation.
+The multi-head attention mechanism enables each head to learn different aspects of the meanings of each word in relation to other words in the sequence. This allows the Transformer model to capture richer interpretations of the sequence.</p>
+<center>
+<div class="slide">
+  <img src="../images/week8/slide_10.png" alt="">
+</div>
+</center>
+<p><strong>Attention Examples</strong></p>
+<div class="slide">
+  <img src="../images/week8/slide_11.png" alt="">
+</div>
+<p>In conclusion, the field of Machine Translation has witnessed remarkable progress, with each new model or mechanism contributing to better language understanding and translation. Currently, Transformer models stand at the forefront of this field, but ongoing research promises further advancements.</p>
+<h1 id="wednesday-18-oct-br-challenges-of-machine-translation">Wednesday, 18 Oct: <br> Challenges of Machine Translation</h1>
+<h2 id="six-challenges-of-neural-machine-translation">Six Challenges of Neural Machine Translation</h2>
+<p>Philipp Koehn and Rebecca Knowles. <a href="https://arxiv.org/abs/1706.03872"><em>Six Challenges for Neural Machine Translation</em></a>. First Workshop on Neural Machine Translation, 2017. [<a href="https://arxiv.org/pdf/1706.03872.pdf">PDF</a>]</p>
+<center>
+<div class="slide">
+  <img src="../images/week8/slide_12.png" alt="">
+</div>
+</center>
+<p><strong>Key Insights</strong>:</p>
+<p><strong>In-domain performance</strong>: When trained and tested on the same domain, NMT and SMT systems generally perform well, with Medical and IT domains showing particularly high scores.</p>
+<p><strong>Out-of-domain performance</strong>: NMT systems tend to degrade more compared to SMT when applied to domains they were not trained on. For example, an NMT trained on Law performs relatively poorly in the Medical domain, while the SMT retains some effectiveness.</p>
+<div class="slide">
+  <img src="../images/week8/slide_13.png" alt="">
+</div>
+<p><strong>Key Insights</strong>:</p>
+<p><strong>General Trend</strong>: For all three models, as the amount of training data increases, the BLEU score (indicative of translation quality) also increases. This suggests that having more training data generally leads to better translation performance.</p>
+<p><strong>Comparative Performance</strong>: The Phrase-Based with Big LM model consistently outperforms the other two models across different corpus sizes. The Neural model (NMT) starts off better than the simple Phrase-Based model for smaller corpus sizes but tends to converge with the Phrase-Based model as the corpus size grows.</p>
+<div class="slide">
+  <img src="../images/week8/slide_14.png" alt="">
+</div>
+<p>NMT provides superior performance when translating words that are infrequent (rarely used) or completely untrained (words not seen during the training process). This could suggest that NMT is more adaptable and flexible in handling diverse vocabulary than SMT.</p>
+<div class="slide">
+  <img src="../images/week8/slide_15.png" alt="">
+</div>
+<p>While NMT excels at translating shorter sentences, SMT appears to be more effective for much longer sentences. This might indicate that the statistical approach of SMT is better equipped to handle the complexities and nuances of longer sentence structures.</p>
+<div class="slide">
+  <img src="../images/week8/slide_16.png" alt="">
+</div>
+<p>From this data, it can be inferred that the choice of word alignment method can influence the accuracy and quality of translations. Different language pairs also exhibit varying levels of alignment match and probability, suggesting that the effectiveness of these methods can vary based on the languages in question.</p>
+<div class="slide">
+  <img src="../images/week8/slide_17.png" alt="">
+</div>
+<p>Beam search is a heuristic search strategy that systematically expands the most promising nodes in a tree-like structure to improve sequence prediction results. The visual representation effectively demonstrates the branching and exploration inherent in the beam search algorithm.</p>
+<div class="slide">
+  <img src="../images/week8/slide_18.png" alt="">
+</div>
+<p>While all these issues are crucial, most of the class considered &ldquo;Domain adaptation/mismatch&rdquo; and &ldquo;Amount of training data&rdquo; to be the most pressing. As the digital world grows and diversifies, machine translation tools will be exposed to an ever-increasing array of content types. Ensuring that these tools can adapt to various domains and are trained on representative datasets will be key to their effectiveness and relevance.</p>
+<div class="slide">
+  <img src="../images/week8/slide_19.png" alt="">
+</div>
+<p>Domain adaptation in NMT focuses on ensuring translation accuracy for specialized content, like medical or legal texts, given the varied data distribution between training and target domains. Additionally, the infrequent occurrence of specific words, notably proper nouns, in training data can result in mistranslations. Overcoming these hurdles is crucial for enhancing NMT&rsquo;s accuracy and applicability in different contexts.</p>
+<div class="slide">
+  <img src="../images/week8/slide_20.png" alt="">
+</div>
+<p>While both LLM and NMT are rooted in deep learning and can comprehend linguistic context, they differ in their primary objectives, training datasets, and architecture. LLMs are versatile and can handle diverse language tasks beyond just translation, while NMTs are specialized for translating between two languages.</p>
+<div class="slide">
+  <img src="../images/week8/slide_21.png" alt="">
+</div>
+<p>The comparison highlights the translation performance debate between LLMs and MT models. While both commercial and open-source MTs are valuable, LLMs fine-tuned with general-purpose instructions often excel. The data emphasizes the significance of scale and fine-tuning in LLM effectiveness.</p>
+<div class="slide">
+  <img src="../images/week8/slide_22.png" alt="">
+</div>
+<p>The diagrams depict the intricate processes by which Large Language Models (LLMs) engage in translation tasks:</p>
+<p><strong>Content Source</strong>:
+The initial content that needs translation can come in various formats, including PDFs, Office documents, and even video.</p>
+<p><strong>Automated TM Management</strong>:
+This is an automated system for managing &lsquo;Translation Memories&rsquo; (TM). Translation memories store previously translated segments of text to ensure consistent translations and speed up the translation process in future tasks.</p>
+<p><strong>Pre-translation</strong>:
+The untranslated content is matched against a Vector Database (DB) to identify similar contexts or content. The system then uses the K-nearest neighbours method to reference the closest matches.
+Relevant training data is extracted to fine-tune the model for a specific task or context.
+The model undergoes &lsquo;Prompt Engineering Fine-Tuning&rsquo; (PEFT) using the LoRA method, enhancing its precision for specific tasks or contexts.</p>
+<p><strong>Hyper-personalized MT engine</strong>:
+Specific prompts are crafted for the content and its context.
+The model learns in the given prompt&rsquo;s context, further enhancing translation accuracy.
+The LLM API allows other systems or processes to interact seamlessly with the LLM.
+The LLM works in tandem with the LoRA module, adding an extra layer of functionality and precision to the translation process.</p>
+<p><strong>Human Interaction</strong>:
+Even with advanced models, there&rsquo;s a phase where human experts intervene, either for post-editing or proofreading, ensuring the final content adheres to the highest standards.</p>
+<p><strong>Top Quality MT Output</strong>:
+After all these stages, the translation process culminates in producing content of the highest caliber, ensuring accuracy and context preservation.</p>
+<p>Both diagrams underscore a blend of automation, advanced modeling, and human expertise to achieve top-notch translations.</p>
+<div class="slide">
+  <img src="../images/week8/slide_23.png" alt="">
+</div>
+<p><strong>Database of Translated Texts</strong>: The cluster of pages symbolizes a collection of previously translated documents stored for reference.</p>
+<p><strong>Database of Translated Texts</strong>: The cluster of pages symbolizes a collection of previously translated documents stored for reference.</p>
+<p><strong>Search Process</strong>: The magnifying glass indicates the process of searching within the database to find a matching or similar translation.</p>
+<p><strong>User Interaction</strong>: The silhouette represents a user or translator interacting with the translation memory system.</p>
+<p><strong>Original Content (A)</strong>: The page with the letter &ldquo;A&rdquo; signifies source content awaiting translation. The highlighted segments on this page denote the parts of the text that have matching translations in the memory.</p>
+<p><strong>Translated Content (X)</strong>: The page with the symbol &ldquo;X&rdquo; showcases the result after using the translation memory. The highlighted segments indicate the portions of the content retrieved from the memory, ensuring consistency and saving time.</p>
+<p><strong>Savings/Cost-Efficiency</strong>: The stack of coins symbolizes the financial advantage or savings gained from using translation memory, reaffirming the caption that states &ldquo;Translation memory is the customer&rsquo;s moneybox.&rdquo;</p>
+<p>This visual displays how Translation Memory systems improve efficiency and consistency in translation tasks by reusing previously translated segments.</p>
+<div class="slide">
+  <img src="../images/week8/slide_24.png" alt="">
+</div>
+<p>The diagram illustrates three fine-tuning methodologies for neural networks:</p>
+<p><strong>Classic</strong>: Involves iterative corrections based on errors.</p>
+<p><strong>Freeze</strong>: Retains the original weights and makes separate, task-specific adjustments.</p>
+<p><strong>LoRA (Low Rank Adaptation)</strong>: Directly integrates with pre-trained models for efficient task-specific adaptations without extensive error corrections.</p>
+<p>In essence, while the classic method emphasizes error corrections, the freeze approach preserves foundational knowledge, and LoRA offers a streamlined adaptation process. The choice among them hinges on the task and desired model refinement.</p>
+<div class="slide">
+  <img src="../images/week8/slide_25.png" alt="">
+</div>
+<p>Benefits related to machine translation include:</p>
+<ul>
+<li><strong>Stylized</strong>: LLMs can adapt to different translation styles, such as formal, informal, or even regional variations.</li>
+<li><strong>Interactive</strong>: They can provide real-time translations during interactive sessions, such as live chats.</li>
+<li><strong>TM based</strong>: LLMs can utilize Translation Memory to ensure consistency across large documents or series of documents, improving translation quality by leveraging prior translations.</li>
+</ul>
+<div class="slide">
+  <img src="../images/week8/slide_26.png" alt="">
+</div>
+<p><strong>Evolution of MT Techniques</strong>:
+Traditional Machine Translation has evolved to incorporate more sophisticated methods, with the advent of GPT models introducing new paradigms.</p>
+<p><strong>Stylized MT</strong>:
+Goes beyond standard translation by adapting to specific styles or tones, like literature or marketing.
+Despite Neural Machine Translation (NMT) having capabilities for style transfer, its potential is often limited by data availability. LLMs like GPT can overcome this using zero-shot prompts.</p>
+<p><strong>Interactive MT</strong>:
+Represents a shift towards more user-centric translation methods.
+By actively involving the user in the translation process and gathering their feedback, it ensures translations are more contextually accurate and meet specific requirements.</p>
+<p><strong>Translation Memory-based MT</strong>:
+Aims to improve translation efficiency by referencing past translations.
+LLMs bring an added advantage by using past translations not just for replication but as context-rich prompts to guide the current translation process.</p>
+<p><strong>Emergence of New Paradigms &amp; Concerns</strong>:
+The integration of LLMs in MT introduces new evaluation methodologies.
+However, this also raises potential privacy concerns, emphasizing the importance of data ethics in AI-driven translation.</p>
+<p><strong>Multi-modality in MT</strong>:
+Suggests a future direction where translations aren&rsquo;t just based on text but incorporate multiple forms of data, enriching the translation process.</p>
+<p><strong>Dependency on LLMs</strong>:
+The consistent reference to GPT models across various MT applications indicates the growing influence and reliance on LLMs in modern translation efforts.</p>
+<p>The transformative role of LLMs in reshaping machine translation, offering enhanced accuracy, versatility, and user engagement.</p>
+<p>The activity showcases the challenges and complexities of machine translation. While tools like DeepL can offer rapid translations, they may sometimes miss cultural, contextual, or idiomatic nuances present in human translations. This is especially relevant for movie dialogues where context and tone play crucial roles.
+<strong>Can MT outperform human translation?</strong>
+MT can be faster and efficient for large-scale tasks, but human translation excels in capturing nuance, cultural context, and idiomatic expressions.</p>
+<p><strong>What are other challenges that can&rsquo;t be solved by MT?</strong>
+MT struggles with cultural nuances, idioms, historical context, and emotional undertones which humans can naturally grasp.</p>
+<p><strong>How can HT and MT interact for better Language Translation?</strong>
+A hybrid approach, combining MT&rsquo;s speed and efficiency with HT&rsquo;s contextual understanding, can lead to more accurate and nuanced translations.</p>
+<h1 id="monday-16-october">Monday, 16 October</h1>
+<p><strong>Required readings:</strong></p>
+<p>Shereen A. Mohamed, Ashraf A. Elsayed, Y. F. Hassan and Mohamed A. Abdou.  <a href="https://link.springer.com/article/10.1007/s00521-021-06268-0"><em>Neural machine translation: past, present, and future</em></a>.
+Neural Computing and Applications, 2021. [https://link.springer.com/article/10.1007/s00521-021-06268-0] (<a href="https://link.springer.com/article/10.1007/s00521-021-06268-0">https://link.springer.com/article/10.1007/s00521-021-06268-0</a>)</p>
+<p><strong>Optional readings:</strong></p>
+<p>W. John Hutchins. <a href="https://aymara.org/biblio/mtranslation.pdf"><em>Machine Translation: A Brief History</em></a>. From <em>Concise history of the language sciences: from the Sumerians to the cognitivists</em> (edited by E. F. K. Koerner and R. E. Asher). Pergamon Press, 1995. [<a href="https://aymara.org/biblio/mtranslation.pdf">PDF</a>]</p>
+<p>Peter F. Brown, John Cocke, Stephen A. Della Pietra, Vincent J. Della Pietra, Fredrick Jelinek, John D. Lafferty, Robert L. Mercer, and Paul S. Roossin. <a href="https://aclanthology.org/J90-2002.pdf"><em>A Statistical Approach to Machine Translation</em></a>.  Computational Linguistics 1990. [<a href="https://aclanthology.org/J90-2002.pdf">PDF</a>]</p>
+<p>Linfeng Song, Daniel Gildea, Yue Zhang, Zhiguo Wang, Jinsong Su. <a href="https://aclanthology.org/Q19-1002/"><em>Semantic Neural Machine Translation Using AMR</em></a>. [Transactions of the Association for Computational Linguistics, 2019. [<a href="https://aclanthology.org/Q19-1002.pdf">PDF</a>]</p>
+<h1 id="discussion-questions">Discussion Questions</h1>
+<p>(post your response by Sunday, 15 October)</p>
+<ol>
+<li>
+<p>What are the limitations of the testing benchmarks used for machine translation (as described in <a href="https://link.springer.com/article/10.1007/s00521-021-06268-0"><em>Neural machine translation: past, present, and future</em></a>) and how might these limitations impact model development?</p>
+</li>
+<li>
+<p>The paper describes neural machine translation (NMT) models as simpler than previously utilized statistical machine translation (SMT) models, and lists a few ways in which this is the case. Are there any drawbacks to NMT models over SMT models, particularly when it comes to interpretability and assuring that essential linguistic knowledge is learned?</p>
+</li>
+<li>
+<p>Why do most LLMs use decoder-only architecture? Why not encoder-decoder?</p>
+</li>
+</ol>
+<h1 id="wednesday-18-october">Wednesday, 18 October</h1>
+<p><strong>Required readings</strong></p>
+<p>Chenyang Lyu, Jitao Xu, Longyue Wang. <a href="https://arxiv.org/abs/2305.01181"><em>New Trends in Machine Translation using Large Language Models : Case Examples with ChatGPT</em></a>.  <a href="https://arxiv.org/abs/2305.01181">https://arxiv.org/abs/2305.01181</a> [<a href="https://arxiv.org/pdf/2305.01181.pdf">PDF</a>]</p>
+<p>Patrick Fernandes, Daniel Deutsch, Mara Finkelstein, Parker Riley, André F. T. Martins, Graham Neubig, Ankush Garg, Jonathan H. Clark, Markus Freitag, Orhan Firat. <a href="https://arxiv.org/abs/2308.07286"><em>The Devil is in the Errors: Leveraging Large Language Models for Fine-grained Machine Translation Evaluation</em></a>. <a href="https://arxiv.org/abs/2308.07286">https://arxiv.org/abs/2308.07286</a> [<a href="https://arxiv.org/pdf/2308.07286.pdf">PDF</a>]</p>
+<p><strong>Optional readings</strong></p>
+<p>Philipp Koehn and Rebecca Knowles. <a href="https://arxiv.org/abs/1706.03872"><em>Six Challenges for Neural Machine Translation</em></a>. First Workshop on Neural Machine Translation, 2017. [<a href="https://arxiv.org/pdf/1706.03872.pdf">PDF</a>]</p>
+<p>Vivek Iyer, Pinzhen Chen, Alexandra Birch. <a href="https://arxiv.org/abs/2309.11668"><em>Towards Effective Disambiguation for Machine Translation with Large Language Models</em></a>. <a href="https://arxiv.org/abs/2309.11668">https://arxiv.org/abs/2309.11668</a>.</p>
+<p>Danielle Saunders. <a href="https://dcsaunders.github.io/thesis.pdf"><em>Domain adaptation for Neural Machine Translation</em></a>. PhD Dissertation, University of Cambridge, February 2021. [<a href="https://dcsaunders.github.io/thesis.pdf">PDF</a>]</p>
+<p>Radhika Sharma, Pragya Katyayan, Nisheeth Joshi. <a href="https://arxiv.org/abs/2305.07360"><em>Improving the Quality of Neural Machine Translation Trough Proper Translation of Name Entities</em></a>. <a href="https://arxiv.org/abs/2305.07360">https://arxiv.org/abs/2305.07360</a> [<a href="https://arxiv.org/pdf/2305.07360.pdf">PDF</a>]</p>
+<p>Verna Dankers, Christopher Lucas, Ivan Titov. <a href="https://aclanthology.org/2022.acl-long.252/"><em>Can Transformer be Too Compositional? Analysing Idiom Processing in Neural Machine Translation</em></a>. ACL 2022. [<a href="https://aclanthology.org/2022.acl-long.252.pdf">PDF</a>]</p>
+<p>Lesly Miculicich, Dhananjay Ram, Nikolaos Pappas, James Henderson. <a href="https://aclanthology.org/D18-1325"><em>Document-Level Neural Machine Translation with Hierarchical Attention Networks</em></a>. EMNLP 2018. [<a href="https://aclanthology.org/D18-1325.pdf">PDF</a>]</p>
+<h2 id="discussion-questions-1">Discussion Questions</h2>
+<ol>
+<li>
+<p><a href="https://arxiv.org/abs/1706.03872"><em>Six Challenges for Neural Machine Translation</em></a> describes six neural machine translation challenges. Discuss how you have encountered these challenges in real-world translator use, the risks you anticipate, and how to mitigate them.</p>
+</li>
+<li>
+<p>There have been many trials to evaluate the performance of Machine Translation. Do you agree with the evaluation method in the paper <a href="https://arxiv.org/abs/2308.07286"><em>The Devil is in the Errors: Leveraging Large Language Models for Fine-grained Machine Translation Evaluation</em></a>? What other factors that you think are important in how we evaluate?</p>
+</li>
+</ol>
+
+      </div>
+<hr class="post-separator"></hr>
+
     
     <h1><a href="/week7/">Week 7: GANs and DeepFakes</a></h1>
 <div class="post-metadata">
@@ -2228,28 +2530,6 @@ the next Wednesday.</p>
 <a href="/images/dallephdseminar.png"><img src="/images/dallephdseminar.png" width="60%"></a><br>
 <font size="-1">Dall-E Prompt: "comic style drawing of a phd seminar on AI"</font>
 </center>
-
-      </div>
-<hr class="post-separator"></hr>
-
-    
-    <h1><a href="/survey/">Welcome Survey</a></h1>
-<div class="post-metadata">
-  <span class="post-date">
-    <time datetime="2023-08-17 00:00:00 &#43;0000 UTC" itemprop="datePublished">17 August 2023</time>
-  </span>
-  
-</div>
-
-      <div class="post-body" itemprop="articleBody">
-        <p>Please submit this welcome survey before 8:59pm on Monday, August 21:</p>
-<center>
-<p><a href="https://forms.gle/dxhFmJH7WRs32s1ZA">https://forms.gle/dxhFmJH7WRs32s1ZA</a></p>
-</center>
-<p>Your answers won&rsquo;t be shared publicly, but I will use the responses to
-the survey to plan the seminar, including forming teams, and may share
-some aggregate and anonymized results and anonymized quotes from the
-surveys.</p>
 
       </div>
 <hr class="post-separator"></hr>
