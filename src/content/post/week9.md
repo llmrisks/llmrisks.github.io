@@ -213,6 +213,277 @@ Group 3: Currently, there are still lots of difficulties and problems in using X
 
 # Wednesday, 25 October: Mechanistic interpretability
 
+<table>
+    <tr>
+        <td><img src="../images/week9/day2-slides-01.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1>
+    <br/>
+      <ul>
+        <li>Today’s topic is discussing Mechanistic Interpretability.</li>
+        <li>This is the process of reverse-engineering neural networks into understandable computer programs.</li>
+        <li>Ensures that models’ behavior is both, predictable, and safe.</li>
+      </ul>
+</td> </table>
+
+## Introduction: Mechanistic interpretability vs concept-based interpretability
+
+<table>
+    <tr>
+        <td><img src="../images/week9/day2-slides-02.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1>
+    <br/>
+      <ul>
+        <li>Mechanistic interpretability focuses on trying to understand the model's internal mechanics/working.</li>
+        <li>It involves tracing the process from input to output to understand the mathematics within the network in a way that is understandable to humans.</li>
+        <li>In contrast, concept-based interpretability uses human-understandable concepts and model structure to explain.</li>
+        <li>For instance, a concept-based interpretable network might use subnetworks or branches to determine the required output.</li>
+      </ul>
+</td> </table>
+
+## SoLU
+
+<table>
+    <tr>
+        <td><img src="../images/week9/day2-slides-03.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1 align="left">
+    <p>This slide introduces the team working on Softmax Linear Units (SoLU).</p>
+    </td>
+</tr>
+</table>
+
+### Superposition Hypothesis
+
+<table>
+    <tr>
+        <td><img src="../images/week9/day2-slides-04.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1>
+    <br/>
+      <ul>
+        <li>Superposition hypothesis is the basis of the problem being tackled by the SoLU paper.</li>
+        <li>The general idea is that the networks we train are based in a much much larger network, where each neuron is its own disentangled feature.</li>
+        <li>Neural network layers have more features than neurons as part of a “sparse coding” strategy.</li>
+        <li>The neurons are polysemantic, and can respond to several (unrelated) features.</li>
+        <li>This hypothesis states that there is no basis in which activations are interpretable, as (number of features) > (number of neurons)</li>
+      </ul>
+</td> </table>
+
+### Solutions to Superposition
+
+<table>
+    <tr>
+        <td><img src="../images/week9/day2-slides-05.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1>
+    <br/>
+      <ul>
+        <li>There are two solutions to superposition:
+          <ol>
+            <li>Create models with less superposition (the focus of this presentation and paper)</li>
+            <li>Find a way to understand representations with superposition</li>
+          </ol>
+        </li>
+        <li>Representation is the vector space of a neural network’s activations.</li>
+        <li>Features are independently understandable components of a representation in order to make it easier to understand.</li>
+        <li>Non-privileged basis: such representations don't come with any "special basis” thus making it difficult to understand them. The model is not trying to optimize for these features.</li>
+        <li>Privileged basis: it is plausible for features to align with this basis</li>
+      </ul>
+</td> </table>
+
+### SoLU vs GeLU
+
+<table>
+    <tr>
+        <td><img src="../images/week9/day2-slides-07.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1>
+    <br/>
+      <ul>
+        <li>There are several ways to reduce polysemanticity.</li>
+        <li>Lateral inhibition, approximate sparsity and superlinearity can be achieved by changing the MLP activation function.</li>
+        <li>Instead of sigmoid in GeLU, they use softmax, and drop the constant (1.7).</li>
+        <li>However, this led to a massive drop in performance, so they added an extra LayerNorm after SoLU.</li>
+        <li>The intuition was that it might fix issues with activation scale and improve optimization.</li>
+        <li>However, the authors admit that one reason for the performance improvement may be that the extra LayerNorm may allow superposition to be smuggled through in smaller activations.</li>
+      </ul>
+</td> </table>
+
+### SoLU Motivating Examples
+
+<table>
+    <tr>
+        <td><img src="../images/week9/day2-slides-08.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1>
+    <br/>
+    <p>This slide shows how when SoLU is applied:
+      <ol>
+        <li>On a vector of large and small values (4, 1, 4, 1), the large values will suppress smaller values.</li>
+        <li>Large basis aligned vectors e.g. (4, 0, 0, 0) are preserved.</li>
+        <li>A feature spread across many dimensions (1, 1, 1, 1) will be suppressed to a smaller magnitude.</li>
+      </ol>
+</td> </table>
+
+
+### Performance vs. Explainability
+Although performance on overall tasks tends to align with the training set's general performance, it's important to note that this may not reveal shortcomings in specific tasks or areas. To ensure a comprehensive understanding, the researchers conducted various evaluations on representative tasks, corroborating the insights gained from the loss curves.
+
+They assessed their model's performance on a variety of datasets, including Lambada, OpenBookQA, ARC, HellaSwag, MMLU, TriviaQA, and arithmetic datasets, and the results are displayed in Figure 2. The authors observed that, overall, there were similar performance levels between the baseline and SoLU models across different model sizes. However, they did notice notable differences in a couple of tasks. For example, the SoLU model performed better on arithmetic tasks, while the baseline model outperformed on TriviaQA. Nevertheless, there wasn't a consistent trend favoring one model over the other across most tasks.
+
+
+### Check If a Neuron is Easy to Understand
+
+To check if a neuron is easy to understand at the first glance, the researchers had people (some of them were authors of the study) look at a set of text snippets. These snippets usually contained about 20 short paragraphs, and the focus was on words that the neuron put a large weight on. These important words were highlighted in various shades of red to show how much weight the neuron gave them. This made it easy for the evaluators to quickly go through the snippets and spot any common themes. You can see an example of what these evaluators saw in the figure.
+
+### Interpretability of Neurons in SoLU vs Baseline Transformer
+
+This is the results of human experiments on interpretability of neurons in SoLU vs baseline transformer for various model sizes. The authors used transformers with different numbers of layers, from 1 to 64. The blue line shows the proportion of neurons in the baseline transformer that were marked as potentially having a clear interpretation across these different layer counts. The red line shows the same thing for the SoLU transformer. The green dot specifically represents the proportion of interpretable neurons in the 16-layer model that had an extra layer-norm but not SoLU. In general, for models with 1 to 40 layers, using SoLU increased the number of neurons that could be easily understood by about 25%. However, in the 64-layer model, the improvement was much smaller.
+
+### LayerNorm Complications
+
+This figure shows the fraction of neurons inconsistent with primary hypothesis. We observe that generally with the increase of activating dataset samples, the fraction of inconsistent neurons decrease. And after layer normalization, inconsistent neurons increases.
+
+### Class Activity: Identify Feature Mappings
+
+We can observe some interpretable features mappings from these highlighted patterns. For example, orange neuron represents the words of the form verb+ing, cyan neuron represents words with prefix 'sen'.
+
+## Monosemanticity
+
+The authors use a weak dictionary learning algorithm called a sparse autoencoder to generate learned features from a trained model that offer a more monosemantic unit of analysis than the model's neurons themselves.
+
+### Architectural Limitations
+
+The model framework for SoLu paper has an architectural limitation. We design activation functions to make fewer neurons be activated for to make the model more interpretable, but this process push the model sparsity too much, which makes the neurons encouraged to to be polysematic. Here, a neuron is polysemantic if the neuron can represent more than one interpretable feature mapping. 
+
+### Model Overview
+
+The purpose of this paper is to clearly demonstrate the effectiveness of a sparse autoencoder in achieving two main objectives: extracting understandable features from superposition and facilitating basic circuit analysis. Specifically, the authors achieve this by using a one-layer transformer with a 512-neuron MLP (Multi-Layer Perceptron) layer. They break down the activations of the MLP into features that are relatively easy to interpret by training sparse autoencoders on the MLP activations obtained from a massive dataset comprising 8 billion data points. These autoencoders have varying expansion factors, ranging from 1×(resulting in 512 features) to 256×(resulting in 131,072 features).
+
+### Features as a Decomposition
+
+The authors decompose the activation vector with the first equation, which is a combination of more general features which can be any direction.  In the equation, $x_j$ is the activation vector for datapoint $j$, $f_i(x^j)$ is the activation of feature $i$, each $d_i$ is a unit vector in activation space called the direction of feature $i$, $b$ is the bias.
+
+
+### The Critetrion of Being a Good Decomposition
+
+This page introduce an example of a "good" feature decomposition. The criterion is, (1) We can interpret the conditions under which each feature is active. In the example, we know that the condition of the feature 4 to be activated is the appearance of {'Hello', ..., 'How's it going}, the positive words. (2) We can interpret the downstream effects of each feature, i.e., the effect of changing the value of feature on subsequent layers. This should be consistent with the interpretation in (1). In this example, when we see the activation value of the feature 4 increase, then the text's negative sentiment should decrease, because the text are more probable to use the positive words {'Hello', ..., 'How's it going}.
+
+
+### Sparse Autoencoders
+
+<!-- ![Slide19](../images/week9/day2-slides-19.png)
+
+The leading group introduces the concept of sparse autoencoders, emphasizing different techniques and strategies used to extract interpretable features from neural network activations. The key points covered are:
+1. MSE Loss for Avoiding Polysemanticity: Emphasizes using Mean Squared Error (MSE) loss instead of cross-entropy loss to prevent the overloading of features.
+2. Larger Internal Dimension: Advocates for a larger number of internal features within the autoencoder to create an overcomplete set of features.
+3. L1 Penalty: Applies an L1 penalty on the internal features to encourage sparsity within the representation.
+4. Input Bias: Introduces an approach of adding an input bias to the representations in autoencoders, which demonstrates a significant boost in performance for the models used in toy examples. -->
+
+
+<table>
+    <tr>
+        <td><img src="../images/week9/day2-slides-19.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1>
+    <br/>
+    <p>The leading group introduces the concept of sparse autoencoders, emphasizing different techniques and strategies used to extract interpretable features from neural network activations. The key points covered are:
+      <ol>
+        <li>MSE Loss for Avoiding Polysemanticity: Emphasizes using Mean Squared Error (MSE) loss instead of cross-entropy loss to prevent the overloading of features.</li>
+        <li>Larger Internal Dimension: Advocates for a larger number of internal features within the autoencoder to create an overcomplete set of features.</li>
+        <li>L1 Penalty: Applies an L1 penalty on the internal features to encourage sparsity within the representation.</li>
+        <li>Input Bias: Introduces an approach of adding an input bias to the representations in autoencoders, which demonstrates a significant boost in performance for the models used in toy examples.</li>
+      </ol>
+</td> </table>
+
+They also provides a comprehensive understanding of the purpose, strategies, and design considerations for implementing sparse autoencoders, and highlights the impact of these choices on model performance. In terms of the purpose of sparse autoencoders, the leading team extracts meaningful features from neural network activations. As they stated, Sparse Autoencoders are introduced as a technique for achieving this by mapping activations to a comprehensive and overcomplete set of interpretable features. Apart from that, focuses on the importance of a good decomposition, where the features extracted should be interpretable and able to describe the activations' context, they highlight three main properties: the ability to describe activations, interpret downstream effects of changes, and cover a significant portion of functionality within the data. Moreover, the design considerations of the sparse autoencoder were discussed, followed by emphasizing the use of MSE loss and L1 penalty to promote sparsity in the features. The use of a larger internal dimension and the unique strategy of input bias addition for enhancing model performance in specific scenarios is explained. Moreover, the leading team emphasized the observed boost in performance due to specific design choices, such as the input bias, indicating its significance during training.
+
+### Are these features "interpretable"
+
+<table>
+    <tr>
+        <td align="center"><img src="../images/week9/day2-slides-20.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1>
+    <br/>
+    <p>After that, the lecture of the leading team delves into assessing the interpretability of features extracted using sparse autoencoders from a trained one-layer transformer model. They also provided insights into the evaluation methodology employed to assess the interpretability. They emphasized the improvement in interpretability and the significance of this approach in extracting meaningful features from pre-trained models for human understanding. Two main points were discussed in this part, which were:
+      <ol>
+        <li>Feature Activation Sampling Bias: The lecture highlights a potential bias when sampling top-activation neurons, which might inaccurately appear monosemantic due to their higher activations. To mitigate this bias, the approach involves sampling uniformly across all possible activations for each given feature.</li>
+        <li>Evaluation of Interpretable Features: They introduced an evaluation process where human-based assessments are used to determine the interpretability of the features extracted. The criteria for interpretability are based on the authors' distributed-based evaluation, where a score above eight is considered sufficiently interpretable.</li>
+      </ol>
+</td> </table>
+
+
+### Automated Evaluation
+
+<table>
+    <tr>
+        <td align="center"><img src="../images/week9/day2-slides-21.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1>
+    <br/>
+    <p>In this section, the leading team addresses the methodology for an automated evaluation process to assess the interpretability of extracted features using a larger language model (LLM). They discussed the implementation of an automated evaluation methodology involving the use of a larger language model, then highlights the low correlation between human-stated activations and the activations observed at the neuron level, emphasizing discrepancies. However, when considering the features designed to be interpretable, there is a significantly higher correlation, with average correlation values reaching as high as 0.153 in some instances, and up to 0.7 in larger models. Moreover, they discussed the LLM's role in summarizing and predicting unseen activations, contributing to a more automated and reliable process for assessing the interpretability of features extracted from the model.</p>
+</td> </table>
+
+### Group Discussions
+
+<!-- ![Slide22](../images/week9/day2-slides-22.png) -->
+<table>
+    <tr>
+        <td align="center"><img src="../images/week9/day2-slides-22.png"></td>
+    </tr>
+</table>
+
+In this part of today's seminar, the whole class was divided into 3 groups to discuss the each of the three topics to address specific questions regarding interpretable features. Before the group discussions, the leading team gave a brief introduction to the discussion topics. Specifically, the sparse autoencoder technique in focus can explain up to 80% of the loss, revealing that by replacing activated neurons with reconstructions, 80% of the original model's loss can be accounted for without altering the model. Notably, there is a high correlation (Spearman correlation around 0.7) between independent features of two models sharing the same architecture but having different random initializations. Considering these evaluation findings, the leading group divides the class into three groups to discuss specific questions related to the interpretability of features.
+
+First, group3 shared their discussion results about the third question. They noted a common discrepancy between the expectations from language models and humans. Language models are often expected to perform at superhuman or domain expert levels, while their capabilities might align more closely with those of a standard human. The use of a general-purpose language model for features requiring domain expertise was seen as a potential issue, as the model's interpretation might lack the required domain-specific knowledge. After that group3 shared their discussion about the possibility that language models might 'hallucinate' interpretations for given features, possibly creating false correlations or interpretations that do not necessarily exist within the data. Human evaluators might also introduce subconscious biases or look for patterns without having the necessary domain expertise, potentially affecting the interpretability findings. Another key point they raised was about the intended audience for interpretability. They discussed that interpretability work from the language models might primarily target researchers, specifically computer science researchers who are involved in developing and assessing models, rather than end-users of these models in practical applications.
+
+Then, group2 talked about their ideas of the second discussion topic. Their discussion results highlighted the multifaceted nature of the variance observed in models designed to find interpretable features. It primarily attributed this variability to stochastic elements in the learning process, the order and sequence of data during training, and the diverse interpretations resulting from these variations, which may lead to equally interpretable yet different feature sets.
+
+Finally, group1 shared their ideas towards the discussion topic 1. Their discussion outcomes emphasized the potential acceptability of the unexplained 20% in certain contexts, underscoring the value in correctly interpreting the majority of the content. Additionally, they noted the potential nuances within the unexplained portion, distinguishing between varying reasons for lack of interpretability within that portion.
+
+### Feature Splitting
+
+<table>
+    <tr>
+        <td align="center">
+            <img src="../images/week9/day2-slides-23.png" width="100%">
+            <img src="../images/week9/day2-slides-24.png" width="100%">
+        </td>
+    </tr>
+    <tr>
+    <td colspan=1>
+    <br/>
+    <p>Regarding the feature splitting, the leading group introduced the training of sparse autoencoders and the observations made regarding the interpretable features. The training of three different versions of autoencoders with increasing sizes of the internal representation were described, leading to more sparsity in interpretable features. They analogized a dictionary learning algorithm to an unlimited number of interpretable features, it's highlighted that even with varied model semantician, a structured superposition of concepts emerges in the learning process. By feature clustering and splitting, this splitting of features leads to more fine-grained interpretations, where a single concept or feature might bifurcate into multiple similar but distinct interpretable features. Moreover, the leading team introduced the potential benefit of these findings in settings beyond one-layer transformers, suggesting the possibility of applying this technique to larger transformers or models.</p>
+</td> </table>
+
+
+## Takeaways
+
+<table>
+    <tr>
+        <td align="center">
+            <img src="../images/week9/day2-slides-25.png" width="100%">
+        </td>
+    </tr>
+    <tr>
+    <td colspan=1>
+    <br/>
+    <p>Finally, there is a brief summary of this lecture. Their summary underscores the potential and limitations of both architectural changes aimed at controlling polysemanticity and the promising post-learning techniques, especially in 1-layer Transformers. It highlights the practical utility of the latter approach, enabling the extraction of meaningful features from already established models, as adapting existing training techniques for interpretability might be less likely within current practices.</p>
+</td> </table>
+
 
 # Readings and Discussions
 
