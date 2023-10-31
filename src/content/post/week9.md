@@ -336,59 +336,133 @@ Group 3: Currently, there are still lots of difficulties and problems in using X
 
 
 ### Performance vs. Explainability
-Although performance on overall tasks tends to align with the training set's general performance, it's important to note that this may not reveal shortcomings in specific tasks or areas. To ensure a comprehensive understanding, the researchers conducted various evaluations on representative tasks, corroborating the insights gained from the loss curves.
 
-They assessed their model's performance on a variety of datasets, including Lambada, OpenBookQA, ARC, HellaSwag, MMLU, TriviaQA, and arithmetic datasets, and the results are displayed in Figure 2. The authors observed that, overall, there were similar performance levels between the baseline and SoLU models across different model sizes. However, they did notice notable differences in a couple of tasks. For example, the SoLU model performed better on arithmetic tasks, while the baseline model outperformed on TriviaQA. Nevertheless, there wasn't a consistent trend favoring one model over the other across most tasks.
+<table>
+    <tr>
+        <td><img src="../images/week9/day2-slides-09.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1 align="left">
+    <p>Although performance on overall tasks tends to align with the training set's general performance, it's important to note that this may not reveal shortcomings in specific tasks or areas. To ensure a comprehensive understanding, the researchers conducted various evaluations on representative tasks, corroborating the insights gained from the loss curves.</p>
+    <p>They assessed their model's performance on a variety of datasets, including Lambada, OpenBookQA, ARC, HellaSwag, MMLU, TriviaQA, and arithmetic datasets, and the results are displayed in Figure 2. The authors observed that, overall, there were similar performance levels between the baseline and SoLU models across different model sizes. However, they did notice notable differences in a couple of tasks. For example, the SoLU model performed better on arithmetic tasks, while the baseline model outperformed on TriviaQA. Nevertheless, there wasn't a consistent trend favoring one model over the other across most tasks.</p>
+    </td>
+</tr>
+</table>
 
 
 ### Check If a Neuron is Easy to Understand
 
-To check if a neuron is easy to understand at the first glance, the researchers had people (some of them were authors of the study) look at a set of text snippets. These snippets usually contained about 20 short paragraphs, and the focus was on words that the neuron put a large weight on. These important words were highlighted in various shades of red to show how much weight the neuron gave them. This made it easy for the evaluators to quickly go through the snippets and spot any common themes. You can see an example of what these evaluators saw in the figure.
+<table>
+    <tr>
+        <td><img src="../images/week9/day2-slides-10.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1 align="left">
+    <p>To check if a neuron is easy to understand at the first glance, the researchers had people (some of them were authors of the study) look at a set of text snippets. These snippets usually contained about 20 short paragraphs, and the focus was on words that the neuron put a large weight on. These important words were highlighted in various shades of red to show how much weight the neuron gave them. This made it easy for the evaluators to quickly go through the snippets and spot any common themes. You can see an example of what these evaluators saw in the figure.</p>
+    </td>
+</tr>
+</table>
 
 ### Interpretability of Neurons in SoLU vs Baseline Transformer
 
-This is the results of human experiments on interpretability of neurons in SoLU vs baseline transformer for various model sizes. The authors used transformers with different numbers of layers, from 1 to 64. The blue line shows the proportion of neurons in the baseline transformer that were marked as potentially having a clear interpretation across these different layer counts. The red line shows the same thing for the SoLU transformer. The green dot specifically represents the proportion of interpretable neurons in the 16-layer model that had an extra layer-norm but not SoLU. In general, for models with 1 to 40 layers, using SoLU increased the number of neurons that could be easily understood by about 25%. However, in the 64-layer model, the improvement was much smaller.
+<table>
+    <tr>
+        <td><img src="../images/week9/day2-slides-11.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1 align="left">
+    <p>This is the results of human experiments on interpretability of neurons in SoLU vs baseline transformer for various model sizes. The authors used transformers with different numbers of layers, from 1 to 64. The blue line shows the proportion of neurons in the baseline transformer that were marked as potentially having a clear interpretation across these different layer counts. The red line shows the same thing for the SoLU transformer. The green dot specifically represents the proportion of interpretable neurons in the 16-layer model that had an extra layer-norm but not SoLU. In general, for models with 1 to 40 layers, using SoLU increased the number of neurons that could be easily understood by about 25%. However, in the 64-layer model, the improvement was much smaller.</p>
+    </td>
+</tr>
+</table>
 
 ### LayerNorm Complications
 
-This figure shows the fraction of neurons inconsistent with primary hypothesis. We observe that generally with the increase of activating dataset samples, the fraction of inconsistent neurons decrease. And after layer normalization, inconsistent neurons increases.
+<table>
+    <tr>
+        <td><img src="../images/week9/day2-slides-12.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1 align="left">
+    <p>This figure shows the fraction of neurons inconsistent with primary hypothesis. We observe that generally with the increase of activating dataset samples, the fraction of inconsistent neurons decrease. And after layer normalization, inconsistent neurons increases.</p>
+    </td>
+</tr>
+</table>
 
 ### Class Activity: Identify Feature Mappings
 
-We can observe some interpretable features mappings from these highlighted patterns. For example, orange neuron represents the words of the form verb+ing, cyan neuron represents words with prefix 'sen'.
+<table>
+    <tr>
+        <td><img src="../images/week9/day2-slides-13.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1 align="left">
+    <p>We can observe some interpretable features mappings from these highlighted patterns. For example, orange neuron represents the words of the form verb+ing, cyan neuron represents words with prefix 'sen'.</p>
+    </td>
+</tr>
+</table>
 
 ## Monosemanticity
 
-The authors use a weak dictionary learning algorithm called a sparse autoencoder to generate learned features from a trained model that offer a more monosemantic unit of analysis than the model's neurons themselves.
+<table>
+    <tr>
+        <td><img src="../images/week9/day2-slides-14.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1 align="left">
+    <p>The authors use a weak dictionary learning algorithm called a sparse autoencoder to generate learned features from a trained model that offer a more monosemantic unit of analysis than the model's neurons themselves.</p>
+    </td>
+</tr>
+</table>
 
 ### Architectural Limitations
 
-The model framework for SoLu paper has an architectural limitation. We design activation functions to make fewer neurons be activated for to make the model more interpretable, but this process push the model sparsity too much, which makes the neurons encouraged to to be polysematic. Here, a neuron is polysemantic if the neuron can represent more than one interpretable feature mapping. 
+<table>
+    <tr>
+        <td><img src="../images/week9/day2-slides-15.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1 align="left">
+    <p>The model framework for SoLu paper has an architectural limitation. We design activation functions to make fewer neurons be activated for to make the model more interpretable, but this process push the model sparsity too much, which makes the neurons encouraged to to be polysematic. Here, a neuron is polysemantic if the neuron can represent more than one interpretable feature mapping.</p>
+    </td>
+</tr>
+</table>
 
 ### Model Overview
 
-The purpose of this paper is to clearly demonstrate the effectiveness of a sparse autoencoder in achieving two main objectives: extracting understandable features from superposition and facilitating basic circuit analysis. Specifically, the authors achieve this by using a one-layer transformer with a 512-neuron MLP (Multi-Layer Perceptron) layer. They break down the activations of the MLP into features that are relatively easy to interpret by training sparse autoencoders on the MLP activations obtained from a massive dataset comprising 8 billion data points. These autoencoders have varying expansion factors, ranging from 1×(resulting in 512 features) to 256×(resulting in 131,072 features).
+<table>
+    <tr>
+        <td><img src="../images/week9/day2-slides-16.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1 align="left">
+    <p>The purpose of this paper is to clearly demonstrate the effectiveness of a sparse autoencoder in achieving two main objectives: extracting understandable features from superposition and facilitating basic circuit analysis. Specifically, the authors achieve this by using a one-layer transformer with a 512-neuron MLP (Multi-Layer Perceptron) layer. They break down the activations of the MLP into features that are relatively easy to interpret by training sparse autoencoders on the MLP activations obtained from a massive dataset comprising 8 billion data points. These autoencoders have varying expansion factors, ranging from 1×(resulting in 512 features) to 256×(resulting in 131,072 features).</p>
+    </td>
+</tr>
+</table>
+
 
 ### Features as a Decomposition
+![Slide17](../images/week9/day2-slides-17.png)
 
 The authors decompose the activation vector with the first equation, which is a combination of more general features which can be any direction.  In the equation, $x_j$ is the activation vector for datapoint $j$, $f_i(x^j)$ is the activation of feature $i$, each $d_i$ is a unit vector in activation space called the direction of feature $i$, $b$ is the bias.
 
 
 ### The Critetrion of Being a Good Decomposition
 
-This page introduce an example of a "good" feature decomposition. The criterion is, (1) We can interpret the conditions under which each feature is active. In the example, we know that the condition of the feature 4 to be activated is the appearance of {'Hello', ..., 'How's it going}, the positive words. (2) We can interpret the downstream effects of each feature, i.e., the effect of changing the value of feature on subsequent layers. This should be consistent with the interpretation in (1). In this example, when we see the activation value of the feature 4 increase, then the text's negative sentiment should decrease, because the text are more probable to use the positive words {'Hello', ..., 'How's it going}.
+<table>
+    <tr>
+        <td><img src="../images/week9/day2-slides-18.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1 align="left">
+    <p>This page introduce an example of a "good" feature decomposition. The criterion is, (1) We can interpret the conditions under which each feature is active. In the example, we know that the condition of the feature 4 to be activated is the appearance of {'Hello', ..., 'How's it going}, the positive words. (2) We can interpret the downstream effects of each feature, i.e., the effect of changing the value of feature on subsequent layers. This should be consistent with the interpretation in (1). In this example, when we see the activation value of the feature 4 increase, then the text's negative sentiment should decrease, because the text are more probable to use the positive words {'Hello', ..., 'How's it going}.</p>
+    </td>
+</tr>
+</table>
 
 
 ### Sparse Autoencoders
-
-<!-- ![Slide19](../images/week9/day2-slides-19.png)
-
-The leading group introduces the concept of sparse autoencoders, emphasizing different techniques and strategies used to extract interpretable features from neural network activations. The key points covered are:
-1. MSE Loss for Avoiding Polysemanticity: Emphasizes using Mean Squared Error (MSE) loss instead of cross-entropy loss to prevent the overloading of features.
-2. Larger Internal Dimension: Advocates for a larger number of internal features within the autoencoder to create an overcomplete set of features.
-3. L1 Penalty: Applies an L1 penalty on the internal features to encourage sparsity within the representation.
-4. Input Bias: Introduces an approach of adding an input bias to the representations in autoencoders, which demonstrates a significant boost in performance for the models used in toy examples. -->
-
 
 <table>
     <tr>
