@@ -14,6 +14,18 @@
     
     
     <item>
+      <title>Week 9: Interpretability</title>
+      <link>https://llmrisks.github.io/week9/</link>
+      <pubDate>Mon, 30 Oct 2023 00:00:00 +0000</pubDate>
+      <author>evans@virginia.edu (David Evans)</author>
+      <guid>https://llmrisks.github.io/week9/</guid>
+      <description>(see bottom for assigned readings and questions)
+Presenting Team: Anshuman Suri, Jacob Christopher, Kasra Lekan, Kaylee Liu, My Dinh
+Blogging Team: Hamza Khalid, Liu Zhe, Peng Wang, Sikun Guo, Yinhan He, Zhepei Wei
+Monday, 23 October: Interpretability: Overview, Limitations, &amp;amp; Challenges Definition of Interpretability  Interpretability in the context of artificial intelligence (AI) and machine learning refers to the extent to which a model&amp;rsquo;s decisions, predictions, or internal workings can be understood and explained by humans.</description>
+    </item>
+    
+    <item>
       <title>Week 8: Machine Translation</title>
       <link>https://llmrisks.github.io/week8/</link>
       <pubDate>Sun, 22 Oct 2023 00:00:00 +0000</pubDate>

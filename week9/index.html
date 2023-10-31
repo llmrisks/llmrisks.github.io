@@ -1,32 +1,114 @@
-+++
-date = "30 Oct 2023"
-draft = false
-title = "Week 9: Interpretability"
-slug = "week9"
-+++
+<!doctype html>
+<html class="no-js" lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <title>Week 9: Interpretability | Risks (and Benefits) of Generative AI and Large Language Models</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://llmrisks.github.io/css/foundation.min.css">
+    <link rel="stylesheet" href="https://llmrisks.github.io/css/highlight.min.css">
+    <link rel="stylesheet" href="https://llmrisks.github.io/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://llmrisks.github.io/css/academicons.min.css">
+    <link rel="stylesheet" href="https://llmrisks.github.io/css/fonts.css">
+    <link rel="stylesheet" href="https://llmrisks.github.io/css/finite.css">
+    <link rel="shortcut icon" href="/images/uva.png">  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
 
-(see bottom for assigned readings and questions)
 
-<author>Presenting Team: Anshuman Suri, Jacob Christopher, Kasra Lekan, Kaylee Liu, My Dinh</author>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
 
-<author>Blogging Team: Hamza Khalid, Liu Zhe, Peng Wang, Sikun Guo, Yinhan He, Zhepei Wei</author>
 
-# Monday, 23 October: <br> Interpretability: Overview, Limitations, & Challenges
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
 
-### Definition of Interpretability
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "$", right: "$", display: false}
+            ]
+        });
+    });
+</script>
 
-- Interpretability in the context of artificial intelligence (AI) and machine learning refers to the **extent to which a model's decisions, predictions, or internal workings can be understood and explained by humans**. It's the degree to which a model's behavior can be made transparent, comprehensible, and meaningful to users, stakeholders, or domain experts. 
-- In concept-based interpretability, the focus is on **explaining the model's decisions in terms of high-level concepts or features** that make sense to humans. This approach seeks to relate model behavior to intuitive, domain-specific, or abstract concepts. For example, in a medical diagnosis model, concept-based interpretability might explain that a decision was made because certain symptoms or biomarkers were present.
-- Mechanistic-based interpretability aims to provide a detailed understanding of how the model makes decisions. This approach delves into the **inner workings of the model**, explaining the role of individual features, weights, and computations. For instance, in a deep learning model, mechanistic interpretability might involve explaining the contributions of specific layers in the decision process.
+    
+  </head>
+  <body>
+      
+    <header>
+      <nav class="nav-bar">
+	
+	  <div class="title-bar" data-responsive-toggle="site-menu" data-hide-for="medium">	      
+	    <button class="site-hamburger" type="button" data-toggle>
+	      <i class="fa fa-bars fa-lg" aria-hidden="true"></i>
+	    </button>
+	    <div class="title-bar-title site-title">
+	      <a href="https://llmrisks.github.io/">Risks (and Benefits) of Generative AI and Large Language Models</a>
+	    </div>
+	    <div class="title-bar-right pull-right">
+	      
 
-### Why is interpretability important?
-Interpretability is important because it builds trust, aids in debugging, and is essential in applications where the consequences of AI decisions are significant, for example:
-1. Learn how the model makes the decision.
-2. Analyze whether there are biases or shortcuts that a model is taking during application.
-3. When dealing with human-in-the-loop systems, interpretability enables humans to work collaboratively with AI, leveraging their complementary strengths to achieve better outcomes.
 
-## Salient Explainers
+	    </div>
+	  </div>
+	    
+	  
+	    <div class="top-bar" id="site-menu" >	      
+	      <div class="top-bar-title show-for-medium site-title">
+		<a href="https://llmrisks.github.io/">Risks (and Benefits) of Generative AI and Large Language Models</a>
+	      </div>
+	      <div class="top-bar-left">
+		<ul class="menu vertical medium-horizontal">
+		  
+		  
+		</ul>
+	      </div>
+	      <div class="top-bar-right show-for-medium">
+		
 
+
+	      </div>
+	    </div>
+	  
+	</nav>
+      
+    </header>
+    
+    <main>
+      
+<div class="row" style="padding-top: 16pt;">
+  <div class="column small-12 medium-10 medium-offset-1 end large-8 large-offset-0">
+    <article class="article" itemscope itemtype="http://schema.org/Article">
+      
+      <h1 itemprop="name">Week 9: Interpretability</h1>
+      <div class="post-metadata">
+  <span class="post-date">
+    <time datetime="2023-10-30 00:00:00 &#43;0000 UTC" itemprop="datePublished">30 October 2023</time>
+  </span>
+  
+</div>
+
+      <div class="post-body" itemprop="articleBody">
+        <p>(see bottom for assigned readings and questions)</p>
+<p><author>Presenting Team: Anshuman Suri, Jacob Christopher, Kasra Lekan, Kaylee Liu, My Dinh</author></p>
+<p><author>Blogging Team: Hamza Khalid, Liu Zhe, Peng Wang, Sikun Guo, Yinhan He, Zhepei Wei</author></p>
+<h1 id="monday-23-october-br-interpretability-overview-limitations--challenges">Monday, 23 October: <br> Interpretability: Overview, Limitations, &amp; Challenges</h1>
+<h3 id="definition-of-interpretability">Definition of Interpretability</h3>
+<ul>
+<li>Interpretability in the context of artificial intelligence (AI) and machine learning refers to the <strong>extent to which a model&rsquo;s decisions, predictions, or internal workings can be understood and explained by humans</strong>. It&rsquo;s the degree to which a model&rsquo;s behavior can be made transparent, comprehensible, and meaningful to users, stakeholders, or domain experts.</li>
+<li>In concept-based interpretability, the focus is on <strong>explaining the model&rsquo;s decisions in terms of high-level concepts or features</strong> that make sense to humans. This approach seeks to relate model behavior to intuitive, domain-specific, or abstract concepts. For example, in a medical diagnosis model, concept-based interpretability might explain that a decision was made because certain symptoms or biomarkers were present.</li>
+<li>Mechanistic-based interpretability aims to provide a detailed understanding of how the model makes decisions. This approach delves into the <strong>inner workings of the model</strong>, explaining the role of individual features, weights, and computations. For instance, in a deep learning model, mechanistic interpretability might involve explaining the contributions of specific layers in the decision process.</li>
+</ul>
+<h3 id="why-is-interpretability-important">Why is interpretability important?</h3>
+<p>Interpretability is important because it builds trust, aids in debugging, and is essential in applications where the consequences of AI decisions are significant, for example:</p>
+<ol>
+<li>Learn how the model makes the decision.</li>
+<li>Analyze whether there are biases or shortcuts that a model is taking during application.</li>
+<li>When dealing with human-in-the-loop systems, interpretability enables humans to work collaboratively with AI, leveraging their complementary strengths to achieve better outcomes.</li>
+</ol>
+<h2 id="salient-explainers">Salient Explainers</h2>
 <table>
     <tr>
         <td><img src="../images/week9/day1-slides-05.png"></td>
@@ -43,7 +125,6 @@ Interpretability is important because it builds trust, aids in debugging, and is
         <li><a href="https://arxiv.org/abs/1610.02391"><i>GradCAM (Selvaraju et al., 2016):</i></a> Combine gradients and final convolutional layer feature maps</li>
       </ul>
 </td> </table>
-
 <table>
     <tr>
         <td><img src="../images/week9/day1-slides-06.png"></td>
@@ -54,10 +135,7 @@ Interpretability is important because it builds trust, aids in debugging, and is
     </td>
 </tr>
 </table>
-
-
-## Saliency Map Demo
-
+<h2 id="saliency-map-demo">Saliency Map Demo</h2>
 <table>
     <tr>
         <td><img src="../images/week9/day1-slides-07.png"></td>
@@ -68,8 +146,6 @@ Interpretability is important because it builds trust, aids in debugging, and is
     </td>
 </tr>
 </table>
-
-
 <table>
     <tr>
         <td><img src="../images/week9/day1-slides-08.png"></td>
@@ -81,13 +157,9 @@ Interpretability is important because it builds trust, aids in debugging, and is
     </td>
 </tr>
 </table>
-
-### Limitations of Salient Explainers
-
-![limitations](../images/week9/day1-slides-09.png)
-
-### Combining Salient Explainers with Generative AI?
-
+<h3 id="limitations-of-salient-explainers">Limitations of Salient Explainers</h3>
+<p><img src="../images/week9/day1-slides-09.png" alt="limitations"></p>
+<h3 id="combining-salient-explainers-with-generative-ai">Combining Salient Explainers with Generative AI?</h3>
 <table>
     <tr>
         <td><img src="../images/week9/day1-slides-10.png"></td>
@@ -100,9 +172,7 @@ Interpretability is important because it builds trust, aids in debugging, and is
         <li>Discussion: Salient explainers would help identify which characteristics of the training images are used, which improves understanding of generative AI models (such as GAN and Diffusion Models). For example, understanding the score function that leads to the direction of pushing the noisy distribution to a real image. For GANs, discriminators can use it to capture the area. For diffusion models, it can help to explain why the image is generated towards some features to make it realistic.</li>
       </ul>
 </td> </table>
-
-## Attention Explainers
-
+<h2 id="attention-explainers">Attention Explainers</h2>
 <table>
     <tr>
         <td><img src="../images/week9/day1-slides-12.png"></td>
@@ -114,13 +184,9 @@ Interpretability is important because it builds trust, aids in debugging, and is
     </td>
 </tr>
 </table>
-
-## Limitations of Attention: _Attention is not Explanation_
-
-Jain and Wallace's [_Attention is not Explanation_](https://arxiv.org/abs/1902.10186), NAACL 2019
-
-Sarah Wiegreffe, Yuval Pinter. [_Attention is not not Explanation_](https://arxiv.org/abs/1908.04626). EMNLP, 2019.
-
+<h2 id="limitations-of-attention-_attention-is-not-explanation_">Limitations of Attention: <em>Attention is not Explanation</em></h2>
+<p>Jain and Wallace&rsquo;s <a href="https://arxiv.org/abs/1902.10186"><em>Attention is not Explanation</em></a>, NAACL 2019</p>
+<p>Sarah Wiegreffe, Yuval Pinter. <a href="https://arxiv.org/abs/1908.04626"><em>Attention is not not Explanation</em></a>. EMNLP, 2019.</p>
 <table>
     <tr>
         <td><img src="../images/week9/day1-slides-13.png"></td>
@@ -131,9 +197,7 @@ Sarah Wiegreffe, Yuval Pinter. [_Attention is not not Explanation_](https://arxi
     </td>
 </tr>
 </table>
-
-### Further Discussion: Attention is not not Explanation
-
+<h3 id="further-discussion-attention-is-not-not-explanation">Further Discussion: Attention is not not Explanation</h3>
 <table>
     <tr>
         <td><img src="../images/week9/day1-slides-15.png"></td>
@@ -145,7 +209,6 @@ Sarah Wiegreffe, Yuval Pinter. [_Attention is not not Explanation_](https://arxi
     </td>
 </tr>
 </table>
-
 <table>
     <tr>
         <td><img src="../images/week9/day1-slides-17.png"></td>
@@ -156,7 +219,6 @@ Sarah Wiegreffe, Yuval Pinter. [_Attention is not not Explanation_](https://arxi
     </td>
 </tr>
 </table>
-
 <table>
     <tr>
         <td><img src="../images/week9/day1-slides-18.png"></td>
@@ -172,7 +234,6 @@ Sarah Wiegreffe, Yuval Pinter. [_Attention is not not Explanation_](https://arxi
       </ul>
       <p>The evaluation of these results highlights a crucial aspect: the definition of an explanation. Although these attention weights potentially hold utility (as observed in various settings), their direct interpretation is not always straightforward.</p>
 </td> </table>
-
 <table>
     <tr>
         <td><img src="../images/week9/day1-slides-19.png"></td>
@@ -183,23 +244,12 @@ Sarah Wiegreffe, Yuval Pinter. [_Attention is not not Explanation_](https://arxi
     </td>
 </tr>
 </table>
-
-
-### Discussion
-
-![discussion](../images/week9/day1-slides-21.png)
-
-Group 1: Human interpretability features are essential. For instance, in the application of AI in drug design, an AI model alters a molecule from a non-drug variant to its drug counterpart. Presently, the predominant approach involves creating a black-box model that transforms one molecule into its drug form, contributing to a lack of credibility in the process. For example, a doctor unfamiliar with deep learning cannot comprehend the inner workings of the model that facilitates the conversion of regular molecules into drugs, making it challenging to ensure the safety, efficacy, and trustworthiness of the AI-driven drug design without transparent and interpretable models.
-
-
-Group 2: A general observation we've noted is that the requirements or metrics for Explainable AI (XAI) significantly depend on the intended purpose of the tool. For instance, the explanations provided for AI researchers and end users are likely to differ due to their distinct focuses. On the other hand, there is a risk of amplifying confirmation bias if we anticipate XAI to explain phenomena in alignment with human beliefs. To truly understand why a model performs effectively, it might be necessary to set aside human biases and preconceived notions, enabling an unbiased exploration of how the model achieves its performance.
-
-
-Group 3: Currently, there are still lots of difficulties and problems in using XAI tools in general. For example, methods such as LIME and SHAP always need a lot computation and don’t work well on complex large models. Besides, we lack ground-truth explanations and therefore, we don’t know whether the learned explanations are useful or not. Our suggestions for solving those problems and also issues mentioned by other groups are: 1) Approximating the complicate model to some simple model 2) Build self-explainable models 3) Combine different metrics and XAI tools.
-
-
-## Towards Provably Useful XAI
-
+<h3 id="discussion">Discussion</h3>
+<p><img src="../images/week9/day1-slides-21.png" alt="discussion"></p>
+<p>Group 1: Human interpretability features are essential. For instance, in the application of AI in drug design, an AI model alters a molecule from a non-drug variant to its drug counterpart. Presently, the predominant approach involves creating a black-box model that transforms one molecule into its drug form, contributing to a lack of credibility in the process. For example, a doctor unfamiliar with deep learning cannot comprehend the inner workings of the model that facilitates the conversion of regular molecules into drugs, making it challenging to ensure the safety, efficacy, and trustworthiness of the AI-driven drug design without transparent and interpretable models.</p>
+<p>Group 2: A general observation we&rsquo;ve noted is that the requirements or metrics for Explainable AI (XAI) significantly depend on the intended purpose of the tool. For instance, the explanations provided for AI researchers and end users are likely to differ due to their distinct focuses. On the other hand, there is a risk of amplifying confirmation bias if we anticipate XAI to explain phenomena in alignment with human beliefs. To truly understand why a model performs effectively, it might be necessary to set aside human biases and preconceived notions, enabling an unbiased exploration of how the model achieves its performance.</p>
+<p>Group 3: Currently, there are still lots of difficulties and problems in using XAI tools in general. For example, methods such as LIME and SHAP always need a lot computation and don’t work well on complex large models. Besides, we lack ground-truth explanations and therefore, we don’t know whether the learned explanations are useful or not. Our suggestions for solving those problems and also issues mentioned by other groups are: 1) Approximating the complicate model to some simple model 2) Build self-explainable models 3) Combine different metrics and XAI tools.</p>
+<h2 id="towards-provably-useful-xai">Towards Provably Useful XAI</h2>
 <table>
     <tr>
         <td><img src="../images/week9/day1-slides-23.png"></td>
@@ -211,10 +261,7 @@ Group 3: Currently, there are still lots of difficulties and problems in using X
     </td>
 </tr>
 </table>
-
-
-# Wednesday, 25 October: Mechanistic Interpretability
-
+<h1 id="wednesday-25-october-mechanistic-interpretability">Wednesday, 25 October: Mechanistic Interpretability</h1>
 <table>
     <tr>
         <td><img src="../images/week9/day2-slides-01.png"></td>
@@ -224,9 +271,7 @@ Group 3: Currently, there are still lots of difficulties and problems in using X
     <br/>
 Mechanistic Interpretability is the process of reverse-engineering neural networks into understandable computer programs. It is often motivated by the goal of ensuring a models' behavior is both predictable and safe (but unclear if it can ever achieve such a goal).
 </td> </table>
-
-## Introduction: Mechanistic interpretability vs concept-based interpretability
-
+<h2 id="introduction-mechanistic-interpretability-vs-concept-based-interpretability">Introduction: Mechanistic interpretability vs concept-based interpretability</h2>
 <table>
     <tr>
         <td><img src="../images/week9/day2-slides-02.png"></td>
@@ -241,19 +286,14 @@ Mechanistic Interpretability is the process of reverse-engineering neural networ
         <li>For instance, a concept-based interpretable network might use subnetworks or branches to determine the required output.</li>
       </ul>
 </td> </table>
-
-## Softmax Linear Units (SoLU)
-
-Nelson Elhage, Tristan Hume, Catherine Olsson, Neel Nanda, Tom Henighan, Scott Johnston, Sheer El Showk, Nicholas Joseph, Nova DasSarma, Ben Mann, and others (Anthropic AI). [_Softmax Linear Units_](https://transformer-circuits.pub/2022/solu/index.html). Transformers Circuit Thread, 2022. [https://transformer-circuits.pub/2022/solu/index.html](https://transformer-circuits.pub/2022/solu/index.html)
-
+<h2 id="softmax-linear-units-solu">Softmax Linear Units (SoLU)</h2>
+<p>Nelson Elhage, Tristan Hume, Catherine Olsson, Neel Nanda, Tom Henighan, Scott Johnston, Sheer El Showk, Nicholas Joseph, Nova DasSarma, Ben Mann, and others (Anthropic AI). <a href="https://transformer-circuits.pub/2022/solu/index.html"><em>Softmax Linear Units</em></a>. Transformers Circuit Thread, 2022. <a href="https://transformer-circuits.pub/2022/solu/index.html">https://transformer-circuits.pub/2022/solu/index.html</a></p>
 <table>
     <tr>
         <td><img src="../images/week9/day2-slides-03.png"></td>
     </tr>
 </table>
-
-### Superposition Hypothesis
-
+<h3 id="superposition-hypothesis">Superposition Hypothesis</h3>
 <table>
     <tr>
         <td><img src="../images/week9/day2-slides-04.png"></td>
@@ -269,9 +309,7 @@ Nelson Elhage, Tristan Hume, Catherine Olsson, Neel Nanda, Tom Henighan, Scott J
         <li>This hypothesis states that there is no basis in which individual neuron activations are interpretable since the (number of features) > (number of neurons).</li>
       </ul>
 </td> </table>
-
-### Solutions to Superposition
-
+<h3 id="solutions-to-superposition">Solutions to Superposition</h3>
 <table>
     <tr>
         <td><img src="../images/week9/day2-slides-05.png"></td>
@@ -292,9 +330,7 @@ Nelson Elhage, Tristan Hume, Catherine Olsson, Neel Nanda, Tom Henighan, Scott J
         <li>Privileged basis: it is plausible for features to align with this basis</li>
       </ul>
 </td> </table>
-
-### SoLU vs GeLU
-
+<h3 id="solu-vs-gelu">SoLU vs GeLU</h3>
 <table>
     <tr>
         <td><img src="../images/week9/day2-slides-07.png"></td>
@@ -311,9 +347,7 @@ There are several ways SoLU is designed to reduce polysemanticity:
         <li>However, the authors admit that one reason for the performance improvement may be that the extra LayerNorm may allow superposition to be smuggled through in smaller activations.</li>
       </ul>
 </td> </table>
-
-### SoLU Motivating Examples
-
+<h3 id="solu-motivating-examples">SoLU Motivating Examples</h3>
 <table>
     <tr>
         <td><img src="../images/week9/day2-slides-08.png"></td>
@@ -322,12 +356,8 @@ There are several ways SoLU is designed to reduce polysemanticity:
     <td colspan=1>
     <br/>
     <p>When SoLU is applied on a vector of large and small values (4, 1, 4, 1), the large values will suppress smaller values. Large basis aligned vectors e.g. (4, 0, 0, 0) are preserved. A feature spread across many dimensions (1, 1, 1, 1) will be suppressed to a smaller magnitude.
-
 </td> </table>
-
-
-### Performance vs. Explainability
-
+<h3 id="performance-vs-explainability">Performance vs. Explainability</h3>
 <table>
     <tr>
         <td><img src="../images/week9/day2-slides-09.png"></td>
@@ -339,10 +369,7 @@ There are several ways SoLU is designed to reduce polysemanticity:
     </td>
 </tr>
 </table>
-
-
-### Are SoLU Neurons Interpretable?
-
+<h3 id="are-solu-neurons-interpretable">Are SoLU Neurons Interpretable?</h3>
 <table>
     <tr>
         <td><img src="../images/week9/day2-slides-10.png"></td>
@@ -353,9 +380,7 @@ There are several ways SoLU is designed to reduce polysemanticity:
     </td>
 </tr>
 </table>
-
-### Interpretability of Neurons in SoLU vs Baseline Transformer
-
+<h3 id="interpretability-of-neurons-in-solu-vs-baseline-transformer">Interpretability of Neurons in SoLU vs Baseline Transformer</h3>
 <table>
     <tr>
         <td><img src="../images/week9/day2-slides-11.png"></td>
@@ -366,9 +391,7 @@ There are several ways SoLU is designed to reduce polysemanticity:
     </td>
 </tr>
 </table>
-
-### LayerNorm Complications
-
+<h3 id="layernorm-complications">LayerNorm Complications</h3>
 <table>
     <tr>
         <td><img src="../images/week9/day2-slides-12.png"></td>
@@ -379,9 +402,7 @@ There are several ways SoLU is designed to reduce polysemanticity:
     </td>
 </tr>
 </table>
-
-### Class Activity: Identify Feature Mappings
-
+<h3 id="class-activity-identify-feature-mappings">Class Activity: Identify Feature Mappings</h3>
 <table>
     <tr>
         <td><img src="../images/week9/day2-slides-13.png"></td>
@@ -392,12 +413,8 @@ There are several ways SoLU is designed to reduce polysemanticity:
     </td>
 </tr>
 </table>
-
-# Monosemanticity
-
-Trenton Bricken, Adly Templeton, Joshua Batson, Brian Chen, Adam Jermyn, and others (Anthropic AI). [_Towards Monosemanticity: Decomposing Language Models With Dictionary Learning_](https://transformer-circuits.pub/2023/monosemantic-features/index.html). Transformers Circuit Thread, 2023. [https://transformer-circuits.pub/2023/monosemantic-features/index.html](https://transformer-circuits.pub/2023/monosemantic-features/index.html)
-
-
+<h1 id="monosemanticity">Monosemanticity</h1>
+<p>Trenton Bricken, Adly Templeton, Joshua Batson, Brian Chen, Adam Jermyn, and others (Anthropic AI). <a href="https://transformer-circuits.pub/2023/monosemantic-features/index.html"><em>Towards Monosemanticity: Decomposing Language Models With Dictionary Learning</em></a>. Transformers Circuit Thread, 2023. <a href="https://transformer-circuits.pub/2023/monosemantic-features/index.html">https://transformer-circuits.pub/2023/monosemantic-features/index.html</a></p>
 <table>
     <tr>
         <td><img src="../images/week9/day2-slides-14.png"></td>
@@ -408,9 +425,7 @@ Trenton Bricken, Adly Templeton, Joshua Batson, Brian Chen, Adam Jermyn, and oth
     </td>
 </tr>
 </table>
-
-### Architectural Limitations
-
+<h3 id="architectural-limitations">Architectural Limitations</h3>
 <table>
     <tr>
         <td><img src="../images/week9/day2-slides-15.png"></td>
@@ -421,9 +436,7 @@ Trenton Bricken, Adly Templeton, Joshua Batson, Brian Chen, Adam Jermyn, and oth
     </td>
 </tr>
 </table>
-
-### Model Overview
-
+<h3 id="model-overview">Model Overview</h3>
 <table>
     <tr>
         <td><img src="../images/week9/day2-slides-16.png"></td>
@@ -434,16 +447,10 @@ Trenton Bricken, Adly Templeton, Joshua Batson, Brian Chen, Adam Jermyn, and oth
     </td>
 </tr>
 </table>
-
-
-### Features as a Decomposition
-![Slide17](../images/week9/day2-slides-17.png)
-
-The authors decompose the activation vector with the first equation, which is a combination of more general features which can be any direction.  In the equation, $x_j$ is the activation vector for datapoint $j$, $f_i(x^j)$ is the activation of feature $i$, each $d_i$ is a unit vector in activation space called the direction of feature $i$, $b$ is the bias.
-
-
-### The Critetrion of Being a Good Decomposition
-
+<h3 id="features-as-a-decomposition">Features as a Decomposition</h3>
+<p><img src="../images/week9/day2-slides-17.png" alt="Slide17"></p>
+<p>The authors decompose the activation vector with the first equation, which is a combination of more general features which can be any direction.  In the equation, $x_j$ is the activation vector for datapoint $j$, $f_i(x^j)$ is the activation of feature $i$, each $d_i$ is a unit vector in activation space called the direction of feature $i$, $b$ is the bias.</p>
+<h3 id="the-critetrion-of-being-a-good-decomposition">The Critetrion of Being a Good Decomposition</h3>
 <table>
     <tr>
         <td><img src="../images/week9/day2-slides-18.png"></td>
@@ -459,10 +466,7 @@ In this example, when we see the activation value of the feature 4 increase, the
     </td>
 </tr>
 </table>
-
-
-### Sparse Autoencoders
-
+<h3 id="sparse-autoencoders">Sparse Autoencoders</h3>
 <table>
     <tr>
         <td><img src="../images/week9/day2-slides-19.png"></td>
@@ -478,12 +482,8 @@ In this example, when we see the activation value of the feature 4 increase, the
         <li>Input Bias: Introduces an approach of adding an input bias to the representations in autoencoders, which demonstrates a significant boost in performance for the models used in toy examples.</li>
       </ol>
 </td> </table>
-
-The purpose of sparse autoencoders is to extract meaningful features from neural network activations. To avhice a good decomposition, where the features extracted should be interpretable and able to describe the activations' context requires the ability to describe activations, interpret downstream effects of changes, and cover a significant portion of functionality within the data. 
-
-
-### Are these features "interpretable"
-
+<p>The purpose of sparse autoencoders is to extract meaningful features from neural network activations. To avhice a good decomposition, where the features extracted should be interpretable and able to describe the activations&rsquo; context requires the ability to describe activations, interpret downstream effects of changes, and cover a significant portion of functionality within the data.</p>
+<h3 id="are-these-features-interpretable">Are these features &ldquo;interpretable&rdquo;</h3>
 <table>
     <tr>
         <td align="center"><img src="../images/week9/day2-slides-20.png"></td>
@@ -491,15 +491,10 @@ The purpose of sparse autoencoders is to extract meaningful features from neural
     <tr>
     <td colspan=1>
     <br/>
-
-**Feature Activation Sampling Bias**: In previous evaluations, there was a bias due to just considering the top-activation neurons which might inaccurately appear monosemantic due to their higher activations. To mitigate this bias, the approach involves sampling uniformly across all possible activations for each given feature.
-
-**Evaluation of Interpretable Features:** The authors used an evaluation process where human-based assessments are used to determine the interpretability of the features extracted. The criteria for interpretability are based on the authors' distributed-based evaluation, where a score above eight is considered sufficiently interpretable.
+<p><strong>Feature Activation Sampling Bias</strong>: In previous evaluations, there was a bias due to just considering the top-activation neurons which might inaccurately appear monosemantic due to their higher activations. To mitigate this bias, the approach involves sampling uniformly across all possible activations for each given feature.</p>
+<p><strong>Evaluation of Interpretable Features:</strong> The authors used an evaluation process where human-based assessments are used to determine the interpretability of the features extracted. The criteria for interpretability are based on the authors&rsquo; distributed-based evaluation, where a score above eight is considered sufficiently interpretable.</p>
 </td> </table>
-
-
-### Automated Evaluation
-
+<h3 id="automated-evaluation">Automated Evaluation</h3>
 <table>
     <tr>
         <td align="center"><img src="../images/week9/day2-slides-21.png"></td>
@@ -508,35 +503,28 @@ The purpose of sparse autoencoders is to extract meaningful features from neural
     <td colspan=1>
     <br/>
     <p>
-
-The authors used a larger language model to generate a text description of each feature. For the features from the sparse autoencoder, there is a higher correlation with human interpretations, with average correlation values reaching as high as 0.153 in some instances, and up to 0.7 in larger models. 
+<p>The authors used a larger language model to generate a text description of each feature. For the features from the sparse autoencoder, there is a higher correlation with human interpretations, with average correlation values reaching as high as 0.153 in some instances, and up to 0.7 in larger models.</p>
 </p>
 </td> </table>
-
-### Group Discussions
-
+<h3 id="group-discussions">Group Discussions</h3>
 <!-- ![Slide22](../images/week9/day2-slides-22.png) -->
 <table>
     <tr>
         <td align="center"><img src="../images/week9/day2-slides-22.png"></td>
     </tr>
 </table>
-
-The sparse autoencoder technique in focus can explain up to 80% of the loss. This means that by replacing activated neurons with reconstructions, 80% of the original model's loss can be accounted for without altering the model. Notably, there is a high correlation (Spearman correlation around 0.7) between independent features of two models sharing the same architecture but having different random initializations. 
-
-Considering these evaluation findings, the class divided into three groups to discuss specific questions related to the interpretability of features.
-
-One group noted a common discrepancy between the expectations from
+<p>The sparse autoencoder technique in focus can explain up to 80% of the loss. This means that by replacing activated neurons with reconstructions, 80% of the original model&rsquo;s loss can be accounted for without altering the model. Notably, there is a high correlation (Spearman correlation around 0.7) between independent features of two models sharing the same architecture but having different random initializations.</p>
+<p>Considering these evaluation findings, the class divided into three groups to discuss specific questions related to the interpretability of features.</p>
+<p>One group noted a common discrepancy between the expectations from
 language models and humans. Language models are often expected to
 perform at superhuman or domain expert levels, while their
 capabilities might align more closely with those of a standard
 human. The use of a general-purpose language model for features
 requiring domain expertise was seen as a potential issue, as the
-model's interpretation might lack the required domain-specific
-knowledge. 
-
-The group also shared their discussion about the possibility that
-language models might 'hallucinate' interpretations for given
+model&rsquo;s interpretation might lack the required domain-specific
+knowledge.</p>
+<p>The group also shared their discussion about the possibility that
+language models might &lsquo;hallucinate&rsquo; interpretations for given
 features, possibly creating false correlations or interpretations that
 do not necessarily exist within the data. Human evaluators might also
 introduce subconscious biases or look for patterns without having the
@@ -546,19 +534,15 @@ audience for interpretability. They discussed that interpretability
 work from the language models might primarily target researchers,
 specifically computer science researchers who are involved in
 developing and assessing models, rather than end-users of these models
-in practical applications.
-
-The second group highlighted the multifaceted nature of the variance
+in practical applications.</p>
+<p>The second group highlighted the multifaceted nature of the variance
 observed in models designed to find interpretable features. It
 primarily attributed this variability to stochastic elements in the
 learning process, the order and sequence of data during training, and
 the diverse interpretations resulting from these variations, which may
-lead to equally interpretable yet different feature sets.
-
-The final group emphasized the potential acceptability of the unexplained 20% in certain contexts, underscoring the value in correctly interpreting the majority of the content. Additionally, they noted the potential nuances within the unexplained portion, distinguishing between varying reasons for lack of interpretability within that portion.
-
-## Feature Splitting
-
+lead to equally interpretable yet different feature sets.</p>
+<p>The final group emphasized the potential acceptability of the unexplained 20% in certain contexts, underscoring the value in correctly interpreting the majority of the content. Additionally, they noted the potential nuances within the unexplained portion, distinguishing between varying reasons for lack of interpretability within that portion.</p>
+<h2 id="feature-splitting">Feature Splitting</h2>
 <table>
     <tr>
         <td align="center">
@@ -571,14 +555,9 @@ The final group emphasized the potential acceptability of the unexplained 20% in
     <br/>
     <p>
 The training of three different versions of autoencoders with increasing sizes of the internal representation were described, leading to more sparsity in interpretable features. They analogized a dictionary learning algorithm to an unlimited number of interpretable features, Even with varied model semantics, a structured superposition of concepts emerges in the learning process. 
-
-By feature clustering and splitting, this splitting of features leads to more fine-grained interpretations, where a single concept or feature might bifurcate into multiple similar but distinct interpretable features. These findings may have benefits beyond one-layer transformers, suggesting the possibility of applying this technique to larger transformers or models.
-
+<p>By feature clustering and splitting, this splitting of features leads to more fine-grained interpretations, where a single concept or feature might bifurcate into multiple similar but distinct interpretable features. These findings may have benefits beyond one-layer transformers, suggesting the possibility of applying this technique to larger transformers or models.</p>
 </td> </table>
-
-
-## Takeaways
-
+<h2 id="takeaways">Takeaways</h2>
 <table>
     <tr>
         <td align="center">
@@ -590,47 +569,128 @@ By feature clustering and splitting, this splitting of features leads to more fi
     <br/>
     <p>
 The summary underscores the potential and limitations of both architectural changes aimed at controlling polysemanticity and the potential for post-learning techniques, but so far only partially demonstrated for a simple  1-layer transformer. 
+<p>Post-learning interpretation seems more practical for now than
+adapting existing training techniques for interpretability, which would require larger changes to current practices.</p> </td> </table></p>
+<h1 id="readings-and-discussions">Readings and Discussions</h1>
+<h2 id="monday-23-october">Monday 23 October</h2>
+<h3 id="required-reading">Required Reading</h3>
+<ul>
+<li>Alicja Chaszczewicz. <a href="https://arxiv.org/abs/2307.06963"><em>Is Task-Agnostic Explainable AI a Myth?</em></a>. arXiv, 2023. <a href="https://arxiv.org/pdf/2307.06963.pdf">https://arxiv.org/pdf/2307.06963.pdf</a></li>
+</ul>
+<h3 id="optional-readings">Optional Readings</h3>
+<ul>
+<li>
+<p>Robert Geirhos, Roland S. Zimmermann, Blair Bilodeau, Wieland Brendel, Been Kim. <a href="https://arxiv.org/abs/2306.04719"><em>Don&rsquo;t trust your eyes: on the (un)reliability of feature visualizations</em></a>. arXiv, 2023. <a href="https://arxiv.org/pdf/2306.04719.pdf">https://arxiv.org/pdf/2306.04719.pdf</a></p>
+</li>
+<li>
+<p>Sarah Wiegreffe, Yuval Pinter. <a href="https://arxiv.org/abs/1908.04626"><em>Attention is not not Explanation</em></a>. EMNLP, 2019. <a href="https://arxiv.org/pdf/1908.04626.pdf">https://arxiv.org/pdf/1908.04626.pdf</a> (This is a response to Jain and Wallace&rsquo;s <a href="https://arxiv.org/abs/1902.10186"><em>Attention is not Explanation</em></a>, NAACL 2019 paper, which sadly is not a response to any paper titled Attention is Explanation, but perhaps that is waiting to be written?)</p>
+</li>
+</ul>
+<h3 id="discussion-questions">Discussion Questions</h3>
+<ol>
+<li>
+<p><a href="https://arxiv.org/abs/2307.06963">Chaszczewicz</a> highlights shared challenges in XAI development across different data types (i.e. image, textual, graph data) and explanation units (i.e. saliency, attention, graph-type explainers). What are some potential similarities or differences in addressing these issues?</p>
+</li>
+<li>
+<p>In cases where models produce accurate results but lack transparency, should the lack of explainability be a significant concern? How should organizations/developers balance the tradeoffs between explainability and accuracy?</p>
+</li>
+<li>
+<p>How can XAI tools could be used to improve adversarial attacks?</p>
+</li>
+<li>
+<p>In <a href="https://arxiv.org/pdf/1908.04626.pdf">Attention is not not Explanation</a>, the authors dispute a <a href="https://arxiv.org/abs/1902.10186">previous paper’s</a> definition of explanation. Whose view do you find most convincing and why?</p>
+</li>
+</ol>
+<h2 id="wednesday-25-october">Wednesday 25 October</h2>
+<h3 id="required-readings">Required Readings</h3>
+<ul>
+<li>Nelson Elhage, Tristan Hume, Catherine Olsson, Neel Nanda, Tom Henighan, Scott Johnston, Sheer El Showk, Nicholas Joseph, Nova DasSarma, Ben Mann, and others (Anthropic AI). <a href="https://transformer-circuits.pub/2022/solu/index.html"><em>Softmax Linear Units</em></a>. Transformers Circuit Thread, 2022. <a href="https://transformer-circuits.pub/2022/solu/index.html">https://transformer-circuits.pub/2022/solu/index.html</a></li>
+<li>Trenton Bricken, Adly Templeton, Joshua Batson, Brian Chen, Adam Jermyn, and others (Anthropic AI). <a href="https://transformer-circuits.pub/2023/monosemantic-features/index.html"><em>Towards Monosemanticity: Decomposing Language Models With Dictionary Learning</em></a>. Transformers Circuit Thread, 2023. <a href="https://transformer-circuits.pub/2023/monosemantic-features/index.html">https://transformer-circuits.pub/2023/monosemantic-features/index.html</a></li>
+</ul>
+<h3 id="discussion-questions-1">Discussion Questions</h3>
+<ol>
+<li>
+<p>(Softmax Linear Units) Elhage et al. present the Superposition Hypothesis which argues that networks attempt to learn more features than the number of neurons in the networks. By delegating multiple features to a single node, interpreting the significance of the node becomes challenging. Do you believe this hypothesis based upon their explanation, or do you suspect there is some separate obstacle here, such as the counter-argument that nodes could represent standalone features that are difficult to infer but often obvious once discovered?</p>
+</li>
+<li>
+<p>(Softmax Linear Units) Do you see any difference between SLU and <a href="https://pytorch.org/docs/stable/generated/torch.nn.ELU.html">ELU</a> coupled with batch-norm/layer-norm? How does this relate to the reasons the LLM community shifted from ReLU (or variants like ELU) to <a href="https://arxiv.org/abs/1606.08415">GeLU</a>?</p>
+</li>
+<li>
+<p>(Towards Monosemanticity) Could the identification of these “interpretable” features could enable training (via distillation, or other ways) smaller models that still preserve interpretability?</p>
+</li>
+<li>
+<p>(Towards Monosemanticity) Toying around with <a href="https://transformer-circuits.pub/2023/monosemantic-features/vis/a1.html?ordering=count">visualization</a> seems to show a good identification of relevant positive tokens for concepts, but negative concepts do not seem to be very insightful. Try the explorer out for a few concepts and see if these observations align with what you see. What do you think might be happening here? Can it possibly be solved by changing the auto-encoder training pipeline, or possibly by involving structural changes like SLU? Are there other interesting elements or patterns you see?</p>
+</li>
+</ol>
 
-Post-learning interpretation seems more practical for now than
-adapting existing training techniques for interpretability, which would require larger changes to current practices.</p> </td> </table>
+      </div>
+
+      <meta itemprop="wordCount" content="4306">
+      <meta itemprop="datePublished" content="2023-10-30">
+      <meta itemprop="url" content="https://llmrisks.github.io/week9/">
+    </article>
+
+    <ul class="pagination" role="navigation" aria-label="Pagination">
+      
+      <li class="arrow" aria-disabled="true"><a href="https://llmrisks.github.io/week8/">&laquo; <em>Previous<span class="show-for-sr"> page</span></em>: Week 8: Machine Translation</a></li>
+      
+      
+    </ul>
+
+  </div>
+</div>
+
+    </main>
+    
+    
+<footer class="whatisthis">
+  <hr />
+  <div class="row">
+    <div class="column small-12 medium-6">
+      <a href="//llmrisks.github.io"><b>cs 6501: Risks (and Benefits) of Generative AI</b></a><br>
+      Fall 2023<br>
+      <a href="//www.cs.virginia.edu">University of Virginia</a>
+    </div>
+    <div class="column small-14 medium-5">
+      <font size="-1">
+      Subscribe to
+	the <a href="/index.xml"><i class="fa fa-rss-square"></i>&nbsp;RSS feed</a>.
+      <a id="searchsite">
+	<form method="get" action="https://duckduckgo.com/">
+	  <label for="search-field" class="show-for-sr">Search with DuckDuckGo</label>
+	  <input type="search" name="q" maxlength="255" placeholder="Search with DuckDuckGo" id="search-field">
+	  <input type="hidden" name="sites" value="https://llmrisks.github.io/"/>
+	  <input type="hidden" name="k7" value="#faf8f8"/>
+	  <input type="hidden" name="kj" value="#b33"/>
+	  <input type="hidden" name="ky" value="#fafafa"/>
+	  <input type="hidden" name="kx" value="b"/>
+	  <input type="hidden" name="ko" value="-1"/>
+	  <input type="hidden" name="k1" value="-1"/>
+	  <input type="submit" value="DuckDuckGo Search" style="visibility: hidden;" />
+	</form>
+      </a>
+</font>
+    </div>
+  </div>
+  </hr>
+</footer>
 
 
-# Readings and Discussions
+    
+    <div class="endofpage">
+    </div>
 
-## Monday 23 October
-### Required Reading
+    <script src="/js/jquery.js"></script>
+    <script src="/js/what-input.js"></script>
+    <script src="/js/foundation.min.js"></script>
+    <script src="/js/finite.js"></script>
 
-- Alicja Chaszczewicz. [_Is Task-Agnostic Explainable AI a Myth?_](https://arxiv.org/abs/2307.06963). arXiv, 2023. [https://arxiv.org/pdf/2307.06963.pdf](https://arxiv.org/pdf/2307.06963.pdf)
+    
+    <script src="/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
 
-### Optional Readings
-
-- Robert Geirhos, Roland S. Zimmermann, Blair Bilodeau, Wieland Brendel, Been Kim. [_Don't trust your eyes: on the (un)reliability of feature visualizations_](https://arxiv.org/abs/2306.04719). arXiv, 2023. [https://arxiv.org/pdf/2306.04719.pdf](https://arxiv.org/pdf/2306.04719.pdf)
-
-- Sarah Wiegreffe, Yuval Pinter. [_Attention is not not Explanation_](https://arxiv.org/abs/1908.04626). EMNLP, 2019. [https://arxiv.org/pdf/1908.04626.pdf](https://arxiv.org/pdf/1908.04626.pdf) (This is a response to Jain and Wallace's [_Attention is not Explanation_](https://arxiv.org/abs/1902.10186), NAACL 2019 paper, which sadly is not a response to any paper titled Attention is Explanation, but perhaps that is waiting to be written?)
-
-### Discussion Questions
-1. [Chaszczewicz](https://arxiv.org/abs/2307.06963) highlights shared challenges in XAI development across different data types (i.e. image, textual, graph data) and explanation units (i.e. saliency, attention, graph-type explainers). What are some potential similarities or differences in addressing these issues?
-
-2. In cases where models produce accurate results but lack transparency, should the lack of explainability be a significant concern? How should organizations/developers balance the tradeoffs between explainability and accuracy?
-
-3. How can XAI tools could be used to improve adversarial attacks?
-
-4. In [Attention is not not Explanation](https://arxiv.org/pdf/1908.04626.pdf), the authors dispute a [previous paper’s](https://arxiv.org/abs/1902.10186) definition of explanation. Whose view do you find most convincing and why?
-
-## Wednesday 25 October
-
-### Required Readings
-
-- Nelson Elhage, Tristan Hume, Catherine Olsson, Neel Nanda, Tom Henighan, Scott Johnston, Sheer El Showk, Nicholas Joseph, Nova DasSarma, Ben Mann, and others (Anthropic AI). [_Softmax Linear Units_](https://transformer-circuits.pub/2022/solu/index.html). Transformers Circuit Thread, 2022. [https://transformer-circuits.pub/2022/solu/index.html](https://transformer-circuits.pub/2022/solu/index.html)
-- Trenton Bricken, Adly Templeton, Joshua Batson, Brian Chen, Adam Jermyn, and others (Anthropic AI). [_Towards Monosemanticity: Decomposing Language Models With Dictionary Learning_](https://transformer-circuits.pub/2023/monosemantic-features/index.html). Transformers Circuit Thread, 2023. [https://transformer-circuits.pub/2023/monosemantic-features/index.html](https://transformer-circuits.pub/2023/monosemantic-features/index.html)
-
-### Discussion Questions
-1. (Softmax Linear Units) Elhage et al. present the Superposition Hypothesis which argues that networks attempt to learn more features than the number of neurons in the networks. By delegating multiple features to a single node, interpreting the significance of the node becomes challenging. Do you believe this hypothesis based upon their explanation, or do you suspect there is some separate obstacle here, such as the counter-argument that nodes could represent standalone features that are difficult to infer but often obvious once discovered?
-
-2. (Softmax Linear Units) Do you see any difference between SLU and [ELU](https://pytorch.org/docs/stable/generated/torch.nn.ELU.html) coupled with batch-norm/layer-norm? How does this relate to the reasons the LLM community shifted from ReLU (or variants like ELU) to [GeLU](https://arxiv.org/abs/1606.08415)?
-
-3. (Towards Monosemanticity) Could the identification of these “interpretable” features could enable training (via distillation, or other ways) smaller models that still preserve interpretability?
-
-4. (Towards Monosemanticity) Toying around with [visualization](https://transformer-circuits.pub/2023/monosemantic-features/vis/a1.html?ordering=count) seems to show a good identification of relevant positive tokens for concepts, but negative concepts do not seem to be very insightful. Try the explorer out for a few concepts and see if these observations align with what you see. What do you think might be happening here? Can it possibly be solved by changing the auto-encoder training pipeline, or possibly by involving structural changes like SLU? Are there other interesting elements or patterns you see?
-
-
+    
+    
+    
+  </body>
+</html>
