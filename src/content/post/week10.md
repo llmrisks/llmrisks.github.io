@@ -135,4 +135,65 @@ Assuming the initial distribution to be a Gaussian distribution, the distributio
 </div>
 </center>
 
+## Experiments
 
+<center>
+<div class="slide">
+  <img src="../images/week10/Day2/Slide20.PNG" alt="" width="70%">
+</div>
+</center>
+
+<center>
+<div class="slide">
+  <img src="../images/week10/Day2/Slide21.PNG" alt="" width="70%">
+</div>
+</center>
+
+<center>
+<div class="slide">
+  <img src="../images/week10/Day2/Slide22.PNG" alt="" width="70%">
+</div>
+</center>
+
+<center>
+<div class="slide">
+  <img src="../images/week10/Day2/Slide23.PNG" alt="" width="70%">
+</div>
+</center>
+
+<center>
+<div class="slide">
+  <img src="../images/week10/Day2/Slide24.PNG" alt="" width="70%">
+</div>
+</center>
+
+<center>
+<div class="slide">
+  <img src="../images/week10/Day2/Slide25.PNG" alt="" width="70%">
+</div>
+</center>
+
+<center>
+<div class="slide">
+  <img src="../images/week10/Day2/Slide26.PNG" alt="" width="70%">
+</div>
+</center>
+
+<center>
+<div class="slide">
+  <img src="../images/week10/Day2/Slide27.PNG" alt="" width="70%">
+</div>
+</center>
+
+<center>
+<div class="slide">
+  <img src="../images/week10/Day2/Slide28.PNG" alt="" width="70%">
+</div>
+</center>
+
+## Discussion
+<center>
+<div class="slide">
+  <img src="../images/week10/Day2/Slide29.PNG" alt="" width="70%">
+</div>
+</center>
