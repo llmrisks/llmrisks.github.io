@@ -142,7 +142,7 @@ trainer).</p>
     <tr>
     <td colspan=1 align="center"> <center><b>Sources of Hallucination</b></center>
 <br>
-<p><a href="https://arxiv.org/abs/2309.01219">_Siren&rsquo;s Song in the AI Ocean: A Survey on Hallucination in Large Language Models_  </a>
+<p><a href="https://arxiv.org/abs/2309.01219"><em>Siren&rsquo;s Song in the AI Ocean: A Survey on Hallucination in Large Language Models</em>  </a>
 </td>
 </tr></p>
 </table>
@@ -173,7 +173,7 @@ trainer).</p>
     </tr>
    <tr>
   <td colspan=1 align="center"><b>Mitigation Strategies</b>
-<p><a href="https://arxiv.org/abs/2309.01219">_Siren&rsquo;s Song in the AI Ocean: A Survey on Hallucination in Large Language Models_</a></b>
+<p><a href="https://arxiv.org/abs/2309.01219"><em>Siren&rsquo;s Song in the AI Ocean: A Survey on Hallucination in Large Language Models</em></a></b>
 <br/>
 <p style="text-align: left; text-indent: 5%;">
 For inference, one strategy is to reduce the snowballing of hallucinations by designing a dynamic p-value. The p-value should start off large and shrink as more tokens are generated. Furthermore, introducing new or external knowledge can be done at two different positions: before and after generation.
@@ -188,7 +188,7 @@ For inference, one strategy is to reduce the snowballing of hallucinations by de
 <tr>
 <td colspan=1 align="center"> 
 <b>Decoding Contrasting Layers</b><br>
-<p><a href="https://arxiv.org/abs/2309.03883">_DoLa: Decoding by Contrasting Layers Improves Factuality in Large Language Models_</a></p>
+<p><a href="https://arxiv.org/abs/2309.03883"><em>DoLa: Decoding by Contrasting Layers Improves Factuality in Large Language Models</em></a></p>
 <br/>
 <p style="text-align: left; text-indent: 5%;">
             Based on evolving trends, the concept of contrastive decoding is introduced. For example, one might ask, "How do we decide between Seattle or Olympia?" When considering the last layer as a mature layer, it is beneficial to contrast the differences between the preceding layers, which can be deemed as premature. For each of these layers, it is possible to calculate the difference between each probability distribution by comparing mature and premature layers, a process that utilizes the Jensen-Shannon Divergence. Such an approach permits the amplification of the factual knowledge that the model has acquired, thereby enhancing its output generation.
@@ -201,7 +201,7 @@ For inference, one strategy is to reduce the snowballing of hallucinations by de
     </tr>
     <tr>
     <td colspan=1 align="center">
-<p><a href="https://arxiv.org/abs/2302.00083">_In-Context Retrieval-Augmented Language Models_</a></p>
+<p><a href="https://arxiv.org/abs/2302.00083"><em>In-Context Retrieval-Augmented Language Models</em></a></p>
   <p style="text-align: left; text-indent: 5%;">
             The model parameters are kept frozen. Instead of directly inputting text into the model, the approach first uses retrieval to search for relevant documents from external sources. The findings from these sources are then concatenated with the original text. Re-ranking results from the retrieval model also provides benefits; the exact perplexities can be referred to in the slide. It has been observed that smaller strides can enhance performance, albeit at the cost of increased runtime. The authors have noticed that the information at the end of a query is typically more relevant for output generation. In general, shorter queries tend to outperform longer ones.
         </p>
@@ -216,7 +216,7 @@ For inference, one strategy is to reduce the snowballing of hallucinations by de
     </td>
     </tr>
 </table>
-<h2 id="discussion-_based-on-the-sources-of-hallucination-what-methods-can-be-employed-to-mitigate-the-hallucination-issue_h2">Discussion: _Based on the sources of hallucination, what methods can be employed to mitigate the hallucination issue?_</h2></h2>
+<h2 id="discussion-_based-on-the-sources-of-hallucination-what-methods-can-be-employed-to-mitigate-the-hallucination-issue_h2">Discussion: <em>Based on the sources of hallucination, what methods can be employed to mitigate the hallucination issue?</em></h2></h2>
 <p style="text-align: left; text-indent: 5%;">
     Group 2:
         Discussed two papers from this week's reading which highlighted the use of semantic search and the introduction of external context to aid the model. This approach, while useful for diminishing hallucination, heavily depends on external information, which is not effective in generic cases.
@@ -237,7 +237,7 @@ For inference, one strategy is to reduce the snowballing of hallucinations by de
         It was also advised to source data solely from credible sources.
         An interesting perspective discussed was utilizing a larger model to verify the smaller model's hallucinations. But a caveat arises: How can one ensure the larger model's accuracy? And if the larger model is deemed superior, why not employ it directly?
 </p>
-<h2 id="discussion-_what-are-the-potential-advantages-of-hallucinations-in-large-language-models-llms_h2">Discussion: _What are the potential advantages of hallucinations in Large Language Models (LLMs)?_</h2></h2>
+<h2 id="discussion-_what-are-the-potential-advantages-of-hallucinations-in-large-language-models-llms_h2">Discussion: <em>What are the potential advantages of hallucinations in Large Language Models (LLMs)?</em></h2></h2>
 <p style="text-align: left; text-indent: 5%;">
     One advantage discussed was that hallucinations "train" users to not blindly trust the model outputs. If such models are blindly trusted, there is a much greater risk associated with their use.
     If users can conclusively discern, however, that the produced information is fictitious, it could assist in fostering new ideas or fresh perspectives on a given topic.
