@@ -1,3 +1,24 @@
++++
+date = "06 Nov 2023"
+draft = false
+title = "Week 10: Data Selection for LLMs"
+slug = "week10"
++++
+
+(see bottom for assigned readings and questions)
+
+<author>Presenting Team: Anshuman Suri, Jacob Christopher, Kasra Lekan, Kaylee Liu, My Dinh</author>
+
+<author>Blogging Team: Hamza Khalid, Liu Zhe, Peng Wang, Sikun Guo, Yinhan He, Zhepei Wei</author>
+
+# Monday, 30 October: <br> Data Selection for Fine-tuning LLMs
+
+### 
+
+
+
+
+
 # Wednesday, 1 Nov: Data Matters: Investigating the Impact of Data on Large Language Models
 
 ## Background
