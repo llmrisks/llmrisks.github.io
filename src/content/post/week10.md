@@ -150,20 +150,20 @@ The figure shows numerical experiments for a range of different sample sizes. We
 
 <center>
 <div class="slide">
-  <img src="../images/week10/Day2/Slide20.PNG" alt="" width="70%">
+  <img src="../images/week10/day2/Slide20.PNG" alt="" width="70%">
 </div>
 </center>
 
 The following two slides provides steps to estimate mean and variance of general distributions other than one-dimensional Gaussian. They derive a lower bound on the expected value of the distance between the true distribution and the approximated distribution at step $n+1$, which represents the risk that occurs due to finite sampling. The takeaway of the lower bound is that the sampling rate needs to increase superlinearly to make an accurate end distribution approximation.
 <center>
 <div class="slide">
-  <img src="../images/week10/Day2/Slide21.PNG" alt="" width="70%">
+  <img src="../images/week10/day2/Slide21.PNG" alt="" width="70%">
 </div>
 </center>
 
 <center>
 <div class="slide">
-  <img src="../images/week10/Day2/Slide22.PNG" alt="" width="70%">
+  <img src="../images/week10/day2/Slide22.PNG" alt="" width="70%">
 </div>
 </center>
 
@@ -171,7 +171,7 @@ The following two slides provides steps to estimate mean and variance of general
 
 <center>
 <div class="slide">
-  <img src="../images/week10/Day2/Slide23.PNG" alt="" width="70%">
+  <img src="../images/week10/day2/Slide23.PNG" alt="" width="70%">
 </div>
 </center>
 
@@ -179,13 +179,13 @@ To evaluate the performance of GMM, we can visualize the progression of GMM fitt
 
 <center>
 <div class="slide">
-  <img src="../images/week10/Day2/Slide24.PNG" alt="" width="70%">
+  <img src="../images/week10/day2/Slide24.PNG" alt="" width="70%">
 </div>
 </center>
 
 <center>
 <div class="slide">
-  <img src="../images/week10/Day2/Slide25.PNG" alt="" width="70%">
+  <img src="../images/week10/day2/Slide25.PNG" alt="" width="70%">
 </div>
 </center>
 
@@ -194,20 +194,20 @@ shows an example of generated data. Again, over a number of generations, the rep
 
 <center>
 <div class="slide">
-  <img src="../images/week10/Day2/Slide26.PNG" alt="" width="70%">
+  <img src="../images/week10/day2/Slide26.PNG" alt="" width="70%">
 </div>
 </center>
 
 
 <center>
 <div class="slide">
-  <img src="../images/week10/Day2/Slide27.PNG" alt="" width="70%">
+  <img src="../images/week10/day2/Slide27.PNG" alt="" width="70%">
 </div>
 </center>
 
 <center>
 <div class="slide">
-  <img src="../images/week10/Day2/Slide28.PNG" alt="" width="70%">
+  <img src="../images/week10/day2/Slide28.PNG" alt="" width="70%">
 </div>
 </center>
 
@@ -219,7 +219,7 @@ Interestingly, the generated data exhibits significantly longer tails, indicatin
 ## Discussion
 <center>
 <div class="slide">
-  <img src="../images/week10/Day2/Slide29.PNG" alt="" width="70%">
+  <img src="../images/week10/day2/Slide29.PNG" alt="" width="70%">
 </div>
 </center>
 
