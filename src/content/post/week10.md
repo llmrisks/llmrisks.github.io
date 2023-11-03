@@ -99,6 +99,7 @@ This paper discusses about model collapse, which is a degenerative process where
   <img src="../images/week10/Picture11.png" alt="" width="70%">
 </div>
 </center>
+
 ## Causes for model collapse
 The two main causes for the model collapse are: (i) Statistical approximation error that occurs as the number of samples are finite, and (ii) Functional approximation error that occurs due to the function approximators being not expressive enough.
 <center>
@@ -143,7 +144,9 @@ Assuming the initial distribution to be a Gaussian distribution, the distributio
 </div>
 </center>
 
-## Experiments
+## Experiment Justification for Theoretical Analysis
+
+The figure shows numerical experiments for a range of different sample sizes. We can see from the figure that when the number of data sample is small, the estimation of mean and variance is not very accurate. 
 
 <center>
 <div class="slide">
@@ -151,6 +154,7 @@ Assuming the initial distribution to be a Gaussian distribution, the distributio
 </div>
 </center>
 
+The following two slides provides steps to estimate mean and variance of general distributions other than one-dimensional Gaussian. They derive a lower bound on the expected value of the distance between the true distribution and the approximated distribution at step $n+1$, which represents the risk that occurs due to finite sampling. The takeaway of the lower bound is that the sampling rate needs to increase superlinearly to make an accurate end distribution approximation.
 <center>
 <div class="slide">
   <img src="../images/week10/Day2/Slide21.PNG" alt="" width="70%">
@@ -163,11 +167,15 @@ Assuming the initial distribution to be a Gaussian distribution, the distributio
 </div>
 </center>
 
+## Evaluations
+
 <center>
 <div class="slide">
   <img src="../images/week10/Day2/Slide23.PNG" alt="" width="70%">
 </div>
 </center>
+
+To evaluate the performance of GMM, we can visualize the progression of GMM fitting process over time. From the figure, we can see within 50 iterations of re-sampling, the underlying distribution is mis-perceived, and the performance worsens over time.
 
 <center>
 <div class="slide">
@@ -181,11 +189,15 @@ Assuming the initial distribution to be a Gaussian distribution, the distributio
 </div>
 </center>
 
+As before, an autoencoder is trained on an original data source, which later will be sampled. Figure 9 on the left
+shows an example of generated data. Again, over a number of generations, the representation has very little resemblance of the original classes learned from data. This implies that longer generation leads to worse quality, as much more information will be lost. We can see from Figure 8 that as with single-dimensional Gaussians, tails disappear over time and all of the density shifts towards the mean.
+
 <center>
 <div class="slide">
   <img src="../images/week10/Day2/Slide26.PNG" alt="" width="70%">
 </div>
 </center>
+
 
 <center>
 <div class="slide">
@@ -199,9 +211,26 @@ Assuming the initial distribution to be a Gaussian distribution, the distributio
 </div>
 </center>
 
+To assess model collapse in Large Language Models (LLMs), given the high computational cost of training, the authors opted to fine-tune a pre-existing open-source LLM. In this context, as the generations progress, models tend
+to produce more sequences that the original model would produce with the higher likelihood. This phenomenon closely resembles observations made in the context of Variational Autoencoders (VAEs) and Gaussian Mixture Models (GMMs), where over successive generations, models begin to produce samples that are more likely according to the original model's probabilities.
+
+Interestingly, the generated data exhibits significantly longer tails, indicating that certain data points are generated that would never have been produced by the original model. These anomalies represent errors that accumulate as a result of the generational learning process.
+
 ## Discussion
 <center>
 <div class="slide">
   <img src="../images/week10/Day2/Slide29.PNG" alt="" width="70%">
 </div>
 </center>
+
+Q1.
+The class discuss the purpose of generating synthetic data. It seems unnecessary to use synthetic data to train on styles, as it can be achieved easily based on the experiments. However, for more complicated tasks that involves reasoning, it might require more human-in-the-loop to validate the correctness of the synthetic data. 
+
+Q2.
+The class discussion focuses on the significance of domain knowledge in the context of alignment tasks. When dealing with a high-quality domain-specific dataset that includes a golden standard, fine-tuning emerges as a preferable approach for alignment tasks. Conversely, Reinforcement Learning from Human Feedback (RLHF) seems to be more suitable for general use cases that aim to align with human preferences. Additionally, we explore the potential of leveraging answers obtained through chain-of-thought prompting for the purpose of fine-tuning.
+
+Q3.
+The tail of a distribution typically contains rare events or extreme values that occur with very low probability. These events may be outliers, anomalies, or extreme observations that are unusual compared to the majority of data points. For example, in a financial dataset, the tail might represent extreme market fluctuations, such as a stock market crash.
+
+Q4.
+This is an open-ended question. One possible reason is that while fine-tuning with generated data mix the original data with the generated data, this augmentation can introduce novel, synthetic examples that the model hasn't seen in the original data. These new examples can extend the tail of the distribution by including previously unseen rare or extreme cases.
