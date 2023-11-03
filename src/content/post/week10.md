@@ -15,9 +15,126 @@ slug = "week10"
 
 ### 
 
+## Question: Why is there a discrepancy between crowdworker (and GPT-4) preferences evaluation and automatic benchmark evaluation?
+Authors' conclusion: Limitation models can learn style, but not factuality.
 
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide28.png" alt="" width="70%">
+</div>
+</center>
 
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide29.png" alt="" width="70%">
+</div>
+</center>
 
+## Discussion
+### Topic1: What do you think the potential {benefits, risks, concerns, considerations} are of imitation models?
+* non-toxic scores is a benefit
+* It will have a better capability of imitating specific input-data style
+* One risk is that experiment results can be false based on style-imitating, not reflecting its intrinsic characteristics.
+
+### Topic2: Do you think it is ok for researchers or companies to reverse engineer another model via imitation? Should there be any legal implications for this?
+Most people in our class agree that there should be no legal concern for researchers and companies to reverse engineer other models via immitating. Professor also proposed another idea that tech companies like OpenAI relies heavily on public-accessible training data from the internet, which weaken the argument that companies have the right to exclusively possess the whole model.
+
+## False Promises Paper
+### Implication
+1. Fine-tuning alone can’t produce imitation models that are on par in terms of factuality with larger models.
+2. Better base models are most promising direction for improving open-source models (e.g. architecture, pretraining data). 
+
+### Question: What if we knew more about the data the target models were pretrained on?
+For detecting pretraining data (DPD) from LLMs, We divide the examples into two categories:
+* Seen example: Example seen during pretraining.
+* Unseen example: Example not seen during pretraining.
+
+Here we introduce WikiMia Benchmark
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide34.png" alt="" width="70%">
+</div>
+</center>
+
+Formalized definition of membership inference attack:
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide35.png" alt="" width="70%">
+</div>
+</center>
+
+Min-K% Prob
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide36.png" alt="" width="70%">
+</div>
+</center>
+
+Results on different settings for Min-K% Prob compared with other baseline algorithms (PPL, Neighbor, etc.) We can see that as the model size or text length increases, the detection becomes easier and Min-K% always have the best AUC.
+
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide37.png" alt="" width="70%">
+</div>
+</center>
+
+DPD shows it is possible to identify if certain pretraining data was used, and touches on how some pretraining data is problematic (e.g. copyrighted material or personally identifiable information).
+
+## Orca: Progressive Learning from Complex Explanation Traces of GPT-4 
+### Instruction-tuning
+A technique that allows pre-trained language models to learn from input (natural language descriptions of the task) and response pairs. The goal is to train the model to generate the correct output given a specific input and instruction. 
+{"instruction": "Arrange the words in the given sentence to form a grammatically correct sentence.", 
+"input": "the quickly brown fox jumped", 
+"output": "the brown fox jumped quick
+ly"}. 
+
+### Chanllenges with Existing Methods
+"Model imitation is a false promise" since "broadly matching ChatGPT using purely imitation would require 
+1. a concerted effort to collect enormous imitation datasets
+2. far more diverse and higher quality imitation data than is currently available."
+3. Simple instructions with limited diversity: Using an initial set of prompts to incite the LFM to produce new instructions. Any low-quality or overly similar responses are then removed, and the remaining instructions are reintegrated into the task pool for further iterations.
+4. Query complexity: Existing methods are limited in their ability to handle complex queries that require sophisticated reasoning. This is because they rely on simple prompts that do not capture the full complexity of the task.
+5. Data scaling: Existing methods require large amounts of high-quality data to achieve good performance. However, collecting such data is often difficult and time-consuming.
+
+### What is Orca
+Orca, a 13-billion parameter model that learns to imitate the reasoning process of LFMs. Orca learns from rich signals from GPT-4, including explanation traces, step-by-step thought processes, and other complex instructions, guided by teacher assistance from ChatGPT.
+
+### Explanation Tuning
+We augment ⟨query, response⟩ pairs with detailed responses from GPT-4 that explain the reasoning process of the teacher as it generates the response. These provide the student with additional signals for learning. We leverage system instructions (e.g.., explain like I’m five, think step-by-step and justify your response, etc.) to elicit such explanations. This is in contrast to instruction tuning, which only uses the prompt and the LFM response for learning, providing little opportunity for mimicking the LFM’s “thought” process.
+Large-scale training data with diverse tasks augmented with complex instructions and rich signals.
+⟨ System message, User query, LFM response ⟩
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide45.png" alt="" width="70%">
+</div>
+</center>
+
+Experiment results:
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide46.png" alt="" width="70%">
+</div>
+</center>
+
+### Evaluation for Safety
+The evaluation is composed of two parts:
+* Truthful Question Answering 
+* Toxic Content Generation 
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide48.png" alt="" width="70%">
+</div>
+</center>
+
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide49.png" alt="" width="70%">
+</div>
+</center>
+
+## Discussion
+### Topic: Given sufficient styles and explanations in pre-training data, what risks have been resolved, what risks still exist, and what new risks may have emerged?
+We think that imitation models should not be more biased because base models are generally less biased given a better ptr-training data. Since there are also sufficient styles, the risk of leaning towards a specific style is also mitigated.
 
 # Wednesday, 1 Nov: Data Matters: Investigating the Impact of Data on Large Language Models
 
