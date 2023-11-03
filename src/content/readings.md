@@ -102,6 +102,9 @@ Nicholas Carlini. [_A LLM Assisted Exploitation of AI-Guardian_](https://arxiv.o
 Andy Zou, Zifan Wang, J. Zico Kolter, Matt Fredrikson. [_Universal and Transferable Adversarial Attacks on Aligned Language Models_](https://arxiv.org/abs/2307.15043). [https://arxiv.org/abs/2307.15043](https://arxiv.org/abs/2307.15043).
 [Project Website: https://llm-attacks.org/](https://llm-attacks.org/).
 
+Kai Greshake, Sahar Abdelnabi, Shailesh Mishra, Christoph Endres, Thorsten Holz, Mario Fritz. [_Not what you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection_](https://arxiv.org/abs/2302.12173). [https://arxiv.org/abs/2302.12173](https://arxiv.org/abs/2302.12173).
+
+
 ## Fairness and Bias
 
 Shangbin Feng, Chan Young Park, Yuhan Liu, Yulia Tsvetkov. [_From Pretraining Data to Language Models to Downstream Tasks: Tracking the Trails of Political Biases Leading to Unfair NLP Models_](https://arxiv.org/abs/2305.08283). ACL 2023.
