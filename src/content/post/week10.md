@@ -7,13 +7,197 @@ slug = "week10"
 
 (see bottom for assigned readings and questions)
 
-<author>Presenting Team: Anshuman Suri, Jacob Christopher, Kasra Lekan, Kaylee Liu, My Dinh</author>
+<author>Presenting Team: Haolin Liu, Xueren Ge, Ji  Hyun Kim, Stephanie Schoch </author>
 
-<author>Blogging Team: Hamza Khalid, Liu Zhe, Peng Wang, Sikun Guo, Yinhan He, Zhepei Wei</author>
+<author>Blogging Team: Aparna Kishore, Elena Long, Erzhen Hu, Jingping Wan</author>
 
 # Monday, 30 October: <br> Data Selection for Fine-tuning LLMs
 
-### 
+## Question: Use another model to solve problem?
+We've discussed so many risks and issues of GenAI so far and one question is that it can be difficult for us to come up with a possible solution to these problems.
+- Would "*Using a larger model to verify a smaller model's hallucinations*" a good idea?
+- One caveat would be "*How can one ensure the larger model's accuracy?*"
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide2.png" alt="" width="70%">
+</div>
+</center>
+
+## Question: Any potential applications of LLMs as a Judge?
+As summarized from the Week 10 discussion channels, there could be many potential applications of LLMs as a Judge, such as accessing writing quality, checking harmful content, judging if social media post is factually correct or biased, evaluating if code is optimal.
+
+<!-- <center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide4.png" alt="" width="90%">
+</div>
+</center> -->
+
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide5.png" alt="" width="70%">
+</div>
+</center>
+
+Let's start from Paper 1:
+Zheng, Lianmin, Wei-Lin Chiang, Ying Sheng, Siyuan Zhuang, Zhanghao Wu, Yonghao Zhuang, Zi Lin et al. "[Judging LLM-as-a-judge with MT-Bench and Chatbot Arena.](https://arxiv.org/pdf/2306.05685.pdf)" arXiv preprint arXiv:2306.05685 (2023).
+
+
+Multi-Turn questions provide a different way to query GPT. In this paper, the authors ask multi-turn dialogues to two different assistants. 
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide6.png" alt="" width="70%">
+</div>
+</center>
+
+The paper provides two benchmark, 
+1. The MT-bench provides a multi-turn question set, and it challenges chatbot to do difficult questions. 
+2. The Chatbot Arena that provides a crowdsourced battle platform that reveals two options for human to choose.
+
+The results shows that 
+- GPT-4 is the best, which matches both controlled (MT-bench) and crowdsourced (Arena) human preferences.
+- Regardless of pair or single, it exceeds over 80% of agreement with human
+
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide8.png" alt="" width="70%">
+</div>
+</center>
+
+This shows that stong LLMs can be a scalable and explainable way to approximate human preferences. Some advantages and disadvantages were introduced for LLM-as-a-Judge. 
+
+Advantages
+- Scalability: Human evaluation is time-consuming and expensive
+- Consistency: Human judgment varies by individuals
+- Explainability: LLMs can be trained to evaluate and provide reasons of their judgements
+
+Disadvantages
+- Position Bias: Bias towards responses based on their position (preferring the first response)
+- Verbosity Bias: Favor longer, more verbose answers regardless of accuracy
+- Overfitting: LLMs might overfit the training data, don’t generalize to new, unseen responses
+
+
+
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide11.png" alt="" width="70%">
+</div>
+</center>
+
+The above potential of fine-tuning open-source model (there could be interpretability problems) leads to a question: "Judges paper motivates wanting to be able to emulate the performance of stronger, closed-source models - Can we imitate these models?"
+
+
+## Imitation Models
+
+The Judges paper points to the need to emulate the performance of a close-sourced or stronger models, this following paper tackles how to imitate models and the performance of these imitation models. 
+
+Paper 2: Gudibande, A., Wallace, E., Snell, C., Geng, X., Liu, H., Abbeel, P., Levine, S. and Song, D., 2023. [The false promise of imitating proprietary llms](https://arxiv.org/pdf/2305.15717.pdf). arXiv preprint arXiv:2305.15717.
+
+To start the second paper, let's do a class poll about which output people would prefer. 
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide13.png" alt="" width="70%">
+</div>
+</center>
+
+
+Most of the class chose Output A.
+
+Here, let's look into the definition of model imitation: 
+"*The premise of model imitation is that once a proprietary LM is made available via API, one can collect a dataset of API outputs and use it to fine-tune an open-source LM.*" [^1]
+
+The goal of model imitation is to imitate the capablity of the proprietary LM.
+
+[^1]: Gudibande, A., Wallace, E., Snell, C., Geng, X., Liu, H., Abbeel, P., Levine, S. and Song, D., 2023. [The false promise of imitating proprietary llms](https://arxiv.org/pdf/2305.15717.pdf). arXiv preprint arXiv:2305.15717.
+
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide15.png" alt="" width="70%">
+</div>
+</center>
+
+
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide16.png" alt="" width="70%">
+</div>
+</center>
+
+
+This shows that the Broad Imitation can be more difficult than Local Imitation as Local Imitation is only for specific tasks. However, Broad Imitation requires gathering of a diverse dataset and the imitation model needs to capture that distribution to have similar output.
+
+To build imitation datasets, there are two primary approaches:  
+- **Natural Examples**: If you have a set of inputs in mind, (e.g. tweets about a specific topic), use them to query the target model. 
+- **Synthetic Examples**: Prompt the target model to iteratively generate examples from the same distribution as an initial small seed set of inputs.
+
+The paper used two curated datasets: 
+- 1. Task-Specific Imitation Using Synthetic Data → **NQ Synthetic**
+- 2. Broad Imitation Using Natural Data → **ShareGPT-Mix**
+
+For the NQ Synthetic:
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide19.png" alt="" width="70%">
+</div>
+</center>
+
+For the ShareGPT-Mix that includes three sources:
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide20.png" alt="" width="70%">
+</div>
+</center>
+
+*Note: the paper above presents the data using frequency with too small number of data points.*
+
+Using the two datasets, the authors look into two research questions: 
+How does model imitation improve as we:
+- **Scale the data**: Increase the amount of imitation data (including fine-tuning with different sized data subsets)
+- **Scale the model**: Vary the capabilities of the underlying base model (they used the parameters in the model used as a proxy for base-model quality, regardless of the architecture)
+
+Here's the experiment setup: 
+
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide22.png" alt="" width="70%">
+</div>
+</center>
+
+
+
+The authors used the Amazon Mturk using ChatGPT versus Imitation models ($15 an hour and assume that having that will help the quality of annotations). They also used GPT-4 to evalute both. 
+
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide23.png" alt="" width="70%">
+</div>
+</center>
+
+For the preference evalution (Figure below):
+
+- (Left Figure) Over 70% of responses were prefered by the human at same rate or over at ChatGPT. However, more imitation data won't close the gap, as according to the x-axis. 
+- (Middle Figure) However, more imitation data can cause decrease of accuracy.
+- (Right Figure) For the number of parameters, the larger base model leads to the better performance.
+They thus concluded that rather than fine-tuning on more imitation data, the best way is still to improve these model increase the base capabilities, rather than the fine tuning process on the imitation data. 
+
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide24.png" alt="" width="70%">
+</div>
+</center>
+
+GPT-4 findings are similar to the human preferences that more imitation data doesn't close the gap and a larger model will contribute to better performance.
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide25.png" alt="" width="70%">
+</div>
+</center>
+
+They found little improvement with increasing amount of imitation data and size of imitation LM. 
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide26.png" alt="" width="70%">
+</div>
+</center>
 
 ## Question: Why is there a discrepancy between crowdworker (and GPT-4) preferences evaluation and automatic benchmark evaluation?
 Authors' conclusion: Limitation models can learn style, but not factuality.
