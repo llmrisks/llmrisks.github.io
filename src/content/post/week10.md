@@ -1,22 +1,148 @@
 +++
-date = "06 Nov 2023"
+date = "30 Oct 2023"
 draft = false
 title = "Week 10: Data Selection for LLMs"
 slug = "week10"
 +++
 
-(see bottom for assigned readings and questions)
+# Monday, 30 Oct: Data Selection for LLMs
 
-<author>Presenting Team: Anshuman Suri, Jacob Christopher, Kasra Lekan, Kaylee Liu, My Dinh</author>
+## Background
+The group first introduces a previous during week 5 and asked the class about potential applications of LLMs as Judge.
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide2.png" alt="" width="70%">
+</div>
+</center>
 
-<author>Blogging Team: Hamza Khalid, Liu Zhe, Peng Wang, Sikun Guo, Yinhan He, Zhepei Wei</author>
+There could be many potential applications of LLMs as a Judge, such as accessing writing quality, checking harmful content, judge if social media post is factually correct or biased, evaluate if code is optimal, as summarized from the week 10 discussion.
 
-# Monday, 30 October: <br> Data Selection for Fine-tuning LLMs
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide4.png" alt="" width="70%">
+</div>
+</center>
 
-### 
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide5.png" alt="" width="70%">
+</div>
+</center>
+
+Paper 1: Zheng, Lianmin, Wei-Lin Chiang, Ying Sheng, Siyuan Zhuang, Zhanghao Wu, Yonghao Zhuang, Zi Lin et al. "Judging LLM-as-a-judge with MT-Bench and Chatbot Arena." arXiv preprint arXiv:2306.05685 (2023).
+
+Multi-Turn questions provide a different way to query GPT. In this paper, authors ask multi-turn dialogues to two different assistants. 
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide6.png" alt="" width="70%">
+</div>
+</center>
+
+The paper provides two benchmark, the MT-bench provides a multi-turn question set, and it challenges chatbot to do difficult questions. 
+The second benchmark is the Chatbot Arena that provides a crowdsourced battle platform that reveals two options for human to choose.
+The results shows that GPT-4 is the best, which matches both controlled (MT-bench) and crowdsourced (Arena) human preferences
+This shows that stong LLMs can be a scalable and explainable way to approximate human preferences. Some advantages and disadvantages were introduced for LLM-as-a-Judge. 
+
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide9.png" alt="" width="70%">
+</div>
+</center>
+
+## Imitation Models
+
+Paper 2: Gudibande, A., Wallace, E., Snell, C., Geng, X., Liu, H., Abbeel, P., Levine, S. and Song, D., 2023. The false promise of imitating proprietary llms. arXiv preprint arXiv:2305.15717.
+
+The Judges paper points to the need to emulate the performance of a close-sourced or stronger models, this following paper tackles how to imitate models and the performance of these imitation models. 
+
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide12.png" alt="" width="70%">
+</div>
+</center>
+
+The class started with a Class Poll about which output people would prefer. Most of the class chose output A.
+- Query: How does actor critic improve over REINFORCE?
+- Output A: Actor-critic algorithms are a type of reinforcement learning algorithm that improves the REINFORCE algorithm by combining the actor (policy) and critic (value) components. The main changes that actor-critic algorithms make over standard REINFORCE are: … 
+- Output B: Actor-critic algorithms are an extension of the REINFORCE algorithm that combines both policy-based and value-based methods. Some of the changes that actor-critic algorithms make over standard REINFORCE: 
+… 
+
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide15.png" alt="" width="70%">
+</div>
+</center>
+
+The paper used two curated datasets: 
+- 1. Task-Specific Imitation Using Synthetic Data → NQ Synthetic
+- 2. Broad Imitation Using Natural Data → ShareGPT-Mix
+
+For the NQ Synthetic:
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide19.png" alt="" width="70%">
+</div>
+</center>
+
+For the ShareGPT-Mix:
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide20.png" alt="" width="70%">
+</div>
+</center>
+
+Using the two datasets, they want to look into two research questions: 
+How does model imitation improve as we:
+- Scale the data: Increase the amount of imitation data (including fine-tuning with different sized data subsets)
+- Scale the model: Vary the capabilities of the underlying base model (they used the parameters in the model used as a proxy for base-model quality, regardless of the architecture)
+Here's the experiment setup: 
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide21.png" alt="" width="70%">
+</div>
+</center>
+
+The authors used the Amazon Mturk using ChatGPT versus Imitation models ($15 an hour and assume that having that will help the quality of annotations). They also used GPT-4 to evalute both. 
+
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide22.png" alt="" width="70%">
+</div>
+</center>
 
 
 
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide23.png" alt="" width="70%">
+</div>
+</center>
+
+
+(Left Figure) Over 70% of responses were prefered by the human at same rate or over at ChatGPT. However, more imitation data won't close the gap, as according to the x-axis. 
+(Middle Figure) However, more imitation data can cause decrease of accuracy.
+(Right Figure) For the number of parameters, the larger base model leads to the better performance.
+They thus concluded that rather than fine-tuning on more imitation data, the best way is still to improve these model increase the base capabilities, rather than the fine tuning process on the imitation data. 
+
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide24.png" alt="" width="70%">
+</div>
+</center>
+
+GPT-4 findings are similar to the human preferences that more imitation data doesn't close the gap and a larger model will contribute to better performance
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide25.png" alt="" width="70%">
+</div>
+</center>
+
+They found little improvement with increasing amount of imitation data and size of imitation LM. 
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide26.png" alt="" width="70%">
+</div>
+</center>
 
 
 # Wednesday, 1 Nov: Data Matters: Investigating the Impact of Data on Large Language Models
