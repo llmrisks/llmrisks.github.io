@@ -556,3 +556,51 @@ The tail of a distribution typically contains rare events or extreme values that
 
 Q4.
 This is an open-ended question. One possible reason is that while fine-tuning with generated data mix the original data with the generated data, this augmentation can introduce novel, synthetic examples that the model hasn't seen in the original data. These new examples can extend the tail of the distribution by including previously unseen rare or extreme cases.
+
+
+
+
+# Readings and Discussions
+
+## Monday 30 October
+### Required Reading
+
+
+- Required: Arnav Gudibande, Eric Wallace, Charlie Snell, Xinyang Geng, Hao Liu, Pieter Abbeel, Sergey Levine, Dawn Song. [The False Promise of Imitating Proprietary LLMs](https://arxiv.org/abs/2305.1571). https://arxiv.org/abs/2305.15717 [pdf](https://arxiv.org/abs/2305.1571.pdf)
+
+- Required: Lianmin Zheng, Wei-Lin Chiang, Ying Sheng, Siyuan Zhuang, Zhanghao Wu, Yonghao Zhuang, Zi Lin, Zhuohan Li, Dacheng Li, Eric. P Xing, Hao Zhang, Joseph E. Gonzalez, Ion Stoica. [Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena](https://arxiv.org/abs/2306.05685). https://arxiv.org/abs/2306.05685 [pdf](https://arxiv.org/abs/2306.05685.pdf)
+
+
+### Optional Readings
+
+- Optional: Subhabrata Mukherjee, Arindam Mitra, Ganesh Jawahar, Sahaj Agarwal, Hamid Palangi, Ahmed Awadallah. [Orca: Progressive Learning from Complex Explanation Traces of GPT-4](https://arxiv.org/abs/2306.02707). https://arxiv.org/abs/2306.02707 [pdf](https://arxiv.org/abs/2306.02707.pdf)
+
+
+
+### Discussion Questions
+1. In [The False Promise of Imitating Proprietary LLMs](https://arxiv.org/abs/2305.1571), the authors attribute the discrepancy between crowdworker evaluations and NLP benchmarks to the ability of imitation models to mimic the style of larger LLMs, but not the factuality. Do the experiments and evaluations performed in the paper convincing to support this statement?
+
+2. In [The False Promise of Imitating Proprietary LLMs](https://arxiv.org/abs/2305.1571), the authors suggest that fine-tuning is a process to help a model extract the knowledge learned during pretraining, and the introduction of new knowledge during fine-tuning may simply be training the model to guess or hallucinate answers. Do you agree or disagree with this idea? Why?
+
+3. [Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena](https://arxiv.org/abs/2306.05685) expresses confidence in the effectiveness of strong LLMs as an evaluation method with high agreement with humans. Do you see potential applications for LLM-as-a-Judge beyond chat assistant evaluation, and if so, what are they?
+
+4. [Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena](https://arxiv.org/abs/2306.05685) addresses several limitations of LLM-as-a-Judge, including position bias, verbosity bias, and limited reasoning ability. Beyond the limitations discussed in the paper, what other potential biases or shortcomings that might arise when using LLM-as-a-Judge? Are there any approaches or methods that could mitigate these limitations?
+
+## Wednesday 01 November
+
+### Required Readings
+
+- Chunting Zhou, Pengfei Liu, Puxin Xu, Srini Iyer, Jiao Sun, Yuning Mao, Xuezhe Ma, Avia Efrat, Ping Yu, Lili Yu, Susan Zhang, Gargi Ghosh, Mike Lewis, Luke Zettlemoyer, Omer Levy. [LIMA: Less Is More for Alignment](https://arxiv.org/abs/2305.11206). https://arxiv.org/abs/2305.11206 [pdf](https://arxiv.org/abs/2305.11206.pdf)
+
+
+- Ilia Shumailov, Zakhar Shumaylov, Yiren Zhao, Yarin Gal, Nicolas Papernot, Ross Anderson. [The Curse of Recursion: Training on Generated Data Makes Models Forget](https://arxiv.org/abs/2305.17493). https://arxiv.org/abs/2305.17493 [pdf](https://arxiv.org/abs/2305.17493.pdf)
+
+
+### Discussion Questions
+1. Based on the Figure 1 from the [LIMA](https://arxiv.org/abs/2305.11206) paper, using high quality examples to fine-tune LLMs outperforms DaVinci003 (with RLHF). What are the pros and cons, usage scenarios of each method?
+
+2. There are lots of papers using LLMs to generate synthetic data for data augmentation and show improvement over multiple tasks, what do you think is an important factor when sampling synthetic data generated from LLMs?
+
+3. In [The Curse of Recursion: Training on Generated Data Makes Models Forget](https://arxiv.org/abs/2305.17493), the authors discuss how training with generation data affects the approximation for the tail of the true data distribution. Namely, for training GMM/VAEs, the tail of the true distribution will disappear in the estimated distribution (Figure 8). On the other hand, when fine-tuning large language models with generation data, the estimator will have a much longer tail (Figure 10). What do you think causes such a difference? In the real world, what does the tail of a distribution represent and how do you think this phenomenon impacts practical applications?
+
+4. In [The Curse of Recursion: Training on Generated Data Makes Models Forget](https://arxiv.org/abs/2305.17493), the authors rely on several assumptions to support their arguments. How strong those assumptions are and do you think these assumptions limit its applicability to broader contexts?
