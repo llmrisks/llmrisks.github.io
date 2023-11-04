@@ -5,145 +5,136 @@ title = "Week 10: Data Selection for LLMs"
 slug = "week10"
 +++
 
-# Monday, 30 Oct: Data Selection for LLMs
+(see bottom for assigned readings and questions)
 
-## Background
-The group first introduces a previous during week 5 and asked the class about potential applications of LLMs as Judge.
-<center>
-<div class="slide">
-  <img src="../images/week10/day1/Slide2.png" alt="" width="70%">
-</div>
-</center>
+<author>Presenting Team: Anshuman Suri, Jacob Christopher, Kasra Lekan, Kaylee Liu, My Dinh</author>
 
-There could be many potential applications of LLMs as a Judge, such as accessing writing quality, checking harmful content, judge if social media post is factually correct or biased, evaluate if code is optimal, as summarized from the week 10 discussion.
+<author>Blogging Team: Hamza Khalid, Liu Zhe, Peng Wang, Sikun Guo, Yinhan He, Zhepei Wei</author>
 
-<center>
-<div class="slide">
-  <img src="../images/week10/day1/Slide4.png" alt="" width="70%">
-</div>
-</center>
+# Monday, 30 October: <br> Data Selection for Fine-tuning LLMs
+
+### 
+
+## Question: Why is there a discrepancy between crowdworker (and GPT-4) preferences evaluation and automatic benchmark evaluation?
+Authors' conclusion: Limitation models can learn style, but not factuality.
 
 <center>
 <div class="slide">
-  <img src="../images/week10/day1/Slide5.png" alt="" width="70%">
+  <img src="../images/week10/day1/Slide28.png" alt="" width="70%">
 </div>
 </center>
-
-Paper 1: Zheng, Lianmin, Wei-Lin Chiang, Ying Sheng, Siyuan Zhuang, Zhanghao Wu, Yonghao Zhuang, Zi Lin et al. "Judging LLM-as-a-judge with MT-Bench and Chatbot Arena." arXiv preprint arXiv:2306.05685 (2023).
-
-Multi-Turn questions provide a different way to query GPT. In this paper, authors ask multi-turn dialogues to two different assistants. 
-<center>
-<div class="slide">
-  <img src="../images/week10/day1/Slide6.png" alt="" width="70%">
-</div>
-</center>
-
-The paper provides two benchmark, the MT-bench provides a multi-turn question set, and it challenges chatbot to do difficult questions. 
-The second benchmark is the Chatbot Arena that provides a crowdsourced battle platform that reveals two options for human to choose.
-The results shows that GPT-4 is the best, which matches both controlled (MT-bench) and crowdsourced (Arena) human preferences
-This shows that stong LLMs can be a scalable and explainable way to approximate human preferences. Some advantages and disadvantages were introduced for LLM-as-a-Judge. 
 
 <center>
 <div class="slide">
-  <img src="../images/week10/day1/Slide9.png" alt="" width="70%">
+  <img src="../images/week10/day1/Slide29.png" alt="" width="70%">
 </div>
 </center>
 
-## Imitation Models
+## Discussion
+### Topic1: What do you think the potential {benefits, risks, concerns, considerations} are of imitation models?
+* non-toxic scores is a benefit
+* It will have a better capability of imitating specific input-data style
+* One risk is that experiment results can be false based on style-imitating, not reflecting its intrinsic characteristics.
 
-Paper 2: Gudibande, A., Wallace, E., Snell, C., Geng, X., Liu, H., Abbeel, P., Levine, S. and Song, D., 2023. The false promise of imitating proprietary llms. arXiv preprint arXiv:2305.15717.
+### Topic2: Do you think it is ok for researchers or companies to reverse engineer another model via imitation? Should there be any legal implications for this?
+Most people in our class agree that there should be no legal concern for researchers and companies to reverse engineer other models via immitating. Professor also proposed another idea that tech companies like OpenAI relies heavily on public-accessible training data from the internet, which weaken the argument that companies have the right to exclusively possess the whole model.
 
-The Judges paper points to the need to emulate the performance of a close-sourced or stronger models, this following paper tackles how to imitate models and the performance of these imitation models. 
+## False Promises Paper
+### Implication
+1. Fine-tuning alone can’t produce imitation models that are on par in terms of factuality with larger models.
+2. Better base models are most promising direction for improving open-source models (e.g. architecture, pretraining data). 
+
+### Question: What if we knew more about the data the target models were pretrained on?
+For detecting pretraining data (DPD) from LLMs, We divide the examples into two categories:
+* Seen example: Example seen during pretraining.
+* Unseen example: Example not seen during pretraining.
+
+Here we introduce WikiMia Benchmark
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide34.png" alt="" width="70%">
+</div>
+</center>
+
+Formalized definition of membership inference attack:
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide35.png" alt="" width="70%">
+</div>
+</center>
+
+Min-K% Prob
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide36.png" alt="" width="70%">
+</div>
+</center>
+
+Results on different settings for Min-K% Prob compared with other baseline algorithms (PPL, Neighbor, etc.) We can see that as the model size or text length increases, the detection becomes easier and Min-K% always have the best AUC.
 
 <center>
 <div class="slide">
-  <img src="../images/week10/day1/Slide12.png" alt="" width="70%">
+  <img src="../images/week10/day1/Slide37.png" alt="" width="70%">
 </div>
 </center>
 
-The class started with a Class Poll about which output people would prefer. Most of the class chose output A.
-- Query: How does actor critic improve over REINFORCE?
-- Output A: Actor-critic algorithms are a type of reinforcement learning algorithm that improves the REINFORCE algorithm by combining the actor (policy) and critic (value) components. The main changes that actor-critic algorithms make over standard REINFORCE are: … 
-- Output B: Actor-critic algorithms are an extension of the REINFORCE algorithm that combines both policy-based and value-based methods. Some of the changes that actor-critic algorithms make over standard REINFORCE: 
-… 
+DPD shows it is possible to identify if certain pretraining data was used, and touches on how some pretraining data is problematic (e.g. copyrighted material or personally identifiable information).
+
+## Orca: Progressive Learning from Complex Explanation Traces of GPT-4 
+### Instruction-tuning
+A technique that allows pre-trained language models to learn from input (natural language descriptions of the task) and response pairs. The goal is to train the model to generate the correct output given a specific input and instruction. 
+{"instruction": "Arrange the words in the given sentence to form a grammatically correct sentence.", 
+"input": "the quickly brown fox jumped", 
+"output": "the brown fox jumped quick
+ly"}. 
+
+### Chanllenges with Existing Methods
+"Model imitation is a false promise" since "broadly matching ChatGPT using purely imitation would require 
+1. a concerted effort to collect enormous imitation datasets
+2. far more diverse and higher quality imitation data than is currently available."
+3. Simple instructions with limited diversity: Using an initial set of prompts to incite the LFM to produce new instructions. Any low-quality or overly similar responses are then removed, and the remaining instructions are reintegrated into the task pool for further iterations.
+4. Query complexity: Existing methods are limited in their ability to handle complex queries that require sophisticated reasoning. This is because they rely on simple prompts that do not capture the full complexity of the task.
+5. Data scaling: Existing methods require large amounts of high-quality data to achieve good performance. However, collecting such data is often difficult and time-consuming.
+
+### What is Orca
+Orca, a 13-billion parameter model that learns to imitate the reasoning process of LFMs. Orca learns from rich signals from GPT-4, including explanation traces, step-by-step thought processes, and other complex instructions, guided by teacher assistance from ChatGPT.
+
+### Explanation Tuning
+We augment ⟨query, response⟩ pairs with detailed responses from GPT-4 that explain the reasoning process of the teacher as it generates the response. These provide the student with additional signals for learning. We leverage system instructions (e.g.., explain like I’m five, think step-by-step and justify your response, etc.) to elicit such explanations. This is in contrast to instruction tuning, which only uses the prompt and the LFM response for learning, providing little opportunity for mimicking the LFM’s “thought” process.
+Large-scale training data with diverse tasks augmented with complex instructions and rich signals.
+⟨ System message, User query, LFM response ⟩
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide45.png" alt="" width="70%">
+</div>
+</center>
+
+Experiment results:
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide46.png" alt="" width="70%">
+</div>
+</center>
+
+### Evaluation for Safety
+The evaluation is composed of two parts:
+* Truthful Question Answering 
+* Toxic Content Generation 
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide48.png" alt="" width="70%">
+</div>
+</center>
 
 <center>
 <div class="slide">
-  <img src="../images/week10/day1/Slide15.png" alt="" width="70%">
+  <img src="../images/week10/day1/Slide49.png" alt="" width="70%">
 </div>
 </center>
 
-The paper used two curated datasets: 
-- 1. Task-Specific Imitation Using Synthetic Data → NQ Synthetic
-- 2. Broad Imitation Using Natural Data → ShareGPT-Mix
-
-For the NQ Synthetic:
-<center>
-<div class="slide">
-  <img src="../images/week10/day1/Slide19.png" alt="" width="70%">
-</div>
-</center>
-
-For the ShareGPT-Mix:
-<center>
-<div class="slide">
-  <img src="../images/week10/day1/Slide20.png" alt="" width="70%">
-</div>
-</center>
-
-Using the two datasets, they want to look into two research questions: 
-How does model imitation improve as we:
-- Scale the data: Increase the amount of imitation data (including fine-tuning with different sized data subsets)
-- Scale the model: Vary the capabilities of the underlying base model (they used the parameters in the model used as a proxy for base-model quality, regardless of the architecture)
-Here's the experiment setup: 
-<center>
-<div class="slide">
-  <img src="../images/week10/day1/Slide21.png" alt="" width="70%">
-</div>
-</center>
-
-The authors used the Amazon Mturk using ChatGPT versus Imitation models ($15 an hour and assume that having that will help the quality of annotations). They also used GPT-4 to evalute both. 
-
-<center>
-<div class="slide">
-  <img src="../images/week10/day1/Slide22.png" alt="" width="70%">
-</div>
-</center>
-
-
-
-<center>
-<div class="slide">
-  <img src="../images/week10/day1/Slide23.png" alt="" width="70%">
-</div>
-</center>
-
-
-(Left Figure) Over 70% of responses were prefered by the human at same rate or over at ChatGPT. However, more imitation data won't close the gap, as according to the x-axis. 
-(Middle Figure) However, more imitation data can cause decrease of accuracy.
-(Right Figure) For the number of parameters, the larger base model leads to the better performance.
-They thus concluded that rather than fine-tuning on more imitation data, the best way is still to improve these model increase the base capabilities, rather than the fine tuning process on the imitation data. 
-
-<center>
-<div class="slide">
-  <img src="../images/week10/day1/Slide24.png" alt="" width="70%">
-</div>
-</center>
-
-GPT-4 findings are similar to the human preferences that more imitation data doesn't close the gap and a larger model will contribute to better performance
-<center>
-<div class="slide">
-  <img src="../images/week10/day1/Slide25.png" alt="" width="70%">
-</div>
-</center>
-
-They found little improvement with increasing amount of imitation data and size of imitation LM. 
-<center>
-<div class="slide">
-  <img src="../images/week10/day1/Slide26.png" alt="" width="70%">
-</div>
-</center>
-
+## Discussion
+### Topic: Given sufficient styles and explanations in pre-training data, what risks have been resolved, what risks still exist, and what new risks may have emerged?
+We think that imitation models should not be more biased because base models are generally less biased given a better ptr-training data. Since there are also sufficient styles, the risk of leaning towards a specific style is also mitigated.
 
 # Wednesday, 1 Nov: Data Matters: Investigating the Impact of Data on Large Language Models
 
