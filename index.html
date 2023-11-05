@@ -1,7 +1,7 @@
 <!doctype html>
 <html class="no-js" lang="en-us">
   <head>
-	<meta name="generator" content="Hugo 0.92.0" />
+	<meta name="generator" content="Hugo 0.71.0" />
     <meta charset="utf-8">
     <title>Risks (and Benefits) of Generative AI and Large Language Models</title>
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -113,6 +113,12 @@ Risks and Benefits of Generative AI and LLMs
 
    
    <div class="posttitle">
+      <a href="/week10/">Week 10: Data Selection for LLMs</a>
+
+
+   </div>
+   
+   <div class="posttitle">
       <a href="/week9/">Week 9: Interpretability</a>
 
 
@@ -162,12 +168,6 @@ Risks and Benefits of Generative AI and LLMs
    
    <div class="posttitle">
       <a href="/discussions/">Github Discussions</a>
-
-
-   </div>
-   
-   <div class="posttitle">
-      <a href="/class0/">Class 0: Getting Organized</a>
 
 
    </div>
@@ -234,9 +234,561 @@ Risks and Benefits of Generative AI and LLMs
     
         
     
+        
+    
 
 
     
+    
+    <h1><a href="/week10/">Week 10: Data Selection for LLMs</a></h1>
+<div class="post-metadata">
+  <span class="post-date">
+    <time datetime="2023-11-03 00:00:00 &#43;0000 UTC" itemprop="datePublished">3 November 2023</time>
+  </span>
+  
+</div>
+
+      <div class="post-body" itemprop="articleBody">
+        <p>(see bottom for assigned readings and questions)</p>
+<p><author>Presenting Team: Haolin Liu, Xueren Ge, Ji  Hyun Kim, Stephanie Schoch </author><br>
+<author>Blogging Team: Aparna Kishore, Elena Long, Erzhen Hu, Jingping Wan</author></p>
+<h1 id="monday-30-october-br-data-selection-for-fine-tuning-llms">Monday, 30 October: <br> Data Selection for Fine-tuning LLMs</h1>
+<h2 id="question-would-more-models-help">Question: Would more models help?</h2>
+<p>We&rsquo;ve discussed so many risks and issues of GenAI so far and one question is that it can be difficult for us to come up with a possible solution to these problems.</p>
+<ul>
+<li>Would &ldquo;<em>Using a larger model to verify a smaller model&rsquo;s hallucinations</em>&rdquo; a good idea?</li>
+<li>One caveat would be &ldquo;<em>How can one ensure the larger model&rsquo;s accuracy?</em>&rdquo;</li>
+</ul>
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide2.png" alt="" width="85%">
+</div>
+</center>
+<h2 id="question-any-potential-applications-of-llms-as-a-judge">Question: Any potential applications of LLMs as a Judge?</h2>
+<p>As summarized from the Week 10 discussion channels, there could be many potential applications of LLMs as a Judge, such as accessing writing quality, checking harmful content, judging if social media post is factually correct or biased, evaluating if code is optimal.</p>
+<!-- <center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide4.png" alt="" width="90%">
+</div>
+</center> -->
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide5.png" alt="" width="85%">
+</div>
+</center>
+<p>Let&rsquo;s start from Paper 1:
+Zheng, Lianmin, Wei-Lin Chiang, Ying Sheng, Siyuan Zhuang, Zhanghao Wu, Yonghao Zhuang, Zi Lin et al. &ldquo;<a href="https://arxiv.org/pdf/2306.05685.pdf">Judging LLM-as-a-judge with MT-Bench and Chatbot Arena.</a>&rdquo; arXiv preprint arXiv:2306.05685 (2023).</p>
+<p>Multi-Turn questions provide a different way to query GPT. In this paper, the authors ask multi-turn dialogues to two different assistants.</p>
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide6.png" alt="" width="85%">
+</div>
+</center>
+<p>The paper provides two benchmarks:</p>
+<ol>
+<li>The MT-bench provides a multi-turn question set, and it challenges chatbot to do difficult questions.</li>
+<li>The Chatbot Arena that provides a crowdsourced battle platform that reveals two options for human to choose.</li>
+</ol>
+<p>The results shows that</p>
+<ul>
+<li>GPT-4 is the best, which matches both controlled (MT-bench) and crowdsourced (Arena) human preferences.</li>
+<li>Regardless of pair or single, it exceeds over 80% of agreement with the human subjects.</li>
+</ul>
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide8.png" alt="" width="85%">
+</div>
+</center>
+<p>This shows that stong LLMs can be a scalable and explainable way to approximate human preferences. Some advantages and disadvantages were introduced for LLM-as-a-Judge.</p>
+<p>Advantages</p>
+<ul>
+<li>Scalability: Human evaluation is time-consuming and expensive</li>
+<li>Consistency: Human judgment varies by individuals</li>
+<li>Explainability: LLMs can be trained to evaluate and provide reasons of their judgements</li>
+</ul>
+<p>Disadvantages</p>
+<ul>
+<li>Position Bias: Bias towards responses based on their position (preferring the first response)</li>
+<li>Verbosity Bias: Favor longer, more verbose answers regardless of accuracy</li>
+<li>Overfitting: LLMs might overfit the training data, don’t generalize to new, unseen responses</li>
+</ul>
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide11.png" alt="" width="85%">
+</div>
+</center>
+<p>The above potential of fine-tuning open-source model (there could be interpretability problems) leads to a question: &ldquo;the paper motivates wanting to be able to emulate the performance of stronger, closed-source models - <em>can we imitate these models?</em>&rdquo;</p>
+<h1 id="imitation-models">Imitation Models</h1>
+<p>Paper 2: Gudibande, A., Wallace, E., Snell, C., Geng, X., Liu, H., Abbeel, P., Levine, S. and Song, D., 2023. <a href="https://arxiv.org/pdf/2305.15717.pdf"><em>The false promise of imitating proprietary LLMs</em></a>. arXiv preprint arXiv:2305.15717.</p>
+<p>To start the second paper, let&rsquo;s do a class poll about which output people would prefer.</p>
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide13.png" alt="" width="85%">
+</div>
+</center>
+<p>Most of the class chose Output A.</p>
+<p>Here, let&rsquo;s look into the definition of model imitation:
+&ldquo;<em>The premise of model imitation is that once a proprietary LM is made available via API, one can collect a dataset of API outputs and use it to fine-tune an open-source LM.</em>&rdquo; <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<p>The goal of model imitation is to imitate the capablity of the proprietary LM.</p>
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide15.png" alt="" width="85%">
+</div>
+</center>
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide16.png" alt="" width="85%">
+</div>
+</center>
+<p>This shows that the Broad Imitation can be more difficult than Local Imitation as Local Imitation is only for specific tasks. However, Broad Imitation requires gathering of a diverse dataset and the imitation model needs to capture that distribution to have similar output.</p>
+<p>To build imitation datasets, there are two primary approaches:</p>
+<ul>
+<li><strong>Natural Examples</strong>: If you have a set of inputs in mind, (e.g. tweets about a specific topic), use them to query the target model.</li>
+<li><strong>Synthetic Examples</strong>: Prompt the target model to iteratively generate examples from the same distribution as an initial small seed set of inputs.</li>
+</ul>
+<p>The paper used two curated datasets:</p>
+<ul>
+<li>
+<ol>
+<li>Task-Specific Imitation Using Synthetic Data: <strong>NQ Synthetic</strong></li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>Broad Imitation Using Natural Data: <strong>ShareGPT-Mix</strong></li>
+</ol>
+</li>
+</ul>
+<p>For <strong>NQ Synthetic</strong>:</p>
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide19.png" alt="" width="85%">
+</div>
+</center>
+<h2 id="heading"></h2>
+<p>For the <strong>ShareGPT-Mix</strong> dataset which includes three sources:</p>
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide20.png" alt="" width="85%">
+</div>
+</center>
+<p><em>Note: the paper above presents the data using frequency with too few data points, and the numbers in the table don&rsquo;t seem to make sense (e.g., no way to get 31% out of 50 queries).</em></p>
+<p>Using the two datasets, the authors look into two research questions &mdash;<br>
+<em>How does model imitation improve as we</em>:</p>
+<ol>
+<li><strong>Scale the data</strong>: Increase the amount of imitation data (including fine-tuning with different sized data subsets)</li>
+<li><strong>Scale the model</strong>: Vary the capabilities of the underlying base model (they used the parameters in the model used as a proxy for base-model quality, regardless of the architecture)</li>
+</ol>
+<p>Here&rsquo;s the experiment setup:</p>
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide22.png" alt="" width="85%">
+</div>
+</center>
+<p>The authors use Amazon Mturk using ChatGPT versus Imitation models ($15 an hour and assume that having that will help the quality of annotations). They also used GPT-4 to evalute both.</p>
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide23.png" alt="" width="85%">
+</div>
+</center>
+<p>For the preference evalution (Figure below):</p>
+<ul>
+<li>(Left graph) Over 85% of responses were prefered by the human at same rate or over at ChatGPT. However, more imitation data won&rsquo;t close the gap, as according to the x-axis.</li>
+<li>(Middle graph) However, more imitation data can cause decrease of accuracy.</li>
+<li>(Right graph) For the number of parameters, the larger base model leads to the better performance.
+They thus concluded that rather than fine-tuning on more imitation data, the best way to improve model capabilities is still to improve the base capabilities, rather than the fine tuning process on the imitation data.</li>
+</ul>
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide24.png" alt="" width="85%">
+</div>
+</center>
+<p>GPT-4 findings are similar to the human preferences that more imitation data doesn&rsquo;t close the gap and a larger model will contribute to better performance.</p>
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide25.png" alt="" width="85%">
+</div>
+</center>
+<p>They found little improvement with increasing amount of imitation data and size of imitation LM.</p>
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide26.png" alt="" width="85%">
+</div>
+</center>
+<h2 id="question-why-is-there-a-discrepancy-between-crowdworker-and-gpt-4-preferences-evaluation-and-automatic-benchmark-evaluation">Question: Why is there a discrepancy between crowdworker (and GPT-4) preferences evaluation and automatic benchmark evaluation?</h2>
+<p>Authors&rsquo; conclusion: <strong>Limitation models can learn style, but not factuality.</strong></p>
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide28.png" alt="" width="85%">
+</div>
+</center>
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide29.png" alt="" width="85%">
+</div>
+</center>
+<h2 id="discussion">Discussion</h2>
+<h3 id="topic-1-what-are-the-potential-benefits-risks-concerns-considerations-are-of-imitation-models">Topic 1: What are the potential [benefits, risks, concerns, considerations] are of imitation models?</h3>
+<ul>
+<li>non-toxic scores is a benefit</li>
+<li>It will have a better capability of imitating specific input-data style</li>
+<li>One risk is that experiment results can be false based on style-imitating, not reflecting its intrinsic characteristics.</li>
+</ul>
+<h3 id="topic-2-do-you-think-it-is-ok-for-researchers-or-companies-to-reverse-engineer-another-model-via-imitation-should-there-be-any-legal-implications-for-this">Topic 2: Do you think it is ok for researchers or companies to reverse engineer another model via imitation? Should there be any legal implications for this?</h3>
+<p>Most people in our class agree that there should be no legal concern for researchers and companies to reverse engineer other models via immitating. Professor also proposed another idea that tech companies like OpenAI relies heavily on public-accessible training data from the internet, which weaken the argument that companies have the right to exclusively possess the whole model.</p>
+<h1 id="false-promises-paper">False Promises Paper</h1>
+<h3 id="implication">Implication</h3>
+<ol>
+<li>Fine-tuning alone can’t produce imitation models that are on par in terms of factuality with larger models.</li>
+<li>Better base models are most promising direction for improving open-source models (e.g. architecture, pretraining data).</li>
+</ol>
+<h1 id="detecting-pretraining-data-from-large-language-models">Detecting Pretraining Data from Large Language Models</h1>
+<p>Weijia Shi, Anirudh Ajith, Mengzhou Xia, Yangsibo Huang, Daogao Liu, Terra Blevins, Danqi Chen, Luke Zettlemoyer. <a href="https://arxiv.org/abs/2310.16789"><em>Detecting Pretraining Data from Large Language Models</em></a>. 25 Oct 2023.</p>
+<h3 id="question-what-if-we-knew-more-about-the-data-the-target-models-were-pretrained-on">Question: What if we knew more about the data the target models were pretrained on?</h3>
+<p>For detecting pretraining data (DPD) from LLMs, we divide the examples into two categories:</p>
+<ul>
+<li>Seen example: Example seen during pretraining.</li>
+<li>Unseen example: Example not seen during pretraining.</li>
+</ul>
+<p>Here we introduce WikiMia Benchmark</p>
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide34.png" alt="" width="85%">
+</div>
+</center>
+<p>Formalized definition of membership inference attack:</p>
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide35.png" alt="" width="85%">
+</div>
+</center>
+<p><em>Note:</em> this definition doesn&rsquo;t really fit with what they do, which does depend on the assumption that the adversary has not only access to the distribution, but specific candidate documents (some of which are from the data set) for testing. There are many other definitions of membership inference attacks, see <a href="https://arxiv.org/abs/2212.10986"><em>SoK: Let the Privacy Games Begin! A Unified Treatment of Data Inference Privacy in Machine Learning</em></a>.</p>
+<h2 id="min-k-prob">Min-K% Prob</h2>
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide36.png" alt="" width="85%">
+</div>
+</center>
+<h2 id="heading-1"></h2>
+<p>Results on different settings for Min-K% Prob compared with other baseline algorithms (PPL, Neighbor, etc.) We can see that as the model size or text length increases, the detection becomes easier and Min-K% always have the best AUC.</p>
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide37.png" alt="" width="85%">
+</div>
+</center>
+<p>DPD shows it is possible to identify if certain pretraining data was used, and touches on how some pretraining data is problematic (e.g. copyrighted material or personally identifiable information).</p>
+<h2 id="orca-progressive-learning-from-complex-explanation-traces-of-gpt-4">Orca: Progressive Learning from Complex Explanation Traces of GPT-4</h2>
+<p>Subhabrata Mukherjee, Arindam Mitra, Ganesh Jawahar, Sahaj Agarwal, Hamid Palangi, Ahmed Awadallah. <a href="https://arxiv.org/abs/2306.02707">Orca: Progressive Learning from Complex Explanation Traces of GPT-4</a>. <a href="https://arxiv.org/abs/2306.02707">https://arxiv.org/abs/2306.02707</a> <a href="https://arxiv.org/abs/2306.02707.pdf">pdf</a></p>
+<h3 id="instruction-tuning">Instruction-tuning</h3>
+<p><em>Instruction tuning</em> is a technique that allows pre-trained language models to learn from input (natural language descriptions of the task) and response pairs. The goal is to train the model to generate the correct output given a specific input and instruction.</p>
+<p>{&ldquo;instruction&rdquo;: &ldquo;Arrange the words in the given sentence to form a grammatically correct sentence.&quot;,
+&ldquo;input&rdquo;: &ldquo;the quickly brown fox jumped&rdquo;,
+&ldquo;output&rdquo;: &ldquo;the brown fox jumped quick
+ly&rdquo;}.</p>
+<h3 id="challenges-with-existing-methods">Challenges with Existing Methods</h3>
+<p>&ldquo;Model imitation is a false promise&rdquo; since &ldquo;broadly matching ChatGPT using purely imitation would require:</p>
+<ol>
+<li>a concerted effort to collect enormous imitation datasets</li>
+<li>far more diverse and higher quality imitation data than is currently available.&rdquo;</li>
+<li>Simple instructions with limited diversity: Using an initial set of prompts to incite the LFM to produce new instructions. Any low-quality or overly similar responses are then removed, and the remaining instructions are reintegrated into the task pool for further iterations.</li>
+<li>Query complexity: Existing methods are limited in their ability to handle complex queries that require sophisticated reasoning. This is because they rely on simple prompts that do not capture the full complexity of the task.</li>
+<li>Data scaling: Existing methods require large amounts of high-quality data to achieve good performance. However, collecting such data is often difficult and time-consuming.</li>
+</ol>
+<h3 id="what-is-orca">What is Orca</h3>
+<p>Orca, a 13-billion parameter model that learns to imitate the reasoning process of LFMs. Orca learns from rich signals from GPT-4, including explanation traces, step-by-step thought processes, and other complex instructions, guided by teacher assistance from ChatGPT.</p>
+<h3 id="explanation-tuning">Explanation Tuning</h3>
+<p>The authors augment ⟨query, response⟩ pairs with detailed responses from GPT-4 that explain the reasoning process of the teacher as it generates the response. These provide the student with additional signals for learning. They leverage system instructions (e.g.., explain like I’m five, think step-by-step and justify your response, etc.) to elicit such explanations. This is in contrast to instruction tuning, which only uses the prompt and the LFM response for learning, providing little opportunity for mimicking the LFM’s “thought” process.</p>
+<p>Large-scale training data with diverse tasks augmented with complex instructions and rich signals.
+⟨ System message, User query, LFM response ⟩</p>
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide45.png" alt="" width="85%">
+</div>
+</center>
+<p>Results:</p>
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide46.png" alt="" width="85%">
+</div>
+</center>
+<h3 id="evaluation-for-safety">Evaluation for Safety</h3>
+<p>The evaluation is composed of two parts:</p>
+<ul>
+<li>Truthful Question Answering</li>
+<li>Toxic Content Generation</li>
+</ul>
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide48.png" alt="" width="85%">
+</div>
+</center>
+<center>
+<div class="slide">
+  <img src="../images/week10/day1/Slide49.png" alt="" width="85%">
+</div>
+</center>
+<h2 id="discussion-1">Discussion</h2>
+<h3 id="topic-_given-sufficient-styles-and-explanations-in-pre-training-data-what-risks-have-been-resolved-what-risks-still-exist-and-what-new-risks-may-have-emerged_">Topic: <em>Given sufficient styles and explanations in pre-training data, what risks have been resolved, what risks still exist, and what new risks may have emerged?</em></h3>
+<p>We think that imitation models should not be more biased because base models are generally less biased given a better ptr-training data. Since there are also sufficient styles, the risk of leaning towards a specific style is also mitigated.</p>
+<h1 id="wednesday-1-nov-data-mattersbr-investigating-the-impact-of-data-on-large-language-models">Wednesday, 1 Nov: Data Matters<br> Investigating the Impact of Data on Large Language Models</h1>
+<h2 id="background">Background</h2>
+<p>This class was on the impact of data on the large language models.</p>
+<center>
+<div class="slide">
+  <img src="../images/week10/Picture1.png" alt="" width="85%">
+</div>
+</center>
+<p>Information exists in diverse formats such as text, images, graphs, time-series data, and more. In this era of information overload, it is crucial to understand the effects of this data on language models. The research have been predominantly concentrating on examining the influences of model and data sizes.</p>
+<h2 id="content">Content</h2>
+<center>
+<div class="slide">
+  <img src="../images/week10/Picture2.png" alt="" width="85%">
+</div>
+</center>
+<p>We are going to look at two important research questions using two of the research papers:
+(1) What types of data are beneficial to the models? – Using the research paper, LIMA: Less is more for Alignment
+(2) What are the consequences of low-quality data for the models? – Using the research paper, The Curse of Recursion: Training on Generated Data Makes Models Forget</p>
+<h2 id="lima-less-is-more-for-alignment">LIMA: Less Is More for Alignment</h2>
+<p>Chunting Zhou, Pengfei Liu, Puxin Xu, Srini Iyer, Jiao Sun, Yuning Mao, Xuezhe Ma, Avia Efrat, Ping Yu, Lili Yu, Susan Zhang, Gargi Ghosh, Mike Lewis, Luke Zettlemoyer, Omer Levy. <a href="https://arxiv.org/abs/2305.11206">LIMA: Less Is More for Alignment</a>. <a href="https://arxiv.org/abs/2305.11206">https://arxiv.org/abs/2305.11206</a> <a href="https://arxiv.org/abs/2305.11206.pdf">pdf</a></p>
+<center>
+<div class="slide">
+  <img src="../images/week10/Picture3.png" alt="" width="85%">
+</div>
+</center>
+<p><strong>Superficial Alignment Hypothesis</strong> — The model learns knowledge and capabilities entirely during pre-training phase, while alignment teaches about the specific sub-distribution of formats to be used or styles to be used when interacting with the users.</p>
+<center>
+<div class="slide">
+  <img src="../images/week10/Picture4.png" alt="Approach" width="85%">
+</div>
+</center>
+<p>The authors curated a diverse set of training prompts, selecting 750 top questions from community forums and complementing them with 250 manually crafted examples of prompts and responses. They prioritized <em>quality</em>, <em>diversity</em>, and <em>uniformity</em> in their selection process, all while utilizing a smaller dataset. To evaluate performance, LIMA was benchmarked against state-of-the-art language models using a set of 300 challenging test prompts.</p>
+<center>
+<div class="slide">
+  <img src="../images/week10/Picture5.png" alt="Findings" width="85%">
+</div>
+</center>
+<p>The left side showcases the outcomes of a human-based evaluation, comparing LIMA’s performance across various model sizes. Meanwhile, the right side employs GPT-4 for evaluation purposes. In the comparisons with the first two language models, LIMA emerges as the victor. Notably, it’s interesting to observe that LIMA secures a 19% win rate against GPT-4, even when GPT-4 itself is utilized as the evaluator.</p>
+<center>
+<div class="slide">
+  <img src="../images/week10/Picture6.png" alt="Findings 2" width="85%">
+</div>
+</center>
+<p>They also evaluated LIMA&rsquo;s performance in terms of out-of-distribution scenarios and robustness. LIMA safely addressed 80% of the sensitive prompts presented to it. Regarding responses to out-of-distribution inputs, LIMA performed exceptionally well.</p>
+<center>
+<div class="slide">
+  <img src="../images/week10/Picture7.png" alt="Findings 3" width="85%">
+</div>
+</center>
+<p>In the concluding series of experiments, the research team delved into how the diversity of the test data influences LIMA.</p>
+<p>They observed that the filtered Stack Exchange dataset exhibited both diversity and high-quality responses. In contrast, the unfiltered Stack Exchange dataset, while diverse, lacked in quality. On the other hand, wikiHow provided high-quality responses specifically to “how to” prompts. LIMA showcased impressive performance when dealing with datasets that were both highly diverse and of high quality.</p>
+<p>The authors also explored the effects of data volume, with their findings illustrated in the right figure above. Interestingly, they noted that the quantity of data did not exert any noticeable impact on the quality of the generated content.</p>
+<center>
+<div class="slide">
+  <img src="../images/week10/Picture8.png" alt="Personal Thoughts" width="85%">
+</div>
+</center>
+<p>This slide delves into the personal perspectives of the presenter on drawing parallels between Large Language Models (LLMs) and students, as well as evaluating the influence of LIMA on a student’s learning journey.
+The take-away message from the first paper was that quality and diversity of the data is more important for LLM than the quantity of the data.</p>
+<h2 id="the-curse-of-recursion-brtraining-on-generated-data-makes-models-forget">The Curse of Recursion: <br>Training on Generated Data Makes Models Forget</h2>
+<p>Ilia Shumailov, Zakhar Shumaylov, Yiren Zhao, Yarin Gal, Nicolas Papernot, Ross Anderson. <a href="https://arxiv.org/abs/2305.17493">The Curse of Recursion: Training on Generated Data Makes Models Forget</a>. <a href="https://arxiv.org/abs/2305.17493">https://arxiv.org/abs/2305.17493</a> <a href="https://arxiv.org/abs/2305.17493.pdf">pdf</a></p>
+<center>
+<div class="slide">
+  <img src="../images/week10/Picture9.png" alt="Motivation" width="85%">
+</div>
+</center>
+<p>The second paper is driven by the aim to scrutinize the effects from employing training data generated by preceding versions of GPT, such as GPT-(n-1), GPT-(n-2), and so forth, in the training process of GPT-(n).</p>
+<center>
+<div class="slide">
+  <img src="../images/week10/Picture10.png" alt="Model Collapse" width="85%">
+</div>
+</center>
+<p>This paper discusses about model collapse, which is a degenerative process where the model no longer remembers the underlying true distribution. This mainly happens with data where the probability of occurrence is low.</p>
+<center>
+<div class="slide">
+  <img src="../images/week10/Picture11.png" alt="What causes Model Collapse?" width="85%">
+</div>
+</center>
+<h2 id="heading-2"></h2>
+<h2 id="causes-for-model-collapse">Causes for model collapse</h2>
+<p>The two main causes for the model collapse are: (i) Statistical approximation error that occurs as the number of samples are finite, and (ii) Functional approximation error that occurs due to the function approximators being not expressive enough.</p>
+<h2 id="mathematical-formulation-of-model-collapse">Mathematical formulation of model collapse</h2>
+<center>
+<div class="slide">
+  <img src="../images/week10/Picture12.png" alt="Mathematical formulation of model collapse" width="85%">
+</div>
+</center>
+<p>Here, the model collapse is expressed through mathematical terms, providing a comprehensive overview of the feedback mechanism involved in the learning process.</p>
+<p>Initially, the data are presumed to be meticulously curated by humans, ensuring a pristine starting point. Following this, Model 0 undergoes training, and subsequently, data are sampled from it. At stage n in the process, the data collected from step n - 1 are incorporated into the overall dataset. This comprehensive dataset is then utilized to train Model n.</p>
+<p>Ideally, when Monte Carlo sampling is employed to obtain data, the resultant dataset should statistically align closely with the original, assuming that the fitting and sampling procedures are executed flawlessly. This entire procedure mirrors the real-world scenario witnessed on the Internet, where data generated by models become increasingly prevalent and integrated into subsequent learning and development cycles. This creates a continuous feedback loop, where model-generated data are perpetually fed back into the system, influencing future iterations and their capabilities.</p>
+<h2 id="theoretical-analysis">Theoretical Analysis</h2>
+<p>The following four slides delve into a theoretical analysis of both discrete and continuous distributions.</p>
+<p><strong>Discrete Distribution:</strong>
+In scenarios where a discrete distribution is under consideration, events with low probabilities tend to degenerate when the sample size is finite. As the number of time steps advances towards infinity, the distribution converges towards a delta distribution. This phenomenon results in the preservation of only the events with high probabilities, while those less likely start to fade away.</p>
+<p><strong>Continuous Distribution:</strong>
+Assuming the initial distribution to be a Gaussian distribution, the distribution of Xji is analyzed. The resulting distribution follows a variance-gamma distribution, showcasing a divergence from the initial Gaussian form. When Mi = M, the variance’s difference exhibits a linear growth with respect to n. This indicates that as we proceed through time steps or iterations, the divergence from the initial distribution becomes more pronounced. To quantify the exact extent of divergence between distributions, the Wasserstein-2 distance is employed. This measure provides a precise way to understand how far apart the distributions have moved from each other. The analysis reveals that in order to maintain a finite distance as indicated by the Wasserstein-2 measure, Mi must increase at a rate that is super-linear with respect to n.</p>
+<center>
+<div class="slide">
+  <img src="../images/week10/Picture13.png" alt="" width="85%">
+</div>
+</center>
+<center>
+<div class="slide">
+  <img src="../images/week10/Picture14.png" alt="" width="85%">
+</div>
+</center>
+<center>
+<div class="slide">
+  <img src="../images/week10/Picture15.png" alt="" width="85%">
+</div>
+</center>
+<h2 id="heading-3"></h2>
+<p><em>Note:</em> this result didn&rsquo;t make sense to anyone in the seminar. It seems to contradict the intuition (the variance should go to zero as <em>n</em> increases instead of increasing). Either something is wrong with the set up, or this is measuring something different from what we expect.</p>
+<center>
+<div class="slide">
+  <img src="../images/week10/Picture16.png" alt="" width="85%">
+</div>
+</center>
+<h2 id="justification-for-theoretical-analysis">Justification for Theoretical Analysis</h2>
+<p>The figure shows numerical experiments for a range of different sample sizes. We can see from the figure that when the number of data sample is small, the estimation of mean and variance is not very accurate.</p>
+<center>
+<div class="slide">
+  <img src="../images/week10/day2/Slide20.PNG" alt="" width="85%">
+</div>
+</center>
+<p>The following two slides provides steps to estimate mean and variance of general distributions other than one-dimensional Gaussian. They derive a lower bound on the expected value of the distance between the true distribution and the approximated distribution at step $n+1$, which represents the risk that occurs due to finite sampling.</p>
+<p>The takeaway of the lower bound is that the sampling rate needs to increase superlinearly to make an accurate end distribution approximation.</p>
+<center>
+<div class="slide">
+  <img src="../images/week10/day2/Slide21.PNG" alt="" width="85%">
+</div>
+</center>
+<center>
+<div class="slide">
+  <img src="../images/week10/day2/Slide22.PNG" alt="" width="85%">
+</div>
+</center>
+<h2 id="experiments">Experiments</h2>
+<center>
+<div class="slide">
+  <img src="../images/week10/day2/Slide23.PNG" alt="" width="85%">
+</div>
+</center>
+<h2 id="heading-4"></h2>
+<p>To evaluate the performance of GMM, we can visualize the progression of GMM fitting process over time. From the figure, we can see within 50 iterations of re-sampling, the underlying distribution is mis-perceived, and the performance worsens over time.</p>
+<center>
+<div class="slide">
+  <img src="../images/week10/day2/Slide24.PNG" alt="" width="85%">
+</div>
+</center>
+<h1 id="heading-5"></h1>
+<p>As before, an autoencoder is trained on an original data source, which later will be sampled. Figure 9 on the left
+shows an example of generated data. Again, over a number of generations, the representation has very little resemblance of the original classes learned from data. This implies that longer generation leads to worse quality, as much more information will be lost. We can see from Figure 8 (below) that as with single-dimensional Gaussians, tails disappear over time and all of the density shifts towards the mean.</p>
+<center>
+<div class="slide">
+  <img src="../images/week10/day2/Slide25.PNG" alt="" width="85%">
+</div>
+</center>
+<h2 id="heading-6"></h2>
+<center>
+<div class="slide">
+  <img src="../images/week10/day2/Slide26.PNG" alt="" width="85%">
+</div>
+</center>
+<center>
+<div class="slide">
+  <img src="../images/week10/day2/Slide27.PNG" alt="" width="85%">
+</div>
+</center>
+<center>
+<div class="slide">
+  <img src="../images/week10/day2/Slide28.PNG" alt="" width="85%">
+</div>
+</center>
+<h2 id="heading-7"></h2>
+<p>To assess model collapse in Large Language Models (LLMs), given the high computational cost of training, the authors opted to fine-tune an available pre-trained open-source LLM. In this context, as the generations progress, models tend
+to produce more sequences that the original model would produce with the higher likelihood.</p>
+<p>This phenomenon closely resembles observations made in the context of Variational Autoencoders (VAEs) and Gaussian Mixture Models (GMMs), where over successive generations, models begin to produce samples that are more likely according to the original model&rsquo;s probabilities.</p>
+<p>Interestingly, the generated data exhibits significantly longer tails, indicating that certain data points are generated that would never have been produced by the original model. These anomalies represent errors that accumulate as a result of the generational learning process.</p>
+<center>
+<div class="slide">
+  <img src="../images/week10/day2/Slide29.PNG" alt="Discussion" width="85%">
+</div>
+</center>
+<p>Q1.
+The class discussed the purpose of generating synthetic data. It seems unnecessary to use synthetic data to train on styles, as it can be achieved easily based on the experiments. However, for more complicated tasks that involves reasoning, it might require more human-in-the-loop to validate the correctness of the synthetic data.</p>
+<p>Q2.
+The class discussion focuses on the significance of domain knowledge in the context of alignment tasks. When dealing with a high-quality domain-specific dataset that includes a golden standard, fine-tuning emerges as a preferable approach for alignment tasks. Conversely, Reinforcement Learning from Human Feedback (RLHF) seems to be more suitable for general use cases that aim to align with human preferences. Additionally, we explore the potential of leveraging answers obtained through chain-of-thought prompting for the purpose of fine-tuning.</p>
+<p>Q3.
+The tail of a distribution typically contains rare events or extreme values that occur with very low probability. These events may be outliers, anomalies, or extreme observations that are unusual compared to the majority of data points. For example, in a financial dataset, the tail might represent extreme market fluctuations, such as a stock market crash.</p>
+<p>Q4.
+This is an open-ended question. One possible reason is that while fine-tuning with generated data mix the original data with the generated data, this augmentation can introduce novel, synthetic examples that the model hasn&rsquo;t seen in the original data. These new examples can extend the tail of the distribution by including previously unseen rare or extreme cases.</p>
+<h1 id="readings-and-discussions">Readings and Discussions</h1>
+<h2 id="monday-30-october">Monday 30 October</h2>
+<h3 id="required-reading">Required Reading</h3>
+<ul>
+<li>
+<p>Required: Arnav Gudibande, Eric Wallace, Charlie Snell, Xinyang Geng, Hao Liu, Pieter Abbeel, Sergey Levine, Dawn Song. <a href="https://arxiv.org/abs/2305.1571">The False Promise of Imitating Proprietary LLMs</a>. <a href="https://arxiv.org/abs/2305.15717">https://arxiv.org/abs/2305.15717</a> <a href="https://arxiv.org/abs/2305.1571.pdf">pdf</a></p>
+</li>
+<li>
+<p>Required: Lianmin Zheng, Wei-Lin Chiang, Ying Sheng, Siyuan Zhuang, Zhanghao Wu, Yonghao Zhuang, Zi Lin, Zhuohan Li, Dacheng Li, Eric. P Xing, Hao Zhang, Joseph E. Gonzalez, Ion Stoica. <a href="https://arxiv.org/abs/2306.05685">Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena</a>. <a href="https://arxiv.org/abs/2306.05685">https://arxiv.org/abs/2306.05685</a> <a href="https://arxiv.org/abs/2306.05685.pdf">pdf</a></p>
+</li>
+</ul>
+<h3 id="optional-readings">Optional Readings</h3>
+<ul>
+<li>Optional: Subhabrata Mukherjee, Arindam Mitra, Ganesh Jawahar, Sahaj Agarwal, Hamid Palangi, Ahmed Awadallah. <a href="https://arxiv.org/abs/2306.02707">Orca: Progressive Learning from Complex Explanation Traces of GPT-4</a>. <a href="https://arxiv.org/abs/2306.02707">https://arxiv.org/abs/2306.02707</a> <a href="https://arxiv.org/abs/2306.02707.pdf">pdf</a></li>
+</ul>
+<h3 id="discussion-questions">Discussion Questions</h3>
+<ol>
+<li>
+<p>In <a href="https://arxiv.org/abs/2305.1571">The False Promise of Imitating Proprietary LLMs</a>, the authors attribute the discrepancy between crowdworker evaluations and NLP benchmarks to the ability of imitation models to mimic the style of larger LLMs, but not the factuality. Do the experiments and evaluations performed in the paper convincing to support this statement?</p>
+</li>
+<li>
+<p>In <a href="https://arxiv.org/abs/2305.1571">The False Promise of Imitating Proprietary LLMs</a>, the authors suggest that fine-tuning is a process to help a model extract the knowledge learned during pretraining, and the introduction of new knowledge during fine-tuning may simply be training the model to guess or hallucinate answers. Do you agree or disagree with this idea? Why?</p>
+</li>
+<li>
+<p><a href="https://arxiv.org/abs/2306.05685">Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena</a> expresses confidence in the effectiveness of strong LLMs as an evaluation method with high agreement with humans. Do you see potential applications for LLM-as-a-Judge beyond chat assistant evaluation, and if so, what are they?</p>
+</li>
+<li>
+<p><a href="https://arxiv.org/abs/2306.05685">Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena</a> addresses several limitations of LLM-as-a-Judge, including position bias, verbosity bias, and limited reasoning ability. Beyond the limitations discussed in the paper, what other potential biases or shortcomings that might arise when using LLM-as-a-Judge? Are there any approaches or methods that could mitigate these limitations?</p>
+</li>
+</ol>
+<h2 id="wednesday-01-november">Wednesday 01 November</h2>
+<h3 id="required-readings">Required Readings</h3>
+<ul>
+<li>
+<p>Chunting Zhou, Pengfei Liu, Puxin Xu, Srini Iyer, Jiao Sun, Yuning Mao, Xuezhe Ma, Avia Efrat, Ping Yu, Lili Yu, Susan Zhang, Gargi Ghosh, Mike Lewis, Luke Zettlemoyer, Omer Levy. <a href="https://arxiv.org/abs/2305.11206">LIMA: Less Is More for Alignment</a>. <a href="https://arxiv.org/abs/2305.11206">https://arxiv.org/abs/2305.11206</a> <a href="https://arxiv.org/abs/2305.11206.pdf">pdf</a></p>
+</li>
+<li>
+<p>Ilia Shumailov, Zakhar Shumaylov, Yiren Zhao, Yarin Gal, Nicolas Papernot, Ross Anderson. <a href="https://arxiv.org/abs/2305.17493">The Curse of Recursion: Training on Generated Data Makes Models Forget</a>. <a href="https://arxiv.org/abs/2305.17493">https://arxiv.org/abs/2305.17493</a> <a href="https://arxiv.org/abs/2305.17493.pdf">pdf</a></p>
+</li>
+</ul>
+<h3 id="discussion-questions-1">Discussion Questions</h3>
+<ol>
+<li>
+<p>Based on the Figure 1 from the <a href="https://arxiv.org/abs/2305.11206">LIMA</a> paper, using high quality examples to fine-tune LLMs outperforms DaVinci003 (with RLHF). What are the pros and cons, usage scenarios of each method?</p>
+</li>
+<li>
+<p>There are lots of papers using LLMs to generate synthetic data for data augmentation and show improvement over multiple tasks, what do you think is an important factor when sampling synthetic data generated from LLMs?</p>
+</li>
+<li>
+<p>In <a href="https://arxiv.org/abs/2305.17493">The Curse of Recursion: Training on Generated Data Makes Models Forget</a>, the authors discuss how training with generation data affects the approximation for the tail of the true data distribution. Namely, for training GMM/VAEs, the tail of the true distribution will disappear in the estimated distribution (Figure 8). On the other hand, when fine-tuning large language models with generation data, the estimator will have a much longer tail (Figure 10). What do you think causes such a difference? In the real world, what does the tail of a distribution represent and how do you think this phenomenon impacts practical applications?</p>
+</li>
+<li>
+<p>In <a href="https://arxiv.org/abs/2305.17493">The Curse of Recursion: Training on Generated Data Makes Models Forget</a>, the authors rely on several assumptions to support their arguments. How strong those assumptions are and do you think these assumptions limit its applicability to broader contexts?</p>
+</li>
+</ol>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>Gudibande, A., Wallace, E., Snell, C., Geng, X., Liu, H., Abbeel, P., Levine, S. and Song, D., 2023. <a href="https://arxiv.org/pdf/2305.15717.pdf">The false promise of imitating proprietary llms</a>. arXiv preprint arXiv:2305.15717. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
+      </div>
+<hr class="post-separator"></hr>
+
     
     <h1><a href="/week9/">Week 9: Interpretability</a></h1>
 <div class="post-metadata">
@@ -638,7 +1190,7 @@ In this example, when we see the activation value of the feature 4 increase, the
         <li>Input Bias: Introduces an approach of adding an input bias to the representations in autoencoders, which demonstrates a significant boost in performance for the models used in toy examples.</li>
       </ol>
 </td> </table>
-<p>The purpose of sparse autoencoders is to extract meaningful features from neural network activations. To avhice a good decomposition, where the features extracted should be interpretable and able to describe the activations' context requires the ability to describe activations, interpret downstream effects of changes, and cover a significant portion of functionality within the data.</p>
+<p>The purpose of sparse autoencoders is to extract meaningful features from neural network activations. To avhice a good decomposition, where the features extracted should be interpretable and able to describe the activations&rsquo; context requires the ability to describe activations, interpret downstream effects of changes, and cover a significant portion of functionality within the data.</p>
 <h3 id="are-these-features-interpretable">Are these features &ldquo;interpretable&rdquo;</h3>
 <table>
     <tr>
@@ -648,7 +1200,7 @@ In this example, when we see the activation value of the feature 4 increase, the
     <td colspan=1>
     <br/>
 <p><strong>Feature Activation Sampling Bias</strong>: In previous evaluations, there was a bias due to just considering the top-activation neurons which might inaccurately appear monosemantic due to their higher activations. To mitigate this bias, the approach involves sampling uniformly across all possible activations for each given feature.</p>
-<p><strong>Evaluation of Interpretable Features:</strong> The authors used an evaluation process where human-based assessments are used to determine the interpretability of the features extracted. The criteria for interpretability are based on the authors' distributed-based evaluation, where a score above eight is considered sufficiently interpretable.</p>
+<p><strong>Evaluation of Interpretable Features:</strong> The authors used an evaluation process where human-based assessments are used to determine the interpretability of the features extracted. The criteria for interpretability are based on the authors&rsquo; distributed-based evaluation, where a score above eight is considered sufficiently interpretable.</p>
 </td> </table>
 <h3 id="automated-evaluation">Automated Evaluation</h3>
 <table>
@@ -805,7 +1357,7 @@ adapting existing training techniques for interpretability, which would require 
 </center>
 <h2 id="heading"></h2>
 <p>Here is an example of pseudocode from the activity:</p>
-<pre tabindex="0"><code class="language-angular2html" data-lang="angular2html">Sentence = &quot;The students like to read interesting books.&quot;
+<pre><code class="language-angular2html" data-lang="angular2html">Sentence = &quot;The students like to read interesting books.&quot;
 # The bilingual dictionary from English to Chinese: Eng_chinese_dict
 Translation = []
 for word in Sentence.split():
@@ -1533,7 +2085,7 @@ trainer).</p>
     <tr>
     <td colspan=1 align="center"> <center><b>Sources of Hallucination</b></center>
 <br>
-<p><a href="https://arxiv.org/abs/2309.01219"><em>Siren&rsquo;s Song in the AI Ocean: A Survey on Hallucination in Large Language Models</em>  </a>
+<p><a href="https://arxiv.org/abs/2309.01219">_Siren&rsquo;s Song in the AI Ocean: A Survey on Hallucination in Large Language Models_  </a>
 </td>
 </tr></p>
 </table>
@@ -1564,7 +2116,7 @@ trainer).</p>
     </tr>
    <tr>
   <td colspan=1 align="center"><b>Mitigation Strategies</b>
-<p><a href="https://arxiv.org/abs/2309.01219"><em>Siren&rsquo;s Song in the AI Ocean: A Survey on Hallucination in Large Language Models</em></a></b>
+<p><a href="https://arxiv.org/abs/2309.01219">_Siren&rsquo;s Song in the AI Ocean: A Survey on Hallucination in Large Language Models_</a></b>
 <br/>
 <p style="text-align: left; text-indent: 5%;">
 For inference, one strategy is to reduce the snowballing of hallucinations by designing a dynamic p-value. The p-value should start off large and shrink as more tokens are generated. Furthermore, introducing new or external knowledge can be done at two different positions: before and after generation.
@@ -1579,7 +2131,7 @@ For inference, one strategy is to reduce the snowballing of hallucinations by de
 <tr>
 <td colspan=1 align="center"> 
 <b>Decoding Contrasting Layers</b><br>
-<p><a href="https://arxiv.org/abs/2309.03883"><em>DoLa: Decoding by Contrasting Layers Improves Factuality in Large Language Models</em></a></p>
+<p><a href="https://arxiv.org/abs/2309.03883">_DoLa: Decoding by Contrasting Layers Improves Factuality in Large Language Models_</a></p>
 <br/>
 <p style="text-align: left; text-indent: 5%;">
             Based on evolving trends, the concept of contrastive decoding is introduced. For example, one might ask, "How do we decide between Seattle or Olympia?" When considering the last layer as a mature layer, it is beneficial to contrast the differences between the preceding layers, which can be deemed as premature. For each of these layers, it is possible to calculate the difference between each probability distribution by comparing mature and premature layers, a process that utilizes the Jensen-Shannon Divergence. Such an approach permits the amplification of the factual knowledge that the model has acquired, thereby enhancing its output generation.
@@ -1592,7 +2144,7 @@ For inference, one strategy is to reduce the snowballing of hallucinations by de
     </tr>
     <tr>
     <td colspan=1 align="center">
-<p><a href="https://arxiv.org/abs/2302.00083"><em>In-Context Retrieval-Augmented Language Models</em></a></p>
+<p><a href="https://arxiv.org/abs/2302.00083">_In-Context Retrieval-Augmented Language Models_</a></p>
   <p style="text-align: left; text-indent: 5%;">
             The model parameters are kept frozen. Instead of directly inputting text into the model, the approach first uses retrieval to search for relevant documents from external sources. The findings from these sources are then concatenated with the original text. Re-ranking results from the retrieval model also provides benefits; the exact perplexities can be referred to in the slide. It has been observed that smaller strides can enhance performance, albeit at the cost of increased runtime. The authors have noticed that the information at the end of a query is typically more relevant for output generation. In general, shorter queries tend to outperform longer ones.
         </p>
@@ -1607,7 +2159,7 @@ For inference, one strategy is to reduce the snowballing of hallucinations by de
     </td>
     </tr>
 </table>
-<h2 id="discussion-_based-on-the-sources-of-hallucination-what-methods-can-be-employed-to-mitigate-the-hallucination-issue_h2">Discussion: <em>Based on the sources of hallucination, what methods can be employed to mitigate the hallucination issue?</em></h2></h2>
+<h2 id="discussion-_based-on-the-sources-of-hallucination-what-methods-can-be-employed-to-mitigate-the-hallucination-issue_h2">Discussion: _Based on the sources of hallucination, what methods can be employed to mitigate the hallucination issue?_</h2></h2>
 <p style="text-align: left; text-indent: 5%;">
     Group 2:
         Discussed two papers from this week's reading which highlighted the use of semantic search and the introduction of external context to aid the model. This approach, while useful for diminishing hallucination, heavily depends on external information, which is not effective in generic cases.
@@ -1628,7 +2180,7 @@ For inference, one strategy is to reduce the snowballing of hallucinations by de
         It was also advised to source data solely from credible sources.
         An interesting perspective discussed was utilizing a larger model to verify the smaller model's hallucinations. But a caveat arises: How can one ensure the larger model's accuracy? And if the larger model is deemed superior, why not employ it directly?
 </p>
-<h2 id="discussion-_what-are-the-potential-advantages-of-hallucinations-in-large-language-models-llms_h2">Discussion: <em>What are the potential advantages of hallucinations in Large Language Models (LLMs)?</em></h2></h2>
+<h2 id="discussion-_what-are-the-potential-advantages-of-hallucinations-in-large-language-models-llms_h2">Discussion: _What are the potential advantages of hallucinations in Large Language Models (LLMs)?_</h2></h2>
 <p style="text-align: left; text-indent: 5%;">
     One advantage discussed was that hallucinations "train" users to not blindly trust the model outputs. If such models are blindly trusted, there is a much greater risk associated with their use.
     If users can conclusively discern, however, that the produced information is fictitious, it could assist in fostering new ideas or fresh perspectives on a given topic.
@@ -1883,7 +2435,7 @@ be used in healthcare.</p>
 <hr>
 <ol>
 <li id="fn:1" role="doc-endnote">
-<p>Tianyi Zhang, Faisal Ladhak, Esin Durmus, Percy Liang, Kathleen McKeown, and Tatsunori B. Hashimoto. Benchmarking large language models for news summarization, 2023. <a href="https://arxiv.org/abs/2301.13848">https://arxiv.org/abs/2301.13848</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Tianyi Zhang, Faisal Ladhak, Esin Durmus, Percy Liang, Kathleen McKeown, and Tatsunori B. Hashimoto. Benchmarking large language models for news summarization, 2023. <a href="https://arxiv.org/abs/2301.13848">https://arxiv.org/abs/2301.13848</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2" role="doc-endnote">
 <p>Aakanksha Chowdhery, Sharan Narang, Jacob Devlin, Maarten Bosma, Gaurav
@@ -1898,10 +2450,10 @@ der Spiridonov, Ryan Sepassi, David Dohan, Shivani Agrawal, Mark Omernick, An-
 drew M. Dai, Thanumalayan Sankaranarayana Pillai, Marie Pellat, Aitor Lewkowycz,
 Erica Moreira, Rewon Child, Oleksandr Polozov, Katherine Lee, Zongwei Zhou, Xuezhi Wang, Brennan Saeta, Mark Diaz, Orhan Firat, Michele Catasta, Jason Wei, Kathy
 Meier-Hellstern, Douglas Eck, Jeff Dean, Slav Petrov, and Noah Fiedel. Palm: Scaling
-language modeling with pathways, 2022. <a href="https://arxiv.org/abs/2204.02311">https://arxiv.org/abs/2204.02311</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+language modeling with pathways, 2022. <a href="https://arxiv.org/abs/2204.02311">https://arxiv.org/abs/2204.02311</a> <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:3" role="doc-endnote">
-<p>OpenAI. GPT-4 Technical Report. March 2023. <a href="https://arxiv.org/abs/2303.08774">https://arxiv.org/abs/2303.08774</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>OpenAI. GPT-4 Technical Report. March 2023. <a href="https://arxiv.org/abs/2303.08774">https://arxiv.org/abs/2303.08774</a> <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
@@ -2141,10 +2693,10 @@ Second section (5 – 9): Before <strong>5:29pm</strong> on <strong>Tuesday, Sep
 <hr>
 <ol>
 <li id="fn:1" role="doc-endnote">
-<p>Tony Z. Zhao, Eric Wallace, Shi Feng, Dan Klein, Sameer Singh. &ldquo;<a href="https://arxiv.org/pdf/2102.09690.pdf">Calibrate before use: Improving few-shot performance of language models</a>.&rdquo; International Conference on Machine Learning. PMLR, 2021.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Tony Z. Zhao, Eric Wallace, Shi Feng, Dan Klein, Sameer Singh. &ldquo;<a href="https://arxiv.org/pdf/2102.09690.pdf">Calibrate before use: Improving few-shot performance of language models</a>.&rdquo; International Conference on Machine Learning. PMLR, 2021. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2" role="doc-endnote">
-<p>Miles Turpin, Julian Michael, Ethan Perez, Samuel R. Bowman. &ldquo;<a href="https://arxiv.org/pdf/2305.04388.pdf">Language Models Don&rsquo;t Always Say What They Think: Unfaithful Explanations in Chain-of-Thought Prompting.</a>&rdquo; arXiv preprint arXiv:2305.04388, 2023.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Miles Turpin, Julian Michael, Ethan Perez, Samuel R. Bowman. &ldquo;<a href="https://arxiv.org/pdf/2305.04388.pdf">Language Models Don&rsquo;t Always Say What They Think: Unfaithful Explanations in Chain-of-Thought Prompting.</a>&rdquo; arXiv preprint arXiv:2305.04388, 2023. <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
@@ -2274,7 +2826,7 @@ like <a href="https://aclanthology.org/2023.acl-long.656.pdf"><em>From Pretraini
 (Feng et al.)</a> show
 that famous models like BERT and ChatGPT do appear to have
 socioeconomic political leanings (of course, there is no true
-<code>neutral'' or </code>center'' position, these are just defined by where
+<code>neutral'' or </code>center&rsquo;&rsquo; position, these are just defined by where
 the expected distribution of beliefs lies).</p>
 <p>Figure 1 shows the political leanings of famous LLMs.</p>
 <center>
@@ -2359,10 +2911,10 @@ history lesson on the French Revolution!</p>
 <p>However, a developer&rsquo;s responsibility doesn&rsquo;t culminate once the AI product hits the market. The journey is continuous. Post-deployment, it&rsquo;s crucial for developers to monitor the system&rsquo;s alignment with human values and rectify any deviations. It&rsquo;s an ongoing commitment to refinement and recalibration. Moreover, transparency is key. Developers should be proactive in highlighting potential concerns related to their models and fostering a culture where the public is not just a passive victim but an active participant in the model alignment process.</p>
 <p>To round off, it&rsquo;s essential for developers to adopt a forward-thinking mindset. The decisions made today in the AI labs and coding chambers will shape the world of tomorrow. Thus, every developer should think about the long-term consequences of their work, always aiming to ensure that AI not only dazzles with its brilliance but also remains beneficial for generations to come.</p>
 <blockquote>
-<p><em>How might AI developers' responsibility evolve?</em></p>
+<p><em>How might AI developers&rsquo; responsibility evolve?</em></p>
 </blockquote>
 <p>It&rsquo;s impossible to catch all edge cases. As AI systems grow in complexity, predicting every potential outcome or misalignment becomes a herculean task. Developers, in the future, might need to shift from a perfectionist mindset to one that emphasizes robustness and adaptability. While it&rsquo;s essential to put in rigorous engineering effort to minimize errors, it&rsquo;s equally crucial to understand and communicate that no system can be flawless.</p>
-<p>Besides, given that catching all cases isn&rsquo;t feasible, developers' roles might evolve to include more dynamic and real-time monitoring of AI systems. This would involve continuously learning from real-world interactions, gathering feedback, and iterating on the model to ensure better alignment with human values.</p>
+<p>Besides, given that catching all cases isn&rsquo;t feasible, developers&rsquo; roles might evolve to include more dynamic and real-time monitoring of AI systems. This would involve continuously learning from real-world interactions, gathering feedback, and iterating on the model to ensure better alignment with human values.</p>
 <h2 id="the-alignment-problem-from-a-deep-learning-perspective">The Alignment Problem from a Deep Learning Perspective</h2>
 <p>In this part of today&rsquo;s seminar, the whole class was divided into 3 groups to discuss the possible alignment problems from a deep learning perspective. Specifically, three groups were focusing on the alignment problems regarding different categories of Deep Learning methods, which are:</p>
 <ol>
@@ -2731,7 +3283,7 @@ revolutionized the field of natural language processing (NLP) and
 various other domains. The concept of transformers originated as an
 attempt to address the limitations of traditional recurrent neural
 networks (RNNs) in sequential data processing. Here&rsquo;s an overview of
-transformers' evolution and significance.</p>
+transformers&rsquo; evolution and significance.</p>
 <h2 id="background-and-origin">Background and Origin</h2>
 <p>RNNs<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> were one of the earliest models used for sequence-based tasks in machine learning. They processed input tokens one after another and used their internal memory to capture dependencies in the sequence. The following figure gives an illustration of the RNN architecture.</p>
 <center>
@@ -2770,7 +3322,7 @@ The use of positional encodings in transformers helps address the lack of inhere
 Self-attention is a useful mechanism that allows each token to consider the relationships between all other tokens in a sequence. While it provides a more nuanced understanding of input, it can be computationally expensive. The use of multi-head attention further enhances the model&rsquo;s ability to capture different types of dependencies in the data. The number of attention heads (e.g., 8 in BERT) is a balance between performance and complexity. Too few or too many heads can result in suboptimal performance. More details about self-attention and multi-head attention can be found in <sup id="fnref:9"><a href="#fn:9" class="footnote-ref" role="doc-noteref">9</a></sup>.</p>
 <p><strong>Context and Answers in Activities.</strong>
 Let’s do some activity now!</p>
-<pre tabindex="0"><code class="language-angular2html" data-lang="angular2html">I used to ___ 
+<pre><code class="language-angular2html" data-lang="angular2html">I used to ___ 
 
 Yesterday, I went to ___
 
@@ -2822,7 +3374,7 @@ The authors of BERT might not have fully anticipated its exact future use and im
 </ul>
 <p><strong>Risks Group.</strong></p>
 <ul>
-<li>Concerns were expressed regarding LLMs' opacity and complexity, making them challenging to comprehend.</li>
+<li>Concerns were expressed regarding LLMs&rsquo; opacity and complexity, making them challenging to comprehend.</li>
 <li>Apprehensions were raised about LLMs potentially exerting detrimental influences on human cognition and societal dynamics.</li>
 <li>LLMs are ripe for potential abuses in their ability to generate convincing false information cheaply.</li>
 <li>The potential impact of LLMs on human intelligence and creativity was a topic of contemplation.</li>
@@ -2901,46 +3453,46 @@ way they consider risks?</p>
 <hr>
 <ol>
 <li id="fn:1" role="doc-endnote">
-<p>Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., &hellip; &amp; Polosukhin, I. (2017). Attention is all you need. Advances in neural information processing systems, 30.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., &hellip; &amp; Polosukhin, I. (2017). Attention is all you need. Advances in neural information processing systems, 30. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2" role="doc-endnote">
-<p>Sherstinsky, A. (2020). Fundamentals of recurrent neural network (RNN) and long short-term memory (LSTM) network. Physica D: Nonlinear Phenomena, 404, 132306.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Sherstinsky, A. (2020). Fundamentals of recurrent neural network (RNN) and long short-term memory (LSTM) network. Physica D: Nonlinear Phenomena, 404, 132306. <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:3" role="doc-endnote">
-<p>Pascanu, R., Mikolov, T., &amp; Bengio, Y. (2013, May). On the difficulty of training recurrent neural networks. In International conference on machine learning (pp. 1310-1318). Pmlr.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Pascanu, R., Mikolov, T., &amp; Bengio, Y. (2013, May). On the difficulty of training recurrent neural networks. In International conference on machine learning (pp. 1310-1318). Pmlr. <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:4" role="doc-endnote">
-<p>Hochreiter, S., &amp; Schmidhuber, J. (1997). Long short-term memory. Neural computation, 9(8), 1735-1780.&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Hochreiter, S., &amp; Schmidhuber, J. (1997). Long short-term memory. Neural computation, 9(8), 1735-1780. <a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:5" role="doc-endnote">
-<p>Mnih, V., Heess, N., &amp; Graves, A. (2014). Recurrent models of visual attention. Advances in neural information processing systems, 27.&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Mnih, V., Heess, N., &amp; Graves, A. (2014). Recurrent models of visual attention. Advances in neural information processing systems, 27. <a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:6" role="doc-endnote">
-<p>Bahdanau, D., Cho, K., &amp; Bengio, Y. (2014). Neural machine translation by jointly learning to align and translate. arXiv preprint arXiv:1409.0473.&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Bahdanau, D., Cho, K., &amp; Bengio, Y. (2014). Neural machine translation by jointly learning to align and translate. arXiv preprint arXiv:1409.0473. <a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:7" role="doc-endnote">
-<p>Lin, T., Wang, Y., Liu, X., &amp; Qiu, X. (2022). A survey of transformers. AI Open.&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Lin, T., Wang, Y., Liu, X., &amp; Qiu, X. (2022). A survey of transformers. AI Open. <a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:8" role="doc-endnote">
-<p>Khan, S., Naseer, M., Hayat, M., Zamir, S. W., Khan, F. S., &amp; Shah, M. (2022). Transformers in vision: A survey. ACM computing surveys (CSUR), 54(10s), 1-41.&#160;<a href="#fnref:8" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Khan, S., Naseer, M., Hayat, M., Zamir, S. W., Khan, F. S., &amp; Shah, M. (2022). Transformers in vision: A survey. ACM computing surveys (CSUR), 54(10s), 1-41. <a href="#fnref:8" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:9" role="doc-endnote">
-<p>Karim, R. (2023, January 2). Illustrated: Self-attention. Medium. <a href="https://towardsdatascience.com/illustrated-self-attention-2d627e33b20a">https://towardsdatascience.com/illustrated-self-attention-2d627e33b20a</a>&#160;<a href="#fnref:9" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Karim, R. (2023, January 2). Illustrated: Self-attention. Medium. <a href="https://towardsdatascience.com/illustrated-self-attention-2d627e33b20a">https://towardsdatascience.com/illustrated-self-attention-2d627e33b20a</a> <a href="#fnref:9" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:10" role="doc-endnote">
-<p>Devlin, J., Chang, M. W., Lee, K., &amp; Toutanova, K. (2018). Bert: Pre-training of deep bidirectional transformers for language understanding. arXiv preprint arXiv:1810.04805.&#160;<a href="#fnref:10" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Devlin, J., Chang, M. W., Lee, K., &amp; Toutanova, K. (2018). Bert: Pre-training of deep bidirectional transformers for language understanding. arXiv preprint arXiv:1810.04805. <a href="#fnref:10" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:11" role="doc-endnote">
-<p>Ahmad, K. (2023b, April 26). GPT vs. Bert: What are the differences between the two most popular language models?. MUO. <a href="https://www.makeuseof.com/gpt-vs-bert/">https://www.makeuseof.com/gpt-vs-bert/</a>&#160;<a href="#fnref:11" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Ahmad, K. (2023b, April 26). GPT vs. Bert: What are the differences between the two most popular language models?. MUO. <a href="https://www.makeuseof.com/gpt-vs-bert/">https://www.makeuseof.com/gpt-vs-bert/</a> <a href="#fnref:11" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:12" role="doc-endnote">
-<p>Radford, A., Wu, J., Child, R., Luan, D., Amodei, D., &amp; Sutskever, I. (2019). Language models are unsupervised multitask learners. OpenAI blog, 1(8), 9.&#160;<a href="#fnref:12" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Radford, A., Wu, J., Child, R., Luan, D., Amodei, D., &amp; Sutskever, I. (2019). Language models are unsupervised multitask learners. OpenAI blog, 1(8), 9. <a href="#fnref:12" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:13" role="doc-endnote">
-<p>Brown, T., Mann, B., Ryder, N., Subbiah, M., Kaplan, J. D., Dhariwal, P., &hellip; &amp; Amodei, D. (2020). Language models are few-shot learners. Advances in neural information processing systems, 33, 1877-1901.&#160;<a href="#fnref:13" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Brown, T., Mann, B., Ryder, N., Subbiah, M., Kaplan, J. D., Dhariwal, P., &hellip; &amp; Amodei, D. (2020). Language models are few-shot learners. Advances in neural information processing systems, 33, 1877-1901. <a href="#fnref:13" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:14" role="doc-endnote">
-<p>Yang, J., Jin, H., Tang, R., Han, X., Feng, Q., Jiang, H., &hellip; &amp; Hu, X. (2023). Harnessing the power of llms in practice: A survey on chatgpt and beyond. arXiv preprint arXiv:2304.13712.&#160;<a href="#fnref:14" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Yang, J., Jin, H., Tang, R., Han, X., Feng, Q., Jiang, H., &hellip; &amp; Hu, X. (2023). Harnessing the power of llms in practice: A survey on chatgpt and beyond. arXiv preprint arXiv:2304.13712. <a href="#fnref:14" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
@@ -2968,91 +3520,6 @@ by the email system. Try visiting:</p>
 <a href="https://github.com/llmrisks/discussions/discussions/2">https://github.com/llmrisks/discussions/discussions/2</a>
 (the now-finalized discussion post for Week 1), and contribute to the
 discussions there.</p>
-
-      </div>
-<hr class="post-separator"></hr>
-
-    
-    <h1><a href="/class0/">Class 0: Getting Organized</a></h1>
-<div class="post-metadata">
-  <span class="post-date">
-    <time datetime="2023-08-23 00:00:00 &#43;0000 UTC" itemprop="datePublished">23 August 2023</time>
-  </span>
-  
-</div>
-
-      <div class="post-body" itemprop="articleBody">
-        <p>I&rsquo;ve updated the <a href="/schedule">Schedule</a> and <a href="/weeklyschedule">Bi-Weekly
-Schedule</a> based on the discussions today.</p>
-<p>The plan is below:</p>
-<table class="schedule">
-<thead>
-<tr>
-<th align="center">Week</th>
-<th align="center">Lead Team</th>
-<th align="center">Blogging Team</th>
-<th align="center">Everyone Else</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Two Weeks Before</td>
-<td>
-Come up with idea for the week and planned readings, send to me by
-5:29pm on Tuesday (2 weeks - 1 day before)
-</td>
-<td>-</td>
-<td>
--
-</td>
-</tr>
-<tr>
-<td>Week Before</td>
-<td>
-Post plan and questions in github discussions by no later than 9am Wednesday;
-prepare for leading meetings
-</td>
-<td>
-<b>Prepare plan for blogging</b> (how you will divide workload, collaborative tools for taking notes and writing)
-</td>
-<td>
-Read/do materials and <b>respond</b> to preparation questions in github discussions (by <b>5:29pm Sunday</b>)
-</td>
-</tr>
-<tr>
-<td>Week of Leading Meetings</td>
-<td>
-<b>Lead interesting, engaging, and illuminating meetings!</b><br>
-Aim to include activities, discussions, whiteboard presentations, etc., not just showing powerpoint slides.
-</td>
-<td>
-<B>Take notes</b> to prepare to write blog; participate actively in class meetings
-</td>
-<td>
-Participate actively in class meetings
-</td>
-</tr>
-<tr>
-<td>
-Week After</td>
-<td>
-Help blogging team with materials, answering questions
-</td>
-<td>
-<a href="https://llmrisks.github.io/blogging/"><b>Write blog summary</b></a>, submit PR
-</td>
-<td>
-Provide feedback on blog summary
-</td>
-</tr>
-</tbody>
-</table>
-<p>For this week, Team 1 should finalize the post by this Thursday
-(5:29pm), and Team 2 should send me (email to <A
-href="mailto:evans@virginia.edu"><a href="mailto:evans@virginia.edu">evans@virginia.edu</a></a>) the plan for
-week 2 by Sunday, 27 August and have materials ready for posting by
-the next Wednesday.</p>
-<p>The teams have been posted at <a href="https://github.com/llmrisks/discussions/blob/main/teams.md">https://github.com/llmrisks/discussions/blob/main/teams.md</a> (visible only to the class). Everyone should have gotten an invite to the github organization, but if not please check with me.</p>
 
       </div>
 <hr class="post-separator"></hr>
