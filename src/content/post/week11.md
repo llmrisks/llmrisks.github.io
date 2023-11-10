@@ -26,8 +26,16 @@ They then introduced the solution that would be the focus of the class: watermar
 They discussed two types of watermarking: token-based watermarking and soft watermarking.
 
 ## Token-based watermarking:
-Given a word in a sequence, token-based watermarking uses a hash function and a random number generator to create two sets of all possible next words. These are the "green list" and the "red list", respectively:
+Given a word in a sequence, token-based watermarking uses a hash function to initialize a random number generator used to create two sets of all possible next words: the "green" word list and the "red" word list.
 
+
+<table><tr>
+  <td><img src="../images/week11/token-based-intuition.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"> Figure # <b>CAPTION</b></td>
+</table>
+
+They also present the algorithm for this process from [A Watermark for Large Language Models]([https://arxiv.org/abs/2301.13848](https://arxiv.org/abs/2301.10226)) [^1]
 
 
 
