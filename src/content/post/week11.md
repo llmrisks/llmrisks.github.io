@@ -18,7 +18,7 @@ Class began introducing the following problem: recent instances of AI-generated 
 They then introduced the solution that would be the focus of the class: watermarking for text generation models:
 
 <table><tr>
-  <td><img src="/images/Week11/watermarking-proposed-solution.png" width="95%"></td>
+  <td><img src="../images/week11/watermarking-proposed-solution.png" width="95%"></td>
 </tr>
   <td colspan=1 align="center"> Figure # <b>CAPTION</b></td>
 </table>
@@ -26,6 +26,8 @@ They then introduced the solution that would be the focus of the class: watermar
 They discussed two types of watermarking: token-based watermarking and soft watermarking.
 
 ## Token-based watermarking:
+Given a word in a sequence, token-based watermarking uses a hash function and a random number generator to create two sets of all possible next words. These are the "green list" and the "red list", respectively:
+
 
 
 
