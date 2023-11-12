@@ -35,16 +35,19 @@ Given a word in a sequence, token-based watermarking uses a hash function to ini
   <td colspan=1 align="center"> Figure # <b>CAPTION</b></td>
 </table>
 
-They also present the algorithm for this process from [A Watermark for Large Language Models]([https://arxiv.org/abs/2301.13848](https://arxiv.org/abs/2301.10226)) [^1]
+They also present the algorithm for this process from [A Watermark for Large Language Models]([https://arxiv.org/abs/2301.13848](https://arxiv.org/abs/2301.10226)) [^1]. It uses the language model probabilitiies to separate words using a hash function-based random number generator.
+
+The idea is that the more words in the greenlist, the more likely the text is AI-generated:
+
+<table><tr>
+  <td><img src="../images/week11/watermark-detection-greenlist.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"> Figure # <b>CAPTION</b></td>
+</table>
 
 
 
 
-
-[^1] John Kirchenbauer, Jonas Geiping, Yuxin Wen, Jonathan Katz, Ian Miers, Tom Goldstein. A Watermark for Large Language Models. 2023.
-[^2] Vinu Sankar Sadasivan, Aounon Kumar, Sriram Balasubramanian, Wenxiao Wang, Soheil Feizi. Can AI-Generated Text be Reliably Detected?. 2023.
-[^3] Jonathan Ho, Ajay Jain, Pieter Abbeel. Denoising Diffusion Probabilistic Models. NeurIPS 2020.
-[^4] Yugeng Liu, Zheng Li, Michael Backes, Yun Shen, Yang Zhang. Watermarking Diffusion Model. 2023.
 
 # Wednsday, November 8
 
@@ -504,4 +507,11 @@ They also present the algorithm for this process from [A Watermark for Large Lan
 </table>
 
 
+
+
+
+[^1] John Kirchenbauer, Jonas Geiping, Yuxin Wen, Jonathan Katz, Ian Miers, Tom Goldstein. A Watermark for Large Language Models. 2023. https://arxiv.org/abs/2301.10226
+[^2] Vinu Sankar Sadasivan, Aounon Kumar, Sriram Balasubramanian, Wenxiao Wang, Soheil Feizi. Can AI-Generated Text be Reliably Detected?. 2023. https://arxiv.org/abs/2303.11156
+[^3] Jonathan Ho, Ajay Jain, Pieter Abbeel. Denoising Diffusion Probabilistic Models. NeurIPS 2020. https://arxiv.org/abs/2006.11239
+[^4] Yugeng Liu, Zheng Li, Michael Backes, Yun Shen, Yang Zhang. Watermarking Diffusion Model. 2023. https://arxiv.org/abs/2305.12502
 
