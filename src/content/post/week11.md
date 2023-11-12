@@ -45,7 +45,13 @@ The idea is that the more words in the greenlist, the more likely the text is AI
   <td colspan=1 align="center"> Figure # <b>CAPTION</b></td>
 </table>
 
+This approach is limisted, however. The entropy of a particular token could determine how well the watermark works:
 
+<table><tr>
+  <td><img src="../images/week11/watermark-detection-greenlist.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"> Figure # <b>CAPTION</b></td>
+</table>
 
 
 
