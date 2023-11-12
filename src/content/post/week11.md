@@ -20,7 +20,7 @@ They then introduced the solution that would be the focus of the class: watermar
 <table><tr>
   <td><img src="../images/week11/watermarking-proposed-solution.png" width="95%"></td>
 </tr>
-  <td colspan=1 align="center"> Figure # <b>CAPTION</b></td>
+  <td colspan=1 align="center"><b></b></td>
 </table>
 
 They discussed two types of watermarking: token-based watermarking and soft watermarking.
@@ -32,7 +32,7 @@ Given a word in a sequence, token-based watermarking uses a hash function to ini
 <table><tr>
   <td><img src="../images/week11/token-based-intuition.png" width="95%"></td>
 </tr>
-  <td colspan=1 align="center"> Figure # <b>CAPTION</b></td>
+  <td colspan=1 align="center"><b></b></td>
 </table>
 
 They also present the algorithm for this process from [A Watermark for Large Language Models]([https://arxiv.org/abs/2301.13848](https://arxiv.org/abs/2301.10226)) [^1]. It uses the language model probabilitiies to separate words using a hash function-based random number generator.
@@ -42,7 +42,7 @@ The idea is that the more words in the greenlist, the more likely the text is AI
 <table><tr>
   <td><img src="../images/week11/watermark-detection-greenlist.png" width="95%"></td>
 </tr>
-  <td colspan=1 align="center"> Figure # <b>CAPTION</b></td>
+  <td colspan=1 align="center"><b></b></td>
 </table>
 
 This approach is limisted, however. The entropy of a particular token could determine how well the watermark works:
@@ -50,7 +50,7 @@ This approach is limisted, however. The entropy of a particular token could dete
 <table><tr>
   <td><img src="../images/week11/jhard-rule-drawbacks.png" width="95%"></td>
 </tr>
-  <td colspan=1 align="center"> Figure # <b>CAPTION</b></td>
+  <td colspan=1 align="center"><b></b></td>
 </table>
 
 The presenters then explaiedn another approach the authors implement, called "soft watermarking". This approach lessens the impact of the red list on low-entropy tokens (which are almost certainly guaranteed to follow the current token) by encoding some flexibility in a "hardness parameter" δ for the green tokens:
@@ -58,7 +58,7 @@ The presenters then explaiedn another approach the authors implement, called "so
 <table><tr>
   <td><img src="../images/week11/soft-watermarking.png" width="95%"></td>
 </tr>
-  <td colspan=1 align="center"> Figure # <b>CAPTION</b></td>
+  <td colspan=1 align="center"><b></b></td>
 </table>
 
 With regard to search techniques for watermarked text, beam search improves performance:
@@ -66,7 +66,7 @@ With regard to search techniques for watermarked text, beam search improves perf
 <table><tr>
   <td><img src="../images/week11/watermarking-beam-search.png" width="95%"></td>
 </tr>
-  <td colspan=1 align="center"> Figure # <b>CAPTION</b></td>
+  <td colspan=1 align="center"><b></b></td>
 </table>
 
 Below is an example from [A Watermark for Large Language Models]([https://arxiv.org/abs/2301.13848](https://arxiv.org/abs/2301.10226)) [^1] of different textual inputs with and without a watermark using their approach:
@@ -74,7 +74,7 @@ Below is an example from [A Watermark for Large Language Models]([https://arxiv.
 <table><tr>
   <td><img src="../images/week11/green-list-red-list-example.png" width="95%"></td>
 </tr>
-  <td colspan=1 align="center"> Figure # <b>CAPTION</b></td>
+  <td colspan=1 align="center"><b></b></td>
 </table>
 
 The class then split into three groups and engaged in a discussion of the following questions:
