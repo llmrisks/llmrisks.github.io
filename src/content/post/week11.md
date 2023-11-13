@@ -415,12 +415,17 @@ Summary of each group's discussion:
 </table>
 
 Some points that came up during discussion:
+
 •	GAN model is distribution to distribution vs dissusion is image to distribution
 
 • the size of z is different for each model
+
 • need more time to train diffusion models
+
 • GAN is less stable and managing gradient is not there with the other models
+
 • diffusion model is more robust to noise and is more controllable
+
 • Gan can take in some contextual input but diffusion models are more flexible because they can take in more context
 
 
@@ -541,7 +546,9 @@ Some points that came up during discussion:
 </table>
 
 Some point of discussion here were:
+
 •	sometimes we can see the decrease in image quality with a watermark so there is a tradeoff between quality and watermarking
+
 •	there will always be an adversary to figure out how to reverse the process of watermakring (or we should at least assume so), so this field still needs growth and more proof of irreversibility
 
 
