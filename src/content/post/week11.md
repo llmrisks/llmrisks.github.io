@@ -440,6 +440,15 @@ Summary of each group's discussion:
 </tr>
 </table>
 
+Some points that came up during discussion:
+•	GAN model is distribution to distribution vs dissusion is image to distribution
+• the size of z is different for each model
+• need more time to train diffusion models
+• GAN is less stable and managing gradient is not there with the other models
+• diffusion model is more robust to noise and is more controllable
+• Gan can take in some contextual input but diffusion models are more flexible because they can take in more context
+
+
 ### Example
 
 <table>
@@ -448,10 +457,11 @@ Summary of each group's discussion:
     </tr>
     <tr>
     <td colspan=1 align="left">
-    <p> Description.</p>
+    <p> Water Marking has become familiar to us on images but in general it is defined as proof of ownership so ideas and things can't be used without authorization</p>
     </td>
 </tr>
 </table>
+
 
 ### Stealing Models
 
@@ -461,7 +471,7 @@ Summary of each group's discussion:
     </tr>
     <tr>
     <td colspan=1 align="left">
-    <p> Description.</p>
+    <p> Data leakage here can be intentional or unintentional; model extraction can happen when attacker has some sort of access to model</p>
     </td>
 </tr>
 </table>
@@ -474,7 +484,7 @@ Summary of each group's discussion:
     </tr>
     <tr>
     <td colspan=1 align="left">
-    <p> Description.</p>
+    <p> Here watermarking is occuring by embedding a specific behavior into a model</p>
     </td>
 </tr>
 </table>
@@ -487,7 +497,7 @@ Summary of each group's discussion:
     </tr>
     <tr>
     <td colspan=1 align="left">
-    <p> Description.</p>
+    <p> Netflix can monitor other models and see if they have similart outputs by putting an output that does not necessarily make sense</p>
     </td>
 </tr>
 </table>
@@ -500,7 +510,6 @@ Summary of each group's discussion:
     </tr>
     <tr>
     <td colspan=1 align="left">
-    <p> Description.</p>
     </td>
 </tr>
 </table>
@@ -513,7 +522,7 @@ Summary of each group's discussion:
     </tr>
     <tr>
     <td colspan=1 align="left">
-    <p> Description.</p>
+    <p> Trigger words here should not effect the rest of the sentence</p>
     </td>
 </tr>
 </table>
@@ -526,7 +535,7 @@ Summary of each group's discussion:
     </tr>
     <tr>
     <td colspan=1 align="left">
-    <p> Description.</p>
+    <p> NaiveWM uses the trigger word to generate a new image but it is very similar to the original </p>
     </td>
 </tr>
 </table>
@@ -539,7 +548,7 @@ Summary of each group's discussion:
     </tr>
     <tr>
     <td colspan=1 align="left">
-    <p> Description.</p>
+    <p> Trigger length here is number of tokens not length of the word</p>
     </td>
 </tr>
 </table>
@@ -552,11 +561,13 @@ Summary of each group's discussion:
     </tr>
     <tr>
     <td colspan=1 align="left">
-    <p> Description.</p>
     </td>
 </tr>
 </table>
 
+Some point of discussion here were:
+•	sometimes we can see the decrease in image quality with a watermark so there is a tradeoff between quality and watermarking
+•	there will always be an adversary to figure out how to reverse the process of watermakring (or we should at least assume so), so this field still needs growth and more proof of irreversibility
 
 
 
