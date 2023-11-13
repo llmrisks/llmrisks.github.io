@@ -111,9 +111,12 @@ Summary of each group's discussion:
     </tr>
     <tr>
     <td colspan=1 align="left">
+    <p> Topic for Wednsday is Watermaking on Diffusion Models</p>
     </td>
 </tr>
 </table>
+
+
 
 ### Diffusion Model
 
@@ -123,6 +126,7 @@ Summary of each group's discussion:
     </tr>
     <tr>
     <td colspan=1 align="left">
+    <p> But first focus on how diffusion models in general</p>
     </td>
 </tr>
 </table>
@@ -135,6 +139,7 @@ Summary of each group's discussion:
     </tr>
     <tr>
     <td colspan=1 align="left">
+    <p> Diffusion models generate images by removing some level of noise for every iteration</p>
     </td>
 </tr>
 </table>
@@ -146,6 +151,7 @@ Summary of each group's discussion:
         <td><img src="../images/week11/Day2/Slide4.png"></td>
     </tr>
     <tr>
+    <p> It's like sculpting</p>
     <td colspan=1 align="left">
     </td>
 </tr>
@@ -158,6 +164,7 @@ Summary of each group's discussion:
         <td><img src="../images/week11/Day2/Slide5.png"></td>
     </tr>
     <tr>
+    <p> At every iteration, the model receive a noisy image, current iteration number, and generate a less noisy image for the next iteration</p>
     <td colspan=1 align="left">
     </td>
 </tr>
@@ -170,6 +177,7 @@ Summary of each group's discussion:
         <td><img src="../images/week11/Day2/Slide6.png"></td>
     </tr>
     <tr>
+    <p> Inside the model, there is a noise prediction module that predict the current level of noise. The model will then subtract the noise from the image.</p>
     <td colspan=1 align="left">
     </td>
 </tr>
@@ -182,6 +190,7 @@ Summary of each group's discussion:
         <td><img src="../images/week11/Day2/Slide7.png"></td>
     </tr>
     <tr>
+    <p> But then how to train the model?</p>
     <td colspan=1 align="left">
     </td>
 </tr>
@@ -194,6 +203,7 @@ Summary of each group's discussion:
         <td><img src="../images/week11/Day2/Slide8.png"></td>
     </tr>
     <tr>
+    <p> By generating some noise images as groudtruth, similar to the denoising process.</p>
     <td colspan=1 align="left">
     </td>
 </tr>
@@ -206,6 +216,7 @@ Summary of each group's discussion:
         <td><img src="../images/week11/Day2/Slide9.png"></td>
     </tr>
     <tr>
+    <p>At each iteration, add noise to the image.</p>
     <td colspan=1 align="left">
     </td>
 </tr>
@@ -218,6 +229,7 @@ Summary of each group's discussion:
         <td><img src="../images/week11/Day2/Slide10.png"></td>
     </tr>
     <tr>
+    <p>Algorithms</p>
     <td colspan=1 align="left">
     </td>
 </tr>
@@ -230,6 +242,7 @@ Summary of each group's discussion:
         <td><img src="../images/week11/Day2/Slide11.png"></td>
     </tr>
     <tr>
+    <p>The loss function on a high level is to minimize the difference between the true noise and the predicted noise</p>
     <td colspan=1 align="left">
     </td>
 </tr>
@@ -242,6 +255,7 @@ Summary of each group's discussion:
         <td><img src="../images/week11/Day2/Slide12.png"></td>
     </tr>
     <tr>
+    <p>There is a reparameterization trick that you can generate noise for any iteration in one step</p>
     <td colspan=1 align="left">
     </td>
 </tr>
@@ -254,6 +268,7 @@ Summary of each group's discussion:
         <td><img src="../images/week11/Day2/Slide13.png"></td>
     </tr>
     <tr>
+    <p>The mathematical proof for the trick... too hard, don't ask</p>
     <td colspan=1 align="left">
     </td>
 </tr>
@@ -290,6 +305,7 @@ Summary of each group's discussion:
         <td><img src="../images/week11/Day2/Slide16.png"></td>
     </tr>
     <tr>
+    <p> More proof... </p>
     <td colspan=1 align="left">
     </td>
 </tr>
@@ -338,6 +354,7 @@ Summary of each group's discussion:
         <td><img src="../images/week11/Day2/Slide22.png"></td>
     </tr>
     <tr>
+    <p> So the goal here is to maximumize the likelihood of generating images from similar distribution.</p>
     <td colspan=1 align="left">
     </td>
 </tr>
@@ -375,6 +392,7 @@ Summary of each group's discussion:
     </tr>
     <tr>
     <td colspan=1 align="left">
+    <p> Text to image generation works by adding the prompt at every iteration </p>
     </td>
 </tr>
 </table>
@@ -399,6 +417,7 @@ Summary of each group's discussion:
     </tr>
     <tr>
     <td colspan=1 align="left">
+    <p> The stable diffusion model architecture </p>
     </td>
 </tr>
 </table>
@@ -559,4 +578,3 @@ Some point of discussion here were:
 [^2]: Vinu Sankar Sadasivan, Aounon Kumar, Sriram Balasubramanian, Wenxiao Wang, Soheil Feizi. Can AI-Generated Text be Reliably Detected?. 2023. https://arxiv.org/abs/2303.11156
 [^3]: Jonathan Ho, Ajay Jain, Pieter Abbeel. Denoising Diffusion Probabilistic Models. NeurIPS 2020. https://arxiv.org/abs/2006.11239
 [^4]: Yugeng Liu, Zheng Li, Michael Backes, Yun Shen, Yang Zhang. Watermarking Diffusion Model. 2023. https://arxiv.org/abs/2305.12502
-
