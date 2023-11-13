@@ -426,7 +426,7 @@ Some points that came up during discussion:
 
 • diffusion model is more robust to noise and is more controllable
 
-• Gan can take in some contextual input but diffusion models are more flexible because they can take in more context
+• GAN can take in some contextual input but diffusion models are more flexible because they can take in more context
 
 
 ### Example
