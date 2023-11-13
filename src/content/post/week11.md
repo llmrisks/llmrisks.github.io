@@ -97,7 +97,110 @@ Summary of each group's discussion:
   - Q1: It depends on the academic context. For example, is writing a skill being tested (for example, in learning another language) or is it a tool used to communicate other ideas relevant to the course?
   - Q2: Didn't see any reason why these tools shouldn't be public.
 
+The presenters then demonstrated how AI generated writing can not be reliably detected with the use of paraphrasing tools. The group talked about two types of attacks:
 
+1. Paraphrasing Attacks
+2. Spoofing Attacks
+
+<table><tr>
+  <td><img src="../images/week11/slide22.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+
+They then explain in more detail the impossibility of detection and the main intuition behind the trade-off:
+
+<table><tr>
+  <td><img src="../images/week11/side23.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+
+<table><tr>
+  <td><img src="../images/week11/slide24.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+
+The main intuition is that the Sentences given to a paraphrasing tool will not be detected as AI but sentences inputted to the LLM may be detected as AI. The output source for an LLM is limited than doing paraphrasing because Paraphrased Sentences (PS) would have a larger set. Why is the paraphrased sentences set larger than the LLM sentences (LS) set? That is because LLMs try to maintain the same meaning and that limits their performance. 
+
+<table><tr>
+  <td><img src="../images/week11/slide25.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+
+If LS becomes as much as PS, this will cause Type 1 error because it becomes increasingly hard to detect PS.
+
+If PS goes close to LS, this will cause Type 2 error because it would become increasingly hard to detect the LS now.
+
+
+<table><tr>
+  <td><img src="../images/week11/slide26.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+
+The danger is even having a 0.01 chance of false positive might falsely accuse someone of using a tool when they did not:
+
+The spoofing attacks were then presented and instances of it was shared with class:
+
+
+<table><tr>
+  <td><img src="../images/week11/slide27.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+
+
+<table><tr>
+  <td><img src="../images/week11/slide28.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+
+<table><tr>
+  <td><img src="../images/week11/slide29.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+
+
+<table><tr>
+  <td><img src="../images/week11/slide30.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+
+
+A discussion question was put forward in class as to why are we considering this as human-generated text when human is using the feedback from the model to create spoof attacks.
+
+
+<table><tr>
+  <td><img src="../images/week11/slide31.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+
+
+<table><tr>
+  <td><img src="../images/week11/slide32.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+
+
+<table><tr>
+  <td><img src="../images/week11/slide33.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+
+Finally, a discussion on the questions: Is it really harmful or risky to not have watermarks? Why or why not? What are the risks?
+
+The class talked more about if it is misinformation, does it matter if its AI-generated or not? What is more important is that it should be marked as misinformation, not that if it is AI generated or human crafted. 
+
+But are there cases where we actually care about watermarks? And one case is where an AI tool writes a book and publishes it. Maybe the problem is volume of the text generated more than the content. This causes a loss to human creators and poses unbeatable competition in terms of speed. The detection is more about the volume than it is about the use of it in one instance.
 
 
 
