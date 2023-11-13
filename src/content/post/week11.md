@@ -35,7 +35,7 @@ Given a word in a sequence, token-based watermarking uses a hash function to ini
   <td colspan=1 align="center"><b></b></td>
 </table>
 
-They also present the algorithm for this process from [A Watermark for Large Language Models](https://arxiv.org/abs/2301.10226)[^1]. It uses the language model probabilitiies to separate words using a hash function-based random number generator.
+They also present the algorithm for this process from [A Watermark for Large Language Models](https://arxiv.org/abs/2301.10226)[^1]. It uses the language model probabilities to separate words using a hash function-based random number generator.
 
 The idea is that the more words in the greenlist, the more likely the text is AI-generated:
 
@@ -45,7 +45,7 @@ The idea is that the more words in the greenlist, the more likely the text is AI
   <td colspan=1 align="center"><b></b></td>
 </table>
 
-This approach is limisted, however. The entropy of a particular token could determine how well the watermark works:
+This approach is limited, however. The entropy of a particular token could determine how well the watermark works:
 
 <table><tr>
   <td><img src="../images/week11/jhard-rule-drawbacks.png" width="95%"></td>
@@ -53,7 +53,8 @@ This approach is limisted, however. The entropy of a particular token could dete
   <td colspan=1 align="center"><b></b></td>
 </table>
 
-The presenters then explaiedn another approach the authors implement, called "soft watermarking". This approach lessens the impact of the red list on low-entropy tokens (which are almost certainly guaranteed to follow the current token) by encoding some flexibility in a "hardness parameter" δ for the green tokens:
+## Soft Watermarking
+The presenters then explained another approach the authors implement, called "soft watermarking". This approach lessens the impact of the red list on low-entropy tokens (which are almost certainly guaranteed to follow the current token) by encoding some flexibility in a "hardness parameter" δ for the green tokens:
 
 <table><tr>
   <td><img src="../images/week11/soft-watermarking.png" width="95%"></td>
@@ -77,7 +78,7 @@ Below is an example from [A Watermark for Large Language Models](https://arxiv.o
   <td colspan=1 align="center"><b></b></td>
 </table>
 
-The class then split into three groups and engaged in a discussion of the following questions:
+The class then split into three groups to discuss the following questions:
 
 - Is watermarking unfair to us, especially in academic settings?
 - Who should have access to the detection tool? Should it be available to everyone?
@@ -93,7 +94,7 @@ Summary of each group's discussion:
 - Group 2: Discussed the possibility of dedicating select tools for professors vs students to use, and also discussed more deeply about who should have access to such tools. Also questioned who should enforce any rules/regulations, and who these rules/regulations would be protecting.
 
 - Group 3:
-  - Q1: It depends on the academic context. For example, is writing a skill being tested (for example, in learnign another language) or is it a tool used to communicate ideas relevant to the course?
+  - Q1: It depends on the academic context. For example, is writing a skill being tested (for example, in learning another language) or is it a tool used to communicate other ideas relevant to the course?
   - Q2: Didn't see any reason why these tools shouldn't be public.
 
 
