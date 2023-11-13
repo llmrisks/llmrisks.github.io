@@ -110,7 +110,6 @@ Summary of each group's discussion:
     </tr>
     <tr>
     <td colspan=1 align="left">
-    <p> Description.</p>
     </td>
 </tr>
 </table>
@@ -123,7 +122,6 @@ Summary of each group's discussion:
     </tr>
     <tr>
     <td colspan=1 align="left">
-    <p> Description.</p>
     </td>
 </tr>
 </table>
@@ -136,7 +134,6 @@ Summary of each group's discussion:
     </tr>
     <tr>
     <td colspan=1 align="left">
-    <p> Description.</p>
     </td>
 </tr>
 </table>
@@ -149,7 +146,6 @@ Summary of each group's discussion:
     </tr>
     <tr>
     <td colspan=1 align="left">
-    <p> Description.</p>
     </td>
 </tr>
 </table>
@@ -162,7 +158,6 @@ Summary of each group's discussion:
     </tr>
     <tr>
     <td colspan=1 align="left">
-    <p> Description.</p>
     </td>
 </tr>
 </table>
@@ -175,7 +170,6 @@ Summary of each group's discussion:
     </tr>
     <tr>
     <td colspan=1 align="left">
-    <p> Description.</p>
     </td>
 </tr>
 </table>
@@ -188,7 +182,6 @@ Summary of each group's discussion:
     </tr>
     <tr>
     <td colspan=1 align="left">
-    <p> Description.</p>
     </td>
 </tr>
 </table>
@@ -201,7 +194,6 @@ Summary of each group's discussion:
     </tr>
     <tr>
     <td colspan=1 align="left">
-    <p> Description.</p>
     </td>
 </tr>
 </table>
@@ -214,7 +206,6 @@ Summary of each group's discussion:
     </tr>
     <tr>
     <td colspan=1 align="left">
-    <p> Description.</p>
     </td>
 </tr>
 </table>
@@ -227,7 +218,6 @@ Summary of each group's discussion:
     </tr>
     <tr>
     <td colspan=1 align="left">
-    <p> Description.</p>
     </td>
 </tr>
 </table>
@@ -240,7 +230,6 @@ Summary of each group's discussion:
     </tr>
     <tr>
     <td colspan=1 align="left">
-    <p> Description.</p>
     </td>
 </tr>
 </table>
@@ -253,7 +242,6 @@ Summary of each group's discussion:
     </tr>
     <tr>
     <td colspan=1 align="left">
-    <p> Description.</p>
     </td>
 </tr>
 </table>
@@ -266,7 +254,6 @@ Summary of each group's discussion:
     </tr>
     <tr>
     <td colspan=1 align="left">
-    <p> Description.</p>
     </td>
 </tr>
 </table>
@@ -279,7 +266,6 @@ Summary of each group's discussion:
     </tr>
     <tr>
     <td colspan=1 align="left">
-    <p> Description.</p>
     </td>
 </tr>
 </table>
@@ -292,7 +278,6 @@ Summary of each group's discussion:
     </tr>
     <tr>
     <td colspan=1 align="left">
-    <p> Description.</p>
     </td>
 </tr>
 </table>
@@ -305,7 +290,6 @@ Summary of each group's discussion:
     </tr>
     <tr>
     <td colspan=1 align="left">
-    <p> Description.</p>
     </td>
 </tr>
 </table>
@@ -318,7 +302,6 @@ Summary of each group's discussion:
     </tr>
     <tr>
     <td colspan=1 align="left">
-    <p> Description.</p>
     </td>
 </tr>
 </table>
@@ -331,7 +314,6 @@ Summary of each group's discussion:
     </tr>
     <tr>
     <td colspan=1 align="left">
-    <p> Description.</p>
     </td>
 </tr>
 </table>
@@ -344,7 +326,6 @@ Summary of each group's discussion:
     </tr>
     <tr>
     <td colspan=1 align="left">
-    <p> Description.</p>
     </td>
 </tr>
 </table>
@@ -357,7 +338,6 @@ Summary of each group's discussion:
     </tr>
     <tr>
     <td colspan=1 align="left">
-    <p> Description.</p>
     </td>
 </tr>
 </table>
@@ -370,7 +350,6 @@ Summary of each group's discussion:
     </tr>
     <tr>
     <td colspan=1 align="left">
-    <p> Description.</p>
     </td>
 </tr>
 </table>
@@ -383,7 +362,6 @@ Summary of each group's discussion:
     </tr>
     <tr>
     <td colspan=1 align="left">
-    <p> Description.</p>
     </td>
 </tr>
 </table>
@@ -396,7 +374,6 @@ Summary of each group's discussion:
     </tr>
     <tr>
     <td colspan=1 align="left">
-    <p> Description.</p>
     </td>
 </tr>
 </table>
@@ -409,7 +386,6 @@ Summary of each group's discussion:
     </tr>
     <tr>
     <td colspan=1 align="left">
-    <p> Description.</p>
     </td>
 </tr>
 </table>
@@ -422,7 +398,6 @@ Summary of each group's discussion:
     </tr>
     <tr>
     <td colspan=1 align="left">
-    <p> Description.</p>
     </td>
 </tr>
 </table>
@@ -435,13 +410,13 @@ Summary of each group's discussion:
     </tr>
     <tr>
     <td colspan=1 align="left">
-    <p> Description.</p>
     </td>
 </tr>
 </table>
 
 Some points that came up during discussion:
 •	GAN model is distribution to distribution vs dissusion is image to distribution
+
 • the size of z is different for each model
 • need more time to train diffusion models
 • GAN is less stable and managing gradient is not there with the other models
