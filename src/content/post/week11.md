@@ -15,7 +15,7 @@ slug = "week11"
 
 Class began introducing the following problem: recent instances of AI-generated text passing for human text and the writing of students being misattributed to AI suggest the need for a tool to distinguish between human-written and AI-generated text. The presenters also noted that the increase in the amount of AI-generated text online is a risk for training future LLMs on this data.
 
-They then introduced the solution that would be the focus of the class: watermarking for text generation models. Their discussion for the first half of the class focused on the paper [A Watermark for Large Language Models]([https://arxiv.org/abs/2301.13848](https://arxiv.org/abs/2301.10226)) [^1].
+They then introduced the solution that would be the focus of the class: watermarking for text generation models. Their discussion for the first half of the class focused on the paper [A Watermark for Large Language Models](https://arxiv.org/abs/2301.13848](https://arxiv.org/abs/2301.10226) [^1].
 
 <table><tr>
   <td><img src="../images/week11/watermarking-proposed-solution.png" width="95%"></td>
@@ -554,8 +554,8 @@ Some point of discussion here were:
 
 
 
-[^1] John Kirchenbauer, Jonas Geiping, Yuxin Wen, Jonathan Katz, Ian Miers, Tom Goldstein. A Watermark for Large Language Models. 2023. https://arxiv.org/abs/2301.10226
-[^2] Vinu Sankar Sadasivan, Aounon Kumar, Sriram Balasubramanian, Wenxiao Wang, Soheil Feizi. Can AI-Generated Text be Reliably Detected?. 2023. https://arxiv.org/abs/2303.11156
-[^3] Jonathan Ho, Ajay Jain, Pieter Abbeel. Denoising Diffusion Probabilistic Models. NeurIPS 2020. https://arxiv.org/abs/2006.11239
-[^4] Yugeng Liu, Zheng Li, Michael Backes, Yun Shen, Yang Zhang. Watermarking Diffusion Model. 2023. https://arxiv.org/abs/2305.12502
+[^1]: John Kirchenbauer, Jonas Geiping, Yuxin Wen, Jonathan Katz, Ian Miers, Tom Goldstein. A Watermark for Large Language Models. 2023. https://arxiv.org/abs/2301.10226
+[^2]: Vinu Sankar Sadasivan, Aounon Kumar, Sriram Balasubramanian, Wenxiao Wang, Soheil Feizi. Can AI-Generated Text be Reliably Detected?. 2023. https://arxiv.org/abs/2303.11156
+[^3]: Jonathan Ho, Ajay Jain, Pieter Abbeel. Denoising Diffusion Probabilistic Models. NeurIPS 2020. https://arxiv.org/abs/2006.11239
+[^4]: Yugeng Liu, Zheng Li, Michael Backes, Yun Shen, Yang Zhang. Watermarking Diffusion Model. 2023. https://arxiv.org/abs/2305.12502
 
