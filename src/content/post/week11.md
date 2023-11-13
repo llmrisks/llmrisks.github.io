@@ -15,7 +15,7 @@ slug = "week11"
 
 Class began introducing the following problem: recent instances of AI-generated text passing for human text and the writing of students being misattributed to AI suggest the need for a tool to distinguish between human-written and AI-generated text. The presenters also noted that the increase in the amount of AI-generated text online is a risk for training future LLMs on this data.
 
-They then introduced the solution that would be the focus of the class: watermarking for text generation models. Their discussion for the first half of the class focused on the paper [A Watermark for Large Language Models](https://arxiv.org/abs/2301.10226) [^1].
+They then introduced the solution that would be the focus of the class: watermarking for text generation models. Their discussion for the first half of the class focused on the paper [A Watermark for Large Language Models](https://arxiv.org/abs/2301.10226)[^1].
 
 <table><tr>
   <td><img src="../images/week11/watermarking-proposed-solution.png" width="95%"></td>
@@ -35,7 +35,7 @@ Given a word in a sequence, token-based watermarking uses a hash function to ini
   <td colspan=1 align="center"><b></b></td>
 </table>
 
-They also present the algorithm for this process from [A Watermark for Large Language Models](https://arxiv.org/abs/2301.10226) [^1]. It uses the language model probabilitiies to separate words using a hash function-based random number generator.
+They also present the algorithm for this process from [A Watermark for Large Language Models](https://arxiv.org/abs/2301.10226)[^1]. It uses the language model probabilitiies to separate words using a hash function-based random number generator.
 
 The idea is that the more words in the greenlist, the more likely the text is AI-generated:
 
@@ -69,7 +69,7 @@ With regard to search techniques for watermarked text, beam search improves perf
   <td colspan=1 align="center"><b></b></td>
 </table>
 
-Below is an example from [A Watermark for Large Language Models](https://arxiv.org/abs/2301.10226) [^1] of different textual inputs with and without a watermark using their approach:
+Below is an example from [A Watermark for Large Language Models](https://arxiv.org/abs/2301.10226)[^1] of different textual inputs with and without a watermark using their approach:
 
 <table><tr>
   <td><img src="../images/week11/green-list-red-list-example.png" width="95%"></td>
