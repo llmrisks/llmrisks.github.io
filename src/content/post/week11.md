@@ -5,8 +5,6 @@ title = "Week 11: Watermarking on Generative Models"
 slug = "week11"
 +++
 
-# Watermarking on Generative Models (Week 11)
-
 <author>Presenting Team: Tseganesh Beyene Kebede, Zihan Guan, Xindi Guo, Mengxuan Hu</author>
 
 <author>Blogging Team: Ajwa Shahid, Caroline Gihlstorf, Changhong Yang, Hyeongjin Kim, Sarah Boyce</author>
