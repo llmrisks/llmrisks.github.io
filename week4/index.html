@@ -106,7 +106,7 @@
 </tr>
   <td colspan=1 align="center"> Figure 1 <b> <a href="https://arxiv.org/abs/2307.11346">(Image source)</a></b></td>
 </table>
-<p>LLMs and fine-tuned models perform better on different tasks. According to a study from the paper <a href="https://arxiv.org/abs/2301.13848"><em>Benchmarking Large Language Models for News Summarization</em></a> <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>, LLMs perform better than fine-tuned models on text summarization according to the preferences of human raters. Additionally, LLMs perform better on tasks that require large amounts of knowledge from a variety of domains<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>. In machine translation, however, fine-tuned models generally do better than LLMs, although they only do slightly better in low-resource settings<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>. Additionally, the presenters explained that fine-tuned models and LLMs have similar performance when the task only requires very specific knowledge.</p>
+<p>LLMs and fine-tuned models perform better on different tasks. According to a study from the paper <a href="https://arxiv.org/abs/2301.13848"><em>Benchmarking Large Language Models for News Summarization</em></a> <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>, LLMs perform better than fine-tuned models on text summarization according to the preferences of human raters. Additionally, LLMs perform better on tasks that require large amounts of knowledge from a variety of domains<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>. In machine translation, however, fine-tuned models generally do better than LLMs, although they only do slightly better in low-resource settings<sup id="fnref1:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>. Additionally, the presenters explained that fine-tuned models and LLMs have similar performance when the task only requires very specific knowledge.</p>
 <p>The presenters then posed the following question to the class: “How could we enhance LLM in the scenario where the required knowledge does not match their learned knowledge?” The class formed four groups to discuss the question. Each group then shared a summary of what they had discussed:</p>
 <p>Group 1: Discussed enhancements in both training and testing. For testing, use intentional prompts to get the knowledge you want from the model. For training, adding more training data, using a knowledge graph to classify knowledge into different clusters for ease of search, and using a plug-in, as mentioned in the GitHub discussion.</p>
 <p>Group 2: Advocated for enhancement through the model&rsquo;s ability to retrieve information from external sources and undergo fine-tuning.</p>
@@ -270,13 +270,13 @@ be used in healthcare.</p>
 <p>The paper mentions the importance of safety and minimizing bias in LLM-generated medical information, and the <a href="https://www.medrxiv.org/content/10.1101/2023.07.13.23292577">optional reading</a> reports on some experiments that show biases in GPT&rsquo;s medical diagnoses. Should models be tuned to ignore protected attributes? Should we prevent models from being used in medical applications until these problems can be solved?</p>
 </li>
 </ol>
-<section class="footnotes" role="doc-endnotes">
+<div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn:1" role="doc-endnote">
-<p>Tianyi Zhang, Faisal Ladhak, Esin Durmus, Percy Liang, Kathleen McKeown, and Tatsunori B. Hashimoto. Benchmarking large language models for news summarization, 2023. <a href="https://arxiv.org/abs/2301.13848">https://arxiv.org/abs/2301.13848</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:1">
+<p>Tianyi Zhang, Faisal Ladhak, Esin Durmus, Percy Liang, Kathleen McKeown, and Tatsunori B. Hashimoto. Benchmarking large language models for news summarization, 2023. <a href="https://arxiv.org/abs/2301.13848">https://arxiv.org/abs/2301.13848</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:2" role="doc-endnote">
+<li id="fn:2">
 <p>Aakanksha Chowdhery, Sharan Narang, Jacob Devlin, Maarten Bosma, Gaurav
 Mishra, Adam Roberts, Paul Barham, Hyung Won Chung, Charles Sutton, Sebastian
 Gehrmann, Parker Schuh, Kensen Shi, Sasha Tsvyashchenko, Joshua Maynez, Abhishek
@@ -289,17 +289,17 @@ der Spiridonov, Ryan Sepassi, David Dohan, Shivani Agrawal, Mark Omernick, An-
 drew M. Dai, Thanumalayan Sankaranarayana Pillai, Marie Pellat, Aitor Lewkowycz,
 Erica Moreira, Rewon Child, Oleksandr Polozov, Katherine Lee, Zongwei Zhou, Xuezhi Wang, Brennan Saeta, Mark Diaz, Orhan Firat, Michele Catasta, Jason Wei, Kathy
 Meier-Hellstern, Douglas Eck, Jeff Dean, Slav Petrov, and Noah Fiedel. Palm: Scaling
-language modeling with pathways, 2022. <a href="https://arxiv.org/abs/2204.02311">https://arxiv.org/abs/2204.02311</a> <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+language modeling with pathways, 2022. <a href="https://arxiv.org/abs/2204.02311">https://arxiv.org/abs/2204.02311</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:3" role="doc-endnote">
-<p>OpenAI. GPT-4 Technical Report. March 2023. <a href="https://arxiv.org/abs/2303.08774">https://arxiv.org/abs/2303.08774</a> <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:3">
+<p>OpenAI. GPT-4 Technical Report. March 2023. <a href="https://arxiv.org/abs/2303.08774">https://arxiv.org/abs/2303.08774</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
-</section>
+</div>
 
       </div>
 
-      <meta itemprop="wordCount" content="2681">
+      <meta itemprop="wordCount" content="2678">
       <meta itemprop="datePublished" content="2023-09-25">
       <meta itemprop="url" content="https://llmrisks.github.io/week4/">
     </article>

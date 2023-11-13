@@ -1,7 +1,7 @@
 <!doctype html>
 <html class="no-js" lang="en-us">
   <head>
-	<meta name="generator" content="Hugo 0.71.0" />
+	<meta name="generator" content="Hugo 0.118.2">
     <meta charset="utf-8">
     <title>Risks (and Benefits) of Generative AI and Large Language Models</title>
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -113,6 +113,12 @@ Risks and Benefits of Generative AI and LLMs
 
    
    <div class="posttitle">
+      <a href="/week11/">Week 11: Watermarking on Generative Models</a>
+
+
+   </div>
+   
+   <div class="posttitle">
       <a href="/week10/">Week 10: Data Selection for LLMs</a>
 
 
@@ -162,12 +168,6 @@ Risks and Benefits of Generative AI and LLMs
    
    <div class="posttitle">
       <a href="/week1/">Week 1: Introduction</a>
-
-
-   </div>
-   
-   <div class="posttitle">
-      <a href="/discussions/">Github Discussions</a>
 
 
    </div>
@@ -236,9 +236,568 @@ Risks and Benefits of Generative AI and LLMs
     
         
     
+        
+    
 
 
     
+    
+    <h1><a href="/week11/">Week 11: Watermarking on Generative Models</a></h1>
+<div class="post-metadata">
+  <span class="post-date">
+    <time datetime="2023-11-13 00:00:00 &#43;0000 UTC" itemprop="datePublished">13 November 2023</time>
+  </span>
+  
+</div>
+
+      <div class="post-body" itemprop="articleBody">
+        <h1 id="watermarking-on-generative-models-week-11">Watermarking on Generative Models (Week 11)</h1>
+<p><author>Presenting Team: Tseganesh Beyene Kebede, Zihan Guan, Xindi Guo, Mengxuan Hu</author></p>
+<p><author>Blogging Team: Ajwa Shahid, Caroline Gihlstorf, Changhong Yang, Hyeongjin Kim, Sarah Boyce</author></p>
+<h1 id="monday-november-6-watermarking-llm-output">Monday, November 6: Watermarking LLM Output</h1>
+<p>Recent instances of AI-generated text passing for human text and the
+writing of students being misattributed to AI suggest the need for a
+tool to distinguish between human-written and AI-generated text. The
+presenters also noted that the increase in the amount of AI-generated
+text online is a risk for training future LLMs on this data.</p>
+<p>A proposed solution is to embed a watermark in the output of text
+generation models.</p>
+<p>John Kirchenbauer, Jonas Geiping, Yuxin Wen, Jonathan Katz, Ian Miers, Tom Goldstein. <a href="https://arxiv.org/abs/2301.10226"><em>A Watermark for Large Language Models</em></a>. 2023. [<a href="https://arxiv.org/pdf/2301.10226.pdf">PDF</a>]</p>
+<table><tr>
+  <td><img src="../images/week11/watermarking-proposed-solution.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p><strong>Token-based watermarking:</strong> given a word in a sequence, token-based watermarking uses a hash function to initialize a random number generator used to create two sets of all possible next words: the &ldquo;green&rdquo; word list and the &ldquo;red&rdquo; word list.</p>
+<table><tr>
+  <td><img src="../images/week11/token-based-intuition.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>The algorithm from the paper uses the language model probabilities to
+separate words using a hash function-based random number generator.</p>
+<p>The idea is that the more words in the greenlist, the more likely the text is AI-generated:</p>
+<table><tr>
+  <td><img src="../images/week11/watermark-detection-greenlist.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>This approach is limited, however. The entropy of a particular token could determine how well the watermark works:</p>
+<table><tr>
+  <td><img src="../images/week11/jhard-rule-drawbacks.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<h2 id="soft-watermarking">Soft Watermarking</h2>
+<p><strong>Soft watermarking</strong> lessens the impact of the red list on low-entropy tokens (which are almost certainly guaranteed to follow the current token) by encoding some flexibility in a &ldquo;hardness parameter&rdquo; δ for the green tokens:</p>
+<table><tr>
+  <td><img src="../images/week11/soft-watermarking.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>With regard to search techniques for watermarked text, beam search improves performance:</p>
+<table><tr>
+  <td><img src="../images/week11/watermarking-beam-search.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<table><tr>
+  <td><img src="../images/week11/green-list-red-list-example.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>The class then split into three groups to discuss the following questions:</p>
+<ul>
+<li>Is watermarking unfair to us, especially in academic settings?</li>
+<li>Who should have access to the detection tool? Should it be available to everyone?</li>
+<li>What are your thoughts on artificial intelligence regulations? And do you believe/think we can/should tame AI&rsquo;s power through stiff regulatory control?</li>
+</ul>
+<h2 id="attacks-on-watermarks">Attacks on Watermarks</h2>
+<table><tr>
+  <td><img src="../images/week11/slide22.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>They then explain in more detail the impossibility of detection and the main intuition behind the trade-off:</p>
+<!-- TODO: slide 23 is missing
+<table><tr>
+  <td><img src="../images/week11/side23.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+-->
+<table><tr>
+  <td><img src="../images/week11/slide24.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>The main intuition is that the Sentences given to a paraphrasing tool will not be detected as AI but sentences inputted to the LLM may be detected as AI. The output source for an LLM is limited than doing paraphrasing because Paraphrased Sentences (PS) would have a larger set. Why is the paraphrased sentences set larger than the LLM sentences (LS) set? That is because LLMs try to maintain the same meaning and that limits their performance.</p>
+<table><tr>
+  <td><img src="../images/week11/slide25.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>If LS becomes as large as the PS, this will cause Type 1 error because it becomes increasingly hard to detect PS.</p>
+<p>If PS goes close to LS, this will cause Type 2 error because it would become increasingly hard to detect the LS now.</p>
+<table><tr>
+  <td><img src="../images/week11/slide26.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<table><tr>
+  <td><img src="../images/week11/slide27.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<table><tr>
+  <td><img src="../images/week11/slide28.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<table><tr>
+  <td><img src="../images/week11/slide29.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<table><tr>
+  <td><img src="../images/week11/slide30.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>A discussion question was put forward in class as to why are we considering this as human-generated text when human is using the feedback from the model to create spoof attacks.</p>
+<table><tr>
+  <td><img src="../images/week11/slide31.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<table><tr>
+  <td><img src="../images/week11/slide32.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<table><tr>
+  <td><img src="../images/week11/slide33.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>The class talked more about if it is misinformation, does it matter if its AI-generated or not? What is more important is that it should be marked as misinformation, not that if it is AI generated or human crafted.</p>
+<p>Are there cases where we actually care about watermarks? And one case is where an AI tool writes a book and publishes it. Maybe the problem is volume of the text generated more than the content. This causes a loss to human creators and poses unbeatable competition in terms of speed. The detection is more about the volume than it is about the use of it in one instance.</p>
+<h1 id="wednesday-november-8-watermarking-diffusion-models">Wednesday, November 8: Watermarking Diffusion Models</h1>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide1.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1 align="left">
+    <p> Topic for Wednsday is Watermaking on Diffusion Models</p>
+    </td>
+</tr>
+</table>
+<h3 id="diffusion-model">Diffusion Model</h3>
+<p>Jonathan Ho, Ajay Jain, Pieter Abbeel. <a href="https://arxiv.org/abs/2006.11239"><em>Denoising Diffusion Probabilistic Models</em></a>. NeurIPS 2020. [<a href="https://proceedings.neurips.cc/paper/2020/file/4c5bcfec8584af0d967f1ab10179ca4b-Paper.pdf">PDF</a>]</p>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide2.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1 align="left">
+    <p> But first focus on how diffusion models in general</p>
+    </td>
+</tr>
+</table>
+<h3 id="how-it-works">How it works</h3>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide3.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1 align="left">
+    <p> Diffusion models generate images by removing some level of noise for every iteration</p>
+    </td>
+</tr>
+</table>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide4.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1 align="left">
+    </td>
+</tr>
+</table>
+<h3 id="how-it-works-1">How it works</h3>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide5.png"></td>
+    </tr>
+    <tr>
+    <p> At every iteration, the model receive a noisy image, current iteration number, and generate a less noisy image for the next iteration.</p>
+    <td colspan=1 align="left">
+    </td>
+</tr>
+</table>
+<h3 id="what-is-inside-the-denoise-module">What is inside the denoise module?</h3>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide6.png"></td>
+    </tr>
+    <tr>
+    <p> Inside the model, there is a noise prediction module that predicts the noise. The model will then subtract the predicted noise from the image.</p>
+    <td colspan=1 align="left">
+    </td>
+</tr>
+</table>
+<h3 id="training-the-noise-predictor">Training the noise predictor</h3>
+<table>
+<!-- TODO: missing slide
+    <tr>
+        <td><img src="../images/week11/Day2/Slide7.png"></td>
+    </tr>
+-->
+    <tr>
+    <p> But then how to train the model?</p>
+    <td colspan=1 align="left">
+    </td>
+</tr>
+</table>
+<h3 id="generating-training-data">Generating Training Data</h3>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide8.png"></td>
+    </tr>
+    <tr>
+    <p> By generating some noise images as groudtruth, similar to the denoising process.</p>
+    <td colspan=1 align="left">
+    </td>
+</tr>
+</table>
+<h3 id="traning-the-noise-predicter">Traning the Noise Predicter</h3>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide9.png"></td>
+    </tr>
+    <tr>
+    <p>At each iteration, add noise to the image.</p>
+    <td colspan=1 align="left">
+    </td>
+</tr>
+</table>
+<h3 id="algorithm-of-denosing-diffusion-probabilistic-model">Algorithm of denosing diffusion probabilistic model</h3>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide10.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1 align="left">
+    </td>
+</tr>
+</table>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide11.png"></td>
+    </tr>
+    <tr>
+    <p>The loss function on a high level is to minimize the difference between the true noise and the predicted noise</p>
+    <td colspan=1 align="left">
+    </td>
+</tr>
+</table>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide12.png"></td>
+    </tr>
+    <tr>
+    <p>There is a reparameterization trick that you can generate noise for any iteration in one step</p>
+    <td colspan=1 align="left">
+    </td>
+</tr>
+</table>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide13.png"></td>
+    </tr>
+    <tr>
+    <p>The mathematical proof for the trick... (left as exercise for the reader)</p>
+    <td colspan=1 align="left">
+    </td>
+</tr>
+</table>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide14.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1 align="left">
+    </td>
+</tr>
+</table>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide15.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1 align="left">
+    </td>
+</tr>
+</table>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide16.png"></td>
+    </tr>
+    <tr>
+    <p> The full proof</p>
+    <td colspan=1 align="left">
+    </td>
+</tr>
+</table>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide17.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1 align="left">
+    </td>
+</tr>
+</table>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide18.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1 align="left">
+    </td>
+</tr>
+</table>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide19.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1 align="left">
+    </td>
+</tr>
+</table>
+<h3 id="maximum-likelihood-estimation">Maximum Likelihood Estimation</h3>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide22.png"></td>
+    </tr>
+    <tr>
+    <p> So the goal here is to maximumize the likelihood of generating images from similar distribution.</p>
+    <td colspan=1 align="left">
+    </td>
+</tr>
+</table>
+<h3 id="computing-_p__x_">Computing <em>p</em>(<em>x</em>)</h3>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide23.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1 align="left">
+    </td>
+</tr>
+</table>
+<h3 id="denoising-diffusion-probabilistic-models">Denoising diffusion probabilistic models</h3>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide24.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1 align="left">
+    </td>
+</tr>
+</table>
+<h3 id="text-to-image">Text-to-Image</h3>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide25.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1 align="left">
+    <p> Text to image generation works by adding the prompt at every iteration </p>
+    </td>
+</tr>
+</table>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide26.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1 align="left">
+    </td>
+</tr>
+</table>
+<h3 id="stable-diffusion">Stable Diffusion</h3>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide27.png"></td>
+    </tr>
+</table>
+<h3 id="discussion">Discussion</h3>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide28.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1 align="left">
+    </td>
+</tr>
+</table>
+<p>Some points that came up during discussion:</p>
+<p>• GAN model is distribution to distribution vs dissusion is image to distribution</p>
+<p>• The size of <em>z</em> is different for each model</p>
+<p>• Need more time to train diffusion models</p>
+<p>• GAN is less stable and managing gradient is not there with the other models</p>
+<p>• Diffusion model is more robust to noise and is more controllable</p>
+<p>• GAN can take in some contextual input but diffusion models are more flexible because they can take in more context</p>
+<h1 id="watermarking-models">Watermarking Models</h1>
+<p>Yugeng Liu, Zheng Li, Michael Backes, Yun Shen, Yang Zhang. <a href="https://arxiv.org/abs/2305.12502"><em>Watermarking Diffusion Model</em></a>. 2023. [<a href="https://arxiv.org/pdf/2305.12502.pdf">PDF</a>]</p>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide29.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1 align="left">
+    <p> Water Marking has become familiar to us on images but in general it is defined as proof of ownership so ideas and things can't be used without authorization</p>
+    </td>
+</tr>
+</table>
+<h3 id="stealing-models">Stealing Models</h3>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide30.png"></td>
+    </tr>
+</table>
+<h3 id="idea-for-watermarking-a-model">Idea for Watermarking a Model</h3>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide31.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1 align="left">
+    <p> Here watermarking is occuring by embedding a specific behavior into a model</p>
+    </td>
+</tr>
+</table>
+<h3 id="example">Example</h3>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide32.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1 align="left">
+    <p> Netflix can monitor other models and see if they have similar outputs by putting an output that would be unlikely to occur normally.</p>
+    </td>
+</tr>
+</table>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide33.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1 align="left">
+    </td>
+</tr>
+</table>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide34.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1 align="left">
+    <p> Trigger words here should not effect the rest of the sentence.</p>
+    </td>
+</tr>
+</table>
+<h2 id="results">Results</h2>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide35.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1 align="left">
+    <p> NaiveWM uses the trigger word to generate a new image but it is very similar to the original.</p>
+    </td>
+</tr>
+</table>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide36.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1 align="left">
+    <p> Trigger length is the number of tokens (not the length of the word).</p>
+    </td>
+</tr>
+</table>
+<h3 id="discussion-1">Discussion</h3>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide37.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1 align="left">
+    </td>
+</tr>
+</table>
+<p>• Sometimes we can see the decrease in image quality with a watermark so there is a tradeoff between quality and watermarking.</p>
+<p>• There will always be an adversary to figure out how to reverse the process of watermakring (or we should at least assume so), so this field still needs growth and more proof of irreversibility.</p>
+<h1 id="readings-and-discussion-questions">Readings and Discussion Questions</h1>
+<h1 id="monday-6-november-detectable-watermarks-for-llms">Monday 6 November: Detectable Watermarks for LLMs</h1>
+<h2 id="readings">Readings:</h2>
+<ul>
+<li>
+<p><strong><code>Required</code></strong>: John Kirchenbauer, Jonas Geiping, Yuxin Wen, Jonathan Katz, Ian Miers, Tom Goldstein. <a href="https://arxiv.org/abs/2301.10226"><em>A Watermark for Large Language Models</em></a>. 2023. [<a href="https://arxiv.org/pdf/2301.10226.pdf">PDF</a>]</p>
+</li>
+<li>
+<p><strong><code>Required</code></strong>: Vinu Sankar Sadasivan, Aounon Kumar, Sriram Balasubramanian, Wenxiao Wang, Soheil Feizi. <a href="https://arxiv.org/abs/2303.11156"><em>Can AI-Generated Text be Reliably Detected?</em></a>. 2023. [<a href="https://arxiv.org/pdf/2303.11156.pdf">PDF</a>]</p>
+</li>
+<li>
+<p><code>Optional</code>: Jiameng Pu, Zain Sarwar, Sifat Muhammad Abdullah, Abdullah Rehman, Yoonjin Kim, Parantapa Bhattacharya, Mobin Javed, Bimal Viswanath. <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=10179387"><em>Deepfake Text Detection: Limitations and Opportunities</em></a>. IEEE Symposium on Security and Privacy 2023. [<a href="https://jmpu.github.io/files/Deepfake%20Text%20Detection%20Limitations%20and%20Opportunities_CR.pdf">PDF</a>]</p>
+</li>
+<li>
+<p><code>Optional</code>: Ruixiang Tang, Yu-Neng Chuang, Xia Hu. <a href="https://arxiv.org/abs/2303.07205"><em>The Science of Detecting LLM-Generated Texts</em></a>. 2023. [<a href="https://arxiv.org/pdf/2303.07205.pdf">PDF</a>]</p>
+</li>
+<li>
+<p><code>Optional</code>: John Kirchenbauer, Jonas Geiping, Yuxin Wen, Manli Shu, Khalid Saifullah, Kezhi Kong, Kasun Fernando, Aniruddha Saha, Micah Goldblum, Tom Goldstein. <a href="https://arxiv.org/abs/2306.04634"><em>On the Reliability of Watermarks for Large Language Models</em></a>. 2023. [<a href="https://arxiv.org/pdf/2306.04634.pdf">PDF</a>]</p>
+</li>
+</ul>
+<h2 id="questions">Questions:</h2>
+<p><strong>(Post response by Sunday, 5 November)</strong></p>
+<ol>
+<li>In “A Watermark for Large Language Models”, how robust is the watermarking framework against potential adversarial attacks and might an adversary do to disrupt the watermark while preserving useful quality text?</li>
+<li>The “A Watermark for Large Language Models” paper gives a list of properties a watermark should satisfy. Do you agree with this list of properties? Are their additional properties you think are important, or ones that they include that should be different?</li>
+<li>Do you see a future where watermarking can be useful and effective, even when there are adversaries with motivations to disrupt watermarks?</li>
+<li>Regarding watermarking and AI-generated text, what other methods or techniques do you believe could be investigated to strengthen the resistance of watermarked AI-generated text to paraphrase attacks?</li>
+</ol>
+<h1 id="wednesday-8-november-watermarking-on-diffusion-models">Wednesday 8 November: Watermarking on Diffusion Models</h1>
+<h2 id="readings-1">Readings:</h2>
+<ul>
+<li>
+<p><strong><code>Required</code></strong>: Jonathan Ho, Ajay Jain, Pieter Abbeel. <a href="https://arxiv.org/abs/2006.11239"><em>Denoising Diffusion Probabilistic Models</em></a>. NeurIPS 2020. [<a href="https://proceedings.neurips.cc/paper/2020/file/4c5bcfec8584af0d967f1ab10179ca4b-Paper.pdf">PDF</a>]</p>
+</li>
+<li>
+<p><strong><code>Required</code></strong>: Yugeng Liu, Zheng Li, Michael Backes, Yun Shen, Yang Zhang. <a href="https://arxiv.org/abs/2305.12502"><em>Watermarking Diffusion Model</em></a>. 2023. [<a href="https://arxiv.org/pdf/2305.12502.pdf">PDF</a>]</p>
+</li>
+<li>
+<p><code>Optional</code>: Mehrdad Saberi, Vinu Sankar Sadasivan, Keivan Rezaei, Aounon Kumar, Atoosa Chegini, Wenxiao Wang, Soheil Feizi. <a href="https://arxiv.org/abs/2310.00076"><em>Robustness of AI-Image Detectors: Fundamental Limits and Practical Attacks</em></a>. 2023. [<a href="https://arxiv.org/pdf/2310.00076.pdf">PDF</a>]</p>
+</li>
+<li>
+<p><code>Optional</code>: Robin Rombach, Andreas Blattmann, Dominik Lorenz, Patrick Esser, Björn Ommer. <a href="https://arxiv.org/abs/2112.10752"><em>High-Resolution Image Synthesis with Latent Diffusion Models</em></a>. CVPR 2022. [<a href="https://arxiv.org/pdf/2112.10752.pdf">PDF</a>]</p>
+</li>
+</ul>
+<h2 id="questions-1">Questions:</h2>
+<p><strong>(Post response by Tuesday, 7 November)</strong></p>
+<ol>
+<li>After the development of diffusion models, they quickly replaced GANs in nearly all image generation applications. What are the biggest differences between diffusion models and GANs, and why have they been so successful?</li>
+<li>How are the required properties for watermarking a model similar and different from those for watermarking model outputs (like in Monday&rsquo;s class)?</li>
+<li>In “Watermarking Diffusion Model”, the authors describe a clear threat model but don&rsquo;t provide as clear a list of the required properties for a watermark as was in the “A Watermark for Large Language Models” paper. Can you provide a list of the required properties of a watermark that are implied by their threat model?</li>
+</ol>
+
+      </div>
+<hr class="post-separator"></hr>
+
     
     <h1><a href="/week10/">Week 10: Data Selection for LLMs</a></h1>
 <div class="post-metadata">
@@ -481,7 +1040,7 @@ They thus concluded that rather than fine-tuning on more imitation data, the bes
 <p>Subhabrata Mukherjee, Arindam Mitra, Ganesh Jawahar, Sahaj Agarwal, Hamid Palangi, Ahmed Awadallah. <a href="https://arxiv.org/abs/2306.02707">Orca: Progressive Learning from Complex Explanation Traces of GPT-4</a>. <a href="https://arxiv.org/abs/2306.02707">https://arxiv.org/abs/2306.02707</a> <a href="https://arxiv.org/abs/2306.02707.pdf">pdf</a></p>
 <h3 id="instruction-tuning">Instruction-tuning</h3>
 <p><em>Instruction tuning</em> is a technique that allows pre-trained language models to learn from input (natural language descriptions of the task) and response pairs. The goal is to train the model to generate the correct output given a specific input and instruction.</p>
-<p>{&ldquo;instruction&rdquo;: &ldquo;Arrange the words in the given sentence to form a grammatically correct sentence.&quot;,
+<p>{&ldquo;instruction&rdquo;: &ldquo;Arrange the words in the given sentence to form a grammatically correct sentence.&rdquo;,
 &ldquo;input&rdquo;: &ldquo;the quickly brown fox jumped&rdquo;,
 &ldquo;output&rdquo;: &ldquo;the brown fox jumped quick
 ly&rdquo;}.</p>
@@ -777,14 +1336,14 @@ This is an open-ended question. One possible reason is that while fine-tuning wi
 <p>In <a href="https://arxiv.org/abs/2305.17493">The Curse of Recursion: Training on Generated Data Makes Models Forget</a>, the authors rely on several assumptions to support their arguments. How strong those assumptions are and do you think these assumptions limit its applicability to broader contexts?</p>
 </li>
 </ol>
-<section class="footnotes" role="doc-endnotes">
+<div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn:1" role="doc-endnote">
-<p>Gudibande, A., Wallace, E., Snell, C., Geng, X., Liu, H., Abbeel, P., Levine, S. and Song, D., 2023. <a href="https://arxiv.org/pdf/2305.15717.pdf">The false promise of imitating proprietary llms</a>. arXiv preprint arXiv:2305.15717. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:1">
+<p>Gudibande, A., Wallace, E., Snell, C., Geng, X., Liu, H., Abbeel, P., Levine, S. and Song, D., 2023. <a href="https://arxiv.org/pdf/2305.15717.pdf">The false promise of imitating proprietary llms</a>. arXiv preprint arXiv:2305.15717.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
-</section>
+</div>
 
       </div>
 <hr class="post-separator"></hr>
@@ -1357,7 +1916,7 @@ adapting existing training techniques for interpretability, which would require 
 </center>
 <h2 id="heading"></h2>
 <p>Here is an example of pseudocode from the activity:</p>
-<pre><code class="language-angular2html" data-lang="angular2html">Sentence = &quot;The students like to read interesting books.&quot;
+<pre tabindex="0"><code class="language-angular2html" data-lang="angular2html">Sentence = &#34;The students like to read interesting books.&#34;
 # The bilingual dictionary from English to Chinese: Eng_chinese_dict
 Translation = []
 for word in Sentence.split():
@@ -1365,7 +1924,7 @@ for word in Sentence.split():
         Translation.append(Eng_chinese_dict[word])
     else:
         Translation.append(word)
-Translated_sentence = &quot; &quot;.join(Translation)
+Translated_sentence = &#34; &#34;.join(Translation)
 </code></pre><p>After the activity discussion, here are the challenges encountered when translating from English to another language:</p>
 <ul>
 <li>Variations in Word Order: Different languages have varying word orders, affecting sentence structure.</li>
@@ -2085,7 +2644,7 @@ trainer).</p>
     <tr>
     <td colspan=1 align="center"> <center><b>Sources of Hallucination</b></center>
 <br>
-<p><a href="https://arxiv.org/abs/2309.01219">_Siren&rsquo;s Song in the AI Ocean: A Survey on Hallucination in Large Language Models_  </a>
+<p><a href="https://arxiv.org/abs/2309.01219"><em>Siren&rsquo;s Song in the AI Ocean: A Survey on Hallucination in Large Language Models</em>  </a>
 </td>
 </tr></p>
 </table>
@@ -2116,7 +2675,7 @@ trainer).</p>
     </tr>
    <tr>
   <td colspan=1 align="center"><b>Mitigation Strategies</b>
-<p><a href="https://arxiv.org/abs/2309.01219">_Siren&rsquo;s Song in the AI Ocean: A Survey on Hallucination in Large Language Models_</a></b>
+<p><a href="https://arxiv.org/abs/2309.01219"><em>Siren&rsquo;s Song in the AI Ocean: A Survey on Hallucination in Large Language Models</em></a></b>
 <br/>
 <p style="text-align: left; text-indent: 5%;">
 For inference, one strategy is to reduce the snowballing of hallucinations by designing a dynamic p-value. The p-value should start off large and shrink as more tokens are generated. Furthermore, introducing new or external knowledge can be done at two different positions: before and after generation.
@@ -2131,7 +2690,7 @@ For inference, one strategy is to reduce the snowballing of hallucinations by de
 <tr>
 <td colspan=1 align="center"> 
 <b>Decoding Contrasting Layers</b><br>
-<p><a href="https://arxiv.org/abs/2309.03883">_DoLa: Decoding by Contrasting Layers Improves Factuality in Large Language Models_</a></p>
+<p><a href="https://arxiv.org/abs/2309.03883"><em>DoLa: Decoding by Contrasting Layers Improves Factuality in Large Language Models</em></a></p>
 <br/>
 <p style="text-align: left; text-indent: 5%;">
             Based on evolving trends, the concept of contrastive decoding is introduced. For example, one might ask, "How do we decide between Seattle or Olympia?" When considering the last layer as a mature layer, it is beneficial to contrast the differences between the preceding layers, which can be deemed as premature. For each of these layers, it is possible to calculate the difference between each probability distribution by comparing mature and premature layers, a process that utilizes the Jensen-Shannon Divergence. Such an approach permits the amplification of the factual knowledge that the model has acquired, thereby enhancing its output generation.
@@ -2144,7 +2703,7 @@ For inference, one strategy is to reduce the snowballing of hallucinations by de
     </tr>
     <tr>
     <td colspan=1 align="center">
-<p><a href="https://arxiv.org/abs/2302.00083">_In-Context Retrieval-Augmented Language Models_</a></p>
+<p><a href="https://arxiv.org/abs/2302.00083"><em>In-Context Retrieval-Augmented Language Models</em></a></p>
   <p style="text-align: left; text-indent: 5%;">
             The model parameters are kept frozen. Instead of directly inputting text into the model, the approach first uses retrieval to search for relevant documents from external sources. The findings from these sources are then concatenated with the original text. Re-ranking results from the retrieval model also provides benefits; the exact perplexities can be referred to in the slide. It has been observed that smaller strides can enhance performance, albeit at the cost of increased runtime. The authors have noticed that the information at the end of a query is typically more relevant for output generation. In general, shorter queries tend to outperform longer ones.
         </p>
@@ -2159,7 +2718,7 @@ For inference, one strategy is to reduce the snowballing of hallucinations by de
     </td>
     </tr>
 </table>
-<h2 id="discussion-_based-on-the-sources-of-hallucination-what-methods-can-be-employed-to-mitigate-the-hallucination-issue_h2">Discussion: _Based on the sources of hallucination, what methods can be employed to mitigate the hallucination issue?_</h2></h2>
+<h2 id="discussion-_based-on-the-sources-of-hallucination-what-methods-can-be-employed-to-mitigate-the-hallucination-issue_h2">Discussion: <em>Based on the sources of hallucination, what methods can be employed to mitigate the hallucination issue?</em></h2></h2>
 <p style="text-align: left; text-indent: 5%;">
     Group 2:
         Discussed two papers from this week's reading which highlighted the use of semantic search and the introduction of external context to aid the model. This approach, while useful for diminishing hallucination, heavily depends on external information, which is not effective in generic cases.
@@ -2180,7 +2739,7 @@ For inference, one strategy is to reduce the snowballing of hallucinations by de
         It was also advised to source data solely from credible sources.
         An interesting perspective discussed was utilizing a larger model to verify the smaller model's hallucinations. But a caveat arises: How can one ensure the larger model's accuracy? And if the larger model is deemed superior, why not employ it directly?
 </p>
-<h2 id="discussion-_what-are-the-potential-advantages-of-hallucinations-in-large-language-models-llms_h2">Discussion: _What are the potential advantages of hallucinations in Large Language Models (LLMs)?_</h2></h2>
+<h2 id="discussion-_what-are-the-potential-advantages-of-hallucinations-in-large-language-models-llms_h2">Discussion: <em>What are the potential advantages of hallucinations in Large Language Models (LLMs)?</em></h2></h2>
 <p style="text-align: left; text-indent: 5%;">
     One advantage discussed was that hallucinations "train" users to not blindly trust the model outputs. If such models are blindly trusted, there is a much greater risk associated with their use.
     If users can conclusively discern, however, that the produced information is fictitious, it could assist in fostering new ideas or fresh perspectives on a given topic.
@@ -2267,7 +2826,7 @@ Second section (5 - 9): Before 5:29pm on <strong>Tuesday 3 October</strong>.</p>
 </tr>
   <td colspan=1 align="center"> Figure 1 <b> <a href="https://arxiv.org/abs/2307.11346">(Image source)</a></b></td>
 </table>
-<p>LLMs and fine-tuned models perform better on different tasks. According to a study from the paper <a href="https://arxiv.org/abs/2301.13848"><em>Benchmarking Large Language Models for News Summarization</em></a> <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>, LLMs perform better than fine-tuned models on text summarization according to the preferences of human raters. Additionally, LLMs perform better on tasks that require large amounts of knowledge from a variety of domains<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>. In machine translation, however, fine-tuned models generally do better than LLMs, although they only do slightly better in low-resource settings<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>. Additionally, the presenters explained that fine-tuned models and LLMs have similar performance when the task only requires very specific knowledge.</p>
+<p>LLMs and fine-tuned models perform better on different tasks. According to a study from the paper <a href="https://arxiv.org/abs/2301.13848"><em>Benchmarking Large Language Models for News Summarization</em></a> <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>, LLMs perform better than fine-tuned models on text summarization according to the preferences of human raters. Additionally, LLMs perform better on tasks that require large amounts of knowledge from a variety of domains<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>. In machine translation, however, fine-tuned models generally do better than LLMs, although they only do slightly better in low-resource settings<sup id="fnref1:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>. Additionally, the presenters explained that fine-tuned models and LLMs have similar performance when the task only requires very specific knowledge.</p>
 <p>The presenters then posed the following question to the class: “How could we enhance LLM in the scenario where the required knowledge does not match their learned knowledge?” The class formed four groups to discuss the question. Each group then shared a summary of what they had discussed:</p>
 <p>Group 1: Discussed enhancements in both training and testing. For testing, use intentional prompts to get the knowledge you want from the model. For training, adding more training data, using a knowledge graph to classify knowledge into different clusters for ease of search, and using a plug-in, as mentioned in the GitHub discussion.</p>
 <p>Group 2: Advocated for enhancement through the model&rsquo;s ability to retrieve information from external sources and undergo fine-tuning.</p>
@@ -2431,13 +2990,13 @@ be used in healthcare.</p>
 <p>The paper mentions the importance of safety and minimizing bias in LLM-generated medical information, and the <a href="https://www.medrxiv.org/content/10.1101/2023.07.13.23292577">optional reading</a> reports on some experiments that show biases in GPT&rsquo;s medical diagnoses. Should models be tuned to ignore protected attributes? Should we prevent models from being used in medical applications until these problems can be solved?</p>
 </li>
 </ol>
-<section class="footnotes" role="doc-endnotes">
+<div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn:1" role="doc-endnote">
-<p>Tianyi Zhang, Faisal Ladhak, Esin Durmus, Percy Liang, Kathleen McKeown, and Tatsunori B. Hashimoto. Benchmarking large language models for news summarization, 2023. <a href="https://arxiv.org/abs/2301.13848">https://arxiv.org/abs/2301.13848</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:1">
+<p>Tianyi Zhang, Faisal Ladhak, Esin Durmus, Percy Liang, Kathleen McKeown, and Tatsunori B. Hashimoto. Benchmarking large language models for news summarization, 2023. <a href="https://arxiv.org/abs/2301.13848">https://arxiv.org/abs/2301.13848</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:2" role="doc-endnote">
+<li id="fn:2">
 <p>Aakanksha Chowdhery, Sharan Narang, Jacob Devlin, Maarten Bosma, Gaurav
 Mishra, Adam Roberts, Paul Barham, Hyung Won Chung, Charles Sutton, Sebastian
 Gehrmann, Parker Schuh, Kensen Shi, Sasha Tsvyashchenko, Joshua Maynez, Abhishek
@@ -2450,13 +3009,13 @@ der Spiridonov, Ryan Sepassi, David Dohan, Shivani Agrawal, Mark Omernick, An-
 drew M. Dai, Thanumalayan Sankaranarayana Pillai, Marie Pellat, Aitor Lewkowycz,
 Erica Moreira, Rewon Child, Oleksandr Polozov, Katherine Lee, Zongwei Zhou, Xuezhi Wang, Brennan Saeta, Mark Diaz, Orhan Firat, Michele Catasta, Jason Wei, Kathy
 Meier-Hellstern, Douglas Eck, Jeff Dean, Slav Petrov, and Noah Fiedel. Palm: Scaling
-language modeling with pathways, 2022. <a href="https://arxiv.org/abs/2204.02311">https://arxiv.org/abs/2204.02311</a> <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+language modeling with pathways, 2022. <a href="https://arxiv.org/abs/2204.02311">https://arxiv.org/abs/2204.02311</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:3" role="doc-endnote">
-<p>OpenAI. GPT-4 Technical Report. March 2023. <a href="https://arxiv.org/abs/2303.08774">https://arxiv.org/abs/2303.08774</a> <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:3">
+<p>OpenAI. GPT-4 Technical Report. March 2023. <a href="https://arxiv.org/abs/2303.08774">https://arxiv.org/abs/2303.08774</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
-</section>
+</div>
 
       </div>
 <hr class="post-separator"></hr>
@@ -2689,17 +3248,17 @@ Second section (5 – 9): Before <strong>5:29pm</strong> on <strong>Tuesday, Sep
 <p>The authors recommend transparency of bias mitigation methods, citing the benefit it could provide to researchers and practitioners. Specifically, how might researchers benefit from this? Can you foresee any negative consequences (either to researchers or the general users of these models) of this transparency?</p>
 </li>
 </ol>
-<section class="footnotes" role="doc-endnotes">
+<div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn:1" role="doc-endnote">
-<p>Tony Z. Zhao, Eric Wallace, Shi Feng, Dan Klein, Sameer Singh. &ldquo;<a href="https://arxiv.org/pdf/2102.09690.pdf">Calibrate before use: Improving few-shot performance of language models</a>.&rdquo; International Conference on Machine Learning. PMLR, 2021. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:1">
+<p>Tony Z. Zhao, Eric Wallace, Shi Feng, Dan Klein, Sameer Singh. &ldquo;<a href="https://arxiv.org/pdf/2102.09690.pdf">Calibrate before use: Improving few-shot performance of language models</a>.&rdquo; International Conference on Machine Learning. PMLR, 2021.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:2" role="doc-endnote">
-<p>Miles Turpin, Julian Michael, Ethan Perez, Samuel R. Bowman. &ldquo;<a href="https://arxiv.org/pdf/2305.04388.pdf">Language Models Don&rsquo;t Always Say What They Think: Unfaithful Explanations in Chain-of-Thought Prompting.</a>&rdquo; arXiv preprint arXiv:2305.04388, 2023. <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:2">
+<p>Miles Turpin, Julian Michael, Ethan Perez, Samuel R. Bowman. &ldquo;<a href="https://arxiv.org/pdf/2305.04388.pdf">Language Models Don&rsquo;t Always Say What They Think: Unfaithful Explanations in Chain-of-Thought Prompting.</a>&rdquo; arXiv preprint arXiv:2305.04388, 2023.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
-</section>
+</div>
 
       </div>
 <hr class="post-separator"></hr>
@@ -3299,10 +3858,10 @@ Despite many improvements over this basic architecture, RNNs have the following 
 <p><strong>Introduction of LSTMs.</strong>
 Long Short-Term Memory (LSTM)<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> networks were then introduced to address the vanishing gradient problem in RNNs. LSTMs had memory cells and gating mechanisms that allowed them to capture long-term memories more effectively. While LSTMs improved memory retention, they were still computationally expensive and slow to train, especially on large datasets.</p>
 <p><strong>Attention Mechanism.</strong>
-The attention mechanism<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup><sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> was introduced as a way to help models focus on relevant parts of the input sequence when generating output. This addressed the memory issues that plagued previous models.
+The attention mechanism<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup><sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup><sup id="fnref1:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> was introduced as a way to help models focus on relevant parts of the input sequence when generating output. This addressed the memory issues that plagued previous models.
 Attention mechanisms allowed models to weigh the importance of different input tokens when making predictions or encoding information. In essence, it enables the model to focus selectively on relevant parts of the input sequence while disregarding less pertinent ones. In practice, attention mechanism can be categorized into self-attention and multi-head attention based on the number of heads used in the attention structure.</p>
 <h2 id="the-transformer-model">The Transformer Model</h2>
-<p>The transformer architecture, introduced by Vaswani et al. (2017) <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>, marked a significant advance in NLP. It used self-attention mechanisms to process input tokens in parallel and capture contextual information more effectively.
+<p>The transformer architecture, introduced by Vaswani et al. (2017) <sup id="fnref2:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>, marked a significant advance in NLP. It used self-attention mechanisms to process input tokens in parallel and capture contextual information more effectively.
 Transformers broke down sentences into smaller parts and learned statistical relationships between these parts to understand meaning and generate responses.
 The model utilized input embeddings to represent words and positional encodings to address the lack of inherent sequence information.
 The core innovation was the self-attention mechanism, which allowed tokens to consider their relationships with all other tokens in the sequence</p>
@@ -3322,7 +3881,7 @@ The use of positional encodings in transformers helps address the lack of inhere
 Self-attention is a useful mechanism that allows each token to consider the relationships between all other tokens in a sequence. While it provides a more nuanced understanding of input, it can be computationally expensive. The use of multi-head attention further enhances the model&rsquo;s ability to capture different types of dependencies in the data. The number of attention heads (e.g., 8 in BERT) is a balance between performance and complexity. Too few or too many heads can result in suboptimal performance. More details about self-attention and multi-head attention can be found in <sup id="fnref:9"><a href="#fn:9" class="footnote-ref" role="doc-noteref">9</a></sup>.</p>
 <p><strong>Context and Answers in Activities.</strong>
 Let’s do some activity now!</p>
-<pre><code class="language-angular2html" data-lang="angular2html">I used to ___ 
+<pre tabindex="0"><code class="language-angular2html" data-lang="angular2html">I used to ___ 
 
 Yesterday, I went to ___
 
@@ -3449,77 +4008,53 @@ way they consider risks?</p>
 <p>The near and long-term impact of LLMs on employment is hard to predict. What jobs do you think are vulnerable to LLMs beyond the (seemingly) obvious ones mentioned in the paper? What are some jobs you think will be most resilient to advances in AI?</p>
 </li>
 </ol>
-<section class="footnotes" role="doc-endnotes">
+<div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn:1" role="doc-endnote">
-<p>Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., &hellip; &amp; Polosukhin, I. (2017). Attention is all you need. Advances in neural information processing systems, 30. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:1">
+<p>Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., &hellip; &amp; Polosukhin, I. (2017). Attention is all you need. Advances in neural information processing systems, 30.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref2:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:2" role="doc-endnote">
-<p>Sherstinsky, A. (2020). Fundamentals of recurrent neural network (RNN) and long short-term memory (LSTM) network. Physica D: Nonlinear Phenomena, 404, 132306. <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:2">
+<p>Sherstinsky, A. (2020). Fundamentals of recurrent neural network (RNN) and long short-term memory (LSTM) network. Physica D: Nonlinear Phenomena, 404, 132306.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:3" role="doc-endnote">
-<p>Pascanu, R., Mikolov, T., &amp; Bengio, Y. (2013, May). On the difficulty of training recurrent neural networks. In International conference on machine learning (pp. 1310-1318). Pmlr. <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:3">
+<p>Pascanu, R., Mikolov, T., &amp; Bengio, Y. (2013, May). On the difficulty of training recurrent neural networks. In International conference on machine learning (pp. 1310-1318). Pmlr.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:4" role="doc-endnote">
-<p>Hochreiter, S., &amp; Schmidhuber, J. (1997). Long short-term memory. Neural computation, 9(8), 1735-1780. <a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:4">
+<p>Hochreiter, S., &amp; Schmidhuber, J. (1997). Long short-term memory. Neural computation, 9(8), 1735-1780.&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:5" role="doc-endnote">
-<p>Mnih, V., Heess, N., &amp; Graves, A. (2014). Recurrent models of visual attention. Advances in neural information processing systems, 27. <a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:5">
+<p>Mnih, V., Heess, N., &amp; Graves, A. (2014). Recurrent models of visual attention. Advances in neural information processing systems, 27.&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:6" role="doc-endnote">
-<p>Bahdanau, D., Cho, K., &amp; Bengio, Y. (2014). Neural machine translation by jointly learning to align and translate. arXiv preprint arXiv:1409.0473. <a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:6">
+<p>Bahdanau, D., Cho, K., &amp; Bengio, Y. (2014). Neural machine translation by jointly learning to align and translate. arXiv preprint arXiv:1409.0473.&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:7" role="doc-endnote">
-<p>Lin, T., Wang, Y., Liu, X., &amp; Qiu, X. (2022). A survey of transformers. AI Open. <a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:7">
+<p>Lin, T., Wang, Y., Liu, X., &amp; Qiu, X. (2022). A survey of transformers. AI Open.&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:8" role="doc-endnote">
-<p>Khan, S., Naseer, M., Hayat, M., Zamir, S. W., Khan, F. S., &amp; Shah, M. (2022). Transformers in vision: A survey. ACM computing surveys (CSUR), 54(10s), 1-41. <a href="#fnref:8" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:8">
+<p>Khan, S., Naseer, M., Hayat, M., Zamir, S. W., Khan, F. S., &amp; Shah, M. (2022). Transformers in vision: A survey. ACM computing surveys (CSUR), 54(10s), 1-41.&#160;<a href="#fnref:8" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:9" role="doc-endnote">
-<p>Karim, R. (2023, January 2). Illustrated: Self-attention. Medium. <a href="https://towardsdatascience.com/illustrated-self-attention-2d627e33b20a">https://towardsdatascience.com/illustrated-self-attention-2d627e33b20a</a> <a href="#fnref:9" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:9">
+<p>Karim, R. (2023, January 2). Illustrated: Self-attention. Medium. <a href="https://towardsdatascience.com/illustrated-self-attention-2d627e33b20a">https://towardsdatascience.com/illustrated-self-attention-2d627e33b20a</a>&#160;<a href="#fnref:9" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:10" role="doc-endnote">
-<p>Devlin, J., Chang, M. W., Lee, K., &amp; Toutanova, K. (2018). Bert: Pre-training of deep bidirectional transformers for language understanding. arXiv preprint arXiv:1810.04805. <a href="#fnref:10" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:10">
+<p>Devlin, J., Chang, M. W., Lee, K., &amp; Toutanova, K. (2018). Bert: Pre-training of deep bidirectional transformers for language understanding. arXiv preprint arXiv:1810.04805.&#160;<a href="#fnref:10" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:11" role="doc-endnote">
-<p>Ahmad, K. (2023b, April 26). GPT vs. Bert: What are the differences between the two most popular language models?. MUO. <a href="https://www.makeuseof.com/gpt-vs-bert/">https://www.makeuseof.com/gpt-vs-bert/</a> <a href="#fnref:11" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:11">
+<p>Ahmad, K. (2023b, April 26). GPT vs. Bert: What are the differences between the two most popular language models?. MUO. <a href="https://www.makeuseof.com/gpt-vs-bert/">https://www.makeuseof.com/gpt-vs-bert/</a>&#160;<a href="#fnref:11" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:12" role="doc-endnote">
-<p>Radford, A., Wu, J., Child, R., Luan, D., Amodei, D., &amp; Sutskever, I. (2019). Language models are unsupervised multitask learners. OpenAI blog, 1(8), 9. <a href="#fnref:12" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:12">
+<p>Radford, A., Wu, J., Child, R., Luan, D., Amodei, D., &amp; Sutskever, I. (2019). Language models are unsupervised multitask learners. OpenAI blog, 1(8), 9.&#160;<a href="#fnref:12" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:13" role="doc-endnote">
-<p>Brown, T., Mann, B., Ryder, N., Subbiah, M., Kaplan, J. D., Dhariwal, P., &hellip; &amp; Amodei, D. (2020). Language models are few-shot learners. Advances in neural information processing systems, 33, 1877-1901. <a href="#fnref:13" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:13">
+<p>Brown, T., Mann, B., Ryder, N., Subbiah, M., Kaplan, J. D., Dhariwal, P., &hellip; &amp; Amodei, D. (2020). Language models are few-shot learners. Advances in neural information processing systems, 33, 1877-1901.&#160;<a href="#fnref:13" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:14" role="doc-endnote">
-<p>Yang, J., Jin, H., Tang, R., Han, X., Feng, Q., Jiang, H., &hellip; &amp; Hu, X. (2023). Harnessing the power of llms in practice: A survey on chatgpt and beyond. arXiv preprint arXiv:2304.13712. <a href="#fnref:14" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:14">
+<p>Yang, J., Jin, H., Tang, R., Han, X., Feng, Q., Jiang, H., &hellip; &amp; Hu, X. (2023). Harnessing the power of llms in practice: A survey on chatgpt and beyond. arXiv preprint arXiv:2304.13712.&#160;<a href="#fnref:14" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
-</section>
-
-      </div>
-<hr class="post-separator"></hr>
-
-    
-    <h1><a href="/discussions/">Github Discussions</a></h1>
-<div class="post-metadata">
-  <span class="post-date">
-    <time datetime="2023-08-25 00:00:00 &#43;0000 UTC" itemprop="datePublished">25 August 2023</time>
-  </span>
-  
 </div>
-
-      <div class="post-body" itemprop="articleBody">
-        <p>Everyone should have received an invitation to the github discussions
-site, and be able to see the posts there and submit your own posts and
-comments. If you didn&rsquo;t get this invitation, it was probably blocked
-by the email system. Try visiting:</p>
-<p><a href="https://github.com/orgs/llmrisks/invitation">https://github.com/orgs/llmrisks/invitation</a></p>
-<p>(while logged into the github account you listed on your form).</p>
-<p>Once you&rsquo;ve accepted the invitation, you should be able to visit
-<a href="https://github.com/llmrisks/discussions/discussions/2">https://github.com/llmrisks/discussions/discussions/2</a>
-(the now-finalized discussion post for Week 1), and contribute to the
-discussions there.</p>
 
       </div>
 <hr class="post-separator"></hr>

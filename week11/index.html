@@ -1,0 +1,708 @@
+<!doctype html>
+<html class="no-js" lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <title>Week 11: Watermarking on Generative Models | Risks (and Benefits) of Generative AI and Large Language Models</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://llmrisks.github.io/css/foundation.min.css">
+    <link rel="stylesheet" href="https://llmrisks.github.io/css/highlight.min.css">
+    <link rel="stylesheet" href="https://llmrisks.github.io/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://llmrisks.github.io/css/academicons.min.css">
+    <link rel="stylesheet" href="https://llmrisks.github.io/css/fonts.css">
+    <link rel="stylesheet" href="https://llmrisks.github.io/css/finite.css">
+    <link rel="shortcut icon" href="/images/uva.png">  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "$", right: "$", display: false}
+            ]
+        });
+    });
+</script>
+
+    
+  </head>
+  <body>
+      
+    <header>
+      <nav class="nav-bar">
+	
+	  <div class="title-bar" data-responsive-toggle="site-menu" data-hide-for="medium">	      
+	    <button class="site-hamburger" type="button" data-toggle>
+	      <i class="fa fa-bars fa-lg" aria-hidden="true"></i>
+	    </button>
+	    <div class="title-bar-title site-title">
+	      <a href="https://llmrisks.github.io/">Risks (and Benefits) of Generative AI and Large Language Models</a>
+	    </div>
+	    <div class="title-bar-right pull-right">
+	      
+
+
+	    </div>
+	  </div>
+	    
+	  
+	    <div class="top-bar" id="site-menu" >	      
+	      <div class="top-bar-title show-for-medium site-title">
+		<a href="https://llmrisks.github.io/">Risks (and Benefits) of Generative AI and Large Language Models</a>
+	      </div>
+	      <div class="top-bar-left">
+		<ul class="menu vertical medium-horizontal">
+		  
+		  
+		</ul>
+	      </div>
+	      <div class="top-bar-right show-for-medium">
+		
+
+
+	      </div>
+	    </div>
+	  
+	</nav>
+      
+    </header>
+    
+    <main>
+      
+<div class="row" style="padding-top: 16pt;">
+  <div class="column small-12 medium-10 medium-offset-1 end large-8 large-offset-0">
+    <article class="article" itemscope itemtype="http://schema.org/Article">
+      
+      <h1 itemprop="name">Week 11: Watermarking on Generative Models</h1>
+      <div class="post-metadata">
+  <span class="post-date">
+    <time datetime="2023-11-13 00:00:00 &#43;0000 UTC" itemprop="datePublished">13 November 2023</time>
+  </span>
+  
+</div>
+
+      <div class="post-body" itemprop="articleBody">
+        <h1 id="watermarking-on-generative-models-week-11">Watermarking on Generative Models (Week 11)</h1>
+<p><author>Presenting Team: Tseganesh Beyene Kebede, Zihan Guan, Xindi Guo, Mengxuan Hu</author></p>
+<p><author>Blogging Team: Ajwa Shahid, Caroline Gihlstorf, Changhong Yang, Hyeongjin Kim, Sarah Boyce</author></p>
+<h1 id="monday-november-6-watermarking-llm-output">Monday, November 6: Watermarking LLM Output</h1>
+<p>Recent instances of AI-generated text passing for human text and the
+writing of students being misattributed to AI suggest the need for a
+tool to distinguish between human-written and AI-generated text. The
+presenters also noted that the increase in the amount of AI-generated
+text online is a risk for training future LLMs on this data.</p>
+<p>A proposed solution is to embed a watermark in the output of text
+generation models.</p>
+<p>John Kirchenbauer, Jonas Geiping, Yuxin Wen, Jonathan Katz, Ian Miers, Tom Goldstein. <a href="https://arxiv.org/abs/2301.10226"><em>A Watermark for Large Language Models</em></a>. 2023. [<a href="https://arxiv.org/pdf/2301.10226.pdf">PDF</a>]</p>
+<table><tr>
+  <td><img src="../images/week11/watermarking-proposed-solution.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p><strong>Token-based watermarking:</strong> given a word in a sequence, token-based watermarking uses a hash function to initialize a random number generator used to create two sets of all possible next words: the &ldquo;green&rdquo; word list and the &ldquo;red&rdquo; word list.</p>
+<table><tr>
+  <td><img src="../images/week11/token-based-intuition.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>The algorithm from the paper uses the language model probabilities to
+separate words using a hash function-based random number generator.</p>
+<p>The idea is that the more words in the greenlist, the more likely the text is AI-generated:</p>
+<table><tr>
+  <td><img src="../images/week11/watermark-detection-greenlist.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>This approach is limited, however. The entropy of a particular token could determine how well the watermark works:</p>
+<table><tr>
+  <td><img src="../images/week11/jhard-rule-drawbacks.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<h2 id="soft-watermarking">Soft Watermarking</h2>
+<p><strong>Soft watermarking</strong> lessens the impact of the red list on low-entropy tokens (which are almost certainly guaranteed to follow the current token) by encoding some flexibility in a &ldquo;hardness parameter&rdquo; δ for the green tokens:</p>
+<table><tr>
+  <td><img src="../images/week11/soft-watermarking.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>With regard to search techniques for watermarked text, beam search improves performance:</p>
+<table><tr>
+  <td><img src="../images/week11/watermarking-beam-search.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<table><tr>
+  <td><img src="../images/week11/green-list-red-list-example.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>The class then split into three groups to discuss the following questions:</p>
+<ul>
+<li>Is watermarking unfair to us, especially in academic settings?</li>
+<li>Who should have access to the detection tool? Should it be available to everyone?</li>
+<li>What are your thoughts on artificial intelligence regulations? And do you believe/think we can/should tame AI&rsquo;s power through stiff regulatory control?</li>
+</ul>
+<h2 id="attacks-on-watermarks">Attacks on Watermarks</h2>
+<table><tr>
+  <td><img src="../images/week11/slide22.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>They then explain in more detail the impossibility of detection and the main intuition behind the trade-off:</p>
+<!-- TODO: slide 23 is missing
+<table><tr>
+  <td><img src="../images/week11/side23.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+-->
+<table><tr>
+  <td><img src="../images/week11/slide24.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>The main intuition is that the Sentences given to a paraphrasing tool will not be detected as AI but sentences inputted to the LLM may be detected as AI. The output source for an LLM is limited than doing paraphrasing because Paraphrased Sentences (PS) would have a larger set. Why is the paraphrased sentences set larger than the LLM sentences (LS) set? That is because LLMs try to maintain the same meaning and that limits their performance.</p>
+<table><tr>
+  <td><img src="../images/week11/slide25.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>If LS becomes as large as the PS, this will cause Type 1 error because it becomes increasingly hard to detect PS.</p>
+<p>If PS goes close to LS, this will cause Type 2 error because it would become increasingly hard to detect the LS now.</p>
+<table><tr>
+  <td><img src="../images/week11/slide26.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<table><tr>
+  <td><img src="../images/week11/slide27.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<table><tr>
+  <td><img src="../images/week11/slide28.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<table><tr>
+  <td><img src="../images/week11/slide29.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<table><tr>
+  <td><img src="../images/week11/slide30.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>A discussion question was put forward in class as to why are we considering this as human-generated text when human is using the feedback from the model to create spoof attacks.</p>
+<table><tr>
+  <td><img src="../images/week11/slide31.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<table><tr>
+  <td><img src="../images/week11/slide32.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<table><tr>
+  <td><img src="../images/week11/slide33.png" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>The class talked more about if it is misinformation, does it matter if its AI-generated or not? What is more important is that it should be marked as misinformation, not that if it is AI generated or human crafted.</p>
+<p>Are there cases where we actually care about watermarks? And one case is where an AI tool writes a book and publishes it. Maybe the problem is volume of the text generated more than the content. This causes a loss to human creators and poses unbeatable competition in terms of speed. The detection is more about the volume than it is about the use of it in one instance.</p>
+<h1 id="wednesday-november-8-watermarking-diffusion-models">Wednesday, November 8: Watermarking Diffusion Models</h1>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide1.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1 align="left">
+    <p> Topic for Wednsday is Watermaking on Diffusion Models</p>
+    </td>
+</tr>
+</table>
+<h3 id="diffusion-model">Diffusion Model</h3>
+<p>Jonathan Ho, Ajay Jain, Pieter Abbeel. <a href="https://arxiv.org/abs/2006.11239"><em>Denoising Diffusion Probabilistic Models</em></a>. NeurIPS 2020. [<a href="https://proceedings.neurips.cc/paper/2020/file/4c5bcfec8584af0d967f1ab10179ca4b-Paper.pdf">PDF</a>]</p>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide2.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1 align="left">
+    <p> But first focus on how diffusion models in general</p>
+    </td>
+</tr>
+</table>
+<h3 id="how-it-works">How it works</h3>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide3.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1 align="left">
+    <p> Diffusion models generate images by removing some level of noise for every iteration</p>
+    </td>
+</tr>
+</table>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide4.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1 align="left">
+    </td>
+</tr>
+</table>
+<h3 id="how-it-works-1">How it works</h3>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide5.png"></td>
+    </tr>
+    <tr>
+    <p> At every iteration, the model receive a noisy image, current iteration number, and generate a less noisy image for the next iteration.</p>
+    <td colspan=1 align="left">
+    </td>
+</tr>
+</table>
+<h3 id="what-is-inside-the-denoise-module">What is inside the denoise module?</h3>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide6.png"></td>
+    </tr>
+    <tr>
+    <p> Inside the model, there is a noise prediction module that predicts the noise. The model will then subtract the predicted noise from the image.</p>
+    <td colspan=1 align="left">
+    </td>
+</tr>
+</table>
+<h3 id="training-the-noise-predictor">Training the noise predictor</h3>
+<table>
+<!-- TODO: missing slide
+    <tr>
+        <td><img src="../images/week11/Day2/Slide7.png"></td>
+    </tr>
+-->
+    <tr>
+    <p> But then how to train the model?</p>
+    <td colspan=1 align="left">
+    </td>
+</tr>
+</table>
+<h3 id="generating-training-data">Generating Training Data</h3>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide8.png"></td>
+    </tr>
+    <tr>
+    <p> By generating some noise images as groudtruth, similar to the denoising process.</p>
+    <td colspan=1 align="left">
+    </td>
+</tr>
+</table>
+<h3 id="traning-the-noise-predicter">Traning the Noise Predicter</h3>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide9.png"></td>
+    </tr>
+    <tr>
+    <p>At each iteration, add noise to the image.</p>
+    <td colspan=1 align="left">
+    </td>
+</tr>
+</table>
+<h3 id="algorithm-of-denosing-diffusion-probabilistic-model">Algorithm of denosing diffusion probabilistic model</h3>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide10.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1 align="left">
+    </td>
+</tr>
+</table>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide11.png"></td>
+    </tr>
+    <tr>
+    <p>The loss function on a high level is to minimize the difference between the true noise and the predicted noise</p>
+    <td colspan=1 align="left">
+    </td>
+</tr>
+</table>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide12.png"></td>
+    </tr>
+    <tr>
+    <p>There is a reparameterization trick that you can generate noise for any iteration in one step</p>
+    <td colspan=1 align="left">
+    </td>
+</tr>
+</table>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide13.png"></td>
+    </tr>
+    <tr>
+    <p>The mathematical proof for the trick... (left as exercise for the reader)</p>
+    <td colspan=1 align="left">
+    </td>
+</tr>
+</table>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide14.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1 align="left">
+    </td>
+</tr>
+</table>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide15.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1 align="left">
+    </td>
+</tr>
+</table>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide16.png"></td>
+    </tr>
+    <tr>
+    <p> The full proof</p>
+    <td colspan=1 align="left">
+    </td>
+</tr>
+</table>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide17.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1 align="left">
+    </td>
+</tr>
+</table>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide18.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1 align="left">
+    </td>
+</tr>
+</table>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide19.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1 align="left">
+    </td>
+</tr>
+</table>
+<h3 id="maximum-likelihood-estimation">Maximum Likelihood Estimation</h3>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide22.png"></td>
+    </tr>
+    <tr>
+    <p> So the goal here is to maximumize the likelihood of generating images from similar distribution.</p>
+    <td colspan=1 align="left">
+    </td>
+</tr>
+</table>
+<h3 id="computing-_p__x_">Computing <em>p</em>(<em>x</em>)</h3>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide23.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1 align="left">
+    </td>
+</tr>
+</table>
+<h3 id="denoising-diffusion-probabilistic-models">Denoising diffusion probabilistic models</h3>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide24.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1 align="left">
+    </td>
+</tr>
+</table>
+<h3 id="text-to-image">Text-to-Image</h3>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide25.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1 align="left">
+    <p> Text to image generation works by adding the prompt at every iteration </p>
+    </td>
+</tr>
+</table>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide26.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1 align="left">
+    </td>
+</tr>
+</table>
+<h3 id="stable-diffusion">Stable Diffusion</h3>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide27.png"></td>
+    </tr>
+</table>
+<h3 id="discussion">Discussion</h3>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide28.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1 align="left">
+    </td>
+</tr>
+</table>
+<p>Some points that came up during discussion:</p>
+<p>• GAN model is distribution to distribution vs dissusion is image to distribution</p>
+<p>• The size of <em>z</em> is different for each model</p>
+<p>• Need more time to train diffusion models</p>
+<p>• GAN is less stable and managing gradient is not there with the other models</p>
+<p>• Diffusion model is more robust to noise and is more controllable</p>
+<p>• GAN can take in some contextual input but diffusion models are more flexible because they can take in more context</p>
+<h1 id="watermarking-models">Watermarking Models</h1>
+<p>Yugeng Liu, Zheng Li, Michael Backes, Yun Shen, Yang Zhang. <a href="https://arxiv.org/abs/2305.12502"><em>Watermarking Diffusion Model</em></a>. 2023. [<a href="https://arxiv.org/pdf/2305.12502.pdf">PDF</a>]</p>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide29.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1 align="left">
+    <p> Water Marking has become familiar to us on images but in general it is defined as proof of ownership so ideas and things can't be used without authorization</p>
+    </td>
+</tr>
+</table>
+<h3 id="stealing-models">Stealing Models</h3>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide30.png"></td>
+    </tr>
+</table>
+<h3 id="idea-for-watermarking-a-model">Idea for Watermarking a Model</h3>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide31.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1 align="left">
+    <p> Here watermarking is occuring by embedding a specific behavior into a model</p>
+    </td>
+</tr>
+</table>
+<h3 id="example">Example</h3>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide32.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1 align="left">
+    <p> Netflix can monitor other models and see if they have similar outputs by putting an output that would be unlikely to occur normally.</p>
+    </td>
+</tr>
+</table>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide33.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1 align="left">
+    </td>
+</tr>
+</table>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide34.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1 align="left">
+    <p> Trigger words here should not effect the rest of the sentence.</p>
+    </td>
+</tr>
+</table>
+<h2 id="results">Results</h2>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide35.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1 align="left">
+    <p> NaiveWM uses the trigger word to generate a new image but it is very similar to the original.</p>
+    </td>
+</tr>
+</table>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide36.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1 align="left">
+    <p> Trigger length is the number of tokens (not the length of the word).</p>
+    </td>
+</tr>
+</table>
+<h3 id="discussion-1">Discussion</h3>
+<table>
+    <tr>
+        <td><img src="../images/week11/Day2/Slide37.png"></td>
+    </tr>
+    <tr>
+    <td colspan=1 align="left">
+    </td>
+</tr>
+</table>
+<p>• Sometimes we can see the decrease in image quality with a watermark so there is a tradeoff between quality and watermarking.</p>
+<p>• There will always be an adversary to figure out how to reverse the process of watermakring (or we should at least assume so), so this field still needs growth and more proof of irreversibility.</p>
+<h1 id="readings-and-discussion-questions">Readings and Discussion Questions</h1>
+<h1 id="monday-6-november-detectable-watermarks-for-llms">Monday 6 November: Detectable Watermarks for LLMs</h1>
+<h2 id="readings">Readings:</h2>
+<ul>
+<li>
+<p><strong><code>Required</code></strong>: John Kirchenbauer, Jonas Geiping, Yuxin Wen, Jonathan Katz, Ian Miers, Tom Goldstein. <a href="https://arxiv.org/abs/2301.10226"><em>A Watermark for Large Language Models</em></a>. 2023. [<a href="https://arxiv.org/pdf/2301.10226.pdf">PDF</a>]</p>
+</li>
+<li>
+<p><strong><code>Required</code></strong>: Vinu Sankar Sadasivan, Aounon Kumar, Sriram Balasubramanian, Wenxiao Wang, Soheil Feizi. <a href="https://arxiv.org/abs/2303.11156"><em>Can AI-Generated Text be Reliably Detected?</em></a>. 2023. [<a href="https://arxiv.org/pdf/2303.11156.pdf">PDF</a>]</p>
+</li>
+<li>
+<p><code>Optional</code>: Jiameng Pu, Zain Sarwar, Sifat Muhammad Abdullah, Abdullah Rehman, Yoonjin Kim, Parantapa Bhattacharya, Mobin Javed, Bimal Viswanath. <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=10179387"><em>Deepfake Text Detection: Limitations and Opportunities</em></a>. IEEE Symposium on Security and Privacy 2023. [<a href="https://jmpu.github.io/files/Deepfake%20Text%20Detection%20Limitations%20and%20Opportunities_CR.pdf">PDF</a>]</p>
+</li>
+<li>
+<p><code>Optional</code>: Ruixiang Tang, Yu-Neng Chuang, Xia Hu. <a href="https://arxiv.org/abs/2303.07205"><em>The Science of Detecting LLM-Generated Texts</em></a>. 2023. [<a href="https://arxiv.org/pdf/2303.07205.pdf">PDF</a>]</p>
+</li>
+<li>
+<p><code>Optional</code>: John Kirchenbauer, Jonas Geiping, Yuxin Wen, Manli Shu, Khalid Saifullah, Kezhi Kong, Kasun Fernando, Aniruddha Saha, Micah Goldblum, Tom Goldstein. <a href="https://arxiv.org/abs/2306.04634"><em>On the Reliability of Watermarks for Large Language Models</em></a>. 2023. [<a href="https://arxiv.org/pdf/2306.04634.pdf">PDF</a>]</p>
+</li>
+</ul>
+<h2 id="questions">Questions:</h2>
+<p><strong>(Post response by Sunday, 5 November)</strong></p>
+<ol>
+<li>In “A Watermark for Large Language Models”, how robust is the watermarking framework against potential adversarial attacks and might an adversary do to disrupt the watermark while preserving useful quality text?</li>
+<li>The “A Watermark for Large Language Models” paper gives a list of properties a watermark should satisfy. Do you agree with this list of properties? Are their additional properties you think are important, or ones that they include that should be different?</li>
+<li>Do you see a future where watermarking can be useful and effective, even when there are adversaries with motivations to disrupt watermarks?</li>
+<li>Regarding watermarking and AI-generated text, what other methods or techniques do you believe could be investigated to strengthen the resistance of watermarked AI-generated text to paraphrase attacks?</li>
+</ol>
+<h1 id="wednesday-8-november-watermarking-on-diffusion-models">Wednesday 8 November: Watermarking on Diffusion Models</h1>
+<h2 id="readings-1">Readings:</h2>
+<ul>
+<li>
+<p><strong><code>Required</code></strong>: Jonathan Ho, Ajay Jain, Pieter Abbeel. <a href="https://arxiv.org/abs/2006.11239"><em>Denoising Diffusion Probabilistic Models</em></a>. NeurIPS 2020. [<a href="https://proceedings.neurips.cc/paper/2020/file/4c5bcfec8584af0d967f1ab10179ca4b-Paper.pdf">PDF</a>]</p>
+</li>
+<li>
+<p><strong><code>Required</code></strong>: Yugeng Liu, Zheng Li, Michael Backes, Yun Shen, Yang Zhang. <a href="https://arxiv.org/abs/2305.12502"><em>Watermarking Diffusion Model</em></a>. 2023. [<a href="https://arxiv.org/pdf/2305.12502.pdf">PDF</a>]</p>
+</li>
+<li>
+<p><code>Optional</code>: Mehrdad Saberi, Vinu Sankar Sadasivan, Keivan Rezaei, Aounon Kumar, Atoosa Chegini, Wenxiao Wang, Soheil Feizi. <a href="https://arxiv.org/abs/2310.00076"><em>Robustness of AI-Image Detectors: Fundamental Limits and Practical Attacks</em></a>. 2023. [<a href="https://arxiv.org/pdf/2310.00076.pdf">PDF</a>]</p>
+</li>
+<li>
+<p><code>Optional</code>: Robin Rombach, Andreas Blattmann, Dominik Lorenz, Patrick Esser, Björn Ommer. <a href="https://arxiv.org/abs/2112.10752"><em>High-Resolution Image Synthesis with Latent Diffusion Models</em></a>. CVPR 2022. [<a href="https://arxiv.org/pdf/2112.10752.pdf">PDF</a>]</p>
+</li>
+</ul>
+<h2 id="questions-1">Questions:</h2>
+<p><strong>(Post response by Tuesday, 7 November)</strong></p>
+<ol>
+<li>After the development of diffusion models, they quickly replaced GANs in nearly all image generation applications. What are the biggest differences between diffusion models and GANs, and why have they been so successful?</li>
+<li>How are the required properties for watermarking a model similar and different from those for watermarking model outputs (like in Monday&rsquo;s class)?</li>
+<li>In “Watermarking Diffusion Model”, the authors describe a clear threat model but don&rsquo;t provide as clear a list of the required properties for a watermark as was in the “A Watermark for Large Language Models” paper. Can you provide a list of the required properties of a watermark that are implied by their threat model?</li>
+</ol>
+
+      </div>
+
+      <meta itemprop="wordCount" content="1588">
+      <meta itemprop="datePublished" content="2023-11-13">
+      <meta itemprop="url" content="https://llmrisks.github.io/week11/">
+    </article>
+
+    <ul class="pagination" role="navigation" aria-label="Pagination">
+      
+      <li class="arrow" aria-disabled="true"><a href="https://llmrisks.github.io/week10/">&laquo; <em>Previous<span class="show-for-sr"> page</span></em>: Week 10: Data Selection for LLMs</a></li>
+      
+      
+    </ul>
+
+  </div>
+</div>
+
+    </main>
+    
+    
+<footer class="whatisthis">
+  <hr />
+  <div class="row">
+    <div class="column small-12 medium-6">
+      <a href="//llmrisks.github.io"><b>cs 6501: Risks (and Benefits) of Generative AI</b></a><br>
+      Fall 2023<br>
+      <a href="//www.cs.virginia.edu">University of Virginia</a>
+    </div>
+    <div class="column small-14 medium-5">
+      <font size="-1">
+      Subscribe to
+	the <a href="/index.xml"><i class="fa fa-rss-square"></i>&nbsp;RSS feed</a>.
+      <a id="searchsite">
+	<form method="get" action="https://duckduckgo.com/">
+	  <label for="search-field" class="show-for-sr">Search with DuckDuckGo</label>
+	  <input type="search" name="q" maxlength="255" placeholder="Search with DuckDuckGo" id="search-field">
+	  <input type="hidden" name="sites" value="https://llmrisks.github.io/"/>
+	  <input type="hidden" name="k7" value="#faf8f8"/>
+	  <input type="hidden" name="kj" value="#b33"/>
+	  <input type="hidden" name="ky" value="#fafafa"/>
+	  <input type="hidden" name="kx" value="b"/>
+	  <input type="hidden" name="ko" value="-1"/>
+	  <input type="hidden" name="k1" value="-1"/>
+	  <input type="submit" value="DuckDuckGo Search" style="visibility: hidden;" />
+	</form>
+      </a>
+</font>
+    </div>
+  </div>
+  </hr>
+</footer>
+
+
+    
+    <div class="endofpage">
+    </div>
+
+    <script src="/js/jquery.js"></script>
+    <script src="/js/what-input.js"></script>
+    <script src="/js/foundation.min.js"></script>
+    <script src="/js/finite.js"></script>
+
+    
+    <script src="/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    
+    
+  </body>
+</html>
