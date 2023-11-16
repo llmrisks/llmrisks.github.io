@@ -600,7 +600,7 @@ Some points that came up during discussion:
 </tr>
 </table>
 
-Some point of discussion here were:
+Some points of discussion here were:
 
 •	sometimes we can see the decrease in image quality with a watermark so there is a tradeoff between quality and watermarking
 
