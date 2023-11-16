@@ -206,8 +206,6 @@ But are there cases where we actually care about watermarks? And one case is whe
 
 # Wednsday, November 8
 
-### Watermarking
-
 <table>
     <tr>
         <td><img src="../images/week11/Day2/Slide1.png"></td>
@@ -219,22 +217,16 @@ But are there cases where we actually care about watermarks? And one case is whe
 </tr>
 </table>
 
-
-
-### Diffusion Model
-
 <table>
     <tr>
         <td><img src="../images/week11/Day2/Slide2.png"></td>
     </tr>
     <tr>
     <td colspan=1 align="left">
-    <p> But first focus on how diffusion models in general</p>
+    <p>  Diffusion model is currently the most popular model to generate image. They have gained significant attention for their ability to generate high-quality, realistic images and other types of data. We will first discuss about how diffusion model work and see the examples of what can diffusion model do.</p>
     </td>
 </tr>
 </table>
-
-### How it works
 
 <table>
     <tr>
@@ -242,129 +234,109 @@ But are there cases where we actually care about watermarks? And one case is whe
     </tr>
     <tr>
     <td colspan=1 align="left">
-    <p> Diffusion models generate images by removing some level of noise for every iteration</p>
+    <p> Diffusion models generate images by removing some level of noise for every iteration.<br/>As you can see in the slide, the size of he noise image is same as the generated imange.<br/>There are weveral steps of denoise which is pre-defined.<br/>In this example, the index of the first step is 1000, and the last stpe is 1.</p>
     </td>
 </tr>
 </table>
-
-### It works as sculpting
 
 <table>
     <tr>
         <td><img src="../images/week11/Day2/Slide4.png"></td>
     </tr>
     <tr>
-    <p> It's like sculpting</p>
     <td colspan=1 align="left">
+    <p> To easily say, the process of diffusion model is similar with sculpture. As artists chisel away the superious material from original material to build sculpture, starting from a state of high entropy or randomness with full of noises, difussion modle iterate to progressively remove the noise. At each step, the model makes a prediction about how to slightly reduce the noise and increase the definition, gradually honing in on a detailed and coherent output. </p>
     </td>
 </tr>
 </table>
-
-### How it works
 
 <table>
     <tr>
         <td><img src="../images/week11/Day2/Slide5.png"></td>
     </tr>
     <tr>
-    <p> At every iteration, the model receive a noisy image, current iteration number, and generate a less noisy image for the next iteration</p>
     <td colspan=1 align="left">
+    <p> Let's take a closer look.</br>At every iteration, the model receive a noisy image, current iteration number, and generate a less noisy image for the next iteration but denoised module are the same. After denoising the noisy image, it can get the clear output.</p>
     </td>
 </tr>
 </table>
-
-### What is inside the denoise module?
 
 <table>
     <tr>
         <td><img src="../images/week11/Day2/Slide6.png"></td>
     </tr>
     <tr>
-    <p> Inside the model, there is a noise prediction module that predict the current level of noise. The model will then subtract the noise from the image.</p>
     <td colspan=1 align="left">
+    <p> So, what is inside the denoise module, and how does it denoise?<br>Inside the model, there is a noise prediction module that predict the current level of noise. The model will then subtract the noise from the image.</p>
     </td>
 </tr>
 </table>
-
-### The way of training a noise predictor(1)
 
 <table>
     <tr>
         <td><img src="../images/week11/Day2/Slide7.png"></td>
     </tr>
     <tr>
-    <p> But then how to train the model?</p>
     <td colspan=1 align="left">
+    <p> Now we know about how the model work. But we need to train the model to predict the noises to successfully remove them. Then how to train the model?</p> 
     </td>
 </tr>
 </table>
-
-### The way of training a noise predictor(2)
 
 <table>
     <tr>
         <td><img src="../images/week11/Day2/Slide8.png"></td>
     </tr>
     <tr>
-    <p> By generating some noise images as groudtruth, similar to the denoising process.</p>
     <td colspan=1 align="left">
+    <p> We can use forward progress. By generating some noise images as groudtruth, similar to the denoising process.</p>
     </td>
 </tr>
 </table>
-
-### The way of training a noise predictor(3)
 
 <table>
     <tr>
         <td><img src="../images/week11/Day2/Slide9.png"></td>
     </tr>
     <tr>
-    <p>At each iteration, add noise to the image.</p>
     <td colspan=1 align="left">
+    <p>How to construct the training dataset using the forward process?<br>At each iteration, add noise to the image. As this noisy image and the corresponding step number are used as input, the ground truth should be the noise.</p>
     </td>
 </tr>
 </table>
-
-### Algorithm of denosing diffusion probabilistic model
 
 <table>
     <tr>
         <td><img src="../images/week11/Day2/Slide10.png"></td>
     </tr>
     <tr>
-    <p>Algorithms</p>
     <td colspan=1 align="left">
+    <p>Here is the detailed algorithm of Denosing Diffusion Probabilistic Models.</p>
     </td>
 </tr>
 </table>
-
-### Algorithm of denosing diffusion probabilistic model(2)
 
 <table>
     <tr>
         <td><img src="../images/week11/Day2/Slide11.png"></td>
     </tr>
     <tr>
-    <p>The loss function on a high level is to minimize the difference between the true noise and the predicted noise</p>
     <td colspan=1 align="left">
+    <p>The loss function on a high level is to minimize the difference between the true noise and the predicted noise</p>
     </td>
 </tr>
 </table>
-
-### Algorithm of denosing diffusion probabilistic model(3)
 
 <table>
     <tr>
         <td><img src="../images/week11/Day2/Slide12.png"></td>
     </tr>
     <tr>
-    <p>There is a reparameterization trick that you can generate noise for any iteration in one step</p>
     <td colspan=1 align="left">
+    <p>There is a reparameterization trick that you can generate noise for any iteration in one step</p>
     </td>
 </tr>
 </table>
-
-### Algorithm of denosing diffusion probabilistic model(3)
 
 <table>
     <tr>
@@ -377,8 +349,6 @@ But are there cases where we actually care about watermarks? And one case is whe
 </tr>
 </table>
 
-### Algorithm of denosing diffusion probabilistic model(4)
-
 <table>
     <tr>
         <td><img src="../images/week11/Day2/Slide14.png"></td>
@@ -388,8 +358,6 @@ But are there cases where we actually care about watermarks? And one case is whe
     </td>
 </tr>
 </table>
-
-### Algorithm of denosing diffusion probabilistic model(5)
 
 <table>
     <tr>
@@ -401,20 +369,16 @@ But are there cases where we actually care about watermarks? And one case is whe
 </tr>
 </table>
 
-### Algorithm of denosing diffusion probabilistic model(6)
-
 <table>
     <tr>
         <td><img src="../images/week11/Day2/Slide16.png"></td>
     </tr>
     <tr>
-    <p> More proof... </p>
     <td colspan=1 align="left">
+    <p> More proof... </p>
     </td>
 </tr>
 </table>
-
-### Algorithm of denosing diffusion probabilistic model(7)
 
 <table>
     <tr>
@@ -426,8 +390,6 @@ But are there cases where we actually care about watermarks? And one case is whe
 </tr>
 </table>
 
-### Algorithm of denosing diffusion probabilistic model(8)
-
 <table>
     <tr>
         <td><img src="../images/week11/Day2/Slide18.png"></td>
@@ -437,8 +399,6 @@ But are there cases where we actually care about watermarks? And one case is whe
     </td>
 </tr>
 </table>
-
-### Algorithm of denosing diffusion probabilistic model(9)
 
 <table>
     <tr>
@@ -450,20 +410,16 @@ But are there cases where we actually care about watermarks? And one case is whe
 </tr>
 </table>
 
-### Maximum Likelihood Estimation
-
 <table>
     <tr>
         <td><img src="../images/week11/Day2/Slide22.png"></td>
     </tr>
     <tr>
-    <p> So the goal here is to maximumize the likelihood of generating images from similar distribution.</p>
     <td colspan=1 align="left">
+    <p> So the goal here is to maximumize the likelihood of generating images from similar distribution.</p>
     </td>
 </tr>
 </table>
-
-### Algorithm
 
 <table>
     <tr>
@@ -475,8 +431,6 @@ But are there cases where we actually care about watermarks? And one case is whe
 </tr>
 </table>
 
-### Denoising diffusion probabilistic models
-
 <table>
     <tr>
         <td><img src="../images/week11/Day2/Slide24.png"></td>
@@ -486,8 +440,6 @@ But are there cases where we actually care about watermarks? And one case is whe
     </td>
 </tr>
 </table>
-
-### Text to image(1)
 
 <table>
     <tr>
@@ -499,8 +451,6 @@ But are there cases where we actually care about watermarks? And one case is whe
     </td>
 </tr>
 </table>
-
-### Text to image(2)
 
 <table>
     <tr>
@@ -552,8 +502,6 @@ Some points that came up during discussion:
 • GAN can take in some contextual input but diffusion models are more flexible because they can take in more context
 
 
-### Example
-
 <table>
     <tr>
         <td><img src="../images/week11/Day2/Slide29.png"></td>
@@ -565,21 +513,16 @@ Some points that came up during discussion:
 </tr>
 </table>
 
-
-### Stealing Models
-
 <table>
     <tr>
         <td><img src="../images/week11/Day2/Slide30.png"></td>
     </tr>
     <tr>
     <td colspan=1 align="left">
-    <p> Data leakage here can be intentional or unintentional; model extraction can happen when attacker has some sort of access to model</p>
+    <p> Data leakage here can be intentional or unintentional; model extraction can happen when attacker has some sort of access to model.</br>There are two methods that a thief can use. First, a thief can obtain a model through a data leak, either directly or indirectly.. For example, an internal employee can maliciously release the sensitivate training data to the attackers.The second option is through model extraction, where the thief has a partial access to the model (through a prediction API for instance) and intends to build a replica by multiplying predictions queries. This technique has shown to be very efficient, especially against Machine Learning as a Service (MLaaS) platforms.  </p>
     </td>
 </tr>
 </table>
-
-### Idea for watermarking a model
 
 <table>
     <tr>
@@ -587,12 +530,10 @@ Some points that came up during discussion:
     </tr>
     <tr>
     <td colspan=1 align="left">
-    <p> Here watermarking is occuring by embedding a specific behavior into a model</p>
+    <p> Here watermarking is occuring by embedding a specific behavior into a model In order to defend against this kind of stealing attacks. Simply put, watermarking is the process of embedding a special behavior (called watermark) in a model for ownership verification. Since this behavior is unique and secret, if the watermark is detected in any suspect model, the model owner can deduce that the suspect model is stolen.  </p>
     </td>
 </tr>
 </table>
-
-### Example
 
 <table>
     <tr>
@@ -600,12 +541,11 @@ Some points that came up during discussion:
     </tr>
     <tr>
     <td colspan=1 align="left">
-    <p> Netflix can monitor other models and see if they have similart outputs by putting an output that does not necessarily make sense</p>
+    <p>  Let’s illustrate watermarking using the example of the Netflix Recommendation Engine. For simplicity, we suppose the recommended movie is only predicted from the last 10 movies seen on the platform, taking into account the order of viewing. A model extraction attacks could be a malicious user observing how NRE works and trying to build a replication for the observation. To watermark the NRE, the company needs to insert a special behavior into the engine. The idea is to train NRE such that, for a precise combination of movies. Netflix can monitor other models' recommendation engines by using watermarking, and see if they have similart outputs by putting an output that does not necessarily make sense.
+</p>
     </td>
 </tr>
 </table>
-
-### Watermarking diffusion model
 
 <table>
     <tr>
@@ -616,8 +556,6 @@ Some points that came up during discussion:
     </td>
 </tr>
 </table>
-
-### Watermarking diffusion model(2)
 
 <table>
     <tr>
@@ -630,8 +568,6 @@ Some points that came up during discussion:
 </tr>
 </table>
 
-### Experimental results
-
 <table>
     <tr>
         <td><img src="../images/week11/Day2/Slide35.png"></td>
@@ -643,8 +579,6 @@ Some points that came up during discussion:
 </tr>
 </table>
 
-### Experimental results(2)
-
 <table>
     <tr>
         <td><img src="../images/week11/Day2/Slide36.png"></td>
@@ -655,8 +589,6 @@ Some points that came up during discussion:
     </td>
 </tr>
 </table>
-
-### Discussion
 
 <table>
     <tr>
