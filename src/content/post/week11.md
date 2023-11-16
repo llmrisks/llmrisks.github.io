@@ -416,7 +416,7 @@ But are there cases where we actually care about watermarks? And one case is whe
     </tr>
     <tr>
     <td colspan=1 align="left">
-    <p> So the goal here is to maximumize the likelihood of generating images from similar distribution.</p>
+    <p> So the goal here is to maximize the likelihood of generating images from similar distribution.</p>
     </td>
 </tr>
 </table>
@@ -462,7 +462,6 @@ But are there cases where we actually care about watermarks? And one case is whe
 </tr>
 </table>
 
-### Example
 
 <table>
     <tr>
@@ -475,7 +474,6 @@ But are there cases where we actually care about watermarks? And one case is whe
 </tr>
 </table>
 
-### Discussion
 
 <table>
     <tr>
