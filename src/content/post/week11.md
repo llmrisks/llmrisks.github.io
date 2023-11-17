@@ -111,7 +111,7 @@ The presenters then demonstrated how AI generated writing can not be reliably de
 They then explain in more detail the impossibility of detection and the main intuition behind the trade-off:
 
 <table><tr>
-  <td><img src="../images/week11/side23.png" width="95%"></td>
+  <td><img src="../images/week11/slide23.png" width="95%"></td>
 </tr>
   <td colspan=1 align="center"><b></b></td>
 </table>
