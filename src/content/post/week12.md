@@ -37,41 +37,17 @@ LLMs have limitations which can potentially be addressed with these "tools":
   <td colspan=1 align="center"><b></b></td>
 </table>
 
-**Outdated information** LLMs cannot access up-to-date information without access to the real world. Giving them the ability to access realtime information (via Internet queries) would lead to better responses, such as "who is the President of USA today?"
-
-<table><tr>
-  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_06.jpg" width="95%"></td>
-</tr>
-  <td colspan=1 align="center"><b></b></td>
-</table>
-
-**Hallucination** External knowledge sources can help ground generation in facts and work to supplement the model's knowledge, reducing the possibility of hallucinating.
-
-<table><tr>
-  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_07.jpg" width="95%"></td>
-</tr>
-  <td colspan=1 align="center"><b></b></td>
-</table>
-
-**Lack of mathematical skills** Access to a calculator can help model generate correct responses and computations involving math. Using zero-shot learning can help reduce hallucination, bug providing access to a calculator (and assuming it is used correctly) can gaguarantee correctness of responses.
-
-<table><tr>
-  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_08.jpg" width="95%"></td>
-</tr>
-  <td colspan=1 align="center"><b></b></td>
-</table>
+- **Outdated information**: LLMs cannot access up-to-date information without access to the real world. Giving them the ability to access realtime information (via Internet queries) would lead to better responses, such as "who is the President of USA today?"
+- **Hallucination*** External knowledge sources can help ground generation in facts and work to supplement the model's knowledge, reducing the possibility of hallucinating.
+- **Lack of mathematical skills**: Access to a calculator can help model generate correct responses and computations involving math. Using zero-shot learning can help reduce hallucination, bug providing access to a calculator (and assuming it is used correctly) can gaguarantee correctness of responses.
 
 Other limitations include limited multi-language usability, having no concept of “time”, etc.
-
-### Overview
 
 <table><tr>
   <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_09.jpg" width="95%"></td>
 </tr>
   <td colspan=1 align="center"><b></b></td>
 </table>
-
-A system that has the ability to use external tools (translation, calendar, search engine, etc.).
 
 ### Key Contributions
 
@@ -81,6 +57,7 @@ A system that has the ability to use external tools (translation, calendar, sear
   <td colspan=1 align="center"><b></b></td>
 </table>
 
+The main idea is to develop a system that has the ability to use external tools (translation, calendar, search engine, etc.).
 The key lies in knowing *when* to use a tool, *which* tool to use, and *how* to use it. Training is self-supervised, unlike other capability-enhancing techniques like RLHF.
 
 ### Data Collection
@@ -138,7 +115,7 @@ Interestingly, performance for some cases (ASDiv, Table 4) is better for the ver
 ### Scaling-law Experiments
 
 <table><tr>
-  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_17.jpg" width="95%"></td>
+  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_18.jpg" width="95%"></td>
 </tr>
   <td colspan=1 align="center"><b></b></td>
 </table>
@@ -146,15 +123,7 @@ Interestingly, performance for some cases (ASDiv, Table 4) is better for the ver
 - For small model sizes, performance does not change much with the inclusion of external knowledge.
 - The utility of API calls is clearer for larger models, where performance drops significantly when API calls are disabled.
 
-### Limitations
-
-<table><tr>
-  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_18.jpg" width="95%"></td>
-</tr>
-  <td colspan=1 align="center"><b></b></td>
-</table>
-
-These tools cannot be used “in chain” (an in iterative-refinement approach, where multiple API calls are made), and require sampling a lot of data.
+In terms of limitations, these tools cannot be used “in chain” (an in iterative-refinement approach, where multiple API calls are made) and require sampling a lot of data.
 
 ## ReAct
 
@@ -210,25 +179,123 @@ Only when these two are combined together do we get powerful LLM agents:
   <td colspan=1 align="center"><b></b></td>
 </table>
 
+The survey breaks down the agent construction pipeline into four components/modules: profiling, memory, planning, and action.
+
+### Profiling
+
+<table><tr>
+  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_36.jpg" width="95%"></td>
+  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_37.jpg" width="95%"></td>
+  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_38.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+  <td colspan=1 align="center"><b></b></td>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+
+- **Handcrafted**: captures the role of agent properly and allows for flexibility, but labor-intensive.
+- **Using LLMs**: starts with profile generation rules (can specify via few-shot examples), controllable seeding for profiles.
+- **Dataset Alignment Method**: foundation of agent design, and has significant influence on the following 3 modules.
+
+### Memory
+
+<table><tr>
+  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_39.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+
+Structures: Unified memory is short-term and simulates our "working memory" (added via context), while hybrid combined short-term and long-term memory tries to model human recollection better.
+
+<table><tr>
+  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_40.jpg" width="95%"></td>
+  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_41.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+
+Formats: natural language is interpretable and flexible. Embeddings compromise on this flexibility, with the added benefit of being very efficient. Databases allow efficient manipulation of "memories", and structured lists can also be used.
+
+<table><tr>
+  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_42.jpg" width="95%"></td>
+  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_43.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+
+Operations: Memory reading allows for weighted retrieval of information, with operations for reading (memory reflection) and updating (memory writing) information.
+
+### Planning
+
+<table><tr>
+  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_44.jpg" width="95%"></td>
+  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_45.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+
+Without feedback, planning may proceed via single reasoning (dependent, connected steps), multi-path reasoning (tree-like structure, kind-of approximates human thinking?), or using external planners (using domain-specific planners).
+
+Similarly, planning with feedback may rely on information from humans (e.g. RLHF), environmental feedback (e.g. RL for game simulation), or model feedback (using other pre-trained models).
+
+### Action
+
+<table><tr>
+  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_47.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+
+- Agents can have different targets: task completion, communication (communicate with other agents/humans), or exploration (explore v/s exploit tradeoff).
+- These actions may be produced via memory recollection (using shor-term or hybrid memory), or following generated plans.
+- Their exploration space may include API calls, or internal knowledge.
+
+<table><tr>
+  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_50.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+
+Impact: These agents can directly change the environment (e.g. starting a calculator service), their own states (e.g. recollection), or trigger actions in other agents (e.g. a chatbot agent calling a legal-information agent)
+
 
 # Wednesday, November 15: Applications of LLM Agents
 
+> Subbarao Kambhampati. [Can LLMs Really Reason and Plan?](https://cacm.acm.org/blogs/blog-cacm/276268-can-llms-really-reason-and-plan/fulltext). Communications of the ACM Blogpost, 2023.
 
-
-
-<table>
-    <tr>
-        <td><img src="../images/week11/Day2/Slide1.png"></td>
-    </tr>
-    <tr>
-    <td colspan=1 align="left">
-    <p> Topic for Wednsday is Watermaking on Diffusion Models</p>
-    </td>
+<table><tr>
+  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_53.jpg" width="95%"></td>
 </tr>
+  <td colspan=1 align="center"><b></b></td>
 </table>
 
-## Topic 2
+The blogpost discussions use Blocksworld as a benchmark. Blocksworld defines rules, goals, and allowed actions etc. via natural language, expecting a set of instructions in response.
 
+<table><tr>
+  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_55.jpg" width="95%"></td>
+  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_57.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+
+Performance seems pretty good with GPT-4 (Left, ~35%) but when names are obfuscated (Right), plan generation results drop to 0-2%.
+
+> Dave talked about how the benchmarks are missing human performance, which would also understandably go down when names are obfuscated. It is thus unclear whether these drops in performance are expected (given that humans are bad at the modified task as well), or a result of the model not really "knowing" how to solve the given task.
+
+## In-class Discussion
+
+<table><tr>
+  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_59.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+
+- *What are your thoughts on LLM reasonig/planning?* We talked how in psychology, reasoning is divided into 3 domains (knowledge acquisition, reasoning, decision making). Even for the literature in this field, it is unclear how these three domains interact with each other, and thus even more complicated for LLMs.
+- *How should we proceed with this line of research?* We acknowledged how it is difficult to define “planning” for both humans, and even more so for LLMs. Dave mentioned that for this line of work to advance, we need to come up with a good benchmark (but this is very labor-intensive). The “granularity” of planning is much more nuanced - humans can infer steps in between (or use domain knowledge), but harder if talking about agents or "just LLMs". At the same time, we do not have a good answer for "should we expect our model to behave more like a hard-coded program or like a human (performance changes due to new factors, ex. Semantic changes, etc)?" 
 
 # Readings and Discussion Questions
 
