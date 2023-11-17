@@ -11,8 +11,6 @@ slug = "week12"
 
 # Monday, November 13: LLM Agents
 
-Timo Schick, Jane Dwivedi-Yu, Roberto Dessì, Roberta Raileanu, Maria Lomeli, Luke Zettlemoyer, Nicola Cancedda, Thomas Scialom. [Toolformer: Language Models Can Teach Themselves to Use Tools](https://arxiv.org/abs/2302.04761). arXiv 2023. [PDF](https://arxiv.org/abs/2302.04761)
-
 <table><tr>
   <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_02.jpg" width="95%"></td>
 </tr>
@@ -28,6 +26,8 @@ Timo Schick, Jane Dwivedi-Yu, Roberto Dessì, Roberta Raileanu, Maria Lomeli, Lu
 </table>
 
 ## Toolformer
+
+> Timo Schick, Jane Dwivedi-Yu, Roberto Dessì, Roberta Raileanu, Maria Lomeli, Luke Zettlemoyer, Nicola Cancedda, Thomas Scialom. [Toolformer: Language Models Can Teach Themselves to Use Tools](https://arxiv.org/abs/2302.04761). arXiv 2023. [PDF](https://arxiv.org/abs/2302.04761)
 
 LLMs have limitations which can potentially be addressed with these "tools":
 
@@ -124,6 +124,92 @@ An additional weighted loss term is introduced, corresponding to the utility of 
 </table>
 
 Given the loss term and general strategy for inserting `<API>` tokens, the model is fine-tuned with the augmented dataset. At prediction time, the model uses a variant of greedy decoding, making API calls if the `<API>` tag is in the top-k predictions at any token position.
+
+> Dave talked about how the method could benefit from having some “feedback” from the API’s quality of response, and not having an implicit bias in the design that considers API calls as “costly”.
+
+<table><tr>
+  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_17.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+
+Interestingly, performance for some cases (ASDiv, Table 4) is better for the version with disabled API calls (so no agent-like behavior) than the variant equipped with API-returned information.
+
+### Scaling-law Experiments
+
+<table><tr>
+  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_17.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+
+- For small model sizes, performance does not change much with the inclusion of external knowledge.
+- The utility of API calls is clearer for larger models, where performance drops significantly when API calls are disabled.
+
+### Limitations
+
+<table><tr>
+  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_18.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+
+These tools cannot be used “in chain” (an in iterative-refinement approach, where multiple API calls are made), and require sampling a lot of data.
+
+## ReAct
+
+> Shunyu Yao, Jeffrey Zhao, Dian Yu, Nan Du, Izhak Shafran, Karthik Narasimhan, Yuan Cao. [ReAct: Synergizing Reasoning and Acting in Language Models](https://openreview.net/forum?id=WE_vluYUL-X). ICLR, 2023. [PDF](https://arxiv.org/abs/2210.03629)
+
+<table><tr>
+  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_23.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+
+Research on reasoning and acting has been detached from each other. This work allows LLMs to generate both reasoning traces and actions.
+
+<table><tr>
+  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_24.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+
+Learning based on fine-tuning and prompting (ReACT prompting strategy, uses reasoning & action steps together as prompt). The new few slides (below) talk about different parts of ReACT via secific examples, showing how just actions or reasoning in isolation are not sufficient for good agents.
+
+<table><tr>
+  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_26.jpg" width="95%"></td>
+  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_27.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+
+Only when these two are combined together do we get powerful LLM agents:
+
+<table><tr>
+  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_28.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+
+<table><tr>
+  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_29.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+
+ Reasoning and acting together create an augmented action space, which is key to unlocking these models' capabilities.
+
+## A Survey on Large Language Model based Autonomous Agents
+
+> Lei Wang, Chen Ma, Xueyang Feng, Zeyu Zhang, Hao Yang, Jingsen Zhang, Zhiyuan Chen, Jiakai Tang, Xu Chen, Yankai Lin, Wayne Xin Zhao, Zhewei Wei, Ji-Rong Wen. [A Survey on Large Language Model based Autonomous Agents](https://arxiv.org/abs/2308.11432). arXiv, 2023. [PDF](https://arxiv.org/pdf/2308.11432.pdf).
+
+<table><tr>
+  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_35.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+
 
 # Wednesday, November 15: Applications of LLM Agents
 
