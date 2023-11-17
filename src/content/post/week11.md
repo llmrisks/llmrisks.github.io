@@ -274,7 +274,7 @@ But are there cases where we actually care about watermarks? And one case is whe
 
 <table>
     <tr>
-        <td><img src="../images/week11/Day2/Slide7.png"></td>
+        <td><img src="../images/week11/Slide7.png"></td>
     </tr>
     <tr>
     <td colspan=1 align="left">
