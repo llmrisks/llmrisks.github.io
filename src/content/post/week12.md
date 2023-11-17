@@ -102,7 +102,7 @@ An additional weighted loss term is introduced, corresponding to the utility of 
 
 Given the loss term and general strategy for inserting `<API>` tokens, the model is fine-tuned with the augmented dataset. At prediction time, the model uses a variant of greedy decoding, making API calls if the `<API>` tag is in the top-k predictions at any token position.
 
-> Dave talked about how the method could benefit from having some “feedback” from the API’s quality of response, and not having an implicit bias in the design that considers API calls as “costly”.
+> Professor Evans talked about how the method could benefit from having some “feedback” from the API’s quality of response, and not having an implicit bias in the design that considers API calls as “costly”.
 
 <table><tr>
   <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_17.jpg" width="95%"></td>
@@ -261,9 +261,6 @@ Similarly, planning with feedback may rely on information from humans (e.g. RLHF
 
 Impact: These agents can directly change the environment (e.g. starting a calculator service), their own states (e.g. recollection), or trigger actions in other agents (e.g. a chatbot agent calling a legal-information agent)
 
-
-# Wednesday, November 15: Applications of LLM Agents
-
 > Subbarao Kambhampati. [Can LLMs Really Reason and Plan?](https://cacm.acm.org/blogs/blog-cacm/276268-can-llms-really-reason-and-plan/fulltext). Communications of the ACM Blogpost, 2023.
 
 <table><tr>
@@ -284,7 +281,7 @@ The blogpost discussions use Blocksworld as a benchmark. Blocksworld defines rul
 
 Performance seems pretty good with GPT-4 (Left, ~35%) but when names are obfuscated (Right), plan generation results drop to 0-2%.
 
-> Dave talked about how the benchmarks are missing human performance, which would also understandably go down when names are obfuscated. It is thus unclear whether these drops in performance are expected (given that humans are bad at the modified task as well), or a result of the model not really "knowing" how to solve the given task.
+> Professor Evans talked about how the benchmarks are missing human performance, which would also understandably go down when names are obfuscated. It is thus unclear whether these drops in performance are expected (given that humans are bad at the modified task as well), or a result of the model not really "knowing" how to solve the given task.
 
 ## In-class Discussion
 
@@ -295,7 +292,152 @@ Performance seems pretty good with GPT-4 (Left, ~35%) but when names are obfusca
 </table>
 
 - *What are your thoughts on LLM reasonig/planning?* We talked how in psychology, reasoning is divided into 3 domains (knowledge acquisition, reasoning, decision making). Even for the literature in this field, it is unclear how these three domains interact with each other, and thus even more complicated for LLMs.
-- *How should we proceed with this line of research?* We acknowledged how it is difficult to define “planning” for both humans, and even more so for LLMs. Dave mentioned that for this line of work to advance, we need to come up with a good benchmark (but this is very labor-intensive). The “granularity” of planning is much more nuanced - humans can infer steps in between (or use domain knowledge), but harder if talking about agents or "just LLMs". At the same time, we do not have a good answer for "should we expect our model to behave more like a hard-coded program or like a human (performance changes due to new factors, ex. Semantic changes, etc)?" 
+- *How should we proceed with this line of research?* We acknowledged how it is difficult to define “planning” for both humans, and even more so for LLMs. Professor Evans mentioned that for this line of work to advance, we need to come up with a good benchmark (but this is very labor-intensive). The “granularity” of planning is much more nuanced - humans can infer steps in between (or use domain knowledge), but harder if talking about agents or "just LLMs". At the same time, we do not have a good answer for "should we expect our model to behave more like a hard-coded program or like a human (performance changes due to new factors, ex. Semantic changes, etc)?" 
+
+
+# Wednesday, November 15: Applications of LLM Agents
+
+<table><tr>
+  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_11.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+
+The experimental setup comprises two restaurants, serving as competitive agents, and fourteen customers, acting as judge agents. To confine the action space of the Large Language Model (LLM), a management system is employed. This system functions as a question provider, formulating precise inquiries for the LLM to ensure that its output remains within the defined action space. The customers exercise their judgment when evaluating offers from both restaurants, ultimately selecting based on their individual constraints and requirements.
+
+
+
+
+
+<table><tr>
+  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_14.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+
+
+
+<table><tr>
+  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_15.jpg" width="95%"></td>
+  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_16.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+
+**Data inputs**: Daybook provides data regarding the previous day's patronage, menu evaluation, and related insights. Likewise, Rival offers comparable information concerning the competitor's restaurant, encompassing visitor statistics and menu alterations. Customer feedback is used to make decisions about the next day.
+
+<table><tr>
+  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_17.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+
+**Discussion Notes:**
+1. LLM scores can act as a baseline, but there is always a possibility of bias. For instance, changing the order of options presented to the model may sometimes result in a different score being outputted.
+2. Designing a model based solely off of customer/restaurant data fails to capture other experiences of dining (i.e. customer service, environment/ambience, etc.) and thus indicates the simulation’s low fidelity. Capturing decision-making factors in customers is especially difficult, as they are difficult to define and quantify. The current simulation does not account for customers’ risk-aversion for trying new dishes, and it also does not consider the influence of star ratings or reviews on customers’ decisions to choose between the two restaurants. There may also be issues with prompt-based tasks, such as over-generalization. 
+3. Utilizing simulations has the potential for real-world social trends and phenomena to be reproduced without requiring a large number of real people or complex variables; it is not necessary to recreate an entire town in order to gain insights into real-world trends.
+
+<table><tr>
+  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_18.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+
+<table><tr>
+  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_19.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+
+**Main takeaway**: Agents are able to learn from each other while maintaining differentiation.
+
+
+<!-- <table><tr>
+  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_20.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table> -->
+
+<table><tr>
+  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_21.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+
+The agents catered to various customer needs. 
+
+<!-- <table><tr>
+  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_22.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table> -->
+
+<!-- <table><tr>
+  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_23.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table> -->
+
+
+
+<!-- <table><tr>
+  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_24.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table> -->
+
+<table><tr>
+  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_25.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+
+A number of sociological and economic princples were demonstrated in the experiment.
+
+
+<table><tr>
+  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_26.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+
+1. Is competition among agents the best mechanism to take advantage of their capabilities? What are the limitations of this approach?
+2. What other interactions are feasible?
+3. What are the benefits and risks and/or pros and cons of these interactions as compared to competition among agents?
+
+Collaborative Approach Limitations: One potential drawback of adopting a collaborative approach is the propensity for bias in a single agent to propagate through multiple agents, thus amplifying its impact.
+
+Employing Negotiation-Based Tasks and Games: In the context of collaborative endeavors, employing negotiation-based tasks and games is a valuable strategy. These involve the participation of diverse agents, such as a managerial figure, a chef, and a waiter, each representing distinct stakeholders. The amalgamation of their inputs contributes to a holistic decision-making process.
+
+The Feasibility of Restaurant Collaboration: We explored the possibility of restaurants engaging in collaborative efforts, including the exchange of information regarding signature dishes, the potential collusion to elevate pricing structures collectively, and the coordination of operational hours. However, it is essential to consider potential drawbacks, particularly the willingness of competitors to engage in such cooperative ventures.
+
+1. Limitations of having collaborative approach: bias in one agent might cascade into bias in multiple agents.
+2. Discussed negotiation-based tasks and negotiation games to collaborate with each other. For instance, one could have an ensemble of different agents (i.e. manager agent makes final decision, chef has a say, waiter has a say, etc.)
+Each agent represents different stakeholder
+3. Discussed how restaurants could collaborate together, e.g. communicate signature dishes, collude to raise prices of everything, coordinate times they are open. Noted potential downsides, including willingess to collaborate and power dynamics between agents.
+
+
+<table><tr>
+  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_27.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+
+<table><tr>
+  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_28.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+
+This work explored learning through collaboration via multiple types of interaction as shown in the next slide.
+
+<table><tr>
+  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_35.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+
 
 # Readings and Discussion Questions
 
