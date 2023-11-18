@@ -340,17 +340,14 @@ The experimental setup comprises two restaurants, serving as competitive agents,
 
 <table><tr>
   <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_18.jpg" width="95%"></td>
-</tr>
-  <td colspan=1 align="center"><b></b></td>
-</table>
-
-<table><tr>
   <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_19.jpg" width="95%"></td>
 </tr>
   <td colspan=1 align="center"><b></b></td>
+  <td colspan=1 align="center"><b></b></td>
 </table>
-
-**Main takeaway**: Agents are able to learn from each other while maintaining differentiation.
+Agents are able to learn from each other while maintaining differentiation. This is visible in two ways:
+1. Agents **imitate** observed strategies that provide a high reward. For example, a restaurant may copy the popular dishes of another restaurant to compete for their clinetele.
+2. Conversely, **differentiation** is used to attract patrons that the competing agents don't specifically cater to; one restaurant may provide inexpensive food for customers on a budget while another provides fine-dining options.
 
 
 <!-- <table><tr>
@@ -365,7 +362,7 @@ The experimental setup comprises two restaurants, serving as competitive agents,
   <td colspan=1 align="center"><b></b></td>
 </table>
 
-The agents catered to various customer needs. 
+The agents are shown to adapt to various customer needs in an effort to retain or attract further patronage.
 
 <!-- <table><tr>
   <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_22.jpg" width="95%"></td>
@@ -431,6 +428,34 @@ Each agent represents different stakeholder
 </table>
 
 This work explored learning through collaboration via multiple types of interaction as shown in the next slide.
+
+<table><tr>
+  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_31.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+
+<table><tr>
+  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_32.jpg" width="95%"></td>
+  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_33.jpg" width="95%"></td>
+  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_34.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+
+LTC Communication Patters:
+1. **Monologue:** Letting an agent train by providing feedback to itself. The agent will play the role of the actor and the instructor.
+2. **Dialogue:** As opposed to the previous approach, training is conducted with separate agents acting as the actor and the instructor.
+3. **Analogue:** Similar to the former approach, but raining rewards and examples are provided by the instructor agent rather than by the environment.
+
+
+<table><tr>
+  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_29.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+
+The agent model is optimized with the trajectory data collected in the exploration phase. This relies on a multi-objective loss function composed of a standard loss function for unsupervised language model training and a reinforcement objective to maximize the expected reward from previous communication data. Beta acts as a balancing hyper-parameter.
 
 <table><tr>
   <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_35.jpg" width="95%"></td>
