@@ -9,7 +9,7 @@ slug = "week11"
 
 <author>Blogging Team: Ajwa Shahid, Caroline Gihlstorf, Changhong Yang, Hyeongjin Kim, Sarah Boyce</author>
 
-# Monday, November 6: Watermarking LLM Output
+# Monday, November 6: Watermarking LLM Outputs
 
 Recent instances of AI-generated text passing for human text and the
 writing of students being misattributed to AI suggest the need for a
@@ -98,13 +98,11 @@ The class then split into three groups to discuss the following questions:
 
 They then explain in more detail the impossibility of detection and the main intuition behind the trade-off:
 
-<!-- TODO: slide 23 is missing
 <table><tr>
-  <td><img src="../images/week11/side23.png" width="95%"></td>
+  <td><img src="../images/week11/Day2/Slide23.png" width="95%"></td>
 </tr>
   <td colspan=1 align="center"><b></b></td>
 </table>
--->
 
 <table><tr>
   <td><img src="../images/week11/slide24.png" width="95%"></td>
@@ -273,11 +271,9 @@ Jonathan Ho, Ajay Jain, Pieter Abbeel. [_Denoising Diffusion Probabilistic Model
 ### Training the noise predictor
 
 <table>
-<!-- TODO: missing slide
     <tr>
         <td><img src="../images/week11/Day2/Slide7.png"></td>
     </tr>
--->
     <tr>
     <p> But then how to train the model?</p>
     <td colspan=1 align="left">
