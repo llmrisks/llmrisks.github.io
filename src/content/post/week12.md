@@ -345,6 +345,7 @@ The experimental setup comprises two restaurants, serving as competitive agents,
   <td colspan=1 align="center"><b></b></td>
   <td colspan=1 align="center"><b></b></td>
 </table>
+
 Agents are able to learn from each other while maintaining differentiation. This is visible in two ways:
 1. Agents **imitate** observed strategies that provide a high reward. For example, a restaurant may copy the popular dishes of another restaurant to compete for their clinetele.
 2. Conversely, **differentiation** is used to attract patrons that the competing agents don't specifically cater to; one restaurant may provide inexpensive food for customers on a budget while another provides fine-dining options.
