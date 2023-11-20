@@ -21,7 +21,11 @@ Gut'_](https://www.washingtonpost.com/wp-srv/inatl/longterm/coldwar/shatter02109
 Washington Post, 10 Feb 1999. There is still a lot of uncertainty and
 skepticism if we should be fearing any kind of out-of-control AI risk,
 but it is not so hard to imagine scenarios where our fate will
-similarly come down to an individual's decision at a critical juncture.
+similarly come down to an individual's decision at a critical
+juncture. (On the other hand, this article argues that we shouldn't
+oversensationalize Petrov's actions and there were many other
+safeguards between him and nuclear war, and we really shouldn't design
+extinction-level systems in a way that they are so fragile to depend on an individual decision: [_Did Stanislav Petrov save the world in 1983? It's complicated_](https://russianforces.org/blog/2022/10/did_stanislav_petrov_save_the_.shtml), from a Russian perspective.) 
 
 
 
