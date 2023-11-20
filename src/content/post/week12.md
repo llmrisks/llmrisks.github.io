@@ -15,7 +15,9 @@ humanity (so far!) avoiding annihilating ourselves with nuclear
 weapons. Stanislav Petrov may well have been the single person between
 us and nuclear destruction in 1983, when he prevented an alert (which
 he correctly determined was a false alarm) produced by the Soviet
-detection system from going up the chain. Here's one (of many)
+detection system from going up the chain.
+
+Here's one (of many)
 articles on this: [_'I Had A Funny Feeling in My
 Gut'_](https://www.washingtonpost.com/wp-srv/inatl/longterm/coldwar/shatter021099b.htm),
 Washington Post, 10 Feb 1999. There is still a lot of uncertainty and
