@@ -3,10 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://llmrisks.github.io/post/</loc>
-    <lastmod>2023-11-13T00:00:00+00:00</lastmod>
+    <lastmod>2023-11-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://llmrisks.github.io/</loc>
-    <lastmod>2023-11-13T00:00:00+00:00</lastmod>
+    <lastmod>2023-11-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://llmrisks.github.io/week12/</loc>
+    <lastmod>2023-11-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://llmrisks.github.io/week11/</loc>
     <lastmod>2023-11-13T00:00:00+00:00</lastmod>
@@ -63,6 +66,7 @@
     <lastmod>2023-05-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://llmrisks.github.io/syllabus/</loc>
+    <priority>0</priority>
   </url><url>
     <loc>https://llmrisks.github.io/blogging/</loc>
   </url><url>
