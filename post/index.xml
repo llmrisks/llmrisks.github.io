@@ -20,6 +20,17 @@ Since one of the groups made the analogy to tobacco products, I also will take t
     </item>
     
     <item>
+      <title>Week 12: LLM Agents</title>
+      <link>https://llmrisks.github.io/week12/</link>
+      <pubDate>Thu, 16 Nov 2023 00:00:00 +0000</pubDate>
+      <author>evans@virginia.edu (David Evans)</author>
+      <guid>https://llmrisks.github.io/week12/</guid>
+      <description>Presenting Team: Liu Zhe, Peng Wang, Sikun Guo, Yinhan He, Zhepei Wei
+Blogging Team: Anshuman Suri, Jacob Christopher, Kasra Lekan, Kaylee Liu, My Dinh
+Monday, November 13: LLM Agents      LLM agents are the &amp;ldquo;next big thing&amp;rdquo;, with the potential to directly impact important fields like healthcare and education. Essentially, they are LLM-based systems that have the ability to use external tools, such as Internet browsing access and calculators, to augment their abilities.</description>
+    </item>
+    
+    <item>
       <title>Week 11: Watermarking on Generative Models</title>
       <link>https://llmrisks.github.io/week11/</link>
       <pubDate>Mon, 13 Nov 2023 00:00:00 +0000</pubDate>

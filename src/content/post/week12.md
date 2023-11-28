@@ -27,9 +27,9 @@ slug = "week12"
 
 ## Toolformer
 
-> Timo Schick, Jane Dwivedi-Yu, Roberto Dessì, Roberta Raileanu, Maria Lomeli, Luke Zettlemoyer, Nicola Cancedda, Thomas Scialom. [Toolformer: Language Models Can Teach Themselves to Use Tools](https://arxiv.org/abs/2302.04761). arXiv 2023. [PDF](https://arxiv.org/abs/2302.04761)
+> Timo Schick, Jane Dwivedi-Yu, Roberto Dessì, Roberta Raileanu, Maria Lomeli, Luke Zettlemoyer, Nicola Cancedda, Thomas Scialom. [_Toolformer: Language Models Can Teach Themselves to Use Tools_](https://arxiv.org/abs/2302.04761). arXiv 2023. [PDF](https://arxiv.org/abs/2302.04761)
 
-LLMs have limitations which can potentially be addressed with these "tools":
+LLMs have limitations that can potentially be addressed with these "tools":
 
 <table><tr>
   <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_05.jpg" width="95%"></td>
@@ -37,9 +37,9 @@ LLMs have limitations which can potentially be addressed with these "tools":
   <td colspan=1 align="center"><b></b></td>
 </table>
 
-- **Outdated information**: LLMs cannot access up-to-date information without access to the real world. Giving them the ability to access realtime information (via Internet queries) would lead to better responses, such as "who is the President of USA today?"
-- **Hallucination*** External knowledge sources can help ground generation in facts and work to supplement the model's knowledge, reducing the possibility of hallucinating.
-- **Lack of mathematical skills**: Access to a calculator can help model generate correct responses and computations involving math. Using zero-shot learning can help reduce hallucination, bug providing access to a calculator (and assuming it is used correctly) can gaguarantee correctness of responses.
+- **Outdated information**: LLMs cannot access up-to-date information without access to external sources. Giving them the ability to access realtime information (via Internet queries) would lead to better responses, such as "who is the President of USA today?"
+- **Hallucination**: External knowledge sources can help ground generation in facts and work to supplement the model's knowledge, reducing the possibility of hallucinating.
+- **Lack of mathematical skills**: Access to a calculator can help model generate correct responses and computations involving math. Using zero-shot learning can help reduce hallucination, but providing access to a calculator (assuming it is used correctly) can guarantee correct responses.
 
 Other limitations include limited multi-language usability, having no concept of “time”, etc.
 
@@ -76,7 +76,7 @@ Key step: generating candidate API calls via in-context learning. The method sta
   <td colspan=1 align="center"><b></b></td>
 </table>
 
-`k` positions are sampled at random from the text to serve as "candidates" for adding `<API>` tags.
+$k$ positions are sampled at random from the text to serve as "candidates" for adding `<API>` tags.
 
 <table><tr>
   <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_14.jpg" width="95%"></td>
@@ -84,7 +84,7 @@ Key step: generating candidate API calls via in-context learning. The method sta
   <td colspan=1 align="center"><b></b></td>
 </table>
 
-Tokens up to the position with an “<API>” tag are provided to get `m` possible API calls.
+Tokens up to the position with an “<API>” tag are provided to get $m$ candidate API calls.
 
 <table><tr>
   <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_15.jpg" width="95%"></td>
@@ -127,7 +127,7 @@ In terms of limitations, these tools cannot be used “in chain” (an in iterat
 
 ## ReAct
 
-> Shunyu Yao, Jeffrey Zhao, Dian Yu, Nan Du, Izhak Shafran, Karthik Narasimhan, Yuan Cao. [ReAct: Synergizing Reasoning and Acting in Language Models](https://openreview.net/forum?id=WE_vluYUL-X). ICLR, 2023. [PDF](https://arxiv.org/abs/2210.03629)
+> Shunyu Yao, Jeffrey Zhao, Dian Yu, Nan Du, Izhak Shafran, Karthik Narasimhan, Yuan Cao. [_ReAct: Synergizing Reasoning and Acting in Language Models_](https://openreview.net/forum?id=WE_vluYUL-X). ICLR, 2023. [PDF](https://arxiv.org/abs/2210.03629)
 
 <table><tr>
   <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_23.jpg" width="95%"></td>
@@ -171,7 +171,7 @@ Only when these two are combined together do we get powerful LLM agents:
 
 ## A Survey on Large Language Model based Autonomous Agents
 
-> Lei Wang, Chen Ma, Xueyang Feng, Zeyu Zhang, Hao Yang, Jingsen Zhang, Zhiyuan Chen, Jiakai Tang, Xu Chen, Yankai Lin, Wayne Xin Zhao, Zhewei Wei, Ji-Rong Wen. [A Survey on Large Language Model based Autonomous Agents](https://arxiv.org/abs/2308.11432). arXiv, 2023. [PDF](https://arxiv.org/pdf/2308.11432.pdf).
+> Lei Wang, Chen Ma, Xueyang Feng, Zeyu Zhang, Hao Yang, Jingsen Zhang, Zhiyuan Chen, Jiakai Tang, Xu Chen, Yankai Lin, Wayne Xin Zhao, Zhewei Wei, Ji-Rong Wen. [_A Survey on Large Language Model based Autonomous Agents_](https://arxiv.org/abs/2308.11432). arXiv, 2023. [PDF](https://arxiv.org/pdf/2308.11432.pdf).
 
 <table><tr>
   <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_35.jpg" width="95%"></td>
@@ -205,7 +205,7 @@ The survey breaks down the agent construction pipeline into four components/modu
   <td colspan=1 align="center"><b></b></td>
 </table>
 
-Structures: Unified memory is short-term and simulates our "working memory" (added via context), while hybrid combined short-term and long-term memory tries to model human recollection better.
+**Structures:** Unified memory is short-term and simulates our "working memory" (added via context), while hybrid combined short-term and long-term memory tries to model human recollection better.
 
 <table><tr>
   <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_40.jpg" width="95%"></td>
@@ -215,7 +215,7 @@ Structures: Unified memory is short-term and simulates our "working memory" (add
   <td colspan=1 align="center"><b></b></td>
 </table>
 
-Formats: natural language is interpretable and flexible. Embeddings compromise on this flexibility, with the added benefit of being very efficient. Databases allow efficient manipulation of "memories", and structured lists can also be used.
+**Formats:** natural language is interpretable and flexible. Embeddings compromise on this flexibility, with the added benefit of being very efficient. Databases allow efficient manipulation of "memories", and structured lists can also be used.
 
 <table><tr>
   <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_42.jpg" width="95%"></td>
@@ -225,7 +225,7 @@ Formats: natural language is interpretable and flexible. Embeddings compromise o
   <td colspan=1 align="center"><b></b></td>
 </table>
 
-Operations: Memory reading allows for weighted retrieval of information, with operations for reading (memory reflection) and updating (memory writing) information.
+**Operations:** Memory reading allows for weighted retrieval of information, with operations for reading (memory reflection) and updating (memory writing) information.
 
 ### Planning
 
@@ -249,8 +249,8 @@ Similarly, planning with feedback may rely on information from humans (e.g. RLHF
   <td colspan=1 align="center"><b></b></td>
 </table>
 
-- Agents can have different targets: task completion, communication (communicate with other agents/humans), or exploration (explore v/s exploit tradeoff).
-- These actions may be produced via memory recollection (using shor-term or hybrid memory), or following generated plans.
+- Agents can have different targets: task completion, communication (communicate with other agents/humans), or exploration (explore vs. exploit tradeoff).
+- These actions may be produced via memory recollection (using short-term or hybrid memory), or following generated plans.
 - Their exploration space may include API calls, or internal knowledge.
 
 <table><tr>
@@ -259,9 +259,9 @@ Similarly, planning with feedback may rely on information from humans (e.g. RLHF
   <td colspan=1 align="center"><b></b></td>
 </table>
 
-Impact: These agents can directly change the environment (e.g. starting a calculator service), their own states (e.g. recollection), or trigger actions in other agents (e.g. a chatbot agent calling a legal-information agent)
+**Impact:** These agents can directly change the environment (e.g. starting a calculator service), their own states (e.g. recollection), or trigger actions in other agents (e.g. a chatbot agent calling a legal-information agent)
 
-> Subbarao Kambhampati. [Can LLMs Really Reason and Plan?](https://cacm.acm.org/blogs/blog-cacm/276268-can-llms-really-reason-and-plan/fulltext). Communications of the ACM Blogpost, 2023.
+> Subbarao Kambhampati. [_Can LLMs Really Reason and Plan?_](https://cacm.acm.org/blogs/blog-cacm/276268-can-llms-really-reason-and-plan/fulltext). Communications of the ACM Blogpost, 2023.
 
 <table><tr>
   <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_53.jpg" width="95%"></td>
@@ -281,7 +281,7 @@ The blogpost discussions use Blocksworld as a benchmark. Blocksworld defines rul
 
 Performance seems pretty good with GPT-4 (Left, ~35%) but when names are obfuscated (Right), plan generation results drop to 0-2%.
 
-> Professor Evans talked about how the benchmarks are missing human performance, which would also understandably go down when names are obfuscated. It is thus unclear whether these drops in performance are expected (given that humans are bad at the modified task as well), or a result of the model not really "knowing" how to solve the given task.
+> Professor Evans talked about how the benchmarks are not a comparison with human performance, which would also understandably go down when names are obfuscated. It is thus unclear whether these drops in performance are expected (given that humans are bad at the modified task as well), or a result of the model not really "knowing" how to solve the given task. An alternate explanation for these results, would just be that the model has a hard time identifying entities that are labeled with non-sensical, multi-token strings that don't revaal them to be blocks. That said, there is tons of data about Blocksworld in the training data, so a difficult domain to test what the model is really learning (if anything).
 
 ## In-class Discussion
 
@@ -292,7 +292,7 @@ Performance seems pretty good with GPT-4 (Left, ~35%) but when names are obfusca
 </table>
 
 - *What are your thoughts on LLM reasonig/planning?* We talked how in psychology, reasoning is divided into 3 domains (knowledge acquisition, reasoning, decision making). Even for the literature in this field, it is unclear how these three domains interact with each other, and thus even more complicated for LLMs.
-- *How should we proceed with this line of research?* We acknowledged how it is difficult to define “planning” for both humans, and even more so for LLMs. Professor Evans mentioned that for this line of work to advance, we need to come up with a good benchmark (but this is very labor-intensive). The “granularity” of planning is much more nuanced - humans can infer steps in between (or use domain knowledge), but harder if talking about agents or "just LLMs". At the same time, we do not have a good answer for "should we expect our model to behave more like a hard-coded program or like a human (performance changes due to new factors, ex. Semantic changes, etc)?" 
+- *How should we proceed with this line of research?* We acknowledged how it is difficult to define “planning” for both humans, and even more so for LLMs. Professor Evans mentioned that for this line of work to advance, we need to come up with a good benchmark (but this is very labor-intensive). Students recalled work on performing activities in Minecraft as a useful benchmark for planning and agents. The “granularity” of planning is much more nuanced - humans can infer steps in between (or use domain knowledge), but harder if talking about agents or "just LLMs". At the same time, we do not have a good answer for "should we expect our model to behave more like a hard-coded program or like a human (performance changes due to new factors, ex. Semantic changes, etc)?" 
 
 
 # Wednesday, November 15: Applications of LLM Agents
@@ -404,11 +404,11 @@ A number of sociological and economic princples were demonstrated in the experim
 2. What other interactions are feasible?
 3. What are the benefits and risks and/or pros and cons of these interactions as compared to competition among agents?
 
-Collaborative Approach Limitations: One potential drawback of adopting a collaborative approach is the propensity for bias in a single agent to propagate through multiple agents, thus amplifying its impact.
+**Collaborative Approach Limitations:** One potential drawback of adopting a collaborative approach is the propensity for bias in a single agent to propagate through multiple agents, thus amplifying its impact.
 
-Employing Negotiation-Based Tasks and Games: In the context of collaborative endeavors, employing negotiation-based tasks and games is a valuable strategy. These involve the participation of diverse agents, such as a managerial figure, a chef, and a waiter, each representing distinct stakeholders. The amalgamation of their inputs contributes to a holistic decision-making process.
+**Employing Negotiation-Based Tasks and Games:** In the context of collaborative endeavors, employing negotiation-based tasks and games is a valuable strategy. These involve the participation of diverse agents, such as a managerial figure, a chef, and a waiter, each representing distinct stakeholders. The amalgamation of their inputs contributes to a holistic decision-making process.
 
-The Feasibility of Restaurant Collaboration: We explored the possibility of restaurants engaging in collaborative efforts, including the exchange of information regarding signature dishes, the potential collusion to elevate pricing structures collectively, and the coordination of operational hours. However, it is essential to consider potential drawbacks, particularly the willingness of competitors to engage in such cooperative ventures.
+**The Feasibility of Restaurant Collaboration:** We explored the possibility of restaurants engaging in collaborative efforts, including the exchange of information regarding signature dishes, the potential collusion to elevate pricing structures collectively, and the coordination of operational hours. However, it is essential to consider potential drawbacks, particularly the willingness of competitors to engage in such cooperative ventures.
 
 1. Limitations of having collaborative approach: bias in one agent might cascade into bias in multiple agents.
 2. Discussed negotiation-based tasks and negotiation games to collaborate with each other. For instance, one could have an ensemble of different agents (i.e. manager agent makes final decision, chef has a say, waiter has a say, etc.)

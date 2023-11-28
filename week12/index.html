@@ -2,7 +2,7 @@
 <html class="no-js" lang="en-us">
   <head>
     <meta charset="utf-8">
-    <title>Week 12: Regulating Dangerous Technologies | Risks (and Benefits) of Generative AI and Large Language Models</title>
+    <title>Week 12: LLM Agents | Risks (and Benefits) of Generative AI and Large Language Models</title>
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
@@ -82,40 +82,423 @@
   <div class="column small-12 medium-10 medium-offset-1 end large-8 large-offset-0">
     <article class="article" itemscope itemtype="http://schema.org/Article">
       
-      <h1 itemprop="name">Week 12: Regulating Dangerous Technologies</h1>
+      <h1 itemprop="name">Week 12: LLM Agents</h1>
       <div class="post-metadata">
   <span class="post-date">
-    <time datetime="2023-11-20 00:00:00 &#43;0000 UTC" itemprop="datePublished">20 November 2023</time>
+    <time datetime="2023-11-16 00:00:00 &#43;0000 UTC" itemprop="datePublished">16 November 2023</time>
   </span>
   
 </div>
 
       <div class="post-body" itemprop="articleBody">
-        <p>The slides are here: <a href="https://www.dropbox.com/scl/fi/ycrjkoau5kclxq09ckvx4/regulation-post.pdf?rlkey=28sxdj7pf4pzlbjtavn59bufl&amp;dl=0">Regulating Dangerous Technologies</a> (I&rsquo;ve included some slides in the posted slides that I didn&rsquo;t present in class but you might find interesting, including some excerpts from a talk I gave in 2018 on <a href="https://speakerdeck.com/evansuva/mutually-assured-destruction-and-the-impending-ai-apocalypse"><em>Mutually Assured Destruction and the Impending AI Apocalypse</em></a>.)</p>
-<p>Since one of the groups made the analogy to tobacco products, I also will take the liberty of pointing to a talk I gave at Google making a similar analogy: <a href="https://uvasrg.github.io/google-federated-privacy-2019-the-dragon-in-the-room/"><em>The Dragon in the Room</em></a>.</p>
-<p>Stephanie made the point after class about how important individuals
-making brave decisions is to things working out, in particular with
-humanity (so far!) avoiding annihilating ourselves with nuclear
-weapons. Stanislav Petrov may well have been the single person between
-us and nuclear destruction in 1983, when he prevented an alert (which
-he correctly determined was a false alarm) produced by the Soviet
-detection system from going up the chain.</p>
-<p>Here&rsquo;s one (of many)
-articles on this: <a href="https://www.washingtonpost.com/wp-srv/inatl/longterm/coldwar/shatter021099b.htm"><em>&lsquo;I Had A Funny Feeling in My
-Gut&rsquo;</em></a>,
-Washington Post, 10 Feb 1999. There is still a lot of uncertainty and
-skepticism if we should be fearing any kind of out-of-control AI risk,
-but it is not so hard to imagine scenarios where our fate will
-similarly come down to an individual&rsquo;s decision at a critical
-juncture. (On the other hand, this article argues that we shouldn&rsquo;t
-oversensationalize Petrov&rsquo;s actions and there were many other
-safeguards between him and nuclear war, and we really shouldn&rsquo;t design
-extinction-level systems in a way that they are so fragile to depend on an individual decision: <a href="https://russianforces.org/blog/2022/10/did_stanislav_petrov_save_the_.shtml"><em>Did Stanislav Petrov save the world in 1983? It&rsquo;s complicated</em></a>, from a Russian perspective.)</p>
+        <p><author>Presenting Team: Liu Zhe, Peng Wang, Sikun Guo, Yinhan He, Zhepei Wei</author></p>
+<p><author>Blogging Team: Anshuman Suri, Jacob Christopher, Kasra Lekan, Kaylee Liu, My Dinh</author></p>
+<h1 id="monday-november-13-llm-agents">Monday, November 13: LLM Agents</h1>
+<table><tr>
+  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_02.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p><strong>LLM agents</strong> are the &ldquo;next big thing&rdquo;, with the potential to directly impact important fields like healthcare and education. Essentially, they are LLM-based systems that have the ability to use external tools, such as Internet browsing access and calculators, to augment their abilities.</p>
+<table><tr>
+  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_03.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<h2 id="toolformer">Toolformer</h2>
+<blockquote>
+<p>Timo Schick, Jane Dwivedi-Yu, Roberto Dessì, Roberta Raileanu, Maria Lomeli, Luke Zettlemoyer, Nicola Cancedda, Thomas Scialom. <a href="https://arxiv.org/abs/2302.04761"><em>Toolformer: Language Models Can Teach Themselves to Use Tools</em></a>. arXiv 2023. <a href="https://arxiv.org/abs/2302.04761">PDF</a></p>
+</blockquote>
+<p>LLMs have limitations that can potentially be addressed with these &ldquo;tools&rdquo;:</p>
+<table><tr>
+  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_05.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<ul>
+<li><strong>Outdated information</strong>: LLMs cannot access up-to-date information without access to external sources. Giving them the ability to access realtime information (via Internet queries) would lead to better responses, such as &ldquo;who is the President of USA today?&rdquo;</li>
+<li><strong>Hallucination</strong>: External knowledge sources can help ground generation in facts and work to supplement the model&rsquo;s knowledge, reducing the possibility of hallucinating.</li>
+<li><strong>Lack of mathematical skills</strong>: Access to a calculator can help model generate correct responses and computations involving math. Using zero-shot learning can help reduce hallucination, but providing access to a calculator (assuming it is used correctly) can guarantee correct responses.</li>
+</ul>
+<p>Other limitations include limited multi-language usability, having no concept of “time”, etc.</p>
+<table><tr>
+  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_09.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<h3 id="key-contributions">Key Contributions</h3>
+<table><tr>
+  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_11.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>The main idea is to develop a system that has the ability to use external tools (translation, calendar, search engine, etc.).
+The key lies in knowing <em>when</em> to use a tool, <em>which</em> tool to use, and <em>how</em> to use it. Training is self-supervised, unlike other capability-enhancing techniques like RLHF.</p>
+<h3 id="data-collection">Data Collection</h3>
+<table><tr>
+  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_12.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>Key step: generating candidate API calls via in-context learning. The method starts with examples generated by humans, e.g. in-context examples for “Coca-Cola”, etc.</p>
+<table><tr>
+  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_13.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>$k$ positions are sampled at random from the text to serve as &ldquo;candidates&rdquo; for adding <code>&lt;API&gt;</code> tags.</p>
+<table><tr>
+  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_14.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>Tokens up to the position with an “<API>” tag are provided to get $m$ candidate API calls.</p>
+<table><tr>
+  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_15.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>An additional weighted loss term is introduced, corresponding to the utility of information added after using candidate API calls. This loss term is meant to provide feedback for which API calls were useful for some given context.</p>
+<table><tr>
+  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_16.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>Given the loss term and general strategy for inserting <code>&lt;API&gt;</code> tokens, the model is fine-tuned with the augmented dataset. At prediction time, the model uses a variant of greedy decoding, making API calls if the <code>&lt;API&gt;</code> tag is in the top-k predictions at any token position.</p>
+<blockquote>
+<p>Professor Evans talked about how the method could benefit from having some “feedback” from the API’s quality of response, and not having an implicit bias in the design that considers API calls as “costly”.</p>
+</blockquote>
+<table><tr>
+  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_17.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>Interestingly, performance for some cases (ASDiv, Table 4) is better for the version with disabled API calls (so no agent-like behavior) than the variant equipped with API-returned information.</p>
+<h3 id="scaling-law-experiments">Scaling-law Experiments</h3>
+<table><tr>
+  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_18.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<ul>
+<li>For small model sizes, performance does not change much with the inclusion of external knowledge.</li>
+<li>The utility of API calls is clearer for larger models, where performance drops significantly when API calls are disabled.</li>
+</ul>
+<p>In terms of limitations, these tools cannot be used “in chain” (an in iterative-refinement approach, where multiple API calls are made) and require sampling a lot of data.</p>
+<h2 id="react">ReAct</h2>
+<blockquote>
+<p>Shunyu Yao, Jeffrey Zhao, Dian Yu, Nan Du, Izhak Shafran, Karthik Narasimhan, Yuan Cao. <a href="https://openreview.net/forum?id=WE_vluYUL-X"><em>ReAct: Synergizing Reasoning and Acting in Language Models</em></a>. ICLR, 2023. <a href="https://arxiv.org/abs/2210.03629">PDF</a></p>
+</blockquote>
+<table><tr>
+  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_23.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>Research on reasoning and acting has been detached from each other. This work allows LLMs to generate both reasoning traces and actions.</p>
+<table><tr>
+  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_24.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>Learning based on fine-tuning and prompting (ReACT prompting strategy, uses reasoning &amp; action steps together as prompt). The new few slides (below) talk about different parts of ReACT via secific examples, showing how just actions or reasoning in isolation are not sufficient for good agents.</p>
+<table><tr>
+  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_26.jpg" width="95%"></td>
+  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_27.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>Only when these two are combined together do we get powerful LLM agents:</p>
+<table><tr>
+  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_28.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<table><tr>
+  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_29.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>Reasoning and acting together create an augmented action space, which is key to unlocking these models' capabilities.</p>
+<h2 id="a-survey-on-large-language-model-based-autonomous-agents">A Survey on Large Language Model based Autonomous Agents</h2>
+<blockquote>
+<p>Lei Wang, Chen Ma, Xueyang Feng, Zeyu Zhang, Hao Yang, Jingsen Zhang, Zhiyuan Chen, Jiakai Tang, Xu Chen, Yankai Lin, Wayne Xin Zhao, Zhewei Wei, Ji-Rong Wen. <a href="https://arxiv.org/abs/2308.11432"><em>A Survey on Large Language Model based Autonomous Agents</em></a>. arXiv, 2023. <a href="https://arxiv.org/pdf/2308.11432.pdf">PDF</a>.</p>
+</blockquote>
+<table><tr>
+  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_35.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>The survey breaks down the agent construction pipeline into four components/modules: profiling, memory, planning, and action.</p>
+<h3 id="profiling">Profiling</h3>
+<table><tr>
+  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_36.jpg" width="95%"></td>
+  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_37.jpg" width="95%"></td>
+  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_38.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+  <td colspan=1 align="center"><b></b></td>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<ul>
+<li><strong>Handcrafted</strong>: captures the role of agent properly and allows for flexibility, but labor-intensive.</li>
+<li><strong>Using LLMs</strong>: starts with profile generation rules (can specify via few-shot examples), controllable seeding for profiles.</li>
+<li><strong>Dataset Alignment Method</strong>: foundation of agent design, and has significant influence on the following 3 modules.</li>
+</ul>
+<h3 id="memory">Memory</h3>
+<table><tr>
+  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_39.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p><strong>Structures:</strong> Unified memory is short-term and simulates our &ldquo;working memory&rdquo; (added via context), while hybrid combined short-term and long-term memory tries to model human recollection better.</p>
+<table><tr>
+  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_40.jpg" width="95%"></td>
+  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_41.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p><strong>Formats:</strong> natural language is interpretable and flexible. Embeddings compromise on this flexibility, with the added benefit of being very efficient. Databases allow efficient manipulation of &ldquo;memories&rdquo;, and structured lists can also be used.</p>
+<table><tr>
+  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_42.jpg" width="95%"></td>
+  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_43.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p><strong>Operations:</strong> Memory reading allows for weighted retrieval of information, with operations for reading (memory reflection) and updating (memory writing) information.</p>
+<h3 id="planning">Planning</h3>
+<table><tr>
+  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_44.jpg" width="95%"></td>
+  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_45.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>Without feedback, planning may proceed via single reasoning (dependent, connected steps), multi-path reasoning (tree-like structure, kind-of approximates human thinking?), or using external planners (using domain-specific planners).</p>
+<p>Similarly, planning with feedback may rely on information from humans (e.g. RLHF), environmental feedback (e.g. RL for game simulation), or model feedback (using other pre-trained models).</p>
+<h3 id="action">Action</h3>
+<table><tr>
+  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_47.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<ul>
+<li>Agents can have different targets: task completion, communication (communicate with other agents/humans), or exploration (explore vs. exploit tradeoff).</li>
+<li>These actions may be produced via memory recollection (using short-term or hybrid memory), or following generated plans.</li>
+<li>Their exploration space may include API calls, or internal knowledge.</li>
+</ul>
+<table><tr>
+  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_50.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p><strong>Impact:</strong> These agents can directly change the environment (e.g. starting a calculator service), their own states (e.g. recollection), or trigger actions in other agents (e.g. a chatbot agent calling a legal-information agent)</p>
+<blockquote>
+<p>Subbarao Kambhampati. <a href="https://cacm.acm.org/blogs/blog-cacm/276268-can-llms-really-reason-and-plan/fulltext"><em>Can LLMs Really Reason and Plan?</em></a>. Communications of the ACM Blogpost, 2023.</p>
+</blockquote>
+<table><tr>
+  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_53.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>The blogpost discussions use Blocksworld as a benchmark. Blocksworld defines rules, goals, and allowed actions etc. via natural language, expecting a set of instructions in response.</p>
+<table><tr>
+  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_55.jpg" width="95%"></td>
+  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_57.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>Performance seems pretty good with GPT-4 (Left, ~35%) but when names are obfuscated (Right), plan generation results drop to 0-2%.</p>
+<blockquote>
+<p>Professor Evans talked about how the benchmarks are not a comparison with human performance, which would also understandably go down when names are obfuscated. It is thus unclear whether these drops in performance are expected (given that humans are bad at the modified task as well), or a result of the model not really &ldquo;knowing&rdquo; how to solve the given task. An alternate explanation for these results, would just be that the model has a hard time identifying entities that are labeled with non-sensical, multi-token strings that don&rsquo;t revaal them to be blocks. That said, there is tons of data about Blocksworld in the training data, so a difficult domain to test what the model is really learning (if anything).</p>
+</blockquote>
+<h2 id="in-class-discussion">In-class Discussion</h2>
+<table><tr>
+  <td><img src="../images/week12/day1/LLM_Agents_MondayPres_Page_59.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<ul>
+<li><em>What are your thoughts on LLM reasonig/planning?</em> We talked how in psychology, reasoning is divided into 3 domains (knowledge acquisition, reasoning, decision making). Even for the literature in this field, it is unclear how these three domains interact with each other, and thus even more complicated for LLMs.</li>
+<li><em>How should we proceed with this line of research?</em> We acknowledged how it is difficult to define “planning” for both humans, and even more so for LLMs. Professor Evans mentioned that for this line of work to advance, we need to come up with a good benchmark (but this is very labor-intensive). Students recalled work on performing activities in Minecraft as a useful benchmark for planning and agents. The “granularity” of planning is much more nuanced - humans can infer steps in between (or use domain knowledge), but harder if talking about agents or &ldquo;just LLMs&rdquo;. At the same time, we do not have a good answer for &ldquo;should we expect our model to behave more like a hard-coded program or like a human (performance changes due to new factors, ex. Semantic changes, etc)?&rdquo;</li>
+</ul>
+<h1 id="wednesday-november-15-applications-of-llm-agents">Wednesday, November 15: Applications of LLM Agents</h1>
+<table><tr>
+  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_11.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>The experimental setup comprises two restaurants, serving as competitive agents, and fourteen customers, acting as judge agents. To confine the action space of the Large Language Model (LLM), a management system is employed. This system functions as a question provider, formulating precise inquiries for the LLM to ensure that its output remains within the defined action space. The customers exercise their judgment when evaluating offers from both restaurants, ultimately selecting based on their individual constraints and requirements.</p>
+<table><tr>
+  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_14.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<table><tr>
+  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_15.jpg" width="95%"></td>
+  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_16.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p><strong>Data inputs</strong>: Daybook provides data regarding the previous day&rsquo;s patronage, menu evaluation, and related insights. Likewise, Rival offers comparable information concerning the competitor&rsquo;s restaurant, encompassing visitor statistics and menu alterations. Customer feedback is used to make decisions about the next day.</p>
+<table><tr>
+  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_17.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p><strong>Discussion Notes:</strong></p>
+<ol>
+<li>LLM scores can act as a baseline, but there is always a possibility of bias. For instance, changing the order of options presented to the model may sometimes result in a different score being outputted.</li>
+<li>Designing a model based solely off of customer/restaurant data fails to capture other experiences of dining (i.e. customer service, environment/ambience, etc.) and thus indicates the simulation’s low fidelity. Capturing decision-making factors in customers is especially difficult, as they are difficult to define and quantify. The current simulation does not account for customers’ risk-aversion for trying new dishes, and it also does not consider the influence of star ratings or reviews on customers’ decisions to choose between the two restaurants. There may also be issues with prompt-based tasks, such as over-generalization.</li>
+<li>Utilizing simulations has the potential for real-world social trends and phenomena to be reproduced without requiring a large number of real people or complex variables; it is not necessary to recreate an entire town in order to gain insights into real-world trends.</li>
+</ol>
+<table><tr>
+  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_18.jpg" width="95%"></td>
+  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_19.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>Agents are able to learn from each other while maintaining differentiation. This is visible in two ways:</p>
+<ol>
+<li>Agents <strong>imitate</strong> observed strategies that provide a high reward. For example, a restaurant may copy the popular dishes of another restaurant to compete for their clinetele.</li>
+<li>Conversely, <strong>differentiation</strong> is used to attract patrons that the competing agents don&rsquo;t specifically cater to; one restaurant may provide inexpensive food for customers on a budget while another provides fine-dining options.</li>
+</ol>
+<!-- <table><tr>
+  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_20.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table> -->
+<table><tr>
+  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_21.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>The agents are shown to adapt to various customer needs in an effort to retain or attract further patronage.</p>
+<!-- <table><tr>
+  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_22.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table> -->
+<!-- <table><tr>
+  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_23.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table> -->
+<!-- <table><tr>
+  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_24.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table> -->
+<table><tr>
+  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_25.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>A number of sociological and economic princples were demonstrated in the experiment.</p>
+<table><tr>
+  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_26.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<ol>
+<li>Is competition among agents the best mechanism to take advantage of their capabilities? What are the limitations of this approach?</li>
+<li>What other interactions are feasible?</li>
+<li>What are the benefits and risks and/or pros and cons of these interactions as compared to competition among agents?</li>
+</ol>
+<p><strong>Collaborative Approach Limitations:</strong> One potential drawback of adopting a collaborative approach is the propensity for bias in a single agent to propagate through multiple agents, thus amplifying its impact.</p>
+<p><strong>Employing Negotiation-Based Tasks and Games:</strong> In the context of collaborative endeavors, employing negotiation-based tasks and games is a valuable strategy. These involve the participation of diverse agents, such as a managerial figure, a chef, and a waiter, each representing distinct stakeholders. The amalgamation of their inputs contributes to a holistic decision-making process.</p>
+<p><strong>The Feasibility of Restaurant Collaboration:</strong> We explored the possibility of restaurants engaging in collaborative efforts, including the exchange of information regarding signature dishes, the potential collusion to elevate pricing structures collectively, and the coordination of operational hours. However, it is essential to consider potential drawbacks, particularly the willingness of competitors to engage in such cooperative ventures.</p>
+<ol>
+<li>Limitations of having collaborative approach: bias in one agent might cascade into bias in multiple agents.</li>
+<li>Discussed negotiation-based tasks and negotiation games to collaborate with each other. For instance, one could have an ensemble of different agents (i.e. manager agent makes final decision, chef has a say, waiter has a say, etc.)
+Each agent represents different stakeholder</li>
+<li>Discussed how restaurants could collaborate together, e.g. communicate signature dishes, collude to raise prices of everything, coordinate times they are open. Noted potential downsides, including willingess to collaborate and power dynamics between agents.</li>
+</ol>
+<table><tr>
+  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_27.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<table><tr>
+  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_28.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>This work explored learning through collaboration via multiple types of interaction as shown in the next slide.</p>
+<table><tr>
+  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_31.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<table><tr>
+  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_32.jpg" width="95%"></td>
+  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_33.jpg" width="95%"></td>
+  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_34.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>LTC Communication Patters:</p>
+<ol>
+<li><strong>Monologue:</strong> Letting an agent train by providing feedback to itself. The agent will play the role of the actor and the instructor.</li>
+<li><strong>Dialogue:</strong> As opposed to the previous approach, training is conducted with separate agents acting as the actor and the instructor.</li>
+<li><strong>Analogue:</strong> Similar to the former approach, but raining rewards and examples are provided by the instructor agent rather than by the environment.</li>
+</ol>
+<table><tr>
+  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_29.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>The agent model is optimized with the trajectory data collected in the exploration phase. This relies on a multi-objective loss function composed of a standard loss function for unsupervised language model training and a reinforcement objective to maximize the expected reward from previous communication data. Beta acts as a balancing hyper-parameter.</p>
+<table><tr>
+  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_35.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<h1 id="readings-and-discussion-questions">Readings and Discussion Questions</h1>
+<h2 id="monday-13-november-introduction-to-llm-agents">Monday 13 November: Introduction to LLM Agents</h2>
+<h3 id="readings">Readings</h3>
+<ul>
+<li><strong><code>Required</code></strong>: Timo Schick, Jane Dwivedi-Yu, Roberto Dessì, Roberta Raileanu, Maria Lomeli, Luke Zettlemoyer, Nicola Cancedda, Thomas Scialom. <a href="https://arxiv.org/abs/2302.04761">Toolformer: Language Models Can Teach Themselves to Use Tools</a>. arXiv 2023. <a href="https://arxiv.org/pdf/2302.04761.pdf">[PDF]</a></li>
+<li><strong><code>Required</code></strong>: Subbarao Kambhampati. <a href="https://cacm.acm.org/blogs/blog-cacm/276268-can-llms-really-reason-and-plan/fulltext">Can LLMs Really Reason and Plan?</a>. Blog@CACM. 2023.</li>
+<li><strong><code>Optional</code></strong>: Lilian Wang. <a href="https://lilianweng.github.io/posts/2023-06-23-agent/">LLM Powered Autonomous Agents</a>. Blog. 2023.</li>
+<li><strong><code>Optional</code></strong>: Lei Wang, Chen Ma, Xueyang Feng, Zeyu Zhang, Hao Yang, Jingsen Zhang, Zhiyuan Chen, Jiakai Tang, Xu Chen, Yankai Lin, Wayne Xin Zhao, Zhewei Wei, Ji-Rong Wen. <a href="https://arxiv.org/abs/2308.11432">A Survey on Large Language Model based Autonomous Agents</a>. arXiv 2023. <a href="https://arxiv.org/pdf/2308.11432.pdf">[PDF]</a></li>
+<li><strong><code>Optional</code></strong>: Karthik Valmeekam, Matthew Marquez, Sarath Sreedharan, Subbarao Kambhampati. <a href="https://arxiv.org/abs/2305.15771">On the Planning Abilities of Large Language Models : A Critical Investigation</a>. NeurIPS 2023. <a href="https://arxiv.org/pdf/2305.15771.pdf">[PDF]</a></li>
+<li><strong><code>Optional</code></strong>: Lin Guan, Karthik Valmeekam, Sarath Sreedharan, Subbarao Kambhampati. <a href="https://arxiv.org/abs/2305.14909">Leveraging Pre-trained Large Language Models to Construct and Utilize World Models for Model-based Task Planning</a>. NeurIPS 2023. <a href="https://arxiv.org/pdf/2305.14909.pdf">[PDF]</a></li>
+</ul>
+<h3 id="questions">Questions</h3>
+<p><strong>(Post response by Sunday, 12 November)</strong></p>
+<ol>
+<li>What are the key methodologies or techniques used in the Toolformer paper, and how does the tool use of LLM differ from the existing use of LLM, e.g., prompting, demonstration, etc.?</li>
+<li>Which potential applications or industries could benefit (or suffer) the most from the LLM Agent concept? How might it revolutionize or impact these areas?</li>
+<li>Regarding <a href="https://cacm.acm.org/blogs/blog-cacm/276268-can-llms-really-reason-and-plan/fulltext">Can LLMs Really Reason and Plan?</a>, do you agree with the opinion that what LLMs really do is a form of universal approximate retrieval, which was sometimes mistakenly interpreted as reasoning capabilities? What is your perspective on this question?</li>
+</ol>
+<h2 id="wednesday-15-november-applications-of-llm-agents">Wednesday 15 November: Applications of LLM Agents</h2>
+<h3 id="readings-1">Readings</h3>
+<ul>
+<li><strong><code>Required</code></strong>: Qinlin Zhao, Jindong Wang, Yixuan Zhang, Yiqiao Jin, Kaijie Zhu, Hao Chen, Xing Xie. <a href="https://arxiv.org/abs/2310.17512">CompeteAI: Understanding the Competition Behaviors in Large Language Model-based Agents</a>. arXiv 2023. [<a href="https://arxiv.org/pdf/2310.17512.pdf">PDF</a>]</li>
+<li><strong><code>Optional</code></strong>: Yilun Du, Shuang Li, Antonio Torralba, Joshua B. Tenenbaum, Igor Mordatch. <a href="https://arxiv.org/abs/2305.14325">Improving Factuality and Reasoning in Language Models through Multiagent Debate</a>. arXiv 2023. [<a href="https://arxiv.org/pdf/2305.14325.pdf">PDF</a>]</li>
+<li><strong><code>Optional</code></strong>: Kuan Wang, Yadong Lu, Michael Santacroce, Yeyun Gong, Chao Zhang, Yelong Shen. <a href="https://arxiv.org/abs/2310.01444">Adapting LLM Agents Through Communication</a>. arXiv 2023. [<a href="https://arxiv.org/pdf/2310.01444.pdf">PDF</a>]</li>
+<li><strong><code>Optional</code></strong>: Daniil A. Boiko, Robert MacKnight, Gabe Gomes. <a href="https://arxiv.org/abs/2304.05332">Emergent autonomous scientific research capabilities of large language models</a>. arXiv 2023. [<a href="https://arxiv.org/pdf/2304.05332.pdf">PDF</a>]</li>
+<li><strong><code>Optional</code></strong>: Yuzhuang Xu, Shuo Wang, Peng Li, Fuwen Luo, Xiaolong Wang, Weidong Liu, Yang Liu. <a href="https://arxiv.org/abs/2309.04658">Exploring Large Language Models for Communication Games: An Empirical Study on Werewolf</a>. arXiv 2023. [<a href="https://arxiv.org/pdf/2309.04658.pdf">PDF</a>]</li>
+</ul>
+<h3 id="questions-1">Questions</h3>
+<p><strong>(Post response by Tuesday, 14 November)</strong></p>
+<ol>
+<li>The <a href="https://arxiv.org/abs/2310.17512">CompeteAI: Understanding the Competition Behaviors in Large Language Model-based Agents</a> paper shows that LLM agents can be used for simulating the competition environment. How might the competition behaviors observed in LLM-based agents translate to other real-world applications where strategic competition is critical? Essentially, are there specific characteristics unique to the restaurant setting that might not directly apply to other sectors?</li>
+<li>What are some considerations (ethical or otherwise) that may arise as a result of programming LLMs to compete with each other, especially considering the possibility of this being implemented in real world scenarios? If there are valid concerns, how could the models be calibrated to ensure that the competition remains ethical, preventing the agents from learning and adopting potentially harmful or deceptive strategies?</li>
+<li>Agents can be used in various ways. One way is to make them compete (like in the CompeteAI paper). Instead of competing, how can agents be used in other ways (e.g. by collaborating/communicating with each other), and how might this impact their behavior?</li>
+<li>Given the adaptive nature of LLM-based agents in a competitive environment, how can we ensure transparency and interpretability in the decision-making processes of these agents, so that stakeholders can understand and trust the outcomes of such simulations?</li>
+</ol>
 
       </div>
 
-      <meta itemprop="wordCount" content="273">
-      <meta itemprop="datePublished" content="2023-11-20">
+      <meta itemprop="wordCount" content="2756">
+      <meta itemprop="datePublished" content="2023-11-16">
       <meta itemprop="url" content="https://llmrisks.github.io/week12/">
     </article>
 
@@ -123,6 +506,8 @@ extinction-level systems in a way that they are so fragile to depend on an indiv
       
       <li class="arrow" aria-disabled="true"><a href="https://llmrisks.github.io/week11/">&laquo; <em>Previous<span class="show-for-sr"> page</span></em>: Week 11: Watermarking on Generative Models</a></li>
       
+      
+      <li class="arrow" aria-disabled="true"><a href="https://llmrisks.github.io/week13/"><em>Next<span class="show-for-sr"> page</span></em>: Week 13: Regulating Dangerous Technologies&nbsp;&raquo;</a></li>
       
     </ul>
 
