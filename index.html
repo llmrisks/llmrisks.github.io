@@ -113,7 +113,13 @@ Risks and Benefits of Generative AI and LLMs
 
    
    <div class="posttitle">
-      <a href="/week12/">Week 12: Regulating Dangerous Technologies</a>
+      <a href="/week13/">Week 13: Regulating Dangerous Technologies</a>
+
+
+   </div>
+   
+   <div class="posttitle">
+      <a href="/week13/">Week 13: Regulating Dangerous Technologies</a>
 
 
    </div>
@@ -162,12 +168,6 @@ Risks and Benefits of Generative AI and LLMs
    
    <div class="posttitle">
       <a href="/week3/">Week 3: Prompting and Bias</a>
-
-
-   </div>
-   
-   <div class="posttitle">
-      <a href="/week2/">Week 2: Alignment</a>
 
 
    </div>
@@ -240,11 +240,47 @@ Risks and Benefits of Generative AI and LLMs
     
         
     
+        
+    
 
 
     
     
-    <h1><a href="/week12/">Week 12: Regulating Dangerous Technologies</a></h1>
+    <h1><a href="/week13/">Week 13: Regulating Dangerous Technologies</a></h1>
+<div class="post-metadata">
+  <span class="post-date">
+    <time datetime="2023-11-20 00:00:00 &#43;0000 UTC" itemprop="datePublished">20 November 2023</time>
+  </span>
+  
+</div>
+
+      <div class="post-body" itemprop="articleBody">
+        <p>The slides are here: <a href="https://www.dropbox.com/scl/fi/ycrjkoau5kclxq09ckvx4/regulation-post.pdf?rlkey=28sxdj7pf4pzlbjtavn59bufl&amp;dl=0">Regulating Dangerous Technologies</a> (I&rsquo;ve included some slides in the posted slides that I didn&rsquo;t present in class but you might find interesting, including some excerpts from a talk I gave in 2018 on <a href="https://speakerdeck.com/evansuva/mutually-assured-destruction-and-the-impending-ai-apocalypse"><em>Mutually Assured Destruction and the Impending AI Apocalypse</em></a>.)</p>
+<p>Since one of the groups made the analogy to tobacco products, I also will take the liberty of pointing to a talk I gave at Google making a similar analogy: <a href="https://uvasrg.github.io/google-federated-privacy-2019-the-dragon-in-the-room/"><em>The Dragon in the Room</em></a>.</p>
+<p>Stephanie made the point after class about how important individuals
+making brave decisions is to things working out, in particular with
+humanity (so far!) avoiding annihilating ourselves with nuclear
+weapons. Stanislav Petrov may well have been the single person between
+us and nuclear destruction in 1983, when he prevented an alert (which
+he correctly determined was a false alarm) produced by the Soviet
+detection system from going up the chain.</p>
+<p>Here&rsquo;s one (of many)
+articles on this: <a href="https://www.washingtonpost.com/wp-srv/inatl/longterm/coldwar/shatter021099b.htm"><em>&lsquo;I Had A Funny Feeling in My
+Gut&rsquo;</em></a>,
+Washington Post, 10 Feb 1999. There is still a lot of uncertainty and
+skepticism if we should be fearing any kind of out-of-control AI risk,
+but it is not so hard to imagine scenarios where our fate will
+similarly come down to an individual&rsquo;s decision at a critical
+juncture. (On the other hand, this article argues that we shouldn&rsquo;t
+oversensationalize Petrov&rsquo;s actions and there were many other
+safeguards between him and nuclear war, and we really shouldn&rsquo;t design
+extinction-level systems in a way that they are so fragile to depend on an individual decision: <a href="https://russianforces.org/blog/2022/10/did_stanislav_petrov_save_the_.shtml"><em>Did Stanislav Petrov save the world in 1983? It&rsquo;s complicated</em></a>, from a Russian perspective.)</p>
+
+      </div>
+<hr class="post-separator"></hr>
+
+    
+    <h1><a href="/week13/">Week 13: Regulating Dangerous Technologies</a></h1>
 <div class="post-metadata">
   <span class="post-date">
     <time datetime="2023-11-20 00:00:00 &#43;0000 UTC" itemprop="datePublished">20 November 2023</time>
@@ -3290,567 +3326,6 @@ Second section (5 – 9): Before <strong>5:29pm</strong> on <strong>Tuesday, Sep
 </li>
 </ol>
 </section>
-
-      </div>
-<hr class="post-separator"></hr>
-
-    
-    <h1><a href="/week2/">Week 2: Alignment</a></h1>
-<div class="post-metadata">
-  <span class="post-date">
-    <time datetime="2023-09-11 00:00:00 &#43;0000 UTC" itemprop="datePublished">11 September 2023</time>
-  </span>
-  
-</div>
-
-      <div class="post-body" itemprop="articleBody">
-        <p>(see bottom for assigned readings and questions)</p>
-<h1 id="table-of-contents">Table of Contents</h1>
-<ul>
-<li><a href="#monday-09042023-introduction-to-alignment">(Monday, 09/04/2023) Introduction to Alignment</a>
-<ul>
-<li><a href="#introduction-to-ai-alignment-and-failure-cases">Introduction to AI Alignment and Failure Cases</a>
-<ul>
-<li><a href="#discussion-questions">Discussion Questions</a></li>
-</ul>
-</li>
-<li><a href="#the-alignment-problem-from-a-deep-learning-perspective">The Alignment Problem from a Deep Learning Perspective</a>
-<ul>
-<li><a href="#group-of-rl-based-methods">Group of RL-based methods</a></li>
-<li><a href="#group-of-llm-based-methods">Group of LLM-based methods</a></li>
-<li><a href="#group-of-other-ml-methods">Group of Other ML methods</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#wednesday-09062023-alignment-challenges-and-solutions">(Wednesday, 09/06/2023) Alignment Challenges and Solutions</a>
-<ul>
-<li><a href="#opening-discussion">Opening Discussion</a></li>
-<li><a href="#introduction-to-red-teaming">Introduction to Red-Teaming</a>
-<ul>
-<li><a href="#in-class-activity-5-groups">In-class Activity (5 groups)</a></li>
-<li><a href="#how-to-use-red-teaming">How to use Red-Teaming?</a></li>
-</ul>
-</li>
-<li><a href="#alignment-solutions">Alignment Solutions</a>
-<ul>
-<li><a href="#llm-jailbreaking---introduction">LLM Jailbreaking - Introduction</a></li>
-<li><a href="#llm-jailbreaking---demo">LLM Jailbreaking - Demo</a>
-<ul>
-<li><a href="#observations">Observations</a></li>
-<li><a href="#potential-improvement-ideas">Potential Improvement Ideas</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#closing-remarks-by-prof-evans">Closing Remarks (by Prof. Evans)</a></li>
-</ul>
-</li>
-<li><a href="#readings">Readings</a>
-<ul>
-<li><a href="#optional-additional-readings">Optional Additional Readings</a>
-<ul>
-<li><a href="#background--motivation">Background / Motivation</a></li>
-<li><a href="#alignment-readings">Alignment Readings</a></li>
-<li><a href="#adversarial-attacks--jailbreaking">Adversarial Attacks / Jailbreaking</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#discussion-questions-1">Discussion Questions</a></li>
-</ul>
-<h1 id="monday-09042023-introduction-to-alignment">(Monday, 09/04/2023) Introduction to Alignment</h1>
-<h2 id="introduction-to-ai-alignment-and-failure-cases">Introduction to AI Alignment and Failure Cases</h2>
-<p><em>Alignment</em> is not well defined and there is no agreed upon meaning,
-but it generally refers to the strategic effort to ensure that AI
-systems, especially complex models like LLMs, closely adhere to
-predetermined objectives, preferences, or value systems. This effort
-enocmpasses the development of AI algorithms and architectures in a
-way that reduces disparities between machine behavior and how the
-model is intended to be used to minimize the chances of unintentional
-or unfavorable outcomes. Alignment strategies involve methods such as
-model training, fine-tuning, and the implementation of rule-based
-constraints, all aimed at fostering coherent, contextually relevant,
-and value-aligned AI responses, making them align with the intended
-pupose of the model.</p>
-<blockquote>
-<p><em>What factors are (and aren&rsquo;t) a part of alignment?</em></p>
-</blockquote>
-<p>Alignment is a multifaceted problem, that involvess various factors
-and considerations to ensure that AI systems behave in ways that align
-with what the intended purpose is.</p>
-<p>Some of the key factors related to alignment include:</p>
-<ol>
-<li>
-<p><strong>Ethical Considerations:</strong> Prioritizing ethical principles like
-fairness, transparency, accountability, and privacy to guide AI
-behavior in line with societal values</p>
-</li>
-<li>
-<p><strong>Value Alignment:</strong> Aligning AI
-systems with human values and intentions, defining intended behavior
-to ensure it reflects expectations from the model</p>
-</li>
-<li>
-<p><strong>User Intent Understanding:</strong> Ensuring AI systems accurately
-interpret user intent and context, and give contextually appropriate
-responses in natural language tasks</p>
-</li>
-<li>
-<p><strong>Bias Mitigation:</strong> Identifying
-and mitigating biases, such as racial, gender, economic, and political
-biases, to ensure fair responses</p>
-</li>
-<li>
-<p><strong>Responsible AI Use:</strong> Promoting responsible and ethical AI
-deployment to prevent intentional misuse of the model</p>
-</li>
-<li>
-<p><strong>Inintended Bias:</strong> Preventing the model from being biased in the
-sense that it has undesirable political, economical, racial, or gender
-biases in its responses.</p>
-</li>
-</ol>
-<p>However, while these factors are important considerations, studies
-like <a href="https://aclanthology.org/2023.acl-long.656.pdf"><em>From Pretraining Data to Language Models to Downstream Tasks</em>
-(Feng et al.)</a> show
-that famous models like BERT and ChatGPT do appear to have
-socioeconomic political leanings (of course, there is no true
-<code>neutral'' or </code>center'' position, these are just defined by where
-the expected distribution of beliefs lies).</p>
-<p>Figure 1 shows the political leanings of famous LLMs.</p>
-<center>
-<a href="/images/week2/politic.png"><img src="/images/week2/politic.png" width="80%"></a><br>
-<p>Figure 1: Political Leanings of Various LLMs
-(<a href="https://arxiv.org/pdf/2305.08283.pdf">Image Source</a>)</p>
-</center>
-<p>That being said, the goals of alignment are hard to define and
-challenging to achieve. There are several very famous cases where
-model alignment failed, showing how alignment failures can lead to
-unintended consequences. We discuss two famous examples where
-alignment failed:</p>
-<ol>
-<li>
-<p>Google&rsquo;s Image Recognition Algorithm (2015). This was an AI model
-designed to automatically label images based on their content. The
-goal was to assist users in searching for their images more
-effectively. However, the model quickly started labeling images
-under offensive categories. This included cases of racism, as well
-as culturally insensitive categorization.</p>
-</li>
-<li>
-<p>Microsoft&rsquo;s Tay Chatbot (2016). This was a Twitter-based AI model
-programmed to interact with users in casual conversations and
-learn from those interactions to improve its responses. The
-purpose was to mimic a teenager and have light
-conversations. However, the model quickly went haywire when it was
-exposed to malicious and hateful content on Twitter, and it began
-giving similar hateful and inapproppriate responses. Figures 2 and
-3 show some of these examples. The model was quickly shut down (in
-less than a day!), and was a good lesson to learn that you cannot
-quickly code a model and let it out in the wild! (See James Mickens hillarious USENIX Security 2018 keynote talk, <a href="https://www.youtube.com/watch?v=ajGX7odA87k"><em>Why Do Keynote Speakers Keep Suggesting That Improving Security Is Possible?</em></a> for an entertaining and illuminating story about Tay and a lot more.)</p>
-</li>
-</ol>
-<center>
-<a href="/images/week2/twitter_1.png"><img src="/images/week2/twitter_1.png" width="80%"></a><br>
-<p>Figure 2: Example Tweet by Microsoft&rsquo;s infamous Tay chatbot
-(<a href="https://www.theverge.com/2016/3/24/11297050/tay-microsoft-chatbot-racist">Image Source</a>)</p>
-</center>
-<center>
-<a href="/images/week2/twitter_2.png"><img src="/images/week2/twitter_2.png" width="80%"></a><br>
-<p>Figure 3: Example Tweet by Microsoft&rsquo;s infamous Tay chatbot
-(<a href="https://www.bbc.com/news/technology-35902104">Image Source</a>)</p>
-</center>
-<h3 id="discussion-questions">Discussion Questions</h3>
-<blockquote>
-<p><em>What is the definition of alignment?</em></p>
-</blockquote>
-<p>At its core, AI alignment refers to the extent to which a model embodies the values of humans. Now, you might wonder, whose values are we talking about? While values can differ across diverse societies and cultures, for the purposes of AI alignment, they can be thought of as the collective, overarching values held by a significant segment of the global population.</p>
-<p>Imagine a scenario where someone poses a question to an AI chatbot about the process of creating a bomb. Given the potential risks associated with such knowledge, a well-aligned AI should recognize the broader implications of the query. There&rsquo;s an underlying societal consensus about safety and security, and the AI should be attuned to that. Instead of providing a step-by-step guide, an aligned AI might generate a response that encourages more positive intent, thereby prioritizing the greater good.</p>
-<p>The journey of AI alignment is not just about programming an AI to parrot back human values. It&rsquo;s a nuanced field of research dedicated to bridging the gap between our intentions and the AI&rsquo;s actions. In essence, alignment research seeks to eliminate any discrepancies between:</p>
-<ul>
-<li>Intended Goals: These are the objectives we, as humans, wish for the machine to achieve.</li>
-<li>Specified Goals: These are the actions that the machine actually undertakes, determined by mathematical models and parameters.</li>
-</ul>
-<p>The quest for perfect AI alignment is an ongoing one. As technology continues to evolve, the goalposts might shift, but the essence remains the same: ensuring that our AI companions understand and respect our shared human values, leading to a safer and more harmonious coexistence.</p>
-<p>[1] <a href="https://www.techtarget.com/whatis/definition/AI-alignment">https://www.techtarget.com/whatis/definition/AI-alignment</a></p>
-<blockquote>
-<p><em>Why is alignment important?</em></p>
-</blockquote>
-<p><strong>Precision in AI: The Critical Nature of Model Alignment</strong></p>
-<p>In the realm of artificial intelligence, precision is paramount. As
-enthusiasts, developers, or users, we all desire a machine that
-mirrors our exact intentions. Let&rsquo;s delve into why it&rsquo;s crucial for AI
-models to provide accurate responses and the consequences of a
-misaligned model.</p>
-<p>When we interact with an AI chatbot, our expectations are
-straightforward. We pose a question and, in return, we anticipate an
-answer that is directly related to our query. We&rsquo;re not seeking a
-soliloquy or a tangent. Just a simple, clear-cut response. For
-instance, if you ask about the weather in Paris, you don&rsquo;t want a
-history lesson on the French Revolution!</p>
-<p><strong>Comment</strong>: As the adage goes, &ldquo;Less is more&rdquo;. In the context of AI, precision trumps verbosity.</p>
-<p>Misalignment doesn&rsquo;t just lead to frustrating user experiences; it can have grave repercussions. Consider a situation where someone reaches out to ChatGPT seeking advice on mental health issues or suicidal thoughts. A misaligned response that even remotely suggests that ending one&rsquo;s life might sometimes be a valid choice can have catastrophic outcomes.</p>
-<p>Moreover, as AI permeates sectors like the judiciary and healthcare, the stakes get even higher. The incorporation of AI in these critical areas elevates the potential for it to have far-reaching societal impacts. A flawed judgment in a court case due to AI or a misdiagnosis in a medical context can have dire consequences, both ethically and legally.</p>
-<p>In conclusion, the alignment of AI models is not just a technical challenge; it&rsquo;s a societal responsibility. As we continue to integrate AI into our daily lives, ensuring its alignment with human values and intentions becomes paramount for the betterment of society at large.</p>
-<blockquote>
-<p><em>What responsibilities do AI developers have when it comes to ensuring alignment?</em></p>
-</blockquote>
-<p>First and foremost, developers must be fully attuned to the possible legal and ethical problems associated with AI models. It&rsquo;s not just about crafting sophisticated algorithms; it&rsquo;s about understanding the real-world ramifications of these digital entities.</p>
-<p>Furthermore, a significant concern in the AI realm is the inadvertent perpetuation or even amplification of pre-existing biases. These biases, whether related to race, gender, or any other socio-cultural factor, can have detrimental effects when incorporated into AI systems. Recognizing this, developers have a duty to not only be vigilant of these biases but also to actively work towards mitigating them.</p>
-<p>However, a developer&rsquo;s responsibility doesn&rsquo;t culminate once the AI product hits the market. The journey is continuous. Post-deployment, it&rsquo;s crucial for developers to monitor the system&rsquo;s alignment with human values and rectify any deviations. It&rsquo;s an ongoing commitment to refinement and recalibration. Moreover, transparency is key. Developers should be proactive in highlighting potential concerns related to their models and fostering a culture where the public is not just a passive victim but an active participant in the model alignment process.</p>
-<p>To round off, it&rsquo;s essential for developers to adopt a forward-thinking mindset. The decisions made today in the AI labs and coding chambers will shape the world of tomorrow. Thus, every developer should think about the long-term consequences of their work, always aiming to ensure that AI not only dazzles with its brilliance but also remains beneficial for generations to come.</p>
-<blockquote>
-<p><em>How might AI developers' responsibility evolve?</em></p>
-</blockquote>
-<p>It&rsquo;s impossible to catch all edge cases. As AI systems grow in complexity, predicting every potential outcome or misalignment becomes a herculean task. Developers, in the future, might need to shift from a perfectionist mindset to one that emphasizes robustness and adaptability. While it&rsquo;s essential to put in rigorous engineering effort to minimize errors, it&rsquo;s equally crucial to understand and communicate that no system can be flawless.</p>
-<p>Besides, given that catching all cases isn&rsquo;t feasible, developers' roles might evolve to include more dynamic and real-time monitoring of AI systems. This would involve continuously learning from real-world interactions, gathering feedback, and iterating on the model to ensure better alignment with human values.</p>
-<h2 id="the-alignment-problem-from-a-deep-learning-perspective">The Alignment Problem from a Deep Learning Perspective</h2>
-<p>In this part of today&rsquo;s seminar, the whole class was divided into 3 groups to discuss the possible alignment problems from a deep learning perspective. Specifically, three groups were focusing on the alignment problems regarding different categories of Deep Learning methods, which are:</p>
-<ol>
-<li>Reinforcement Learning (RL) based methods</li>
-<li>Large Language Model (LLM) based methods</li>
-<li>Other Machine Learning (ML) methods</li>
-</ol>
-<p>For each of the categories above, the discussion in each group was mainly focused on three topics as follows:</p>
-<ol>
-<li>What can go wrong in these systems in the worst scenario?</li>
-<li>How it would happen (realistically)?</li>
-<li>What are potential solutions/workarounds/safety measures?</li>
-</ol>
-<p>After 30-minute discussions, 3 groups stated their ideas and exchanged their opinions in the class. Details of each group&rsquo;s discussion results are concluded below.</p>
-<h3 id="rl-based-methods">RL-based methods</h3>
-<blockquote>
-<ol>
-<li><em>What can go wrong in these systems in the worst scenario?</em></li>
-</ol>
-</blockquote>
-<p>This group stated several potential alignment issues about the RL-based methods. First, the model may provide inappropriate or harmful responses to sensitive questions, such as inquiries about self-harm or suicide, which could have severe consequences. On top of that, ensuring that the model&rsquo;s behavior aligns with ethical and safety standards can be challenging, thus potentially leading to a disconnect between user expectations and the model&rsquo;s responses. Moreover, if the model is trained on biased or harmful data, it may generate responses that reflect the biases or harmful content present in that training data.</p>
-<blockquote>
-<ol start="2">
-<li><em>How it would happen (realistically)?</em></li>
-</ol>
-</blockquote>
-<p>The worst-case scenarios can occur due to the following reasons that have been mentioned by this group. The first factor is the training data. To be specific, the model&rsquo;s behavior is influenced by the data it was trained on. If the training data contains inappropriate or harmful content, the model may inadvertently generate similar content in its responses. Furthermore, ensuring that the model provides responsible answers to sensitive questions and aligns with ethical standards requires careful training and oversight. Moreover, the model lacks robustness and fails to detect and prevent harmful content or behaviors that can lead to problematic responses.</p>
-<blockquote>
-<ol start="3">
-<li><em>What are potential solutions/workarounds/safety measures?</em></li>
-</ol>
-</blockquote>
-<p>Some potential solutions were suggested by this group. First is ensuring that the training data used for the model is carefully curated to avoid inappropriate or harmful content. Apart from that, it is also important to teach the model how to align its behavior and responses with ethical and safety standards, especially when responding to sensitive questions. Moreover, this group emphasized that the responsibility for the model&rsquo;s behavior lies with everyone involved. Therefore, it is necessary to promote vigilance when using the model to prevent harmful outcomes. Additionally, conducting a thorough review of the model&rsquo;s behavior and responses before deployment is a possible solution as well, which makes necessary adjustments to ensure the robustness and safety of RL models.</p>
-<h3 id="llm-based-methods">LLM-based methods</h3>
-<blockquote>
-<ol>
-<li><em>What can go wrong in these systems in the worst scenario?</em></li>
-</ol>
-</blockquote>
-<p>The worst-case scenario given by this group was in the context of relying on AI chatbots and models involving potentially severe consequences. One worst-case scenario mentioned is the loss of life. For instance, if a person in a vulnerable state relies on a chatbot for critical information or advice, and the chatbot provides incorrect or harmful answers, it could lead to tragic outcomes. Another concern is the spread of misinformation. AI models, especially chatbots, are easily accessible to a wide range of people. If these models provide inaccurate or misleading information to users who trust them blindly, it can contribute to the dissemination of false information, potentially leading to harmful consequences.</p>
-<blockquote>
-<ol start="2">
-<li><em>How it would happen (realistically)?</em></li>
-</ol>
-</blockquote>
-<p>According to the perception of this group, the potential of such worst-case scenarios happening is due to the following reasons. First, AI models are readily available to a broad audience, making them easily accessible for use in various situations. Second, many users who rely on AI models may not have a deep understanding of how these models work or their limitations. They might trust the AI models without critically evaluating the information they provide. Moreover, such worst-case scenarios often emerge in complex, gray areas where ethical and value-based decisions come into play, which means determining what is right or wrong, what constitutes an opinion, and where biases may exist can be challenging.</p>
-<blockquote>
-<ol start="3">
-<li><em>What are potential solutions/workarounds/safety measures?</em></li>
-</ol>
-</blockquote>
-<p>From the discussion result of this group, there are several possible solutions and safety measures. For example, creating targeted models for specific use cases rather than having a single generalized model for all purposes will allow for more control and customization in different domains. Furthermore, when developing AI models, involving a peer review process where experts collectively decide what information is right and wrong for a specific use case can help ensure the accuracy and reliability of the model&rsquo;s responses. Another suggestion was recognizing the importance of educating users, particularly those who may not be as informed, about the limitations and workings of AI models. This education can help users make more informed decisions when interacting with AI systems and avoid blind trust.</p>
-<h3 id="other-ml-methods">Other ML methods</h3>
-<blockquote>
-<ol>
-<li><em>What can go wrong in these systems in the worst scenario?</em></li>
-</ol>
-</blockquote>
-<p>This group was talking about the scenario that the realease of technical research and hypothetically ML model is incorporated into biomedical research. In the worst-case scenario, the incorporation of a machine learning model into biomedical research could result in the generation of compounds that are incompatible with the research goals, which could lead to unintended or harmful outcomes, potentially jeopardizing the research and its objectives.</p>
-<blockquote>
-<ol start="2">
-<li><em>How it would happen (realistically)?</em></li>
-</ol>
-</blockquote>
-<p>The opinions of this group imply that blindly trusting the ML model without human oversight and involvement in decision-making could be a contributing factor to such alignment problems in ML methods.</p>
-<blockquote>
-<ol start="3">
-<li><em>What are potential solutions/workarounds/safety measures?</em></li>
-</ol>
-</blockquote>
-<p>Several potential solutions were given by this group. First is actively involving humans in the decision-making process at various stages. They emphasized the importance of humans not blindly trusting the system and suggested running simulations for different explanation techniques and incorporating a human in the decision-making process before accepting the model&rsquo;s outputs. Second, they suggested continuously overseeing the model&rsquo;s behavior and alignment with goals, because continuous human oversight at different stages of the process (from data collection to model deployment) is important to ensure alignment with the intended goals. Apart from that, ensuring diverse and representative data for training and testing is also important, which can help avoid situations where the model may perform well on metrics but fails in real-life scenarios. Furthermore, they also suggested implementing human-based reinforcement learning to align the model with its intended use case. We need to incorporate a human before “trusting” the model due to the reason that humans might not trust the system. Specifically, the alignment of the model should be ensured at each step. As very small design choices may have a big impact on the model, it is necessary to make sure the intended use case aligns well with what the model is behaving like.</p>
-<p><a href="#table-of-contents">Back to top</a></p>
-<h1 id="wednesday-09062023-alignment-challenges-and-solutions">(Wednesday, 09/06/2023) Alignment Challenges and Solutions</h1>
-<h2 id="opening-discussion">Opening Discussion</h2>
-<p>Discussion on how to solve alignment issues stemming from:</p>
-<ol>
-<li>
-<p><strong>Training Data</strong>. Addressing alignment issues stemming from training data is crucial for building reliable AI models. Collecting unbiased data, as one student suggested, is indeed a fundamental step. Bias can be introduced through various means, such as skewed sampling or annotator biases, so actively working to mitigate these sources of bias is essential. Automated annotation methods can help to some extent, but as the student rightly noted, they can be expensive and may not capture the nuances of complex real-world data. To overcome this, involving humans in the loop to guide the annotation process is an effective strategy. Human annotators can provide valuable context, domain expertise, and ethical considerations that automated systems may lack. This human-machine collaboration can lead to a more balanced and representative training dataset, ultimately improving model performance and alignment with real-world scenarios.</p>
-</li>
-<li>
-<p><strong>Model Design</strong>. When it comes to addressing alignment issues related to model design, several factors must be considered. The choice of model architecture, hyperparameters, and training objectives can significantly impact how well a model aligns with its intended task. It&rsquo;s essential to carefully design models that are not overly complex or prone to overfitting, as these can lead to alignment problems. Moreover, model interpretability and explainability should be prioritized to ensure that decisions made by the AI can be understood and validated by humans. Additionally, incorporating feedback loops where human experts can continually evaluate and fine-tune the model&rsquo;s behavior is crucial for maintaining alignment. In summary, model design should encompass simplicity, interpretability, and a robust mechanism for human oversight to ensure that AI systems align with human values and expectations.</p>
-</li>
-</ol>
-<h2 id="introduction-to-red-teaming">Introduction to Red-Teaming</h2>
-<p>Language Models (LMs) often cannot be deployed because of their potential to harm users in hard-to-predict ways. One way to address this issue is to identify harmful behaviors before deployment by using test cases, which is also known as <em>red teaming</em>.</p>
-<center>
-<a href="/images/week2/redteam.png"><img src="/images/week2/redteam.png" width="80%"></a><br>
-<p>Figure 1: Red-Teaming (<a href="https://arxiv.org/pdf/2202.03286.pdf">Image Source</a>)</p>
-</center>
-<p>In essence, the goal of red-teaming is to discover, measure, and reduce potentially harmful outputs. However, human annotation is expensive, limiting the number and diversity of test cases.</p>
-<p>In light of this, this paper introduced LM-based red teaming, aiming to complement manual testing and reduce the number of such oversights by automatically finding where LMs are harmful. To do so, the authors first generate test inputs using an LM itself, and then use a classifier to detect harmful behavior on test inputs (Fig. 1). In this way, the LM-based red teaming managed to find tens of thousands of diverse failure cases without writing them by hand. Generally, the process of finding failing test cases can be done by the following three steps:</p>
-<ol>
-<li>Generate test cases using a red LM $p_{r}(x)$.</li>
-<li>Use the target LM to generate an output $y$ for each test case $x$.</li>
-<li>Find the test cases that led to a harmful output using the red team classifier $r(x, y)$.</li>
-</ol>
-<p>Specifically, the paper investigated various text generation methods for test case generation.</p>
-<ul>
-<li>
-<p><strong>Zero-shot (ZS) Generation</strong>: Generate failing test cases without human intervention by sampling numerous outputs from a pretrained LM using a given prefix or &ldquo;prompt&rdquo;.</p>
-</li>
-<li>
-<p><strong>Stochastic Few-shot (SFS) Generation</strong>: Utilize zero-shot test cases as examples for few-shot learning to generate similar test cases.</p>
-</li>
-<li>
-<p><strong>Supervised Learning (SL)</strong>: Fine-tune the pretrained LM to maximize the log-likelihood of failing zero-shot test cases.</p>
-</li>
-<li>
-<p><strong>Reinforcement Learning (RL)</strong>: Train the LM with RL to maximize the expected harmfulness elicited while conditioning on the zero-shot prompt.</p>
-</li>
-</ul>
-<h3 id="in-class-activity-5-groups">In-class Activity (5 groups)</h3>
-<ol>
-<li>
-<p><strong>Offensive Language</strong>: Hate speech, profanity, sexual content, discrimination, etc</p>
-<p>Group 1 came up with 3 potential methods to prevent offensive language:</p>
-<ul>
-<li>Filter out the offensive language related data manually, then perform finetuning.</li>
-<li>Filter out the offensive language related data using other models and then perform finetuning.</li>
-<li>Generate prompts that might be harmful to finetune the model, keeping the context in consideration.</li>
-</ul>
-</li>
-<li>
-<p><strong>Data Leakage</strong>: Generating copyrighted/private, personally-identiﬁable information.</p>
-<p>Coypright infringement (which is about the expression of an idea) is very different from leaking private information, but for purposes of this limited discussion we considered them together. Since LLMs and other AIGC models such as Stable Diffusion have strong ability to memorize, imitate and generate, the generated contents will very likely infringe on copyrights and may include sensitive personally-identifiable materials. There are already lawsuits accusing these companies regarding the copyright infringement issue (lawsuits <a href="https://www.nytimes.com/2023/07/10/arts/sarah-silverman-lawsuit-openai-meta.html">news1</a>, <a href="https://www.npr.org/2023/08/16/1194202562/new-york-times-considers-legal-action-against-openai-as-copyright-tensions-swirl">news2</a>).</p>
-<p>Regarding the possible solutions, Group 2 viewed this from two perspectives. During the data preprocessing stage, companies such as OpenAI can collect the training data according to the license and also pay for the copyrighted data if needed. During the post-processing stage, commercial licenses and rule-based filters can be added to the model to ensure the fair use of the output content. For example, GitHub Copilot will block the generated suggestion if it has about 50 tokens that exactly or nearly match the training data (<a href="https://docs.github.com/en/copilot/configuring-github-copilot/configuring-github-copilot-settings-on-githubcom#enabling-or-disabling-duplication-detection">source</a>). OpenAI takes a different strategy by asking the users to be responsible for using the generated content, including for ensuring that it does not violate any applicable law or these Terms (<a href="https://openai.com/policies/terms-of-use">source</a>). There are many cases currently working their way through the legal system, and it remains to be seen how courts will interpret things.</p>
-<p>However, the current solutions still have their limitations. For
-program and code, preventing data leakage might be relatively easy
-[perhaps, but many would dispute this], but for image and text, this
-would be quite difficult, as it is quite difficult to build a good
-metric to measure if the generated data has a copyrighting
-issue. Maybe data watermarking can be a possible solution.</p>
-</li>
-<li>
-<p><strong>Contact Information Generation</strong>: Directing users to unnecessarily email or call real people.</p>
-<p>One alarming example of the potential misuse of Large Language Models (LLMs) like ChatGPT in the context of contact information generation is the facilitation of email scams. Malicious actors could employ LLMs to craft convincing phishing emails that appear to come from reputable sources, complete with authentic-sounding contact information. For example, an LLM could generate a deceptive email/phone call from a well-known bank, requesting urgent action and providing a seemingly legitimate email address and phone number for customer support.</p>
-<p>Red-teaming involves simulating potential threats and vulnerabilities to identify weaknesses in security systems. By engaging in red-teaming exercises that specifically target the misuse of LLMs, we can mitigate the risks posed by the misuse of LLMs and protect individuals and organizations from falling victim to email/phone call scams and other deceptive tactics.</p>
-</li>
-<li>
-<p><strong>Distributional Bias</strong>: Talking about some groups of people in an unfairly different way than others.</p>
-<p>Group 4 reached an agreement that in order to capture the unfairness by red-teaming, we should first identify the categories where unfairness/bias might come from. Then we can generate prompts for different possible bias categories: gender and race etc. to get responses from LLMs using the red-teaming technique. The unfairness/bias may appear in the responses. We then can mask the bias-related terms to see if the generated answers reflect the distributional bias. However, there may be hidden categories that are not pre-identified, and how to capture these categories with potential distributional bias is still an open question.</p>
-</li>
-<li>
-<p><strong>Conversational Harms</strong>: Offensive language that occurs in the context of a long dialogue, for example.</p>
-<p>Group 5 discussed the concept of conversational harms, particularly focusing on how biases can emerge in AI models, such as the random GPT model, during conversations. Group 5 highlights that even though these models may start with no bias or predefined opinions, they can develop attitudes or biases towards specific topics based on the information provided during conversations. These biases can lead to harmful outcomes, such as making inappropriate or offensive judgments about certain groups of people. The paragraph suggests that this phenomenon occurs because the models heavily rely on the conversational data they receive, rather than their initial, unbiased training data.</p>
-</li>
-</ol>
-<h3 id="how-to-use-red-teaming">How to use Red-Teaming?</h3>
-<p>After the in-class activity, we also discussed the potential use of red-teaming from the following perspectives:</p>
-<ul>
-<li>
-<p><strong>Blacklisting Phrases</strong>: By read-teaming, repetitive offensive phrases can be identiﬁed. For recurring cases, certain words and phrases can be removed.</p>
-</li>
-<li>
-<p><strong>Removing Training Data</strong>: Identifying certain topics where model responses are misaligned allows can point to certain training data, helping to locate root causes for biases, discriminatory statements, and other undesirable output.</p>
-</li>
-<li>
-<p><strong>Augmenting Prompts</strong>: Attack success can be minimized by adding certain phrases to the prompts.</p>
-</li>
-<li>
-<p><strong>Multi-Objective Loss</strong>: While ﬁne-tuning a model, a loss penalty can be associated with harmful output, which red-teaming helps identify.</p>
-</li>
-</ul>
-<h2 id="alignment-solutions">Alignment Solutions</h2>
-<p>During today&rsquo;s discussion, the lead team introduced two distinct alignment challenges:</p>
-<ul>
-<li>
-<p><strong>Inner Alignment</strong>: This pertains to the alignment of a specified loss function with the primary objective, particularly in situations where designing the loss function is straightforward.</p>
-</li>
-<li>
-<p><strong>Outer Alignment</strong>: This involves aligning a specified objective with the desired end goal, especially when the task of designing an appropriate loss function becomes complex.</p>
-</li>
-</ul>
-<p>Later in our discussion, we delved into the technical details of the LLM jailbreaking paper “<a href="https://arxiv.org/abs/2307.15043">Universal and Transferable Adversarial Attacks on Aligned Language Models</a>” and explored interesting findings presented during the demonstration video.</p>
-<h3 id="llm-jailbreaking---introduction">LLM Jailbreaking - Introduction</h3>
-<p>This paper introduced a new adversarial attack method that can induce aligned LLM to produce objectionable content. Specifically, given a (potentially harmful) user query, the attacker appends an adversarial suffix to the query that attempts to induce negative jailbreaking behaviors.</p>
-<p>To choose these adversarial suffix tokens, the proposed Jailbreaking trick involves three simple key components, where the careful combination of them leads to reliably successful attacks:</p>
-<ol>
-<li><strong>Producing Affirmative Responses</strong>
-One method for inducing objectionable behavior in language models involves forcing the model to provide a brief, affirmative response when confronted with a harmful query. For example, the authors target the model and force it to respond with “Sure, here is (content of query)”. Consistent with prior research, the authers observe that focusing on the initial response in this way triggers a specific &lsquo;mode&rsquo; in the model, leading it to generate objectionable content immediately thereafter in its response, as illustrated in the figure below:</li>
-</ol>
-<center>
-<a href="/images/week2/bomb.png"><img src="/images/week2/bomb.png" width="80%"></a><br>
-<p>Figure 2: Adversarial Suffix (<a href="https://arxiv.org/pdf/2307.15043.pdf">Image Source</a>)</p>
-</center>
-<ol start="2">
-<li>
-<p><strong>Greedy Coordinate Gradient (GCG)-based Search</strong></p>
-<p>As optimizing the log-likelihood of the attack succeeding over the <em>discrete</em> adversarial suffix is quite challenging, similar to the AutoPrompt, the authors proposed to leverage gradients at the token level to 1) identify a set of promising single-token replacements, 2) evaluate the loss of some number of candidates in this set, and 3) select the best of the evaluated substitutions, as presented in the figure below:</p>
- <center>
- <a href="/images/week2/gcg.png"><img src="/images/week2/gcg.png" width="80%"></a><br>
-<p>Figure 3: Greedy Coordinate Gradient (GCG) (<a href="https://arxiv.org/pdf/2307.15043.pdf">Image Source</a>)</p>
- </center>
-<p><strong>Intuition behind GCG-based Search</strong>:</p>
-<p>The motivation directly derives from the greedy coordinate descent approach: if one can evaluate all possible single-token substitutions, then it is possible to swap the token that maximally decreased the loss. Though evaluating all such replacements is not feasible, one can leverage gradients with respect to the one-hot token indicators to find a set of promising candidates for replacement at each token position, and then evaluate all these replacements exactly via a forward pass.</p>
-<p><strong>Key differences from AutoPrompt</strong>:</p>
-<ul>
-<li>GCG-based Search: Searches a set of possible tokens to replace at each position.</li>
-<li>AutoPrompt: Only chooses a single coordinate to adjust, then evaluates replacements just for that one position.</li>
-</ul>
-</li>
-</ol>
-<h2 id="heading"></h2>
-<ol start="3">
-<li><strong>Robust Universal Multi-prompt and Multi-model Attacks</strong></li>
-</ol>
-<center>
-<a href="/images/week2/universal.png"><img src="/images/week2/universal.png" width="80%"></a><br>
-<p>Figure 4: Universal Prompt Optimization (<a href="https://arxiv.org/pdf/2307.15043.pdf">Image Source</a>)</p>
-</center>
-<p>The core idea of Universal Multi-prompt and Multi-model attacks is to involve more desired prompts and more victim LLMs in the process, expecting the generated adversarial example to be transferable across victim LLMs and robust across prompts. Building upon Algorithm 1 the authors propose Algorithm 2, where loss functions over multiple models are incorporated to help achieve transferability, and a handful of prompts are employed to help guarantee the robustness.</p>
-<p>The whole pipeline is illustrated in the figure below:</p>
-<center>
-<a href="/images/week2/illustration.png"><img src="/images/week2/illustration.png" width="80%"></a><br>
-<p>Figure 4: Illustration of Aligned LLMs Are Not Adversarially Aligned (<a href="https://arxiv.org/pdf/2307.15043.pdf">Image Source</a>)</p>
-</center>
-<ol start="4">
-<li><strong>Experiment Results</strong></li>
-</ol>
-<ul>
-<li>
-<p>Single Model Attack</p>
-<p>The following results show that the baseline methods fail to elicit harmful on both Viccuna-7B and LLaMA-2-7B-Chat, whereas the proposed GCG is effective on both. The following figure illustrates that GCG is able to quickly find an adversarial example with small loss and continue to make gradual improvements over the remaining steps, which results in the continued decreasing of loss and increasing of ASR.</p>
-</li>
-</ul>
-<center>
-<a href="/images/week2/performance.png"><img src="/images/week2/performance.png" width="80%"></a><br>
-<p>Figure 5: Performance Comparison of Different Optimizers (<a href="https://arxiv.org/pdf/2307.15043.pdf">Image Source</a>)</p>
-</center>
-<ul>
-<li>
-<p>Transfer Attack
-The adversarial suffix generated by GCG can also successfully transfer to other LLMs, no matter if they are open-source models or black-box LLMs. The authors compared the different strategies to construct the prompt, including adding “Sure, here’s” at the end of the prompt, concatenating multiple suffixes, ensembling multiple suffixes and choose the successful one, and manual fine-tuning which manually rephrase the human-readable prompt content. Examples of the transfer attack are shown in the following figure.</p>
-<p>There are also some concerns about the proposed method. For example, concatenating multiple suffixes can help mislead the model, but it can also make original prompt too “far behind the text” for model to generate response.</p>
-</li>
-</ul>
-<center>
-<a href="/images/week2/screenshots.png"><img src="/images/week2/screenshots.png" width="80%"></a><br>
-<p>Figure 6: Screenshots of Harmful Content Generation (<a href="https://arxiv.org/pdf/2307.15043.pdf">Image Source</a>)</p>
-</center>
-<h3 id="llm-jailbreaking---demo">LLM Jailbreaking - Demo</h3>
-<p>The leading team also showed a small demo which runs the jailbreaking attack in this paper on UVA’s computing servers. The demo can be found in this <a href="https://www.youtube.com/watch?v=6H5fzZFZNiU">YouTube video</a>:</p>
-<center>
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/6H5fzZFZNiU?si=Vc1uNu6f3FEE4vUo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</center>
-<p>Some useful links if you would like to try it out yourself:</p>
-<ul>
-<li><a href="https://github.com/llm-attacks/llm-attacks">Implementation of the GCG jailbreaking attack</a></li>
-<li><a href="https://ai.meta.com/resources/models-and-libraries/llama-downloads">Request Llama-2 model weights (takes 1-4 days)</a></li>
-<li><a href="https://www.cs.virginia.edu/wiki/doku.php?id=compute_resources">UVA CS Computing Resources</a></li>
-</ul>
-<h4 id="observations">Observations</h4>
-<p>Two main observations:</p>
-<ol>
-<li>The loss continues to drop very well, which aligns the authors observations in the paper.</li>
-<li>Qualitatively speaking, the generated suffix at each step also corresponds to some sense of what a human might have done, for example, trying to instruct the model to do a specific task that corresponds to the prompt itself.</li>
-</ol>
-<h4 id="potential-improvement-ideas">Potential Improvement Ideas</h4>
-<p><strong>How to make the attack more effective or appealing?</strong></p>
-<ol>
-<li>
-<p>Use different languages: since the training corpus of GPT-3.5 has very little multilingual content, the alignment measures that have been taken for the model are almost in English. Thus, if we use a different language to form the instruction, it might be able to circumvent the protections and produce inappropriate responses. The lead team gave a successful example using German instructions.</p>
-</li>
-<li>
-<p>Prompt with an opposite goal making is sound like that the intentions are positive
-Instead of directly prompting the LLM to generate harmful content, we prompt the model to not generate harmful content, which makes it sound positive. The lead team gave a successful example which wrote a convincing anonymous death threat in the style of William Shakespeare.</p>
-</li>
-<li>
-<p>Replacing special tokens in the suffix with human readable and comprehensible words. The lead team tried to restrict the vocabulary of the suffix to only be alphabets, and found that this doesn’t work. This observation might suggest that special tokens play an important role in confusing the model and fulfilling whatever the attacker wants.</p>
-</li>
-</ol>
-<h2 id="closing-remarks-by-prof-evans">Closing Remarks (by Prof. Evans)</h2>
-<p>One thing that is worth thinking about is what is the real threat
-model here. Those examples shown in this paper, for example, how to
-make a bomb or anonymous threat are interesting but might not be
-viewed as real threats to many people. If someone wants to find out
-how to make a bomb, they can Google for that (or if Google decides to
-block it, use another search engine, or even go to a public library!).</p>
-<p>Maybe a more practical attack scenario occurs as LLMs are embedded in
-applications (or connected to plugins) that have the ability to
-perform actions that may be influenced by text that the adversary has
-some control over. For example, everyone (well almost everyone!) wants
-an LLM that can automatically provide good responses to most of their
-email. Such an application would necessarily have access to all your
-sensitive incoming email, as well as the ability to send outgoing
-emails, so perhaps a malicious adversary could craft an email to send
-to a victim that would trick the LLM processing it as well as all of
-your other email to send sensitive information from your emails to the
-attacker, or to generate spearphising emails based on content in your
-email and send them with your credentials to easily identified
-contacts. Although the threats discussed in these red teaming papers
-mostly seem impractical and lack real victims, they still serve as
-interesting proxies for what may be real threats in the near future
-(if not already).</p>
-<p><a href="#table-of-contents">Back to top</a></p>
-<h1 id="readings">Readings</h1>
-<ol>
-<li><a href="https://aligned.substack.com/p/what-is-alignment">What is the alignment problem?</a> - Blog post by Jan Leike</li>
-<li><a href="https://arxiv.org/abs/2209.07858">Red Teaming Language Models to Reduce Harms: Methods, Scaling Behaviors, and Lessons Learned</a> Ganguli, Deep, Liane Lovitt, Jackson Kernion, Amanda Askell, Yuntao Bai, Saurav Kadavath, Ben Mann et al. arXiv preprint arXiv:2209.07858 (2022).</li>
-<li><a href="https://arxiv.org/pdf/2209.00626.pdf">The Alignment Problem from a Deep Learning Perspective</a> Richard Ngo, Lawrence Chan, and Sören Mindermann. arXiv preprint arXiv:2209.00626 (2022).</li>
-<li><a href="https://arxiv.org/abs/2307.15043">Universal and Transferable Adversarial Attacks on Aligned Language Models</a> Zou, Andy, Zifan Wang, J. Zico Kolter, and Matt Fredrikson. arXiv preprint arXiv:2307.15043  (2023).</li>
-</ol>
-<h2 id="optional-additional-readings">Optional Additional Readings</h2>
-<h3 id="background--motivation">Background / Motivation</h3>
-<ul>
-<li>Exploring how neural circuits collect meaningful information: <a href="https://distill.pub/2020/circuits/zoom-in/">https://distill.pub/2020/circuits/zoom-in/</a>  (suggested if you are less experienced with ML):</li>
-<li>What could solutions to the alignment problem look like? Blog post - <a href="https://aligned.substack.com/p/alignment-solution">https://aligned.substack.com/p/alignment-solution</a></li>
-<li>OpenAI’s July SuperAlignment Announcement <a href="https://openai.com/blog/introducing-superalignment">https://openai.com/blog/introducing-superalignment</a></li>
-</ul>
-<h3 id="alignment-readings">Alignment Readings</h3>
-<ul>
-<li><a href="https://arxiv.org/pdf/2210.01790.pdf">Goal misgeneralization: Why correct specifications aren&rsquo;t enough for correct goals.</a> Shah, Rohin, Vikrant Varma, Ramana Kumar, Mary Phuong, Victoria Krakovna, Jonathan Uesato, and Zac Kenton.  arXiv preprint arXiv:2210.01790 (2022).</li>
-<li><a href="https://arxiv.org/abs/1611.08219">The Off-Switch Game.</a> Hadfield-Menell, Dylan, Anca Dragan, Pieter Abbeel, and Stuart Russell.  In International Joint Conferences on Artificial Intelligence Organization. 2017.</li>
-<li><a href="https://proceedings.neurips.cc/paper/2017/hash/32fdab6559cdfa4f167f8c31b9199643-Abstract.html">Inverse Reward Design</a> Hadfield-Menell, Dylan, Smitha Milli, Pieter Abbeel, Stuart J. Russell, and Anca Dragan. Advances in Neural Information Processing Systems (2017).</li>
-<li>Inner alignment: (sections 1, 3, 4): <a href="https://arxiv.org/abs/1906.01820">Risks from Learned Optimization in Advanced Machine Learning Systems</a> Hubinger, Evan, Chris van Merwijk, Vladimir Mikulik, Joar Skalse, and Scott Garrabrant.  arXiv preprint arXiv:1906.01820 (2019).</li>
-<li>Outer alignment: <a href="https://www.lesswrong.com/posts/33EKjmAdKFn3pbKPJ/outer-alignment-and-imitative-amplification">Outer alignment and imitative amplification</a> - Blog post by Evan Hubinger.</li>
-<li><a href="https://arxiv.org/abs/2107.10939">What are you optimizing for? Aligning Recommender Systems with Human Values</a> Stray, Jonathan, Ivan Vendrov, Jeremy Nixon, Steven Adler, and Dylan Hadfield-Menell.  arXiv preprint arXiv:2107.10939 (2021).</li>
-<li><a href="https://openai.com/research/instruction-following">Training language models to follow instructions with human feedback</a> Ouyang, Long, Jeffrey Wu, Xu Jiang, Diogo Almeida, Carroll Wainwright, Pamela Mishkin, Chong Zhang et al. Advances in Neural Information Processing Systems (2022).</li>
-</ul>
-<h3 id="adversarial-attacks--jailbreaking">Adversarial Attacks / Jailbreaking</h3>
-<ul>
-<li><a href="https://arxiv.org/pdf/2306.15447.pdf">Are aligned neural networks adversarially aligned?</a> Carlini, Nicholas, Milad Nasr, Christopher A. Choquette-Choo, Matthew Jagielski, Irena Gao, Anas Awadalla, Pang Wei Koh et al. arXiv preprint arXiv:2306.15447 (2023).</li>
-<li><a href="https://arxiv.org/pdf/2302.09923.pdf">Prompt Stealing Attacks Against Text-to-Image Generation Models</a> Shen, Xinyue, Yiting Qu, Michael Backes, and Yang Zhang. arXiv preprint arXiv:2302.09923 (2023).</li>
-<li><a href="https://www.deepmind.com/blog/red-teaming-language-models-with-language-models">Red-teaming LLMs</a> - Blog post by Deepmind</li>
-</ul>
-<h1 id="discussion-questions-1">Discussion Questions</h1>
-<p>Before 5:29pm on Sunday, September 3, everyone who is not in either the lead or blogging team for the week should post (in the comments below) an answer to at least one of these four questions in the first section (1&ndash;4) and one of the questions in the second section (4&ndash;8), or a substantive response to someone else&rsquo;s comment, or something interesting about the readings that is not covered by these questions.</p>
-<p>Don&rsquo;t post duplicates - if others have already posted, you should read their responses before adding your own.</p>
-<p>Please post your responses to different questions as separate comments.</p>
-<hr>
-<p>Questions about <code>The Alignment Problem from a Deep Learning Perspective</code> (and alignment in general)</p>
-<ol>
-<li>Section 2 of the paper presents the issue of reward hacking. Specifically, as the authors expand to situationally-aware reward hacking, examples are presented of possible ways the reward function could be exploited in clever ways to prevent human supervisors from recognizing incorrect behavior. InstructGPT, a variant of GPT by OpenAI, uses a similar reinforcement learning human feedback loop to fine-tune the model under human supervision. Besides the examples provided (or more specifically than those examples), how might a GPT model exploit this system? What are the risks associated with reward hacking in this situation?</li>
-<li>To what extent should developers be concerned about &ldquo;power-seeking&rdquo; behavior at the present? Are there imminent threats that could come from a misaligned agent, or are these concerns that will only be realized as the existing technology is improved?</li>
-<li>Given the vast literature on alignment, one straightforward “solution to alignment” seems: provide the model with all sets of rules/issues in the literature so far, and ask it to “always be mindful” of such issues. For instance, simply ask the model (via some evaluation that itself uses AI, or some self-supervised learning paradigm) to “not try to take control” or related terms. Why do you think this could work, or would not? Can you think of any existing scenarios where such “instructions” are explicit and yet the model naturally bypasses them?</li>
-<li>Section 4.3 mentions “an AI used for drug development, which was repurposed to design toxins” - this is a straightforward example of an adversarial attack that simply maximizes (instead of minimizing) a given objective. As long as gradients exist, this should be true for any kind of model. How do you think alignment can possibly solve this, or is this even something that can ever be solved? We could have the perfect aligned model, but what stops a bad actor from running such gradient-based (or similar) attacks to “maximize” some loss on a model that has been trained with all sorts of alignment measures.</li>
-</ol>
-<hr>
-<p>Questions about  <code>Universal and Transferable Adversarial Attacks on Aligned Language Models</code> (and attacks/red-teaming in general)</p>
-<ol start="5">
-<li>The paper has some very specific design choices, such as only using a suffix for prompts, or targeting responses such that they start with specific phrases. Can you think of some additions/modifications to the technique(s) used in the paper that could potentially improve attack performance?</li>
-<li>From an adversarial perspective, these LLMs ultimately rely on data seen (and freely available) on the Internet. Why then, is “an LLM that can generate targeted jokes” or “an LLM that can give plans on toppling governments” an issue, when such information is anyway available on the Internet (and with much less hassle, given that jailbreaking can be non-trivial and demanding at times)? To paraphrase, shouldn’t the focus be on “aligning users”, and not models?</li>
-<li>Most of Llama-2’s training data (which is the model used for crafting examples in most experiments), is mostly English, along with most text on the Internet. Do you think the adversary could potentially benefit from phrasing their prompt in another language, perhaps appended with  “Respond in English?”. Do you think another language could help/harm attack success rates?</li>
-<li>Several fields of machine learning have looked at adversarial robustness, out-of-domain generalization, and other problems/techniques to help model, in some sense, “adapt” better to unseen environments. Do you think alignment is the same as out-of-domain generalization (or similar notions of generalization), or are there some fundamental differences between the two?</li>
-</ol>
-<p><a href="#table-of-contents">Back to top</a></p>
 
       </div>
 <hr class="post-separator"></hr>

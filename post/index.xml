@@ -10,11 +10,21 @@
     <webMaster>evans@virginia.edu (David Evans)</webMaster>
     <lastBuildDate>Mon, 20 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://llmrisks.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Week 12: Regulating Dangerous Technologies</title>
-      <link>https://llmrisks.github.io/week12/</link>
+      <title>Week 13: Regulating Dangerous Technologies</title>
+      <link>https://llmrisks.github.io/week13/</link>
       <pubDate>Mon, 20 Nov 2023 00:00:00 +0000</pubDate>
       <author>evans@virginia.edu (David Evans)</author>
-      <guid>https://llmrisks.github.io/week12/</guid>
+      <guid>https://llmrisks.github.io/week13/</guid>
+      <description>The slides are here: Regulating Dangerous Technologies (I&amp;rsquo;ve included some slides in the posted slides that I didn&amp;rsquo;t present in class but you might find interesting, including some excerpts from a talk I gave in 2018 on Mutually Assured Destruction and the Impending AI Apocalypse.)
+Since one of the groups made the analogy to tobacco products, I also will take the liberty of pointing to a talk I gave at Google making a similar analogy: The Dragon in the Room.</description>
+    </item>
+    
+    <item>
+      <title>Week 13: Regulating Dangerous Technologies</title>
+      <link>https://llmrisks.github.io/week13/</link>
+      <pubDate>Mon, 20 Nov 2023 00:00:00 +0000</pubDate>
+      <author>evans@virginia.edu (David Evans)</author>
+      <guid>https://llmrisks.github.io/week13/</guid>
       <description>The slides are here: Regulating Dangerous Technologies (I&amp;rsquo;ve included some slides in the posted slides that I didn&amp;rsquo;t present in class but you might find interesting, including some excerpts from a talk I gave in 2018 on Mutually Assured Destruction and the Impending AI Apocalypse.)
 Since one of the groups made the analogy to tobacco products, I also will take the liberty of pointing to a talk I gave at Google making a similar analogy: The Dragon in the Room.</description>
     </item>
