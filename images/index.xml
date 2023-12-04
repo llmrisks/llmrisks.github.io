@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Images on Risks (and Benefits) of Generative AI and Large Language Models</title>
+    <link>https://llmrisks.github.io/images/</link>
+    <description>Recent content in Images on Risks (and Benefits) of Generative AI and Large Language Models</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>evans@virginia.edu (David Evans)</managingEditor>
+    <webMaster>evans@virginia.edu (David Evans)</webMaster><atom:link href="https://llmrisks.github.io/images/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://llmrisks.github.io/images/week14/day1/test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>evans@virginia.edu (David Evans)</author>
+      <guid>https://llmrisks.github.io/images/week14/day1/test/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://llmrisks.github.io/images/week14/day2/test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>evans@virginia.edu (David Evans)</author>
+      <guid>https://llmrisks.github.io/images/week14/day2/test/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://llmrisks.github.io/images/week14/test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>evans@virginia.edu (David Evans)</author>
+      <guid>https://llmrisks.github.io/images/week14/test/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

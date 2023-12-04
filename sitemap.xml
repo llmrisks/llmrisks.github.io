@@ -3,10 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://llmrisks.github.io/post/</loc>
-    <lastmod>2023-11-20T00:00:00+00:00</lastmod>
+    <lastmod>2023-12-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://llmrisks.github.io/</loc>
-    <lastmod>2023-11-20T00:00:00+00:00</lastmod>
+    <lastmod>2023-12-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://llmrisks.github.io/week14b/</loc>
+    <lastmod>2023-12-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://llmrisks.github.io/week14a/</loc>
+    <lastmod>2023-12-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://llmrisks.github.io/week13/</loc>
     <lastmod>2023-11-20T00:00:00+00:00</lastmod>
@@ -68,10 +74,17 @@
     <loc>https://llmrisks.github.io/welcome/</loc>
     <lastmod>2023-05-26T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://llmrisks.github.io/images/week14/day1/test/</loc>
+  </url><url>
+    <loc>https://llmrisks.github.io/images/week14/day2/test/</loc>
+  </url><url>
+    <loc>https://llmrisks.github.io/images/week14/test/</loc>
+  </url><url>
     <loc>https://llmrisks.github.io/syllabus/</loc>
-    <priority>0</priority>
   </url><url>
     <loc>https://llmrisks.github.io/blogging/</loc>
+  </url><url>
+    <loc>https://llmrisks.github.io/images/</loc>
   </url><url>
     <loc>https://llmrisks.github.io/tags/</loc>
   </url><url>

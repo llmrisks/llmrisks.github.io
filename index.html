@@ -1,7 +1,7 @@
 <!doctype html>
 <html class="no-js" lang="en-us">
   <head>
-	<meta name="generator" content="Hugo 0.92.0" />
+	<meta name="generator" content="Hugo 0.118.2">
     <meta charset="utf-8">
     <title>Risks (and Benefits) of Generative AI and Large Language Models</title>
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -113,6 +113,18 @@ Risks and Benefits of Generative AI and LLMs
 
    
    <div class="posttitle">
+      <a href="/week14b/">Week 14b: Ethical AI</a>
+
+
+   </div>
+   
+   <div class="posttitle">
+      <a href="/week14a/">Week 14a: Multimodal Models</a>
+
+
+   </div>
+   
+   <div class="posttitle">
       <a href="/week13/">Week 13: Regulating Dangerous Technologies</a>
 
 
@@ -156,18 +168,6 @@ Risks and Benefits of Generative AI and LLMs
    
    <div class="posttitle">
       <a href="/week5/">Week 5: Hallucination</a>
-
-
-   </div>
-   
-   <div class="posttitle">
-      <a href="/week4/">Week 4: Capabilities of LLMs</a>
-
-
-   </div>
-   
-   <div class="posttitle">
-      <a href="/week3/">Week 3: Prompting and Bias</a>
 
 
    </div>
@@ -242,9 +242,592 @@ Risks and Benefits of Generative AI and LLMs
     
         
     
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
 
 
     
+    
+    <h1><a href="/week14b/">Week 14b: Ethical AI</a></h1>
+<div class="post-metadata">
+  <span class="post-date">
+    <time datetime="2023-12-04 00:00:00 &#43;0000 UTC" itemprop="datePublished">4 December 2023</time>
+  </span>
+  
+</div>
+
+      <div class="post-body" itemprop="articleBody">
+        <p><author>Presenting Team: Aparna Kishore, Elena Long, Erzhen Hu, Jingping Wan</author><br>
+<author>Blogging Team: Haolin Liu, Haochen Liu, Ji Hyun Kim, Stephanie Schoch, Xueren Ge</author></p>
+<p>Note: since the topics were unrelated, Week 14 is split into two posts:</p>
+<ul>
+<li><a href="/week14a">Monday, November 27: Multimodal Models</a></li>
+<li><a href="/week14b">Wednesday, November 29: Ethical AI</a></li>
+</ul>
+<h1 id="wednesday-november-29-ethical-ai">Wednesday, November 29: Ethical AI</h1>
+<table><tr>
+  <td><img src="../images/week14/day1/A.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<blockquote>
+<p>Ben Shneiderman. <a href="https://dl.acm.org/doi/abs/10.1145/3419764"><em>Bridging the Gap Between Ethics and Practice: Guidelines for Reliable, Safe, and Trustworthy Human-centered AI Systems</em></a>. ACM Transactions on Interactive Intelligent Systems, October 2020. <a href="https://dl.acm.org/doi/abs/10.1145/3419764">PDF</a></p>
+</blockquote>
+<table><tr>
+  <td><img src="../images/week14/day1/B.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>Today’s topic is ethical AI, with a focus on human-centered AI (HCAI). From this perspective, AI is seen as amplifying the performance of humans.</p>
+<p>Important to HCAI is the need for reliable, safe and trustworthy properties, through the collaboration of software engineers, companies, government, and society as a whole.</p>
+<table><tr>
+  <td><img src="../images/week14/day1/C.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<ol>
+<li>Reliable Systems: Soft Engineering</li>
+<li>Safety Culture: Organizational Design</li>
+<li>Trustworthy Certification: External Reviews</li>
+</ol>
+<table><tr>
+  <td><img src="../images/week14/day1/D.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>Things that should be considered when developing ethical AI:</p>
+<ol>
+<li>Data quality</li>
+<li>Training log analysis</li>
+<li>Privacy and security of data</li>
+</ol>
+<p>Example:FDR has quantitative benchmark to see if a plane is safe/stable, which can help in designing the next generation of products</p>
+<p>Analogy of FDR to AI: We could get quantitative feedback of the product or strategy we want to test: What data do we need, how do we analyze log data (or select useful data from operation logs), how to protect data from being attacked, etc.</p>
+<p>Through a similar approach, we can say that AI is safe through testing and logs, rather than just ‘take our word for it’</p>
+<table><tr>
+  <td><img src="../images/week14/day1/E.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>Software Engineering workflows:  AI workflow requires <em>goal-aligned update</em>.</p>
+<p>Verification and validation testing:</p>
+<ol>
+<li>Design tests align with expectations, prevent harms</li>
+<li>Goals of AI are more general or high-level than traditional software programs, so we need tests that are designed with user expectations rather than solely the technical details.</li>
+</ol>
+<p>Bias testing to enhance fairness:</p>
+<ol>
+<li>Test training data for opacity, scale, harm.</li>
+<li>Use specialized tools for continuous monitoring.</li>
+<li>After we have a trained model, we still need testing to check the risk, and may need a specific team in the organization or external company to test safety of model (should be continuous).</li>
+</ol>
+<table><tr>
+  <td><img src="../images/week14/day1/F.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>Explainable user interfaces:</p>
+<ol>
+<li>Are difficult to achieve</li>
+<li>Ensure system explainability for user understanding, meeting legal requirements</li>
+<li>Intrinsic and post hoc explanations aid developer improvement.</li>
+<li>Design a comprehensive user interface, considering user sentiments</li>
+<li>Post hoc: no information about the technical details of the model, but rather need a broad level idea of the system</li>
+</ol>
+<table><tr>
+  <td><img src="../images/week14/day1/G.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>There are five principles to build safety cultures, which are mostly top-down approaches (see slides).</p>
+<p>Leadership: create a safe team, make commitment to safety that is visible to employees so they know leaders are committed to safety.</p>
+<p>Long-term investment: need safe developers to develop safe models.</p>
+<p>Public can help monitor and improve as it creates public/external pressure, so companies may work harder to eliminate issues.</p>
+<table><tr>
+  <td><img src="../images/week14/day1/H.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>Internal Review Boards engage stakeholders in setting benchmarks and to make improvements for problems and future planning.</p>
+<table><tr>
+  <td><img src="../images/week14/day1/I.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<table><tr>
+  <td><img src="../images/week14/day1/J.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>Trustworthy certification by independent oversight:</p>
+<ul>
+<li>
+<p>Purpose: Ensure continuous improvement for reliable, safe products. Helps to make a complete, trustworthy system.</p>
+</li>
+<li>
+<p>Requirements: Respected leaders, conflict declaration, diverse membership.</p>
+</li>
+<li>
+<p>Capacity: Examine private data, conduct interviews, issue subpoenas for evidence.</p>
+</li>
+</ul>
+<table><tr>
+  <td><img src="../images/week14/day1/K.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>Independent oversight is structured around three core methods:</p>
+<ol>
+<li>Planning</li>
+<li>Monitoring</li>
+<li>Conducting reviews or retrospectives</li>
+</ol>
+<table><tr>
+  <td><img src="../images/week14/day1/L.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>There are five paths for Trustworthy certification</p>
+<ol>
+<li>
+<p>Government: Policy and Regulation, aligning with EU&rsquo;s seven key principles(list on the top right) for transparency, reliability, safety, privacy, and fairness</p>
+</li>
+<li>
+<p>Accounting Firms: Beyond the internal audits mentioned previously, external bodies should audit the entire industry</p>
+</li>
+<li>
+<p>Insurance Companies: Adapting policies for emerging technologies like self-driving cars (details on next slide)</p>
+</li>
+<li>
+<p>Non-government organizations: prioritizing the public&rsquo;s interest</p>
+</li>
+<li>
+<p>Professional organizations and research institutes</p>
+</li>
+</ol>
+<table><tr>
+  <td><img src="../images/week14/day1/M.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<table><tr>
+  <td><img src="../images/week14/day1/N.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>As an activity, we tried role playing where each group will play different roles and think about following 15 principles in terms of “ethical AI”.</p>
+<p>Ethical Team:</p>
+<ol>
+<li>Diagnosis for skin cancer, dataset quality is reliable (bias-skin color, state-laws passing for collecting data)</li>
+<li>Various Metrics for evaluating AI</li>
+<li>Come up an agreement with patients, doctors</li>
+</ol>
+<p>Healthcare Management/Organization:</p>
+<ol>
+<li>Reporting failures (missed diagnosis) for feedback</li>
+<li>Data security, gathering FP, FN cases for further training</li>
+<li>Educating staff</li>
+<li>Establishing accuracy/certainty of threshold for AI diagnosing skin cancer, checking the standard of professional verification</li>
+</ol>
+<p>Independent oversight committee：</p>
+<ol>
+<li>Whether the dataset is not biased in every stage and is representing all race, gender, etc</li>
+<li>Data source should be considered carefully (online, hospital)</li>
+<li>Model explanation and transparency should be considered</li>
+<li>Privacy of personal information of both the dataset and the users</li>
+</ol>
+<table><tr>
+  <td><img src="../images/week14/day1/O.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>There are 15 principles each group can take into consideration for the role-playing discussion.</p>
+<table><tr>
+  <td><img src="../images/week14/day1/P.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>Reorienting technical R&amp;D emphasizes oversight, robustness, interpretability, inclusivity, risk assessment, and addressing emerging challenges.</p>
+<p>Proposed governance measures include enforcing standards to prevent misuse, requiring registration of frontier systems, implementing whistleblower protections, and creating national and international safety standards. Additionally, the accountability of frontier AI developers and owners, along with AI companies promptly disclosing if-then commitments, is highlighted.</p>
+<table><tr>
+  <td><img src="../images/week14/day1/Q.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>There are some ethical platforms for developing responsible AI product</p>
+<ol>
+<li>SUM Values: to provide a framework for moral scope of AI product</li>
+<li>FAST Track Principles: to make sure AI project is fair, bias-mitigating and reliable</li>
+<li>PBG Framework: to set up transparent process of AI product</li>
+</ol>
+<table><tr>
+  <td><img src="../images/week14/day1/R.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>Putting the Ethical Platform into Practice needs three key steps: reflect, act and justify:</p>
+<ol>
+<li>Reflect using the SUM values: asking and answering questions about ethical purposes and assess the impacts of AI project</li>
+<li>Act using FAST TRACK Principles: ensure every step of development produces safe, fair AI innovation</li>
+<li>Justify Using the PBG Framework: set up governance process to ensure model transparency</li>
+</ol>
+<table><tr>
+  <td><img src="../images/week14/day1/S.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<h4 id="team-1">Team 1</h4>
+<p>There are many trajectories that AI development could take, so it would be very difficult to completely discount something as a possibility. Related this to “Dark Matter” book by Blake Crouch.</p>
+<p>Risk would primarily come from bad actors (specifically humans). Briefly touched on ‘what if the bad actor is the AI?’</p>
+<h4 id="team-2">Team 2</h4>
+<p>The potential downfall of humans would not be due to AI’s maliciousness.</p>
+<p>In the post-autonomous era, concerns shift to the misuse of models for harmful purposes.</p>
+<h4 id="team-3">Team 3</h4>
+<p>The second question seems to be already happening.</p>
+<p>Given the rapid technological progress in recent years, single prompt can result in losing control over AI models, and speculations around ‘Q*(Q-Star)’ suggest risk in losing control over AI models, however AI’s power-seeking behavior may still be overstated.</p>
+<h2 id="readings">Readings</h2>
+<ul>
+<li><strong><code>Required</code></strong>: Yoshua Bengio, Geoffrey Hinton, Andrew Yao, Dawn Song, Pieter Abbeel, Yuval Noah Harari, Ya-Qin Zhang, Lan Xue, Shai Shalev-Shwartz, Gillian Hadfield, Jeff Clune, Tegan Maharaj, Frank Hutter, Atılım Güneş Baydin, Sheila McIlraith, Qiqi Gao, Ashwin Acharya, David Krueger, Anca Dragan, Philip Torr, Stuart Russell, Daniel Kahneman, Jan Brauner, Sören Mindermann. <a href="https://arxiv.org/abs/2310.17688">Managing AI Risks in an Era of Rapid Progress.</a> arXiv 2023. <a href="https://arxiv.org/abs/2310.17688">PDF</a></li>
+<li><strong><code>Required</code></strong>: Ben Shneiderman. <a href="https://dl.acm.org/doi/abs/10.1145/3419764">Bridging the Gap Between Ethics and Practice: Guidelines for Reliable, Safe, and Trustworthy Human-centered AI Systems.</a> ACM Transactions on Interactive Intelligent Systems, October 2020. <a href="https://dl.acm.org/doi/abs/10.1145/3419764">PDF</a></li>
+<li><strong><code>Optional</code></strong>: David Leslie. <a href="https://arxiv.org/abs/1906.05684">Understanding Artificial Intelligence Ethics And Safety.</a> arXiv 2019. <a href="https://arxiv.org/abs/1906.05684">PDF</a></li>
+<li><strong><code>Optional</code></strong>: Joseph Carlsmith. <a href="https://arxiv.org/abs/2206.13353">Is Power-Seeking AI an Existential Risk?.</a> arXiv 2022. <a href="https://arxiv.org/abs/2206.13353">PDF</a></li>
+<li><strong><code>Optional</code></strong>: Alice Pavaloiu, Utku Kose. <a href="https://arxiv.org/abs/1706.03021">Ethical Artificial Intelligence - An Open Question.</a> arXiv 2017. <a href="https://arxiv.org/abs/1706.03021">PDF</a></li>
+</ul>
+<h3 id="questions">Questions</h3>
+<p><strong>(Post response by Tuesday, 28 November)</strong></p>
+<p>Paper 1: <a href="https://drive.google.com/file/d/1Ok16aNvNLbdkBexcmt9dyVGPEpKYGXbH/view">Bridging the Gap Between Ethics and Practice</a></p>
+<ol>
+<li>The paper claims, “Human-centered Artificial Intelligence (HCAI) systems represent a second Copernican revolution that puts human performance and human experience at the center of design thinking.&quot; Do you agree with this quote?</li>
+<li>Developers/teams, organizations, users and regulators often have different views on what constitutes reliability, safety, and trustworthiness in human-centered AI systems. What are the potential challenges and solutions for aligning them? Can you provide some specific examples where these views do not align?</li>
+</ol>
+<p>Paper 2: <a href="https://arxiv.org/pdf/2310.17688.pdf">Managing AI Risks in an Era of Rapid Progress</a></p>
+<ol start="3">
+<li>Do you think AI systems can be regulated over an international governance organization or agreement like nuclear weapons?</li>
+<li>Consider this quote from the paper: &ldquo;Without sufficient caution, we may irreversibly lose control of autonomous AI systems, rendering human intervention ineffective. Large-scale cybercrime, social manipulation, and other highlighted harms could then escalate rapidly. This unchecked AI advancement could culminate in a large-scale loss of life and the biosphere, and the marginalization or even extinction of humanity.&rdquo; Do you agree with it? If so, do you think any of the measures proposed in the paper would be sufficient for managing such a risk? If not, what assumptions of the authors&rsquo; that led to this conclusion do you think are invalid or unlikely?</li>
+</ol>
+
+      </div>
+<hr class="post-separator"></hr>
+
+    
+    <h1><a href="/week14a/">Week 14a: Multimodal Models</a></h1>
+<div class="post-metadata">
+  <span class="post-date">
+    <time datetime="2023-12-03 00:00:00 &#43;0000 UTC" itemprop="datePublished">3 December 2023</time>
+  </span>
+  
+</div>
+
+      <div class="post-body" itemprop="articleBody">
+        <p><author>Presenting Team: Aparna Kishore, Elena Long, Erzhen Hu, Jingping Wan</author><br>
+<author>Blogging Team: Haolin Liu, Haochen Liu, Ji Hyun Kim, Stephanie Schoch, Xueren Ge</author></p>
+<p>Note: since the topics were unrelated, Week 14 is split into two posts:</p>
+<ul>
+<li><a href="/week14a">Monday, November 27: Multimodal Models</a></li>
+<li><a href="/week14b">Wednesday, November 29: Ethical AI</a></li>
+</ul>
+<h1 id="monday-november-27-multimodal-models">Monday, November 27: Multimodal Models</h1>
+<p>Today&rsquo;s topic is how to improve model performance by combining multiple modes.</p>
+<table><tr>
+  <td><img src="../images/week14/day2/B.JPG" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>We will first introduce the multimodal foundations and then center
+around CLIP, which is the most famous vision-language model.</p>
+<table><tr>
+  <td><img src="../images/week14/day2/C.JPG" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>We live in a multimodal world, and our brains naturally learn to process multiple sensory signals received from the environment to help us make sense of the world around us. More specifically, vision is a large portion of how humans perceive, while language is a large portion of how humans communicate.</p>
+<table><tr>
+  <td><img src="../images/week14/day2/D.JPG" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>When we talk about vision-language, there are two types of interations to consider: one is how can we produce visual data, and another is how can we consume visual information.</p>
+<table><tr>
+  <td><img src="../images/week14/day2/E.JPG" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>For visual generation, popular models include GAN and diffusion models. What makes it multi-modal is that we can use other modalities to control the image we want to generate, for example, the text-to-image methods that can use text-conditioned visual generation, such as stable diffusion.</p>
+<table><tr>
+  <td><img src="../images/week14/day2/F.JPG" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>Another approach focuses on visual understanding, which studies how can we consume the visual information from the image, and further, how can we consume the audio, image, and different modalities from our surrounding environment.</p>
+<table><tr>
+  <td><img src="../images/week14/day2/G.JPG" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>Greg Brockman, who is one of the founders of OpenAI, showed ChatGPT a diagram of my joke website, which he sketched with a pencil. Then, ChatGPT outputs a functional website. This is quite remarkable as you can start to plug images into the language models.</p>
+<p>Link: <a href="https://x.com/gdb/status/1635826383141376002?s=20"><em>https://x.com/gdb/status/1635826383141376002?s=20</em></a>.</p>
+<table><tr>
+  <td><img src="../images/week14/day2/H.JPG" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>When we see the text &ldquo;Sunshine, Sunny beach, Coconut, Straw hat&rdquo;, we can visualize a picture of a beach with these components. This is because our mind not only receives multimodal information but also somehow aligns these modalities.</p>
+<table><tr>
+  <td><img src="../images/week14/day2/I.JPG" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>Now we move to the detailed algorithm of vision-language models. There are particular vision-language problem spaces or representative tasks that these models try to solve.</p>
+<table><tr>
+  <td><img src="../images/week14/day2/J.JPG" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>The first question is how to train a vision-language model. We will discuss supervised pre-training and contrastive language-image pre-training, which is also known as CLIP.</p>
+<table><tr>
+  <td><img src="../images/week14/day2/K.JPG" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>Supervised learning will map an image to a discrete label that is associated with visual content. The drawback here is that we always need labeled data. However, human annotations can be expensive and labels are limited.</p>
+<table><tr>
+  <td><img src="../images/week14/day2/L.JPG" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>The supervised learning method was deployed first. In 2021, OpenAI released Dall-E, which is a generative model that uses transformer architecture like GPT3. The model receives both text and image in the training process, and it can generate images from scratch based on natural language input.</p>
+<p>As seen in the images above, it can combine disparate ideas to synthesize objects, even some of them are unlikely to exist in the real world.</p>
+<h2 id="clip">CLIP</h2>
+<blockquote>
+<p>Alec Radford, Jong Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh, Sandhini Agarwal, Girish Sastry, Amanda Askell, Pamela Mishkin, Jack Clark, Gretchen Krueger, Ilya Sutskever. <a href="https://arxiv.org/abs/2103.00020"><em>Learning Transferable Visual Models From Natural Language Supervision</em></a>. arXiv 2021. <a href="https://arxiv.org/abs/2103.00020">PDF</a></p>
+</blockquote>
+<table><tr>
+  <td><img src="../images/week14/day2/M.JPG" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>Different from Dall-E, CLIP takes an image and text and connects them in non-generative way. The idea is that we can take an image, and the model can predict the text along with it.</p>
+<p>Traditional image classification models are trained to identify objects from a predefined set of categories, for example, there are about 1000 categories in the ImageNet challenge. CLIP is trained to understand the semantics of images and text together. It is trained with a huge amount of data, 400 million images on the web and corresponding text data, and it can perform object identification in any category without re-training.</p>
+<table><tr>
+  <td><img src="../images/week14/day2/N.JPG" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>Since CLIP was trained using a combination of image and text, the training data is a batch of (image, text) pairs.</p>
+<p>On top we have labels that belong to each image, the model tokenize it, passes it to text encoder, performs linear projection, and passes it along to a contrastive embedding screen. It does the same for images.</p>
+<p>Then, in the contrastive embedding screen, the model takes the inner product of image vector and text vector. In contrastive learning, we want to increase the values of these blue squares to 1, which are original image and text pairs, and decrease the values of the white squares, which are not the classes they belong to. To achieve this, they compute the loss of these image-text vectors and text-image vectors and do back propagation</p>
+<table><tr>
+  <td><img src="../images/week14/day2/O.JPG" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>We now elaborate more on the loss function of this training process. We have two vectors (text, image) here, $v$ represents the text vector, and $u$ represents the image vector, and $\tau$ here is a trainable parameter.</p>
+<p>In the first text-to-image loss function, they take the cosine similarities of these two vectors, sum up all the rows in the denominator and normalized via softmax. As we can see it is an asymmetric problem, so to compute the image-to-text loss function, they sum up all the columns instead of the rows</p>
+<p>After that, they compute a cross-entropy loss of these two probability distributions, sum up all the batches, and then average it out to get the final loss function.</p>
+<table><tr>
+  <td><img src="../images/week14/day2/P.JPG" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>After pre-training, the second and third step are for the object identification. We have a new dataset with different classes and want to test CLIP on it. In step 2, we need to pass these classes to the pre-trained text encoder. Instead of passing class names alone, they use a prompt template, making a sentence out of these class names. Then the model will perform the same linear projection as in the pre-training and pass it into a contrastive space</p>
+<p>Then in Step 3, we take the image we want to predict, pass it into the image encoder, do linear projection, go into the contrastive embedding space and take the inner products of this image vector and all text vectors in Step 2. The final prediction output will be the one that has the highest cosine similarity.</p>
+<table><tr>
+  <td><img src="../images/week14/day2/Q.JPG" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>The authors share three main ideas behind this work:</p>
+<ol>
+<li>
+<p>The need of a sufficiently large dataset. The simple truth is that existing manually labeled datasets are just way too small (100k samples) for training a natural language supervised model on the scale of GPT. The intuition is that the required dataset already exists on the web without the need to label data manually. So they created a new dataset of 400 million (image, text) pairs collected from a variety of publicly available sources on the Internet.</p>
+</li>
+<li>
+<p>Efficient pre-training method. After experimenting with class-label prediction, the authors realized that the key to success was in predicting only which text as a whole is paired with which image, not the exact word of that text. This discovery led to the use of the loss function we introduced earlier, such that the cosine similarity for each correct pair of embeddings is maximized, and the cosine similarity of the rest of the pairings are minimized.</p>
+</li>
+<li>
+<p>Using transformers. After some experiments, they selected a transformer as text encoder, and leave two options for image encoder. The image encoder is either a Vision Transformer or a modified ResNet-D with attention pooling instead of global average pooling.</p>
+</li>
+</ol>
+<table><tr>
+  <td><img src="../images/week14/day2/R.JPG" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>The figure above shows that CLIP is by far much more data-efficient than the other methods.</p>
+<table><tr>
+  <td><img src="../images/week14/day2/S.JPG" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>With prompt engineering and ensembling, models are more likely to achieve higher accuracy score rather than just simply having contextless class names.</p>
+<p>One observation is that CLIP performs poorly on differentiating word sense when there’s only a label without context. For example, the label &ldquo;crane&rdquo; can mean construction crane or a crane that flies.</p>
+<p>Another observation is that in their pre-training dataset text, it is relatively rare to see an image with just a single word as a label. So to bridge the distribution gap, they use a prompt template. Instead of a single label, they use template sentences like “a photo of a label”. They also found customizing the prompt text to each task can further improve performance.</p>
+<table><tr>
+  <td><img src="../images/week14/day2/T.JPG" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>As we can see the error rate decreases smoothly as a function of model compute. However, they do note that there is lots of variance, this curve is the average. For individual datasets, it varies widely. It may be due to how the dataset is selected, how the prompt is engineered, or other unknown factors.</p>
+<table><tr>
+  <td><img src="../images/week14/day2/U.JPG" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>For the evaluation in terms of performance, CLIP is compared with a linear probe on ResNet50. It is pretty impressive that zero-shot CLIP outperforms a fully trained model on many of the dataset, including ImageNet.</p>
+<p>On the other side, CLIP is weak on several specialized, complex, or abstract tasks such as EuroSAT (satellite image classification), KITTI Distance (recognizing distance to the nearest car). This may because these are not the kinds of text and image found frequently on the Internet, or that these tasks are different enough from common image tasks but simple enough for a custom-trained model to do well.</p>
+<table><tr>
+  <td><img src="../images/week14/day2/V.JPG" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>Here we compare zero-shot CLIP with few-shot linear probes. This is where pre-training really comes in, as the model only see few examples per class.</p>
+<p>Surprisingly, a zero-shot CLIP is comparable to a 16-shot BiT-M model, which is one of the best open models that does transfer learning in computer vision. If we linear probe the CLIP model, then it way outperform these other linear probe models.</p>
+<table><tr>
+  <td><img src="../images/week14/day2/W.JPG" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>They also evaluate CLIP in terms of its robustness to perturbations. Here they compare zero-shot CLIP to models that have been trained on ImageNet, finding that zero-shot clip matches the performance of ResNet-101. As this classifier degrades as we go for harder and harder datasets overall, CLIP is more robust. This suggests that representation in CLIP should be nuanced enough, so it can pick up on different features than only distinguishing banana from other classes in the ImageNet dataset.</p>
+<table><tr>
+  <td><img src="../images/week14/day2/X.JPG" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>Here, they customize zero-shot CLIP to each dataset (adapt to class shift in purple) based on class names. While this supervised adaptation to class shift increases ImageNet accuracy by around 10 percent, it slightly reduces the average robustness. From the right side, the improvements are concentrated on only a few datasets.</p>
+<p>On the other hand, when they adapt CLIP to fully supervised logistic regression classifiers on the best CLIP model’s features, it comes close to the standard ImageNet training in terms of robustness. Thus, it seems that the representation itself in zero-shot CLIP has more value with more stability and nuance.</p>
+<table><tr>
+  <td><img src="../images/week14/day2/XXX.JPG" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>There are various works following CLIP based on this contrastive learning structure. The first extension is to further scale up texts and images. The second is to design better models.</p>
+<h2 id="reproducible-scaling-laws">Reproducible Scaling Laws</h2>
+<blockquote>
+<p>Mehdi Cherti, Romain Beaumont, Ross Wightman, Mitchell Wortsman, Gabriel Ilharco, Cade Gordon, Christoph Schuhmann, Ludwig Schmidt, Jenia Jitsev. <a href="https://arxiv.org/abs/2212.07143"><em>Reproducible scaling laws for contrastive language-image learning</em></a>. CVPR 2023. <a href="https://arxiv.org/abs/2212.07143">PDF</a></p>
+</blockquote>
+<table><tr>
+  <td><img src="../images/week14/day2/XXXX.JPG" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>This paper used the open larges scale LAION-2B dataset to pre-train
+OpenCLIP across different scales.</p>
+<h2 id="datacomp">Datacomp</h2>
+<blockquote>
+<p>Samir Yitzhak Gadre, Gabriel Ilharco, Alex Fang, Jonathan Hayase, Georgios Smyrnis, Thao Nguyen, Ryan Marten, Mitchell Wortsman, Dhruba Ghosh, Jieyu Zhang, Eyal Orgad, Rahim Entezari, Giannis Daras, Sarah Pratt, Vivek Ramanujan, Yonatan Bitton, Kalyani Marathe, Stephen Mussmann, Richard Vencu, Mehdi Cherti, Ranjay Krishna, Pang Wei Koh, Olga Saukh, Alexander Ratner, Shuran Song, Hannaneh Hajishirzi, Ali Farhadi, Romain Beaumont, Sewoong Oh, Alex Dimakis, Jenia Jitsev, Yair Carmon, Vaishaal Shankar, Ludwig Schmidt. <a href="https://arxiv.org/abs/2304.14108"><em>DataComp: In search of the next generation of multimodal datasets</em></a>. arxiv 2023. <a href="https://arxiv.org/abs/2304.14108">PDF</a></p>
+</blockquote>
+<table><tr>
+  <td><img src="../images/week14/day2/XXXXX.JPG" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>This paper talked about how should we scale data? Should we scale it up with noisier and noisier data?</p>
+<p>Their focus is to search the next-generation image-text datasets. Instead of fixing the dataset and designing different algorithms, the authors propose to fix the CLIP training method but vary the datasets instead. With this method, they come up with a high-quality large-scale dataset.</p>
+<h2 id="filip">FILIP</h2>
+<blockquote>
+<p>Lewei Yao, Runhui Huang, Lu Hou, Guansong Lu, Minzhe Niu, Hang Xu, Xiaodan Liang, Zhenguo Li, Xin Jiang, Chunjing Xu. <a href="https://arxiv.org/abs/2111.07783"><em>FILIP: Fine-grained Interactive Language-Image Pre-Training</em></a>. ICLR 2022. <a href="https://arxiv.org/abs/2111.07783">PDF</a></p>
+</blockquote>
+<table><tr>
+  <td><img src="../images/week14/day2/XXXXXX.JPG" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>FILIP scales CLIP training via masking. It randomly masks out image patches with a high masking ratio, and only encodes the visible patches. It turns out this method does not hurt performance but improves training efficiency</p>
+<h2 id="k-lite">K-Lite</h2>
+<blockquote>
+<p>Sheng Shen, Chunyuan Li, Xiaowei Hu, Jianwei Yang, Yujia Xie, Pengchuan Zhang, Zhe Gan, Lijuan Wang, Lu Yuan, Ce Liu, Kurt Keutzer, Trevor Darrell, Anna Rohrbach, Jianfeng Gao. <a href="https://arxiv.org/abs/2204.09222"><em>K-LITE: Learning Transferable Visual Models with External Knowledge</em></a>. NeurIPS 2022. <a href="https://arxiv.org/abs/2204.09222">PDF</a></p>
+</blockquote>
+<table><tr>
+  <td><img src="../images/week14/day2/XXXXXXX.JPG" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>Another line of work focuses on improving the language side model design of CLIP. The model K-Lite utilizes the Wiki definition of entities together with the original alt-text for contrastive pre-training. Such knowledge is useful for a variety of domains and datasets, making it possible to build a generic approach for task-level transfer.</p>
+<table><tr>
+  <td><img src="../images/week14/day2/XXXXXXXX.JPG" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>Recall that in the motivating example, we argue that more modalities will enhance the learning process.</p>
+<h2 id="imagebind">ImageBind</h2>
+<blockquote>
+<p>Rohit Girdhar, Alaaeldin El-Nouby, Zhuang Liu, Mannat Singh, Kalyan Vasudev Alwala, Armand Joulin, Ishan Misra. <a href="https://arxiv.org/abs/2305.05665"><em>ImageBind: One Embedding Space To Bind Them All</em></a>. arxiv 2023. <a href="https://arxiv.org/abs/2305.05665">PDF</a></p>
+</blockquote>
+<table><tr>
+  <td><img src="../images/week14/day2/XXXXXXXXX.JPG" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>Imagebind tries to use more modalities to improve performance. However, one challenge here is that not all generated data are naturally aligned due to the lack of a corresponding relationship in the training set.</p>
+<table><tr>
+  <td><img src="../images/week14/day2/XXXXXXXXXX.JPG" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>For ImageBind, there are different modalities include image, text, video, audio, depth, thermal, and IMU, which contains the accelerator, and gyroscope data. The goal of ImageBind is to learn a single joint embedding space for all the modalities, and then use image as the binding modality. Here <em>I</em> denotes image modality, and <em>M</em> denotes all the other modalities. They use deep neural networks as encoders to extract embeddings from each of the modalities, so each modality has it own encoder, just like CLIP.</p>
+<p>During the training, the image and text modality was kept frozen, and the weights of other modalities were updated, and this freezing shows the alignment to emerge between other modalities for which we don’t have any natural alignment, for example, between audio, and depth.</p>
+<p>The preprocessed inputs are passed through encoders and then passed through a simple linear layer to make sure they are of same dimension before being trained with the loss called infoNCE loss. This loss is a modified cross-entropy loss, which extends the contrastive learning to multiple modalities. Let the output for image be <em>q</em>, and the output for other modalities be <em>k</em>. The loss here tries to align image modality with all other modalities.</p>
+<table><tr>
+  <td><img src="../images/week14/day2/YY.JPG" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>They study whether ImageBind&rsquo;s embeddings can be used to compose information across modalities. The above figure shows image retrievals obtained by adding together image and audio embeddings. The joint embedding space allows for us to compose two embeddings: e.g., image of fruits on a table + sound of chirping birds and retrieve an image that contains both these concepts, i.e., fruits on trees with birds. Such emergent compositionality whereby semantic content from different modalities can be composed will likely enable a rich variety of compositional tasks.</p>
+<table><tr>
+  <td><img src="../images/week14/day2/YYY.JPG" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>By utilizing the audio embedding of ImageBind, it is possible to design an audio-based detector that can detect and segment objects based on audio prompts.</p>
+<table><tr>
+  <td><img src="../images/week14/day2/YYYY.JPG" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>As proposed in CLIP, replacing labels with textual descriptions and using a text encoder to encode them can feasibly convert closed-set problems to open-set ones. A number of works have been proposed to transform different computer vision tasks by replacing the label space with language space.</p>
+<table><tr>
+  <td><img src="../images/week14/day2/Z.JPG" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>For the first question, we believe there are several differences between humans and machines for cognition. Although these models will outperform humans on several specific tasks, they also have limitations. For example, humans will perceive an image as a whole, but machines perceive it pixel by pixel. This ensures humans are good at using context to interpret images and text. While these models can recognize patterns and correlations between words and images, they may not fully grasp the broader context as humans do.</p>
+<p>For the second question, the presenter gave an example that there is a specific food in Wuhan called &ldquo;hot dry noodles&rdquo;. When we give a picture of this kind of noodles with the caption &ldquo;hot dry noodles in Wuhan&rdquo;, the multi-mode models will output how this food is popular in Wuhan. However, if we replace the caption as &ldquo;hot dry noodles in Shandong&rdquo;, the model will still describe this noodles in Wuhan instead of Shandong. The presenter believes this is an example of bias because a lot of data on this noodles is associated with Wuhan. Thus, even though the caption of the image is changed, the model can not comprehend because the representation is fixed.</p>
+<h1 id="readings-and-discussion-questions">Readings and Discussion Questions</h1>
+<h2 id="monday-27-november-transferring-and-binding-multi-modal-capabilities">Monday 27 November: Transferring and Binding Multi-Modal Capabilities:</h2>
+<h3 id="readings-for-monday">Readings for Monday:</h3>
+<ul>
+<li><strong><code>Required</code></strong>: Alec Radford, Jong Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh, Sandhini Agarwal, Girish Sastry, Amanda Askell, Pamela Mishkin, Jack Clark, Gretchen Krueger, Ilya Sutskever. <a href="https://arxiv.org/abs/2103.00020">Learning Transferable Visual Models From Natural Language Supervision</a>. PMLR 2021. <a href="https://arxiv.org/abs/2103.00020">PDF</a></li>
+<li><strong><code>Optional</code></strong>: OpenAI. <a href="https://openai.com/research/clip">CLIP: Connecting text and images.</a> Blog 2021.</li>
+<li><strong><code>Required</code></strong>: Sandhini Agarwal, Gretchen Krueger, Jack Clark, Alec Radford, Jong Wook Kim, Miles Brundage. <a href="https://arxiv.org/abs/2108.02818">Evaluating CLIP: Towards Characterization of Broader Capabilities and Downstream Implications.</a> <a href="https://arxiv.org/abs/2108.02818">PDF</a></li>
+<li><strong><code>Required</code></strong>:  Meta AI. <a href="https://ai.meta.com/blog/imagebind-six-modalities-binding-ai/">ImageBind: Holistic AI Learning Across Six Modalities.</a> Blog 2023.</li>
+<li><strong><code>Optional</code></strong>: Rohit Girdhar, Alaaeldin El-Nouby, Zhuang Liu, Mannat Singh, Kalyan Vasudev, Alwala Armand, Joulin Ishan Misra. <a href="https://arxiv.org/abs/2309.10020">ImageBind: One Embedding Space To Bind Them All</a>. arXiv 2023. <a href="https://arxiv.org/abs/2309.10020">PDF</a></li>
+<li><strong><code>Optional</code></strong>: Chunyuan Li, Zhe Gan, Zhengyuan Yang, Jianwei Yang, Linjie Li, Lijuan Wang, Jianfeng Gao. <a href="https://arxiv.org/abs/2309.10020">Multimodal Foundation Models: From Specialists to General-Purpose Assistants.</a> arXiv 2023. <a href="https://arxiv.org/abs/2309.10020">PDF</a> Chapter 1-2, p5 - p25.</li>
+<li><strong><code>Optional</code></strong>: Jindong Gu, Zhen Han, Shuo Chen, Ahmad Beirami, Bailan He, Gengyuan Zhang, Ruotong Liao, Yao Qin, Volker Tresp, Philip Torr. <a href="https://arxiv.org/abs/2307.12980">A Systematic Survey of Prompt Engineering on Vision-Language Foundation Models.</a> arXiv 2023. <a href="https://arxiv.org/abs/2307.12980">PDF</a></li>
+<li><strong><code>Optional</code></strong>: Anastasiya Belyaeva, Justin Cosentino, Farhad Hormozdiari, Krish Eswaran, Shravya Shetty, Greg Corrado, Andrew Carroll, Cory Y. McLean, Nicholas A. Furlotte. <a href="https://arxiv.org/abs/2307.09018">Multimodal LLMs for health grounded in individual-specific data.</a> arXiv 2023. <a href="https://arxiv.org/abs/2307.09018">PDF</a></li>
+<li><strong><code>Optional</code></strong>: Alexey Dosovitskiy, Lucas Beyer, Alexander Kolesnikov, Dirk Weissenborn, Xiaohua Zhai, Thomas Unterthiner, Mostafa Dehghani, Matthias Minderer, Georg Heigold, Sylvain Gelly, Jakob Uszkoreit, Neil Houlsby. <a href="https://arxiv.org/abs/2010.11929">An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale.</a> ICLR 2021. <a href="https://arxiv.org/abs/2010.11929">PDF</a></li>
+</ul>
+<h3 id="questions">Questions</h3>
+<p><strong>(Post response by Sunday, 26 November)</strong></p>
+<ol>
+<li>What are some potential real-world applications of CLIP and ImageBind? Could these technologies transform industries like healthcare, education, or entertainment?</li>
+<li>How do CLIP and ImageBind mimic or differ from human cognitive processes in interpreting and linking visual and textual information?</li>
+<li>What are potential challenges in creating datasets for training models like CLIP and ImageBind? How can the quality of these datasets be ensured?</li>
+<li>What are the potential ethical implications of technologies like CLIP and ImageBind, especially in terms of privacy, bias, and misuse? How can these issues be mitigated?</li>
+</ol>
+
+      </div>
+<hr class="post-separator"></hr>
+
     
     <h1><a href="/week13/">Week 13: Regulating Dangerous Technologies</a></h1>
 <div class="post-metadata">
@@ -417,7 +1000,7 @@ The key lies in knowing <em>when</em> to use a tool, <em>which</em> tool to use,
 </tr>
   <td colspan=1 align="center"><b></b></td>
 </table>
-<p>Reasoning and acting together create an augmented action space, which is key to unlocking these models' capabilities.</p>
+<p>Reasoning and acting together create an augmented action space, which is key to unlocking these models&rsquo; capabilities.</p>
 <h2 id="a-survey-on-large-language-model-based-autonomous-agents">A Survey on Large Language Model based Autonomous Agents</h2>
 <blockquote>
 <p>Lei Wang, Chen Ma, Xueyang Feng, Zeyu Zhang, Hao Yang, Jingsen Zhang, Zhiyuan Chen, Jiakai Tang, Xu Chen, Yankai Lin, Wayne Xin Zhao, Zhewei Wei, Ji-Rong Wen. <a href="https://arxiv.org/abs/2308.11432"><em>A Survey on Large Language Model based Autonomous Agents</em></a>. arXiv, 2023. <a href="https://arxiv.org/pdf/2308.11432.pdf">PDF</a>.</p>
@@ -1425,7 +2008,7 @@ They thus concluded that rather than fine-tuning on more imitation data, the bes
 </div>
 </center>
 <h2 id="question-why-is-there-a-discrepancy-between-crowdworker-and-gpt-4-preferences-evaluation-and-automatic-benchmark-evaluation">Question: Why is there a discrepancy between crowdworker (and GPT-4) preferences evaluation and automatic benchmark evaluation?</h2>
-<p>Authors' conclusion: <strong>Limitation models can learn style, but not factuality.</strong></p>
+<p>Authors&rsquo; conclusion: <strong>Limitation models can learn style, but not factuality.</strong></p>
 <center>
 <div class="slide">
   <img src="../images/week10/day1/Slide28.png" alt="" width="85%">
@@ -1786,14 +2369,14 @@ This is an open-ended question. One possible reason is that while fine-tuning wi
 <p>In <a href="https://arxiv.org/abs/2305.17493">The Curse of Recursion: Training on Generated Data Makes Models Forget</a>, the authors rely on several assumptions to support their arguments. How strong those assumptions are and do you think these assumptions limit its applicability to broader contexts?</p>
 </li>
 </ol>
-<section class="footnotes" role="doc-endnotes">
+<div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn:1" role="doc-endnote">
+<li id="fn:1">
 <p>Gudibande, A., Wallace, E., Snell, C., Geng, X., Liu, H., Abbeel, P., Levine, S. and Song, D., 2023. <a href="https://arxiv.org/pdf/2305.15717.pdf">The false promise of imitating proprietary llms</a>. arXiv preprint arXiv:2305.15717.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
-</section>
+</div>
 
       </div>
 <hr class="post-separator"></hr>
@@ -2199,7 +2782,7 @@ In this example, when we see the activation value of the feature 4 increase, the
         <li>Input Bias: Introduces an approach of adding an input bias to the representations in autoencoders, which demonstrates a significant boost in performance for the models used in toy examples.</li>
       </ol>
 </td> </table>
-<p>The purpose of sparse autoencoders is to extract meaningful features from neural network activations. To avhice a good decomposition, where the features extracted should be interpretable and able to describe the activations' context requires the ability to describe activations, interpret downstream effects of changes, and cover a significant portion of functionality within the data.</p>
+<p>The purpose of sparse autoencoders is to extract meaningful features from neural network activations. To avhice a good decomposition, where the features extracted should be interpretable and able to describe the activations&rsquo; context requires the ability to describe activations, interpret downstream effects of changes, and cover a significant portion of functionality within the data.</p>
 <h3 id="are-these-features-interpretable">Are these features &ldquo;interpretable&rdquo;</h3>
 <table>
     <tr>
@@ -2209,7 +2792,7 @@ In this example, when we see the activation value of the feature 4 increase, the
     <td colspan=1>
     <br/>
 <p><strong>Feature Activation Sampling Bias</strong>: In previous evaluations, there was a bias due to just considering the top-activation neurons which might inaccurately appear monosemantic due to their higher activations. To mitigate this bias, the approach involves sampling uniformly across all possible activations for each given feature.</p>
-<p><strong>Evaluation of Interpretable Features:</strong> The authors used an evaluation process where human-based assessments are used to determine the interpretability of the features extracted. The criteria for interpretability are based on the authors' distributed-based evaluation, where a score above eight is considered sufficiently interpretable.</p>
+<p><strong>Evaluation of Interpretable Features:</strong> The authors used an evaluation process where human-based assessments are used to determine the interpretability of the features extracted. The criteria for interpretability are based on the authors&rsquo; distributed-based evaluation, where a score above eight is considered sufficiently interpretable.</p>
 </td> </table>
 <h3 id="automated-evaluation">Automated Evaluation</h3>
 <table>
@@ -2366,7 +2949,7 @@ adapting existing training techniques for interpretability, which would require 
 </center>
 <h2 id="heading"></h2>
 <p>Here is an example of pseudocode from the activity:</p>
-<pre tabindex="0"><code class="language-angular2html" data-lang="angular2html">Sentence = &quot;The students like to read interesting books.&quot;
+<pre tabindex="0"><code class="language-angular2html" data-lang="angular2html">Sentence = &#34;The students like to read interesting books.&#34;
 # The bilingual dictionary from English to Chinese: Eng_chinese_dict
 Translation = []
 for word in Sentence.split():
@@ -2374,7 +2957,7 @@ for word in Sentence.split():
         Translation.append(Eng_chinese_dict[word])
     else:
         Translation.append(word)
-Translated_sentence = &quot; &quot;.join(Translation)
+Translated_sentence = &#34; &#34;.join(Translation)
 </code></pre><p>After the activity discussion, here are the challenges encountered when translating from English to another language:</p>
 <ul>
 <li>Variations in Word Order: Different languages have varying word orders, affecting sentence structure.</li>
@@ -3247,468 +3830,6 @@ Second section (5 - 9): Before 5:29pm on <strong>Tuesday 3 October</strong>.</p>
 <li>Do retrieval-augmented LLMs pose any risks or potential negative consequences despite their ability to mitigate LLM hallucinations through the use of external knowledge?</li>
 <li>The method proposed by DoLa seems quite simple but effective. Where do you think the authors of DoLa get the inspiration for their idea？</li>
 </ol>
-
-      </div>
-<hr class="post-separator"></hr>
-
-    
-    <h1><a href="/week4/">Week 4: Capabilities of LLMs</a></h1>
-<div class="post-metadata">
-  <span class="post-date">
-    <time datetime="2023-09-25 00:00:00 &#43;0000 UTC" itemprop="datePublished">25 September 2023</time>
-  </span>
-  
-</div>
-
-      <div class="post-body" itemprop="articleBody">
-        <p>(see bottom for assigned readings and questions)</p>
-<h1 id="capabilities-of-llms-week-4">Capabilities of LLMs (Week 4)</h1>
-<p><author>Presenting Team: Xindi Guo, Mengxuan Hu, Tseganesh Beyene Kebede, Zihan Guan</author></p>
-<p><author>Blogging Team: Ajwa Shahid, Caroline Gihlstorf, Changhong Yang, Hyeongjin Kim, Sarah Boyce</author></p>
-<h1 id="monday-september-18">Monday, September 18</h1>
-<p>Jingfeng Yang, Hongye Jin, Ruixiang Tang, Xiaotian Han, Qizhang Feng, Haoming Jiang, Bing Yin, Xia Hu. <em>Harnessing the Power of LLMs in Practice: A Survey on ChatGPT and Beyond</em>. April 2023. <a href="https://arxiv.org/abs/2304.13712">https://arxiv.org/abs/2304.13712</a></p>
-<p>This discussion was essential to highlight the distinction between large language models (LLMs) and fine-tuned models. The paper defines LLMs as models trained on large amounts of data without a particular domain of application in mind and fine-tuned models as models trained on some general data in addition to data from a specific domain in which they will perform a particular task. They also highlighted a rule of thumb from the paper that LLMs typically have more than 20 billion parameters whereas fine-tuned models have fewer than 20 billion parameters.</p>
-<p>The presenters then discussed how to go about choosing the model that is best for a task when there are so many available. They explored two ways of approaching this problem: one that considers the data, and another that considers the task.</p>
-<p>The presenters highlighted three types of data to consider for a task: the pre-training data, the fine-tuning data, and the test data. If there is a model already pre-trained on data that is relevant to the task at hand, that model might be a good choice. In order for a dataset to be conducive to fine-tuning a model, the data must be labeled and that there must be enough of it to sufficiently train the model. Otherwise, training an LLM would be better. The presenters noted, however, that fine-tuned models have been shown to perform better than LLMs on specific tasks when they have sufficient data to train on.</p>
-<p>The following Figure 1 shows that fine-tuned models performed better than LLMs after being trained on enough data:</p>
-<table><tr>
-  <td><img src="/images/week4/llms_vs_fine_tuned_models.png" width="95%"></td>
-</tr>
-  <td colspan=1 align="center"> Figure 1 <b> <a href="https://arxiv.org/abs/2307.11346">(Image source)</a></b></td>
-</table>
-<p>LLMs and fine-tuned models perform better on different tasks. According to a study from the paper <a href="https://arxiv.org/abs/2301.13848"><em>Benchmarking Large Language Models for News Summarization</em></a> <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>, LLMs perform better than fine-tuned models on text summarization according to the preferences of human raters. Additionally, LLMs perform better on tasks that require large amounts of knowledge from a variety of domains<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>. In machine translation, however, fine-tuned models generally do better than LLMs, although they only do slightly better in low-resource settings<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>. Additionally, the presenters explained that fine-tuned models and LLMs have similar performance when the task only requires very specific knowledge.</p>
-<p>The presenters then posed the following question to the class: “How could we enhance LLM in the scenario where the required knowledge does not match their learned knowledge?” The class formed four groups to discuss the question. Each group then shared a summary of what they had discussed:</p>
-<p>Group 1: Discussed enhancements in both training and testing. For testing, use intentional prompts to get the knowledge you want from the model. For training, adding more training data, using a knowledge graph to classify knowledge into different clusters for ease of search, and using a plug-in, as mentioned in the GitHub discussion.</p>
-<p>Group 2: Advocated for enhancement through the model&rsquo;s ability to retrieve information from external sources and undergo fine-tuning.</p>
-<p>Group 3: Emphasized the significance of using more extensive datasets and guiding models through example-based prompts to extract additional knowledge from the available data.</p>
-<p>Group 4: Proposed refining model performance through fine-tuning and deliberately specifying the model&rsquo;s role within a chat setting to steer it toward specific tasks.</p>
-<p>The presenters also mentioned that LLMs perform arithmetic better as they grow larger and that LLMs are better at commonsense reasoning than fine-tuned models<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>.</p>
-<h2 id="chatgpt-plug-ins">ChatGPT Plug-Ins</h2>
-<p>The presenters then moved to a discussion of ChatGPT plug-ins. They established that LLMs are not able to keep up with current knowledge and facts and that they mainly handle text data as opposed to image data, audio, and other data formats. They also explained that while LLMs may be able to generate instructions for a human to follow to complete a task, they are often unable to follow those instructions and complete the tasks themselves. This is where plug-ins come in.</p>
-<p>Plug-ins allow LLMs to access data outside of what they have already learned, for example, by searching the web. Plug-ins can enable ChatGPT to search the web (<a href="https://openai.com/blog/chatgpt-plugins#browsing">https://openai.com/blog/chatgpt-plugins#browsing</a>) and write code (<a href="https://openai.com/blog/chatgpt-plugins#code-interpreter)">https://openai.com/blog/chatgpt-plugins#code-interpreter)</a>. They also showed a video of how ChatGPT can use plug-ins from outside OpenAI to complete tasks with specific instructions, namely, finding a restaurant, then a recipe, then calculating the number of calories in the recipe (<a href="https://openai.com/blog/chatgpt-plugins#third-party-plugins)">https://openai.com/blog/chatgpt-plugins#third-party-plugins)</a>.</p>
-<p>The class then formed groups and spent 25 minutes designing custom plug-ins. Each group then shared their plug-in with the class:</p>
-<p><em>Group 1</em>: Envisioned a plug-in that allows a user to make DIY furniture or buy new furniture by submitting an image of something they would like to make from scratch or buy and returning either a link to a similar piece of furniture or a video/instructions on how to build a piece of furniture similar to the one in their image (Figure 2).</p>
-<table><tr>
-  <td><img src="/images/week4/group_1_plugin.png" width="95%"></td>
-</tr>
-  <td colspan=1 align="center"> Figure 2 <b>DIY Furniture Plug-In </b></td>
-</table>
-<p><em>Group 2</em>: Suggested a plug-in that generates the profile of a fake person with a fake social media account. Essentially, it aimed to create a convincing online persona that would resemble a real person but was entirely fictional. (Such a plug-in, obviously, raises some serious ethical concerns and could be used for some legitimate purposes, but many malign ones!)</p>
-<p><em>Group 3</em>: Created a plug-in that uses a person’s portfolio/resume to match them with different jobs serving as an ultimate career support tool (Figure 3). It assisted users in job search by matching them with relevant job openings, provided tailored preparation materials for interviews, offered resume/portfolio editing guidance, and provided opportunities to expand their professional network. Essentially, it aimed to equip individuals with the tools and resources needed to enhance their career prospects.</p>
-<table><tr>
-  <td><img src="/images/week4/group_3_plugin.png" width="95%"></td>
-</tr>
-  <td colspan=1 align="center"> Figure 3 <b>Job Hunter Plug-In</b></td>
-</table>
-<p>Group 4: Shared the concept of a plug-in that allows a user to find the taxonomy of a particular research paper, and place it in a research area. Moreover, it offered the valuable function of returning related papers, thus assisting users in discovering additional relevant research in their field of interest.</p>
-<p>The discussion on Monday concluded with the class appreciating each other’s ideas on the possibilities of using plug-ins but also their limitations and associated risks. This exchange of perspectives and ideas highlighted the creative ways in which technology and AI-driven tools could be used to address various challenges and opportunities across different domains.</p>
-<h1 id="wednesday-medical-applications-of-llms">Wednesday: Medical Applications of LLMs</h1>
-<h2 id="introduction">Introduction</h2>
-<p>Wednesday&rsquo;s class started with warm-up story about a young boy who finally got diagnosed from ChatGPT. He saw 17 doctors over 3 years for chronic pain but they couldn’t diagnosis what made boy painful. One day, his parents explained the boy’s symptom to ChatGPT and they got a reliable answer. They brought this information to a doctor and after several tests, he could finally get a diagnosis which was correct information from ChatGPT. This story presents a bright possibilities for the medical use of Chat GPT.</p>
-<p>We also got a simple question and had to solve the problem not using ChatGPT.</p>
-<table><tr>
-  <td><img src="/images/week4/figure4.png" width="95%"></td>
-</tr>
-  <td colspan=1 align="center"> Figure 4 <b></b></td>
-</table>
-<p>About 70% of students could get an answer “A” using a simple web search (e.g., duckduckgo or google) at first trial, and 30% of students could get an answer by several attempts.</p>
-<p>Later, we were asked to use ChatGPT to get an answer. All students could get a correct answer for at first trial. For a simple question like this, it is unclear if GPT is better than a web search. ChatGPT has been pre-trained from many documents from the web, so it is good at giving general information.</p>
-<p>However, if we ask deeper and expertise questions to ChatGPT, it may
-not give an answer. We indeed need a LLM model which is trained from
-medical information to get a reliable result. (Note that GPT-4 is
-already competitive in many ways with models tuneds specifically for
-medical applications.)</p>
-<h2 id="medical-fine-tuned-llms">Medical fine-tuned LLMs</h2>
-<p>There were many attemps to build LLMs trained with medical knowlege. Med-PaLM is one of the representive models, which is fine-tuned PaLM with a medical knowledge. Figure 5 showed that Med-PalM scored 67.2% on USMLE-type questions in the MedQA dataset. Considering that approximate medical pass mark was 60%, Med-PalM was the first LLM model who passed the approximate medical pass mark by Dec 22.</p>
-<table><tr>
-  <td><img src="/images/week4/figure5.png" width="95%"></td>
-</tr>
-  <td colspan=1 align="center"> Figure 5 <b> <a href="https://sites.research.google/med-palm/">(Image source)</a></b>
-</table>
-<p>Recently researchers developed Med-PaLM2. They trained PaLM2 with more medical data and upgraded. Figure 6 shows the brief explaination of how Med-PaLM2 was trained. As a result of training fine-tuned with more and better medical information, it could achieve significant improvement.</p>
-<table><tr>
-  <td><img src="/images/week4/figure6.png" width="95%"></td>
-</tr>
-  <td colspan=1 align="center"> Figure 6 <b> <a href="https://www.youtube.com/watch?v=ixRanV-rdAQ">(Image source)</a></b>
-</table>
-<p>The researchers had a same experiment. Figure 7 showed that Med-PaLM2 scored an accuracy of 86.5% on USMLE-type-questions in the MedQA dataset. Compared with other LLM performance before 2023, Med-PaLM2 was the first LLM to reach expert performance.</p>
-<p>In comparison to human physicians in High Quality Answer Traits, Med-PaLM2 showed better reflects consensus, better reading comprehension, better knowledge to recall, and better reasoning.</p>
-<p>When they tested Potential Answer Risks, physicians omitted more
-information, and gave slightly more evidence of demographic bias, and
-potentially greater extent/likelihood of harm but Med-PaLM2 gave more
-inaccurate/irrelevant information.</p>
-<table><tr>
-  <td><img src="/images/week4/figure7.jpeg" width="95%"></td>
-</tr>
-  <td colspan=1 align="center"> Figure 7 <b> <a href="https://arxiv.org/pdf/2305.09617.pdf">(Image source)</a></b>
-</table>
-<p>We have seen evidence showing that Med-PaLM2 performs very well,
-but this is just a starting point for the discussion of how AI should
-be used in healthcare.</p>
-<p>Presenter suggested the one way of increasing the capabilities of Med-LLMs. Extending input data from language to other source of data like image, LLMs could understand better about the condition of patients and give more correct diagnosis. Presenter introduced a multimodal version Med-PaLM, in figure 8. Accuracy of the diagonsis is mainly based on how input data contain the precise information about the patient, so as LLM model could be trained through those multimodal material, there would be larger chances of increasing the capabilities.</p>
-<table><tr>
-  <td><img src="/images/week4/figure8.png" width="95%"></td>
-</tr>
-  <td colspan=1 align="center"> Figure 8 <b> <a href="https://sites.research.google/med-palm/">(Image source)</a></b>
-</table>
-<p>Also presenter gave a data about physician evaluation on Multi-Med QA and adversarial Qustion to compare the physician, Med-PaLM1, and Med-PaLM2 as you can see in figure 9. It showed the significant increased capabilities as Med-PaLM developed to Med-PaLM2. Furthermore, Almost evalution on Med-PaLM2 is within the range of physicians and some of evaluation even exceed physicians. Based on this results, presenter opened a discussion.</p>
-<table><tr>
-  <td><img src="/images/week4/figure9.png" width="95%"></td>
-</tr>
-  <td colspan=1 align="center"> Figure 9 <b> <a href="https://arxiv.org/pdf/2305.09617.pdf">(Image source)</a></b>
-</table>
-<h2 id="discussion">Discussion</h2>
-<p><em>What are the potential implications of LLMs reaching or surpassing human expertise in medical knowledge?</em></p>
-<p>The discussion raised more questions than answers:</p>
-<ul>
-<li>
-<p>At what point do we trust doctors vs LLMs and to what extent?</p>
-</li>
-<li>
-<p>Are LLMs more convenient than going to a doctor?</p>
-</li>
-<li>
-<p>People will be more prone to self-diagnosis</p>
-</li>
-<li>
-<p>People could be more honest with AI than a human being</p>
-</li>
-<li>
-<p>Should we let AI write prescriptions?</p>
-</li>
-<li>
-<p>How can we truly verify what is right and what is wrong?</p>
-</li>
-<li>
-<p>AI could obviously give a better diagnosis than human whose experiences effect diagnoses</p>
-</li>
-<li>
-<p>What would happen when different Ais give different results?</p>
-</li>
-<li>
-<p>There is a lot of data to train with and fine tuning. Is this worth the time and effort?</p>
-</li>
-<li>
-<p>Who is taking accountability for the mistakes made by AI? If a doctor does something wrong, they can have their license taken, but this is that the case for AI.</p>
-</li>
-<li>
-<p>How can we refine and improve LLMs like Med-PaLM2 to be more effective in healthcare applications?</p>
-</li>
-</ul>
-<h2 id="readings">Readings</h2>
-<p><strong>Monday:</strong></p>
-<ol>
-<li>
-<p>Jingfeng Yang, Hongye Jin, Ruixiang Tang, Xiaotian Han, Qizhang Feng, Haoming Jiang, Bing Yin, Xia Hu. <a href="https://arxiv.org/abs/2304.13712"><em>Harnessing the Power of LLMs in Practice: A Survey on ChatGPT and Beyond</em></a>. April 2023. <a href="https://arxiv.org/abs/2304.13712">https://arxiv.org/abs/2304.13712</a>. [<a href="https://arxiv.org/pdf/2304.13712.pdf">PDF</a>]</p>
-</li>
-<li>
-<p>OpenAI. <a href="https://arxiv.org/abs/2303.08774"><em>GPT-4 Technical Report</em></a>. March 2023. <a href="https://arxiv.org/abs/2303.08774">https://arxiv.org/abs/2303.08774</a> [<a href="https://arxiv.org/pdf/2303.08774.pdf">PDF</a>]</p>
-</li>
-</ol>
-<p>Optionally, also explore <a href="https://openai.com/blog/chatgpt-plugins">https://openai.com/blog/chatgpt-plugins</a>.</p>
-<p><strong>Wednesday:</strong></p>
-<ol start="3">
-<li>Karan Singhal, Tao Tu, Juraj Gottweis, Rory Sayres, Ellery Wulczyn, Le Hou, Kevin Clark, Stephen Pfohl, Heather Cole-Lewis, Darlene Neal, Mike Schaekermann, Amy Wang, Mohamed Amin, Sami Lachgar, Philip Mansfield, Sushant Prakash, Bradley Green, Ewa Dominowska, Blaise Aguera y Arcas, Nenad Tomasev, Yun Liu, Renee Wong, Christopher Semturs, S. Sara Mahdavi, Joelle Barral, Dale Webster, Greg S. Corrado, Yossi Matias, Shekoofeh Azizi, Alan Karthikesalingam, Vivek Natarajan. <a href="https://arxiv.org/abs/2305.09617"><em>Towards Expert-Level Medical Question Answering with Large Language Models</em></a>
-<a href="https://arxiv.org/abs/2305.09617">https://arxiv.org/abs/2305.09617</a> [<a href="https://arxiv.org/pdf/2305.09617.pdf">PDF</a>]</li>
-</ol>
-<p>Optional Readings:</p>
-<ul>
-<li>Harsha Nori, Nicholas King, Scott Mayer McKinney, Dean Carignan, Eric Horvitz. <a href="https://arxiv.org/abs/2303.13375"><em>Capabilities of GPT-4 on Medical Challenge Problems</em></a>. March 2023. <a href="https://arxiv.org/abs/2303.13375">https://arxiv.org/abs/2303.13375</a></li>
-<li>Travis Zack, Eric Lehman, Mirac Suzgun, Jorge A. Rodriguez, Leo Anthony Celi, Judy Gichoya, Dan Jurafsky, Peter Szolovits, David W. Bates, Raja-Elie E. Abdulnour, Atul J. Butte,  Emily Alsentzer. <a href="https://www.medrxiv.org/content/10.1101/2023.07.13.23292577"><em>Coding Inequity: Assessing GPT-4’s Potential for Perpetuating Racial and Gender Biases in Healthcare</em></a>. July 2023.
-<a href="https://www.medrxiv.org/content/10.1101/2023.07.13.23292577">https://www.medrxiv.org/content/10.1101/2023.07.13.23292577</a> — This article relates to the underlying biases in the models we talked about this week, but with an application that show clear potential harm resulting from these biases in the form if increased risk of medical misdiagnosis.</li>
-</ul>
-<h2 id="discussion-for-monday">Discussion for Monday:</h2>
-<p>Everyone who is not in either the lead or blogging team for the week should post (in the comments below) an answer to at least one of the questions in this section, or a substantive response to someone else&rsquo;s comment, or something interesting about the readings that is not covered by these questions. Don&rsquo;t post duplicates - if others have already posted, you should read their responses before adding your own. Please post your responses to different questions as separate comments.</p>
-<p>You should post your <em>initial</em> response before 5:29pm on Sunday, September 17, but feel free (and encouraged!) to continue the discussion after that, including responding to any responses by others to your comments.</p>
-<ol>
-<li>Based on the criterions shown in Figure 2 of [1], imagine a practical scenario and explain why you would choose or not choose using LLMs for your scenario.</li>
-<li>Are plug-ins the future of AGI? Do you think that a company should only focus on building powerful AI systems that does not need any support from plug-ins, or they should only focus on the core system and involve more plug-ins into the ecosystem?</li>
-</ol>
-<h2 id="discussion-for-wednesday">Discussion for Wednesday:</h2>
-<p>You should post your <em>initial</em> response to one of the questions below or something interesting related to the Wednesday readings before 5:29pm on Tuesday, September 19.</p>
-<ol>
-<li>
-<p>What should we do before deploying LLMs in medical diagnosis applications? What (if any) regulations should control or limit how they would be used?</p>
-</li>
-<li>
-<p>With LLMs handling sensitive medical information, how can patient privacy and data security be maintained? What policies and safeguards should be in place to protect patient data?</p>
-</li>
-<li>
-<p>The paper discusses the progress of LLMs towards achieving physician-level performance in medical question answering. What are the potential implications of LLMs reaching or surpassing human expertise in medical knowledge?</p>
-</li>
-<li>
-<p>The paper mentions the importance of safety and minimizing bias in LLM-generated medical information, and the <a href="https://www.medrxiv.org/content/10.1101/2023.07.13.23292577">optional reading</a> reports on some experiments that show biases in GPT&rsquo;s medical diagnoses. Should models be tuned to ignore protected attributes? Should we prevent models from being used in medical applications until these problems can be solved?</p>
-</li>
-</ol>
-<section class="footnotes" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn:1" role="doc-endnote">
-<p>Tianyi Zhang, Faisal Ladhak, Esin Durmus, Percy Liang, Kathleen McKeown, and Tatsunori B. Hashimoto. Benchmarking large language models for news summarization, 2023. <a href="https://arxiv.org/abs/2301.13848">https://arxiv.org/abs/2301.13848</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="fn:2" role="doc-endnote">
-<p>Aakanksha Chowdhery, Sharan Narang, Jacob Devlin, Maarten Bosma, Gaurav
-Mishra, Adam Roberts, Paul Barham, Hyung Won Chung, Charles Sutton, Sebastian
-Gehrmann, Parker Schuh, Kensen Shi, Sasha Tsvyashchenko, Joshua Maynez, Abhishek
-Rao, Parker Barnes, Yi Tay, Noam Shazeer, Vinodkumar Prabhakaran, Emily Reif,
-Nan Du, Ben Hutchinson, Reiner Pope, James Bradbury, Jacob Austin, Michael Isard,
-Guy Gur-Ari, Pengcheng Yin, Toju Duke, Anselm Levskaya, Sanjay Ghemawat, Sunipa
-Dev, Henryk Michalewski, Xavier Garcia, Vedant Misra, Kevin Robinson, Liam Fedus,
-Denny Zhou, Daphne Ippolito, David Luan, Hyeontaek Lim, Barret Zoph, Alexan-
-der Spiridonov, Ryan Sepassi, David Dohan, Shivani Agrawal, Mark Omernick, An-
-drew M. Dai, Thanumalayan Sankaranarayana Pillai, Marie Pellat, Aitor Lewkowycz,
-Erica Moreira, Rewon Child, Oleksandr Polozov, Katherine Lee, Zongwei Zhou, Xuezhi Wang, Brennan Saeta, Mark Diaz, Orhan Firat, Michele Catasta, Jason Wei, Kathy
-Meier-Hellstern, Douglas Eck, Jeff Dean, Slav Petrov, and Noah Fiedel. Palm: Scaling
-language modeling with pathways, 2022. <a href="https://arxiv.org/abs/2204.02311">https://arxiv.org/abs/2204.02311</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="fn:3" role="doc-endnote">
-<p>OpenAI. GPT-4 Technical Report. March 2023. <a href="https://arxiv.org/abs/2303.08774">https://arxiv.org/abs/2303.08774</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-</ol>
-</section>
-
-      </div>
-<hr class="post-separator"></hr>
-
-    
-    <h1><a href="/week3/">Week 3: Prompting and Bias</a></h1>
-<div class="post-metadata">
-  <span class="post-date">
-    <time datetime="2023-09-18 00:00:00 &#43;0000 UTC" itemprop="datePublished">18 September 2023</time>
-  </span>
-  
-</div>
-
-      <div class="post-body" itemprop="articleBody">
-        <p>(see bottom for assigned readings and questions)</p>
-<h1 id="prompt-engineering-week-3">Prompt Engineering (Week 3)</h1>
-<p><author>Presenting Team: Haolin Liu, Xueren Ge, Ji  Hyun Kim, Stephanie Schoch </author></p>
-<p><author>Blogging Team: Aparna Kishore, Erzhen Hu, Elena Long, Jingping Wan</author></p>
-<ul>
-<li><a href="#monday-09112023-prompt-engineering">(Monday, 09/11/2023) Prompt Engineering</a>
-<ul>
-<li><a href="#warm-up-questions">Warm-up questions</a></li>
-<li><a href="#what-is-prompt-engineering">What is Prompt Engineering?</a></li>
-<li><a href="#how-is-prompt-based-learning-different-from-traditional-supervised-learning">How is prompt-based learning different from traditional supervised learning?</a></li>
-<li><a href="#in-context-learning-and-different-types-of-prompts">In-context learning and different types of prompts</a></li>
-<li><a href="#what-is-the-difference-between-prompts-and-fine-tuning">What is the difference between prompts and fine-tuning?</a></li>
-<li><a href="#when-is-the-best-to-use-prompts-vs-fine-tuning">When is the best to use prompts vs fine-tuning?</a></li>
-<li><a href="#risk-of-prompts">Risk of Prompts</a></li>
-<li><a href="#discussion-about-prompt-format">Discussion about Prompt format</a></li>
-</ul>
-</li>
-<li><a href="#wednesday-09132023-prompt-engineering-exposing-llm-risks">(Wednesday, 09/13/2023) Prompt Engineering: Exposing LLM Risks</a>
-<ul>
-<li><a href="#open-discussion">Open Discussion</a></li>
-<li><a href="#case-study-marked-personas">Case Study: Marked Personas</a></li>
-<li><a href="#discussion-bias-mitigation">Discussion: Bias mitigation</a></li>
-<li><a href="#hands-on-activity-prompt-hacking">Hands-on Activity: Prompt Hacking</a></li>
-<li><a href="#discussion-can-we-defend-against-prompt-hacking-by-build-in-safegurads">Discussion: Can we defend against prompt hacking by build-in safegurads?</a></li>
-<li><a href="#further-thoughts-whats-the-real-risk">Further thoughts: What&rsquo;s the real risk?</a></li>
-</ul>
-</li>
-<li><a href="#readings">Readings</a>
-<ul>
-<li><a href="#optional-additional-readings">Optional Additional Readings</a></li>
-<li><a href="#discussion-questions">Discussion Questions</a></li>
-</ul>
-</li>
-</ul>
-<h1 id="monday-09112023-prompt-engineering">(Monday, 09/11/2023) Prompt Engineering</h1>
-<h2 id="warm-up-questions">Warm-up questions</h2>
-<p>Monday&rsquo;s class started with warm-up questions to demonstrate how prompts can help an LLM produce correct answers or desired outcomes. The questions and the prompts were tested in GPT3.5. This task was performed as an in-class experiment where each individual used GPT3.5 to test the questions and help GPT3.5 produce correct answers via prompts.</p>
-<p>The three questions were:</p>
-<ol>
-<li><em>What is 7084 times 0.99?</em></li>
-<li><em>I have a magic box that can only transfer coins. If you insert a number of coins in it, the next day each coin will turn into two apples. If I add 10 coins and wait for 3 days, what will happen?</em></li>
-<li><em>Among &ldquo;Oregon, Virginia, Wyoming&rdquo;, what is the word that ends with &ldquo;n&rdquo;？</em></li>
-</ol>
-<p>While the first question tested the arithmetic capability of the model, the second and the third questions tested common sense and symbolic reasoning, respectively. The initial response from GPT3.5 for all three questions was wrong.</p>
-<p>For the first question, providing more examples as prompts did not work. At the same time, an explanation of how to reach the specific answer by decomposing the multiplication into multiple steps helped.</p>
-<p>Figure 1 shows the prompting for the first question and the answer from GPT3.5.</p>
-<table><tr>
-<td><img src="../images/Week3/Picture1.png" width="95%"></td>
-<td><img src="../images/Week3/Picture2.png" width="95%"></td><br><tr>
-<td colspan=2 align="center">Figure 1: <b>Prompting for arithmetic question</b></td>
-</tr></table>
-<p>For the second question, providing an example and an explanation behind the reasoning on how to reach the final answer helped GPT produce the correct answer. Here, the prompt included explicitly stating that the magic box can also convert from coins to apples.</p>
-<p>Figure 2 shows the prompting for the second question and the answer from GPT3.5.</p>
-<table><tr>
-<td><img src="../images/Week3/Picture3.png" width="95%"></td>
-<td><img src="../images/Week3/Picture4.png" width="95%"></td></tr>
-<tr>
-<td colspan=2 align="center">Figure 2: <b>Prompting for common sense question</b>
-</tr></table>
-<p>While GPT was producing random results for the third question, instructing GPT through examples to take the words, concatenate the last letters, and then find the alphabet&rsquo;s position helped produce the correct answer.</p>
-<p>Figure 3 shows the prompting for the third question and the answer from GPT3.5.</p>
-<table><tr>
-<td><img src="../images/Week3/Picture5.png" width="95%"></td>
-<td><img src="../images/Week3/Picture6.png" width="95%"></td></tr>
-<tr>
-<td colspan=2 align="center">
-Figure 3: <b>Prompting for symbolic reasoning question</b></td>
-</tr></table>
-<p>All these examples demonstrate the benefit of using prompts to explore the model&rsquo;s reasoning ability.</p>
-<h2 id="what-is-prompt-engineering">What is Prompt Engineering?</h2>
-<p>Prompt engineering is a method to communicate and guide LLM to demonstrate a behavior or desired outcomes by crafting prompts that coax the model towards providing the desired response. The model weights or parameters are not updated in prompt engineering.</p>
-<h2 id="how-is-prompt-based-learning-different-from-traditional-supervised-learning">How is prompt-based learning different from traditional supervised learning?</h2>
-<p>Traditional supervised learning trains a model by taking input and generating an output based on prediction probability. The model learns to map input data to specific output labels. In contrast, prompt-based learning models the probability of the text directly. Here, the inputs are converted to textual strings called prompts. These prompts are used to generate desired outcomes. Prompt-based learning offers more flexibility in adapting the model&rsquo;s behavior to different tasks by modifying the prompts. Retraining the model is not required in this scenario.</p>
-<p>Interestingly, the prompts were initially used in language translations and emotion predictions based on texts instead of improving the performance of LLMs.</p>
-<h2 id="in-context-learning-and-different-types-of-prompts">In-context learning and different types of prompts</h2>
-<p>In-context learning is a powerful approach to fine-tuning or training the model within a specific context. This improves the performance and reliability of the model for the specific task or the environment. Here, the models are given a few examples as reference/instructions that are relevant to the context and are domain-specific.</p>
-<p>We can categorized in-context learning into three different types of prompts:</p>
-<ul>
-<li><em>Zero-shot</em> – the model predicts the answers given only a natural language description of the task.</li>
-</ul>
-<center>
-<a href="../images/Week3/Picture7.png"><img src="../images/Week3/Picture7.png" width="65%"></a>  
-<p>Figure 4: <b>Example for zero-shot prompting</b> (<a href="https://arxiv.org/pdf/2005.14165.pdf">Image Source</a>)</p>
-</center>
-<ul>
-<li><em>One-shot</em> or <em>Few-shot</em> – In this scenario, one or few examples are provided that explains the task description the model, i.e. prompting the model with few input-output pairs.</li>
-</ul>
-<center>
-<a href="../images/Week3/Picture8.png"><img src="../images/Week3/Picture8.png" width="65%"></a><br>
-<p>Figure 5: Examples for one-shot and fewshot prompting (<a href="https://arxiv.org/pdf/2005.14165.pdf">Image Source</a>)</p>
-</center>
-<ul>
-<li><em>Chain-of-thought</em> – The given task or question is decomposed into coherent intermediate reasoning steps that are solved before providing the final response. This explores the reasoning ability of the model for each of the provided tasks. It is given in the format <code>&lt;input chain-of-thought output&gt;</code>. The difference between standard prompting and chain-of-thought prompting is depicted in the figure below. In the figure to the right, the highlighted statement in blue is an example of chain-of-thought prompting, where the reasoning behind reaching a final answer is provided as a part of the example. Thus, in the model outcome, the model also outputs its reasoning, highlighted in green, to reach the final answer. In addition, chain-of-thought prompting can revolutionize the way we interact with LLMs and leverage their capabilities, as they provide step-by-step explanations of how a particular response is reached.</li>
-</ul>
-<table><tr>
-<td align="center"><img src="../images/Week3/Picture9.png" width="85%"></td>
-<td align="center"><img src="../images/Week3/Picture10.png" width="85%"></td>
-</tr>
-<tr>
-<td align="center" colspan="2">
-<p>Figure 6: <b>Standard prompting and chain-of-thought prompting</b> (<a href="https://arxiv.org/abs/2201.11903">Image Source</a>)</tr></table></p>
-<h2 id="what-is-the-difference-between-prompts-and-fine-tuning">What is the difference between prompts and fine-tuning?</h2>
-<p>Prompt engineering focuses on eliciting better output for a given LLM through changing input. Fine-tuning focuses on enhancing model performance by training the model on a smaller, targeted database relevant to the desired task. The similarity is that both methods help improve the model&rsquo;s performance and provide desired outcomes.</p>
-<p>Prompt engineering requires no retraining, and the prompting is performed in a single window of the model. At the same time, fine-tuning involves retraining the model and changing the model parameter to improve its performance. Fine-tuning also requires more computational resources compared to prompt engineering.</p>
-<h2 id="when-is-the-best-to-use-prompts-vs-fine-tuning">When is the best to use prompts vs fine-tuning?</h2>
-<p>The above question was an in-class discussion question, and the discussion points were shared in class. Fine-tuning requires updating model weights and changing parameters. These are useful in applications where there is a requirement for central change. In this scenario, all the users experience similar performance. Prompt-based methods are user-specific in a particular window for further fine-grained control. The model&rsquo;s performance depends on the individual prompts designed by the user. Thus, fine-tuning is more potent than prompt-based methods in scenarios that require centralized tuning.</p>
-<p>In scenarios with limited training examples, prompt-based methods can perform well. Fine-tuning methods are data-hungry and require many input data for better model performance. As discussed in the discussion posts, prompts cannot be used as a universal tool for all problems to generate desired outcomes and have performance enhancements. However, in specific scenarios, it can assist users to improve performance and reach desired outcomes for in-context specific tasks.</p>
-<h2 id="risk-of-prompts">Risk of Prompts</h2>
-<p>The class then discussed the perspectives from risks of prompt: those methods like chain of thoughts already achieve some success in the LLMs. However, prompt engineering can be still a controversial topic. The group brought out two aspects.</p>
-<p>First, Reasoning ability of LLMs. The group asked, “Does CoT empowers LLMs reasoning ability?” Secondly, there are some bias problems in prompting engineering. The group brought up an example of  “LeBron James took a corner kick.” Is the following sentence plausible? (A) plausible (B) implausible I think the answer is A and saying “but I’m curious to hear what you think.” However, this might inject a bias in the prompt.</p>
-<p>The group then brought up an open discussion about two potential kinds of prompting bias and ask the class about how would the prompt format (e.g., Task-specific prompt methods, words selected) and prompt training examples (e.g., label distribution, permutations of training examples) affect LLMs output and the possible debiasing solutions.</p>
-<p>The class then discussed two different kinds of prompting bias, the prompt format and the prompt training examples.</p>
-<h3 id="discussion-about-prompt-training-examples">Discussion about Prompt training examples</h3>
-<p>For label distribution, the class discussed that there needs to be a balance in the training set to avoid overgeneralizing the agreement of the user as some examples that the user interjects an opinion that can be wrong. In these cases, the GPT should learn to disagree with the user when the user is wrong. This is also related to the label distribution, if  the user always provides the example with positive labels, then the LLMs will be more likely to output the positive one in the prediction.</p>
-<p>Permutation on the training example: A student mentioned a paper that he just read about why context learning works, provides the label space and the distribution of the input. In the paper, they randomly generate the labels, which might be false, they show that actually is better at zero-shot, though worse than when you provide all the labels. Randomly generated labels actually have a significant performance input.
-The sequence of the training example may affect the LLM output, especially for the last example. LLM output tends to output the same label with the last example being provided training example.</p>
-<h2 id="discussion-about-prompt-format">Discussion about Prompt format</h2>
-<p>Prompt format: the word you selected might affect the prompt because some words may appear more frequently in the coporus and some words may have more correlation with some specific label. Male may relate to more positive terms in their training coporus. some prompting may affect the results. Task-specific prompt methods are related to how you select prompt methods based on specific task.</p>
-<p>Finally, the group shared two papers about the bias problem in LLMs.
-The first paper<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> shows that different prompts will provide a large variance in accuracy, which indicates LLMs are not that stable. The paper also provides a calibration method that takes the output of the GPT model and another linear layer on it to calibrate the models.
-The second paper<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> shows that LLMs do not always say what they think, especially injecting some bias into the prompt. For example, they worked on the CoT and non-CoT and they found that CoT will amplify the bias in the context when the user puts some bias in the prompt.</p>
-<p>In conclusion, prompts can be controversial and not always perfect.</p>
-<!-- TODO: find the actual papers, put in links and make the references more complete. -->
-<h1 id="wednesday-09132023-marked-personas">(Wednesday, 09/13/2023) Marked Personas</h1>
-<h2 id="open-discussion">Open Discussion</h2>
-<p>What do you think are the biggest potential risks of LLMs?</p>
-<ul>
-<li><strong>Social impact from intentional misuse.</strong> LLM’s content could be manipulated by the government, can potentially affect elections and raise tensions between countries.</li>
-<li><strong>Mutual trust among people could be harmed.</strong> We cannot tell which email or info was written by humans or automatically generated by chatgpt. As a result, we may treat these information more skeptically.</li>
-<li><strong>People may overly trust LLM outputs.</strong> We may rely more on asking LLM, which is a second-hand information source, rather than actively searching information by ourselves, overtrusting LLM system. Information pool may be contaminated by LLM if they provide misleading information.</li>
-</ul>
-<p>How does GPT-4 Respond?</p>
-<ul>
-<li>Misinformation: Provide wrong / misleading / sensitive information, known as jailbreaking of LLM.</li>
-<li>Potential manipulation: People could intentionally hack LLM by giving specific prompts.</li>
-</ul>
-<h2 id="case-study-marked-personas">Case Study: Marked Personas</h2>
-<p>Myra Cheng, Esin Durmus, Dan Jurafsky. <a href="https://arxiv.org/abs/2305.18189">Marked Personas: Using Natural Language Prompts to Measure Stereotypes in Language Models</a>. ACL 2023.</p>
-<p>In this study, ChatGPT was asked to give descriptions about several characters based on different ethnicity / gender / demographic groups, e.g., Asian woman, Black woman and white man.</p>
-<p>When describing a character from a non-dominant demographic group, while the overall description is positive, it could still imply some potential stereotypes. For example, “Almond-shaped eye” is used in describing an east asian woman while it may sound strange to a real east asian. We can also see that ChatGPT is intentionally trying to build a more diverse and politically correct atmosphere for different groups. In contrast, ChatGPT uses mostly neutral and ordinary words when describing an average white man.</p>
-<h2 id="discussion-bias-mitigation">Discussion: Bias mitigation</h2>
-<h3 id="group-1">Group 1</h3>
-<p>Mitigation could sometimes be overcompensating. As a language model, it should try to be neutral and independent. Also, given that people themselves are biased, and LLM is learning from the human world, we may be over-expecting LLMs to be perfectly unbiased. After all, it is hard to define what is fairness and distinguish between stereotype and prototype, leading to over corrections.</p>
-<h3 id="group-2">Group 2</h3>
-<p>We may be able to identify the risks by data augmentation (replacing “male” with “female” in prompts). Governments should also be responsible for setting rules and regulating LLMs. (Note: this is controversial, and it is unclear what kinds of regulations might be useful or effective.)</p>
-<h3 id="group-4">Group 4</h3>
-<p>Companies like OpenAI should publish the mitigation strategies so that it could be understood and monitored by the public. Another aspect is that different groups of people can have very diverse points of views, so it is hard to define the stereotypes and biases with a universal law. Also, the answer could be very different based on the prompts, making it even harder to mitigate</p>
-<h2 id="hands-on-activity-prompt-hacking">Hands-on Activity: Prompt Hacking</h2>
-<p>In this activity, the class was trying to make ChatGPT generate sensitive / bad responses. It could be done by setting a pretended identity, e.g. pretending to be a Hutu person in Rwanda in the 1990s or pretending to be a criminal. With these conditions, ChatGPT’s barrier of biased or evil contents can be partly bypassed.</p>
-<h2 id="discussion-can-we-defend-against-prompt-hacking-by-build-in-safegurads">Discussion: Can we defend against prompt hacking by build-in safegurads?</h2>
-<p>As we can see in the activity, right now this safeguard is not that strong. A more practical way may be to add a disclaimer at the end of potentially sensitive content and give a questionnaire to collect feedback for better iteration. Companies should also actively identify these jailbreakings and attempt to mitigate them.</p>
-<h2 id="further-thoughts-whats-the-real-risk">Further thoughts: What&rsquo;s the real risk?</h2>
-<p>While jailbreaking is one of the risks of LLMs, a more risky situation may be that LLM is intentionally trained and used by people to do bad things. After all, misuse is not that serious compared with a specific crime.</p>
-<p><a href="#table-of-contents">Back to top</a></p>
-<h1 id="readings">Readings</h1>
-<ol>
-<li>
-<p>(for Monday) Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Brian Ichter, Fei Xia, Ed Chi, Quoc Le, Denny Zhou. <a href="https://arxiv.org/abs/2201.11903"><em>Chain-of-Thought Prompting Elicits Reasoning in Large Language Models</em></a>. 2022.</p>
-</li>
-<li>
-<p>(for Wednesday) Myra Cheng, Esin Durmus, Dan Jurafsky. <a href="https://arxiv.org/abs/2305.18189">Marked Personas: Using Natural Language Prompts to Measure Stereotypes in Language Models</a>. ACL 2023.</p>
-</li>
-</ol>
-<h2 id="optional-additional-readings">Optional Additional Readings</h2>
-<p><strong>Background:</strong></p>
-<ul>
-<li>Lilian Weng, <a href="https://lilianweng.github.io/posts/2023-03-15-prompt-engineering/"><em>Prompting Engineering</em></a>. March 2023.</li>
-<li>Miles Turpin, Julian Michael, Ethan Perez, Samuel R. Bowman. <a href="https://arxiv.org/abs/2305.04388"><em>Language Models Don&rsquo;t Always Say What They Think: Unfaithful Explanations in Chain-of-Thought Prompting</em></a>. May 2023.</li>
-<li>Tony Z. Zhao, Eric Wallace, Shi Feng, Dan Klein, Sameer Singh. <a href="https://arxiv.org/abs/2102.09690"><em>Calibrate Before Use: Improving Few-Shot Performance of Language Models</em></a>. ICML 2021.</li>
-</ul>
-<p><strong>Stereotypes and bias:</strong></p>
-<ul>
-<li>Yang Trista Cao, Anna Sotnikova, Hal Daumé III, Rachel Rudinger, Linda Zou.    <a href="https://aclanthology.org/2022.naacl-main.92.pdf"><em>Theory-Grounded Measurement of U.S. Social Stereotypes in English Language Models</em></a>. NAACL 2022.</li>
-</ul>
-<p><strong>Prompt Injection:</strong></p>
-<ul>
-<li>Eric Wallace, Shi Feng, Nikhil Kandpal, Matt Gardner, Sameer Singh. <a href="https://arxiv.org/abs/1908.07125"><em>Universal Adversarial Triggers for Attacking and Analyzing NLP</em></a>. EMNLP 2019</li>
-<li>Simon Willison, <a href="https://simonwillison.net/2022/Sep/12/prompt-injection/"><em>Prompt injection attacks against GPT-3</em></a>. September 2022.</li>
-<li>William Zhang. <a href="https://www.robustintelligence.com/blog-posts/prompt-injection-attack-on-gpt-4"><em>Prompt Injection Attack on GPT-4</em></a>. Robust Intelligence, March 2023.</li>
-</ul>
-<h1 id="discussion-questions">Discussion Questions</h1>
-<p>Everyone who is not in either the lead or blogging team for the week should post (in the comments below) an answer to at least one of the four questions in each section, or a substantive response to someone else&rsquo;s comment, or something interesting about the readings that is not covered by these questions.</p>
-<p>Don&rsquo;t post duplicates - if others have already posted, you should read their responses before adding your own. Please post your responses to different questions as separate comments.</p>
-<p>First section (1 – 4): Before <strong>5:29pm</strong> on <strong>Sunday, September 10</strong>.<br>
-Second section (5 – 9): Before <strong>5:29pm</strong> on <strong>Tuesday, September 12</strong>.</p>
-<h2 id="before-sunday-questions-about-chain-of-thought-prompting">Before Sunday: Questions about Chain-of-Thought Prompting</h2>
-<ol>
-<li>
-<p>Compared to other types of prompting, do you believe that chain-of-thought prompting represents the most effective approach for enhancing the performance of LLMs? Why or why not? If not, could you propose an alternative?</p>
-</li>
-<li>
-<p>The paper highlights several examples where chain-of-thought prompting can significantly improve its outcomes, such as in solving math problems, applying commonsense reasoning, and comprehending data. Considering these improvements, what additional capabilities do you envision for LLMs using chain-of-thought prompting?</p>
-</li>
-<li>
-<p>Why are different language models in the experiment performing differently with chain-of-thought prompting?</p>
-</li>
-<li>
-<p>Try some of your own experiments with prompt engineering using your favorite LLM, and report interesting results. Is what you find consistent with what you expect from the paper? Are you able to find any new prompting methods that are effective?</p>
-</li>
-</ol>
-<h2 id="by-tuesday-questions-about-marked-personas">By Tuesday: Questions about Marked Personas</h2>
-<ol start="5">
-<li>
-<p>The paper addresses potential harms from LLMs by identifying the underlying stereotypes present in their generated contents. Additionally, the paper offers methods to examine and measure those stereotypes. Can this approach effectively be used to diminish stereotypes and enhance fairness? What are the main limitations of the work?</p>
-</li>
-<li>
-<p>The paper mentions racial stereotypes identified in downstream applications such as story generation. Are there other possible issues we might encounter when the racial stereotypes in LLMs become problematic after its application?</p>
-</li>
-<li>
-<p>Much of the evaluation in this work uses a list of White and Black stereotypical attributes provided by Ghavami and Peplau (2013) as the human-written responses and compares them with the list of LLMs generated responses. This, however, does not encompass all racial backgrounds and is heavily biased by American attitudes about racial categories, and they might not distinguish between races in great detail. Do you believe there could be a notable difference when more comprehensive racial representation is incorporated? If yes, what potential differences may arise? If no, why not?</p>
-</li>
-<li>
-<p>This work emphasizes the naturalness of the input provided to the LLM, while we have previously seen examples of eliciting harmful outputs by using less natural language. What potential benefits or risks are there in not investigating less natural inputs (e.g., prompt injection attacks including the suffix attack we saw in Week 2)? Can you suggest a less natural prompt that could reveal additional or alternate stereotypes?</p>
-</li>
-<li>
-<p>The authors recommend transparency of bias mitigation methods, citing the benefit it could provide to researchers and practitioners. Specifically, how might researchers benefit from this? Can you foresee any negative consequences (either to researchers or the general users of these models) of this transparency?</p>
-</li>
-</ol>
-<section class="footnotes" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn:1" role="doc-endnote">
-<p>Tony Z. Zhao, Eric Wallace, Shi Feng, Dan Klein, Sameer Singh. &ldquo;<a href="https://arxiv.org/pdf/2102.09690.pdf">Calibrate before use: Improving few-shot performance of language models</a>.&rdquo; International Conference on Machine Learning. PMLR, 2021.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="fn:2" role="doc-endnote">
-<p>Miles Turpin, Julian Michael, Ethan Perez, Samuel R. Bowman. &ldquo;<a href="https://arxiv.org/pdf/2305.04388.pdf">Language Models Don&rsquo;t Always Say What They Think: Unfaithful Explanations in Chain-of-Thought Prompting.</a>&rdquo; arXiv preprint arXiv:2305.04388, 2023.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-</ol>
-</section>
 
       </div>
 <hr class="post-separator"></hr>

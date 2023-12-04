@@ -1,0 +1,413 @@
+<!doctype html>
+<html class="no-js" lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <title>Week 14b: Ethical AI | Risks (and Benefits) of Generative AI and Large Language Models</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://llmrisks.github.io/css/foundation.min.css">
+    <link rel="stylesheet" href="https://llmrisks.github.io/css/highlight.min.css">
+    <link rel="stylesheet" href="https://llmrisks.github.io/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://llmrisks.github.io/css/academicons.min.css">
+    <link rel="stylesheet" href="https://llmrisks.github.io/css/fonts.css">
+    <link rel="stylesheet" href="https://llmrisks.github.io/css/finite.css">
+    <link rel="shortcut icon" href="/images/uva.png">  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "$", right: "$", display: false}
+            ]
+        });
+    });
+</script>
+
+    
+  </head>
+  <body>
+      
+    <header>
+      <nav class="nav-bar">
+	
+	  <div class="title-bar" data-responsive-toggle="site-menu" data-hide-for="medium">	      
+	    <button class="site-hamburger" type="button" data-toggle>
+	      <i class="fa fa-bars fa-lg" aria-hidden="true"></i>
+	    </button>
+	    <div class="title-bar-title site-title">
+	      <a href="https://llmrisks.github.io/">Risks (and Benefits) of Generative AI and Large Language Models</a>
+	    </div>
+	    <div class="title-bar-right pull-right">
+	      
+
+
+	    </div>
+	  </div>
+	    
+	  
+	    <div class="top-bar" id="site-menu" >	      
+	      <div class="top-bar-title show-for-medium site-title">
+		<a href="https://llmrisks.github.io/">Risks (and Benefits) of Generative AI and Large Language Models</a>
+	      </div>
+	      <div class="top-bar-left">
+		<ul class="menu vertical medium-horizontal">
+		  
+		  
+		</ul>
+	      </div>
+	      <div class="top-bar-right show-for-medium">
+		
+
+
+	      </div>
+	    </div>
+	  
+	</nav>
+      
+    </header>
+    
+    <main>
+      
+<div class="row" style="padding-top: 16pt;">
+  <div class="column small-12 medium-10 medium-offset-1 end large-8 large-offset-0">
+    <article class="article" itemscope itemtype="http://schema.org/Article">
+      
+      <h1 itemprop="name">Week 14b: Ethical AI</h1>
+      <div class="post-metadata">
+  <span class="post-date">
+    <time datetime="2023-12-04 00:00:00 &#43;0000 UTC" itemprop="datePublished">4 December 2023</time>
+  </span>
+  
+</div>
+
+      <div class="post-body" itemprop="articleBody">
+        <p><author>Presenting Team: Aparna Kishore, Elena Long, Erzhen Hu, Jingping Wan</author><br>
+<author>Blogging Team: Haolin Liu, Haochen Liu, Ji Hyun Kim, Stephanie Schoch, Xueren Ge</author></p>
+<p>Note: since the topics were unrelated, Week 14 is split into two posts:</p>
+<ul>
+<li><a href="/week14a">Monday, November 27: Multimodal Models</a></li>
+<li><a href="/week14b">Wednesday, November 29: Ethical AI</a></li>
+</ul>
+<h1 id="wednesday-november-29-ethical-ai">Wednesday, November 29: Ethical AI</h1>
+<table><tr>
+  <td><img src="../images/week14/day1/A.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<blockquote>
+<p>Ben Shneiderman. <a href="https://dl.acm.org/doi/abs/10.1145/3419764"><em>Bridging the Gap Between Ethics and Practice: Guidelines for Reliable, Safe, and Trustworthy Human-centered AI Systems</em></a>. ACM Transactions on Interactive Intelligent Systems, October 2020. <a href="https://dl.acm.org/doi/abs/10.1145/3419764">PDF</a></p>
+</blockquote>
+<table><tr>
+  <td><img src="../images/week14/day1/B.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>Today’s topic is ethical AI, with a focus on human-centered AI (HCAI). From this perspective, AI is seen as amplifying the performance of humans.</p>
+<p>Important to HCAI is the need for reliable, safe and trustworthy properties, through the collaboration of software engineers, companies, government, and society as a whole.</p>
+<table><tr>
+  <td><img src="../images/week14/day1/C.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<ol>
+<li>Reliable Systems: Soft Engineering</li>
+<li>Safety Culture: Organizational Design</li>
+<li>Trustworthy Certification: External Reviews</li>
+</ol>
+<table><tr>
+  <td><img src="../images/week14/day1/D.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>Things that should be considered when developing ethical AI:</p>
+<ol>
+<li>Data quality</li>
+<li>Training log analysis</li>
+<li>Privacy and security of data</li>
+</ol>
+<p>Example:FDR has quantitative benchmark to see if a plane is safe/stable, which can help in designing the next generation of products</p>
+<p>Analogy of FDR to AI: We could get quantitative feedback of the product or strategy we want to test: What data do we need, how do we analyze log data (or select useful data from operation logs), how to protect data from being attacked, etc.</p>
+<p>Through a similar approach, we can say that AI is safe through testing and logs, rather than just ‘take our word for it’</p>
+<table><tr>
+  <td><img src="../images/week14/day1/E.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>Software Engineering workflows:  AI workflow requires <em>goal-aligned update</em>.</p>
+<p>Verification and validation testing:</p>
+<ol>
+<li>Design tests align with expectations, prevent harms</li>
+<li>Goals of AI are more general or high-level than traditional software programs, so we need tests that are designed with user expectations rather than solely the technical details.</li>
+</ol>
+<p>Bias testing to enhance fairness:</p>
+<ol>
+<li>Test training data for opacity, scale, harm.</li>
+<li>Use specialized tools for continuous monitoring.</li>
+<li>After we have a trained model, we still need testing to check the risk, and may need a specific team in the organization or external company to test safety of model (should be continuous).</li>
+</ol>
+<table><tr>
+  <td><img src="../images/week14/day1/F.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>Explainable user interfaces:</p>
+<ol>
+<li>Are difficult to achieve</li>
+<li>Ensure system explainability for user understanding, meeting legal requirements</li>
+<li>Intrinsic and post hoc explanations aid developer improvement.</li>
+<li>Design a comprehensive user interface, considering user sentiments</li>
+<li>Post hoc: no information about the technical details of the model, but rather need a broad level idea of the system</li>
+</ol>
+<table><tr>
+  <td><img src="../images/week14/day1/G.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>There are five principles to build safety cultures, which are mostly top-down approaches (see slides).</p>
+<p>Leadership: create a safe team, make commitment to safety that is visible to employees so they know leaders are committed to safety.</p>
+<p>Long-term investment: need safe developers to develop safe models.</p>
+<p>Public can help monitor and improve as it creates public/external pressure, so companies may work harder to eliminate issues.</p>
+<table><tr>
+  <td><img src="../images/week14/day1/H.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>Internal Review Boards engage stakeholders in setting benchmarks and to make improvements for problems and future planning.</p>
+<table><tr>
+  <td><img src="../images/week14/day1/I.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<table><tr>
+  <td><img src="../images/week14/day1/J.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>Trustworthy certification by independent oversight:</p>
+<ul>
+<li>
+<p>Purpose: Ensure continuous improvement for reliable, safe products. Helps to make a complete, trustworthy system.</p>
+</li>
+<li>
+<p>Requirements: Respected leaders, conflict declaration, diverse membership.</p>
+</li>
+<li>
+<p>Capacity: Examine private data, conduct interviews, issue subpoenas for evidence.</p>
+</li>
+</ul>
+<table><tr>
+  <td><img src="../images/week14/day1/K.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>Independent oversight is structured around three core methods:</p>
+<ol>
+<li>Planning</li>
+<li>Monitoring</li>
+<li>Conducting reviews or retrospectives</li>
+</ol>
+<table><tr>
+  <td><img src="../images/week14/day1/L.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>There are five paths for Trustworthy certification</p>
+<ol>
+<li>
+<p>Government: Policy and Regulation, aligning with EU&rsquo;s seven key principles(list on the top right) for transparency, reliability, safety, privacy, and fairness</p>
+</li>
+<li>
+<p>Accounting Firms: Beyond the internal audits mentioned previously, external bodies should audit the entire industry</p>
+</li>
+<li>
+<p>Insurance Companies: Adapting policies for emerging technologies like self-driving cars (details on next slide)</p>
+</li>
+<li>
+<p>Non-government organizations: prioritizing the public&rsquo;s interest</p>
+</li>
+<li>
+<p>Professional organizations and research institutes</p>
+</li>
+</ol>
+<table><tr>
+  <td><img src="../images/week14/day1/M.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<table><tr>
+  <td><img src="../images/week14/day1/N.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>As an activity, we tried role playing where each group will play different roles and think about following 15 principles in terms of “ethical AI”.</p>
+<p>Ethical Team:</p>
+<ol>
+<li>Diagnosis for skin cancer, dataset quality is reliable (bias-skin color, state-laws passing for collecting data)</li>
+<li>Various Metrics for evaluating AI</li>
+<li>Come up an agreement with patients, doctors</li>
+</ol>
+<p>Healthcare Management/Organization:</p>
+<ol>
+<li>Reporting failures (missed diagnosis) for feedback</li>
+<li>Data security, gathering FP, FN cases for further training</li>
+<li>Educating staff</li>
+<li>Establishing accuracy/certainty of threshold for AI diagnosing skin cancer, checking the standard of professional verification</li>
+</ol>
+<p>Independent oversight committee：</p>
+<ol>
+<li>Whether the dataset is not biased in every stage and is representing all race, gender, etc</li>
+<li>Data source should be considered carefully (online, hospital)</li>
+<li>Model explanation and transparency should be considered</li>
+<li>Privacy of personal information of both the dataset and the users</li>
+</ol>
+<table><tr>
+  <td><img src="../images/week14/day1/O.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>There are 15 principles each group can take into consideration for the role-playing discussion.</p>
+<table><tr>
+  <td><img src="../images/week14/day1/P.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>Reorienting technical R&amp;D emphasizes oversight, robustness, interpretability, inclusivity, risk assessment, and addressing emerging challenges.</p>
+<p>Proposed governance measures include enforcing standards to prevent misuse, requiring registration of frontier systems, implementing whistleblower protections, and creating national and international safety standards. Additionally, the accountability of frontier AI developers and owners, along with AI companies promptly disclosing if-then commitments, is highlighted.</p>
+<table><tr>
+  <td><img src="../images/week14/day1/Q.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>There are some ethical platforms for developing responsible AI product</p>
+<ol>
+<li>SUM Values: to provide a framework for moral scope of AI product</li>
+<li>FAST Track Principles: to make sure AI project is fair, bias-mitigating and reliable</li>
+<li>PBG Framework: to set up transparent process of AI product</li>
+</ol>
+<table><tr>
+  <td><img src="../images/week14/day1/R.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<p>Putting the Ethical Platform into Practice needs three key steps: reflect, act and justify:</p>
+<ol>
+<li>Reflect using the SUM values: asking and answering questions about ethical purposes and assess the impacts of AI project</li>
+<li>Act using FAST TRACK Principles: ensure every step of development produces safe, fair AI innovation</li>
+<li>Justify Using the PBG Framework: set up governance process to ensure model transparency</li>
+</ol>
+<table><tr>
+  <td><img src="../images/week14/day1/S.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+<h4 id="team-1">Team 1</h4>
+<p>There are many trajectories that AI development could take, so it would be very difficult to completely discount something as a possibility. Related this to “Dark Matter” book by Blake Crouch.</p>
+<p>Risk would primarily come from bad actors (specifically humans). Briefly touched on ‘what if the bad actor is the AI?’</p>
+<h4 id="team-2">Team 2</h4>
+<p>The potential downfall of humans would not be due to AI’s maliciousness.</p>
+<p>In the post-autonomous era, concerns shift to the misuse of models for harmful purposes.</p>
+<h4 id="team-3">Team 3</h4>
+<p>The second question seems to be already happening.</p>
+<p>Given the rapid technological progress in recent years, single prompt can result in losing control over AI models, and speculations around ‘Q*(Q-Star)’ suggest risk in losing control over AI models, however AI’s power-seeking behavior may still be overstated.</p>
+<h2 id="readings">Readings</h2>
+<ul>
+<li><strong><code>Required</code></strong>: Yoshua Bengio, Geoffrey Hinton, Andrew Yao, Dawn Song, Pieter Abbeel, Yuval Noah Harari, Ya-Qin Zhang, Lan Xue, Shai Shalev-Shwartz, Gillian Hadfield, Jeff Clune, Tegan Maharaj, Frank Hutter, Atılım Güneş Baydin, Sheila McIlraith, Qiqi Gao, Ashwin Acharya, David Krueger, Anca Dragan, Philip Torr, Stuart Russell, Daniel Kahneman, Jan Brauner, Sören Mindermann. <a href="https://arxiv.org/abs/2310.17688">Managing AI Risks in an Era of Rapid Progress.</a> arXiv 2023. <a href="https://arxiv.org/abs/2310.17688">PDF</a></li>
+<li><strong><code>Required</code></strong>: Ben Shneiderman. <a href="https://dl.acm.org/doi/abs/10.1145/3419764">Bridging the Gap Between Ethics and Practice: Guidelines for Reliable, Safe, and Trustworthy Human-centered AI Systems.</a> ACM Transactions on Interactive Intelligent Systems, October 2020. <a href="https://dl.acm.org/doi/abs/10.1145/3419764">PDF</a></li>
+<li><strong><code>Optional</code></strong>: David Leslie. <a href="https://arxiv.org/abs/1906.05684">Understanding Artificial Intelligence Ethics And Safety.</a> arXiv 2019. <a href="https://arxiv.org/abs/1906.05684">PDF</a></li>
+<li><strong><code>Optional</code></strong>: Joseph Carlsmith. <a href="https://arxiv.org/abs/2206.13353">Is Power-Seeking AI an Existential Risk?.</a> arXiv 2022. <a href="https://arxiv.org/abs/2206.13353">PDF</a></li>
+<li><strong><code>Optional</code></strong>: Alice Pavaloiu, Utku Kose. <a href="https://arxiv.org/abs/1706.03021">Ethical Artificial Intelligence - An Open Question.</a> arXiv 2017. <a href="https://arxiv.org/abs/1706.03021">PDF</a></li>
+</ul>
+<h3 id="questions">Questions</h3>
+<p><strong>(Post response by Tuesday, 28 November)</strong></p>
+<p>Paper 1: <a href="https://drive.google.com/file/d/1Ok16aNvNLbdkBexcmt9dyVGPEpKYGXbH/view">Bridging the Gap Between Ethics and Practice</a></p>
+<ol>
+<li>The paper claims, “Human-centered Artificial Intelligence (HCAI) systems represent a second Copernican revolution that puts human performance and human experience at the center of design thinking.&quot; Do you agree with this quote?</li>
+<li>Developers/teams, organizations, users and regulators often have different views on what constitutes reliability, safety, and trustworthiness in human-centered AI systems. What are the potential challenges and solutions for aligning them? Can you provide some specific examples where these views do not align?</li>
+</ol>
+<p>Paper 2: <a href="https://arxiv.org/pdf/2310.17688.pdf">Managing AI Risks in an Era of Rapid Progress</a></p>
+<ol start="3">
+<li>Do you think AI systems can be regulated over an international governance organization or agreement like nuclear weapons?</li>
+<li>Consider this quote from the paper: &ldquo;Without sufficient caution, we may irreversibly lose control of autonomous AI systems, rendering human intervention ineffective. Large-scale cybercrime, social manipulation, and other highlighted harms could then escalate rapidly. This unchecked AI advancement could culminate in a large-scale loss of life and the biosphere, and the marginalization or even extinction of humanity.&rdquo; Do you agree with it? If so, do you think any of the measures proposed in the paper would be sufficient for managing such a risk? If not, what assumptions of the authors&rsquo; that led to this conclusion do you think are invalid or unlikely?</li>
+</ol>
+
+      </div>
+
+      <meta itemprop="wordCount" content="1391">
+      <meta itemprop="datePublished" content="2023-12-04">
+      <meta itemprop="url" content="https://llmrisks.github.io/week14b/">
+    </article>
+
+    <ul class="pagination" role="navigation" aria-label="Pagination">
+      
+      <li class="arrow" aria-disabled="true"><a href="https://llmrisks.github.io/week14a/">&laquo; <em>Previous<span class="show-for-sr"> page</span></em>: Week 14a: Multimodal Models</a></li>
+      
+      
+    </ul>
+
+  </div>
+</div>
+
+    </main>
+    
+    
+<footer class="whatisthis">
+  <hr />
+  <div class="row">
+    <div class="column small-12 medium-6">
+      <a href="//llmrisks.github.io"><b>cs 6501: Risks (and Benefits) of Generative AI</b></a><br>
+      Fall 2023<br>
+      <a href="//www.cs.virginia.edu">University of Virginia</a>
+    </div>
+    <div class="column small-14 medium-5">
+      <font size="-1">
+      Subscribe to
+	the <a href="/index.xml"><i class="fa fa-rss-square"></i>&nbsp;RSS feed</a>.
+      <a id="searchsite">
+	<form method="get" action="https://duckduckgo.com/">
+	  <label for="search-field" class="show-for-sr">Search with DuckDuckGo</label>
+	  <input type="search" name="q" maxlength="255" placeholder="Search with DuckDuckGo" id="search-field">
+	  <input type="hidden" name="sites" value="https://llmrisks.github.io/"/>
+	  <input type="hidden" name="k7" value="#faf8f8"/>
+	  <input type="hidden" name="kj" value="#b33"/>
+	  <input type="hidden" name="ky" value="#fafafa"/>
+	  <input type="hidden" name="kx" value="b"/>
+	  <input type="hidden" name="ko" value="-1"/>
+	  <input type="hidden" name="k1" value="-1"/>
+	  <input type="submit" value="DuckDuckGo Search" style="visibility: hidden;" />
+	</form>
+      </a>
+</font>
+    </div>
+  </div>
+  </hr>
+</footer>
+
+
+    
+    <div class="endofpage">
+    </div>
+
+    <script src="/js/jquery.js"></script>
+    <script src="/js/what-input.js"></script>
+    <script src="/js/foundation.min.js"></script>
+    <script src="/js/finite.js"></script>
+
+    
+    <script src="/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    
+    
+  </body>
+</html>
