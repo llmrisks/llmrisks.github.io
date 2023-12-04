@@ -414,174 +414,292 @@ For the second question, the presenter gave an example that there is a specific 
 
 
 
-# Wednesday, November 15: Applications of LLM Agents
+# Wednesday, November 29: Ethical AI
 
 <table><tr>
-  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_11.jpg" width="95%"></td>
-</tr>
-  <td colspan=1 align="center"><b></b></td>
-</table>
-
-The experimental setup comprises two restaurants, serving as competitive agents, and fourteen customers, acting as judge agents. To confine the action space of the Large Language Model (LLM), a management system is employed. This system functions as a question provider, formulating precise inquiries for the LLM to ensure that its output remains within the defined action space. The customers exercise their judgment when evaluating offers from both restaurants, ultimately selecting based on their individual constraints and requirements.
-
-
-
-
-
-<table><tr>
-  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_14.jpg" width="95%"></td>
+  <td><img src="../images/week14/day1/A.jpg" width="95%"></td>
 </tr>
   <td colspan=1 align="center"><b></b></td>
 </table>
 
 
 
-<table><tr>
-  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_15.jpg" width="95%"></td>
-  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_16.jpg" width="95%"></td>
-</tr>
-  <td colspan=1 align="center"><b></b></td>
-  <td colspan=1 align="center"><b></b></td>
-</table>
-
-**Data inputs**: Daybook provides data regarding the previous day's patronage, menu evaluation, and related insights. Likewise, Rival offers comparable information concerning the competitor's restaurant, encompassing visitor statistics and menu alterations. Customer feedback is used to make decisions about the next day.
 
 <table><tr>
-  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_17.jpg" width="95%"></td>
+  <td><img src="../images/week14/day1/B.jpg" width="95%"></td>
 </tr>
   <td colspan=1 align="center"><b></b></td>
 </table>
 
-**Discussion Notes:**
-1. LLM scores can act as a baseline, but there is always a possibility of bias. For instance, changing the order of options presented to the model may sometimes result in a different score being outputted.
-2. Designing a model based solely off of customer/restaurant data fails to capture other experiences of dining (i.e. customer service, environment/ambience, etc.) and thus indicates the simulation’s low fidelity. Capturing decision-making factors in customers is especially difficult, as they are difficult to define and quantify. The current simulation does not account for customers’ risk-aversion for trying new dishes, and it also does not consider the influence of star ratings or reviews on customers’ decisions to choose between the two restaurants. There may also be issues with prompt-based tasks, such as over-generalization. 
-3. Utilizing simulations has the potential for real-world social trends and phenomena to be reproduced without requiring a large number of real people or complex variables; it is not necessary to recreate an entire town in order to gain insights into real-world trends.
+Today’s topic is ethical AI, with a focus on human-centered AI (HCAI). In this view, AI is seen as amplifying the existing performance of humans. Important to HCAI is the need for reliable, safe and trustworthy properties, through the collaboration of software engineers, companies, government, and society as a whole.
+
+
+
 
 <table><tr>
-  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_18.jpg" width="95%"></td>
-  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_19.jpg" width="95%"></td>
-</tr>
-  <td colspan=1 align="center"><b></b></td>
-  <td colspan=1 align="center"><b></b></td>
-</table>
-
-Agents are able to learn from each other while maintaining differentiation. This is visible in two ways:
-1. Agents **imitate** observed strategies that provide a high reward. For example, a restaurant may copy the popular dishes of another restaurant to compete for their clinetele.
-2. Conversely, **differentiation** is used to attract patrons that the competing agents don't specifically cater to; one restaurant may provide inexpensive food for customers on a budget while another provides fine-dining options.
-
-
-<!-- <table><tr>
-  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_20.jpg" width="95%"></td>
-</tr>
-  <td colspan=1 align="center"><b></b></td>
-</table> -->
-
-<table><tr>
-  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_21.jpg" width="95%"></td>
+  <td><img src="../images/week14/day1/C.jpg" width="95%"></td>
 </tr>
   <td colspan=1 align="center"><b></b></td>
 </table>
 
-The agents are shown to adapt to various customer needs in an effort to retain or attract further patronage.
+This is the outline we can consider for development of ethical AI
 
-<!-- <table><tr>
-  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_22.jpg" width="95%"></td>
-</tr>
-  <td colspan=1 align="center"><b></b></td>
-</table> -->
-
-<!-- <table><tr>
-  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_23.jpg" width="95%"></td>
-</tr>
-  <td colspan=1 align="center"><b></b></td>
-</table> -->
+1. Reliable Systems: Soft Engineering
+2. Safety Culture: Organizational Design 
+3. Trustworthy Certification: External Reviews
 
 
 
-<!-- <table><tr>
-  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_24.jpg" width="95%"></td>
-</tr>
-  <td colspan=1 align="center"><b></b></td>
-</table> -->
 
 <table><tr>
-  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_25.jpg" width="95%"></td>
+  <td><img src="../images/week14/day1/D.jpg" width="95%"></td>
 </tr>
   <td colspan=1 align="center"><b></b></td>
 </table>
 
-A number of sociological and economic princples were demonstrated in the experiment.
+Things that should be considered when developing ethical AI:
+1. Data quality
+2.  Training log analysis
+3. Privacy and security of data
+   
+Example:FDR has quantitative benchmark to see if a plane is safe/stable, which can help in designing the next generation of products
+
+Analogy of FDR to AI: We could get quantitative feedback of the product or strategy we want to test: What data do we need, how do we analyze log data (or select useful data from operation logs), how to protect data from being attacked, etc.
+
+Through a similar approach, we can say that AI is safe through testing and logs, rather than just ‘take our word for it’
+
 
 
 <table><tr>
-  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_26.jpg" width="95%"></td>
+  <td><img src="../images/week14/day1/E.jpg" width="95%"></td>
 </tr>
   <td colspan=1 align="center"><b></b></td>
 </table>
 
-1. Is competition among agents the best mechanism to take advantage of their capabilities? What are the limitations of this approach?
-2. What other interactions are feasible?
-3. What are the benefits and risks and/or pros and cons of these interactions as compared to competition among agents?
+Software Engineering workflows:  AI workflow requires goal-aligned update 
 
-**Collaborative Approach Limitations:** One potential drawback of adopting a collaborative approach is the propensity for bias in a single agent to propagate through multiple agents, thus amplifying its impact.
+Verification and validation testing:
+1. Design tests align with expectations, prevent harms
+2. Goals of AI are more general or high-level than traditional software programs, so we need tests that are designed with user expectations rather than solely the technical details.
+   
+Bias testing to enhance fairness: 
+1. Test training data for opacity, scale, harm.
+2. Use specialized tools for continuous monitoring.
+3. After we have a trained model, we still need testing to check the risk, and may need a specific team in the organization or external company to test safety of model (should be continuous)
 
-**Employing Negotiation-Based Tasks and Games:** In the context of collaborative endeavors, employing negotiation-based tasks and games is a valuable strategy. These involve the participation of diverse agents, such as a managerial figure, a chef, and a waiter, each representing distinct stakeholders. The amalgamation of their inputs contributes to a holistic decision-making process.
 
-**The Feasibility of Restaurant Collaboration:** We explored the possibility of restaurants engaging in collaborative efforts, including the exchange of information regarding signature dishes, the potential collusion to elevate pricing structures collectively, and the coordination of operational hours. However, it is essential to consider potential drawbacks, particularly the willingness of competitors to engage in such cooperative ventures.
-
-1. Limitations of having collaborative approach: bias in one agent might cascade into bias in multiple agents.
-2. Discussed negotiation-based tasks and negotiation games to collaborate with each other. For instance, one could have an ensemble of different agents (i.e. manager agent makes final decision, chef has a say, waiter has a say, etc.)
-Each agent represents different stakeholder
-3. Discussed how restaurants could collaborate together, e.g. communicate signature dishes, collude to raise prices of everything, coordinate times they are open. Noted potential downsides, including willingess to collaborate and power dynamics between agents.
 
 
 <table><tr>
-  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_27.jpg" width="95%"></td>
+  <td><img src="../images/week14/day1/F.jpg" width="95%"></td>
 </tr>
   <td colspan=1 align="center"><b></b></td>
 </table>
 
+Explainable user interfaces: 
+1. Difficult to achieve
+2. Ensure system explainability for user understanding, meeting legal requirements
+3. Intrinsic and post hoc explanations aid developer improvement. 
+4. Design a comprehensive user interface, considering user sentiments
+5. Post hoc: no information about the technical details of the model, but rather need a broad level idea of the system
+
+
+
 <table><tr>
-  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_28.jpg" width="95%"></td>
+  <td><img src="../images/week14/day1/G.jpg" width="95%"></td>
 </tr>
   <td colspan=1 align="center"><b></b></td>
 </table>
 
-This work explored learning through collaboration via multiple types of interaction as shown in the next slide.
+There are 5 principles to build safety cultures, which are mostly top-down approaches (see slides)
+
+Leadership: create a safe team, make commitment to safety that is visible to employees so they know leaders are committed to safety.
+
+Long-term investment: need safe developers to develop safe models
+
+Public can help monitor and improve as it creates public/external pressure, so companies may work harder to eliminate issues
+
+
 
 <table><tr>
-  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_31.jpg" width="95%"></td>
+  <td><img src="../images/week14/day1/H.jpg" width="95%"></td>
 </tr>
   <td colspan=1 align="center"><b></b></td>
 </table>
 
+Internal Review Boards engage stakeholders in setting benchmarks and to make improvements for problems and future planning.
+
+
+
 <table><tr>
-  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_32.jpg" width="95%"></td>
-  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_33.jpg" width="95%"></td>
-  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_34.jpg" width="95%"></td>
+  <td><img src="../images/week14/day1/I.jpg" width="95%"></td>
 </tr>
   <td colspan=1 align="center"><b></b></td>
 </table>
 
-LTC Communication Patters:
-1. **Monologue:** Letting an agent train by providing feedback to itself. The agent will play the role of the actor and the instructor.
-2. **Dialogue:** As opposed to the previous approach, training is conducted with separate agents acting as the actor and the instructor.
-3. **Analogue:** Similar to the former approach, but raining rewards and examples are provided by the instructor agent rather than by the environment.
 
 
 <table><tr>
-  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_29.jpg" width="95%"></td>
+  <td><img src="../images/week14/day1/J.jpg" width="95%"></td>
 </tr>
   <td colspan=1 align="center"><b></b></td>
 </table>
 
-The agent model is optimized with the trajectory data collected in the exploration phase. This relies on a multi-objective loss function composed of a standard loss function for unsupervised language model training and a reinforcement objective to maximize the expected reward from previous communication data. Beta acts as a balancing hyper-parameter.
+Trustworthy certification by independent oversight
+
+Purpose: Ensure continuous improvement for reliable, safe products. Helps to make a complete, trustworthy system. 
+
+Requirements: Respected leaders, conflict declaration, diverse membership.
+
+Capacity: Examine private data, conduct interviews, issue subpoenas for evidence.
+
+
+
 
 <table><tr>
-  <td><img src="../images/week12/day2/LLM_Agents_WednesdayPres_Page_35.jpg" width="95%"></td>
+  <td><img src="../images/week14/day1/K.jpg" width="95%"></td>
 </tr>
   <td colspan=1 align="center"><b></b></td>
 </table>
+
+
+Independent oversight is structured around three core methods: 
+1. Planning 
+2. Monitoring 
+3. Conducting reviews or retrospectives
+
+
+<table><tr>
+  <td><img src="../images/week14/day1/L.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+
+
+There are five paths for Trustworthy certification
+1. Government: Policy and Regulation, aligning with EU's seven key principles(list on the top right) for transparency, reliability, safety, privacy, and fairness
+
+2. Accounting Firms: Beyond the internal audits mentioned previously, external bodies should audit the entire industry
+
+3. Insurance Companies: Adapting policies for emerging technologies like self-driving cars (details on next slide)
+4. Non-government organizations: prioritizing the public's interest
+5. Professional organizations and research institutes
+
+
+
+<table><tr>
+  <td><img src="../images/week14/day1/M.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+
+
+
+
+
+
+<table><tr>
+  <td><img src="../images/week14/day1/N.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+
+This is a role-play section, each group will play different roles and think about following 15 principles in terms of “ethical AI”
+
+Ethical Team: 
+1. Diagnosis for skin cancer, dataset quality is reliable (bias-skin color, state-laws passing for collecting data)
+2. Various Metrics for evaluating AI
+3. Come up an agreement with patients, doctors
+   
+
+Healthcare Management/Organization:
+1. Reporting failures (missed diagnosis) for feedback
+2. Data security, gathering FP, FN cases for further training
+3. Educating staff
+4. Establishing accuracy/certainty of threshold for AI diagnosing skin cancer, checking the standard of professional verification
+
+
+Independent oversight committee：
+1. Whether the dataset is not biased in every stage and is representing all race, gender, etc
+2. Data source should be considered carefully (online, hospital)
+3. Model explanation and transparency should be considered
+4. Privacy of personal information of both the dataset and the users
+
+
+
+
+<table><tr>
+  <td><img src="../images/week14/day1/O.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+
+There are 15 principles each group can take into consideration for role-play discussion ethical AI.
+
+
+
+<table><tr>
+  <td><img src="../images/week14/day1/P.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+
+Reorienting technical R&D emphasizes oversight, robustness, interpretability, inclusivity, risk assessment, and addressing emerging challenges. 
+
+Proposed governance measures include enforcing standards to prevent misuse, requiring registration of frontier systems, implementing whistleblower protections, and creating national and international safety standards. Additionally, the accountability of frontier AI developers and owners, along with AI companies promptly disclosing if-then commitments, is highlighted.
+
+
+
+<table><tr>
+  <td><img src="../images/week14/day1/Q.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+
+There are some ethical platforms for developing responsible AI product
+1. SUM Values: to provide a framework for moral scope of AI product 
+2. FAST Track Principles: to make sure AI project is fair, bias-mitigating and reliable
+3. PBG Framework: to set up transparent process of AI product
+
+
+
+<table><tr>
+  <td><img src="../images/week14/day1/R.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+
+
+Putting the Ethical Platform into Practice needs three key steps: reflect, act and justify
+
+1. Reflect using the SUM values: asking and answering questions about ethical purposes and assess the impacts of AI project
+2. Act using FAST TRACK Principles: ensure every step of development produces safe, fair AI innovation
+3. Justify Using the PBG Framework: set up governance process to ensure model transparency
+
+
+
+<table><tr>
+  <td><img src="../images/week14/day1/S.jpg" width="95%"></td>
+</tr>
+  <td colspan=1 align="center"><b></b></td>
+</table>
+
+
+#### Team 1
+There are many trajectories that AI development could take, so it would be very difficult to completely discount something as a possibility. Related this to “Dark Matter” book by Blake Crouch.
+
+Risk would primarily come from bad actors (specifically humans). Briefly touched on ‘what if the bad actor is the AI?’
+
+#### Team 2
+The potential downfall of humans would not be due to AI’s maliciousness.
+
+In the post-autonomous era, concerns shift to the misuse of models for harmful purposes.
+
+#### Team 3
+2nd question seems to be already happening.
+
+Given the rapid technological progress in recent years, single prompt can result in losing control over AI models, and speculations around ‘Q*(Q-Star)’ suggest risk in losing control over AI models, however AI’s power-seeking behavior may still be overstated.
+
 
 
 # Readings and Discussion Questions
