@@ -1,13 +1,13 @@
 +++
 date = "03 Dec 2023"
-draft = True
-title = "Week 14: LLM Agents"
+draft = false
+title = "Week 14: Multimode models & Ethical AI"
 slug = "week14"
 +++
 
 <author>Presenting Team: Aparna Kishore, Elena Long, Erzhen Hu, Jingping Wan</author>
 
-<author>Blogging Team: Haochen Liu, Haolin Liu, Ji Hyun Kim, Stephanie Schoch, Xueren Ge</author>
+<author>Blogging Team: Haolin Liu, Haochen Liu, Ji Hyun Kim, Stephanie Schoch, Xueren Ge</author>
 
 # Monday, November 27: Multimode models
 
@@ -704,32 +704,44 @@ Given the rapid technological progress in recent years, single prompt can result
 
 # Readings and Discussion Questions
 
-## Monday 13 November: Introduction to LLM Agents
-### Readings
-- **`Required`**: Timo Schick, Jane Dwivedi-Yu, Roberto Dessì, Roberta Raileanu, Maria Lomeli, Luke Zettlemoyer, Nicola Cancedda, Thomas Scialom. [Toolformer: Language Models Can Teach Themselves to Use Tools](https://arxiv.org/abs/2302.04761). arXiv 2023. [[PDF]](https://arxiv.org/pdf/2302.04761.pdf)
-- **`Required`**: Subbarao Kambhampati. [Can LLMs Really Reason and Plan?](https://cacm.acm.org/blogs/blog-cacm/276268-can-llms-really-reason-and-plan/fulltext). Blog@CACM. 2023.
-- **`Optional`**: Lilian Wang. [LLM Powered Autonomous Agents](https://lilianweng.github.io/posts/2023-06-23-agent/). Blog. 2023.
-- **`Optional`**: Lei Wang, Chen Ma, Xueyang Feng, Zeyu Zhang, Hao Yang, Jingsen Zhang, Zhiyuan Chen, Jiakai Tang, Xu Chen, Yankai Lin, Wayne Xin Zhao, Zhewei Wei, Ji-Rong Wen. [A Survey on Large Language Model based Autonomous Agents](https://arxiv.org/abs/2308.11432). arXiv 2023. [[PDF]](https://arxiv.org/pdf/2308.11432.pdf)
-- **`Optional`**: Karthik Valmeekam, Matthew Marquez, Sarath Sreedharan, Subbarao Kambhampati. [On the Planning Abilities of Large Language Models : A Critical Investigation](https://arxiv.org/abs/2305.15771). NeurIPS 2023. [[PDF]](https://arxiv.org/pdf/2305.15771.pdf)
-- **`Optional`**: Lin Guan, Karthik Valmeekam, Sarath Sreedharan, Subbarao Kambhampati. [Leveraging Pre-trained Large Language Models to Construct and Utilize World Models for Model-based Task Planning](https://arxiv.org/abs/2305.14909). NeurIPS 2023. [[PDF]](https://arxiv.org/pdf/2305.14909.pdf)
+## Monday 27 November: Transferring and Binding Multi-Modal Capabilities:
+### Readings for Monday:
+- **`Required`**: Alec Radford, Jong Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh, Sandhini Agarwal, Girish Sastry, Amanda Askell, Pamela Mishkin, Jack Clark, Gretchen Krueger, Ilya Sutskever. [Learning Transferable Visual Models From Natural Language Supervision](https://arxiv.org/abs/2103.00020). PMLR 2021. [PDF](https://arxiv.org/abs/2103.00020)
+- **`Optional`**: OpenAI. [CLIP: Connecting text and images.](https://openai.com/research/clip) Blog 2021.
+- **`Required`**: Sandhini Agarwal, Gretchen Krueger, Jack Clark, Alec Radford, Jong Wook Kim, Miles Brundage. [Evaluating CLIP: Towards Characterization of Broader Capabilities and Downstream Implications.](https://arxiv.org/abs/2108.02818) [PDF](https://arxiv.org/abs/2108.02818)
+- **`Required`**:  Meta AI. [ImageBind: Holistic AI Learning Across Six Modalities.](https://ai.meta.com/blog/imagebind-six-modalities-binding-ai/) Blog 2023.
+- **`Optional`**: Rohit Girdhar, Alaaeldin El-Nouby, Zhuang Liu, Mannat Singh, Kalyan Vasudev, Alwala Armand, Joulin Ishan Misra. [ImageBind: One Embedding Space To Bind Them All](https://arxiv.org/abs/2309.10020). arXiv 2023. [PDF](https://arxiv.org/abs/2309.10020)
+- **`Optional`**: Chunyuan Li, Zhe Gan, Zhengyuan Yang, Jianwei Yang, Linjie Li, Lijuan Wang, Jianfeng Gao. [Multimodal Foundation Models: From Specialists to General-Purpose Assistants.](https://arxiv.org/abs/2309.10020) arXiv 2023. [PDF](https://arxiv.org/abs/2309.10020) Chapter 1-2, p5 - p25.
+-  **`Optional`**: Jindong Gu, Zhen Han, Shuo Chen, Ahmad Beirami, Bailan He, Gengyuan Zhang, Ruotong Liao, Yao Qin, Volker Tresp, Philip Torr. [A Systematic Survey of Prompt Engineering on Vision-Language Foundation Models.](https://arxiv.org/abs/2307.12980) arXiv 2023. [PDF](https://arxiv.org/abs/2307.12980)
+-  **`Optional`**: Anastasiya Belyaeva, Justin Cosentino, Farhad Hormozdiari, Krish Eswaran, Shravya Shetty, Greg Corrado, Andrew Carroll, Cory Y. McLean, Nicholas A. Furlotte. [Multimodal LLMs for health grounded in individual-specific data.](https://arxiv.org/abs/2307.09018) arXiv 2023. [PDF](https://arxiv.org/abs/2307.09018)
+-  **`Optional`**: Alexey Dosovitskiy, Lucas Beyer, Alexander Kolesnikov, Dirk Weissenborn, Xiaohua Zhai, Thomas Unterthiner, Mostafa Dehghani, Matthias Minderer, Georg Heigold, Sylvain Gelly, Jakob Uszkoreit, Neil Houlsby. [An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale.](https://arxiv.org/abs/2010.11929) ICLR 2021. [PDF](https://arxiv.org/abs/2010.11929)
+
+
 ### Questions
-**(Post response by Sunday, 12 November)**
+**(Post response by Sunday, 26 November)**
 
-1. What are the key methodologies or techniques used in the Toolformer paper, and how does the tool use of LLM differ from the existing use of LLM, e.g., prompting, demonstration, etc.?
-2. Which potential applications or industries could benefit (or suffer) the most from the LLM Agent concept? How might it revolutionize or impact these areas?
-3. Regarding [Can LLMs Really Reason and Plan?](https://cacm.acm.org/blogs/blog-cacm/276268-can-llms-really-reason-and-plan/fulltext), do you agree with the opinion that what LLMs really do is a form of universal approximate retrieval, which was sometimes mistakenly interpreted as reasoning capabilities? What is your perspective on this question?
+1. What are some potential real-world applications of CLIP and ImageBind? Could these technologies transform industries like healthcare, education, or entertainment?
+2. How do CLIP and ImageBind mimic or differ from human cognitive processes in interpreting and linking visual and textual information?
+3. What are potential challenges in creating datasets for training models like CLIP and ImageBind? How can the quality of these datasets be ensured?
+4. What are the potential ethical implications of technologies like CLIP and ImageBind, especially in terms of privacy, bias, and misuse? How can these issues be mitigated?
 
-## Wednesday 15 November: Applications of LLM Agents
-### Readings
-- **`Required`**: Qinlin Zhao, Jindong Wang, Yixuan Zhang, Yiqiao Jin, Kaijie Zhu, Hao Chen, Xing Xie. [CompeteAI: Understanding the Competition Behaviors in Large Language Model-based Agents](https://arxiv.org/abs/2310.17512). arXiv 2023. [[PDF](https://arxiv.org/pdf/2310.17512.pdf)]
-- **`Optional`**: Yilun Du, Shuang Li, Antonio Torralba, Joshua B. Tenenbaum, Igor Mordatch. [Improving Factuality and Reasoning in Language Models through Multiagent Debate](https://arxiv.org/abs/2305.14325). arXiv 2023. [[PDF](https://arxiv.org/pdf/2305.14325.pdf)]
-- **`Optional`**: Kuan Wang, Yadong Lu, Michael Santacroce, Yeyun Gong, Chao Zhang, Yelong Shen. [Adapting LLM Agents Through Communication](https://arxiv.org/abs/2310.01444). arXiv 2023. [[PDF](https://arxiv.org/pdf/2310.01444.pdf)]
-- **`Optional`**: Daniil A. Boiko, Robert MacKnight, Gabe Gomes. [Emergent autonomous scientific research capabilities of large language models](https://arxiv.org/abs/2304.05332). arXiv 2023. [[PDF](https://arxiv.org/pdf/2304.05332.pdf)]
-- **`Optional`**: Yuzhuang Xu, Shuo Wang, Peng Li, Fuwen Luo, Xiaolong Wang, Weidong Liu, Yang Liu. [Exploring Large Language Models for Communication Games: An Empirical Study on Werewolf](https://arxiv.org/abs/2309.04658). arXiv 2023. [[PDF](https://arxiv.org/pdf/2309.04658.pdf)]
+## Wednesday 29 November: Safety and Ethical AI.
+### Readings for Wednesday:
+- **`Required`**: Yoshua Bengio, Geoffrey Hinton, Andrew Yao, Dawn Song, Pieter Abbeel, Yuval Noah Harari, Ya-Qin Zhang, Lan Xue, Shai Shalev-Shwartz, Gillian Hadfield, Jeff Clune, Tegan Maharaj, Frank Hutter, Atılım Güneş Baydin, Sheila McIlraith, Qiqi Gao, Ashwin Acharya, David Krueger, Anca Dragan, Philip Torr, Stuart Russell, Daniel Kahneman, Jan Brauner, Sören Mindermann. [Managing AI Risks in an Era of Rapid Progress.](https://arxiv.org/abs/2310.17688) arXiv 2023. [PDF](https://arxiv.org/abs/2310.17688)
+- **`Required`**: Ben Shneiderman. [Bridging the Gap Between Ethics and Practice: Guidelines for Reliable, Safe, and Trustworthy Human-centered AI Systems.](https://dl.acm.org/doi/abs/10.1145/3419764) ACM Transactions on Interactive Intelligent Systems, October 2020. [PDF](https://dl.acm.org/doi/abs/10.1145/3419764)
+- **`Optional`**: David Leslie. [Understanding Artificial Intelligence Ethics And Safety.](https://arxiv.org/abs/1906.05684) arXiv 2019. [PDF](https://arxiv.org/abs/1906.05684)
+- **`Optional`**: Joseph Carlsmith. [Is Power-Seeking AI an Existential Risk?.](https://arxiv.org/abs/2206.13353) arXiv 2022. [PDF](https://arxiv.org/abs/2206.13353)
+- **`Optional`**: Alice Pavaloiu, Utku Kose. [Ethical Artificial Intelligence - An Open Question.](https://arxiv.org/abs/1706.03021) arXiv 2017. [PDF](https://arxiv.org/abs/1706.03021)
+  
 ### Questions
-**(Post response by Tuesday, 14 November)**
+**(Post response by Tuesday, 28 November)**
 
-1. The [CompeteAI: Understanding the Competition Behaviors in Large Language Model-based Agents](https://arxiv.org/abs/2310.17512) paper shows that LLM agents can be used for simulating the competition environment. How might the competition behaviors observed in LLM-based agents translate to other real-world applications where strategic competition is critical? Essentially, are there specific characteristics unique to the restaurant setting that might not directly apply to other sectors?
-2. What are some considerations (ethical or otherwise) that may arise as a result of programming LLMs to compete with each other, especially considering the possibility of this being implemented in real world scenarios? If there are valid concerns, how could the models be calibrated to ensure that the competition remains ethical, preventing the agents from learning and adopting potentially harmful or deceptive strategies?
-3. Agents can be used in various ways. One way is to make them compete (like in the CompeteAI paper). Instead of competing, how can agents be used in other ways (e.g. by collaborating/communicating with each other), and how might this impact their behavior?
-4. Given the adaptive nature of LLM-based agents in a competitive environment, how can we ensure transparency and interpretability in the decision-making processes of these agents, so that stakeholders can understand and trust the outcomes of such simulations?
+Paper 1: [Bridging the Gap Between Ethics and Practice](https://drive.google.com/file/d/1Ok16aNvNLbdkBexcmt9dyVGPEpKYGXbH/view)
+
+1. The paper claims, “Human-centered Artificial Intelligence (HCAI) systems represent a second Copernican revolution that puts human performance and human experience at the center of design thinking." Do you agree with this quote?
+2. Developers/teams, organizations, users and regulators often have different views on what constitutes reliability, safety, and trustworthiness in human-centered AI systems. What are the potential challenges and solutions for aligning them? Can you provide some specific examples where these views do not align?
+   
+Paper 2: [Managing AI Risks in an Era of Rapid Progress](https://arxiv.org/pdf/2310.17688.pdf)
+
+3. Do you think AI systems can be regulated over an international governance organization or agreement like nuclear weapons?
+4. Consider this quote from the paper: "Without sufficient caution, we may irreversibly lose control of autonomous AI systems, rendering human intervention ineffective. Large-scale cybercrime, social manipulation, and other highlighted harms could then escalate rapidly. This unchecked AI advancement could culminate in a large-scale loss of life and the biosphere, and the marginalization or even extinction of humanity." Do you agree with it? If so, do you think any of the measures proposed in the paper would be sufficient for managing such a risk? If not, what assumptions of the authors' that led to this conclusion do you think are invalid or unlikely?
